@@ -8,13 +8,25 @@ jobs:
   diagnose:
     runs-on: ubuntu-latest
     steps:
-      - name: API-Zugriff pruefen
+      - name: API-Endpunkte einzeln pruefen
         env:
           TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN }}
         run: |
-          set +e
-          RESPONSE=$(curl -sS \
-            -w '\nHTTP_STATUS:%{http_code}' \
-            -H "X-Auth-Token: $TOKEN" \
-            "https://api.football-data.org/v4/competitions/BL1/standings")
-          echo "$RESPONSE"
+          for ENDPOINT in \
+            "BL1/matches" \
+            "BL2/standings" \
+            "BL2/matches"
+          do
+            echo "Pruefe $ENDPOINT"
+            STATUS=$(curl -sS \
+              -o /tmp/antwort.json \
+              -w "%{http_code}" \
+              -H "X-Auth-Token: $TOKEN" \
+              "https://api.football-data.org/v4/competitions/$ENDPOINT")
+            echo "HTTP_STATUS: $STATUS"
+            if [ "$STATUS" != "200" ]; then
+              cat /tmp/antwort.json
+              echo
+            fi
+          done
+
