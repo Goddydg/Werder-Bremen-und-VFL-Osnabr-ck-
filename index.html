@@ -44,12 +44,14 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 .error{color:#ffb5a9}
 .refresh{display:block;width:100%;margin:12px 0;padding:12px;border:1px solid #37684f;border-radius:10px;background:#194a34;color:white;font-size:14px}
 .league-purple .refresh{background:#4c1d72;border-color:#8b5bb4}
-
-/* Vereinshervorhebung in den Spielen */
 .match.werder-match{background:#1d7045;border:1px solid #35a66b;border-radius:10px;padding:12px;margin:8px 0;color:#fff}
 .match.vfl-match{background:#6b21a8;border:1px solid #a855f7;border-radius:10px;padding:12px;margin:8px 0;color:#fff}
 .match.werder-match .match-date,.match.vfl-match .match-date{color:#fff;opacity:.9}
 .team-highlight{display:inline-block;padding:3px 6px;border-radius:5px;background:rgba(255,255,255,.18);font-weight:bold}
+.live-badge{display:inline-block;background:#e32636;color:#fff;border-radius:5px;padding:3px 7px;font-size:11px;font-weight:bold;margin-right:5px}
+.finished-badge{display:inline-block;background:#40584a;color:#fff;border-radius:5px;padding:3px 7px;font-size:11px;margin-right:5px}
+.status-line{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.update-info{font-size:12px;color:#a9beb0;margin-top:8px}
 </style>
 </head>
 
@@ -70,7 +72,8 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 
     <h3>Tabelle</h3>
     <div id="bl1-table">Tabelle wird geladen …</div>
-    <button class="refresh" onclick="start()">Daten aktualisieren</button>
+    <div class="update-info" id="bl1-update"></div>
+    <button class="refresh" onclick="refreshData(true)">Daten jetzt aktualisieren</button>
   </section>
 
   <section class="league league-purple" id="zweite-bundesliga">
@@ -83,71 +86,108 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 
     <h3>Tabelle</h3>
     <div id="bl2-table">Tabelle wird geladen …</div>
-    <button class="refresh" onclick="start()">Daten aktualisieren</button>
+    <div class="update-info" id="bl2-update"></div>
+    <button class="refresh" onclick="refreshData(true)">Daten jetzt aktualisieren</button>
   </section>
 </main>
 
 <script>
-const base='./data/';
+const base = './data/';
 
-let standings={};
-let matches={};
-let selectedRound={bl1:null,bl2:null};
+let standings = {};
+let matches = {};
+let selectedRound = {bl1:null, bl2:null};
+let lastUpdate = null;
+let loading = false;
 
 function esc(value){
-  return String(value??'').replace(/[&<>"']/g,c=>({
+  return String(value ?? '').replace(/[&<>"']/g,c=>({
     '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
   }[c]));
 }
 
 async function load(file){
-  const response=await fetch(base+file+'?t='+Date.now());
-  if(!response.ok)throw new Error(file+' konnte nicht geladen werden.');
+  const response = await fetch(base + file + '?t=' + Date.now(), {
+    cache: 'no-store'
+  });
+  if(!response.ok) throw new Error(file + ' konnte nicht geladen werden.');
   return response.json();
 }
 
 function getGames(key){
-  const data=matches[key];
-  return Array.isArray(data)?data:(data?.matches||[]);
+  const data = matches[key];
+  return Array.isArray(data) ? data : (data?.matches || []);
 }
 
 function roundNumber(match,key){
-  if(key==='bl1'){
-    return Number(match.matchday??match.season?.currentMatchday??0);
+  if(key === 'bl1'){
+    return Number(match.matchday ?? match.season?.currentMatchday ?? 0);
   }
-  return Number(match.group?.groupOrderID??match.groupOrderID??match.matchday??0);
+  return Number(
+    match.group?.groupOrderID ??
+    match.groupOrderID ??
+    match.matchday ??
+    0
+  );
 }
 
 function gameDate(match,key){
-  return key==='bl1'?match.utcDate:match.matchDateTime;
+  return key === 'bl1' ? match.utcDate : match.matchDateTime;
 }
 
 function isFinished(match,key){
-  return key==='bl1'?match.status==='FINISHED':Boolean(match.matchIsFinished);
+  return key === 'bl1'
+    ? match.status === 'FINISHED'
+    : Boolean(match.matchIsFinished);
+}
+
+function isLive(match,key){
+  if(key === 'bl1'){
+    return ['IN_PLAY','PAUSED','EXTRA_TIME','PENALTY_SHOOTOUT']
+      .includes(match.status);
+  }
+
+  if(match.matchIsFinished) return false;
+
+  const kickoff = gameDate(match,key);
+  if(!kickoff) return false;
+
+  const elapsed = Date.now() - new Date(kickoff).getTime();
+
+  // OpenLigaDB liefert nicht bei jedem Spiel einen Live-Status.
+  // Daher nur ein vorsichtiger Zeitindikator, kein garantierter Live-Feed.
+  return elapsed >= 0 && elapsed <= 3 * 60 * 60 * 1000;
 }
 
 function findDefaultRound(games,key){
-  const rounds=[...new Set(games.map(g=>roundNumber(g,key)).filter(n=>n>0))]
-    .sort((a,b)=>a-b);
-  if(!rounds.length)return null;
+  const rounds = [...new Set(
+    games.map(g=>roundNumber(g,key)).filter(n=>n>0)
+  )].sort((a,b)=>a-b);
 
-  const now=Date.now();
-  const today=new Date().toDateString();
+  if(!rounds.length) return null;
 
-  const todayRounds=games
-    .filter(g=>gameDate(g,key)&&new Date(gameDate(g,key)).toDateString()===today)
+  const now = Date.now();
+  const today = new Date().toDateString();
+
+  const todayRounds = games
+    .filter(g=>gameDate(g,key) &&
+      new Date(gameDate(g,key)).toDateString()===today)
     .map(g=>roundNumber(g,key)).filter(n=>n>0);
-  if(todayRounds.length)return todayRounds[0];
 
-  const upcoming=games
-    .filter(g=>!isFinished(g,key)&&gameDate(g,key)&&new Date(gameDate(g,key)).getTime()>=now)
+  if(todayRounds.length) return todayRounds[0];
+
+  const upcoming = games
+    .filter(g=>!isFinished(g,key) && gameDate(g,key) &&
+      new Date(gameDate(g,key)).getTime()>=now)
     .sort((a,b)=>new Date(gameDate(a,key))-new Date(gameDate(b,key)));
-  if(upcoming.length)return roundNumber(upcoming[0],key);
 
-  const unfinished=games
+  if(upcoming.length) return roundNumber(upcoming[0],key);
+
+  const unfinished = games
     .filter(g=>!isFinished(g,key)&&roundNumber(g,key)>0)
     .sort((a,b)=>new Date(gameDate(a,key)||0)-new Date(gameDate(b,key)||0));
-  if(unfinished.length)return roundNumber(unfinished[0],key);
+
+  if(unfinished.length) return roundNumber(unfinished[0],key);
 
   return Math.max(...rounds);
 }
@@ -164,11 +204,13 @@ function changeRound(key,value){
 }
 
 function roundSelector(key){
-  const rounds=[...new Set(getGames(key).map(g=>roundNumber(g,key)).filter(n=>n>0))]
-    .sort((a,b)=>a-b);
+  const rounds = [...new Set(
+    getGames(key).map(g=>roundNumber(g,key)).filter(n=>n>0)
+  )].sort((a,b)=>a-b);
+
   ensureRound(key);
 
-  if(!rounds.length)return '<p class="muted">Keine Spieltage verfügbar.</p>';
+  if(!rounds.length) return '<p class="muted">Keine Spieltage verfügbar.</p>';
 
   return `
     <div class="selector">
@@ -177,7 +219,8 @@ function roundSelector(key){
         ${rounds.map(n=>`
           <option value="${n}" ${n===selectedRound[key]?'selected':''}>
             ${n}. Spieltag
-          </option>`).join('')}
+          </option>
+        `).join('')}
       </select>
     </div>`;
 }
@@ -196,6 +239,7 @@ function teamNames(match,key){
       away:match.awayTeam?.shortName||match.awayTeam?.name||'Unbekannt'
     };
   }
+
   return {
     home:match.team1?.teamName||'Unbekannt',
     away:match.team2?.teamName||'Unbekannt'
@@ -204,33 +248,63 @@ function teamNames(match,key){
 
 function gameScore(match,key){
   if(key==='bl1'){
-    const home=match.score?.fullTime?.home;
-    const away=match.score?.fullTime?.away;
-    return home==null||away==null?'– : –':home+' : '+away;
+    // Bei laufenden Spielen liefert football-data.org normalerweise
+    // den aktuellen Zwischenstand in score.fullTime.
+    const score = match.score || {};
+    const candidates = [
+      score.fullTime,
+      score.regularTime,
+      score.halfTime
+    ];
+
+    for(const candidate of candidates){
+      if(candidate && candidate.home!=null && candidate.away!=null){
+        return `${candidate.home} : ${candidate.away}`;
+      }
+    }
+
+    return '– : –';
   }
 
-  const results=match.matchResults||[];
-  const result=results.find(r=>r.resultTypeID===2)||
-    results.reduce((best,r)=>
-      !best||Number(r.resultTypeID)>Number(best.resultTypeID)?r:best,null);
+  // OpenLigaDB stellt Zwischenstände nicht bei allen Spielen bereit.
+  // Wir verwenden das zuletzt verfügbare Ergebnis.
+  const results = match.matchResults || [];
+  const result = results.reduce((best,r)=>
+    !best || Number(r.resultTypeID||0)>Number(best.resultTypeID||0)
+      ? r : best
+  ,null);
 
-  return result?`${result.pointsTeam1} : ${result.pointsTeam2}`:'– : –';
+  if(!result || result.pointsTeam1==null || result.pointsTeam2==null){
+    return '– : –';
+  }
+
+  return `${result.pointsTeam1} : ${result.pointsTeam2}`;
 }
 
 function formatDate(value){
-  if(!value)return 'Termin offen';
+  if(!value) return 'Termin offen';
+
   return new Date(value).toLocaleString('de-DE',{
-    weekday:'short',day:'2-digit',month:'2-digit',
-    hour:'2-digit',minute:'2-digit'
+    weekday:'short',
+    day:'2-digit',
+    month:'2-digit',
+    hour:'2-digit',
+    minute:'2-digit'
   });
 }
 
-function statusText(match,key){
-  if(isFinished(match,key))return 'Beendet';
-  if(gameDate(match,key)&&new Date(gameDate(match,key))<new Date()){
-    return 'Ergebnis noch nicht verfügbar';
+function statusHTML(match,key){
+  if(isLive(match,key)){
+    return '<span class="live-badge">● LIVE</span> ' +
+      esc(formatDate(gameDate(match,key)));
   }
-  return 'Anstoß: '+formatDate(gameDate(match,key));
+
+  if(isFinished(match,key)){
+    return '<span class="finished-badge">BEENDET</span> ' +
+      esc(formatDate(gameDate(match,key)));
+  }
+
+  return esc(formatDate(gameDate(match,key)));
 }
 
 function isWerder(name){
@@ -240,27 +314,38 @@ function isWerder(name){
 
 function isVfL(name){
   const n=name.toLowerCase();
-  return n.includes('osnabrück')||n.includes('osnabrueck')||n.includes('vfl osnabr');
+  return n.includes('osnabrück')||
+    n.includes('osnabrueck')||
+    n.includes('vfl osnabr');
 }
 
 function gamesHTML(key){
-  const games=selectedGames(key);
-  if(!games.length)return '<p class="muted">Keine Spiele für diesen Spieltag gefunden.</p>';
+  const games = selectedGames(key);
+
+  if(!games.length){
+    return '<p class="muted">Keine Spiele für diesen Spieltag gefunden.</p>';
+  }
 
   return games.map(match=>{
-    const names=teamNames(match,key);
-    const hasWerder=key==='bl1'&&(isWerder(names.home)||isWerder(names.away));
-    const hasVfL=key==='bl2'&&(isVfL(names.home)||isVfL(names.away));
-    const cssClass=hasWerder?'werder-match':hasVfL?'vfl-match':'';
+    const names = teamNames(match,key);
+    const hasWerder = key==='bl1' &&
+      (isWerder(names.home)||isWerder(names.away));
+    const hasVfL = key==='bl2' &&
+      (isVfL(names.home)||isVfL(names.away));
 
-    const homeClass=(key==='bl1'&&isWerder(names.home))||
+    const cssClass = hasWerder?'werder-match':hasVfL?'vfl-match':'';
+
+    const homeClass =
+      (key==='bl1'&&isWerder(names.home))||
       (key==='bl2'&&isVfL(names.home))?'team-highlight':'';
-    const awayClass=(key==='bl1'&&isWerder(names.away))||
+
+    const awayClass =
+      (key==='bl1'&&isWerder(names.away))||
       (key==='bl2'&&isVfL(names.away))?'team-highlight':'';
 
     return `
       <div class="match ${cssClass}">
-        <div class="match-date">${esc(statusText(match,key))}</div>
+        <div class="match-date status-line">${statusHTML(match,key)}</div>
         <div>
           <span class="${homeClass}"><b>${esc(names.home)}</b></span>
           <span class="score">${esc(gameScore(match,key))}</span>
@@ -271,12 +356,14 @@ function gamesHTML(key){
 }
 
 function getTableRows(data){
-  if(Array.isArray(data))return data;
-  if(Array.isArray(data?.table))return data.table;
+  if(Array.isArray(data)) return data;
+  if(Array.isArray(data?.table)) return data.table;
+
   if(Array.isArray(data?.standings)){
     const total=data.standings.find(s=>s.type==='TOTAL');
     return total?.table||data.standings[0]?.table||[];
   }
+
   return [];
 }
 
@@ -286,63 +373,56 @@ function teamName(row){
 
 function tableHTML(data,key){
   const rows=getTableRows(data);
-  if(!rows.length)return '<p class="muted">Tabelle nicht verfügbar.</p>';
+
+  if(!rows.length) return '<p class="muted">Tabelle nicht verfügbar.</p>';
 
   return `
     <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>Pos.</th>
-          <th>Verein</th>
-          <th>Sp.</th>
-          <th>S</th>
-          <th>U</th>
-          <th>N</th>
-          <th>Tore</th>
-          <th>TD</th>
-          <th>Pkt.</th>
-        </tr>
-      </thead>
-      <tbody>
-        ${rows.map((row,index)=>{
-          const name=teamName(row);
-          const highlighted=key==='bl1'?isWerder(name):isVfL(name);
+      <table>
+        <thead>
+          <tr>
+            <th>Pos.</th><th>Verein</th><th>Sp.</th>
+            <th>S</th><th>U</th><th>N</th>
+            <th>Tore</th><th>TD</th><th>Pkt.</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${rows.map((row,index)=>{
+            const name=teamName(row);
+            const highlighted=key==='bl1'?isWerder(name):isVfL(name);
+            const played=row.playedGames??row.matchesPlayed??row.played??'–';
+            const wins=row.won??row.wins??row.wonGames??'–';
+            const draws=row.draw??row.draws??row.drawGames??'–';
+            const losses=row.lost??row.losses??row.lostGames??'–';
+            const goalsFor=row.goalsFor??row.goalsScored;
+            const goalsAgainst=row.goalsAgainst??row.goalsConceded;
 
-          const played=row.playedGames??row.matchesPlayed??row.played??'–';
-          const wins=row.won??row.wins??row.wonGames??'–';
-          const draws=row.draw??row.draws??row.drawGames??'–';
-          const losses=row.lost??row.losses??row.lostGames??'–';
+            let goals='–';
+            if(goalsFor!==undefined&&goalsAgainst!==undefined){
+              goals=goalsFor+':'+goalsAgainst;
+            }else if(row.goals!==undefined){
+              goals=row.goals;
+            }
 
-          const goalsFor=row.goalsFor??row.goalsScored;
-          const goalsAgainst=row.goalsAgainst??row.goalsConceded;
-          let goals='–';
+            const difference=row.goalDifference??row.goalDiff??'–';
+            const points=row.points??row.pts??'–';
+            const position=row.position??row.rank??index+1;
 
-          if(goalsFor!==undefined&&goalsAgainst!==undefined){
-            goals=goalsFor+':'+goalsAgainst;
-          }else if(row.goals!==undefined){
-            goals=row.goals;
-          }
-
-          const difference=row.goalDifference??row.goalDiff??'–';
-          const points=row.points??row.pts??'–';
-          const position=row.position??row.rank??index+1;
-
-          return `
-            <tr class="${highlighted?(key==='bl1'?'werder-row':'vfl-row'):''}">
-              <td>${esc(position)}</td>
-              <td>${esc(name)}</td>
-              <td>${esc(played)}</td>
-              <td>${esc(wins)}</td>
-              <td>${esc(draws)}</td>
-              <td>${esc(losses)}</td>
-              <td>${esc(goals)}</td>
-              <td>${esc(difference)}</td>
-              <td><b>${esc(points)}</b></td>
-            </tr>`;
-        }).join('')}
-      </tbody>
-    </table>
+            return `
+              <tr class="${highlighted?(key==='bl1'?'werder-row':'vfl-row'):''}">
+                <td>${esc(position)}</td>
+                <td>${esc(name)}</td>
+                <td>${esc(played)}</td>
+                <td>${esc(wins)}</td>
+                <td>${esc(draws)}</td>
+                <td>${esc(losses)}</td>
+                <td>${esc(goals)}</td>
+                <td>${esc(difference)}</td>
+                <td><b>${esc(points)}</b></td>
+              </tr>`;
+          }).join('')}
+        </tbody>
+      </table>
     </div>`;
 }
 
@@ -354,13 +434,21 @@ function renderGames(key){
 function render(){
   renderGames('bl1');
   renderGames('bl2');
+
   document.getElementById('bl1-table').innerHTML=tableHTML(standings.bl1,'bl1');
   document.getElementById('bl2-table').innerHTML=tableHTML(standings.bl2,'bl2');
+
+  const stamp=lastUpdate
+    ? 'Zuletzt von der App geprüft: '+lastUpdate.toLocaleTimeString('de-DE')
+    : '';
+
+  document.getElementById('bl1-update').textContent=stamp;
+  document.getElementById('bl2-update').textContent=stamp;
 }
 
-async function start(){
-  document.getElementById('bl1-games').textContent='Daten werden geladen …';
-  document.getElementById('bl2-games').textContent='Daten werden geladen …';
+async function refreshData(showMessage=false){
+  if(loading) return;
+  loading=true;
 
   try{
     const [bl1,bl1Games,bl2Table,bl2Games]=await Promise.all([
@@ -375,19 +463,37 @@ async function start(){
     standings.bl2=bl2Table;
     matches.bl2=bl2Games;
 
-    selectedRound.bl1=findDefaultRound(getGames('bl1'),'bl1');
-    selectedRound.bl2=findDefaultRound(getGames('bl2'),'bl2');
+    if(selectedRound.bl1===null){
+      selectedRound.bl1=findDefaultRound(getGames('bl1'),'bl1');
+    }
+    if(selectedRound.bl2===null){
+      selectedRound.bl2=findDefaultRound(getGames('bl2'),'bl2');
+    }
 
+    lastUpdate=new Date();
     render();
   }catch(error){
-    document.getElementById('bl1-games').innerHTML=
-      '<p class="error">Fehler beim Laden: '+esc(error.message)+'</p>';
-    document.getElementById('bl2-games').innerHTML=
-      '<p class="error">Fehler beim Laden der Daten.</p>';
+    if(!standings.bl1){
+      document.getElementById('bl1-games').innerHTML=
+        '<p class="error">Fehler beim Laden: '+esc(error.message)+'</p>';
+      document.getElementById('bl2-games').innerHTML=
+        '<p class="error">Fehler beim Laden der Daten.</p>';
+    }
+    console.error('Aktualisierung fehlgeschlagen:',error);
+  }finally{
+    loading=false;
   }
 }
 
-start();
+refreshData();
+
+// Die gespeicherten JSON-Dateien werden jede Minute erneut geprüft.
+setInterval(()=>refreshData(),60000);
+
+// Beim Zurückkehren zur geöffneten App sofort erneut prüfen.
+document.addEventListener('visibilitychange',()=>{
+  if(!document.hidden) refreshData();
+});
 </script>
 </body>
 </html>
