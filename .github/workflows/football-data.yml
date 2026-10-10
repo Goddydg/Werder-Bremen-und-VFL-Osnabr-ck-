@@ -1,3 +1,4 @@
+
 name: Fussballdaten aktualisieren
 
 on:
@@ -16,27 +17,61 @@ jobs:
       - name: Repository laden
         uses: actions/checkout@v4
 
-      - name: Bundesliga abrufen
+      - name: Datenordner anlegen
+        run: mkdir -p data
+
+      - name: Bundesliga-Daten abrufen
         env:
           TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN }}
         run: |
-          mkdir -p data
+          set -e
 
+          # Tabelle der 1. Bundesliga
           curl -fsS --retry 3 --retry-delay 5 \
             -H "X-Auth-Token: $TOKEN" \
             "https://api.football-data.org/v4/competitions/BL1/standings" \
             -o data/bundesliga.json
 
-          curl -fsS --retry 3 --retry-delay 5 \
+          # Spielplan und Ergebnisse.
+          # Erweiterte Daten werden angefordert, falls der Tarif sie erlaubt.
+          if ! curl -fsS --retry 2 \
             -H "X-Auth-Token: $TOKEN" \
-            "https://api.football-data.org/v4/competitions/BL1/matches" \
-            -o data/bundesliga-spiele.json
+            -H "X-Unfold-Goals: true" \
+            -H "X-Unfold-Bookings: true" \
+            -H "X-Unfold-Subs: true" \
+            -H "X-Unfold-Lineups: true" \
+            "https://api.football-data.org/v4/competitions/BL1/matches?season=2026" \
+            -o data/bundesliga-spiele.json; then
 
-      - name: Zweite Bundesliga abrufen
+            echo "Erweiterte Daten nicht verfügbar; Standarddaten werden geladen."
+
+            curl -fsS --retry 3 --retry-delay 5 \
+              -H "X-Auth-Token: $TOKEN" \
+              "https://api.football-data.org/v4/competitions/BL1/matches?season=2026" \
+              -o data/bundesliga-spiele.json
+          fi
+
+      - name: OpenLigaDB-Daten abrufen
         run: |
+          set -e
+
+          # Beide Ligen und komplette Saison
+          curl -fsS --retry 3 --retry-delay 5 \
+            "https://api.openligadb.de/getmatchdata/bl1/2026" \
+            -o data/openligadb-bl1-spiele.json
+
           curl -fsS --retry 3 --retry-delay 5 \
             "https://api.openligadb.de/getmatchdata/bl2/2026" \
             -o data/2bundesliga-spiele.json
+
+          # Torschützenlisten der beiden Ligen
+          curl -fsS --retry 3 --retry-delay 5 \
+            "https://api.openligadb.de/getgoalgetters/bl1/2026" \
+            -o data/openligadb-bl1-torschuetzen.json
+
+          curl -fsS --retry 3 --retry-delay 5 \
+            "https://api.openligadb.de/getgoalgetters/bl2/2026" \
+            -o data/openligadb-bl2-torschuetzen.json
 
       - name: Tabelle der zweiten Bundesliga berechnen
         run: |
