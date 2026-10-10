@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -19,50 +18,25 @@ main{padding:12px}
 h2{font-size:22px;margin:4px 0 14px}
 h3{font-size:18px;margin:20px 0 10px}
 h4{font-size:15px;margin:12px 0}
-.club{display:inline-flex;align-items:center;gap:9px;padding:7px 11px;margin-bottom:12px;border-radius:8px;background:#1d7045;color:white;font-weight:bold}
+.club{display:inline-block;padding:7px 11px;margin-bottom:12px;border-radius:8px;background:#1d7045;color:white;font-weight:bold}
 .league-purple .club{background:#6b21a8}
-.club-logo{width:34px;height:34px;object-fit:contain;flex:0 0 34px}
-.table-wrap{width:100%;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
-table{width:620px;min-width:620px;table-layout:fixed;border-collapse:collapse;font-size:12px}
-th,td{padding:7px 3px;border-bottom:1px solid #294536;text-align:center;white-space:nowrap;overflow:hidden}
-th:nth-child(1),td:nth-child(1){width:35px}
-th:nth-child(2),td:nth-child(2){width:132px;text-align:left}
-th:nth-child(3),td:nth-child(3){width:35px}
-th:nth-child(4),td:nth-child(4){width:54px}
-th:nth-child(5),td:nth-child(5){width:40px}
-th:nth-child(6),td:nth-child(6){width:45px;text-align:right;padding-right:8px}
-th:nth-child(7),td:nth-child(7){width:48px}
-th:nth-child(8),td:nth-child(8){width:38px}
-th:nth-child(9),td:nth-child(9){width:38px}
-.table-team{display:flex;align-items:center;gap:6px;min-width:0}
-.table-team-logo{width:23px;height:23px;object-fit:contain;flex:0 0 23px}
-.table-team-name{display:block;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .selector{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0}
 select{max-width:100%;padding:11px;border-radius:9px;background:#173c2a;color:white;border:1px solid #477258;font-size:15px}
 .league-purple select{background:#35194b;border-color:#8b5bb4}
-.table-wrap{width:100%;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
-.table-wrap table{width:620px;min-width:620px;table-layout:fixed;border-collapse:collapse;font-size:12px}
-.table-wrap th,.table-wrap td{padding:7px 3px;border-bottom:1px solid #294536;text-align:center;white-space:nowrap;overflow:hidden}
-.table-wrap th:nth-child(1),.table-wrap td:nth-child(1){width:5%}
-.table-wrap th:nth-child(2),.table-wrap td:nth-child(2){width:20%;text-align:left}
-.table-wrap th:nth-child(3),.table-wrap td:nth-child(3){width:5%}
-.table-wrap th:nth-child(4),.table-wrap td:nth-child(4){width:8%}
-.table-wrap th:nth-child(5),.table-wrap td:nth-child(5){width:5%}
-.table-wrap th:nth-child(6),.table-wrap td:nth-child(6){width:7%;text-align:right;padding-right:8px}
-.table-wrap th:nth-child(7),.table-wrap td:nth-child(7){width:16.7%}
-.table-wrap th:nth-child(8),.table-wrap td:nth-child(8){width:16.7%}
-.table-wrap th:nth-child(9),.table-wrap td:nth-child(9){width:16.6%}
-.club{display:inline-flex;align-items:center;gap:9px}
-.table-team{display:flex;align-items:center;gap:6px;min-width:0}
-.table-team-logo{width:23px;height:23px;object-fit:contain;flex:0 0 23px}
-.table-team-name{display:block;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-
-/* Vereinswappen in der Spieltagsansicht */
-.match-teams{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
-.match-team{display:inline-flex;align-items:center;gap:5px;min-width:0}
-.match-teams .table-team-logo{width:25px;height:25px;object-fit:contain;flex:0 0 25px}
-.match-team b{overflow-wrap:anywhere}
-
+.table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{width:100%;min-width:590px;border-collapse:collapse;font-size:13px}
+th,td{padding:9px 6px;border-bottom:1px solid #294536;text-align:center;white-space:nowrap}
+th:nth-child(2),td:nth-child(2){text-align:left}
+th:last-child,td:last-child{text-align:right}
+.team-cell{display:flex;align-items:center;gap:7px;min-width:150px}
+.team-logo{width:23px;height:23px;object-fit:contain;flex:0 0 23px;vertical-align:middle}
+.match-team{display:inline-flex;align-items:center;gap:5px;vertical-align:middle}
+.match-team .team-logo{width:25px;height:25px;flex-basis:25px}
+th{color:#b9d3c3;font-size:12px}
+.league-purple th{color:#dfc9f1}
+.league-purple th,.league-purple td{border-bottom-color:#493257}
+tr.werder-row{background:#1d7045!important;color:white;font-weight:bold}
+tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 .match{padding:12px;margin:8px 0;border-bottom:1px solid #294536;border-radius:9px}
 .league-purple .match{border-bottom-color:#493257}
 .match-date{color:#a9beb0;font-size:12px;margin-bottom:8px}
@@ -99,11 +73,14 @@ select{max-width:100%;padding:11px;border-radius:9px;background:#173c2a;color:wh
 </style>
 </head>
 <body>
-<header><h1>⚽ Werder & VfL</h1><p>Bundesliga · Spieltage · Tabellen</p></header>
+<header>
+  <h1>⚽ Werder & VfL</h1>
+  <p>Bundesliga · Spieltage · Tabellen</p>
+</header>
 <main>
   <section class="league league-green">
     <h2>🟢 1. Bundesliga</h2>
-    <div class="club"><img id="bl1-club-logo" class="club-logo" alt="" hidden><span>SV Werder Bremen</span></div>
+    <div class="club">🟢 SV Werder Bremen</div>
     <h3>Spiele des Spieltags</h3>
     <div id="bl1-selector"></div>
     <div id="bl1-games">Daten werden geladen …</div>
@@ -114,7 +91,7 @@ select{max-width:100%;padding:11px;border-radius:9px;background:#173c2a;color:wh
   </section>
   <section class="league league-purple">
     <h2>🟣 2. Bundesliga</h2>
-    <div class="club"><img id="bl2-club-logo" class="club-logo" alt="" hidden><span>VfL Osnabrück</span></div>
+    <div class="club">🟣 VfL Osnabrück</div>
     <h3>Spiele des Spieltags</h3>
     <div id="bl2-selector"></div>
     <div id="bl2-games">Daten werden geladen …</div>
@@ -126,6 +103,7 @@ select{max-width:100%;padding:11px;border-radius:9px;background:#173c2a;color:wh
 </main>
 <script>
 'use strict';
+
 const base='./data/';
 const season=2026;
 let standings={bl1:null,bl2:null};
@@ -135,16 +113,49 @@ let selectedRound={bl1:null,bl2:null};
 let expandedMatch={bl1:null,bl2:null};
 let lastUpdate=null,loading=false,initialRenderDone=false;
 
-function esc(value){return String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
-async function loadJSON(url){const response=await fetch(url,{cache:'no-store'});if(!response.ok)throw new Error('HTTP '+response.status);return response.json();}
-async function loadFile(file){return loadJSON(base+file+'?t='+Date.now());}
-async function loadLiveGames(key){const response=await loadJSON(`https://api.openligadb.de/getmatchdata/${key}/${season}`);if(!Array.isArray(response))throw new Error('Ungültige Spieldaten');return response;}
+function esc(value){
+  return String(value??'').replace(/[&<>"']/g,c=>({
+    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+  }[c]));
+}
+
+async function loadJSON(url){
+  const response=await fetch(url,{cache:'no-store'});
+  if(!response.ok)throw new Error('HTTP '+response.status);
+  return response.json();
+}
+
+async function loadFile(file){
+  return loadJSON(base+file+'?t='+Date.now());
+}
+
+async function loadLiveGames(key){
+  const response=await loadJSON(`https://api.openligadb.de/getmatchdata/${key}/${season}`);
+  if(!Array.isArray(response))throw new Error('Ungültige Spieldaten');
+  return response;
+}
+
 function getGames(key){return matches[key]||[];}
 function roundNumber(match){return Number(match.group?.groupOrderID??match.groupOrderID??match.matchday??0);}
 function gameDate(match){return match.matchDateTime||null;}
 function isFinished(match){return Boolean(match.matchIsFinished);}
-function matchKey(match){return match.matchID!=null?String(match.matchID):[match.team1?.teamName||'',match.team2?.teamName||'',gameDate(match)||''].join('|');}
-function normalizeName(value){return String(value||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/ß/g,'ss').replace(/[^a-z0-9]/g,'');}
+
+function matchKey(match){
+  return match.matchID!=null?String(match.matchID):
+    [match.team1?.teamName||'',match.team2?.teamName||'',gameDate(match)||''].join('|');
+}
+
+function normalizeName(value){
+  return String(value||'').toLowerCase().normalize('NFD')
+    .replace(/[\u0300-\u036f]/g,'').replace(/ß/g,'ss').replace(/[^a-z0-9]/g,'');
+}
+
+/* Korrigierter Teamnamenvergleich */
+function isSameTeamName(a,b){
+  const x=normalizeName(a),y=normalizeName(b);
+  return Boolean(x&&y&&(x===y||(Math.min(x.length,y.length)>=5&&(x.includes(y)||y.includes(x)))));
+}
+
 function footballTeamName(team){return team?.name||team?.shortName||team?.tla||'';}
 function apiDate(match){return match?.fixture?.date||match?.utcDate||null;}
 function apiStatus(match){return match?.fixture?.status?.short||match?.status||'';}
@@ -155,54 +166,112 @@ function findFootballMatch(match,key){
   const away=normalizeName(match.team2?.teamName);
   const kickoff=gameDate(match)?new Date(gameDate(match)).getTime():null;
   let best=null,bestDiff=Infinity;
+
   for(const candidate of list){
     const cHome=normalizeName(candidate.teams?.home?.name||candidate.homeTeam?.name);
     const cAway=normalizeName(candidate.teams?.away?.name||candidate.awayTeam?.name);
-    if(!home||!away||home!==cHome||away!==cAway)continue;
+    if(!home||!away||!isSameTeamName(home,cHome)||!isSameTeamName(away,cAway))continue;
     const d=apiDate(candidate);
     const cDate=d?new Date(d).getTime():null;
     const diff=kickoff!==null&&cDate!==null?Math.abs(kickoff-cDate):0;
     if(diff<bestDiff){best=candidate;bestDiff=diff;}
   }
+
   return best&&kickoff!==null&&apiDate(best)&&bestDiff>36*60*60*1000?null:best;
 }
+
 function findDefaultRound(games){
   const rounds=[...new Set(games.map(roundNumber).filter(n=>n>0))].sort((a,b)=>a-b);
   if(!rounds.length)return null;
   const now=Date.now(),today=new Date().toDateString();
-  const todayRounds=games.filter(g=>gameDate(g)&&new Date(gameDate(g)).toDateString()===today).map(roundNumber).filter(n=>n>0);
+  const todayRounds=games.filter(g=>gameDate(g)&&new Date(gameDate(g)).toDateString()===today)
+    .map(roundNumber).filter(n=>n>0);
   if(todayRounds.length)return todayRounds[0];
-  const upcoming=games.filter(g=>!isFinished(g)&&gameDate(g)&&new Date(gameDate(g)).getTime()>=now).sort((a,b)=>new Date(gameDate(a))-new Date(gameDate(b)));
+  const upcoming=games.filter(g=>!isFinished(g)&&gameDate(g)&&new Date(gameDate(g)).getTime()>=now)
+    .sort((a,b)=>new Date(gameDate(a))-new Date(gameDate(b)));
   if(upcoming.length)return roundNumber(upcoming[0]);
-  const unfinished=games.filter(g=>!isFinished(g)&&roundNumber(g)>0).sort((a,b)=>new Date(gameDate(a)||0)-new Date(gameDate(b)||0));
+  const unfinished=games.filter(g=>!isFinished(g)&&roundNumber(g)>0)
+    .sort((a,b)=>new Date(gameDate(a)||0)-new Date(gameDate(b)||0));
   if(unfinished.length)return roundNumber(unfinished[0]);
   return Math.max(...rounds);
 }
-function ensureRound(key){if(selectedRound[key]===null)selectedRound[key]=findDefaultRound(getGames(key));}
-function changeRound(key,value){selectedRound[key]=Number(value);expandedMatch[key]=null;renderGames(key);}
+
+function ensureRound(key){
+  if(selectedRound[key]===null)selectedRound[key]=findDefaultRound(getGames(key));
+}
+
+function changeRound(key,value){
+  selectedRound[key]=Number(value);
+  expandedMatch[key]=null;
+  renderGames(key);
+}
+
 function roundSelector(key){
   const rounds=[...new Set(getGames(key).map(roundNumber).filter(n=>n>0))].sort((a,b)=>a-b);
   ensureRound(key);
   if(!rounds.length)return '<p class="muted">Keine Spieltage verfügbar.</p>';
-  return `<div class="selector"><label for="${key}-round"><b>Spieltag:</b></label><select id="${key}-round" onchange="changeRound('${key}',this.value)">${rounds.map(n=>`<option value="${n}" ${n===selectedRound[key]?'selected':''}>${n}. Spieltag</option>`).join('')}</select></div>`;
+  return `<div class="selector"><label for="${key}-round"><b>Spieltag:</b></label>
+    <select id="${key}-round" onchange="changeRound('${key}',this.value)">
+    ${rounds.map(n=>`<option value="${n}" ${n===selectedRound[key]?'selected':''}>${n}. Spieltag</option>`).join('')}
+    </select></div>`;
 }
-function selectedGames(key){ensureRound(key);return getGames(key).filter(g=>roundNumber(g)===selectedRound[key]).sort((a,b)=>new Date(gameDate(a)||0)-new Date(gameDate(b)||0));}
-function teamNames(match){return {home:match.team1?.teamName||'Unbekannt',away:match.team2?.teamName||'Unbekannt'};}
+
+function selectedGames(key){
+  ensureRound(key);
+  return getGames(key).filter(g=>roundNumber(g)===selectedRound[key])
+    .sort((a,b)=>new Date(gameDate(a)||0)-new Date(gameDate(b)||0));
+}
+
+function teamNames(match){
+  return {home:match.team1?.teamName||'Unbekannt',away:match.team2?.teamName||'Unbekannt'};
+}
+
+/* Vereinswappen aus OpenLigaDB oder API-Football */
+function teamLogoUrl(name,key,row=null){
+  const direct=row?.team?.crest||row?.team?.logo||row?.crest||row?.logo;
+  if(direct)return direct;
+
+  for(const game of (matches[key]||[])){
+    for(const team of [game.team1,game.team2]){
+      if(team?.teamIconUrl&&isSameTeamName(name,team.teamName))return team.teamIconUrl;
+    }
+  }
+
+  for(const game of (footballMatches[key]||[])){
+    for(const team of [game.teams?.home,game.teams?.away,game.homeTeam,game.awayTeam]){
+      if(team?.logo&&isSameTeamName(name,team.name||team.shortName))return team.logo;
+    }
+  }
+
+  return '';
+}
+
+function teamLogoHTML(name,key,row=null){
+  const url=teamLogoUrl(name,key,row);
+  return url?`<img class="team-logo" src="${esc(url)}" alt="" loading="lazy" onerror="this.style.display='none'">`:'';
+}
+
 function footballScore(match){
   const goals=match?.goals;
   if(goals?.home!=null&&goals?.away!=null)return `${goals.home} : ${goals.away}`;
-  const score=match?.score,ft=score?.fulltime||score?.fullTime,regular=score?.regularTime;
-  const chosen=ft?.home!=null&&ft?.away!=null?ft:regular?.home!=null&&regular?.away!=null?regular:null;
+  const score=match?.score;
+  const ft=score?.fulltime||score?.fullTime;
+  const regular=score?.regularTime;
+  const chosen=ft?.home!=null&&ft?.away!=null?ft:
+    regular?.home!=null&&regular?.away!=null?regular:null;
   return chosen?`${chosen.home} : ${chosen.away}`:null;
 }
+
 function gameScore(match,key){
   const apiMatch=findFootballMatch(match,key),apiResult=footballScore(apiMatch);
   if(apiResult)return apiResult;
   const results=match.matchResults||[];
   if(!results.length)return '– : –';
   const result=results.reduce((best,r)=>!best||Number(r.resultTypeID||0)>Number(best.resultTypeID||0)?r:best,null);
-  return !result||result.pointsTeam1==null||result.pointsTeam2==null?'– : –':`${result.pointsTeam1} : ${result.pointsTeam2}`;
+  return !result||result.pointsTeam1==null||result.pointsTeam2==null?
+    '– : –':`${result.pointsTeam1} : ${result.pointsTeam2}`;
 }
+
 function isLive(match,key){
   const status=apiStatus(findFootballMatch(match,key));
   if(['1H','HT','2H','ET','BT','P','LIVE','IN_PLAY','PAUSED'].includes(status))return true;
@@ -213,82 +282,154 @@ function isLive(match,key){
   const elapsed=Date.now()-new Date(kickoff).getTime();
   return elapsed>=0&&elapsed<=3*60*60*1000;
 }
-function formatDate(value){if(!value)return 'Termin offen';return new Date(value).toLocaleString('de-DE',{weekday:'short',day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'});}
+
+function formatDate(value){
+  if(!value)return 'Termin offen';
+  return new Date(value).toLocaleString('de-DE',{
+    weekday:'short',day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'
+  });
+}
+
 function statusHTML(match,key){
   const status=apiStatus(findFootballMatch(match,key));
-  if(isFinished(match)||['FT','AET','PEN','FINISHED'].includes(status))return '<span class="finished-badge">BEENDET</span> '+esc(formatDate(gameDate(match)));
-  if(isLive(match,key))return '<span class="live-badge">● LIVE</span> '+esc(formatDate(gameDate(match)));
+  if(isFinished(match)||['FT','AET','PEN','FINISHED'].includes(status))
+    return '<span class="finished-badge">BEENDET</span> '+esc(formatDate(gameDate(match)));
+  if(isLive(match,key))
+    return '<span class="live-badge">● LIVE</span> '+esc(formatDate(gameDate(match)));
   if(['PST','POSTPONED'].includes(status))return '⏸ Verschoben · '+esc(formatDate(gameDate(match)));
   if(['CANC','CANCELLED'].includes(status))return 'Abgesagt · '+esc(formatDate(gameDate(match)));
   return esc(formatDate(gameDate(match)));
 }
-function isWerder(name){const n=normalizeName(name);return n.includes('werder')||n.includes('bremen');}
-function isVfL(name){const n=normalizeName(name);return n.includes('osnabruck')||n.includes('vflosnabr');}
-function teamSlug(name){return String(name||'').toLowerCase().replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/ß/g,'ss').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');}
+
+function isWerder(name){
+  const n=normalizeName(name);
+  return n.includes('werder')||n.includes('bremen');
+}
+
+function isVfL(name){
+  const n=normalizeName(name);
+  return n.includes('osnabruck')||n.includes('vflosnabr');
+}
+
+function teamSlug(name){
+  return String(name||'').toLowerCase().replace(/ä/g,'ae').replace(/ö/g,'oe')
+    .replace(/ü/g,'ue').replace(/ß/g,'ss').normalize('NFD')
+    .replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+}
+
 function aufstellungAbrufen(key,index){
-  const match=selectedGames(key)[index];if(!match)return;
-  const names=teamNames(match),round=roundNumber(match),leaguePath=key==='bl1'?'bundesliga':'2bundesliga',seasonPath=`${season}-${season+1}`,matchup=`${teamSlug(names.home)}-vs-${teamSlug(names.away)}`;
+  const match=selectedGames(key)[index];
+  if(!match)return;
+  const names=teamNames(match),round=roundNumber(match);
+  const leaguePath=key==='bl1'?'bundesliga':'2bundesliga';
+  const seasonPath=`${season}-${season+1}`;
+  const matchup=`${teamSlug(names.home)}-vs-${teamSlug(names.away)}`;
   const url=`https://www.bundesliga.com/de/${leaguePath}/spieltag/${seasonPath}/${round}/${matchup}/liveticker`;
   window.open(url,'_blank','noopener,noreferrer');
 }
-function detailLine(label,value){if(value===undefined||value===null||value==='')return '';return `<div class="detail-line"><span class="detail-label">${esc(label)}</span><span>${esc(value)}</span></div>`;}
-function eventMinute(event){const t=event?.time||{};const minute=t.elapsed??event.minute??event.matchMinute;const extra=t.extra??event.injuryTime;return minute==null?'':`${minute}${extra?`+${extra}`:''}′`;}
-function apiEvents(apiMatch){return Array.isArray(apiMatch?.events)?apiMatch.events:[];}
+
+function detailLine(label,value){
+  if(value===undefined||value===null||value==='')return '';
+  return `<div class="detail-line"><span class="detail-label">${esc(label)}</span><span>${esc(value)}</span></div>`;
+}
+
+function eventMinute(event){
+  const t=event?.time||{};
+  const minute=t.elapsed??event.minute??event.matchMinute;
+  const extra=t.extra??event.injuryTime;
+  return minute==null?'':`${minute}${extra?`+${extra}`:''}′`;
+}
+
+function apiEvents(apiMatch){
+  return Array.isArray(apiMatch?.events)?apiMatch.events:[];
+}
+
 function renderGoals(match,apiMatch){
   const entries=[];
-  for(const g of (Array.isArray(match.goals)?match.goals:[]))entries.push({minute:g.matchMinute,player:g.goalGetterName||'Torschütze nicht angegeben',team:g.teamName||'',detail:[g.isPenalty?'Elfmeter':'',g.isOwnGoal?'Eigentor':''].filter(Boolean).join(' · ')});
+  for(const g of (Array.isArray(match.goals)?match.goals:[])){
+    entries.push({
+      minute:g.matchMinute,
+      player:g.goalGetterName||'Torschütze nicht angegeben',
+      team:g.teamName||'',
+      detail:[g.isPenalty?'Elfmeter':'',g.isOwnGoal?'Eigentor':''].filter(Boolean).join(' · ')
+    });
+  }
+
   for(const e of apiEvents(apiMatch)){
     if(e.type!=='Goal')continue;
-    const player=e.player?.name||'Torschütze nicht angegeben',minute=eventMinute(e);
+    const player=e.player?.name||'Torschütze nicht angegeben';
+    const minute=eventMinute(e);
     const duplicate=entries.some(x=>normalizeName(x.player)===normalizeName(player)&&String(x.minute??'')===String(minute??''));
     if(!duplicate)entries.push({minute:minute.replace('′',''),player,team:e.team?.name||'',detail:e.detail||''});
   }
+
   entries.sort((a,b)=>(parseInt(a.minute,10)||0)-(parseInt(b.minute,10)||0));
   if(!entries.length)return '<p class="no-data">Für dieses Spiel sind keine Torschützen hinterlegt.</p>';
+
   return entries.map(g=>`<div class="scorer"><b>${esc(g.minute==null?'':String(g.minute).includes('′')?g.minute:g.minute+'′')}</b> ${esc(g.player)} ${g.detail?`<span class="detail-label">(${esc(g.detail)})</span>`:''}${g.team?`<div class="detail-label">${esc(g.team)}</div>`:''}</div>`).join('');
 }
+
 function renderBookings(apiMatch){
   const bookings=apiEvents(apiMatch).filter(e=>e.type==='Card');
   if(!bookings.length)return '<p class="no-data">Keine Kartendaten hinterlegt.</p>';
   return bookings.map(e=>{
-    const type=String(e.detail||'').toLowerCase();let label='🟨 Karte';
+    const type=String(e.detail||'').toLowerCase();
+    let label='🟨 Karte';
     if(type.includes('yellow-red')||type.includes('second yellow'))label='🟨🟥 Gelb-Rote Karte';
     else if(type.includes('red'))label='🟥 Rote Karte';
     else if(type.includes('yellow'))label='🟨 Gelbe Karte';
     return `<div class="scorer"><b>${esc(eventMinute(e))}</b> ${label} – ${esc(e.player?.name||'Spieler unbekannt')}${e.team?.name?`<div class="detail-label">${esc(e.team.name)}</div>`:''}</div>`;
   }).join('');
 }
+
 function renderSubs(apiMatch){
   const subs=apiEvents(apiMatch).filter(e=>e.type==='subst');
   if(!subs.length)return '<p class="no-data">Keine Auswechslungen hinterlegt.</p>';
   return subs.map(e=>`<div class="scorer"><b>${esc(eventMinute(e))}</b> ${esc(e.assist?.name||'')} ${e.assist?.name?'→ ':''}${esc(e.player?.name||'Spieler unbekannt')}${e.team?.name?`<div class="detail-label">${esc(e.team.name)}</div>`:''}</div>`).join('');
 }
+
 function renderLineups(apiMatch){
   const lineups=Array.isArray(apiMatch?.lineups)?apiMatch.lineups:[];
-  if(!lineups.length)return '<p class="no-data">Noch keine Aufstellungen verfügbar. Sie werden häufig erst 20–40 Minuten vor Anstoß veröffentlicht.</p>';
+  if(!lineups.length)return '<p class="no-data">Keine Aufstellungen hinterlegt.</p>';
+
+  const players=list=>list.map(p=>{
+    const number=p.number!=null?`#${p.number} `:'';
+    const pos=p.pos?` (${p.pos})`:'';
+    return `<div class="scorer">${esc(number)}${esc(p.player?.name||p.name||'Spieler unbekannt')}${esc(pos)}</div>`;
+  }).join('');
+
   return lineups.map(team=>{
-    const start=team.startXI||[],bench=team.substitutes||[];
-    const players=(list)=>list.length?list.map(p=>`<div class="scorer">${p.player?.number!=null?esc(p.player.number)+' · ':''}${esc(p.player?.name||'Spieler unbekannt')}${p.player?.pos?` <span class="detail-label">(${esc(p.player.pos)})</span>`:''}</div>`).join(''):'<p class="no-data">Keine Angaben.</p>';
+    const start=Array.isArray(team.startXI)?team.startXI:[];
+    const bench=Array.isArray(team.substitutes)?team.substitutes:[];
+    if(!start.length&&!bench.length)return '<p class="no-data">Keine Angaben.</p>';
     return `<h4>${esc(team.team?.name||'Mannschaft')}${team.formation?' · '+esc(team.formation):''}</h4><div class="scorer"><b>Startaufstellung</b></div>${players(start)}<div class="scorer"><b>Ersatzbank</b></div>${players(bench)}${team.coach?.name?`<div class="scorer">Trainer: ${esc(team.coach.name)}</div>`:''}`;
   }).join('');
 }
+
 function renderStatistics(apiMatch){
   const stats=Array.isArray(apiMatch?.statistics)?apiMatch.statistics:[];
   if(!stats.length)return '<p class="no-data">Keine Spielstatistiken hinterlegt.</p>';
   const rows=[];
+
   for(const teamStats of stats){
     for(const stat of (teamStats.statistics||[])){
-      const label=stat.type||'';let row=rows.find(r=>r.label===label);
+      const label=stat.type||'';
+      let row=rows.find(r=>r.label===label);
       if(!row){row={label,home:'–',away:'–'};rows.push(row);}
-      const teamName=normalizeName(teamStats.team?.name),homeName=normalizeName(apiMatch.teams?.home?.name);
-      if(teamName===homeName)row.home=stat.value??'–';else row.away=stat.value??'–';
+      const teamName=normalizeName(teamStats.team?.name);
+      const homeName=normalizeName(apiMatch.teams?.home?.name);
+      if(teamName===homeName)row.home=stat.value??'–';
+      else row.away=stat.value??'–';
     }
   }
+
   if(!rows.length)return '<p class="no-data">Keine Spielstatistiken hinterlegt.</p>';
   return `<div class="stats-grid">${rows.map(r=>`<div class="stat"><strong>${esc(r.label)}</strong><span>${esc(r.home)} : ${esc(r.away)}</span></div>`).join('')}</div>`;
 }
+
 function detailsHTML(match,key){
-  const names=teamNames(match),apiMatch=findFootballMatch(match,key),results=[...(match.matchResults||[])].sort((a,b)=>Number(a.resultTypeID||0)-Number(b.resultTypeID||0));
+  const names=teamNames(match),apiMatch=findFootballMatch(match,key);
+  const results=[...(match.matchResults||[])].sort((a,b)=>Number(a.resultTypeID||0)-Number(b.resultTypeID||0));
   let html='<div class="match-details"><h4>📋 Spieldetails</h4>';
   html+=detailLine('Begegnung',`${names.home} – ${names.away}`)+detailLine('Spielbeginn',formatDate(gameDate(match)));
   const venue=apiMatch?.fixture?.venue?.name||match.matchLocation?.locationStadium||match.location?.locationStadium||'';
@@ -296,38 +437,55 @@ function detailsHTML(match,key){
   html+=detailLine('Stadion',venue)+detailLine('Spielort',city)+detailLine('Schiedsrichter',apiMatch?.fixture?.referee||'');
   if(apiMatch?.fixture?.status?.long)html+=detailLine('Spielstatus',apiMatch.fixture.status.long);
   if(apiMatch?.fixture?.status?.elapsed!=null)html+=detailLine('Spielminute',`${apiMatch.fixture.status.elapsed}${apiMatch.fixture.status.extra?`+${apiMatch.fixture.status.extra}`:''}′`);
+
   const ht=apiMatch?.score?.halftime,ft=apiMatch?.score?.fulltime,et=apiMatch?.score?.extratime,pen=apiMatch?.score?.penalty;
   if(ht?.home!=null)html+=detailLine('Halbzeit',`${ht.home} : ${ht.away}`);
   if(ft?.home!=null)html+=detailLine('Endstand',`${ft.home} : ${ft.away}`);
   if(et?.home!=null)html+=detailLine('Verlängerung',`${et.home} : ${et.away}`);
   if(pen?.home!=null)html+=detailLine('Elfmeterschießen',`${pen.home} : ${pen.away}`);
+
   if(results.length){
     html+='<h4>Ergebnisse OpenLigaDB</h4>';
     results.forEach(r=>html+=detailLine(r.resultName||(Number(r.resultTypeID)===1?'Halbzeit':Number(r.resultTypeID)===2?'Endstand':'Spielstand'),`${r.pointsTeam1} : ${r.pointsTeam2}`));
   }
-  html+='<h4>⚽ Torschützen</h4>'+renderGoals(match,apiMatch)+'<h4>🟨 Karten</h4>'+renderBookings(apiMatch)+'<h4>🔄 Auswechslungen</h4>'+renderSubs(apiMatch)+'<h4>📊 Spielstatistiken</h4>'+renderStatistics(apiMatch)+'<h4>👥 Aufstellungen & Ersatzbank</h4>'+renderLineups(apiMatch);
+
+  html+='<h4>⚽ Torschützen</h4>'+renderGoals(match,apiMatch);
+  html+='<h4>🟨 Karten</h4>'+renderBookings(apiMatch);
+  html+='<h4>🔄 Auswechslungen</h4>'+renderSubs(apiMatch);
+  html+='<h4>📊 Spielstatistiken</h4>'+renderStatistics(apiMatch);
+  html+='<h4>👥 Aufstellungen & Ersatzbank</h4>'+renderLineups(apiMatch);
   html+=`<p class="no-data">Zusatzdaten: ${apiMatch?'API-Football':'Noch keine passenden API-Football-Daten für dieses Spiel'}. Aufstellungen und Statistiken sind abhängig von der Verfügbarkeit beim Anbieter.</p></div>`;
   return html;
 }
+
 function toggleDetails(key,index){
-  const match=selectedGames(key)[index];if(!match)return;
-  const id=matchKey(match),slot=document.getElementById('details-'+key+'-'+index),hint=document.getElementById('hint-'+key+'-'+index),button=document.getElementById('button-'+key+'-'+index);
+  const match=selectedGames(key)[index];
+  if(!match)return;
+  const id=matchKey(match);
+  const slot=document.getElementById('details-'+key+'-'+index);
+  const hint=document.getElementById('hint-'+key+'-'+index);
+  const button=document.getElementById('button-'+key+'-'+index);
   if(!slot)return;
+
   if(expandedMatch[key]===id){
-    expandedMatch[key]=null;slot.innerHTML='';slot.hidden=true;
+    expandedMatch[key]=null;
+    slot.innerHTML='';
+    slot.hidden=true;
     if(hint)hint.textContent='▼ Tippen für Spieldetails und Torschützen';
     if(button)button.setAttribute('aria-expanded','false');
   }else{
-    expandedMatch[key]=id;slot.innerHTML=detailsHTML(match,key);slot.hidden=false;
+    expandedMatch[key]=id;
+    slot.innerHTML=detailsHTML(match,key);
+    slot.hidden=false;
     if(hint)hint.textContent='▲ Details ausblenden';
     if(button)button.setAttribute('aria-expanded','true');
   }
 }
 
-/* Spieltagsansicht: Wappen vor jedem Vereinsnamen */
 function gamesHTML(key){
   const games=selectedGames(key);
   if(!games.length)return '<p class="muted">Keine Spiele für diesen Spieltag gefunden.</p>';
+
   return games.map((match,index)=>{
     const names=teamNames(match);
     const hasWerder=key==='bl1'&&(isWerder(names.home)||isWerder(names.away));
@@ -336,13 +494,14 @@ function gamesHTML(key){
     const homeClass=((key==='bl1'&&isWerder(names.home))||(key==='bl2'&&isVfL(names.home)))?'team-highlight':'';
     const awayClass=((key==='bl1'&&isWerder(names.away))||(key==='bl2'&&isVfL(names.away)))?'team-highlight':'';
     const expanded=expandedMatch[key]===matchKey(match);
+
     return `<div class="match ${cssClass}" id="card-${key}-${index}">
       <button type="button" class="match-button" id="button-${key}-${index}" onclick="toggleDetails('${key}',${index})" aria-expanded="${expanded}">
         <div class="match-date" id="date-${key}-${index}">${statusHTML(match,key)}</div>
-        <div class="match-teams">
-          <span class="match-team ${homeClass}">${logoHTML(names.home,key,null)}<b>${esc(names.home)}</b></span>
+        <div>
+          <span class="match-team ${homeClass}">${teamLogoHTML(names.home,key)}<b>${esc(names.home)}</b></span>
           <span class="score" id="score-${key}-${index}">${esc(gameScore(match,key))}</span>
-          <span class="match-team ${awayClass}">${logoHTML(names.away,key,null)}<b>${esc(names.away)}</b></span>
+          <span class="match-team ${awayClass}">${teamLogoHTML(names.away,key)}<b>${esc(names.away)}</b></span>
         </div>
         <div class="tap-hint" id="hint-${key}-${index}">${expanded?'▲ Details ausblenden':'▼ Tippen für Spieldetails und Torschützen'}</div>
       </button>
@@ -351,107 +510,134 @@ function gamesHTML(key){
     </div>`;
   }).join('');
 }
-function getTableRows(data){if(Array.isArray(data))return data;if(Array.isArray(data?.table))return data.table;if(Array.isArray(data?.standings)){const total=data.standings.find(s=>s.type==='TOTAL');return total?.table||data.standings[0]?.table||[];}return [];}
 
-// Berechnet die Tabelle direkt aus den aktuellen OpenLigaDB-Spieldaten.
-// Laufende Spiele fließen mit dem aktuellen Zwischenstand ein.
+function getTableRows(data){
+  if(Array.isArray(data))return data;
+  if(Array.isArray(data?.table))return data.table;
+  if(Array.isArray(data?.standings)){
+    const total=data.standings.find(s=>s.type==='TOTAL');
+    return total?.table||data.standings[0]?.table||[];
+  }
+  return [];
+}
+
+/* Berechnet die Tabelle aus den aktuellen OpenLigaDB-Spieldaten. */
 function liveTableFromMatches(key){
-  const games=getGames(key);if(!games.length)return null;
+  const games=getGames(key);
+  if(!games.length)return null;
   const teams=new Map();
+
   const ensureTeam=(team)=>{
-    const id=String(team?.teamId??team?.teamName??'');if(!id)return null;
-    if(!teams.has(id))teams.set(id,{position:0,team:{id:team?.teamId,name:team?.teamName,shortName:team?.shortName||team?.teamName},playedGames:0,won:0,draw:0,lost:0,goalsFor:0,goalsAgainst:0,goalDifference:0,points:0});
+    const id=String(team?.teamId??team?.teamName??'');
+    if(!id)return null;
+    if(!teams.has(id))teams.set(id,{
+      position:0,
+      team:{id:team?.teamId,name:team?.teamName,shortName:team?.shortName||team?.teamName},
+      playedGames:0,won:0,draw:0,lost:0,goalsFor:0,goalsAgainst:0,goalDifference:0,points:0
+    });
     return teams.get(id);
   };
+
   games.forEach(g=>{ensureTeam(g.team1);ensureTeam(g.team2);});
   let counted=0;
+
   games.forEach(g=>{
-    const finished=isFinished(g),live=!finished&&isLive(g,key);if(!finished&&!live)return;
-    const result=(g.matchResults||[]).filter(r=>r.pointsTeam1!=null&&r.pointsTeam2!=null).sort((a,b)=>Number(b.resultTypeID||0)-Number(a.resultTypeID||0))[0];
+    const finished=isFinished(g),live=!finished&&isLive(g,key);
+    if(!finished&&!live)return;
+
+    const result=(g.matchResults||[])
+      .filter(r=>r.pointsTeam1!=null&&r.pointsTeam2!=null)
+      .sort((a,b)=>Number(b.resultTypeID||0)-Number(a.resultTypeID||0))[0];
+
     let home,away;
     if(result){home=Number(result.pointsTeam1);away=Number(result.pointsTeam2);}
     else if(live){home=0;away=0;}
     else{return;}
-    const h=ensureTeam(g.team1),a=ensureTeam(g.team2);if(!h||!a)return;
-    h.playedGames++;a.playedGames++;h.goalsFor+=home;h.goalsAgainst+=away;a.goalsFor+=away;a.goalsAgainst+=home;
+
+    const h=ensureTeam(g.team1),a=ensureTeam(g.team2);
+    if(!h||!a)return;
+
+    h.playedGames++;a.playedGames++;
+    h.goalsFor+=home;h.goalsAgainst+=away;
+    a.goalsFor+=away;a.goalsAgainst+=home;
+
     if(home>away){h.won++;a.lost++;h.points+=3;}
     else if(home<away){a.won++;h.lost++;a.points+=3;}
     else{h.draw++;a.draw++;h.points++;a.points++;}
+
     counted++;
   });
+
   if(!teams.size||!counted)return null;
-  const rows=[...teams.values()];rows.forEach(r=>r.goalDifference=r.goalsFor-r.goalsAgainst);
+  const rows=[...teams.values()];
+  rows.forEach(r=>r.goalDifference=r.goalsFor-r.goalsAgainst);
   rows.sort((a,b)=>b.points-a.points||b.goalDifference-a.goalDifference||b.goalsFor-a.goalsFor||String(a.team.name).localeCompare(String(b.team.name),'de'));
-  rows.forEach((r,i)=>r.position=i+1);return rows;
+  rows.forEach((r,i)=>r.position=i+1);
+  return rows;
 }
-function tableTeamName(row){return row.team?.shortName||row.team?.name||row.teamName||row.name||'';}
-function sameTeamName(a,b){
-  const x=normalizeName(a),y=normalizeName(b);
-  return Boolean(x&&y&&(x===y||(Math.min(x.length,y.length)>=5&&(x.includes(y)||y.includes(x))));
+
+function tableTeamName(row){
+  return row.team?.shortName||row.team?.name||row.teamName||row.name||'';
 }
-function teamLogo(name,key,row){
-  const direct=row?.team?.teamIconUrl||row?.team?.logo||row?.team?.crest||row?.teamIconUrl||row?.logo||row?.crest;
-  if(direct)return direct;
-  for(const leagueKey of ['bl1','bl2']){
-    for(const match of getGames(leagueKey)){
-      for(const team of [match.team1,match.team2]){
-        if(team&&sameTeamName(name,team.teamName)&&(team.teamIconUrl||team.logo||team.crest))return team.teamIconUrl||team.logo||team.crest;
-      }
-    }
-  }
-  for(const leagueKey of ['bl1','bl2']){
-    for(const match of (footballMatches[leagueKey]||[])){
-      for(const team of [match.teams?.home,match.teams?.away,match.homeTeam,match.awayTeam]){
-        if(team&&sameTeamName(name,team.name||team.shortName)&&(team.logo||team.crest||team.teamIconUrl))return team.logo||team.crest||team.teamIconUrl;
-      }
-    }
-  }
-  return '';
-}
-function logoHTML(name,key,row){
-  const url=teamLogo(name,key,row);
-  return url?`<img class="table-team-logo" src="${esc(url)}" alt="" loading="lazy" onerror="this.hidden=true">`:'';
-}
-function updateClubLogos(){
-  for(const key of ['bl1','bl2']){
-    const image=document.getElementById(key+'-club-logo');if(!image)continue;
-    const name=key==='bl1'?'SV Werder Bremen':'VfL Osnabrück',url=teamLogo(name,key,null);
-    if(url&&image.getAttribute('src')!==url){image.src=url;image.hidden=false;image.onerror=()=>{image.hidden=true;};}
-  }
-}
+
 function tableHTML(data,key){
   const rows=getTableRows(data);
   if(!rows.length)return '<p class="muted">Tabelle nicht verfügbar.</p>';
-  return `<div class="table-wrap"><table><thead><tr><th>Pos.</th><th>Verein</th><th>Sp.</th><th>Tore</th><th>TD</th><th>Pkt.</th><th>S</th><th>U</th><th>N</th></tr></thead><tbody>${rows.map((row,index)=>{
-    const name=tableTeamName(row),highlighted=key==='bl1'?isWerder(name):isVfL(name);
-    const played=row.playedGames??row.matchesPlayed??row.played??'–';
-    const wins=row.won??row.wins??row.wonGames??'–',draws=row.draw??row.draws??row.drawGames??'–',losses=row.lost??row.losses??row.lostGames??'–';
-    const gf=row.goalsFor??row.goalsScored,ga=row.goalsAgainst??row.goalsConceded;
-    const goals=gf!==undefined&&ga!==undefined?gf+':'+ga:(row.goals??'–');
-    const difference=row.goalDifference??row.goalDiff??'–',points=row.points??row.pts??'–',position=row.position??row.rank??index+1;
-    return `<tr class="${highlighted?(key==='bl1'?'werder-row':'vfl-row'):''}"><td>${esc(position)}</td><td><span class="table-team">${logoHTML(name,key,row)}<span class="table-team-name">${esc(name)}</span></span></td><td>${esc(played)}</td><td>${esc(goals)}</td><td>${esc(difference)}</td><td><b>${esc(points)}</b></td><td>${esc(wins)}</td><td>${esc(draws)}</td><td>${esc(losses)}</td></tr>`;
-  }).join('')}</tbody></table></div>`;
+
+  return `<div class="table-wrap"><table>
+    <thead><tr><th>Pos.</th><th>Verein</th><th>Sp.</th><th>S</th><th>U</th><th>N</th><th>Tore</th><th>TD</th><th>Pkt.</th></tr></thead>
+    <tbody>${rows.map((row,index)=>{
+      const name=tableTeamName(row);
+      const highlighted=key==='bl1'?isWerder(name):isVfL(name);
+      const played=row.playedGames??row.matchesPlayed??row.played??'–';
+      const wins=row.won??row.wins??row.wonGames??'–';
+      const draws=row.draw??row.draws??row.drawGames??'–';
+      const losses=row.lost??row.losses??row.lostGames??'–';
+      const gf=row.goalsFor??row.goalsScored;
+      const ga=row.goalsAgainst??row.goalsConceded;
+      const goals=gf!==undefined&&ga!==undefined?gf+':'+ga:(row.goals??'–');
+      const difference=row.goalDifference??row.goalDiff??'–';
+      const points=row.points??row.pts??'–';
+      const position=row.position??row.rank??index+1;
+
+      return `<tr class="${highlighted?(key==='bl1'?'werder-row':'vfl-row'):''}">
+        <td>${esc(position)}</td>
+        <td><div class="team-cell">${teamLogoHTML(name,key,row)}<span>${esc(name)}</span></div></td>
+        <td>${esc(played)}</td><td>${esc(wins)}</td><td>${esc(draws)}</td><td>${esc(losses)}</td>
+        <td>${esc(goals)}</td><td>${esc(difference)}</td><td><b>${esc(points)}</b></td>
+      </tr>`;
+    }).join('')}</tbody></table></div>`;
 }
-function renderGames(key){document.getElementById(key+'-selector').innerHTML=roundSelector(key);document.getElementById(key+'-games').innerHTML=gamesHTML(key);}
+
+function renderGames(key){
+  document.getElementById(key+'-selector').innerHTML=roundSelector(key);
+  document.getElementById(key+'-games').innerHTML=gamesHTML(key);
+}
+
 function renderInitial(){
-  renderGames('bl1');renderGames('bl2');
+  renderGames('bl1');
+  renderGames('bl2');
   document.getElementById('bl1-table').innerHTML=tableHTML(liveTableFromMatches('bl1')||standings.bl1,'bl1');
   document.getElementById('bl2-table').innerHTML=tableHTML(liveTableFromMatches('bl2')||standings.bl2,'bl2');
-  updateClubLogos();initialRenderDone=true;
+  initialRenderDone=true;
 }
+
 function renderTables(){
   document.getElementById('bl1-table').innerHTML=tableHTML(liveTableFromMatches('bl1')||standings.bl1,'bl1');
   document.getElementById('bl2-table').innerHTML=tableHTML(liveTableFromMatches('bl2')||standings.bl2,'bl2');
-  updateClubLogos();
 }
+
 function updateLiveDisplay(key){
   selectedGames(key).forEach((match,index)=>{
-    const date=document.getElementById(`date-${key}-${index}`),score=document.getElementById(`score-${key}-${index}`),slot=document.getElementById(`details-${key}-${index}`);
+    const date=document.getElementById(`date-${key}-${index}`);
+    const score=document.getElementById(`score-${key}-${index}`);
+    const slot=document.getElementById(`details-${key}-${index}`);
     if(date)date.innerHTML=statusHTML(match,key);
     if(score)score.textContent=gameScore(match,key);
     if(slot&&!slot.hidden&&expandedMatch[key]===matchKey(match))slot.innerHTML=detailsHTML(match,key);
   });
 }
+
 async function loadSavedSources(){
   const jobs=[
     ['bl1-matches',()=>loadFile('bundesliga-spiele.json')],
@@ -459,74 +645,123 @@ async function loadSavedSources(){
     ['api-football',()=>loadFile('api-football-details.json')],
     ['bl1-openliga',()=>loadFile('openligadb-bl1-spiele.json')]
   ];
+
   const results=await Promise.allSettled(jobs.map(j=>j[1]()));
+
   results.forEach((result,index)=>{
     if(result.status!=='fulfilled'){
       console.warn('Zusatzdatei nicht verfügbar:',jobs[index][0],result.reason);
       return;
     }
+
     const data=result.value;
+
     switch(jobs[index][0]){
       case 'bl1-matches':
         footballMatches.bl1=Array.isArray(data.matches)?data.matches:[];
         break;
+
       case 'bl2-matches':
         footballMatches.bl2=Array.isArray(data.matches)?data.matches:[];
         break;
+
       case 'api-football':{
-        // Datenformat des vorhandenen GitHub-Workflows.
         const convertLeague=(leagueKey)=>{
-          const league=data?.leagues?.[leagueKey];if(!league)return [];
+          const league=data?.leagues?.[leagueKey];
+          if(!league)return [];
           const fixtures=Array.isArray(league.fixtures)?league.fixtures:[];
           const details=league.details&&typeof league.details==='object'?league.details:{};
+
           return fixtures.map(fixture=>{
-            const id=String(fixture?.fixture?.id??''),saved=details[id]||{},baseFixture=saved.fixture||fixture;
-            return {...fixture,...baseFixture,events:Array.isArray(saved.events)?saved.events:[],lineups:Array.isArray(saved.lineups)?saved.lineups:[],statistics:Array.isArray(saved.statistics)?saved.statistics:[],_savedDetailsComplete:Boolean(saved.complete)};
+            const id=String(fixture?.fixture?.id??'');
+            const saved=details[id]||{};
+            const baseFixture=saved.fixture||fixture;
+
+            return {
+              ...fixture,
+              ...baseFixture,
+              events:Array.isArray(saved.events)?saved.events:[],
+              lineups:Array.isArray(saved.lineups)?saved.lineups:[],
+              statistics:Array.isArray(saved.statistics)?saved.statistics:[],
+              _savedDetailsComplete:Boolean(saved.complete)
+            };
           });
         };
-        const apiBl1=convertLeague('bl1'),apiBl2=convertLeague('bl2');
+
+        const apiBl1=convertLeague('bl1');
+        const apiBl2=convertLeague('bl2');
+
         const merge=(existing,added)=>{
           const byId=new Map();
           [...(existing||[]),...(added||[])].forEach(match=>{
             const id=match?.fixture?.id;
-            if(id!=null){const previous=byId.get(String(id));byId.set(String(id),previous?{...previous,...match}:match);}
+            if(id!=null){
+              const previous=byId.get(String(id));
+              byId.set(String(id),previous?{...previous,...match}:match);
+            }
           });
           return [...byId.values()];
         };
+
         footballMatches.bl1=merge(footballMatches.bl1,apiBl1);
         footballMatches.bl2=merge(footballMatches.bl2,apiBl2);
         break;
       }
+
       case 'bl1-openliga':
         if(Array.isArray(data))matches.bl1=data;
         break;
     }
   });
 }
+
 async function refreshData(showError=false){
   if(loading)return;
   loading=true;
+
   try{
     const results=await Promise.allSettled([loadLiveGames('bl1'),loadLiveGames('bl2')]);
-    if(results[0].status==='fulfilled')matches.bl1=results[0].value;else console.warn('BL1 Live-Abruf fehlgeschlagen:',results[0].reason);
-    if(results[1].status==='fulfilled')matches.bl2=results[1].value;else console.warn('BL2 Live-Abruf fehlgeschlagen:',results[1].reason);
+
+    if(results[0].status==='fulfilled')matches.bl1=results[0].value;
+    else console.warn('BL1 Live-Abruf fehlgeschlagen:',results[0].reason);
+
+    if(results[1].status==='fulfilled')matches.bl2=results[1].value;
+    else console.warn('BL2 Live-Abruf fehlgeschlagen:',results[1].reason);
+
     await loadSavedSources();
-    const tableResults=await Promise.allSettled([loadFile('bundesliga.json'),loadFile('2bundesliga-tabelle.json')]);
+
+    const tableResults=await Promise.allSettled([
+      loadFile('bundesliga.json'),
+      loadFile('2bundesliga-tabelle.json')
+    ]);
+
     if(tableResults[0].status==='fulfilled')standings.bl1=tableResults[0].value;
     if(tableResults[1].status==='fulfilled')standings.bl2=tableResults[1].value;
+
     if(selectedRound.bl1===null)selectedRound.bl1=findDefaultRound(getGames('bl1'));
     if(selectedRound.bl2===null)selectedRound.bl2=findDefaultRound(getGames('bl2'));
+
     lastUpdate=new Date();
+
     if(!initialRenderDone)renderInitial();
-    else{updateLiveDisplay('bl1');updateLiveDisplay('bl2');renderTables();}
+    else{
+      updateLiveDisplay('bl1');
+      updateLiveDisplay('bl2');
+      renderTables();
+    }
+
     const stamp='Live-Tabelle geprüft: '+lastUpdate.toLocaleTimeString('de-DE');
     document.getElementById('bl1-update').textContent=stamp;
     document.getElementById('bl2-update').textContent=stamp;
   }catch(error){
     console.error('Aktualisierung fehlgeschlagen:',error);
     if(showError)alert('Live-Daten konnten nicht geladen werden. Bitte später erneut versuchen.');
-  }finally{loading=false;}
+  }finally{
+    loading=false;
+  }
 }
+
+/* Aktualisierung bleibt ausdrücklich bei 2 Sekunden */
 refreshData();
 setInterval(()=>refreshData(),2000);
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshData();});
