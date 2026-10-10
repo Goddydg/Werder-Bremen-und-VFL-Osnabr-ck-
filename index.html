@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -57,6 +58,8 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 .detail-label{opacity:.8}
 .scorer{padding:9px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:13px}
 .no-data{font-size:13px;line-height:1.5;opacity:.85}
+.lineup-button{display:block;width:100%;margin-top:10px;padding:12px;border:1px solid rgba(255,255,255,.4);border-radius:9px;background:rgba(0,0,0,.22);color:white;font-size:14px;font-weight:bold;text-align:center;cursor:pointer}
+.lineup-button:active{opacity:.75}
 </style>
 </head>
 <body>
@@ -255,6 +258,28 @@ function isVfL(name){
   return n.includes('osnabrück')||n.includes('osnabrueck')||n.includes('vfl osnabr');
 }
 
+/* Öffnet eine Suche nach der offiziellen Bundesliga-Spielseite.
+   Es werden keine Daten automatisch aus der Webseite ausgelesen. */
+function aufstellungAbrufen(key,index){
+  const match=selectedGames(key)[index];
+  if(!match)return;
+
+  const names=teamNames(match);
+  const date=gameDate(match)
+    ?new Date(gameDate(match)).toLocaleDateString('de-DE')
+    :'';
+
+  const query=encodeURIComponent(
+    `site:bundesliga.com/de/bundesliga/spieltag "${names.home}" "${names.away}" Aufstellung ${date}`
+  );
+
+  window.open(
+    `https://www.google.com/search?q=${query}`,
+    '_blank',
+    'noopener,noreferrer'
+  );
+}
+
 function detailsHTML(match){
   const names=teamNames(match);
   const results=[...(match.matchResults||[])].sort(
@@ -319,12 +344,11 @@ function detailsHTML(match){
   }
 
   html+='<h4>📊 Weitere Statistiken</h4>';
-  html+='<p class="no-data">Ballbesitz, Torschüsse und Ecken sind in der aktuellen Datenquelle nicht zuverlässig verfügbar.</p>';
+  html+='<p class="no-data">Ballbesitz, Torschüsse, Schüsse aufs Tor, Ecken, Karten, Laufleistung und Aufstellungen sind in der aktuellen Datenquelle nicht zuverlässig verfügbar. Nutze den Taster unterhalb der Spielkarte für die offizielle Spielseite.</p>';
   html+='</div>';
   return html;
 }
 
-/* Der Klick verändert nur das Statistikfenster dieser Begegnung. */
 function toggleDetails(key,index){
   const games=selectedGames(key);
   const match=games[index];
@@ -382,6 +406,10 @@ function gamesHTML(key){
         <div class="tap-hint" id="hint-${key}-${index}">${expanded?'▲ Details ausblenden':'▼ Tippen für Spieldetails und Torschützen'}</div>
       </button>
       <div class="details-slot" id="details-${key}-${index}" ${expanded?'':'hidden'}>${expanded?detailsHTML(match):''}</div>
+      <button type="button" class="lineup-button"
+        onclick="aufstellungAbrufen('${key}',${index})">
+        👥 Aufstellung, Spielerbilder & Statistiken öffnen
+      </button>
     </div>`;
   }).join('');
 }
@@ -458,7 +486,6 @@ function updateLiveDisplay(key){
     if(date)date.innerHTML=statusHTML(match);
     if(score)score.textContent=gameScore(match);
 
-    /* Offenes Fenster bleibt offen; nur dessen Inhalt wird aktualisiert. */
     if(slot&&!slot.hidden&&expandedMatch[key]===matchKey(match)){
       slot.innerHTML=detailsHTML(match);
     }
@@ -502,7 +529,6 @@ async function refreshData(showError=false){
     if(!initialRenderDone){
       renderInitial();
     }else{
-      /* Kein Neuaufbau der Tabellen, Auswahl oder Spieleliste. */
       updateLiveDisplay('bl1');
       updateLiveDisplay('bl2');
     }
