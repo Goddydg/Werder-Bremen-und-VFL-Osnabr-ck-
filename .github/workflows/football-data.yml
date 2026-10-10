@@ -3,7 +3,7 @@ name: Fussballdaten aktualisieren
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 */6 * * *"
+    - cron: "*/15 * * * *"
 
 permissions:
   contents: write
@@ -48,10 +48,15 @@ jobs:
               matches = json.load(f)
 
           teams = defaultdict(lambda: {
-              "playedGames": 0, "won": 0, "draw": 0,
-              "lost": 0, "points": 0,
-              "goalsFor": 0, "goalsAgainst": 0
+              "playedGames": 0,
+              "won": 0,
+              "draw": 0,
+              "lost": 0,
+              "points": 0,
+              "goalsFor": 0,
+              "goalsAgainst": 0
           })
+
           names = {}
 
           for match in matches:
@@ -81,13 +86,16 @@ jobs:
 
               hg = result.get("pointsTeam1")
               ag = result.get("pointsTeam2")
+
               if hg is None or ag is None:
                   continue
 
               names[home_id] = home.get("teamName", "Unbekannt")
               names[away_id] = away.get("teamName", "Unbekannt")
 
-              h, a = teams[home_id], teams[away_id]
+              h = teams[home_id]
+              a = teams[away_id]
+
               h["playedGames"] += 1
               a["playedGames"] += 1
               h["goalsFor"] += hg
@@ -110,6 +118,7 @@ jobs:
                   a["points"] += 1
 
           table = []
+
           for team_id, stats in teams.items():
               name = names[team_id]
               table.append({
@@ -126,12 +135,14 @@ jobs:
                       stats["goalsFor"] - stats["goalsAgainst"]
               })
 
-          table.sort(key=lambda t: (
-              -t["points"],
-              -t["goalDifference"],
-              -t["goalsFor"],
-              t["team"]["name"]
-          ))
+          table.sort(
+              key=lambda t: (
+                  -t["points"],
+                  -t["goalDifference"],
+                  -t["goalsFor"],
+                  t["team"]["name"]
+              )
+          )
 
           for position, team in enumerate(table, 1):
               team["position"] = position
@@ -148,112 +159,14 @@ jobs:
               }]
           }
 
-          with open("data/2bundesliga-tabelle.json", "w",
-                    encoding="utf-8") as f:
+          with open(
+              "data/2bundesliga-tabelle.json",
+              "w",
+              encoding="utf-8"
+          ) as f:
               json.dump(output, f, ensure_ascii=False, indent=2)
 
           print(f"Tabelle erstellt: {len(table)} Mannschaften")
-          PY
-
-      - name: Spielstatistiken kostenlos abrufen
-        env:
-          API_KEY: ${{ secrets.API_FOOTBALL_KEY }}
-        run: |
-          if [ -z "$API_KEY" ]; then
-            echo "API_FOOTBALL_KEY fehlt. Zusatzstatistiken werden übersprungen."
-            echo '{"matches":{},"updatedAt":null}' > data/spielstatistiken.json
-            exit 0
-          fi
-
-          python3 - <<'PY'
-          import json
-          import os
-          import urllib.request
-          import urllib.parse
-          import datetime
-          import unicodedata
-          import re
-          import time
-
-          API_KEY = os.environ["API_KEY"]
-          BASE = "https://v3.football.api-sports.io"
-          TODAY = datetime.date.today()
-          DATE_FROM = (TODAY - datetime.timedelta(days=2)).isoformat()
-          DATE_TO = (TODAY + datetime.timedelta(days=5)).isoformat()
-
-          def normalize(text):
-              text = unicodedata.normalize("NFKD", str(text or ""))
-              text = "".join(c for c in text if not unicodedata.combining(c))
-              text = text.casefold().replace("&", "and")
-              return re.sub(r"[^a-z0-9]", "", text)
-
-          def api(path, params):
-              query = urllib.parse.urlencode(params)
-              request = urllib.request.Request(
-                  f"{BASE}/{path}?{query}",
-                  headers={"x-apisports-key": API_KEY}
-              )
-              with urllib.request.urlopen(request, timeout=30) as response:
-                  data = json.loads(response.read().decode("utf-8"))
-
-              if data.get("errors"):
-                  raise RuntimeError(str(data["errors"]))
-              return data.get("response", [])
-
-          # Deutsche Bundesliga: API-Football-Ligen 78 und 79.
-          fixtures = []
-          for league_id in (78, 79):
-              result = api("fixtures", {
-                  "league": league_id,
-                  "season": 2026,
-                  "from": DATE_FROM,
-                  "to": DATE_TO,
-                  "timezone": "Europe/Berlin"
-              })
-              fixtures.extend(result)
-              time.sleep(1)
-
-          # Nur Spiele abrufen, die im Zeitraum liegen.
-          ids = list(dict.fromkeys(
-              str(item.get("fixture", {}).get("id"))
-              for item in fixtures
-              if item.get("fixture", {}).get("id")
-          ))
-
-          details = []
-          for start in range(0, len(ids), 20):
-              batch = ids[start:start + 20]
-              details.extend(api("fixtures", {"ids": "-".join(batch)}))
-              time.sleep(1)
-
-          output = {}
-          for item in details:
-              fixture = item.get("fixture", {})
-              teams = item.get("teams", {})
-              home = teams.get("home", {}).get("name", "")
-              away = teams.get("away", {}).get("name", "")
-              date = fixture.get("date", "")[:10]
-
-              if not home or not away or not date:
-                  continue
-
-              key = "|".join((date, normalize(home), normalize(away)))
-              output[key] = item
-
-          payload = {
-              "updatedAt": datetime.datetime.now(
-                  datetime.timezone.utc
-              ).isoformat(),
-              "dateFrom": DATE_FROM,
-              "dateTo": DATE_TO,
-              "matches": output
-          }
-
-          with open("data/spielstatistiken.json", "w",
-                    encoding="utf-8") as f:
-              json.dump(payload, f, ensure_ascii=False, separators=(",", ":"))
-
-          print(f"Statistiken gespeichert: {len(output)} Spiele")
           PY
 
       - name: Daten speichern
