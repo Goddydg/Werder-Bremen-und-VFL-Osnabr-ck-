@@ -23,7 +23,7 @@ h4{font-size:15px;margin:12px 0}
 .selector{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0}
 select{max-width:100%;padding:11px;border-radius:9px;background:#173c2a;color:white;border:1px solid #477258;font-size:15px}
 .league-purple select{background:#35194b;border-color:#8b5bb4}
-.table-wrap{width:100%;overflow-x:auto}
+.table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
 table{width:100%;min-width:490px;border-collapse:collapse;font-size:13px}
 th,td{padding:9px 6px;border-bottom:1px solid #294536;text-align:center;white-space:nowrap}
 th:nth-child(2),td:nth-child(2){text-align:left}
@@ -75,7 +75,7 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
     <h3>Tabelle</h3>
     <div id="bl1-table">Tabelle wird geladen …</div>
     <div class="update-info" id="bl1-update"></div>
-    <button class="refresh" onclick="refreshData(true)">Daten jetzt aktualisieren</button>
+    <button class="refresh" data-refresh="true">Daten jetzt aktualisieren</button>
   </section>
 
   <section class="league league-purple">
@@ -87,7 +87,7 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
     <h3>Tabelle</h3>
     <div id="bl2-table">Tabelle wird geladen …</div>
     <div class="update-info" id="bl2-update"></div>
-    <button class="refresh" onclick="refreshData(true)">Daten jetzt aktualisieren</button>
+    <button class="refresh" data-refresh="true">Daten jetzt aktualisieren</button>
   </section>
 </main>
 
@@ -95,12 +95,13 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 const base='./data/';
 const season=2026;
 
-let standings={};
+let standings={bl1:null,bl2:null};
 let matches={bl1:[],bl2:[]};
 let selectedRound={bl1:null,bl2:null};
 let expandedMatch={bl1:null,bl2:null};
 let lastUpdate=null;
 let loading=false;
+let firstRender={bl1:false,bl2:false};
 
 function esc(value){
   return String(value??'').replace(/[&<>"']/g,c=>({
@@ -119,11 +120,11 @@ async function loadFile(file){
 }
 
 async function loadLiveGames(key){
-  const response=await loadJSON(
+  const data=await loadJSON(
     `https://api.openligadb.de/getmatchdata/${key}/${season}`
   );
-  if(!Array.isArray(response))throw new Error('Ungültige Spieldaten');
-  return response;
+  if(!Array.isArray(data))throw new Error('Ungültige Spieldaten');
+  return data;
 }
 
 function getGames(key){return matches[key]||[]}
@@ -134,6 +135,15 @@ function roundNumber(match){
 
 function gameDate(match){return match.matchDateTime||null}
 function isFinished(match){return Boolean(match.matchIsFinished)}
+
+function matchKey(match){
+  if(match.matchID!=null)return String(match.matchID);
+  return [
+    match.team1?.teamName||'',
+    match.team2?.teamName||'',
+    gameDate(match)||''
+  ].join('|');
+}
 
 function findDefaultRound(games){
   const rounds=[...new Set(games.map(roundNumber).filter(n=>n>0))]
@@ -180,7 +190,7 @@ function roundSelector(key){
 
   return `<div class="selector">
     <label for="${key}-round"><b>Spieltag:</b></label>
-    <select id="${key}-round" onchange="changeRound('${key}',this.value)">
+    <select id="${key}-round" data-round-select="${key}">
       ${rounds.map(n=>`<option value="${n}" ${n===selectedRound[key]?'selected':''}>${n}. Spieltag</option>`).join('')}
     </select>
   </div>`;
@@ -245,7 +255,6 @@ function isVfL(name){
   return n.includes('osnabrück')||n.includes('osnabrueck')||n.includes('vfl osnabr');
 }
 
-/* Details für eine Begegnung */
 function detailsHTML(match){
   const names=teamNames(match);
   const results=[...(match.matchResults||[])].sort(
@@ -314,9 +323,8 @@ function detailsHTML(match){
   return html;
 }
 
-/* WICHTIG: Es wird der Spielindex verwendet, nicht die Spiel-ID. */
-function toggleDetails(key,index){
-  expandedMatch[key]=expandedMatch[key]===index?null:index;
+function toggleDetails(key,id){
+  expandedMatch[key]=expandedMatch[key]===id?null:id;
   renderGames(key);
 }
 
@@ -324,8 +332,9 @@ function gamesHTML(key){
   const games=selectedGames(key);
   if(!games.length)return '<p class="muted">Keine Spiele für diesen Spieltag gefunden.</p>';
 
-  return games.map((match,index)=>{
+  return games.map(match=>{
     const names=teamNames(match);
+    const id=matchKey(match);
     const hasWerder=key==='bl1'&&(isWerder(names.home)||isWerder(names.away));
     const hasVfL=key==='bl2'&&(isVfL(names.home)||isVfL(names.away));
     const cssClass=hasWerder?'werder-match':hasVfL?'vfl-match':'';
@@ -333,11 +342,11 @@ function gamesHTML(key){
       (key==='bl2'&&isVfL(names.home))?'team-highlight':'';
     const awayClass=(key==='bl1'&&isWerder(names.away))||
       (key==='bl2'&&isVfL(names.away))?'team-highlight':'';
-    const expanded=expandedMatch[key]!==null&&expandedMatch[key]===index;
+    const expanded=expandedMatch[key]===id;
 
-    return `<div class="match ${cssClass}">
+    return `<div class="match ${cssClass}" data-match-card="${esc(id)}">
       <button type="button" class="match-button"
-        onclick="toggleDetails('${key}',${index})"
+        data-match-toggle="${esc(id)}" data-league="${key}"
         aria-expanded="${expanded}">
         <div class="match-date">${statusHTML(match)}</div>
         <div>
@@ -345,9 +354,9 @@ function gamesHTML(key){
           <span class="score">${esc(gameScore(match))}</span>
           <span class="${awayClass}"><b>${esc(names.away)}</b></span>
         </div>
-        <div class="tap-hint">${expanded?'▲ Details ausblenden':'▼ Tippen für Spielstatistiken und Torschützen'}</div>
+        <div class="tap-hint">${expanded?'▲ Details ausblenden':'▼ Tippen für Spieldetails und Torschützen'}</div>
       </button>
-      ${expanded?detailsHTML(match):''}
+      <div class="details-slot">${expanded?detailsHTML(match):''}</div>
     </div>`;
   }).join('');
 }
@@ -398,21 +407,93 @@ function tableHTML(data,key){
     </tbody></table></div>`;
 }
 
+/* Spieltage werden nur bei Bedarf neu aufgebaut */
 function renderGames(key){
-  document.getElementById(key+'-selector').innerHTML=roundSelector(key);
-  document.getElementById(key+'-games').innerHTML=gamesHTML(key);
+  const selector=document.getElementById(key+'-selector');
+  const gamesBox=document.getElementById(key+'-games');
+
+  const newSelector=roundSelector(key);
+  if(selector.innerHTML!==newSelector){
+    selector.innerHTML=newSelector;
+  }
+
+  const newGames=gamesHTML(key);
+  if(!firstRender[key]||gamesBox.dataset.round!==String(selectedRound[key])){
+    gamesBox.innerHTML=newGames;
+    gamesBox.dataset.round=String(selectedRound[key]);
+    firstRender[key]=true;
+  }else{
+    updateExistingGames(key);
+  }
+}
+
+/* Aktualisiert Spielstand und Status, ohne die Karten neu aufzubauen */
+function updateExistingGames(key){
+  const games=selectedGames(key);
+  const gamesBox=document.getElementById(key+'-games');
+
+  if(!gamesBox.querySelector('[data-match-card]')){
+    gamesBox.innerHTML=gamesHTML(key);
+    return;
+  }
+
+  games.forEach(match=>{
+    const id=matchKey(match);
+    const card=[...gamesBox.querySelectorAll('[data-match-card]')]
+      .find(el=>el.dataset.matchCard===id);
+
+    if(!card)return;
+
+    const button=card.querySelector('.match-button');
+    const date=button?.querySelector('.match-date');
+    const score=button?.querySelector('.score');
+    if(date)date.innerHTML=statusHTML(match);
+    if(score)score.textContent=gameScore(match);
+
+    /* Offene Details aktualisieren, ohne das Fenster zu schließen */
+    if(expandedMatch[key]===id){
+      const slot=card.querySelector('.details-slot');
+      if(slot)slot.innerHTML=detailsHTML(match);
+    }
+  });
+}
+
+function renderTables(){
+  document.getElementById('bl1-table').innerHTML=tableHTML(standings.bl1,'bl1');
+  document.getElementById('bl2-table').innerHTML=tableHTML(standings.bl2,'bl2');
 }
 
 function render(){
   renderGames('bl1');
   renderGames('bl2');
-  document.getElementById('bl1-table').innerHTML=tableHTML(standings.bl1,'bl1');
-  document.getElementById('bl2-table').innerHTML=tableHTML(standings.bl2,'bl2');
+  renderTables();
 
   const stamp=lastUpdate?'Zuletzt geprüft: '+lastUpdate.toLocaleTimeString('de-DE'):'';
   document.getElementById('bl1-update').textContent=stamp;
   document.getElementById('bl2-update').textContent=stamp;
 }
+
+/* Ereignisse zentral behandeln, damit Tippen zuverlässig funktioniert */
+document.addEventListener('click',event=>{
+  const button=event.target.closest('[data-match-toggle]');
+  if(button){
+    const key=button.dataset.league;
+    const id=button.dataset.matchToggle;
+    toggleDetails(key,id);
+    return;
+  }
+
+  if(event.target.closest('[data-refresh]')){
+    refreshData(true);
+  }
+});
+
+document.addEventListener('change',event=>{
+  const select=event.target.closest('[data-round-select]');
+  if(select){
+    changeRound(select.dataset.roundSelect,select.value);
+  }
+});
 
 async function refreshData(showError=false){
   if(loading)return;
@@ -424,28 +505,53 @@ async function refreshData(showError=false){
       loadLiveGames('bl2')
     ]);
 
-    if(liveResults[0].status==='fulfilled')matches.bl1=liveResults[0].value;
-    else console.warn('BL1 Live-Abruf fehlgeschlagen:',liveResults[0].reason);
-
-    if(liveResults[1].status==='fulfilled')matches.bl2=liveResults[1].value;
-    else console.warn('BL2 Live-Abruf fehlgeschlagen:',liveResults[1].reason);
-
-    try{
-      const [bl1Table,bl2Table]=await Promise.all([
-        loadFile('bundesliga.json'),
-        loadFile('2bundesliga-tabelle.json')
-      ]);
-      standings.bl1=bl1Table;
-      standings.bl2=bl2Table;
-    }catch(error){
-      console.warn('Tabellen konnten nicht aktualisiert werden:',error);
+    if(liveResults[0].status==='fulfilled'){
+      matches.bl1=liveResults[0].value;
+    }else{
+      console.warn('BL1 Live-Abruf fehlgeschlagen:',liveResults[0].reason);
     }
 
-    if(selectedRound.bl1===null)selectedRound.bl1=findDefaultRound(getGames('bl1'));
-    if(selectedRound.bl2===null)selectedRound.bl2=findDefaultRound(getGames('bl2'));
+    if(liveResults[1].status==='fulfilled'){
+      matches.bl2=liveResults[1].value;
+    }else{
+      console.warn('BL2 Live-Abruf fehlgeschlagen:',liveResults[1].reason);
+    }
+
+    /* Tabellen nur beim ersten Laden abrufen.
+       So bleibt die horizontale Tabellenposition erhalten. */
+    if(!standings.bl1||!standings.bl2){
+      try{
+        const [bl1Table,bl2Table]=await Promise.all([
+          loadFile('bundesliga.json'),
+          loadFile('2bundesliga-tabelle.json')
+        ]);
+        standings.bl1=bl1Table;
+        standings.bl2=bl2Table;
+      }catch(error){
+        console.warn('Tabellen konnten nicht geladen werden:',error);
+      }
+    }
+
+    if(selectedRound.bl1===null){
+      selectedRound.bl1=findDefaultRound(getGames('bl1'));
+    }
+    if(selectedRound.bl2===null){
+      selectedRound.bl2=findDefaultRound(getGames('bl2'));
+    }
 
     lastUpdate=new Date();
-    render();
+
+    if(!firstRender.bl1||!firstRender.bl2){
+      render();
+    }else{
+      updateExistingGames('bl1');
+      updateExistingGames('bl2');
+
+      const stamp='Zuletzt geprüft: '+lastUpdate.toLocaleTimeString('de-DE');
+      document.getElementById('bl1-update').textContent=stamp;
+      document.getElementById('bl2-update').textContent=stamp;
+    }
+
   }catch(error){
     console.error('Aktualisierung fehlgeschlagen:',error);
     if(showError){
