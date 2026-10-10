@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Werder & VfL</title>
+<style>
+body{margin:0;background:#101810;color:white;font-family:Arial,sans-serif}
+header{background:#008b50;padding:24px 16px;font-size:24px;font-weight:bold}
+nav{display:flex;gap:8px;padding:12px;flex-wrap:wrap}
+button{background:#26352a;color:white;border:1px solid #49614e;padding:12px;border-radius:10px}
+main{padding:14px}
+.card{background:#1d2920;padding:16px;border-radius:14px;margin-bottom:14px}
+h2{color:#43d98a;font-size:19px}
+a{color:#43d98a}
+</style>
+</head>
+<body>
+<header>⚽ Werder & VfL</header>
+<nav>
+<button onclick="show('start')">Start</button>
+<button onclick="show('werder')">Werder</button>
+<button onclick="show('vfl')">VfL Osnabrück</button>
+<button onclick="show('liga')">Bundesliga</button>
+<button onclick="show('news')">News</button>
+</nav>
+<main id="app"></main>
+<script>
+function show(page){
+let content={
+start:`<div class="card"><h2>Grün-weißer Fußball</h2><p>Deine Fußballzentrale für Werder Bremen und den VfL Osnabrück.</p></div>
+<div class="card"><h2>1. Bundesliga</h2><p>Werder Bremen – Spielplan, Tabelle und Ergebnisse</p></div>
+<div class="card"><h2>2. Bundesliga</h2><p>VfL Osnabrück – Spielplan, Tabelle und Ergebnisse</p></div>`,
+werder:`<div class="card"><h2>Werder Bremen</h2><a href="https://www.werder.de/">Offizielle Vereinsnews öffnen</a><p><a href="https://www.bundesliga.com/de/bundesliga">Bundesliga-Spielplan und Ergebnisse</a></p></div>`,
+vfl:`<div class="card"><h2>VfL Osnabrück</h2><a href="https://www.vfl.de/">Offizielle Vereinsnews öffnen</a><p><a href="https://www.kicker.de/2-bundesliga">Spielplan und Tabelle</a></p></div>`,
+liga:`<div class="card"><h2>1. Bundesliga</h2><a href="https://www.kicker.de/bundesliga/tabelle">Aktuelle Tabelle ansehen</a></div><div class="card"><h2>2. Bundesliga</h2><a href="https://www.kicker.de/2-bundesliga/tabelle">Aktuelle Tabelle ansehen</a></div>`,
+news:`<div class="card"><h2>Werder-News</h2><a href="https://www.werder.de/">Nachrichten von Werder</a></div><div class="card"><h2>VfL-News</h2><a href="https://www.vfl.de/">Nachrichten aus Osnabrück</a></div>`
+};
+document.getElementById('app').innerHTML=content[page]||content.start;
+}
+show('start');
+</script>
+</body>
+</html>
