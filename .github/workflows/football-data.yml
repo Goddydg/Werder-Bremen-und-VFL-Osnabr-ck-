@@ -12,6 +12,7 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
+
     steps:
       - name: Repository laden
         uses: actions/checkout@v4
@@ -38,6 +39,132 @@ jobs:
             "https://api.openligadb.de/getmatchdata/bl2/2026" \
             -o data/2bundesliga-spiele.json
 
+      - name: Tabelle der zweiten Bundesliga berechnen
+        run: |
+          python3 - <<'PY'
+          import json
+          from collections import defaultdict
+
+          with open("data/2bundesliga-spiele.json", encoding="utf-8") as f:
+              matches = json.load(f)
+
+          teams = defaultdict(lambda: {
+              "playedGames": 0,
+              "won": 0,
+              "draw": 0,
+              "lost": 0,
+              "points": 0,
+              "goalsFor": 0,
+              "goalsAgainst": 0
+          })
+
+          names = {}
+
+          for match in matches:
+              if not match.get("matchIsFinished"):
+                  continue
+
+              home = match.get("team1", {})
+              away = match.get("team2", {})
+              home_id = str(home.get("teamId"))
+              away_id = str(away.get("teamId"))
+
+              result = next(
+                  (r for r in match.get("matchResults", [])
+                   if r.get("resultTypeID") == 2),
+                  None
+              )
+
+              if result is None:
+                  results = match.get("matchResults", [])
+                  result = max(
+                      results,
+                      key=lambda r: r.get("resultTypeID", 0),
+                      default=None
+                  )
+
+              if result is None:
+                  continue
+
+              hg = result.get("pointsTeam1")
+              ag = result.get("pointsTeam2")
+
+              if hg is None or ag is None:
+                  continue
+
+              names[home_id] = home.get("teamName", "Unbekannt")
+              names[away_id] = away.get("teamName", "Unbekannt")
+
+              h, a = teams[home_id], teams[away_id]
+
+              h["playedGames"] += 1
+              a["playedGames"] += 1
+              h["goalsFor"] += hg
+              h["goalsAgainst"] += ag
+              a["goalsFor"] += ag
+              a["goalsAgainst"] += hg
+
+              if hg > ag:
+                  h["won"] += 1
+                  h["points"] += 3
+                  a["lost"] += 1
+              elif hg < ag:
+                  a["won"] += 1
+                  a["points"] += 3
+                  h["lost"] += 1
+              else:
+                  h["draw"] += 1
+                  a["draw"] += 1
+                  h["points"] += 1
+                  a["points"] += 1
+
+          table = []
+
+          for team_id, stats in teams.items():
+              name = names[team_id]
+              table.append({
+                  "position": 0,
+                  "team": {
+                      "id": int(team_id),
+                      "name": name,
+                      "shortName": name,
+                      "tla": "",
+                      "crest": ""
+                  },
+                  **stats,
+                  "goalDifference": stats["goalsFor"] - stats["goalsAgainst"]
+              })
+
+          table.sort(
+              key=lambda t: (
+                  -t["points"],
+                  -t["goalDifference"],
+                  -t["goalsFor"],
+                  t["team"]["name"]
+              )
+          )
+
+          for position, team in enumerate(table, 1):
+              team["position"] = position
+
+          output = {
+              "competition": {
+                  "name": "2. Bundesliga",
+                  "code": "BL2"
+              },
+              "standings": [{
+                  "stage": "REGULAR_SEASON",
+                  "type": "TOTAL",
+                  "table": table
+              }]
+          }
+
+          with open("data/2bundesliga-tabelle.json", "w", encoding="utf-8") as f:
+              json.dump(output, f, ensure_ascii=False, indent=2)
+
+          print(f"Tabelle erstellt: {len(table)} Mannschaften")
+          PY
+
       - name: Daten speichern
         run: |
           git config user.name "github-actions[bot]"
@@ -47,4 +174,3 @@ jobs:
             git commit -m "Fussballdaten aktualisieren"
             git push
           )
-
