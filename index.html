@@ -169,8 +169,15 @@ function normalizeName(value){
     .normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/g,'');
 }
 
+/* Bayer 04 Leverkusen und Bayer Leverkusen als denselben Verein erkennen. */
+function canonicalTeamName(value){
+  const name=normalizeName(value);
+  if(name==='bayer04leverkusen')return 'bayerleverkusen';
+  return name;
+}
+
 function isSameTeamName(a,b){
-  const x=normalizeName(a),y=normalizeName(b);
+  const x=canonicalTeamName(a),y=canonicalTeamName(b);
   return Boolean(x&&y&&(x===y||
     (Math.min(x.length,y.length)>=5&&(x.includes(y)||y.includes(x)))));
 }
