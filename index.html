@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -60,6 +59,8 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 .no-data{font-size:13px;line-height:1.5;opacity:.85}
 .lineup-button{display:block;width:100%;margin-top:10px;padding:12px;border:1px solid rgba(255,255,255,.4);border-radius:9px;background:rgba(0,0,0,.22);color:white;font-size:14px;font-weight:bold;text-align:center;cursor:pointer}
 .lineup-button:active{opacity:.75}
+.lineup-button:focus-visible{outline:2px solid white;outline-offset:3px}
+[hidden]{display:none!important}
 </style>
 </head>
 <body>
@@ -78,7 +79,7 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
     <h3>Tabelle</h3>
     <div id="bl1-table">Tabelle wird geladen …</div>
     <div class="update-info" id="bl1-update"></div>
-    <button class="refresh" onclick="refreshData(true)">Daten jetzt aktualisieren</button>
+    <button class="refresh" type="button" onclick="refreshData(true)">Daten jetzt aktualisieren</button>
   </section>
 
   <section class="league league-purple">
@@ -90,186 +91,222 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
     <h3>Tabelle</h3>
     <div id="bl2-table">Tabelle wird geladen …</div>
     <div class="update-info" id="bl2-update"></div>
-    <button class="refresh" onclick="refreshData(true)">Daten jetzt aktualisieren</button>
+    <button class="refresh" type="button" onclick="refreshData(true)">Daten jetzt aktualisieren</button>
   </section>
 </main>
 
 <script>
-const base='./data/';
-const season=2026;
+'use strict';
 
-let standings={bl1:null,bl2:null};
-let matches={bl1:[],bl2:[]};
-let selectedRound={bl1:null,bl2:null};
-let expandedMatch={bl1:null,bl2:null};
-let lastUpdate=null;
-let loading=false;
-let initialRenderDone=false;
+const base = './data/';
+const season = 2026;
 
-function esc(value){
-  return String(value??'').replace(/[&<>"']/g,c=>({
-    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+let standings = {bl1:null, bl2:null};
+let matches = {bl1:[], bl2:[]};
+let selectedRound = {bl1:null, bl2:null};
+let expandedMatch = {bl1:null, bl2:null};
+let lastUpdate = null;
+let loading = false;
+let initialRenderDone = false;
+
+function esc(value) {
+  return String(value ?? '').replace(/[&<>"']/g, c => ({
+    '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'
   }[c]));
 }
 
-async function loadJSON(url){
-  const response=await fetch(url,{cache:'no-store'});
-  if(!response.ok)throw new Error('HTTP '+response.status);
+async function loadJSON(url) {
+  const response = await fetch(url, {cache:'no-store'});
+  if (!response.ok) throw new Error('HTTP ' + response.status);
   return response.json();
 }
 
-async function loadFile(file){
-  return loadJSON(base+file+'?t='+Date.now());
+async function loadFile(file) {
+  return loadJSON(base + file + '?t=' + Date.now());
 }
 
-async function loadLiveGames(key){
-  const data=await loadJSON(
-    `https://api.openligadb.de/getmatchdata/${key}/${season}`
-  );
-  if(!Array.isArray(data))throw new Error('Ungültige Spieldaten');
+async function loadLiveGames(key) {
+  const data = await loadJSON(`https://api.openligadb.de/getmatchdata/${key}/${season}`);
+  if (!Array.isArray(data)) throw new Error('Ungültige Spieldaten');
   return data;
 }
 
-function getGames(key){return matches[key]||[]}
-
-function roundNumber(match){
-  return Number(match.group?.groupOrderID??match.groupOrderID??match.matchday??0);
+function getGames(key) {
+  return matches[key] || [];
 }
 
-function gameDate(match){return match.matchDateTime||null}
-function isFinished(match){return Boolean(match.matchIsFinished)}
+function roundNumber(match) {
+  return Number(match.group?.groupOrderID ?? match.groupOrderID ?? match.matchday ?? 0);
+}
 
-function matchKey(match){
-  if(match.matchID!=null)return String(match.matchID);
+function gameDate(match) {
+  return match.matchDateTime || null;
+}
+
+function isFinished(match) {
+  return Boolean(match.matchIsFinished);
+}
+
+function matchKey(match) {
+  if (match.matchID != null) return String(match.matchID);
   return [
-    match.team1?.teamName||'',
-    match.team2?.teamName||'',
-    gameDate(match)||''
+    match.team1?.teamName || '',
+    match.team2?.teamName || '',
+    gameDate(match) || ''
   ].join('|');
 }
 
-function findDefaultRound(games){
-  const rounds=[...new Set(games.map(roundNumber).filter(n=>n>0))]
-    .sort((a,b)=>a-b);
-  if(!rounds.length)return null;
+function findDefaultRound(games) {
+  const rounds = [...new Set(games.map(roundNumber).filter(n => n > 0))]
+    .sort((a,b) => a-b);
 
-  const now=Date.now();
-  const today=new Date().toDateString();
+  if (!rounds.length) return null;
 
-  const todayRounds=games.filter(g=>gameDate(g)&&
-    new Date(gameDate(g)).toDateString()===today)
-    .map(roundNumber).filter(n=>n>0);
-  if(todayRounds.length)return todayRounds[0];
+  const now = Date.now();
+  const today = new Date().toDateString();
 
-  const upcoming=games.filter(g=>!isFinished(g)&&gameDate(g)&&
-    new Date(gameDate(g)).getTime()>=now)
-    .sort((a,b)=>new Date(gameDate(a))-new Date(gameDate(b)));
-  if(upcoming.length)return roundNumber(upcoming[0]);
+  const todayRounds = games.filter(g =>
+    gameDate(g) && new Date(gameDate(g)).toDateString() === today
+  ).map(roundNumber).filter(n => n > 0);
 
-  const unfinished=games.filter(g=>!isFinished(g)&&roundNumber(g)>0)
-    .sort((a,b)=>new Date(gameDate(a)||0)-new Date(gameDate(b)||0));
-  if(unfinished.length)return roundNumber(unfinished[0]);
+  if (todayRounds.length) return todayRounds[0];
+
+  const upcoming = games.filter(g =>
+    !isFinished(g) && gameDate(g) &&
+    new Date(gameDate(g)).getTime() >= now
+  ).sort((a,b) => new Date(gameDate(a)) - new Date(gameDate(b)));
+
+  if (upcoming.length) return roundNumber(upcoming[0]);
+
+  const unfinished = games.filter(g => !isFinished(g) && roundNumber(g) > 0)
+    .sort((a,b) => new Date(gameDate(a) || 0) - new Date(gameDate(b) || 0));
+
+  if (unfinished.length) return roundNumber(unfinished[0]);
 
   return Math.max(...rounds);
 }
 
-function ensureRound(key){
-  if(selectedRound[key]===null)
-    selectedRound[key]=findDefaultRound(getGames(key));
+function ensureRound(key) {
+  if (selectedRound[key] === null) {
+    selectedRound[key] = findDefaultRound(getGames(key));
+  }
 }
 
-function changeRound(key,value){
-  selectedRound[key]=Number(value);
-  expandedMatch[key]=null;
+function changeRound(key, value) {
+  selectedRound[key] = Number(value);
+  expandedMatch[key] = null;
   renderGames(key);
 }
 
-function roundSelector(key){
-  const rounds=[...new Set(getGames(key).map(roundNumber).filter(n=>n>0))]
-    .sort((a,b)=>a-b);
+function roundSelector(key) {
+  const rounds = [...new Set(getGames(key).map(roundNumber).filter(n => n > 0))]
+    .sort((a,b) => a-b);
+
   ensureRound(key);
 
-  if(!rounds.length)return '<p class="muted">Keine Spieltage verfügbar.</p>';
+  if (!rounds.length) {
+    return '<p class="muted">Keine Spieltage verfügbar.</p>';
+  }
 
   return `<div class="selector">
     <label for="${key}-round"><b>Spieltag:</b></label>
     <select id="${key}-round" onchange="changeRound('${key}',this.value)">
-      ${rounds.map(n=>`<option value="${n}" ${n===selectedRound[key]?'selected':''}>${n}. Spieltag</option>`).join('')}
+      ${rounds.map(n => `<option value="${n}" ${n === selectedRound[key] ? 'selected' : ''}>${n}. Spieltag</option>`).join('')}
     </select>
   </div>`;
 }
 
-function selectedGames(key){
+function selectedGames(key) {
   ensureRound(key);
+
   return getGames(key)
-    .filter(g=>roundNumber(g)===selectedRound[key])
-    .sort((a,b)=>new Date(gameDate(a)||0)-new Date(gameDate(b)||0));
+    .filter(g => roundNumber(g) === selectedRound[key])
+    .sort((a,b) => new Date(gameDate(a) || 0) - new Date(gameDate(b) || 0));
 }
 
-function teamNames(match){
+function teamNames(match) {
   return {
-    home:match.team1?.teamName||'Unbekannt',
-    away:match.team2?.teamName||'Unbekannt'
+    home:match.team1?.teamName || 'Unbekannt',
+    away:match.team2?.teamName || 'Unbekannt'
   };
 }
 
-function gameScore(match){
-  const results=match.matchResults||[];
-  if(!results.length)return '– : –';
+function gameScore(match) {
+  const results = match.matchResults || [];
 
-  const result=results.reduce((best,r)=>
-    !best||Number(r.resultTypeID||0)>Number(best.resultTypeID||0)?r:best,null);
+  if (!results.length) return '– : –';
 
-  if(!result||result.pointsTeam1==null||result.pointsTeam2==null)return '– : –';
+  const result = results.reduce((best,r) =>
+    !best || Number(r.resultTypeID || 0) > Number(best.resultTypeID || 0) ? r : best,
+    null
+  );
+
+  if (!result || result.pointsTeam1 == null || result.pointsTeam2 == null) {
+    return '– : –';
+  }
+
   return `${result.pointsTeam1} : ${result.pointsTeam2}`;
 }
 
-function isLive(match){
-  if(isFinished(match))return false;
-  const kickoff=gameDate(match);
-  if(!kickoff)return false;
-  const elapsed=Date.now()-new Date(kickoff).getTime();
-  return elapsed>=0&&elapsed<=3*60*60*1000;
+function isLive(match) {
+  if (isFinished(match)) return false;
+
+  const kickoff = gameDate(match);
+  if (!kickoff) return false;
+
+  const elapsed = Date.now() - new Date(kickoff).getTime();
+  return elapsed >= 0 && elapsed <= 3 * 60 * 60 * 1000;
 }
 
-function formatDate(value){
-  if(!value)return 'Termin offen';
-  return new Date(value).toLocaleString('de-DE',{
-    weekday:'short',day:'2-digit',month:'2-digit',
-    hour:'2-digit',minute:'2-digit'
+function formatDate(value) {
+  if (!value) return 'Termin offen';
+
+  return new Date(value).toLocaleString('de-DE', {
+    weekday:'short',
+    day:'2-digit',
+    month:'2-digit',
+    hour:'2-digit',
+    minute:'2-digit'
   });
 }
 
-function statusHTML(match){
-  if(isFinished(match))
-    return '<span class="finished-badge">BEENDET</span> '+esc(formatDate(gameDate(match)));
-  if(isLive(match))
-    return '<span class="live-badge">● LIVE</span> '+esc(formatDate(gameDate(match)));
+function statusHTML(match) {
+  if (isFinished(match)) {
+    return '<span class="finished-badge">BEENDET</span> ' +
+      esc(formatDate(gameDate(match)));
+  }
+
+  if (isLive(match)) {
+    return '<span class="live-badge">● LIVE</span> ' +
+      esc(formatDate(gameDate(match)));
+  }
+
   return esc(formatDate(gameDate(match)));
 }
 
-function isWerder(name){
-  const n=name.toLowerCase();
-  return n.includes('werder')||n.includes('bremen');
+function isWerder(name) {
+  const n = name.toLowerCase();
+  return n.includes('werder') || n.includes('bremen');
 }
 
-function isVfL(name){
-  const n=name.toLowerCase();
-  return n.includes('osnabrück')||n.includes('osnabrueck')||n.includes('vfl osnabr');
+function isVfL(name) {
+  const n = name.toLowerCase();
+  return n.includes('osnabrück') ||
+    n.includes('osnabrueck') ||
+    n.includes('vfl osnabr');
 }
 
-/* Öffnet eine Suche nach der offiziellen Bundesliga-Spielseite.
-   Es werden keine Daten automatisch aus der Webseite ausgelesen. */
-function aufstellungAbrufen(key,index){
-  const match=selectedGames(key)[index];
-  if(!match)return;
+/* Öffnet eine Websuche zur Aufstellung. Daten werden nicht automatisch importiert. */
+function aufstellungAbrufen(key, index) {
+  const match = selectedGames(key)[index];
+  if (!match) return;
 
-  const names=teamNames(match);
-  const date=gameDate(match)
-    ?new Date(gameDate(match)).toLocaleDateString('de-DE')
-    :'';
+  const names = teamNames(match);
+  const date = gameDate(match)
+    ? new Date(gameDate(match)).toLocaleDateString('de-DE')
+    : '';
 
-  const query=encodeURIComponent(
+  const query = encodeURIComponent(
     `site:bundesliga.com/de/bundesliga/spieltag "${names.home}" "${names.away}" Aufstellung ${date}`
   );
 
@@ -280,117 +317,142 @@ function aufstellungAbrufen(key,index){
   );
 }
 
-function detailsHTML(match){
-  const names=teamNames(match);
-  const results=[...(match.matchResults||[])].sort(
-    (a,b)=>Number(a.resultTypeID||0)-Number(b.resultTypeID||0)
+function detailsHTML(match) {
+  const names = teamNames(match);
+
+  const results = [...(match.matchResults || [])].sort(
+    (a,b) => Number(a.resultTypeID || 0) - Number(b.resultTypeID || 0)
   );
-  const goals=Array.isArray(match.goals)?[...match.goals]:[];
-  const location=match.matchLocation?.locationStadium||
-    match.location?.locationStadium||
-    match.matchLocation?.locationName||'';
 
-  let html='<div class="match-details"><h4>📋 Spieldetails</h4>';
+  const goals = Array.isArray(match.goals) ? [...match.goals] : [];
 
-  html+=`<div class="detail-line">
+  const location = match.matchLocation?.locationStadium ||
+    match.location?.locationStadium ||
+    match.matchLocation?.locationName || '';
+
+  let html = '<div class="match-details"><h4>📋 Spieldetails</h4>';
+
+  html += `<div class="detail-line">
     <span class="detail-label">Begegnung</span>
     <span>${esc(names.home)} – ${esc(names.away)}</span>
   </div>`;
 
-  html+=`<div class="detail-line">
+  html += `<div class="detail-line">
     <span class="detail-label">Spielbeginn</span>
     <span>${esc(formatDate(gameDate(match)))}</span>
   </div>`;
 
-  if(location){
-    html+=`<div class="detail-line">
-      <span class="detail-label">Spielort</span><span>${esc(location)}</span>
+  if (location) {
+    html += `<div class="detail-line">
+      <span class="detail-label">Spielort</span>
+      <span>${esc(location)}</span>
     </div>`;
   }
 
-  if(results.length){
-    html+='<h4>Ergebnisse</h4>';
-    results.forEach(result=>{
-      const label=result.resultName||
-        (Number(result.resultTypeID)===1?'Halbzeit':
-         Number(result.resultTypeID)===2?'Endstand':'Spielstand');
+  if (results.length) {
+    html += '<h4>Ergebnisse</h4>';
 
-      html+=`<div class="detail-line">
+    results.forEach(result => {
+      const label = result.resultName ||
+        (Number(result.resultTypeID) === 1 ? 'Halbzeit' :
+        Number(result.resultTypeID) === 2 ? 'Endstand' : 'Spielstand');
+
+      html += `<div class="detail-line">
         <span class="detail-label">${esc(label)}</span>
         <b>${esc(result.pointsTeam1)} : ${esc(result.pointsTeam2)}</b>
       </div>`;
     });
   }
 
-  html+='<h4>⚽ Torschützen</h4>';
+  html += '<h4>⚽ Torschützen</h4>';
 
-  if(goals.length){
-    goals.sort((a,b)=>Number(a.matchMinute||0)-Number(b.matchMinute||0));
-    goals.forEach(goal=>{
-      const minute=goal.matchMinute!=null?`${goal.matchMinute}′`:'';
-      const scorer=goal.goalGetterName||'Unbekannter Torschütze';
-      const extras=[
-        goal.isPenalty?'Elfmeter':'',
-        goal.isOwnGoal?'Eigentor':''
+  if (goals.length) {
+    goals.sort((a,b) => Number(a.matchMinute || 0) - Number(b.matchMinute || 0));
+
+    goals.forEach(goal => {
+      const minute = goal.matchMinute != null ? `${goal.matchMinute}′` : '';
+      const scorer = goal.goalGetterName || 'Unbekannter Torschütze';
+
+      const extras = [
+        goal.isPenalty ? 'Elfmeter' : '',
+        goal.isOwnGoal ? 'Eigentor' : ''
       ].filter(Boolean).join(' · ');
 
-      html+=`<div class="scorer">
+      html += `<div class="scorer">
         <b>${esc(minute)}</b> ${esc(scorer)}
-        ${extras?`<span class="detail-label"> (${esc(extras)})</span>`:''}
+        ${extras ? `<span class="detail-label"> (${esc(extras)})</span>` : ''}
       </div>`;
     });
-  }else{
-    html+='<p class="no-data">Für dieses Spiel sind aktuell keine Torschützen hinterlegt.</p>';
+  } else {
+    html += '<p class="no-data">Für dieses Spiel sind aktuell keine Torschützen hinterlegt.</p>';
   }
 
-  html+='<h4>📊 Weitere Statistiken</h4>';
-  html+='<p class="no-data">Ballbesitz, Torschüsse, Schüsse aufs Tor, Ecken, Karten, Laufleistung und Aufstellungen sind in der aktuellen Datenquelle nicht zuverlässig verfügbar. Nutze den Taster unterhalb der Spielkarte für die offizielle Spielseite.</p>';
-  html+='</div>';
+  html += '<h4>📊 Weitere Statistiken</h4>';
+
+  html += '<p class="no-data">Ballbesitz, Torschüsse, Schüsse aufs Tor, Ecken, Karten, Laufleistung und Aufstellungen sind in der aktuellen Datenquelle nicht zuverlässig verfügbar. Nutze den Button unterhalb der Spielkarte für eine Websuche zur Aufstellung.</p>';
+
+  html += '</div>';
   return html;
 }
 
-function toggleDetails(key,index){
-  const games=selectedGames(key);
-  const match=games[index];
-  if(!match)return;
+function toggleDetails(key, index) {
+  const match = selectedGames(key)[index];
+  if (!match) return;
 
-  const id=matchKey(match);
-  const card=document.getElementById('card-'+key+'-'+index);
-  const slot=document.getElementById('details-'+key+'-'+index);
-  const hint=document.getElementById('hint-'+key+'-'+index);
-  const button=document.getElementById('button-'+key+'-'+index);
+  const id = matchKey(match);
+  const slot = document.getElementById('details-' + key + '-' + index);
+  const hint = document.getElementById('hint-' + key + '-' + index);
+  const button = document.getElementById('button-' + key + '-' + index);
 
-  if(!card||!slot)return;
+  if (!slot) return;
 
-  if(expandedMatch[key]===id){
-    expandedMatch[key]=null;
-    slot.innerHTML='';
-    slot.hidden=true;
-    if(hint)hint.textContent='▼ Tippen für Spieldetails und Torschützen';
-    if(button)button.setAttribute('aria-expanded','false');
-  }else{
-    expandedMatch[key]=id;
-    slot.innerHTML=detailsHTML(match);
-    slot.hidden=false;
-    if(hint)hint.textContent='▲ Details ausblenden';
-    if(button)button.setAttribute('aria-expanded','true');
+  if (expandedMatch[key] === id) {
+    expandedMatch[key] = null;
+    slot.innerHTML = '';
+    slot.hidden = true;
+
+    if (hint) hint.textContent = '▼ Tippen für Spieldetails und Torschützen';
+    if (button) button.setAttribute('aria-expanded', 'false');
+  } else {
+    expandedMatch[key] = id;
+    slot.innerHTML = detailsHTML(match);
+    slot.hidden = false;
+
+    if (hint) hint.textContent = '▲ Details ausblenden';
+    if (button) button.setAttribute('aria-expanded', 'true');
   }
 }
 
-function gamesHTML(key){
-  const games=selectedGames(key);
-  if(!games.length)return '<p class="muted">Keine Spiele für diesen Spieltag gefunden.</p>';
+function gamesHTML(key) {
+  const games = selectedGames(key);
 
-  return games.map((match,index)=>{
-    const names=teamNames(match);
-    const hasWerder=key==='bl1'&&(isWerder(names.home)||isWerder(names.away));
-    const hasVfL=key==='bl2'&&(isVfL(names.home)||isVfL(names.away));
-    const cssClass=hasWerder?'werder-match':hasVfL?'vfl-match':'';
-    const homeClass=(key==='bl1'&&isWerder(names.home))||
-      (key==='bl2'&&isVfL(names.home))?'team-highlight':'';
-    const awayClass=(key==='bl1'&&isWerder(names.away))||
-      (key==='bl2'&&isVfL(names.away))?'team-highlight':'';
-    const expanded=expandedMatch[key]===matchKey(match);
+  if (!games.length) {
+    return '<p class="muted">Keine Spiele für diesen Spieltag gefunden.</p>';
+  }
+
+  return games.map((match,index) => {
+    const names = teamNames(match);
+
+    const hasWerder = key === 'bl1' &&
+      (isWerder(names.home) || isWerder(names.away));
+
+    const hasVfL = key === 'bl2' &&
+      (isVfL(names.home) || isVfL(names.away));
+
+    const cssClass = hasWerder ? 'werder-match' :
+      hasVfL ? 'vfl-match' : '';
+
+    const homeClass =
+      ((key === 'bl1' && isWerder(names.home)) ||
+       (key === 'bl2' && isVfL(names.home)))
+      ? 'team-highlight' : '';
+
+    const awayClass =
+      ((key === 'bl1' && isWerder(names.away)) ||
+       (key === 'bl2' && isVfL(names.away)))
+      ? 'team-highlight' : '';
+
+    const expanded = expandedMatch[key] === matchKey(match);
 
     return `<div class="match ${cssClass}" id="card-${key}-${index}">
       <button type="button" class="match-button"
@@ -403,9 +465,11 @@ function gamesHTML(key){
           <span class="score" id="score-${key}-${index}">${esc(gameScore(match))}</span>
           <span class="${awayClass}"><b>${esc(names.away)}</b></span>
         </div>
-        <div class="tap-hint" id="hint-${key}-${index}">${expanded?'▲ Details ausblenden':'▼ Tippen für Spieldetails und Torschützen'}</div>
+        <div class="tap-hint" id="hint-${key}-${index}">${expanded ? '▲ Details ausblenden' : '▼ Tippen für Spieldetails und Torschützen'}</div>
       </button>
-      <div class="details-slot" id="details-${key}-${index}" ${expanded?'':'hidden'}>${expanded?detailsHTML(match):''}</div>
+
+      <div class="details-slot" id="details-${key}-${index}" ${expanded ? '' : 'hidden'}>${expanded ? detailsHTML(match) : ''}</div>
+
       <button type="button" class="lineup-button"
         onclick="aufstellungAbrufen('${key}',${index})">
         👥 Aufstellung, Spielerbilder & Statistiken öffnen
@@ -414,144 +478,176 @@ function gamesHTML(key){
   }).join('');
 }
 
-function getTableRows(data){
-  if(Array.isArray(data))return data;
-  if(Array.isArray(data?.table))return data.table;
-  if(Array.isArray(data?.standings)){
-    const total=data.standings.find(s=>s.type==='TOTAL');
-    return total?.table||data.standings[0]?.table||[];
+function getTableRows(data) {
+  if (Array.isArray(data)) return data;
+  if (Array.isArray(data?.table)) return data.table;
+
+  if (Array.isArray(data?.standings)) {
+    const total = data.standings.find(s => s.type === 'TOTAL');
+    return total?.table || data.standings[0]?.table || [];
   }
+
   return [];
 }
 
-function teamName(row){
-  return row.team?.shortName||row.team?.name||row.teamName||row.name||'';
+function teamName(row) {
+  return row.team?.shortName || row.team?.name ||
+    row.teamName || row.name || '';
 }
 
-function tableHTML(data,key){
-  const rows=getTableRows(data);
-  if(!rows.length)return '<p class="muted">Tabelle nicht verfügbar.</p>';
+function tableHTML(data, key) {
+  const rows = getTableRows(data);
+
+  if (!rows.length) {
+    return '<p class="muted">Tabelle nicht verfügbar.</p>';
+  }
 
   return `<div class="table-wrap"><table>
     <thead><tr>
       <th>Pos.</th><th>Verein</th><th>Sp.</th><th>S</th>
       <th>U</th><th>N</th><th>Tore</th><th>TD</th><th>Pkt.</th>
-    </tr></thead><tbody>
-    ${rows.map((row,index)=>{
-      const name=teamName(row);
-      const highlighted=key==='bl1'?isWerder(name):isVfL(name);
-      const played=row.playedGames??row.matchesPlayed??row.played??'–';
-      const wins=row.won??row.wins??row.wonGames??'–';
-      const draws=row.draw??row.draws??row.drawGames??'–';
-      const losses=row.lost??row.losses??row.lostGames??'–';
-      const gf=row.goalsFor??row.goalsScored;
-      const ga=row.goalsAgainst??row.goalsConceded;
-      const goals=gf!==undefined&&ga!==undefined?gf+':'+ga:(row.goals??'–');
-      const difference=row.goalDifference??row.goalDiff??'–';
-      const points=row.points??row.pts??'–';
-      const position=row.position??row.rank??index+1;
+    </tr></thead>
+    <tbody>
+    ${rows.map((row,index) => {
+      const name = teamName(row);
+      const highlighted = key === 'bl1' ? isWerder(name) : isVfL(name);
 
-      return `<tr class="${highlighted?(key==='bl1'?'werder-row':'vfl-row'):''}">
-        <td>${esc(position)}</td><td>${esc(name)}</td><td>${esc(played)}</td>
-        <td>${esc(wins)}</td><td>${esc(draws)}</td><td>${esc(losses)}</td>
-        <td>${esc(goals)}</td><td>${esc(difference)}</td><td><b>${esc(points)}</b></td>
+      const played = row.playedGames ?? row.matchesPlayed ?? row.played ?? '–';
+      const wins = row.won ?? row.wins ?? row.wonGames ?? '–';
+      const draws = row.draw ?? row.draws ?? row.drawGames ?? '–';
+      const losses = row.lost ?? row.losses ?? row.lostGames ?? '–';
+
+      const gf = row.goalsFor ?? row.goalsScored;
+      const ga = row.goalsAgainst ?? row.goalsConceded;
+      const goals = gf !== undefined && ga !== undefined
+        ? gf + ':' + ga
+        : (row.goals ?? '–');
+
+      const difference = row.goalDifference ?? row.goalDiff ?? '–';
+      const points = row.points ?? row.pts ?? '–';
+      const position = row.position ?? row.rank ?? index + 1;
+
+      return `<tr class="${highlighted ? (key === 'bl1' ? 'werder-row' : 'vfl-row') : ''}">
+        <td>${esc(position)}</td>
+        <td>${esc(name)}</td>
+        <td>${esc(played)}</td>
+        <td>${esc(wins)}</td>
+        <td>${esc(draws)}</td>
+        <td>${esc(losses)}</td>
+        <td>${esc(goals)}</td>
+        <td>${esc(difference)}</td>
+        <td><b>${esc(points)}</b></td>
       </tr>`;
     }).join('')}
     </tbody></table></div>`;
 }
 
-function renderGames(key){
-  document.getElementById(key+'-selector').innerHTML=roundSelector(key);
-  document.getElementById(key+'-games').innerHTML=gamesHTML(key);
+function renderGames(key) {
+  document.getElementById(key + '-selector').innerHTML = roundSelector(key);
+  document.getElementById(key + '-games').innerHTML = gamesHTML(key);
 }
 
-function renderInitial(){
+function renderInitial() {
   renderGames('bl1');
   renderGames('bl2');
 
-  document.getElementById('bl1-table').innerHTML=tableHTML(standings.bl1,'bl1');
-  document.getElementById('bl2-table').innerHTML=tableHTML(standings.bl2,'bl2');
+  document.getElementById('bl1-table').innerHTML = tableHTML(standings.bl1, 'bl1');
+  document.getElementById('bl2-table').innerHTML = tableHTML(standings.bl2, 'bl2');
 
-  initialRenderDone=true;
+  initialRenderDone = true;
 }
 
-function updateLiveDisplay(key){
-  const games=selectedGames(key);
+function updateLiveDisplay(key) {
+  const games = selectedGames(key);
 
-  games.forEach((match,index)=>{
-    const date=document.getElementById(`date-${key}-${index}`);
-    const score=document.getElementById(`score-${key}-${index}`);
-    const slot=document.getElementById(`details-${key}-${index}`);
+  games.forEach((match,index) => {
+    const date = document.getElementById(`date-${key}-${index}`);
+    const score = document.getElementById(`score-${key}-${index}`);
+    const slot = document.getElementById(`details-${key}-${index}`);
 
-    if(date)date.innerHTML=statusHTML(match);
-    if(score)score.textContent=gameScore(match);
+    if (date) date.innerHTML = statusHTML(match);
+    if (score) score.textContent = gameScore(match);
 
-    if(slot&&!slot.hidden&&expandedMatch[key]===matchKey(match)){
-      slot.innerHTML=detailsHTML(match);
+    if (slot && !slot.hidden && expandedMatch[key] === matchKey(match)) {
+      slot.innerHTML = detailsHTML(match);
     }
   });
 }
 
-async function refreshData(showError=false){
-  if(loading)return;
-  loading=true;
+async function refreshData(showError = false) {
+  if (loading) return;
+  loading = true;
 
-  try{
-    const results=await Promise.allSettled([
+  try {
+    const results = await Promise.allSettled([
       loadLiveGames('bl1'),
       loadLiveGames('bl2')
     ]);
 
-    if(results[0].status==='fulfilled')matches.bl1=results[0].value;
-    else console.warn('BL1 Live-Abruf fehlgeschlagen:',results[0].reason);
+    if (results[0].status === 'fulfilled') {
+      matches.bl1 = results[0].value;
+    } else {
+      console.warn('BL1 Live-Abruf fehlgeschlagen:', results[0].reason);
+    }
 
-    if(results[1].status==='fulfilled')matches.bl2=results[1].value;
-    else console.warn('BL2 Live-Abruf fehlgeschlagen:',results[1].reason);
+    if (results[1].status === 'fulfilled') {
+      matches.bl2 = results[1].value;
+    } else {
+      console.warn('BL2 Live-Abruf fehlgeschlagen:', results[1].reason);
+    }
 
-    if(!standings.bl1||!standings.bl2){
-      try{
-        const tables=await Promise.all([
+    if (!standings.bl1 || !standings.bl2) {
+      try {
+        const tables = await Promise.all([
           loadFile('bundesliga.json'),
           loadFile('2bundesliga-tabelle.json')
         ]);
-        standings.bl1=tables[0];
-        standings.bl2=tables[1];
-      }catch(error){
-        console.warn('Tabellen konnten nicht geladen werden:',error);
+
+        standings.bl1 = tables[0];
+        standings.bl2 = tables[1];
+      } catch (error) {
+        console.warn('Tabellen konnten nicht geladen werden:', error);
       }
     }
 
-    if(selectedRound.bl1===null)selectedRound.bl1=findDefaultRound(getGames('bl1'));
-    if(selectedRound.bl2===null)selectedRound.bl2=findDefaultRound(getGames('bl2'));
+    if (selectedRound.bl1 === null) {
+      selectedRound.bl1 = findDefaultRound(getGames('bl1'));
+    }
 
-    lastUpdate=new Date();
+    if (selectedRound.bl2 === null) {
+      selectedRound.bl2 = findDefaultRound(getGames('bl2'));
+    }
 
-    if(!initialRenderDone){
+    lastUpdate = new Date();
+
+    if (!initialRenderDone) {
       renderInitial();
-    }else{
+    } else {
       updateLiveDisplay('bl1');
       updateLiveDisplay('bl2');
     }
 
-    const stamp='Zuletzt geprüft: '+lastUpdate.toLocaleTimeString('de-DE');
-    document.getElementById('bl1-update').textContent=stamp;
-    document.getElementById('bl2-update').textContent=stamp;
+    const stamp = 'Zuletzt geprüft: ' + lastUpdate.toLocaleTimeString('de-DE');
 
-  }catch(error){
-    console.error('Aktualisierung fehlgeschlagen:',error);
-    if(showError){
+    document.getElementById('bl1-update').textContent = stamp;
+    document.getElementById('bl2-update').textContent = stamp;
+
+  } catch (error) {
+    console.error('Aktualisierung fehlgeschlagen:', error);
+
+    if (showError) {
       alert('Live-Daten konnten nicht geladen werden. Bitte später erneut versuchen.');
     }
-  }finally{
-    loading=false;
+  } finally {
+    loading = false;
   }
 }
 
 refreshData();
-setInterval(()=>refreshData(),2000);
+setInterval(() => refreshData(), 15000);
 
-document.addEventListener('visibilitychange',()=>{
-  if(!document.hidden)refreshData();
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden) refreshData();
 });
 </script>
 </body>
