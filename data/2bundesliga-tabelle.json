@@ -1,0 +1,338 @@
+{
+  "competition": {
+    "name": "2. Bundesliga",
+    "code": "BL2"
+  },
+  "standings": [
+    {
+      "stage": "REGULAR_SEASON",
+      "type": "TOTAL",
+      "table": [
+        {
+          "position": 1,
+          "team": {
+            "id": 54,
+            "name": "Hertha BSC",
+            "shortName": "Hertha BSC",
+            "tla": "",
+            "crest": ""
+          },
+          "playedGames": 6,
+          "won": 6,
+          "draw": 0,
+          "lost": 0,
+          "points": 18,
+          "goalsFor": 17,
+          "goalsAgainst": 7,
+          "goalDifference": 10
+        },
+        {
+          "position": 2,
+          "team": {
+            "id": 79,
+            "name": "1. FC Nürnberg",
+            "shortName": "1. FC Nürnberg",
+            "tla": "",
+            "crest": ""
+          },
+          "playedGames": 6,
+          "won": 5,
+          "draw": 1,
+          "lost": 0,
+          "points": 16,
+          "goalsFor": 16,
+          "goalsAgainst": 6,
+          "goalDifference": 10
+        },
+        {
+          "position": 3,
+          "team": {
+            "id": 199,
+            "name": "1. FC Heidenheim 1846",
+            "shortName": "1. FC Heidenheim 1846",
+            "tla": "",
+            "crest": ""
+          },
+          "playedGames": 7,
+          "won": 4,
+          "draw": 2,
+          "lost": 1,
+          "points": 14,
+          "goalsFor": 14,
+          "goalsAgainst": 12,
+          "goalDifference": 2
+        },
+        {
+          "position": 4,
+          "team": {
+            "id": 78,
+            "name": "1. FC Magdeburg",
+            "shortName": "1. FC Magdeburg",
+            "tla": "",
+            "crest": ""
+          },
+          "playedGames": 7,
+          "won": 4,
+          "draw": 1,
+          "lost": 2,
+          "points": 13,
+          "goalsFor": 14,
+          "goalsAgainst": 9,
+          "goalDifference": 5
+        },
+        {
+          "position": 5,
+          "team": {
+            "id": 76,
+            "name": "1. FC Kaiserslautern",
+            "shortName": "1. FC Kaiserslautern",
+            "tla": "",
+            "crest": ""
+          },
+          "playedGames": 7,
+          "won": 3,
+          "draw": 3,
+          "lost": 1,
+          "points": 12,
+          "goalsFor": 6,
+          "goalsAgainst": 4,
+          "goalDifference": 2
+        },
+        {
+          "position": 6,
+          "team": {
+            "id": 131,
+            "name": "VfL Wolfsburg",
+            "shortName": "VfL Wolfsburg",
+            "tla": "",
+            "crest": ""
+          },
+          "playedGames": 6,
+          "won": 3,
+          "draw": 2,
+          "lost": 1,
+          "points": 11,
+          "goalsFor": 15,
+          "goalsAgainst": 8,
+          "goalDifference": 7
+        },
+        {
+          "position": 7,
+          "team": {
+            "id": 93,
+            "name": "Energie Cottbus",
+            "shortName": "Energie Cottbus",
+            "tla": "",
+            "crest": ""
+          },
+          "playedGames": 7,
+          "won": 2,
+          "draw": 2,
+          "lost": 3,
+          "points": 8,
+          "goalsFor": 15,
+          "goalsAgainst": 16,
+          "goalDifference": -1
+        },
+        {
+          "position": 8,
+          "team": {
+            "id": 36,
+            "name": "VfL Osnabrück",
+            "shortName": "VfL Osnabrück",
+            "tla": "",
+            "crest": ""
+          },
+          "playedGames": 7,
+          "won": 2,
+          "draw": 2,
+          "lost": 3,
+          "points": 8,
+          "goalsFor": 10,
+          "goalsAgainst": 13,
+          "goalDifference": -3
+        },
+        {
+          "position": 9,
+          "team": {
+            "id": 74,
+            "name": "Eintracht Braunschweig",
+            "shortName": "Eintracht Braunschweig",
+            "tla": "",
+            "crest": ""
+          },
+          "playedGames": 7,
+          "won": 2,
+          "draw": 1,
+          "lost": 4,
+          "points": 7,
+          "goalsFor": 13,
+          "goalsAgainst": 13,
+          "goalDifference": 0
+        },
+        {
+          "position": 10,
+          "team": {
+            "id": 98,
+            "name": "FC St. Pauli",
+            "shortName": "FC St. Pauli",
+            "tla": "",
+            "crest": ""
+          },
+          "playedGames": 6,
+          "won": 1,
+          "draw": 4,
+          "lost": 1,
+          "points": 7,
+          "goalsFor": 8,
+          "goalsAgainst": 8,
+          "goalDifference": 0
+        },
+        {
+          "position": 11,
+          "team": {
+            "id": 129,
+            "name": "VfL Bochum",
+            "shortName": "VfL Bochum",
+            "tla": "",
+            "crest": ""
+          },
+          "playedGames": 6,
+          "won": 2,
+          "draw": 1,
+          "lost": 3,
+          "points": 7,
+          "goalsFor": 5,
+          "goalsAgainst": 6,
+          "goalDifference": -1
+        },
+        {
+          "position": 12,
+          "team": {
+            "id": 55,
+            "name": "Hannover 96",
+            "shortName": "Hannover 96",
+            "tla": "",
+            "crest": ""
+          },
+          "playedGames": 7,
+          "won": 2,
+          "draw": 1,
+          "lost": 4,
+          "points": 7,
+          "goalsFor": 7,
+          "goalsAgainst": 12,
+          "goalDifference": -5
+        },
+        {
+          "position": 13,
+          "team": {
+            "id": 118,
+            "name": "SV Darmstadt 98",
+            "shortName": "SV Darmstadt 98",
+            "tla": "",
+            "crest": ""
+          },
+          "playedGames": 7,
+          "won": 2,
+          "draw": 1,
+          "lost": 4,
+          "points": 7,
+          "goalsFor": 8,
+          "goalsAgainst": 14,
+          "goalDifference": -6
+        },
+        {
+          "position": 14,
+          "team": {
+            "id": 115,
+            "name": "SpVgg Greuther Fürth",
+            "shortName": "SpVgg Greuther Fürth",
+            "tla": "",
+            "crest": ""
+          },
+          "playedGames": 6,
+          "won": 1,
+          "draw": 3,
+          "lost": 2,
+          "points": 6,
+          "goalsFor": 9,
+          "goalsAgainst": 11,
+          "goalDifference": -2
+        },
+        {
+          "position": 15,
+          "team": {
+            "id": 83,
+            "name": "DSC Arminia Bielefeld",
+            "shortName": "DSC Arminia Bielefeld",
+            "tla": "",
+            "crest": ""
+          },
+          "playedGames": 6,
+          "won": 1,
+          "draw": 2,
+          "lost": 3,
+          "points": 5,
+          "goalsFor": 10,
+          "goalsAgainst": 12,
+          "goalDifference": -2
+        },
+        {
+          "position": 16,
+          "team": {
+            "id": 177,
+            "name": "Dynamo Dresden",
+            "shortName": "Dynamo Dresden",
+            "tla": "",
+            "crest": ""
+          },
+          "playedGames": 7,
+          "won": 1,
+          "draw": 2,
+          "lost": 4,
+          "points": 5,
+          "goalsFor": 9,
+          "goalsAgainst": 15,
+          "goalDifference": -6
+        },
+        {
+          "position": 17,
+          "team": {
+            "id": 105,
+            "name": "Karlsruher SC",
+            "shortName": "Karlsruher SC",
+            "tla": "",
+            "crest": ""
+          },
+          "playedGames": 6,
+          "won": 1,
+          "draw": 2,
+          "lost": 3,
+          "points": 5,
+          "goalsFor": 6,
+          "goalsAgainst": 12,
+          "goalDifference": -6
+        },
+        {
+          "position": 18,
+          "team": {
+            "id": 104,
+            "name": "Holstein Kiel",
+            "shortName": "Holstein Kiel",
+            "tla": "",
+            "crest": ""
+          },
+          "playedGames": 7,
+          "won": 0,
+          "draw": 4,
+          "lost": 3,
+          "points": 4,
+          "goalsFor": 7,
+          "goalsAgainst": 11,
+          "goalDifference": -4
+        }
+      ]
+    }
+  ]
+}
