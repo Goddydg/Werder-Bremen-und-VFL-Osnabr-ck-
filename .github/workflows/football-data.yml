@@ -1,0 +1,52 @@
+name: Fussballdaten aktualisieren
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 * * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository laden
+        uses: actions/checkout@v4
+
+      - name: Fussballdaten abrufen
+        env:
+          TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN }}
+        run: |
+          mkdir -p data
+
+          curl -fsS \
+            -H "X-Auth-Token: $TOKEN" \
+            "https://api.football-data.org/v4/competitions/BL1/standings" \
+            -o data/bundesliga.json
+
+          curl -fsS \
+            -H "X-Auth-Token: $TOKEN" \
+            "https://api.football-data.org/v4/competitions/BL1/matches" \
+            -o data/bundesliga-spiele.json
+
+          curl -fsS \
+            -H "X-Auth-Token: $TOKEN" \
+            "https://api.football-data.org/v4/competitions/BL2/standings" \
+            -o data/2bundesliga.json
+
+          curl -fsS \
+            -H "X-Auth-Token: $TOKEN" \
+            "https://api.football-data.org/v4/competitions/BL2/matches" \
+            -o data/2bundesliga-spiele.json
+
+      - name: Daten speichern
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet || (
+            git commit -m "Fussballdaten aktualisieren"
+            git push
+          )
