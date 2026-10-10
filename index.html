@@ -11,8 +11,8 @@
 body{margin:0;background:#071b13;color:#f5f7f5;font-family:Arial,sans-serif}
 header{padding:22px 16px;background:#103b28}
 h1{margin:0;font-size:25px}
-p{color:#c5d5cb}
-nav{display:flex;gap:8px;padding:12px;overflow:auto}
+header p{color:#c5d5cb}
+nav{display:flex;gap:8px;padding:12px;overflow-x:auto}
 button{background:#194a34;color:white;border:1px solid #37684f;border-radius:10px;padding:12px;white-space:nowrap;font-size:15px}
 button.active{background:#35a66b;color:#071b13;font-weight:bold}
 main{padding:12px}
@@ -42,13 +42,18 @@ tr.focus{background:#1d5136;font-weight:bold}
 <script>
 const base='./data/';
 let standings={},matches={},current='bl1';
+
 async function load(file){
  const r=await fetch(base+file+'?t='+Date.now());
  if(!r.ok) throw Error(file+' nicht gefunden');
  return r.json();
 }
-function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
-function date(s){return s?new Date(s).toLocaleString('de-DE',{dateStyle:'medium',timeStyle:'short'}):''}
+function esc(s){
+ return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function date(s){
+ return s?new Date(s).toLocaleString('de-DE',{dateStyle:'medium',timeStyle:'short'}):'';
+}
 function table(data,focus){
  const rows=data?.standings?.find(x=>x.type==='TOTAL')?.table||[];
  if(!rows.length)return '<p>Tabelle nicht verfügbar.</p>';
@@ -64,7 +69,11 @@ function listFootballData(data,team){
 function listOpenLiga(data,team){
  const arr=(Array.isArray(data)?data:[]).filter(m=>!team||m.team1?.teamName?.includes(team)||m.team2?.teamName?.includes(team));
  if(!arr.length)return '<p>Keine Spiele gefunden.</p>';
- return arr.slice(0,30).map(m=>`<div class="match"><div class="muted">${date(m.matchDateTime)} · ${esc(m.matchIsFinished?'Beendet':'Geplant')}</div><b>${esc(m.team1?.teamName)}</b> ${m.matchResults?.find(r=>r.resultTypeID===2)?.pointsTeam1??'–'} : ${m.matchResults?.find(r=>r.resultTypeID===2)?.pointsTeam2??'–'} <b>${esc(m.team2?.teamName)}</b></div>`).join('');
+ return arr.slice(0,30).map(m=>{
+  const result=m.matchResults?.find(r=>r.resultTypeID===2)||m.matchResults?.[0];
+  const home=result?.pointsTeam1??'–',away=result?.pointsTeam2??'–';
+  return `<div class="match"><div class="muted">${date(m.matchDateTime)} · ${esc(m.matchIsFinished?'Beendet':'Geplant')}</div><b>${esc(m.team1?.teamName)}</b> ${home} : ${away} <b>${esc(m.team2?.teamName)}</b></div>`;
+ }).join('');
 }
 function show(page,btn){
  current=page;
@@ -73,23 +82,38 @@ function show(page,btn){
 }
 function render(){
  const app=document.getElementById('app');
- if(current==='bl1')app.innerHTML='<div class="card"><h2>1. Bundesliga · Tabelle</h2>'+table(standings.bl1,'SV Werder Bremen')+'</div><div class="card"><h2>Spiele</h2>'+listFootballData(matches.bl1)+'</div>';
- if(current==='werder')app.innerHTML='<div class="card"><h2>SV Werder Bremen</h2>'+table(standings.bl1,'SV Werder Bremen')+'</div><div class="card"><h2>Werder-Spiele</h2>'+listFootballData(matches.bl1,'Werder Bremen')+'</div>';
- if(current==='bl2')app.innerHTML='<div class="card"><h2>2. Bundesliga</h2><p>OpenLigaDB · Spielplan und Ergebnisse</p>'+listOpenLiga(matches.bl2)+'</div>';
- if(current==='vfl')app.innerHTML='<div class="card"><h2>VfL Osnabrück</h2><p>OpenLigaDB · Spielplan und Ergebnisse</p>'+listOpenLiga(matches.bl2,'Osnabrück')+'</div>';
+ if(current==='bl1')app.innerHTML=
+  '<div class="card"><h2>1. Bundesliga · Tabelle</h2>'+table(standings.bl1,'SV Werder Bremen')+'</div>'+
+  '<div class="card"><h2>Spiele</h2>'+listFootballData(matches.bl1)+'</div>';
+ if(current==='werder')app.innerHTML=
+  '<div class="card"><h2>1. Bundesliga · Tabelle</h2>'+table(standings.bl1,'SV Werder Bremen')+'</div>'+
+  '<div class="card"><h2>Werder-Spiele</h2>'+listFootballData(matches.bl1,'Werder Bremen')+'</div>';
+ if(current==='bl2')app.innerHTML=
+  '<div class="card"><h2>2. Bundesliga · Tabelle</h2>'+table(standings.bl2,'')+'</div>'+
+  '<div class="card"><h2>Spiele</h2>'+listOpenLiga(matches.bl2)+'</div>';
+ if(current==='vfl')app.innerHTML=
+  '<div class="card"><h2>2. Bundesliga · Tabelle</h2>'+table(standings.bl2,'')+'</div>'+
+  '<div class="card"><h2>VfL Osnabrück · Spiele</h2>'+listOpenLiga(matches.bl2,'Osnabrück')+'</div>';
 }
 async function start(){
  try{
-  [standings.bl1,matches.bl1,matches.bl2]=await Promise.all([
-   load('bundesliga.json'),load('bundesliga-spiele.json'),load('2bundesliga-spiele.json')
+  const [bl1,bl1matches,bl2table,bl2matches]=await Promise.all([
+   load('bundesliga.json'),
+   load('bundesliga-spiele.json'),
+   load('2bundesliga-tabelle.json'),
+   load('2bundesliga-spiele.json')
   ]);
+  standings.bl1=bl1;
+  standings.bl2=bl2table;
+  matches.bl1=bl1matches;
+  matches.bl2=bl2matches;
   render();
  }catch(e){
-  document.getElementById('app').innerHTML='<div class="card"><p class="error">Daten konnten nicht geladen werden.</p><p class="muted">'+esc(e.message)+'</p><button onclick="start()">Erneut laden</button></div>';
+  document.getElementById('app').innerHTML=
+   '<div class="card"><p class="error">Daten konnten nicht geladen werden.</p><p class="muted">'+esc(e.message)+'</p><button onclick="start()">Erneut laden</button></div>';
  }
 }
 start();
 </script>
 </body>
 </html>
-
