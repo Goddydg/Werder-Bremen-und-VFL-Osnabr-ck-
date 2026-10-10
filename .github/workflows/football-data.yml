@@ -32,8 +32,7 @@ jobs:
             "https://api.football-data.org/v4/competitions/BL1/standings" \
             -o data/bundesliga.json
 
-          # Spielplan und Ergebnisse.
-          # Erweiterte Daten werden angefordert, falls der Tarif sie erlaubt.
+          # Erweiterte Spieldaten anfordern, falls verfügbar
           if ! curl -fsS --retry 2 \
             -H "X-Auth-Token: $TOKEN" \
             -H "X-Unfold-Goals: true" \
@@ -55,7 +54,6 @@ jobs:
         run: |
           set -e
 
-          # Beide Ligen und komplette Saison
           curl -fsS --retry 3 --retry-delay 5 \
             "https://api.openligadb.de/getmatchdata/bl1/2026" \
             -o data/openligadb-bl1-spiele.json
@@ -64,7 +62,6 @@ jobs:
             "https://api.openligadb.de/getmatchdata/bl2/2026" \
             -o data/2bundesliga-spiele.json
 
-          # Torschützenlisten der beiden Ligen
           curl -fsS --retry 3 --retry-delay 5 \
             "https://api.openligadb.de/getgoalgetters/bl1/2026" \
             -o data/openligadb-bl1-torschuetzen.json
@@ -202,6 +199,198 @@ jobs:
               json.dump(output, f, ensure_ascii=False, indent=2)
 
           print(f"Tabelle erstellt: {len(table)} Mannschaften")
+          PY
+
+      - name: API-Football Zusatzdaten abrufen
+        env:
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          import urllib.request
+          import urllib.error
+          from datetime import datetime, timezone
+
+          key = os.environ.get("API_FOOTBALL_KEY", "").strip()
+
+          if not key:
+              raise SystemExit(
+                  "API_FOOTBALL_KEY fehlt in den GitHub Secrets."
+              )
+
+          # Nur viermal täglich automatisch abrufen:
+          # 00:00, 06:00, 12:00 und 18:00 UTC.
+          # Manuelle Starts bleiben jederzeit möglich.
+          now = datetime.now(timezone.utc)
+
+          if os.environ.get("GITHUB_EVENT_NAME") != "workflow_dispatch":
+              if now.hour % 6 != 0 or now.minute != 0:
+                  print("API-Football: außerhalb des Abruffensters.")
+                  raise SystemExit(0)
+
+          base_url = "https://v3.football.api-sports.io"
+          calls = 0
+
+          def api_get(endpoint, params):
+              global calls
+
+              query = "&".join(
+                  f"{name}={value}" for name, value in params.items()
+              )
+              url = f"{base_url}/{endpoint}?{query}"
+
+              request = urllib.request.Request(
+                  url,
+                  headers={"x-apisports-key": key}
+              )
+
+              with urllib.request.urlopen(request, timeout=30) as response:
+                  data = json.load(response)
+
+              calls += 1
+
+              if data.get("errors"):
+                  raise RuntimeError(
+                      f"API-Fehler bei {endpoint}: {data['errors']}"
+                  )
+
+              return data.get("response", [])
+
+          path = "data/api-football-details.json"
+
+          if os.path.exists(path):
+              with open(path, encoding="utf-8") as f:
+                  output = json.load(f)
+          else:
+              output = {"leagues": {}}
+
+          output.setdefault("leagues", {})
+
+          # API-Football League-IDs:
+          # 78 = Bundesliga, 79 = 2. Bundesliga
+          leagues = [
+              (78, "bl1", ("werder", "bremen")),
+              (79, "bl2", ("osnabruck", "osnabrueck"))
+          ]
+
+          def normalize(value):
+              import unicodedata
+              value = unicodedata.normalize("NFKD", value.lower())
+              return "".join(
+                  c for c in value
+                  if c.isalnum() and not unicodedata.combining(c)
+              )
+
+          for league_id, league_key, team_terms in leagues:
+              print(f"Lade Spielplan: Liga {league_id}")
+
+              try:
+                  fixtures = api_get("fixtures", {
+                      "league": league_id,
+                      "season": 2026
+                  })
+              except Exception as error:
+                  print(f"Spielplan fehlgeschlagen: {error}")
+                  continue
+
+              # Spielplan vollständig speichern.
+              league_data = output["leagues"].setdefault(
+                  league_key, {}
+              )
+              league_data["leagueId"] = league_id
+              league_data["fixtures"] = fixtures
+              details = league_data.setdefault("details", {})
+
+              relevant = []
+
+              for item in fixtures:
+                  teams = item.get("teams", {})
+                  home = normalize(teams.get("home", {}).get("name", ""))
+                  away = normalize(teams.get("away", {}).get("name", ""))
+
+                  target = (
+                      any(term in home for term in team_terms)
+                      or any(term in away for term in team_terms)
+                  )
+
+                  if not target:
+                      continue
+
+                  status = item.get("fixture", {}).get("status", {}).get("short", "")
+                  date = item.get("fixture", {}).get("date", "")
+
+                  if status in ("FT", "AET", "PEN", "1H", "HT", "2H", "ET", "P"):
+                      relevant.append((date, item, status))
+
+              # Nur das jüngste abgeschlossene oder laufende Spiel
+              # des jeweiligen Vereins erhält drei Detailabrufe.
+              completed = [
+                  entry for entry in relevant
+                  if entry[2] in ("FT", "AET", "PEN")
+              ]
+
+              live = [
+                  entry for entry in relevant
+                  if entry[2] in ("1H", "HT", "2H", "ET", "P")
+              ]
+
+              candidates = completed or live
+
+              if not candidates:
+                  print(f"Keine passenden vergangenen/laufenden Spiele: {league_key}")
+                  continue
+
+              _, selected, _ = max(candidates, key=lambda entry: entry[0])
+              fixture_id = str(selected.get("fixture", {}).get("id"))
+
+              if not fixture_id:
+                  continue
+
+              # Bereits gespeicherte Details nur aktualisieren,
+              # wenn der ausgewählte Spielstatus sich geändert hat
+              # oder noch keine Details vorhanden sind.
+              old = details.get(fixture_id, {})
+              current_status = selected.get("fixture", {}).get("status", {}).get("short")
+
+              if old.get("status") == current_status and old.get("complete"):
+                  print(f"Details bereits vorhanden: {fixture_id}")
+                  continue
+
+              print(f"Lade Details für Spiel {fixture_id}")
+
+              detail_data = {
+                  "fixture": selected,
+                  "status": current_status,
+                  "complete": False
+              }
+
+              try:
+                  detail_data["events"] = api_get(
+                      "fixtures/events", {"fixture": fixture_id}
+                  )
+                  detail_data["lineups"] = api_get(
+                      "fixtures/lineups", {"fixture": fixture_id}
+                  )
+                  detail_data["statistics"] = api_get(
+                      "fixtures/statistics", {"fixture": fixture_id}
+                  )
+                  detail_data["complete"] = True
+                  details[fixture_id] = detail_data
+
+              except Exception as error:
+                  print(f"Detailabruf fehlgeschlagen: {error}")
+                  # Vorherige vollständige Details nicht überschreiben.
+                  if fixture_id not in details:
+                      details[fixture_id] = detail_data
+
+          output["updatedAt"] = datetime.now(timezone.utc).isoformat()
+
+          with open(path, "w", encoding="utf-8") as f:
+              json.dump(output, f, ensure_ascii=False, indent=2)
+
+          print(f"API-Football-Abrufe in diesem Lauf: {calls}")
+          print(f"Gespeichert: {path}")
           PY
 
       - name: Daten speichern
