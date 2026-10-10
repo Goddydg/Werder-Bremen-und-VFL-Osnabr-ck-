@@ -5,10 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#071b13">
 <title>Werder Bremen & VfL Osnabrück</title>
-
 <style>
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
 body{margin:0;background:#071b13;color:#f5f7f5;font-family:Arial,sans-serif}
 header{padding:20px 16px;background:#103b28}
 header h1{margin:0;font-size:25px}
@@ -19,6 +17,7 @@ main{padding:12px}
 .league-purple{background:#20142d;border-color:#593477;border-top:5px solid #a855f7}
 h2{font-size:22px;margin:4px 0 14px}
 h3{font-size:18px;margin:20px 0 10px}
+h4{font-size:15px;margin:12px 0}
 .club{display:inline-block;padding:7px 11px;margin-bottom:12px;border-radius:8px;background:#1d7045;color:white;font-weight:bold}
 .league-purple .club{background:#6b21a8}
 .selector{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0}
@@ -50,22 +49,16 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 .live-badge{display:inline-block;background:#e32636;color:#fff;border-radius:5px;padding:3px 7px;font-size:11px;font-weight:bold;margin-right:5px}
 .finished-badge{display:inline-block;background:#40584a;color:#fff;border-radius:5px;padding:3px 7px;font-size:11px;margin-right:5px}
 .update-info{font-size:12px;color:#a9beb0;margin-top:8px}
-
-/* Begegnung antippen */
-.match-button{width:100%;padding:0;border:0;background:transparent;color:inherit;text-align:left;font:inherit;cursor:pointer}
-.match-button:focus-visible{outline:2px solid #fff;outline-offset:4px;border-radius:5px}
+.match-button{display:block;width:100%;padding:0;border:0;background:transparent;color:inherit;text-align:left;font:inherit;cursor:pointer}
+.match-button:focus-visible{outline:2px solid white;outline-offset:4px}
 .tap-hint{font-size:11px;opacity:.8;margin-top:8px}
 .match-details{margin-top:12px;padding:12px;border-radius:10px;background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.18)}
-.match-details h4{font-size:15px;margin:4px 0 10px}
 .detail-line{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:13px}
-.detail-line:last-child{border-bottom:0}
 .detail-label{opacity:.8}
 .scorer{padding:9px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:13px}
-.scorer:last-child{border-bottom:0}
 .no-data{font-size:13px;line-height:1.5;opacity:.85}
 </style>
 </head>
-
 <body>
 <header>
   <h1>⚽ Werder & VfL</h1>
@@ -126,73 +119,61 @@ async function loadFile(file){
 }
 
 async function loadLiveGames(key){
-  const url=`https://api.openligadb.de/getmatchdata/${key}/${season}`;
-  const data=await loadJSON(url);
-  if(!Array.isArray(data))throw new Error('Ungültige Spieldaten');
-  return data;
+  const response=await loadJSON(
+    `https://api.openligadb.de/getmatchdata/${key}/${season}`
+  );
+  if(!Array.isArray(response))throw new Error('Ungültige Spieldaten');
+  return response;
 }
 
-function getGames(key){
-  return matches[key]||[];
-}
+function getGames(key){return matches[key]||[]}
 
 function roundNumber(match){
   return Number(match.group?.groupOrderID??match.groupOrderID??match.matchday??0);
 }
 
-function gameDate(match){
-  return match.matchDateTime||null;
-}
-
-function isFinished(match){
-  return Boolean(match.matchIsFinished);
-}
+function gameDate(match){return match.matchDateTime||null}
+function isFinished(match){return Boolean(match.matchIsFinished)}
 
 function findDefaultRound(games){
   const rounds=[...new Set(games.map(roundNumber).filter(n=>n>0))]
     .sort((a,b)=>a-b);
-
   if(!rounds.length)return null;
 
   const now=Date.now();
   const today=new Date().toDateString();
 
-  const todayRounds=games
-    .filter(g=>gameDate(g)&&new Date(gameDate(g)).toDateString()===today)
+  const todayRounds=games.filter(g=>gameDate(g)&&
+    new Date(gameDate(g)).toDateString()===today)
     .map(roundNumber).filter(n=>n>0);
-
   if(todayRounds.length)return todayRounds[0];
 
-  const upcoming=games
-    .filter(g=>!isFinished(g)&&gameDate(g)&&new Date(gameDate(g)).getTime()>=now)
+  const upcoming=games.filter(g=>!isFinished(g)&&gameDate(g)&&
+    new Date(gameDate(g)).getTime()>=now)
     .sort((a,b)=>new Date(gameDate(a))-new Date(gameDate(b)));
-
   if(upcoming.length)return roundNumber(upcoming[0]);
 
-  const unfinished=games
-    .filter(g=>!isFinished(g)&&roundNumber(g)>0)
+  const unfinished=games.filter(g=>!isFinished(g)&&roundNumber(g)>0)
     .sort((a,b)=>new Date(gameDate(a)||0)-new Date(gameDate(b)||0));
-
   if(unfinished.length)return roundNumber(unfinished[0]);
 
   return Math.max(...rounds);
 }
 
 function ensureRound(key){
-  if(selectedRound[key]===null){
+  if(selectedRound[key]===null)
     selectedRound[key]=findDefaultRound(getGames(key));
-  }
 }
 
 function changeRound(key,value){
   selectedRound[key]=Number(value);
+  expandedMatch[key]=null;
   renderGames(key);
 }
 
 function roundSelector(key){
   const rounds=[...new Set(getGames(key).map(roundNumber).filter(n=>n>0))]
     .sort((a,b)=>a-b);
-
   ensureRound(key);
 
   if(!rounds.length)return '<p class="muted">Keine Spieltage verfügbar.</p>';
@@ -227,7 +208,6 @@ function gameScore(match){
     !best||Number(r.resultTypeID||0)>Number(best.resultTypeID||0)?r:best,null);
 
   if(!result||result.pointsTeam1==null||result.pointsTeam2==null)return '– : –';
-
   return `${result.pointsTeam1} : ${result.pointsTeam2}`;
 }
 
@@ -248,12 +228,10 @@ function formatDate(value){
 }
 
 function statusHTML(match){
-  if(isFinished(match)){
+  if(isFinished(match))
     return '<span class="finished-badge">BEENDET</span> '+esc(formatDate(gameDate(match)));
-  }
-  if(isLive(match)){
+  if(isLive(match))
     return '<span class="live-badge">● LIVE</span> '+esc(formatDate(gameDate(match)));
-  }
   return esc(formatDate(gameDate(match)));
 }
 
@@ -267,21 +245,18 @@ function isVfL(name){
   return n.includes('osnabrück')||n.includes('osnabrueck')||n.includes('vfl osnabr');
 }
 
-/* Erstellt das aufklappbare Detailfenster */
+/* Details für eine Begegnung */
 function detailsHTML(match){
   const names=teamNames(match);
   const results=[...(match.matchResults||[])].sort(
     (a,b)=>Number(a.resultTypeID||0)-Number(b.resultTypeID||0)
   );
-
-  const goals=Array.isArray(match.goals)?match.goals:[];
+  const goals=Array.isArray(match.goals)?[...match.goals]:[];
   const location=match.matchLocation?.locationStadium||
-                 match.location?.locationStadium||
-                 match.matchLocation?.locationName||
-                 '';
+    match.location?.locationStadium||
+    match.matchLocation?.locationName||'';
 
-  let html='<div class="match-details">';
-  html+='<h4>📋 Spieldetails</h4>';
+  let html='<div class="match-details"><h4>📋 Spieldetails</h4>';
 
   html+=`<div class="detail-line">
     <span class="detail-label">Begegnung</span>
@@ -295,20 +270,16 @@ function detailsHTML(match){
 
   if(location){
     html+=`<div class="detail-line">
-      <span class="detail-label">Spielort</span>
-      <span>${esc(location)}</span>
+      <span class="detail-label">Spielort</span><span>${esc(location)}</span>
     </div>`;
   }
 
   if(results.length){
     html+='<h4>Ergebnisse</h4>';
-
     results.forEach(result=>{
       const label=result.resultName||
         (Number(result.resultTypeID)===1?'Halbzeit':
-         Number(result.resultTypeID)===2?'Endstand':
-         'Spielstand');
-
+         Number(result.resultTypeID)===2?'Endstand':'Spielstand');
       html+=`<div class="detail-line">
         <span class="detail-label">${esc(label)}</span>
         <b>${esc(result.pointsTeam1)} : ${esc(result.pointsTeam2)}</b>
@@ -320,13 +291,9 @@ function detailsHTML(match){
 
   if(goals.length){
     goals.sort((a,b)=>Number(a.matchMinute||0)-Number(b.matchMinute||0));
-
     goals.forEach(goal=>{
       const minute=goal.matchMinute!=null?`${goal.matchMinute}′`:'';
       const scorer=goal.goalGetterName||'Unbekannter Torschütze';
-      const score=goal.scoreTeam1!=null&&goal.scoreTeam2!=null
-        ?`${goal.scoreTeam1} : ${goal.scoreTeam2}`:'';
-
       const extras=[
         goal.isPenalty?'Elfmeter':'',
         goal.isOwnGoal?'Eigentor':''
@@ -335,50 +302,42 @@ function detailsHTML(match){
       html+=`<div class="scorer">
         <b>${esc(minute)}</b> ${esc(scorer)}
         ${extras?`<span class="detail-label"> (${esc(extras)})</span>`:''}
-        ${score?`<span style="float:right">${esc(score)}</span>`:''}
       </div>`;
     });
   }else{
-    html+='<p class="no-data">Für dieses Spiel sind derzeit keine Torschützen verfügbar. Bei noch nicht begonnenen Spielen ist das normal.</p>';
+    html+='<p class="no-data">Für dieses Spiel sind aktuell keine Torschützen hinterlegt.</p>';
   }
 
   html+='<h4>📊 Weitere Statistiken</h4>';
-  html+='<p class="no-data">Ballbesitz, Torschüsse und Ecken werden von der aktuellen Datenquelle nicht zuverlässig für jedes Spiel bereitgestellt. Deshalb zeigen wir hier keine erfundenen Werte an.</p>';
-
+  html+='<p class="no-data">Ballbesitz, Torschüsse und Ecken sind in der aktuellen Datenquelle nicht zuverlässig verfügbar.</p>';
   html+='</div>';
   return html;
 }
 
-function toggleDetails(key,matchID){
-  expandedMatch[key]=expandedMatch[key]===matchID?null:matchID;
+/* WICHTIG: Es wird der Spielindex verwendet, nicht die Spiel-ID. */
+function toggleDetails(key,index){
+  expandedMatch[key]=expandedMatch[key]===index?null:index;
   renderGames(key);
 }
 
 function gamesHTML(key){
   const games=selectedGames(key);
-
-  if(!games.length){
-    return '<p class="muted">Keine Spiele für diesen Spieltag gefunden.</p>';
-  }
+  if(!games.length)return '<p class="muted">Keine Spiele für diesen Spieltag gefunden.</p>';
 
   return games.map((match,index)=>{
     const names=teamNames(match);
-    const id=match.matchID??`${key}-${index}-${gameDate(match)}`;
     const hasWerder=key==='bl1'&&(isWerder(names.home)||isWerder(names.away));
     const hasVfL=key==='bl2'&&(isVfL(names.home)||isVfL(names.away));
     const cssClass=hasWerder?'werder-match':hasVfL?'vfl-match':'';
-
     const homeClass=(key==='bl1'&&isWerder(names.home))||
       (key==='bl2'&&isVfL(names.home))?'team-highlight':'';
-
     const awayClass=(key==='bl1'&&isWerder(names.away))||
       (key==='bl2'&&isVfL(names.away))?'team-highlight':'';
-
-    const expanded=String(expandedMatch[key])===String(id);
+    const expanded=expandedMatch[key]!==null&&expandedMatch[key]===index;
 
     return `<div class="match ${cssClass}">
-      <button class="match-button"
-        onclick="toggleDetails('${key}',${JSON.stringify(id)})"
+      <button type="button" class="match-button"
+        onclick="toggleDetails('${key}',${index})"
         aria-expanded="${expanded}">
         <div class="match-date">${statusHTML(match)}</div>
         <div>
@@ -396,12 +355,10 @@ function gamesHTML(key){
 function getTableRows(data){
   if(Array.isArray(data))return data;
   if(Array.isArray(data?.table))return data.table;
-
   if(Array.isArray(data?.standings)){
     const total=data.standings.find(s=>s.type==='TOTAL');
     return total?.table||data.standings[0]?.table||[];
   }
-
   return [];
 }
 
@@ -411,47 +368,34 @@ function teamName(row){
 
 function tableHTML(data,key){
   const rows=getTableRows(data);
-
   if(!rows.length)return '<p class="muted">Tabelle nicht verfügbar.</p>';
 
-  return `<div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>Pos.</th><th>Verein</th><th>Sp.</th><th>S</th>
-          <th>U</th><th>N</th><th>Tore</th><th>TD</th><th>Pkt.</th>
-        </tr>
-      </thead>
-      <tbody>
-        ${rows.map((row,index)=>{
-          const name=teamName(row);
-          const highlighted=key==='bl1'?isWerder(name):isVfL(name);
-          const played=row.playedGames??row.matchesPlayed??row.played??'–';
-          const wins=row.won??row.wins??row.wonGames??'–';
-          const draws=row.draw??row.draws??row.drawGames??'–';
-          const losses=row.lost??row.losses??row.lostGames??'–';
-          const gf=row.goalsFor??row.goalsScored;
-          const ga=row.goalsAgainst??row.goalsConceded;
-          const goals=gf!==undefined&&ga!==undefined?gf+':'+ga:(row.goals??'–');
-          const difference=row.goalDifference??row.goalDiff??'–';
-          const points=row.points??row.pts??'–';
-          const position=row.position??row.rank??index+1;
+  return `<div class="table-wrap"><table>
+    <thead><tr>
+      <th>Pos.</th><th>Verein</th><th>Sp.</th><th>S</th>
+      <th>U</th><th>N</th><th>Tore</th><th>TD</th><th>Pkt.</th>
+    </tr></thead><tbody>
+    ${rows.map((row,index)=>{
+      const name=teamName(row);
+      const highlighted=key==='bl1'?isWerder(name):isVfL(name);
+      const played=row.playedGames??row.matchesPlayed??row.played??'–';
+      const wins=row.won??row.wins??row.wonGames??'–';
+      const draws=row.draw??row.draws??row.drawGames??'–';
+      const losses=row.lost??row.losses??row.lostGames??'–';
+      const gf=row.goalsFor??row.goalsScored;
+      const ga=row.goalsAgainst??row.goalsConceded;
+      const goals=gf!==undefined&&ga!==undefined?gf+':'+ga:(row.goals??'–');
+      const difference=row.goalDifference??row.goalDiff??'–';
+      const points=row.points??row.pts??'–';
+      const position=row.position??row.rank??index+1;
 
-          return `<tr class="${highlighted?(key==='bl1'?'werder-row':'vfl-row'):''}">
-            <td>${esc(position)}</td>
-            <td>${esc(name)}</td>
-            <td>${esc(played)}</td>
-            <td>${esc(wins)}</td>
-            <td>${esc(draws)}</td>
-            <td>${esc(losses)}</td>
-            <td>${esc(goals)}</td>
-            <td>${esc(difference)}</td>
-            <td><b>${esc(points)}</b></td>
-          </tr>`;
-        }).join('')}
-      </tbody>
-    </table>
-  </div>`;
+      return `<tr class="${highlighted?(key==='bl1'?'werder-row':'vfl-row'):''}">
+        <td>${esc(position)}</td><td>${esc(name)}</td><td>${esc(played)}</td>
+        <td>${esc(wins)}</td><td>${esc(draws)}</td><td>${esc(losses)}</td>
+        <td>${esc(goals)}</td><td>${esc(difference)}</td><td><b>${esc(points)}</b></td>
+      </tr>`;
+    }).join('')}
+    </tbody></table></div>`;
 }
 
 function renderGames(key){
@@ -462,14 +406,10 @@ function renderGames(key){
 function render(){
   renderGames('bl1');
   renderGames('bl2');
-
   document.getElementById('bl1-table').innerHTML=tableHTML(standings.bl1,'bl1');
   document.getElementById('bl2-table').innerHTML=tableHTML(standings.bl2,'bl2');
 
-  const stamp=lastUpdate
-    ?'Zuletzt geprüft: '+lastUpdate.toLocaleTimeString('de-DE')
-    :'';
-
+  const stamp=lastUpdate?'Zuletzt geprüft: '+lastUpdate.toLocaleTimeString('de-DE'):'';
   document.getElementById('bl1-update').textContent=stamp;
   document.getElementById('bl2-update').textContent=stamp;
 }
@@ -484,59 +424,42 @@ async function refreshData(showError=false){
       loadLiveGames('bl2')
     ]);
 
-    if(liveResults[0].status==='fulfilled'){
-      matches.bl1=liveResults[0].value;
-    }else{
-      console.warn('BL1 Live-Abruf fehlgeschlagen:',liveResults[0].reason);
-    }
+    if(liveResults[0].status==='fulfilled')matches.bl1=liveResults[0].value;
+    else console.warn('BL1 Live-Abruf fehlgeschlagen:',liveResults[0].reason);
 
-    if(liveResults[1].status==='fulfilled'){
-      matches.bl2=liveResults[1].value;
-    }else{
-      console.warn('BL2 Live-Abruf fehlgeschlagen:',liveResults[1].reason);
-    }
+    if(liveResults[1].status==='fulfilled')matches.bl2=liveResults[1].value;
+    else console.warn('BL2 Live-Abruf fehlgeschlagen:',liveResults[1].reason);
 
     try{
       const [bl1Table,bl2Table]=await Promise.all([
         loadFile('bundesliga.json'),
         loadFile('2bundesliga-tabelle.json')
       ]);
-
       standings.bl1=bl1Table;
       standings.bl2=bl2Table;
     }catch(error){
       console.warn('Tabellen konnten nicht aktualisiert werden:',error);
     }
 
-    if(selectedRound.bl1===null){
-      selectedRound.bl1=findDefaultRound(getGames('bl1'));
-    }
-
-    if(selectedRound.bl2===null){
-      selectedRound.bl2=findDefaultRound(getGames('bl2'));
-    }
+    if(selectedRound.bl1===null)selectedRound.bl1=findDefaultRound(getGames('bl1'));
+    if(selectedRound.bl2===null)selectedRound.bl2=findDefaultRound(getGames('bl2'));
 
     lastUpdate=new Date();
     render();
-
   }catch(error){
     console.error('Aktualisierung fehlgeschlagen:',error);
-
     if(showError){
       document.getElementById('bl1-games').innerHTML=
         '<p class="error">Live-Daten konnten nicht geladen werden. Bitte später erneut versuchen.</p>';
     }
-
   }finally{
     loading=false;
   }
 }
 
-/* Automatische Aktualisierung alle 2 Sekunden */
 refreshData();
 setInterval(()=>refreshData(),2000);
 
-/* Beim Zurückkehren zur App sofort aktualisieren */
 document.addEventListener('visibilitychange',()=>{
   if(!document.hidden)refreshData();
 });
