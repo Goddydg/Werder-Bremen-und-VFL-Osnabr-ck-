@@ -1,10 +1,9 @@
-
 name: Fussballdaten aktualisieren
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17 * * * *"
+    - cron: "*/15 * * * *"
 
 permissions:
   contents: write
@@ -23,19 +22,19 @@ jobs:
         run: |
           mkdir -p data
 
-          curl -fsS \
+          curl -fsS --retry 3 --retry-delay 5 \
             -H "X-Auth-Token: $TOKEN" \
             "https://api.football-data.org/v4/competitions/BL1/standings" \
             -o data/bundesliga.json
 
-          curl -fsS \
+          curl -fsS --retry 3 --retry-delay 5 \
             -H "X-Auth-Token: $TOKEN" \
             "https://api.football-data.org/v4/competitions/BL1/matches" \
             -o data/bundesliga-spiele.json
 
       - name: Zweite Bundesliga abrufen
         run: |
-          curl -fsS \
+          curl -fsS --retry 3 --retry-delay 5 \
             "https://api.openligadb.de/getmatchdata/bl2/2026" \
             -o data/2bundesliga-spiele.json
 
@@ -76,9 +75,8 @@ jobs:
               )
 
               if result is None:
-                  results = match.get("matchResults", [])
                   result = max(
-                      results,
+                      match.get("matchResults", []),
                       key=lambda r: r.get("resultTypeID", 0),
                       default=None
                   )
@@ -95,7 +93,8 @@ jobs:
               names[home_id] = home.get("teamName", "Unbekannt")
               names[away_id] = away.get("teamName", "Unbekannt")
 
-              h, a = teams[home_id], teams[away_id]
+              h = teams[home_id]
+              a = teams[away_id]
 
               h["playedGames"] += 1
               a["playedGames"] += 1
@@ -122,6 +121,7 @@ jobs:
 
           for team_id, stats in teams.items():
               name = names[team_id]
+
               table.append({
                   "position": 0,
                   "team": {
@@ -132,7 +132,8 @@ jobs:
                       "crest": ""
                   },
                   **stats,
-                  "goalDifference": stats["goalsFor"] - stats["goalsAgainst"]
+                  "goalDifference":
+                      stats["goalsFor"] - stats["goalsAgainst"]
               })
 
           table.sort(
@@ -159,7 +160,11 @@ jobs:
               }]
           }
 
-          with open("data/2bundesliga-tabelle.json", "w", encoding="utf-8") as f:
+          with open(
+              "data/2bundesliga-tabelle.json",
+              "w",
+              encoding="utf-8"
+          ) as f:
               json.dump(output, f, ensure_ascii=False, indent=2)
 
           print(f"Tabelle erstellt: {len(table)} Mannschaften")
