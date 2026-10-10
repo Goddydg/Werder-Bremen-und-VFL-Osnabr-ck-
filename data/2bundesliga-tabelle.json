@@ -35,13 +35,13 @@
             "tla": "",
             "crest": ""
           },
-          "playedGames": 6,
+          "playedGames": 7,
           "won": 5,
-          "draw": 1,
+          "draw": 2,
           "lost": 0,
-          "points": 16,
-          "goalsFor": 16,
-          "goalsAgainst": 6,
+          "points": 17,
+          "goalsFor": 20,
+          "goalsAgainst": 10,
           "goalDifference": 10
         },
         {
@@ -83,6 +83,24 @@
         {
           "position": 5,
           "team": {
+            "id": 131,
+            "name": "VfL Wolfsburg",
+            "shortName": "VfL Wolfsburg",
+            "tla": "",
+            "crest": ""
+          },
+          "playedGames": 7,
+          "won": 3,
+          "draw": 3,
+          "lost": 1,
+          "points": 12,
+          "goalsFor": 19,
+          "goalsAgainst": 12,
+          "goalDifference": 7
+        },
+        {
+          "position": 6,
+          "team": {
             "id": 76,
             "name": "1. FC Kaiserslautern",
             "shortName": "1. FC Kaiserslautern",
@@ -97,24 +115,6 @@
           "goalsFor": 6,
           "goalsAgainst": 4,
           "goalDifference": 2
-        },
-        {
-          "position": 6,
-          "team": {
-            "id": 131,
-            "name": "VfL Wolfsburg",
-            "shortName": "VfL Wolfsburg",
-            "tla": "",
-            "crest": ""
-          },
-          "playedGames": 6,
-          "won": 3,
-          "draw": 2,
-          "lost": 1,
-          "points": 11,
-          "goalsFor": 15,
-          "goalsAgainst": 8,
-          "goalDifference": 7
         },
         {
           "position": 7,
