@@ -12,8 +12,8 @@
 <body>
 <header><h1>⚽ Werder & VfL</h1><p>Bundesliga · Spieltage · Tabellen</p></header>
 <main>
-  <section class="league league-green"><h2>🟢 1. Bundesliga</h2><div class="club">🟢 SV Werder Bremen</div><h3>Spiele des Spieltags</h3><div id="bl1-selector"></div><div id="bl1-games">Daten werden geladen …</div><h3>Tabelle</h3><div id="bl1-table">Tabelle wird geladen …</div><div class="update-info" id="bl1-update"></div><button class="refresh" type="button" onclick="refreshData(true)">Daten jetzt aktualisieren</button></section>
-  <section class="league league-purple"><h2>🟣 2. Bundesliga</h2><div class="club">🟣 VfL Osnabrück</div><h3>Spiele des Spieltags</h3><div id="bl2-selector"></div><div id="bl2-games">Daten werden geladen …</div><h3>Tabelle</h3><div id="bl2-table">Tabelle wird geladen …</div><div class="update-info" id="bl2-update"></div><button class="refresh" type="button" onclick="refreshData(true)">Daten jetzt aktualisieren</button></section>
+<section class="league league-green"><h2>🟢 1. Bundesliga</h2><div class="club">🟢 SV Werder Bremen</div><h3>Spiele des Spieltags</h3><div id="bl1-selector"></div><div id="bl1-games">Daten werden geladen …</div><h3>Tabelle</h3><div id="bl1-table">Tabelle wird geladen …</div><div class="update-info" id="bl1-update"></div><button class="refresh" type="button" onclick="refreshData(true)">Daten jetzt aktualisieren</button></section>
+<section class="league league-purple"><h2>🟣 2. Bundesliga</h2><div class="club">🟣 VfL Osnabrück</div><h3>Spiele des Spieltags</h3><div id="bl2-selector"></div><div id="bl2-games">Daten werden geladen …</div><h3>Tabelle</h3><div id="bl2-table">Tabelle wird geladen …</div><div class="update-info" id="bl2-update"></div><button class="refresh" type="button" onclick="refreshData(true)">Daten jetzt aktualisieren</button></section>
 </main>
 <script>
 'use strict';
@@ -72,10 +72,33 @@ function detailsHTML(match,key){const names=teamNames(match),apiMatch=findFootba
 function toggleDetails(key,index){const match=selectedGames(key)[index];if(!match)return;const id=matchKey(match),slot=document.getElementById('details-'+key+'-'+index),hint=document.getElementById('hint-'+key+'-'+index),button=document.getElementById('button-'+key+'-'+index);if(!slot)return;if(expandedMatch[key]===id){expandedMatch[key]=null;slot.innerHTML='';slot.hidden=true;if(hint)hint.textContent='▼ Tippen für Spieldetails und Torschützen';if(button)button.setAttribute('aria-expanded','false');}else{expandedMatch[key]=id;slot.innerHTML=detailsHTML(match,key);slot.hidden=false;if(hint)hint.textContent='▲ Details ausblenden';if(button)button.setAttribute('aria-expanded','true');}}
 function gamesHTML(key){const games=selectedGames(key);if(!games.length)return '<p class="muted">Keine Spiele für diesen Spieltag gefunden.</p>';return games.map((match,index)=>{const names=teamNames(match),hasWerder=key==='bl1'&&(isWerder(names.home)||isWerder(names.away)),hasVfL=key==='bl2'&&(isVfL(names.home)||isVfL(names.away)),cssClass=hasWerder?'werder-match':hasVfL?'vfl-match':'',homeClass=((key==='bl1'&&isWerder(names.home))||(key==='bl2'&&isVfL(names.home)))?'team-highlight':'',awayClass=((key==='bl1'&&isWerder(names.away))||(key==='bl2'&&isVfL(names.away)))?'team-highlight':'',expanded=expandedMatch[key]===matchKey(match);return `<div class="match ${cssClass}" id="card-${key}-${index}"><button type="button" class="match-button" id="button-${key}-${index}" onclick="toggleDetails('${key}',${index})" aria-expanded="${expanded}"><div class="match-date" id="date-${key}-${index}">${statusHTML(match,key)}</div><div><span class="${homeClass}"><b>${esc(names.home)}</b></span><span class="score" id="score-${key}-${index}">${esc(gameScore(match,key))}</span><span class="${awayClass}"><b>${esc(names.away)}</b></span></div><div class="tap-hint" id="hint-${key}-${index}">${expanded?'▲ Details ausblenden':'▼ Tippen für Spieldetails und Torschützen'}</div></button><div class="details-slot" id="details-${key}-${index}" ${expanded?'':'hidden'}>${expanded?detailsHTML(match,key):''}</div><button type="button" class="lineup-button" onclick="aufstellungAbrufen('${key}',${index})">👥 Aufstellung, Spielerbilder & Statistiken öffnen</button></div>`;}).join('');}
 function getTableRows(data){if(Array.isArray(data))return data;if(Array.isArray(data?.table))return data.table;if(Array.isArray(data?.standings)){const total=data.standings.find(s=>s.type==='TOTAL');return total?.table||data.standings[0]?.table||[];}return [];}
+// Berechnet die Tabelle direkt aus den aktuellen OpenLigaDB-Spieldaten.
+// Laufende Spiele fließen mit dem aktuellen Zwischenstand ein.
+function liveTableFromMatches(key){
+  const games=getGames(key);if(!games.length)return null;
+  const teams=new Map();
+  const ensureTeam=(team)=>{const id=String(team?.teamId??team?.teamName??'');if(!id)return null;if(!teams.has(id))teams.set(id,{position:0,team:{id:team?.teamId,name:team?.teamName,shortName:team?.shortName||team?.teamName},playedGames:0,won:0,draw:0,lost:0,goalsFor:0,goalsAgainst:0,goalDifference:0,points:0});return teams.get(id);};
+  games.forEach(g=>{ensureTeam(g.team1);ensureTeam(g.team2);});
+  let counted=0;
+  games.forEach(g=>{
+    const finished=isFinished(g),live=!finished&&isLive(g,key);if(!finished&&!live)return;
+    const result=(g.matchResults||[]).filter(r=>r.pointsTeam1!=null&&r.pointsTeam2!=null).sort((a,b)=>Number(b.resultTypeID||0)-Number(a.resultTypeID||0))[0];
+    let home,away;if(result){home=Number(result.pointsTeam1);away=Number(result.pointsTeam2);}else if(live){home=0;away=0;}else{return;}
+    const h=ensureTeam(g.team1),a=ensureTeam(g.team2);if(!h||!a)return;
+    h.playedGames++;a.playedGames++;h.goalsFor+=home;h.goalsAgainst+=away;a.goalsFor+=away;a.goalsAgainst+=home;
+    if(home>away){h.won++;a.lost++;h.points+=3;}else if(home<away){a.won++;h.lost++;a.points+=3;}else{h.draw++;a.draw++;h.points++;a.points++;}
+    counted++;
+  });
+  if(!teams.size||!counted)return null;
+  const rows=[...teams.values()];rows.forEach(r=>r.goalDifference=r.goalsFor-r.goalsAgainst);
+  rows.sort((a,b)=>b.points-a.points||b.goalDifference-a.goalDifference||b.goalsFor-a.goalsFor||String(a.team.name).localeCompare(String(b.team.name),'de'));
+  rows.forEach((r,i)=>r.position=i+1);return rows;
+}
 function tableTeamName(row){return row.team?.shortName||row.team?.name||row.teamName||row.name||'';}
 function tableHTML(data,key){const rows=getTableRows(data);if(!rows.length)return '<p class="muted">Tabelle nicht verfügbar.</p>';return `<div class="table-wrap"><table><thead><tr><th>Pos.</th><th>Verein</th><th>Sp.</th><th>S</th><th>U</th><th>N</th><th>Tore</th><th>TD</th><th>Pkt.</th></tr></thead><tbody>${rows.map((row,index)=>{const name=tableTeamName(row),highlighted=key==='bl1'?isWerder(name):isVfL(name),played=row.playedGames??row.matchesPlayed??row.played??'–',wins=row.won??row.wins??row.wonGames??'–',draws=row.draw??row.draws??row.drawGames??'–',losses=row.lost??row.losses??row.lostGames??'–',gf=row.goalsFor??row.goalsScored,ga=row.goalsAgainst??row.goalsConceded,goals=gf!==undefined&&ga!==undefined?gf+':'+ga:(row.goals??'–'),difference=row.goalDifference??row.goalDiff??'–',points=row.points??row.pts??'–',position=row.position??row.rank??index+1;return `<tr class="${highlighted?(key==='bl1'?'werder-row':'vfl-row'):''}"><td>${esc(position)}</td><td>${esc(name)}</td><td>${esc(played)}</td><td>${esc(wins)}</td><td>${esc(draws)}</td><td>${esc(losses)}</td><td>${esc(goals)}</td><td>${esc(difference)}</td><td><b>${esc(points)}</b></td></tr>`;}).join('')}</tbody></table></div>`;}
 function renderGames(key){document.getElementById(key+'-selector').innerHTML=roundSelector(key);document.getElementById(key+'-games').innerHTML=gamesHTML(key);}
-function renderInitial(){renderGames('bl1');renderGames('bl2');document.getElementById('bl1-table').innerHTML=tableHTML(standings.bl1,'bl1');document.getElementById('bl2-table').innerHTML=tableHTML(standings.bl2,'bl2');initialRenderDone=true;}
+function renderInitial(){renderGames('bl1');renderGames('bl2');document.getElementById('bl1-table').innerHTML=tableHTML(liveTableFromMatches('bl1')||standings.bl1,'bl1');document.getElementById('bl2-table').innerHTML=tableHTML(liveTableFromMatches('bl2')||standings.bl2,'bl2');initialRenderDone=true;}
+function renderTables(){document.getElementById('bl1-table').innerHTML=tableHTML(liveTableFromMatches('bl1')||standings.bl1,'bl1');document.getElementById('bl2-table').innerHTML=tableHTML(liveTableFromMatches('bl2')||standings.bl2,'bl2');}
 function updateLiveDisplay(key){selectedGames(key).forEach((match,index)=>{const date=document.getElementById(`date-${key}-${index}`),score=document.getElementById(`score-${key}-${index}`),slot=document.getElementById(`details-${key}-${index}`);if(date)date.innerHTML=statusHTML(match,key);if(score)score.textContent=gameScore(match,key);if(slot&&!slot.hidden&&expandedMatch[key]===matchKey(match))slot.innerHTML=detailsHTML(match,key);});}
 async function loadSavedSources(){
   const jobs=[
@@ -99,9 +122,6 @@ async function loadSavedSources(){
         footballMatches.bl2=Array.isArray(data.matches)?data.matches:[];
         break;
       case 'api-football':{
-        // Schema des GitHub-Workflows: leagues.bl1/bl2.fixtures plus details[fixtureId].
-        // Für die Detailansicht werden Events, Aufstellungen und Statistiken
-        // aus der gespeicherten Detaildatei an den jeweiligen Spielplan-Eintrag gehängt.
         const convertLeague=(leagueKey)=>{
           const league=data?.leagues?.[leagueKey];
           if(!league)return [];
@@ -111,31 +131,19 @@ async function loadSavedSources(){
             const id=String(fixture?.fixture?.id??'');
             const saved=details[id]||{};
             const baseFixture=saved.fixture||fixture;
-            return {
-              ...fixture,
-              ...baseFixture,
-              events:Array.isArray(saved.events)?saved.events:[],
-              lineups:Array.isArray(saved.lineups)?saved.lineups:[],
-              statistics:Array.isArray(saved.statistics)?saved.statistics:[],
-              _savedDetailsComplete:Boolean(saved.complete)
-            };
+            return {...fixture,...baseFixture,events:Array.isArray(saved.events)?saved.events:[],lineups:Array.isArray(saved.lineups)?saved.lineups:[],statistics:Array.isArray(saved.statistics)?saved.statistics:[],_savedDetailsComplete:Boolean(saved.complete)};
           });
         };
-        const apiBl1=convertLeague('bl1');
-        const apiBl2=convertLeague('bl2');
         const merge=(existing,added)=>{
           const byId=new Map();
           [...(existing||[]),...(added||[])].forEach(match=>{
             const id=match?.fixture?.id;
-            if(id!=null){
-              const previous=byId.get(String(id));
-              byId.set(String(id),previous?{...previous,...match}:match);
-            }
+            if(id!=null){const previous=byId.get(String(id));byId.set(String(id),previous?{...previous,...match}:match);}
           });
           return [...byId.values()];
         };
-        footballMatches.bl1=merge(footballMatches.bl1,apiBl1);
-        footballMatches.bl2=merge(footballMatches.bl2,apiBl2);
+        footballMatches.bl1=merge(footballMatches.bl1,convertLeague('bl1'));
+        footballMatches.bl2=merge(footballMatches.bl2,convertLeague('bl2'));
         break;
       }
       case 'bl1-openliga':
@@ -144,8 +152,33 @@ async function loadSavedSources(){
     }
   });
 }
-async function refreshData(showError=false){if(loading)return;loading=true;try{const results=await Promise.allSettled([loadLiveGames('bl1'),loadLiveGames('bl2')]);if(results[0].status==='fulfilled')matches.bl1=results[0].value;else console.warn('BL1 Live-Abruf fehlgeschlagen:',results[0].reason);if(results[1].status==='fulfilled')matches.bl2=results[1].value;else console.warn('BL2 Live-Abruf fehlgeschlagen:',results[1].reason);await loadSavedSources();const tableResults=await Promise.allSettled([loadFile('bundesliga.json'),loadFile('2bundesliga-tabelle.json')]);if(tableResults[0].status==='fulfilled')standings.bl1=tableResults[0].value;if(tableResults[1].status==='fulfilled')standings.bl2=tableResults[1].value;if(selectedRound.bl1===null)selectedRound.bl1=findDefaultRound(getGames('bl1'));if(selectedRound.bl2===null)selectedRound.bl2=findDefaultRound(getGames('bl2'));lastUpdate=new Date();if(!initialRenderDone)renderInitial();else{updateLiveDisplay('bl1');updateLiveDisplay('bl2');}const stamp='Zuletzt geprüft: '+lastUpdate.toLocaleTimeString('de-DE');document.getElementById('bl1-update').textContent=stamp;document.getElementById('bl2-update').textContent=stamp;}catch(error){console.error('Aktualisierung fehlgeschlagen:',error);if(showError)alert('Live-Daten konnten nicht geladen werden. Bitte später erneut versuchen.');}finally{loading=false;}}
-refreshData();setInterval(()=>refreshData(),15000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshData();});
+async function refreshData(showError=false){
+  if(loading)return;
+  loading=true;
+  try{
+    const results=await Promise.allSettled([loadLiveGames('bl1'),loadLiveGames('bl2')]);
+    if(results[0].status==='fulfilled')matches.bl1=results[0].value;else console.warn('BL1 Live-Abruf fehlgeschlagen:',results[0].reason);
+    if(results[1].status==='fulfilled')matches.bl2=results[1].value;else console.warn('BL2 Live-Abruf fehlgeschlagen:',results[1].reason);
+    await loadSavedSources();
+    const tableResults=await Promise.allSettled([loadFile('bundesliga.json'),loadFile('2bundesliga-tabelle.json')]);
+    if(tableResults[0].status==='fulfilled')standings.bl1=tableResults[0].value;
+    if(tableResults[1].status==='fulfilled')standings.bl2=tableResults[1].value;
+    if(selectedRound.bl1===null)selectedRound.bl1=findDefaultRound(getGames('bl1'));
+    if(selectedRound.bl2===null)selectedRound.bl2=findDefaultRound(getGames('bl2'));
+    lastUpdate=new Date();
+    if(!initialRenderDone)renderInitial();
+    else{updateLiveDisplay('bl1');updateLiveDisplay('bl2');renderTables();}
+    const stamp='Live-Tabelle geprüft: '+lastUpdate.toLocaleTimeString('de-DE');
+    document.getElementById('bl1-update').textContent=stamp;
+    document.getElementById('bl2-update').textContent=stamp;
+  }catch(error){
+    console.error('Aktualisierung fehlgeschlagen:',error);
+    if(showError)alert('Live-Daten konnten nicht geladen werden. Bitte später erneut versuchen.');
+  }finally{loading=false;}
+}
+refreshData();
+setInterval(()=>refreshData(),2000);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshData();});
 </script>
 </body>
 </html>
