@@ -33,10 +33,9 @@ th{color:#b9d3c3;font-size:12px}
 .league-purple th,.league-purple td{border-bottom-color:#493257}
 tr.werder-row{background:#1d7045!important;color:white;font-weight:bold}
 tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
-.match{padding:12px 0;border-bottom:1px solid #294536}
+.match{padding:12px;margin:8px 0;border-bottom:1px solid #294536;border-radius:9px}
 .league-purple .match{border-bottom-color:#493257}
-.match:last-child{border-bottom:0}
-.match-date{color:#a9beb0;font-size:12px;margin-bottom:6px}
+.match-date{color:#a9beb0;font-size:12px;margin-bottom:8px}
 .league-purple .match-date{color:#c8b3d9}
 .score{display:inline-block;padding:0 5px;font-weight:bold;white-space:nowrap}
 .muted{color:#a9beb0;font-size:13px}
@@ -44,13 +43,26 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 .error{color:#ffb5a9}
 .refresh{display:block;width:100%;margin:12px 0;padding:12px;border:1px solid #37684f;border-radius:10px;background:#194a34;color:white;font-size:14px}
 .league-purple .refresh{background:#4c1d72;border-color:#8b5bb4}
-.match.werder-match{background:#1d7045;border:1px solid #35a66b;border-radius:10px;padding:12px;margin:8px 0;color:#fff}
-.match.vfl-match{background:#6b21a8;border:1px solid #a855f7;border-radius:10px;padding:12px;margin:8px 0;color:#fff}
+.match.werder-match{background:#1d7045;border:1px solid #35a66b;color:#fff}
+.match.vfl-match{background:#6b21a8;border:1px solid #a855f7;color:#fff}
 .match.werder-match .match-date,.match.vfl-match .match-date{color:#fff}
 .team-highlight{display:inline-block;padding:3px 6px;border-radius:5px;background:rgba(255,255,255,.18);font-weight:bold}
 .live-badge{display:inline-block;background:#e32636;color:#fff;border-radius:5px;padding:3px 7px;font-size:11px;font-weight:bold;margin-right:5px}
 .finished-badge{display:inline-block;background:#40584a;color:#fff;border-radius:5px;padding:3px 7px;font-size:11px;margin-right:5px}
 .update-info{font-size:12px;color:#a9beb0;margin-top:8px}
+
+/* Begegnung antippen */
+.match-button{width:100%;padding:0;border:0;background:transparent;color:inherit;text-align:left;font:inherit;cursor:pointer}
+.match-button:focus-visible{outline:2px solid #fff;outline-offset:4px;border-radius:5px}
+.tap-hint{font-size:11px;opacity:.8;margin-top:8px}
+.match-details{margin-top:12px;padding:12px;border-radius:10px;background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.18)}
+.match-details h4{font-size:15px;margin:4px 0 10px}
+.detail-line{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:13px}
+.detail-line:last-child{border-bottom:0}
+.detail-label{opacity:.8}
+.scorer{padding:9px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:13px}
+.scorer:last-child{border-bottom:0}
+.no-data{font-size:13px;line-height:1.5;opacity:.85}
 </style>
 </head>
 
@@ -93,9 +105,9 @@ const season=2026;
 let standings={};
 let matches={bl1:[],bl2:[]};
 let selectedRound={bl1:null,bl2:null};
+let expandedMatch={bl1:null,bl2:null};
 let lastUpdate=null;
 let loading=false;
-let pollTimer=null;
 
 function esc(value){
   return String(value??'').replace(/[&<>"']/g,c=>({
@@ -255,6 +267,93 @@ function isVfL(name){
   return n.includes('osnabrück')||n.includes('osnabrueck')||n.includes('vfl osnabr');
 }
 
+/* Erstellt das aufklappbare Detailfenster */
+function detailsHTML(match){
+  const names=teamNames(match);
+  const results=[...(match.matchResults||[])].sort(
+    (a,b)=>Number(a.resultTypeID||0)-Number(b.resultTypeID||0)
+  );
+
+  const goals=Array.isArray(match.goals)?match.goals:[];
+  const location=match.matchLocation?.locationStadium||
+                 match.location?.locationStadium||
+                 match.matchLocation?.locationName||
+                 '';
+
+  let html='<div class="match-details">';
+  html+='<h4>📋 Spieldetails</h4>';
+
+  html+=`<div class="detail-line">
+    <span class="detail-label">Begegnung</span>
+    <span>${esc(names.home)} – ${esc(names.away)}</span>
+  </div>`;
+
+  html+=`<div class="detail-line">
+    <span class="detail-label">Spielbeginn</span>
+    <span>${esc(formatDate(gameDate(match)))}</span>
+  </div>`;
+
+  if(location){
+    html+=`<div class="detail-line">
+      <span class="detail-label">Spielort</span>
+      <span>${esc(location)}</span>
+    </div>`;
+  }
+
+  if(results.length){
+    html+='<h4>Ergebnisse</h4>';
+
+    results.forEach(result=>{
+      const label=result.resultName||
+        (Number(result.resultTypeID)===1?'Halbzeit':
+         Number(result.resultTypeID)===2?'Endstand':
+         'Spielstand');
+
+      html+=`<div class="detail-line">
+        <span class="detail-label">${esc(label)}</span>
+        <b>${esc(result.pointsTeam1)} : ${esc(result.pointsTeam2)}</b>
+      </div>`;
+    });
+  }
+
+  html+='<h4>⚽ Torschützen</h4>';
+
+  if(goals.length){
+    goals.sort((a,b)=>Number(a.matchMinute||0)-Number(b.matchMinute||0));
+
+    goals.forEach(goal=>{
+      const minute=goal.matchMinute!=null?`${goal.matchMinute}′`:'';
+      const scorer=goal.goalGetterName||'Unbekannter Torschütze';
+      const score=goal.scoreTeam1!=null&&goal.scoreTeam2!=null
+        ?`${goal.scoreTeam1} : ${goal.scoreTeam2}`:'';
+
+      const extras=[
+        goal.isPenalty?'Elfmeter':'',
+        goal.isOwnGoal?'Eigentor':''
+      ].filter(Boolean).join(' · ');
+
+      html+=`<div class="scorer">
+        <b>${esc(minute)}</b> ${esc(scorer)}
+        ${extras?`<span class="detail-label"> (${esc(extras)})</span>`:''}
+        ${score?`<span style="float:right">${esc(score)}</span>`:''}
+      </div>`;
+    });
+  }else{
+    html+='<p class="no-data">Für dieses Spiel sind derzeit keine Torschützen verfügbar. Bei noch nicht begonnenen Spielen ist das normal.</p>';
+  }
+
+  html+='<h4>📊 Weitere Statistiken</h4>';
+  html+='<p class="no-data">Ballbesitz, Torschüsse und Ecken werden von der aktuellen Datenquelle nicht zuverlässig für jedes Spiel bereitgestellt. Deshalb zeigen wir hier keine erfundenen Werte an.</p>';
+
+  html+='</div>';
+  return html;
+}
+
+function toggleDetails(key,matchID){
+  expandedMatch[key]=expandedMatch[key]===matchID?null:matchID;
+  renderGames(key);
+}
+
 function gamesHTML(key){
   const games=selectedGames(key);
 
@@ -262,8 +361,9 @@ function gamesHTML(key){
     return '<p class="muted">Keine Spiele für diesen Spieltag gefunden.</p>';
   }
 
-  return games.map(match=>{
+  return games.map((match,index)=>{
     const names=teamNames(match);
+    const id=match.matchID??`${key}-${index}-${gameDate(match)}`;
     const hasWerder=key==='bl1'&&(isWerder(names.home)||isWerder(names.away));
     const hasVfL=key==='bl2'&&(isVfL(names.home)||isVfL(names.away));
     const cssClass=hasWerder?'werder-match':hasVfL?'vfl-match':'';
@@ -274,13 +374,21 @@ function gamesHTML(key){
     const awayClass=(key==='bl1'&&isWerder(names.away))||
       (key==='bl2'&&isVfL(names.away))?'team-highlight':'';
 
+    const expanded=String(expandedMatch[key])===String(id);
+
     return `<div class="match ${cssClass}">
-      <div class="match-date">${statusHTML(match)}</div>
-      <div>
-        <span class="${homeClass}"><b>${esc(names.home)}</b></span>
-        <span class="score">${esc(gameScore(match))}</span>
-        <span class="${awayClass}"><b>${esc(names.away)}</b></span>
-      </div>
+      <button class="match-button"
+        onclick="toggleDetails('${key}',${JSON.stringify(id)})"
+        aria-expanded="${expanded}">
+        <div class="match-date">${statusHTML(match)}</div>
+        <div>
+          <span class="${homeClass}"><b>${esc(names.home)}</b></span>
+          <span class="score">${esc(gameScore(match))}</span>
+          <span class="${awayClass}"><b>${esc(names.away)}</b></span>
+        </div>
+        <div class="tap-hint">${expanded?'▲ Details ausblenden':'▼ Tippen für Spielstatistiken und Torschützen'}</div>
+      </button>
+      ${expanded?detailsHTML(match):''}
     </div>`;
   }).join('');
 }
@@ -393,6 +501,7 @@ async function refreshData(showError=false){
         loadFile('bundesliga.json'),
         loadFile('2bundesliga-tabelle.json')
       ]);
+
       standings.bl1=bl1Table;
       standings.bl2=bl2Table;
     }catch(error){
@@ -402,6 +511,7 @@ async function refreshData(showError=false){
     if(selectedRound.bl1===null){
       selectedRound.bl1=findDefaultRound(getGames('bl1'));
     }
+
     if(selectedRound.bl2===null){
       selectedRound.bl2=findDefaultRound(getGames('bl2'));
     }
