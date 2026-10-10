@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -17,8 +18,7 @@ main{padding:12px}
 .league-purple{background:#20142d;border-color:#593477;border-top:5px solid #a855f7}
 h2{font-size:22px;margin:4px 0 14px}
 h3{font-size:18px;margin:20px 0 10px}
-h4{font-size:15px;margin:12px 0}
-.club{display:inline-flex;align-items:center;gap:8px;padding:7px 11px;margin-bottom:12px;border-radius:8px;background:#1d7045;color:white;font-weight:bold}
+.club{display:inline-flex;align-items:center;gap:7px;padding:7px 11px;margin-bottom:12px;border-radius:8px;background:#1d7045;color:white;font-weight:bold;font-size:15px;line-height:1.2}
 .league-purple .club{background:#6b21a8}
 .selector{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0}
 select{max-width:100%;padding:11px;border-radius:9px;background:#173c2a;color:white;border:1px solid #477258;font-size:15px}
@@ -36,8 +36,8 @@ th,td{padding:8px 3px;border-bottom:1px solid #294536;text-align:center;white-sp
 th:nth-child(2),td:nth-child(2){text-align:left}
 .team-cell{display:flex;align-items:center;gap:5px;min-width:0}
 .team-cell span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.team-logo{width:22px;height:22px;object-fit:contain;flex:0 0 22px;vertical-align:middle}
-.club .team-logo{width:26px;height:26px;flex-basis:26px}
+.team-logo{display:block;width:22px;height:22px;object-fit:contain;flex:0 0 22px;vertical-align:middle}
+.club .team-logo{width:22px;height:22px;flex:0 0 22px}
 .match-team{display:inline-flex;align-items:center;gap:5px;vertical-align:middle}
 .match-team .team-logo{width:25px;height:25px;flex-basis:25px}
 th{color:#b9d3c3;font-size:12px}
@@ -88,7 +88,7 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 <main>
   <section class="league league-green">
     <h2>🟢 1. Bundesliga</h2>
-    <div class="club" id="bl1-club">SV Werder Bremen</div>
+    <div class="club" id="bl1-club"><span class="club-name">SV Werder Bremen</span></div>
     <h3>Spiele des Spieltags</h3>
     <div id="bl1-selector"></div>
     <div id="bl1-games">Daten werden geladen …</div>
@@ -99,7 +99,7 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
   </section>
   <section class="league league-purple">
     <h2>🟣 2. Bundesliga</h2>
-    <div class="club" id="bl2-club">VfL Osnabrück</div>
+    <div class="club" id="bl2-club"><span class="club-name">VfL Osnabrück</span></div>
     <h3>Spiele des Spieltags</h3>
     <div id="bl2-selector"></div>
     <div id="bl2-games">Daten werden geladen …</div>
@@ -124,6 +124,12 @@ let lastUpdate=null;
 let loading=false;
 let initialRenderDone=false;
 let lastRenderedTableHTML={bl1:null,bl2:null};
+
+/* Zustand der beiden Vereinswappen */
+const clubLogoState={
+  bl1:{url:'',img:null,failedUrl:''},
+  bl2:{url:'',img:null,failedUrl:''}
+};
 
 function esc(value){
   return String(value??'').replace(/[&<>"']/g,c=>({
@@ -169,12 +175,6 @@ function isSameTeamName(a,b){
     (Math.min(x.length,y.length)>=5&&(x.includes(y)||y.includes(x)))));
 }
 
-/* Vereinswappen:
-   1. Direkt aus den Tabellendaten
-   2. Über die Team-ID
-   3. Über den vollständigen Vereinsnamen
-   4. Über API-Football
-*/
 function teamLogoUrl(name,key,row=null){
   const direct=[
     row?.team?.teamIconUrl,
@@ -184,6 +184,7 @@ function teamLogoUrl(name,key,row=null){
     row?.crest,
     row?.logo
   ].find(url=>typeof url==='string'&&url.trim()!=='');
+
   if(direct)return direct;
 
   const ids=[
@@ -195,6 +196,7 @@ function teamLogoUrl(name,key,row=null){
   ].filter(id=>id!==undefined&&id!==null).map(String);
 
   const allGames=Object.values(matches).flat();
+
   for(const game of allGames){
     for(const team of [game.team1,game.team2]){
       if(!team?.teamIconUrl)continue;
@@ -204,6 +206,7 @@ function teamLogoUrl(name,key,row=null){
   }
 
   const allFootballMatches=Object.values(footballMatches).flat();
+
   for(const game of allFootballMatches){
     for(const team of [
       game.teams?.home,game.teams?.away,
@@ -223,10 +226,57 @@ function teamLogoHTML(name,key,row=null){
   return `<img class="team-logo" src="${esc(url)}" alt="${esc(name)}" loading="lazy" onerror="this.style.display='none'">`;
 }
 
+/*
+ * Vereinswappen nicht bei jedem Refresh neu einsetzen.
+ * Ein vorhandenes, geladenes Bild bleibt unverändert im DOM.
+ */
 function renderClubLogo(key,name){
   const el=document.getElementById(key+'-club');
   if(!el)return;
-  el.innerHTML=teamLogoHTML(name,key)+'<span>'+esc(name)+'</span>';
+
+  let label=el.querySelector('.club-name');
+
+  if(!label){
+    label=document.createElement('span');
+    label.className='club-name';
+    label.textContent=name;
+    el.appendChild(label);
+  }else if(label.textContent!==name){
+    label.textContent=name;
+  }
+
+  const state=clubLogoState[key];
+  const url=teamLogoUrl(name,key);
+
+  if(!url)return;
+  if(state.url===url&&state.img?.isConnected)return;
+  if(state.failedUrl===url)return;
+
+  const img=document.createElement('img');
+  img.className='team-logo';
+  img.alt='';
+  img.setAttribute('aria-hidden','true');
+  img.loading='eager';
+  img.decoding='async';
+
+  img.addEventListener('load',()=>{
+    const old=el.querySelector('img.team-logo');
+
+    /* Erst nach erfolgreichem Laden das alte Wappen ersetzen. */
+    if(old&&old!==img)old.remove();
+    if(label.parentNode===el)el.insertBefore(img,label);
+
+    state.url=url;
+    state.img=img;
+    state.failedUrl='';
+  },{once:true});
+
+  img.addEventListener('error',()=>{
+    state.failedUrl=url;
+    img.remove();
+  },{once:true});
+
+  img.src=url;
 }
 
 function apiDate(match){return match?.fixture?.date||match?.utcDate||null;}
@@ -791,7 +841,7 @@ async function refreshData(showError=false){
 
 refreshData();
 
-/* Unverändert: Prüfung alle 2 Sekunden */
+/* Aktualisierung weiterhin alle 2 Sekunden */
 setInterval(()=>refreshData(),2000);
 
 document.addEventListener('visibilitychange',()=>{
