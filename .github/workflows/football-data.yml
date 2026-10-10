@@ -1,32 +1,50 @@
 
-name: Fussballdaten diagnostizieren
+name: Fussballdaten aktualisieren
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "17 * * * *"
+
+permissions:
+  contents: write
 
 jobs:
-  diagnose:
+  update:
     runs-on: ubuntu-latest
     steps:
-      - name: API-Endpunkte einzeln pruefen
+      - name: Repository laden
+        uses: actions/checkout@v4
+
+      - name: Bundesliga abrufen
         env:
           TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN }}
         run: |
-          for ENDPOINT in \
-            "BL1/matches" \
-            "BL2/standings" \
-            "BL2/matches"
-          do
-            echo "Pruefe $ENDPOINT"
-            STATUS=$(curl -sS \
-              -o /tmp/antwort.json \
-              -w "%{http_code}" \
-              -H "X-Auth-Token: $TOKEN" \
-              "https://api.football-data.org/v4/competitions/$ENDPOINT")
-            echo "HTTP_STATUS: $STATUS"
-            if [ "$STATUS" != "200" ]; then
-              cat /tmp/antwort.json
-              echo
-            fi
-          done
+          mkdir -p data
+
+          curl -fsS \
+            -H "X-Auth-Token: $TOKEN" \
+            "https://api.football-data.org/v4/competitions/BL1/standings" \
+            -o data/bundesliga.json
+
+          curl -fsS \
+            -H "X-Auth-Token: $TOKEN" \
+            "https://api.football-data.org/v4/competitions/BL1/matches" \
+            -o data/bundesliga-spiele.json
+
+      - name: Zweite Bundesliga abrufen
+        run: |
+          curl -fsS \
+            "https://api.openligadb.de/getmatchdata/bl2/2026" \
+            -o data/2bundesliga-spiele.json
+
+      - name: Daten speichern
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet || (
+            git commit -m "Fussballdaten aktualisieren"
+            git push
+          )
 
