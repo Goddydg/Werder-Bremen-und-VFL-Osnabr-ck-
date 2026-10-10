@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -6,113 +5,384 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#071b13">
 <title>Werder & VfL</title>
+
 <style>
 *{box-sizing:border-box}
 body{margin:0;background:#071b13;color:#f5f7f5;font-family:Arial,sans-serif}
-header{padding:22px 16px;background:#103b28}
+header{padding:20px 16px;background:#103b28}
 h1{margin:0;font-size:25px}
-header p{color:#c5d5cb}
+header p{color:#c5d5cb;margin-bottom:0}
 nav{display:flex;gap:8px;padding:12px;overflow-x:auto}
-button{background:#194a34;color:white;border:1px solid #37684f;border-radius:10px;padding:12px;white-space:nowrap;font-size:15px}
+button{background:#194a34;color:white;border:1px solid #37684f;border-radius:10px;padding:12px;white-space:nowrap;font-size:14px}
 button.active{background:#35a66b;color:#071b13;font-weight:bold}
 main{padding:12px}
-h2{font-size:21px}
-.card{background:#10291e;border:1px solid #244a37;border-radius:14px;padding:14px;margin-bottom:14px;overflow:auto}
+h2{font-size:20px;margin-top:0}
+.card{background:#10291e;border:1px solid #244a37;border-radius:14px;padding:14px;margin-bottom:14px;overflow-x:auto}
+.selector{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+select{background:#173c2a;color:white;border:1px solid #477258;border-radius:9px;padding:11px;font-size:15px;max-width:100%}
 table{width:100%;border-collapse:collapse;font-size:13px}
 th,td{padding:9px 5px;border-bottom:1px solid #294536;text-align:center}
 th:nth-child(2),td:nth-child(2){text-align:left}
-tr.focus{background:#1d5136;font-weight:bold}
+tr.focus{background:#1d7045;color:white;font-weight:bold}
 .match{padding:12px 0;border-bottom:1px solid #294536}
+.match:last-child{border-bottom:0}
+.match-date{color:#a9beb0;font-size:12px;margin-bottom:5px}
+.score{font-weight:bold;white-space:nowrap;padding:0 5px}
 .muted{color:#a9beb0;font-size:13px}
 .error{color:#ffb5a9}
+body.vfl-mode header{background:#4c1d72}
+body.vfl-mode button.active{background:#a855f7;color:white}
+body.vfl-mode tr.focus{background:#6b21a8;color:white;font-weight:bold}
+body.vfl-mode select{background:#35194b;border-color:#8b5bb4}
 </style>
 </head>
+
 <body>
 <header>
-<h1>⚽ Werder & VfL</h1>
-<p>Deine Fußball-App · Bundesliga & 2. Bundesliga</p>
+  <h1>⚽ Werder & VfL</h1>
+  <p>Bundesliga und 2. Bundesliga</p>
 </header>
+
 <nav>
-<button class="active" onclick="show('bl1',this)">1. Bundesliga</button>
-<button onclick="show('werder',this)">Werder Bremen</button>
-<button onclick="show('bl2',this)">2. Bundesliga</button>
-<button onclick="show('vfl',this)">VfL Osnabrück</button>
+  <button data-page="bl1" class="active" onclick="show('bl1',this)">1. Bundesliga</button>
+  <button data-page="werder" onclick="show('werder',this)">Werder Bremen</button>
+  <button data-page="bl2" onclick="show('bl2',this)">2. Bundesliga</button>
+  <button data-page="vfl" onclick="show('vfl',this)">VfL Osnabrück</button>
 </nav>
+
 <main id="app">Daten werden geladen …</main>
+
 <script>
 const base='./data/';
-let standings={},matches={},current='bl1';
+
+let standings={};
+let matches={};
+let current='bl1';
+let selectedRound={bl1:null,bl2:null};
+
+function esc(value){
+  return String(value??'').replace(/[&<>"']/g,c=>({
+    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+  }[c]));
+}
 
 async function load(file){
- const r=await fetch(base+file+'?t='+Date.now());
- if(!r.ok) throw Error(file+' nicht gefunden');
- return r.json();
+  const response=await fetch(base+file+'?t='+Date.now());
+  if(!response.ok) throw Error(file+' konnte nicht geladen werden.');
+  return response.json();
 }
-function esc(s){
- return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+function isBL2(page){
+  return page==='bl2'||page==='vfl';
 }
-function date(s){
- return s?new Date(s).toLocaleString('de-DE',{dateStyle:'medium',timeStyle:'short'}):'';
+
+function leagueKey(){
+  return isBL2(current)?'bl2':'bl1';
 }
-function table(data,focus){
- const rows=data?.standings?.find(x=>x.type==='TOTAL')?.table||[];
- if(!rows.length)return '<p>Tabelle nicht verfügbar.</p>';
- return '<table><thead><tr><th>#</th><th>Verein</th><th>Sp</th><th>TD</th><th>Pkt</th></tr></thead><tbody>'+
- rows.map(t=>`<tr class="${t.team.shortName===focus||t.team.name===focus?'focus':''}"><td>${t.position}</td><td>${esc(t.team.shortName||t.team.name)}</td><td>${t.playedGames}</td><td>${t.goalDifference}</td><td><b>${t.points}</b></td></tr>`).join('')+
- '</tbody></table>';
+
+function getGames(key){
+  const data=matches[key];
+  if(Array.isArray(data)) return data;
+  return data?.matches||[];
 }
-function listFootballData(data,team){
- const arr=(data?.matches||[]).filter(m=>!team||m.homeTeam.name.includes(team)||m.awayTeam.name.includes(team));
- if(!arr.length)return '<p>Keine Spiele gefunden.</p>';
- return arr.slice(0,30).map(m=>`<div class="match"><div class="muted">${date(m.utcDate)} · ${esc(m.status)}</div><b>${esc(m.homeTeam.shortName||m.homeTeam.name)}</b> ${m.score?.fullTime?.home??'–'} : ${m.score?.fullTime?.away??'–'} <b>${esc(m.awayTeam.shortName||m.awayTeam.name)}</b></div>`).join('');
+
+function roundNumber(match,key){
+  if(key==='bl1'){
+    return Number(match.matchday??match.season?.currentMatchday??0);
+  }
+  return Number(
+    match.group?.groupOrderID ??
+    match.groupOrderID ??
+    match.matchday ??
+    0
+  );
 }
-function listOpenLiga(data,team){
- const arr=(Array.isArray(data)?data:[]).filter(m=>!team||m.team1?.teamName?.includes(team)||m.team2?.teamName?.includes(team));
- if(!arr.length)return '<p>Keine Spiele gefunden.</p>';
- return arr.slice(0,30).map(m=>{
-  const result=m.matchResults?.find(r=>r.resultTypeID===2)||m.matchResults?.[0];
-  const home=result?.pointsTeam1??'–',away=result?.pointsTeam2??'–';
-  return `<div class="match"><div class="muted">${date(m.matchDateTime)} · ${esc(m.matchIsFinished?'Beendet':'Geplant')}</div><b>${esc(m.team1?.teamName)}</b> ${home} : ${away} <b>${esc(m.team2?.teamName)}</b></div>`;
- }).join('');
+
+function gameDate(match,key){
+  return key==='bl1'
+    ? match.utcDate
+    : match.matchDateTime;
 }
-function show(page,btn){
- current=page;
- document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b===btn));
- render();
+
+function isFinished(match,key){
+  return key==='bl1'
+    ? match.status==='FINISHED'
+    : Boolean(match.matchIsFinished);
 }
-function render(){
- const app=document.getElementById('app');
- if(current==='bl1')app.innerHTML=
-  '<div class="card"><h2>1. Bundesliga · Tabelle</h2>'+table(standings.bl1,'SV Werder Bremen')+'</div>'+
-  '<div class="card"><h2>Spiele</h2>'+listFootballData(matches.bl1)+'</div>';
- if(current==='werder')app.innerHTML=
-  '<div class="card"><h2>1. Bundesliga · Tabelle</h2>'+table(standings.bl1,'SV Werder Bremen')+'</div>'+
-  '<div class="card"><h2>Werder-Spiele</h2>'+listFootballData(matches.bl1,'Werder Bremen')+'</div>';
- if(current==='bl2')app.innerHTML=
-  '<div class="card"><h2>2. Bundesliga · Tabelle</h2>'+table(standings.bl2,'')+'</div>'+
-  '<div class="card"><h2>Spiele</h2>'+listOpenLiga(matches.bl2)+'</div>';
- if(current==='vfl')app.innerHTML=
-  '<div class="card"><h2>2. Bundesliga · Tabelle</h2>'+table(standings.bl2,'')+'</div>'+
-  '<div class="card"><h2>VfL Osnabrück · Spiele</h2>'+listOpenLiga(matches.bl2,'Osnabrück')+'</div>';
+
+function findDefaultRound(games,key){
+  const available=[...new Set(
+    games.map(g=>roundNumber(g,key)).filter(n=>n>0)
+  )].sort((a,b)=>a-b);
+
+  if(!available.length) return null;
+
+  const now=Date.now();
+  const today=new Date().toDateString();
+
+  const todayRounds=games
+    .filter(g=>gameDate(g,key)&&new Date(gameDate(g,key)).toDateString()===today)
+    .map(g=>roundNumber(g,key))
+    .filter(n=>n>0);
+
+  if(todayRounds.length) return todayRounds[0];
+
+  const upcoming=games
+    .filter(g=>!isFinished(g,key)&&gameDate(g,key)&&new Date(gameDate(g,key)).getTime()>=now)
+    .sort((a,b)=>new Date(gameDate(a,key))-new Date(gameDate(b,key)));
+
+  if(upcoming.length) return roundNumber(upcoming[0],key);
+
+  const unfinished=games
+    .filter(g=>!isFinished(g,key)&&roundNumber(g,key)>0)
+    .sort((a,b)=>new Date(gameDate(a,key)||0)-new Date(gameDate(b,key)||0));
+
+  if(unfinished.length) return roundNumber(unfinished[0],key);
+
+  return Math.max(...available);
 }
-async function start(){
- try{
-  const [bl1,bl1matches,bl2table,bl2matches]=await Promise.all([
-   load('bundesliga.json'),
-   load('bundesliga-spiele.json'),
-   load('2bundesliga-tabelle.json'),
-   load('2bundesliga-spiele.json')
-  ]);
-  standings.bl1=bl1;
-  standings.bl2=bl2table;
-  matches.bl1=bl1matches;
-  matches.bl2=bl2matches;
+
+function ensureRound(key){
+  if(selectedRound[key]!==null) return;
+
+  selectedRound[key]=findDefaultRound(getGames(key),key);
+}
+
+function roundSelector(key){
+  const games=getGames(key);
+  const rounds=[...new Set(
+    games.map(g=>roundNumber(g,key)).filter(n=>n>0)
+  )].sort((a,b)=>a-b);
+
+  ensureRound(key);
+
+  if(!rounds.length){
+    return '<p class="muted">Keine Spieltage verfügbar.</p>';
+  }
+
+  return `
+    <div class="selector">
+      <label for="round-select"><b>Spieltag auswählen:</b></label>
+      <select id="round-select" onchange="changeRound('${key}',this.value)">
+        ${rounds.map(n=>`
+          <option value="${n}" ${n===selectedRound[key]?'selected':''}>
+            ${n}. Spieltag
+          </option>
+        `).join('')}
+      </select>
+    </div>
+  `;
+}
+
+function changeRound(key,value){
+  selectedRound[key]=Number(value);
   render();
- }catch(e){
-  document.getElementById('app').innerHTML=
-   '<div class="card"><p class="error">Daten konnten nicht geladen werden.</p><p class="muted">'+esc(e.message)+'</p><button onclick="start()">Erneut laden</button></div>';
- }
 }
+
+function selectedGames(key){
+  ensureRound(key);
+  return getGames(key).filter(
+    g=>roundNumber(g,key)===selectedRound[key]
+  ).sort((a,b)=>
+    new Date(gameDate(a,key)||0)-new Date(gameDate(b,key)||0)
+  );
+}
+
+function teamNames(match,key){
+  if(key==='bl1'){
+    return {
+      home:match.homeTeam?.shortName||match.homeTeam?.name||'Unbekannt',
+      away:match.awayTeam?.shortName||match.awayTeam?.name||'Unbekannt'
+    };
+  }
+  return {
+    home:match.team1?.teamName||'Unbekannt',
+    away:match.team2?.teamName||'Unbekannt'
+  };
+}
+
+function gameScore(match,key){
+  if(key==='bl1'){
+    const home=match.score?.fullTime?.home;
+    const away=match.score?.fullTime?.away;
+    return home==null||away==null?'– : –':home+' : '+away;
+  }
+
+  const results=match.matchResults||[];
+  const result=results.find(r=>r.resultTypeID===2)||
+    results.reduce((best,r)=>
+      !best||Number(r.resultTypeID)>Number(best.resultTypeID)?r:best
+    ,null);
+
+  if(!result) return '– : –';
+  return `${result.pointsTeam1} : ${result.pointsTeam2}`;
+}
+
+function statusText(match,key){
+  if(isFinished(match,key)) return 'Beendet';
+  if(gameDate(match,key)&&new Date(gameDate(match,key))<new Date()){
+    return 'Ergebnis noch nicht verfügbar';
+  }
+  return 'Anstoß: '+formatDate(gameDate(match,key));
+}
+
+function formatDate(value){
+  if(!value) return 'Termin offen';
+  return new Date(value).toLocaleString('de-DE',{
+    weekday:'short',day:'2-digit',month:'2-digit',
+    hour:'2-digit',minute:'2-digit'
+  });
+}
+
+function gamesHTML(key,team){
+  const games=selectedGames(key).filter(match=>{
+    if(!team) return true;
+    const names=teamNames(match,key);
+    return names.home.toLowerCase().includes(team.toLowerCase())||
+           names.away.toLowerCase().includes(team.toLowerCase());
+  });
+
+  if(!games.length){
+    return '<p class="muted">Für diesen Spieltag sind keine passenden Spiele vorhanden.</p>';
+  }
+
+  return games.map(match=>{
+    const names=teamNames(match,key);
+    return `
+      <div class="match">
+        <div class="match-date">${esc(statusText(match,key))}</div>
+        <div>
+          <b>${esc(names.home)}</b>
+          <span class="score">${esc(gameScore(match,key))}</span>
+          <b>${esc(names.away)}</b>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function getTableRows(data){
+  if(Array.isArray(data)) return data;
+  if(Array.isArray(data?.table)) return data.table;
+  if(Array.isArray(data?.standings)){
+    const total=data.standings.find(s=>s.type==='TOTAL');
+    return total?.table||data.standings[0]?.table||[];
+  }
+  return [];
+}
+
+function teamName(row){
+  return row.team?.shortName||
+         row.team?.name||
+         row.teamName||
+         row.name||
+         '';
+}
+
+function tableHTML(data,focus){
+  const rows=getTableRows(data);
+
+  if(!rows.length){
+    return '<p class="muted">Tabelle nicht verfügbar.</p>';
+  }
+
+  return `
+    <table>
+      <thead>
+        <tr><th>#</th><th>Verein</th><th>Sp</th><th>TD</th><th>Pkt</th></tr>
+      </thead>
+      <tbody>
+        ${rows.map((row,index)=>{
+          const name=teamName(row);
+          const highlighted=focus&&
+            (name.toLowerCase().includes(focus.toLowerCase())||
+             focus.toLowerCase().includes(name.toLowerCase()));
+
+          const played=row.playedGames??row.matchesPlayed??row.played??'–';
+          const difference=row.goalDifference??
+            row.goalDiff??row.goalDifference??'–';
+          const points=row.points??row.pts??'–';
+          const position=row.position??row.rank??index+1;
+
+          return `
+            <tr class="${highlighted?'focus':''}">
+              <td>${esc(position)}</td>
+              <td>${esc(name)}</td>
+              <td>${esc(played)}</td>
+              <td>${esc(difference)}</td>
+              <td><b>${esc(points)}</b></td>
+            </tr>
+          `;
+        }).join('')}
+      </tbody>
+    </table>
+  `;
+}
+
+function render(){
+  const app=document.getElementById('app');
+  const key=leagueKey();
+  const isTeam=current==='werder'||current==='vfl';
+  const focus=current==='werder'?'Werder Bremen':
+              current==='vfl'?'Osnabrück':'';
+
+  const leagueName=key==='bl1'?'1. Bundesliga':'2. Bundesliga';
+  const heading=isTeam
+    ?(current==='werder'?'Werder Bremen':'VfL Osnabrück')+' · Spieltag'
+    :leagueName+' · Spieltag';
+
+  app.innerHTML=`
+    <div class="card">
+      <h2>${esc(heading)}</h2>
+      ${roundSelector(key)}
+      ${gamesHTML(key,focus)}
+    </div>
+    <div class="card">
+      <h2>${esc(leagueName)} · Tabelle</h2>
+      ${tableHTML(standings[key],focus)}
+    </div>
+  `;
+}
+
+function show(page,button){
+  current=page;
+  document.body.classList.toggle('vfl-mode',isBL2(page));
+
+  document.querySelectorAll('nav button').forEach(item=>{
+    item.classList.toggle('active',item===button);
+  });
+
+  render();
+}
+
+async function start(){
+  try{
+    const [bl1,bl1Games,bl2Table,bl2Games]=await Promise.all([
+      load('bundesliga.json'),
+      load('bundesliga-spiele.json'),
+      load('2bundesliga-tabelle.json'),
+      load('2bundesliga-spiele.json')
+    ]);
+
+    standings.bl1=bl1;
+    matches.bl1=bl1Games;
+    standings.bl2=bl2Table;
+    matches.bl2=bl2Games;
+
+    ensureRound('bl1');
+    ensureRound('bl2');
+    render();
+  }catch(error){
+    document.getElementById('app').innerHTML=`
+      <div class="card">
+        <p class="error">Die Fußballdaten konnten nicht geladen werden.</p>
+        <p class="muted">${esc(error.message)}</p>
+        <button onclick="start()">Erneut laden</button>
+      </div>
+    `;
+  }
+}
+
 start();
 </script>
 </body>
