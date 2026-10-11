@@ -180,7 +180,7 @@ const data=await loadJSON(`https://site.api.espn.com/apis/site/v2/sports/soccer/
 return (data.events||[]).map(event=>{
 const competition=event.competitions?.[0],teams=competition?.competitors||[];
 const home=teams.find(team=>team.homeAway==='home'),away=teams.find(team=>team.homeAway==='away'),status=event.status||competition?.status||{};
-return {home:normalizeName(home?.team?.displayName||home?.team?.name),away:normalizeName(away?.team?.displayName||away?.team?.name),clock:status.displayClock||'',detail:status.type?.shortDetail||status.type?.detail||'',state:status.type?.state||'',period:status.period||0};
+return {id:String(event.id||''),home:normalizeName(home?.team?.displayName||home?.team?.name),away:normalizeName(away?.team?.displayName||away?.team?.name),homeName:home?.team?.displayName||home?.team?.name||'',awayName:away?.team?.displayName||away?.team?.name||'',clock:status.displayClock||'',detail:status.type?.shortDetail||status.type?.detail||'',state:status.type?.state||'',period:status.period||0};
 }).filter(item=>item.home&&item.away);
 }
 async function refreshESPNLiveMatches(){
@@ -380,24 +380,49 @@ if(key==='bl2'){if(date&&date.getDay()===6&&date.getHours()===20)return 'Sky · 
 if(date&&date.getDay()===0)return 'DAZN';
 return 'Sky · WOW';
 }
-function teamCardTypes(match,key,teamName){
-const apiMatch=findFootballMatch(match,key),team=normalizeName(teamName);
-if(!apiMatch)return [];
-const home=apiMatch.teams?.home,away=apiMatch.teams?.away;
-const isHome=normalizeName(home?.name||apiMatch.homeTeam?.name)===team;
-const isAway=normalizeName(away?.name||apiMatch.awayTeam?.name)===team;
-const events=apiEvents(apiMatch),types=[];
-for(const event of events){
-const eventType=String(event.type||'').toLowerCase(),detail=String(event.detail||'').toLowerCase();
-if(!eventType.includes('card')&&!detail.includes('card')&&!detail.includes('red')&&!detail.includes('yellow'))continue;
-const eventTeam=normalizeName(event.team?.name||'');
-const sameTeam=(eventTeam&&(eventTeam===team||eventTeam.includes(team)||team.includes(eventTeam)))||
-(event.team?.id!=null&&((isHome&&String(event.team.id)===String(home?.id))||(isAway&&String(event.team.id)===String(away?.id))));
-if(!sameTeam)continue;
-if(detail.includes('red')||detail.includes('second yellow')||detail.includes('yellow-red'))types.push('red');
-else if(detail.includes('yellow'))types.push('yellow');
+let espnCardEvents={bl1:[],bl2:[]},lastEspnCardsCheck=0;
+async function refreshESPNCardEvents(){
+if(Date.now()-lastEspnCardsCheck<20000)return;
+lastEspnCardsCheck=Date.now();
+for(const key of ['bl1','bl2']){
+const live=(espnLiveMatches[key]||[]).filter(x=>x.state==='in'&&x.id);
+const results=await Promise.allSettled(live.map(async item=>{
+const league=key==='bl1'?'ger.1':'ger.2';
+const data=await loadJSON(`https://site.api.espn.com/apis/site/v2/sports/soccer/${league}/summary?event=${encodeURIComponent(item.id)}`);
+const found=[];
+function walk(value){
+if(!value)return;
+if(Array.isArray(value)){value.forEach(walk);return;}
+if(typeof value!=='object')return;
+const txt=[value.text,value.shortText,value.description,value.type?.text,value.type?.name,value.detail].filter(x=>typeof x==='string').join(' ');
+if(/red card|sent off|sending off|second yellow|yellow-red|rote karte|gelb-rot/i.test(txt)){
+const tn=value.team?.displayName||value.team?.name||value.teamName||'';
+if(tn)found.push({team:normalizeName(tn),text:txt});
 }
-return [...new Set(types)];
+Object.entries(value).forEach(([k,v])=>{if(k!=='team')walk(v);});
+}
+walk(data);
+return {home:item.home,away:item.away,events:found};
+}));
+espnCardEvents[key]=results.filter(x=>x.status==='fulfilled').map(x=>x.value);
+}
+}
+function teamCardTypes(match,key,teamName){
+const team=normalizeName(teamName),apiMatch=findFootballMatch(match,key);
+const apiTypes=[];
+for(const event of apiEvents(apiMatch)){
+const detail=String(event.detail||'').toLowerCase(),type=String(event.type||'').toLowerCase();
+const eventTeam=normalizeName(event.team?.name||'');
+if(!(type.includes('card')||detail.includes('red')||detail.includes('yellow')))continue;
+if(!eventTeam||!(eventTeam===team||eventTeam.includes(team)||team.includes(eventTeam)))continue;
+if(detail.includes('red')||detail.includes('second yellow')||detail.includes('yellow-red'))apiTypes.push('red');
+else if(detail.includes('yellow'))apiTypes.push('yellow');
+}
+const names=teamNames(match),home=normalizeName(names.home),away=normalizeName(names.away);
+const espn=(espnCardEvents[key]||[]).filter(game=>game.home===home&&game.away===away).flatMap(game=>game.events||[]);
+const hasRed=espn.some(event=>event.team&&(event.team===team||event.team.includes(team)||team.includes(event.team)));
+if(hasRed)apiTypes.push('red');
+return [...new Set(apiTypes)];
 }
 function redCardHTML(match,key,teamName){
 const types=teamCardTypes(match,key,teamName);
@@ -522,6 +547,7 @@ if(loading)return;
 loading=true;
 try{
 await refreshESPNLiveMatches().catch(error=>console.warn('ESPN-Live-Minuten nicht verfügbar:',error));
+await refreshESPNCardEvents().catch(error=>console.warn('ESPN-Kartendaten nicht verfügbar:',error));
 const results=await Promise.allSettled([loadLiveGames('bl1'),loadLiveGames('bl2')]);
 if(results[0].status==='fulfilled')matches.bl1=results[0].value;else console.warn('BL1 Live-Abruf fehlgeschlagen:',results[0].reason);
 if(results[1].status==='fulfilled')matches.bl2=results[1].value;else console.warn('BL2 Live-Abruf fehlgeschlagen:',results[1].reason);
