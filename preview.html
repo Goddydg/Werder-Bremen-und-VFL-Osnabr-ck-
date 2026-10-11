@@ -13,7 +13,7 @@
 *{box-sizing:border-box}
 body{margin:0;background:#071b13;color:#f5f7f5;font-family:Arial,sans-serif}
 header{padding:20px 16px;background:#103b28}
-header h1{margin:0;font-size:25px}
+header h1{margin:0;font-size:22px;line-height:1.25}
 header p{margin-bottom:0;color:#c5d5cb}
 main{padding:12px}
 .league{margin-bottom:30px;padding:14px;border-radius:16px;background:#10291e;border:1px solid #244a37}
@@ -28,8 +28,8 @@ h4{font-size:15px;margin:12px 0}
 .team-logo{width:30px;height:30px;object-fit:contain;flex:0 0 30px;vertical-align:middle}
 .table-team{display:flex;align-items:center;gap:4px;min-width:0;width:100%}
 .table-team-name{white-space:nowrap;font-size:11px;letter-spacing:-.1px;min-width:0}
-.match-scoreline{display:grid;grid-template-columns:minmax(0,1fr) 48px minmax(0,1fr);align-items:center;gap:8px;width:100%;min-width:0;padding:10px 0 12px}
-.match-team{display:grid;grid-template-columns:28px minmax(0,1fr);align-items:center;column-gap:6px;min-width:0;min-height:42px;white-space:normal}
+.match-scoreline{display:grid;grid-template-columns:minmax(0,1fr) 48px minmax(0,1fr);align-items:center;gap:8px;width:100%;min-width:0;padding:4px 0 5px}
+.match-team{display:grid;grid-template-columns:28px minmax(0,1fr);align-items:center;column-gap:6px;min-width:0;min-height:30px;white-space:normal}
 .match-team.away{justify-content:stretch;text-align:left}
 .team-logo-slot{display:flex;align-items:center;justify-content:center;width:28px;height:28px;min-width:28px}
 .match-team .team-logo{display:block;width:26px;height:26px;max-width:26px;max-height:26px;object-fit:contain}
@@ -37,8 +37,8 @@ h4{font-size:15px;margin:12px 0}
 .match-scoreline .score{font-size:16px;padding:0 2px;white-space:nowrap;text-align:center;font-weight:bold;justify-self:center}
 .team-logo[hidden],.club-logo[hidden]{display:none!important}
 @media(max-width:520px){
-.match-scoreline{grid-template-columns:minmax(0,1fr) 43px minmax(0,1fr);gap:4px;padding:10px 0 12px}
-.match-team{grid-template-columns:23px minmax(0,1fr);column-gap:4px;min-height:42px}
+.match-scoreline{grid-template-columns:minmax(0,1fr) 43px minmax(0,1fr);gap:4px;padding:3px 0 4px}
+.match-team{grid-template-columns:23px minmax(0,1fr);column-gap:4px;min-height:28px}
 .team-logo-slot{width:23px;height:25px;min-width:23px}
 .match-team .team-logo{width:22px;height:22px;max-width:22px;max-height:22px}
 .match-team .team-name{font-size:12px;line-height:1.18;overflow-wrap:normal}
@@ -47,8 +47,8 @@ h4{font-size:15px;margin:12px 0}
 .table-team .team-logo{width:20px;height:20px;flex:0 0 20px}
 .table-team-name{font-size:12.5px;letter-spacing:-.15px}
 .match-date{min-height:26px;margin-bottom:8px;line-height:1.5}
-.tap-hint{min-height:48px;display:flex;align-items:center;margin-top:10px;padding:7px 0 2px;line-height:1.3}
-.lineup-button{min-height:54px;display:flex;align-items:center;justify-content:center;margin-top:8px;padding:10px 9px;line-height:1.3}
+.tap-hint{min-height:0;display:flex;align-items:center;margin-top:4px;padding:2px 0 0;line-height:1.2}
+.lineup-button{min-height:40px;display:flex;align-items:center;justify-content:center;margin-top:8px;padding:10px 9px;line-height:1.3}
 }
 .selector{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0}
 select{max-width:100%;padding:11px;border-radius:9px;background:#173c2a;color:white;border:1px solid #477258;font-size:15px}
@@ -84,9 +84,9 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 .live-badge{display:inline-block;background:#e32636;color:#fff;border-radius:5px;padding:3px 7px;font-size:11px;font-weight:bold;margin-right:5px}
 .finished-badge{display:inline-block;background:#40584a;color:#fff;border-radius:5px;padding:3px 7px;font-size:11px;margin-right:5px}
 .update-info{font-size:12px;color:#a9beb0;margin-top:8px}
-.match-button{display:block;width:100%;min-height:64px;padding:12px 8px;border:0;border-radius:9px;background:rgba(255,255,255,.07);color:inherit;text-align:left;font:inherit;cursor:pointer;touch-action:manipulation}
+.match-button{display:block;width:100%;min-height:48px;padding:6px 8px;border:0;border-radius:9px;background:rgba(255,255,255,.07);color:inherit;text-align:left;font:inherit;cursor:pointer;touch-action:manipulation}
 .match-button:focus-visible{outline:2px solid white;outline-offset:4px}
-.tap-hint{font-size:14px;font-weight:bold;line-height:1.4;margin-top:12px;padding:7px 0 2px}
+.tap-hint{font-size:12px;font-weight:bold;line-height:1.25;margin-top:4px;padding:2px 0 0}
 .match-details{display:block;margin-top:12px;padding:12px;border-radius:10px;background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.18)}
 .detail-line{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:13px}
 .detail-line span:last-child{text-align:right;overflow-wrap:anywhere}
@@ -104,8 +104,9 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 </style>
 </head>
 <body>
-<header><h1>⚽ Werder & VfL</h1><p>Bundesliga · Spieltage · Tabellen</p></header>
+<header><h1>⚽ SV Werder Bremen &amp; VfL Osnabrück</h1><p>Bundesliga · Live-Spiele · Spieltage · Tabellen</p></header>
 <main>
+<section class="league live-league" id="live-league"><h2>🔴 Live-Spiele · 1. &amp; 2. Bundesliga</h2><div id="live-games"><p class="muted">Live-Spiele werden geladen …</p></div></section>
 <section class="league league-green">
 <h2>🟢 1. Bundesliga</h2>
 <div class="club"><img class="club-logo" id="bl1-club-logo" alt="" hidden><span>SV Werder Bremen</span></div>
@@ -297,6 +298,12 @@ const img=document.getElementById(id),url=logoForTeam(name,key);
 if(img&&url&&img.src!==url){img.src=url;img.hidden=false;img.onerror=()=>{img.hidden=true;};}
 }
 }
+function liveGamesHTML(){
+const all=[...getGames('bl1').map(match=>({match,key:'bl1'})),...getGames('bl2').map(match=>({match,key:'bl2'}))].filter(item=>isLive(item.match,item.key)).sort((a,b)=>new Date(gameDate(a.match)||0)-new Date(gameDate(b.match)||0));
+if(!all.length)return '<p class="muted">Aktuell keine Live-Spiele in der 1. oder 2. Bundesliga.</p>';
+return all.map(({match,key})=>{const names=teamNames(match),homeLogo=teamLogoHTML(match.team1,key),awayLogo=teamLogoHTML(match.team2,key);return `<div class="match live-match"><div class="match-date"><span class="live-badge">● LIVE</span>${esc(key==='bl1'?'1. Bundesliga':'2. Bundesliga')} · ${esc(formatDate(gameDate(match)))}</div><div class="match-scoreline"><span class="match-team"><span class="team-logo-slot">${homeLogo}</span><span class="team-name">${esc(names.home)}</span></span><span class="score">${esc(gameScore(match,key))}</span><span class="match-team away"><span class="team-logo-slot">${awayLogo}</span><span class="team-name">${esc(names.away)}</span></span></div></div>`;}).join('');
+}
+function renderLiveGames(){const el=document.getElementById('live-games');if(el)el.innerHTML=liveGamesHTML();}
 function gamesHTML(key){
 const games=selectedGames(key);
 if(!games.length)return '<p class="muted">Keine Spiele für diesen Spieltag gefunden.</p>';
@@ -334,7 +341,7 @@ return `<div class="table-wrap"><table><thead><tr><th>Pos.</th><th>Verein</th><t
 }
 function renderGames(key){document.getElementById(key+'-selector').innerHTML=roundSelector(key);document.getElementById(key+'-games').innerHTML=gamesHTML(key);}
 function setTableHTML(id,html){const container=document.getElementById(id);if(!container)return;const oldWrap=container.querySelector('.table-wrap'),scrollLeft=oldWrap?oldWrap.scrollLeft:0;if(container.dataset.tableMarkup===html)return;container.innerHTML=html;container.dataset.tableMarkup=html;const newWrap=container.querySelector('.table-wrap');if(newWrap)newWrap.scrollLeft=scrollLeft;}
-function renderInitial(){renderGames('bl1');renderGames('bl2');setTableHTML('bl1-table',tableHTML(liveTableFromMatches('bl1')||standings.bl1,'bl1'));setTableHTML('bl2-table',tableHTML(liveTableFromMatches('bl2')||standings.bl2,'bl2'));updateClubLogos();initialRenderDone=true;}
+function renderInitial(){renderLiveGames();renderGames('bl1');renderGames('bl2');setTableHTML('bl1-table',tableHTML(liveTableFromMatches('bl1')||standings.bl1,'bl1'));setTableHTML('bl2-table',tableHTML(liveTableFromMatches('bl2')||standings.bl2,'bl2'));updateClubLogos();initialRenderDone=true;}
 function renderTables(){setTableHTML('bl1-table',tableHTML(liveTableFromMatches('bl1')||standings.bl1,'bl1'));setTableHTML('bl2-table',tableHTML(liveTableFromMatches('bl2')||standings.bl2,'bl2'));updateClubLogos();}
 function updateLiveDisplay(key){selectedGames(key).forEach((match,index)=>{const date=document.getElementById(`date-${key}-${index}`),score=document.getElementById(`score-${key}-${index}`),slot=document.getElementById(`details-${key}-${index}`);if(date)date.innerHTML=statusHTML(match,key);if(score)score.textContent=gameScore(match,key);if(slot&&!slot.hidden&&expandedMatch[key]===matchKey(match))slot.innerHTML=detailsHTML(match,key);});}
 async function loadSavedSources(){
@@ -392,7 +399,7 @@ if(selectedRound.bl1===null)selectedRound.bl1=findDefaultRound(getGames('bl1'));
 if(selectedRound.bl2===null)selectedRound.bl2=findDefaultRound(getGames('bl2'));
 lastUpdate=new Date();
 if(!initialRenderDone)renderInitial();
-else{updateLiveDisplay('bl1');updateLiveDisplay('bl2');renderTables();updateClubLogos();}
+else{renderLiveGames();updateLiveDisplay('bl1');updateLiveDisplay('bl2');renderTables();updateClubLogos();}
 const stamp='Live-Daten geprüft: '+lastUpdate.toLocaleTimeString('de-DE');
 document.getElementById('bl1-update').textContent=stamp;
 document.getElementById('bl2-update').textContent=stamp;
