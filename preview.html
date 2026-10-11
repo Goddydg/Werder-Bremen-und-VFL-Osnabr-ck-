@@ -32,6 +32,14 @@ h2{font-size:22px;margin:4px 0 14px}
 .league-title{display:flex;align-items:center;gap:8px}
 .league-logo{width:26px;height:26px;object-fit:contain;flex:0 0 26px}
 #live-league h2{font-size:19px;white-space:nowrap;letter-spacing:-.3px}@media(max-width:380px){#live-league h2{font-size:16px;letter-spacing:-.5px}}
+/* Testseite: Live-Spiele breiter, damit die Spielminute lesbar bleibt */
+#live-league{padding-left:8px;padding-right:8px}
+#live-league .live-match{padding:12px 8px}
+#live-league .live-match .match-button{padding-left:6px;padding-right:6px}
+#live-league .live-badge{font-size:13px;padding:5px 9px;white-space:nowrap;flex-shrink:0}
+#live-league .live-match .match-date{gap:5px}
+#live-league .live-match .live-meta{display:flex;align-items:center;flex-wrap:wrap;gap:4px;flex:1 1 auto}
+@media(max-width:520px){#live-league{padding-left:6px;padding-right:6px}#live-league .live-match{padding-left:5px;padding-right:5px}#live-league .live-badge{font-size:13px;padding:5px 8px}}
 h3{font-size:18px;margin:20px 0 10px}
 h4{font-size:15px;margin:12px 0}
 .club{display:inline-flex;align-items:center;gap:8px;padding:7px 11px;margin-bottom:12px;border-radius:8px;background:#1d7045;color:white;font-weight:bold}
