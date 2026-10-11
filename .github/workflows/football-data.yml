@@ -201,6 +201,60 @@ jobs:
           print(f"Tabelle erstellt: {len(table)} Mannschaften")
           PY
 
+      - name: Kostenlose Kartenereignisse abrufen
+        run: |
+          python3 - <<'PY'
+          import json, os, re, urllib.request
+          from datetime import datetime, timedelta, timezone
+          now=datetime.now(timezone.utc)
+          if os.environ.get("GITHUB_EVENT_NAME")!="workflow_dispatch" and (now.hour%3!=0 or now.minute>=15):
+              print("Sofascore: außerhalb des Abruffensters"); raise SystemExit(0)
+          path="data/sofascore-details.json"
+          try: saved=json.load(open(path,encoding="utf-8"))
+          except (OSError,ValueError): saved={"matches":[]}
+          by_id={str(m.get("id")):m for m in saved.get("matches",[]) if m.get("id")}
+          def get(url):
+              req=urllib.request.Request(url,headers={"User-Agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/126 Safari/537.36","Accept":"application/json"})
+              with urllib.request.urlopen(req,timeout=25) as res: return json.load(res)
+          def norm(s): return re.sub(r"[^a-z0-9]","",str(s or "").lower().replace("ß","ss").replace("ü","u"))
+          for i in range(7):
+              day=(now.date()-timedelta(days=i)).isoformat()
+              try: events=get("https://www.sofascore.com/api/v1/sport/football/scheduled-events/"+day).get("events",[])
+              except Exception as e: print("Spielplan",day,"nicht verfügbar:",e); continue
+              for ev in events:
+                  tournament=norm(ev.get("tournament",{}).get("name",""))
+                  country=norm(ev.get("tournament",{}).get("category",{}).get("name",""))
+                  if "bundesliga" not in tournament or country not in ("germany","deutschland"): continue
+                  home=ev.get("homeTeam",{}).get("name",""); away=ev.get("awayTeam",{}).get("name","")
+                  if not any(x in norm(home+" "+away) for x in ("werder","osnabruck","osnabrueck")): continue
+                  eid=str(ev.get("id","")); status=ev.get("status",{}).get("type","")
+                  if not eid or status not in ("finished","inprogress"): continue
+                  try: inc=get("https://www.sofascore.com/api/v1/event/"+eid+"/incidents").get("incidents",[])
+                  except Exception as e: print("Ereignisse",eid,"nicht verfügbar:",e); continue
+                  out=[]
+                  for x in inc:
+                      kind=str(x.get("incidentType","")).lower(); cls=str(x.get("incidentClass","")).lower()
+                      minute=x.get("time"); extra=x.get("addedTime")
+                      timing={"elapsed":minute,"extra":extra}
+                      team=home if x.get("isHome") else away
+                      player=x.get("playerName") or (x.get("player") or {}).get("name") or "Spieler unbekannt"
+                      if kind=="card":
+                          detail="Yellow-Red Card" if cls in ("yellowred","yellow-red","secondyellow","second-yellow") else "Red Card" if "red" in cls else "Yellow Card" if "yellow" in cls else ""
+                          if detail: out.append({"type":"Card","detail":detail,"time":timing,"player":{"name":player},"team":{"name":team}})
+                      elif kind=="goal":
+                          out.append({"type":"Goal","detail":cls or "Goal","time":timing,"player":{"name":player},"team":{"name":team}})
+                      elif kind in ("substitution","substitutionperiod"):
+                          out.append({"type":"subst","time":timing,"player":{"name":(x.get("playerIn") or {}).get("name") or player},"assist":{"name":(x.get("playerOut") or {}).get("name","")},"team":{"name":team}})
+                  ts=ev.get("startTimestamp")
+                  date=datetime.fromtimestamp(ts,timezone.utc).isoformat() if ts else now.isoformat()
+                  by_id[eid]={"id":eid,"fixture":{"id":eid,"date":date,"status":{"short":"FT" if status=="finished" else "LIVE","long":ev.get("status",{}).get("description",status)},"venue":{"name":(ev.get("venue") or {}).get("name",""),"city":((ev.get("venue") or {}).get("city") or {}).get("name","")}},"teams":{"home":{"name":home},"away":{"name":away}},"events":out,"_savedDetailsComplete":True,"source":"Sofascore","tournament":tournament,"updatedAt":now.isoformat()}
+                  print(f"{home} – {away}: {sum(1 for e in out if e['type']=='Card')} Kartenereignisse")
+          output={"updatedAt":now.isoformat(),"source":"Sofascore","matches":list(by_id.values())[-60:]}
+          os.makedirs("data",exist_ok=True)
+          with open(path,"w",encoding="utf-8") as f: json.dump(output,f,ensure_ascii=False,indent=2)
+          print("Sofascore-Cache:",len(output["matches"]),"Spiele")
+          PY
+
       - name: API-Football Zusatzdaten abrufen
         env:
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
