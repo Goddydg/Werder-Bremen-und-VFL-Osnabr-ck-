@@ -226,7 +226,7 @@ jobs:
                   country=norm(ev.get("tournament",{}).get("category",{}).get("name",""))
                   if "bundesliga" not in tournament or country not in ("germany","deutschland"): continue
                   # Keep events for all matches in both divisions, not only Werder/VfL.
-                  if not any(x in tournament for x in ("1bundesliga","2bundesliga")): continue
+                  if tournament != "bundesliga" and "2bundesliga" not in tournament: continue
                   home=ev.get("homeTeam",{}).get("name",""); away=ev.get("awayTeam",{}).get("name","")
                   eid=str(ev.get("id","")); status=ev.get("status",{}).get("type","")
                   if not eid or status not in ("finished","inprogress"): continue
