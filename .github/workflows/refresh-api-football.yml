@@ -1,6 +1,10 @@
 name: Refresh Bundesliga website card events
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/refresh-api-football.yml"
   schedule:
     - cron: "*/15 * * * *"
   workflow_dispatch:
