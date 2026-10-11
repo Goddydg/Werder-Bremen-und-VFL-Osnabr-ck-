@@ -149,7 +149,7 @@ let matches={bl1:[],bl2:[]};
 let footballMatches={bl1:[],bl2:[]};
 let selectedRound={bl1:null,bl2:null};
 let expandedMatch={bl1:null,bl2:null};
-let lastUpdate=null,loading=false,initialRenderDone=false,savedSourcesLoaded=false;
+let lastUpdate=null,loading=false,initialRenderDone=false,savedSourcesLoaded=false,lastSavedSourcesCheck=0;
 
 function esc(value){return String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 async function loadJSON(url){const response=await fetch(url,{cache:'no-store'});if(!response.ok)throw new Error('HTTP '+response.status);return response.json();}
@@ -446,12 +446,13 @@ try{
 const results=await Promise.allSettled([loadLiveGames('bl1'),loadLiveGames('bl2')]);
 if(results[0].status==='fulfilled')matches.bl1=results[0].value;else console.warn('BL1 Live-Abruf fehlgeschlagen:',results[0].reason);
 if(results[1].status==='fulfilled')matches.bl2=results[1].value;else console.warn('BL2 Live-Abruf fehlgeschlagen:',results[1].reason);
-if(!savedSourcesLoaded){
+if(!savedSourcesLoaded||Date.now()-lastSavedSourcesCheck>60000){
 await loadSavedSources();
 const tableResults=await Promise.allSettled([loadFile('bundesliga.json'),loadFile('2bundesliga-tabelle.json')]);
 if(tableResults[0].status==='fulfilled')standings.bl1=tableResults[0].value;
 if(tableResults[1].status==='fulfilled')standings.bl2=tableResults[1].value;
 savedSourcesLoaded=true;
+lastSavedSourcesCheck=Date.now();
 }
 if(selectedRound.bl1===null)selectedRound.bl1=findDefaultRound(getGames('bl1'));
 if(selectedRound.bl2===null)selectedRound.bl2=findDefaultRound(getGames('bl2'));
