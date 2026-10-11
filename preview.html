@@ -301,18 +301,15 @@ if(!entries.length)return '<p class="no-data">Für dieses Spiel sind keine Torsc
 return entries.map(g=>`<div class="scorer"><b>${esc(g.minute==null?'':String(g.minute).includes('′')?g.minute:g.minute+'′')}</b> ${esc(g.player)} ${g.detail?`<span class="detail-label">(${esc(g.detail)})</span>`:''}${g.team?`<div class="detail-label">${esc(g.team)}</div>`:''}</div>`).join('');
 }
 function renderBookings(match,key,apiMatch){
-const bookings=apiEvents(apiMatch).filter(e=>e.type==='Card').map(e=>({minute:eventMinute(e),type:/red|second yellow|yellow-red/i.test(String(e.detail||''))?'red':'yellow',player:e.player?.name||'Spieler unbekannt',team:e.team?.name||''}));
-const names=teamNames(match),home=normalizeName(names.home),away=normalizeName(names.away);
-const espn=(espnCardEvents[key]||[]).filter(game=>game.home===home&&game.away===away).flatMap(game=>game.events||[]);
-for(const e of espn){
-const duplicate=bookings.some(x=>x.type===e.type&&normalizeName(x.team)===e.team&&x.player===e.player&&String(x.minute)===String(e.minute));
-if(!duplicate)bookings.push({minute:e.minute,type:e.type,player:e.player||'Spieler unbekannt',team:e.teamName||''});
+const saved=websiteCardEvents[key]?.[String(match.matchID)]||[];
+const bookings=[...saved];
+for(const e of apiEvents(apiMatch).filter(e=>e.type==='Card')){
+const type=/second yellow|yellow-red/i.test(String(e.detail||''))?'yellow-red':/red/i.test(String(e.detail||''))?'red':'yellow';
+if(!bookings.some(x=>x.type===type&&normalizeName(x.player)===normalizeName(e.player?.name)&&String(x.minute)===String(eventMinute(e))))bookings.push({minute:eventMinute(e),type,player:e.player?.name||'Spieler unbekannt',team:e.team?.name||''});
 }
+if(!bookings.length)return '<p class="no-data">Für dieses Spiel wurden noch keine Kartenereignisse aus dem offiziellen Bundesliga-Liveticker gespeichert.</p>';
 bookings.sort((a,b)=>(parseInt(a.minute,10)||0)-(parseInt(b.minute,10)||0));
-const list=bookings.length?bookings.map(e=>{const label=e.type==='red'?'🟥 Rote Karte':'🟨 Gelbe Karte';return `<div class="scorer"><b>${esc(String(e.minute||'').replace(/′$/,''))}${String(e.minute||'').includes("'")||String(e.minute||'').includes('′')?'':"′"}</b> ${label} – ${esc(e.player)}${e.team?`<div class="detail-label">${esc(e.team)}</div>`:''}</div>`;}).join(''):'<p class="no-data">Die Kartenereignisse werden im offiziellen Bundesliga-Liveticker angezeigt.</p>';
-const round=roundNumber(match),leaguePath=key==='bl1'?'bundesliga':'2bundesliga',seasonPath=`${season}-${season+1}`,matchup=`${teamSlug(names.home)}-vs-${teamSlug(names.away)}`;
-const url=`https://www.bundesliga.com/de/${leaguePath}/spieltag/${seasonPath}/${round}/${matchup}/liveticker`;
-return list+`<p class="section-note"><a href="${url}" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline">Offiziellen Bundesliga-Liveticker mit Kartenereignissen öffnen ↗</a></p>`;
+return bookings.map(e=>{const label=e.type==='red'?'🟥 Rote Karte':e.type==='yellow-red'?'🟨🟥 Gelb-Rote Karte':'🟨 Gelbe Karte';return `<div class="scorer"><b>${esc(String(e.minute||'').replace(/′$/,''))}${String(e.minute||'').includes("'")||String(e.minute||'').includes('′')?'':"′"}</b> ${label} – ${esc(e.player||'Spieler unbekannt')}${e.team?`<div class="detail-label">${esc(e.team)}</div>`:''}</div>`;}).join('');
 }
 function renderSubs(apiMatch){
 const subs=apiEvents(apiMatch).filter(e=>e.type==='subst');
@@ -386,6 +383,7 @@ if(date&&date.getDay()===0)return 'DAZN';
 return 'Sky · WOW';
 }
 let espnCardEvents={bl1:[],bl2:[]},lastEspnCardsCheck=0;
+let websiteCardEvents={bl1:{},bl2:{}};
 async function refreshESPNCardEvents(){
 if(Date.now()-lastEspnCardsCheck<20000)return;
 lastEspnCardsCheck=Date.now();
@@ -512,7 +510,8 @@ const jobs=[
 ['bl2-matches',()=>loadFile('2bundesliga-spiele.json')],
 ['api-football',()=>loadFile('api-football-details.json')],
 ['bl1-openliga',()=>loadFile('openligadb-bl1-spiele.json')],
-['sofascore',()=>loadFile('sofascore-details.json')]
+['sofascore',()=>loadFile('sofascore-details.json')],
+['bundesliga-card-events',()=>loadFile('bundesliga-card-events.json')]
 ];
 const results=await Promise.allSettled(jobs.map(j=>j[1]()));
 results.forEach((result,index)=>{
@@ -541,6 +540,11 @@ footballMatches.bl1=merge(footballMatches.bl1,apiBl1);footballMatches.bl2=merge(
 break;
 }
 case 'bl1-openliga':if(Array.isArray(data))matches.bl1=data;break;
+case 'bundesliga-card-events':{
+websiteCardEvents.bl1=data?.leagues?.bl1||{};
+websiteCardEvents.bl2=data?.leagues?.bl2||{};
+break;
+}
 case 'sofascore':{
 const items=Array.isArray(data.matches)?data.matches:[];
 for(const item of items){
