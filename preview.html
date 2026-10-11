@@ -31,7 +31,8 @@ main{padding:12px}
 h2{font-size:22px;margin:4px 0 14px}
 .league-title{display:flex;align-items:center;gap:8px}
 .league-logo{width:26px;height:26px;object-fit:contain;flex:0 0 26px}
-#live-league h2{font-size:19px;white-space:nowrap;letter-spacing:-.3px}@media(max-width:380px){#live-league h2{font-size:16px;letter-spacing:-.5px}}
+#live-league h2{font-size:19px;white-space:nowrap;letter-spacing:-.3px}
+.red-card-indicator{display:inline-block;margin-right:4px;font-size:1em;vertical-align:baseline;filter:drop-shadow(0 0 1px rgba(0,0,0,.4))}@media(max-width:380px){#live-league h2{font-size:16px;letter-spacing:-.5px}}
 /* Testseite: Live-Spiele breiter, damit die Spielminute lesbar bleibt */
 #live-league{padding-left:8px;padding-right:8px}
 #live-league .live-match{padding:12px 8px}
@@ -379,10 +380,23 @@ if(key==='bl2'){if(date&&date.getDay()===6&&date.getHours()===20)return 'Sky · 
 if(date&&date.getDay()===0)return 'DAZN';
 return 'Sky · WOW';
 }
+function teamHasRedCard(match,key,teamName){
+const apiMatch=findFootballMatch(match,key),team=normalizeName(teamName);
+return apiEvents(apiMatch).some(event=>{
+if(event.type!=='Card')return false;
+const detail=String(event.detail||'').toLowerCase();
+if(!(detail.includes('red')||detail.includes('second yellow')||detail.includes('yellow-red')))return false;
+const eventTeam=normalizeName(event.team?.name||'');
+return eventTeam&& (eventTeam===team||eventTeam.includes(team)||team.includes(eventTeam));
+});
+}
+function redCardHTML(match,key,teamName){
+return teamHasRedCard(match,key,teamName)?'<span class="red-card-indicator" title="Rote Karte" aria-label="Rote Karte">🟥</span>':'';
+}
 function liveGamesHTML(){
 const all=[...getGames('bl1').map(match=>({match,key:'bl1'})),...getGames('bl2').map(match=>({match,key:'bl2'}))].filter(item=>isLive(item.match,item.key)).sort((a,b)=>new Date(gameDate(a.match)||0)-new Date(gameDate(b.match)||0));
 if(!all.length)return '<p class="muted">Aktuell keine Live-Spiele in der 1. oder 2. Bundesliga.</p>';
-return all.map(({match,key})=>{const names=teamNames(match),homeLogo=teamLogoHTML(match.team1,key),awayLogo=teamLogoHTML(match.team2,key),index=selectedGames(key).findIndex(g=>matchKey(g)===matchKey(match)),id=key+'|'+matchKey(match),expanded=window.liveExpandedKey===id;return `<div class="match live-match"><button type="button" class="match-button" onclick="toggleLiveDetails('${key}',${index})" aria-expanded="${expanded}"><div class="match-date"><span class="live-meta"><span class="live-badge">● LIVE${liveMinute(match,key)?' '+esc(liveMinute(match,key)):''}</span>${esc(key==='bl1'?'1. Bundesliga':'2. Bundesliga')} · ${esc(formatDate(gameDate(match)))}</span><span class="scheduled-tv-badge">📺 ${esc(tvProvider(match,key))}</span></div><div class="match-scoreline"><span class="match-team"><span class="team-logo-slot">${homeLogo}</span><span class="team-name">${esc(names.home)}</span></span><span class="score">${esc(gameScore(match,key))}</span><span class="match-team away"><span class="team-logo-slot">${awayLogo}</span><span class="team-name">${esc(names.away)}</span></span></div></button><div class="details-slot" id="live-details-${key}-${index}" ${expanded?'':'hidden'}>${expanded?detailsHTML(match,key):''}</div></div>`;}).join('');
+return all.map(({match,key})=>{const names=teamNames(match),homeLogo=teamLogoHTML(match.team1,key),awayLogo=teamLogoHTML(match.team2,key),index=selectedGames(key).findIndex(g=>matchKey(g)===matchKey(match)),id=key+'|'+matchKey(match),expanded=window.liveExpandedKey===id;return `<div class="match live-match"><button type="button" class="match-button" onclick="toggleLiveDetails('${key}',${index})" aria-expanded="${expanded}"><div class="match-date"><span class="live-meta"><span class="live-badge">● LIVE${liveMinute(match,key)?' '+esc(liveMinute(match,key)):''}</span>${esc(key==='bl1'?'1. Bundesliga':'2. Bundesliga')} · ${esc(formatDate(gameDate(match)))}</span><span class="scheduled-tv-badge">📺 ${esc(tvProvider(match,key))}</span></div><div class="match-scoreline"><span class="match-team"><span class="team-logo-slot">${homeLogo}</span><span class="team-name">${redCardHTML(match,key,names.home)}${esc(names.home)}</span></span><span class="score">${esc(gameScore(match,key))}</span><span class="match-team away"><span class="team-logo-slot">${awayLogo}</span><span class="team-name">${redCardHTML(match,key,names.away)}${esc(names.away)}</span></span></div></button><div class="details-slot" id="live-details-${key}-${index}" ${expanded?'':'hidden'}>${expanded?detailsHTML(match,key):''}</div></div>`;}).join('');
 }
 function toggleLiveDetails(key,index){const match=selectedGames(key)[index];if(!match)return;const id=key+'|'+matchKey(match);window.liveExpandedKey=window.liveExpandedKey===id?null:id;renderLiveGames();const slot=document.getElementById('live-details-'+key+'-'+index);if(window.liveExpandedKey===id&&slot){slot.innerHTML=detailsHTML(match,key);slot.hidden=false;}}
 function renderLiveGames(){
