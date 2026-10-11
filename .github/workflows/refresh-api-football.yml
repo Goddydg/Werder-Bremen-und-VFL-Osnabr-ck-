@@ -6,7 +6,7 @@ on:
     paths:
       - ".github/workflows/refresh-api-football.yml"
   schedule:
-    - cron: "*/15 * * * *"
+    - cron: "*/5 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -37,6 +37,7 @@ jobs:
             : { updatedAt: null, leagues: { bl1: {}, bl2: {} } };
           saved.leagues ||= {};
           const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+          const { execFileSync } = require('child_process');
 
           async function get(url) {
             const response = await fetch(url, {
@@ -88,14 +89,20 @@ jobs:
 
           (async () => {
             let checked = 0, found = 0;
-            for (const [leagueKey, config] of Object.entries(leagues)) {
+            // GitHub Actions scheduled workflows have a 5-minute minimum interval.
+            // Poll live match pages once per minute during this run.
+            for (let cycle = 0; cycle < 5; cycle++) {
+              checked = 0; found = 0;
+              const cycleNow = Date.now();
+              const liveFrom = cycleNow - 3 * 60 * 60 * 1000;
+              for (const [leagueKey, config] of Object.entries(leagues)) {
               const fixtureUrl = `https://api.openligadb.de/getmatchdata/${config.openLiga}/${season}`;
               const response = await get(fixtureUrl);
               const fixtures = await response.json();
               const output = { ...(saved.leagues[leagueKey] || {}) };
               for (const fixture of fixtures) {
                 const date = new Date(fixture.matchDateTime || fixture.matchDateTimeUTC || '').getTime();
-                if (!Number.isFinite(date) || date < from || date > to) continue;
+                if (!Number.isFinite(date) || date < liveFrom || date > cycleNow || fixture.matchIsFinished === true) continue;
                 const round = Number(fixture.group?.groupOrderID || fixture.groupOrderID || fixture.matchday || 0);
                 const home = fixture.team1?.teamName || '';
                 const away = fixture.team2?.teamName || '';
@@ -116,12 +123,24 @@ jobs:
                 }
               }
               saved.leagues[leagueKey] = output;
+              }
+              saved.updatedAt = new Date().toISOString();
+              saved.source = 'bundesliga.com';
+              fs.mkdirSync('data', { recursive: true });
+              fs.writeFileSync(path, JSON.stringify(saved, null, 2) + '\n');
+              execFileSync('git', ['add', path]);
+              try {
+                execFileSync('git', ['diff', '--cached', '--quiet']);
+                console.log(`Minute poll ${cycle + 1}: no card data changes.`);
+              } catch {
+                execFileSync('git', ['config', 'user.name', 'github-actions[bot]']);
+                execFileSync('git', ['config', 'user.email', '41898282+github-actions[bot]@users.noreply.github.com']);
+                execFileSync('git', ['commit', '-m', `Refresh Bundesliga card events (${new Date().toISOString()})']);
+                execFileSync('git', ['push']);
+              }
+              console.log(`Minute poll ${cycle + 1}: checked ${checked} live match pages; extracted ${found} card events.`);
+              if (cycle < 4) await wait(60000);
             }
-            saved.updatedAt = new Date().toISOString();
-            saved.source = 'bundesliga.com';
-            fs.mkdirSync('data', { recursive: true });
-            fs.writeFileSync(path, JSON.stringify(saved, null, 2) + '\n');
-            console.log(`Checked ${checked} official match pages; extracted ${found} card events.`);
           })().catch(error => { console.error(error); process.exit(1); });
           NODE
 
