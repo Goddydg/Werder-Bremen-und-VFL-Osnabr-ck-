@@ -1,0 +1,91 @@
+name: Refresh football events
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Fetch Bundesliga fixtures and match events
+        env:
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const path = 'data/api-football-details.json';
+          const key = process.env.API_FOOTBALL_KEY;
+          if (!key) throw new Error('Repository secret API_FOOTBALL_KEY is missing.');
+          const season = 2026;
+          const leagues = { bl1: 78, bl2: 79 };
+          const now = Date.now();
+          const from = new Date(now - 4 * 86400000).toISOString().slice(0, 10);
+          const to = new Date(now + 8 * 86400000).toISOString().slice(0, 10);
+          const saved = fs.existsSync(path) ? JSON.parse(fs.readFileSync(path, 'utf8')) : { leagues: {} };
+          saved.leagues ||= {};
+
+          async function api(endpoint) {
+            const response = await fetch('https://v3.football.api-sports.io/' + endpoint, {
+              headers: { 'x-apisports-key': key }
+            });
+            if (!response.ok) throw new Error('API-Football HTTP ' + response.status + ' for ' + endpoint);
+            const body = await response.json();
+            if (body.errors && Object.keys(body.errors).length) throw new Error(JSON.stringify(body.errors));
+            return body.response || [];
+          }
+          const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+          (async () => {
+            for (const [name, leagueId] of Object.entries(leagues)) {
+              const oldLeague = saved.leagues[name] || {};
+              const oldDetails = oldLeague.details || {};
+              const fixtures = await api(`fixtures?league=${leagueId}&season=${season}&from=${from}&to=${to}`);
+              const details = { ...oldDetails };
+              const fixtureList = [];
+              for (const fixture of fixtures) {
+                const id = String(fixture.fixture?.id || '');
+                if (!id) continue;
+                fixtureList.push(fixture);
+                const status = fixture.fixture?.status?.short || '';
+                const isLive = ['1H','HT','2H','ET','BT','P','LIVE'].includes(status);
+                const date = new Date(fixture.fixture.date).getTime();
+                const recentlyPlayed = Number.isFinite(date) && date >= now - 4 * 86400000 && date <= now;
+                if (isLive || recentlyPlayed || !details[id]) {
+                  if (isLive || recentlyPlayed) {
+                    await wait(800);
+                    const events = await api(`fixtures/events?fixture=${id}`);
+                    details[id] = { ...(details[id] || {}), fixture, events, complete: true, updatedAt: new Date().toISOString() };
+                  } else {
+                    details[id] = { ...(details[id] || {}), fixture };
+                  }
+                } else if (details[id]) {
+                  details[id] = { ...details[id], fixture };
+                }
+              }
+              saved.leagues[name] = { fixtures: fixtureList, details };
+              console.log(name + ': ' + fixtureList.length + ' fixtures, ' + Object.keys(details).length + ' cached event records');
+            }
+            fs.mkdirSync('data', { recursive: true });
+            fs.writeFileSync(path, JSON.stringify(saved, null, 2) + '\n');
+          })().catch(error => { console.error(error); process.exit(1); });
+          NODE
+
+      - name: Commit refreshed event data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/api-football-details.json
+          if git diff --cached --quiet; then
+            echo "No event data changes."
+          else
+            git commit -m "Refresh football match events"
+            git push
+          fi
