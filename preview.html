@@ -16,6 +16,13 @@ header{padding:20px 16px;background:#103b28}
 header h1{margin:0;font-size:22px;line-height:1.25}
 .header-werder{font-family:Georgia,'Times New Roman',serif;font-weight:700;letter-spacing:-.5px}
 .header-vfl{font-family:'Arial Narrow','Roboto Condensed',Impact,sans-serif;font-stretch:condensed;font-weight:800;letter-spacing:-.4px}
+.header-clubs{display:flex;align-items:center;justify-content:center;gap:10px;max-width:100%;flex-wrap:wrap}
+.header-club{display:flex;align-items:center;justify-content:center;gap:7px;min-width:0}
+.header-club img.crest{width:38px;height:38px;object-fit:contain;flex:0 0 38px}
+.header-club img.stadium{width:52px;height:36px;object-fit:cover;border-radius:5px;border:1px solid rgba(255,255,255,.25);flex:0 0 52px}
+.header-club-name{font-size:19px;line-height:1.1}
+.header-center{display:flex;justify-content:center;margin:3px 0 2px;font-size:18px;font-weight:bold;line-height:1}
+@media(max-width:520px){header{padding:16px 10px}.header-clubs{gap:6px}.header-club{gap:4px}.header-club img.crest{width:30px;height:30px;flex-basis:30px}.header-club img.stadium{width:35px;height:28px;flex-basis:35px}.header-club-name{font-size:15px}.header-center{font-size:16px}}
 header p{margin-bottom:0;color:#c5d5cb}
 main{padding:12px}
 .league{margin-bottom:30px;padding:14px;border-radius:16px;background:#10291e;border:1px solid #244a37}
@@ -109,7 +116,7 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 </style>
 </head>
 <body>
-<header><h1>⚽ <span class="header-werder">SV Werder Bremen</span> <span aria-hidden="true">&amp;</span> <span class="header-vfl">VfL Osnabrück</span></h1><p>Bundesliga · Live-Spiele · Spieltage · Tabellen</p></header>
+<header><div class="header-clubs"><div class="header-club"><img class="crest" id="header-werder-crest" alt="Werder-Wappen"><span class="header-club-name header-werder">SV Werder Bremen</span><img class="stadium" src="https://commons.wikimedia.org/wiki/Special:FilePath/Weserstadion-von-suedwesten.jpg?width=220" alt="Weserstadion" loading="eager"></div><div class="header-club"><img class="crest" id="header-vfl-crest" alt="VfL-Wappen"><span class="header-club-name header-vfl">VfL Osnabrück</span><img class="stadium" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bremer-bruecke.jpg?width=220" alt="Stadion an der Bremer Brücke" loading="eager"></div></div><div class="header-center">&amp;</div><p>Bundesliga · Live-Spiele · Spieltage · Tabellen</p></header>
 <main>
 <section class="league live-league" id="live-league"><h2>🔴 Live-Spiele · 1. &amp; 2. Bundesliga</h2><div id="live-games"><p class="muted">Live-Spiele werden geladen …</p></div></section>
 <section class="league league-green">
@@ -299,7 +306,7 @@ const url=directLogo(team)||logoForTeam(name,key);
 return url?`<img class="team-logo" src="${esc(url)}" alt="" loading="lazy" ${logoErrorAttribute(name)}>`:'';
 }
 function updateClubLogos(){
-for(const [id,name,key] of [['bl1-club-logo','SV Werder Bremen','bl1'],['bl2-club-logo','VfL Osnabrück','bl2']]){
+for(const [id,name,key] of [['header-werder-crest','SV Werder Bremen','bl1'],['header-vfl-crest','VfL Osnabrück','bl2'],['bl1-club-logo','SV Werder Bremen','bl1'],['bl2-club-logo','VfL Osnabrück','bl2']]){
 const img=document.getElementById(id),url=logoForTeam(name,key);
 if(img&&url&&img.src!==url){img.src=url;img.hidden=false;img.onerror=()=>{img.hidden=true;};}
 }
