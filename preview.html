@@ -57,7 +57,7 @@ select{max-width:100%;padding:11px;border-radius:9px;background:#173c2a;color:wh
 table{width:100%;min-width:450px;border-collapse:collapse;table-layout:fixed;font-size:12px}
 th,td{padding:6px 2px;border-bottom:1px solid #294536;text-align:center;white-space:nowrap}
 th:nth-child(1),td:nth-child(1){width:27px}
-th:nth-child(2),td:nth-child(2){text-align:left;width:162px}
+th:nth-child(2),td:nth-child(2){text-align:left;width:159px}
 th:nth-child(3),td:nth-child(3){width:27px}
 th:nth-child(4),td:nth-child(4){width:42px}
 th:nth-child(5),td:nth-child(5){width:30px}
@@ -81,6 +81,10 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 .match.vfl-match{background:#6b21a8;border:1px solid #a855f7;color:#fff}
 .match.werder-match .match-date,.match.vfl-match .match-date{color:#fff}
 .team-highlight{display:inline-block;padding:3px 6px;border-radius:5px;background:rgba(255,255,255,.18);font-weight:bold}
+/* Werder und VfL in der Spieltagsansicht wie alle anderen Vereine darstellen */
+.match.werder-match,.match.vfl-match{background:transparent!important;border:0!important;color:inherit!important}
+.match.werder-match .match-date,.match.vfl-match .match-date{color:var(--match-date-color,#a9beb0)}
+.match-team .team-highlight{display:contents;padding:0;border-radius:0;background:transparent;font-weight:inherit}
 .live-badge{display:inline-block;background:#e32636;color:#fff;border-radius:5px;padding:3px 7px;font-size:11px;font-weight:bold;margin-right:5px}
 .finished-badge{display:inline-block;background:#40584a;color:#fff;border-radius:5px;padding:3px 7px;font-size:11px;margin-right:5px}
 .update-info{font-size:12px;color:#a9beb0;margin-top:8px}
