@@ -388,7 +388,8 @@ const jobs=[
 ['bl1-matches',()=>loadFile('bundesliga-spiele.json')],
 ['bl2-matches',()=>loadFile('2bundesliga-spiele.json')],
 ['api-football',()=>loadFile('api-football-details.json')],
-['bl1-openliga',()=>loadFile('openligadb-bl1-spiele.json')]
+['bl1-openliga',()=>loadFile('openligadb-bl1-spiele.json')],
+['sofascore',()=>loadFile('sofascore-details.json')]
 ];
 const results=await Promise.allSettled(jobs.map(j=>j[1]()));
 results.forEach((result,index)=>{
@@ -417,6 +418,23 @@ footballMatches.bl1=merge(footballMatches.bl1,apiBl1);footballMatches.bl2=merge(
 break;
 }
 case 'bl1-openliga':if(Array.isArray(data))matches.bl1=data;break;
+case 'sofascore':{
+const items=Array.isArray(data.matches)?data.matches:[];
+for(const item of items){
+const home=normalizeName(item.teams?.home?.name),away=normalizeName(item.teams?.away?.name);
+const key=/werder|bremen/.test(home+' '+away)?'bl1':/osnabruck|osnabrueck/.test(home+' '+away)?'bl2':null;
+if(!key)continue;
+const list=footballMatches[key]||[],date=item.fixture?.date?new Date(item.fixture.date).getTime():null;
+const idx=list.findIndex(old=>{
+const oh=normalizeName(old.teams?.home?.name||old.homeTeam?.name),oa=normalizeName(old.teams?.away?.name||old.awayTeam?.name);
+const od=old.fixture?.date||old.utcDate,ot=od?new Date(od).getTime():null;
+return home===oh&&away===oa&&(date===null||ot===null||Math.abs(date-ot)<36*60*60*1000);
+});
+if(idx>=0)list[idx]={...list[idx],...item};else list.push(item);
+footballMatches[key]=list;
+}
+break;
+}
 }
 });
 }
