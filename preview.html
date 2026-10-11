@@ -180,7 +180,7 @@ const data=await loadJSON(`https://site.api.espn.com/apis/site/v2/sports/soccer/
 return (data.events||[]).map(event=>{
 const competition=event.competitions?.[0],teams=competition?.competitors||[];
 const home=teams.find(team=>team.homeAway==='home'),away=teams.find(team=>team.homeAway==='away'),status=event.status||competition?.status||{};
-return {id:String(event.id||''),home:normalizeName(home?.team?.displayName||home?.team?.name),away:normalizeName(away?.team?.displayName||away?.team?.name),homeName:home?.team?.displayName||home?.team?.name||'',awayName:away?.team?.displayName||away?.team?.name||'',clock:status.displayClock||'',detail:status.type?.shortDetail||status.type?.detail||'',state:status.type?.state||'',period:status.period||0};
+return {id:String(event.id||''),home:normalizeName(home?.team?.displayName||home?.team?.name),away:normalizeName(away?.team?.displayName||away?.team?.name),homeName:home?.team?.displayName||home?.team?.name||'',awayName:away?.team?.displayName||away?.team?.name||'',homeId:String(home?.team?.id||''),awayId:String(away?.team?.id||''),clock:status.displayClock||'',detail:status.type?.shortDetail||status.type?.detail||'',state:status.type?.state||'',period:status.period||0};
 }).filter(item=>item.home&&item.away);
 }
 async function refreshESPNLiveMatches(){
@@ -392,29 +392,38 @@ async function refreshESPNCardEvents(){
 if(Date.now()-lastEspnCardsCheck<20000)return;
 lastEspnCardsCheck=Date.now();
 for(const key of ['bl1','bl2']){
-const events=(espnLiveMatches[key]||[]).filter(x=>x.id);
-const results=await Promise.allSettled(events.map(async item=>{
+const games=(espnLiveMatches[key]||[]).filter(x=>x.id);
+const results=await Promise.allSettled(games.map(async item=>{
 const league=key==='bl1'?'ger.1':'ger.2';
 const data=await loadJSON(`https://site.api.espn.com/apis/site/v2/sports/soccer/${league}/summary?event=${encodeURIComponent(item.id)}`);
 const found=[],seen=new Set();
-function walk(value,context={}){
+const possible=[];
+function collect(value,context={}){
 if(!value)return;
-if(Array.isArray(value)){value.forEach(v=>walk(v,context));return;}
+if(Array.isArray(value)){value.forEach(v=>collect(v,context));return;}
 if(typeof value!=='object')return;
-const player=value.athlete?.displayName||value.player?.displayName||value.player?.name||context.player||'';
-const team=value.team?.displayName||value.team?.name||value.teamName||context.team||'';
+const teamObj=value.team||value.competitor||value.competitors?.[0]||{};
+const playerObj=value.athlete||value.player||value.participants?.find?.(p=>p.athlete||p.player)||{};
+const teamName=teamObj.displayName||teamObj.name||teamObj.team?.displayName||teamObj.team?.name||value.teamName||context.teamName||'';
+const teamId=String(teamObj.id||teamObj.team?.id||value.teamId||context.teamId||'');
+const player=playerObj.displayName||playerObj.fullName||playerObj.name||playerObj.athlete?.displayName||context.player||'';
 const minute=value.clock?.displayValue||value.time?.displayValue||value.time?.elapsed||value.minute||value.clock||context.minute||'';
-const texts=[value.text,value.shortText,value.description,value.type?.text,value.type?.name,value.type?.abbreviation,value.detail,value.name].filter(x=>typeof x==='string').join(' ');
-const isCard=/red card|sent off|sending off|second yellow|yellow-red|yellow card|booking|rote karte|gelb-rot|gelbe karte/i.test(texts);
-if(isCard&&team){
+const texts=[value.text,value.shortText,value.description,value.type?.text,value.type?.name,value.type?.abbreviation,value.detail,value.name,value.type?.description].filter(x=>typeof x==='string').join(' ');
+if(/red card|sent off|sending off|second yellow|yellow-red|yellow card|booking|rote karte|gelb-rot|gelbe karte/i.test(texts)){
 const red=/red card|sent off|sending off|second yellow|yellow-red|rote karte|gelb-rot/i.test(texts);
-const type=red?'red':'yellow',id=[type,team,player,minute,texts].join('|');
-if(!seen.has(id)){seen.add(id);found.push({team:normalizeName(team),teamName:team,player,minute:String(minute||''),type,detail:texts});}
+const resolvedTeam=teamName||(teamId&&teamId===item.homeId?item.homeName:teamId&&teamId===item.awayId?item.awayName:'');
+if(resolvedTeam){
+const ev={team:normalizeName(resolvedTeam),teamName:resolvedTeam,player,minute:String(minute||''),type:red?'red':'yellow',detail:texts};
+const signature=[ev.type,ev.team,ev.player,ev.minute].join('|');
+if(!seen.has(signature)){seen.add(signature);found.push(ev);}
+}else possible.push({text:texts,player,minute:String(minute||'')});
 }
-const next={player:player||context.player,team:team||context.team,minute:minute||context.minute};
-Object.entries(value).forEach(([k,v])=>{if(k!=='team'&&k!=='athlete'&&k!=='player')walk(v,next);});
+const next={teamName:teamName||context.teamName,teamId:teamId||context.teamId,player:player||context.player,minute:minute||context.minute};
+Object.entries(value).forEach(([k,v])=>{if(!['team','competitor','athlete','player','participants'].includes(k))collect(v,next);});
 }
-walk(data);
+collect(data);
+const plays=data.plays?.items||data.plays||data.commentary?.items||data.commentary||[];
+collect(plays);
 return {id:item.id,home:item.home,away:item.away,events:found};
 }));
 espnCardEvents[key]=results.filter(x=>x.status==='fulfilled').map(x=>x.value);
