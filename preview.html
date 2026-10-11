@@ -423,7 +423,7 @@ const items=Array.isArray(data.matches)?data.matches:[];
 for(const item of items){
 const home=normalizeName(item.teams?.home?.name),away=normalizeName(item.teams?.away?.name);
 const tournament=normalizeName(item.tournament||'');
-const key=tournament.includes('2bundesliga')?'bl2':tournament.includes('1bundesliga')?'bl1':(/werder|bremen/.test(home+' '+away)?'bl1':/osnabruck|osnabrueck/.test(home+' '+away)?'bl2':null);
+const key=tournament.includes('2bundesliga')?'bl2':(tournament==='bundesliga'||tournament.includes('1bundesliga'))?'bl1':(/werder|bremen/.test(home+' '+away)?'bl1':/osnabruck|osnabrueck/.test(home+' '+away)?'bl2':null);
 if(!key)continue;
 const list=footballMatches[key]||[],date=item.fixture?.date?new Date(item.fixture.date).getTime():null;
 const idx=list.findIndex(old=>{
