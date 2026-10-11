@@ -29,6 +29,8 @@ main{padding:12px}
 .league-green{border-top:5px solid #35a66b}
 .league-purple{background:#20142d;border-color:#593477;border-top:5px solid #a855f7}
 h2{font-size:22px;margin:4px 0 14px}
+.league-title{display:flex;align-items:center;gap:8px}
+.league-logo{width:26px;height:26px;object-fit:contain;flex:0 0 26px}
 h3{font-size:18px;margin:20px 0 10px}
 h4{font-size:15px;margin:12px 0}
 .club{display:inline-flex;align-items:center;gap:8px;padding:7px 11px;margin-bottom:12px;border-radius:8px;background:#1d7045;color:white;font-weight:bold}
@@ -120,7 +122,7 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 <main>
 <section class="league live-league" id="live-league"><h2>🔴 Live-Spiele · 1. &amp; 2. Bundesliga</h2><div id="live-games"><p class="muted">Live-Spiele werden geladen …</p></div></section>
 <section class="league league-green">
-<h2>🟢 1. Bundesliga</h2>
+<h2 class="league-title"><img class="league-logo" src="https://upload.wikimedia.org/wikipedia/en/f/f3/Bundesliga_logo_%282017%29.svg" alt="Bundesliga-Logo">1. Bundesliga</h2>
 <div class="club"><img class="club-logo" id="bl1-club-logo" alt="" hidden><span>SV Werder Bremen</span></div>
 <h3>Spiele des Spieltags</h3><div id="bl1-selector"></div><div id="bl1-games">Daten werden geladen …</div>
 <h3>Tabelle</h3><div id="bl1-table">Tabelle wird geladen …</div>
@@ -128,7 +130,7 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 <button class="refresh" type="button" onclick="refreshData(true)">Daten jetzt aktualisieren</button>
 </section>
 <section class="league league-purple">
-<h2>🟣 2. Bundesliga</h2>
+<h2 class="league-title"><img class="league-logo" src="https://upload.wikimedia.org/wikipedia/en/f/f3/Bundesliga_logo_%282017%29.svg" alt="2. Bundesliga-Logo">2. Bundesliga</h2>
 <div class="club"><img class="club-logo" id="bl2-club-logo" alt="" hidden><span>VfL Osnabrück</span></div>
 <h3>Spiele des Spieltags</h3><div id="bl2-selector"></div><div id="bl2-games">Daten werden geladen …</div>
 <h3>Tabelle</h3><div id="bl2-table">Tabelle wird geladen …</div>
