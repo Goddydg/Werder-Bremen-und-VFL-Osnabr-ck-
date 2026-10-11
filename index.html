@@ -22,40 +22,107 @@ h4{font-size:15px;margin:12px 0}
 .league-purple .club{background:#6b21a8}
 .club-logo{width:32px;height:32px;object-fit:contain;flex:0 0 32px}
 .team-logo{width:30px;height:30px;object-fit:contain;flex:0 0 30px;vertical-align:middle}
+
 .table-team{display:flex;align-items:center;gap:4px;min-width:0;width:100%}
 .table-team-name{white-space:nowrap}
-.match-scoreline{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1.15fr);align-items:center;gap:3px;width:100%;min-width:0;padding:7px 0 10px}
-.match-team{display:flex;flex-direction:row;align-items:center;gap:4px;min-width:0;white-space:normal;flex-wrap:nowrap}
-.match-team.away{justify-content:flex-end;text-align:right}
-.match-team .team-name{display:block;min-width:0;overflow-wrap:anywhere;word-break:normal;font-size:14px;font-weight:bold;line-height:1.15;text-align:left}
-.match-scoreline .score{font-size:15px;padding:0 2px;flex:0 0 auto;justify-self:center}
-.team-logo[hidden],.club-logo[hidden]{display:none!important}
-@media(max-width:520px){
-.match-scoreline{grid-template-columns:minmax(0,1fr) auto minmax(0,1.15fr);gap:2px}
-.match-team{gap:3px}
-.team-logo{width:22px;height:22px;flex:0 0 22px}
-.match-team .team-name{font-size:12px;line-height:1.1}
-.table-team{min-width:0;gap:3px}
-.table-team .team-logo{width:20px;height:20px;flex:0 0 20px}
+
+/* Einheitliche Aufstellung aller Spielpaarungen */
+.match-scoreline{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);
+  align-items:center;
+  gap:8px;
+  width:100%;
+  min-width:0;
+  padding:7px 0 10px;
 }
+.match-team{
+  display:grid;
+  grid-template-columns:24px minmax(0,1fr);
+  align-items:center;
+  column-gap:5px;
+  min-width:0;
+  white-space:normal;
+}
+.match-team.away{justify-content:stretch;text-align:left}
+.match-team .team-logo{
+  width:24px;
+  height:24px;
+  flex:0 0 24px;
+  object-fit:contain;
+  justify-self:center;
+}
+.match-team .team-name{
+  display:block;
+  min-width:0;
+  overflow-wrap:anywhere;
+  word-break:normal;
+  font-size:14px;
+  font-weight:bold;
+  line-height:1.15;
+  text-align:left;
+}
+.match-scoreline .score{
+  font-size:15px;
+  padding:0 2px;
+  flex:0 0 auto;
+  justify-self:center;
+}
+.team-logo[hidden],.club-logo[hidden]{display:none!important}
+
+@media(max-width:520px){
+  .match-scoreline{
+    grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);
+    gap:4px;
+  }
+  .match-team{
+    grid-template-columns:21px minmax(0,1fr);
+    column-gap:3px;
+  }
+  .match-team .team-logo{
+    width:21px;
+    height:21px;
+    flex-basis:21px;
+  }
+  .match-team .team-name{font-size:12px;line-height:1.12}
+  .table-team{min-width:0;gap:3px}
+  .table-team .team-logo{width:20px;height:20px;flex:0 0 20px}
+}
+
 .selector{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0}
 select{max-width:100%;padding:11px;border-radius:9px;background:#173c2a;color:white;border:1px solid #477258;font-size:15px}
 .league-purple select{background:#35194b;border-color:#8b5bb4}
 .table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
-table{width:100%;min-width:385px;border-collapse:collapse;table-layout:fixed;font-size:12px}
-th,td{padding:6px 2px;border-bottom:1px solid #294536;text-align:center;white-space:nowrap}
-th:nth-child(1),td:nth-child(1){width:29px}
-th:nth-child(2),td:nth-child(2){text-align:left;width:132px}
-th:nth-child(3),td:nth-child(3){width:29px}
-th:nth-child(4),td:nth-child(4){width:43px}
-th:nth-child(5),td:nth-child(5){width:31px}
+
+/* Punkte passen in den sichtbaren Bereich; S/U/N folgen rechts */
+table{
+  width:100%;
+  min-width:450px;
+  border-collapse:collapse;
+  table-layout:fixed;
+  font-size:12px;
+}
+th,td{
+  padding:6px 2px;
+  border-bottom:1px solid #294536;
+  text-align:center;
+  white-space:nowrap;
+}
+th:nth-child(1),td:nth-child(1){width:27px}
+th:nth-child(2),td:nth-child(2){text-align:left;width:180px}
+th:nth-child(3),td:nth-child(3){width:27px}
+th:nth-child(4),td:nth-child(4){width:42px}
+th:nth-child(5),td:nth-child(5){width:30px}
 th:nth-child(6),td:nth-child(6){width:36px}
-th:nth-child(7),td:nth-child(7),th:nth-child(8),td:nth-child(8),th:nth-child(9),td:nth-child(9){width:30px}
+th:nth-child(7),td:nth-child(7),
+th:nth-child(8),td:nth-child(8),
+th:nth-child(9),td:nth-child(9){width:30px}
 th{color:#b9d3c3;font-size:12px}
 .league-purple th{color:#dfc9f1}
 .league-purple th,.league-purple td{border-bottom-color:#493257}
 tr.werder-row{background:#1d7045!important;color:white;font-weight:bold}
 tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
+
 .match{padding:12px;margin:8px 0;border-bottom:1px solid #294536;border-radius:9px}
 .league-purple .match{border-bottom-color:#493257}
 .match-date{color:#a9beb0;font-size:12px;margin-bottom:8px}
@@ -154,8 +221,8 @@ function detailsHTML(match,key){const names=teamNames(match),apiMatch=findFootba
 function toggleDetails(key,index){const match=selectedGames(key)[index];if(!match)return;const id=matchKey(match),slot=document.getElementById('details-'+key+'-'+index),hint=document.getElementById('hint-'+key+'-'+index),button=document.getElementById('button-'+key+'-'+index);if(!slot)return;if(expandedMatch[key]===id){expandedMatch[key]=null;slot.innerHTML='';slot.hidden=true;if(hint)hint.textContent='▼ Tippen für Spieldetails und Torschützen';if(button)button.setAttribute('aria-expanded','false');}else{expandedMatch[key]=id;slot.innerHTML=detailsHTML(match,key);slot.hidden=false;if(hint)hint.textContent='▲ Details ausblenden';if(button)button.setAttribute('aria-expanded','true');}}
 function directLogo(team){return team?.teamIconUrl||team?.team?.teamIconUrl||team?.crest||team?.logo||team?.team?.crest||team?.team?.logo||'';}
 function sameTeamName(a,b){const x=normalizeName(a),y=normalizeName(b);if(!x||!y)return false;return x===y||(x.includes('werder')&&y.includes('werder'))||(x.includes('osnabruck')&&y.includes('osnabruck'))||(x.includes('leverkusen')&&y.includes('leverkusen'));}
-function logoForTeam(name,key){for(const game of getGames(key)){for(const team of [game.team1,game.team2])if(sameTeamName(name,team?.teamName||team?.name||team?.shortName)){const url=directLogo(team);if(url)return url;}}for(const row of getTableRows(standings[key])){const rowName=row.team?.name||row.team?.shortName||row.teamName||row.name||'';if(sameTeamName(name,rowName)){const url=directLogo(row);if(url)return url;}}if(normalizeName(name).includes('leverkusen'))return 'https://commons.wikimedia.org/wiki/Special:FilePath/Logo_TSV_Bayer_04_Leverkusen.svg';return ''; }
-function logoErrorAttribute(name){return normalizeName(name).includes('leverkusen')?`onerror="this.onerror=null;this.src='https://commons.wikimedia.org/wiki/Special:FilePath/Logo_TSV_Bayer_04_Leverkusen.svg'"`:'onerror="this.hidden=true"';}
+function logoForTeam(name,key){for(const game of getGames(key)){for(const team of [game.team1,game.team2])if(sameTeamName(name,team?.teamName||team?.name||team?.shortName)){const url=directLogo(team);if(url)return url;}}for(const row of getTableRows(standings[key])){const rowName=row.team?.name||row.team?.shortName||row.teamName||row.name||'';if(sameTeamName(name,rowName)){const url=directLogo(row);if(url)return url;}}if(normalizeName(name).includes('leverkusen'))return 'https://upload.wikimedia.org/wikipedia/commons/9/9d/Logo_TSV_Bayer_04_Leverkusen.svg';return '';}
+function logoErrorAttribute(name){return normalizeName(name).includes('leverkusen')?`onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/9/9d/Logo_TSV_Bayer_04_Leverkusen.svg'"`:'onerror="this.hidden=true"';}
 function teamLogoHTML(team,key){const name=team?.teamName||team?.name||team?.shortName||'';const url=directLogo(team)||logoForTeam(name,key);return url?`<img class="team-logo" src="${esc(url)}" alt="" loading="lazy" ${logoErrorAttribute(name)}>`:'';}
 function updateClubLogos(){for(const [id,name,key] of [['bl1-club-logo','SV Werder Bremen','bl1'],['bl2-club-logo','VfL Osnabrück','bl2']]){const img=document.getElementById(id),url=logoForTeam(name,key);if(img&&url&&img.src!==url){img.src=url;img.hidden=false;img.onerror=()=>{img.hidden=true;};}}}
 function gamesHTML(key){const games=selectedGames(key);if(!games.length)return '<p class="muted">Keine Spiele für diesen Spieltag gefunden.</p>';return games.map((match,index)=>{const names=teamNames(match),hasWerder=key==='bl1'&&(isWerder(names.home)||isWerder(names.away)),hasVfL=key==='bl2'&&(isVfL(names.home)||isVfL(names.away)),cssClass=hasWerder?'werder-match':hasVfL?'vfl-match':'',homeClass=((key==='bl1'&&isWerder(names.home))||(key==='bl2'&&isVfL(names.home)))?'team-highlight':'',awayClass=((key==='bl1'&&isWerder(names.away))||(key==='bl2'&&isVfL(names.away)))?'team-highlight':'',expanded=expandedMatch[key]===matchKey(match);return `<div class="match ${cssClass}" id="card-${key}-${index}"><button type="button" class="match-button" id="button-${key}-${index}" onclick="toggleDetails('${key}',${index})" aria-expanded="${expanded}"><div class="match-date" id="date-${key}-${index}">${statusHTML(match,key)}</div><div class="match-scoreline"><span class="match-team ${homeClass}">${teamLogoHTML(match.team1,key)}<span class="team-name">${esc(names.home)}</span></span><span class="score" id="score-${key}-${index}">${esc(gameScore(match,key))}</span><span class="match-team away ${awayClass}">${teamLogoHTML(match.team2,key)}<span class="team-name">${esc(names.away)}</span></span></div><div class="tap-hint" id="hint-${key}-${index}">${expanded?'▲ Details ausblenden':'▼ Tippen für Spieldetails und Torschützen'}</div></button><div class="details-slot" id="details-${key}-${index}" ${expanded?'':'hidden'}>${expanded?detailsHTML(match,key):''}</div><button type="button" class="lineup-button" onclick="aufstellungAbrufen('${key}',${index})">👥 Aufstellung, Spielerbilder & Statistiken öffnen</button></div>`;}).join('');}
@@ -211,6 +278,9 @@ async function loadSavedSources(){
         footballMatches.bl2=Array.isArray(data.matches)?data.matches:[];
         break;
       case 'api-football':{
+        // Schema des GitHub-Workflows: leagues.bl1/bl2.fixtures plus details[fixtureId].
+        // Für die Detailansicht werden Events, Aufstellungen und Statistiken
+        // aus der gespeicherten Detaildatei an den jeweiligen Spielplan-Eintrag gehängt.
         const convertLeague=(leagueKey)=>{
           const league=data?.leagues?.[leagueKey];
           if(!league)return [];
@@ -257,6 +327,8 @@ async function refreshData(showError=false){
   if(loading)return;
   loading=true;
   try{
+    // Live-Spielstände alle 2 Sekunden abfragen. Statische Dateien werden
+    // nur einmal geladen, damit sie die Live-Aktualisierung nicht ausbremsen.
     const results=await Promise.allSettled([loadLiveGames('bl1'),loadLiveGames('bl2')]);
     if(results[0].status==='fulfilled')matches.bl1=results[0].value;else console.warn('BL1 Live-Abruf fehlgeschlagen:',results[0].reason);
     if(results[1].status==='fulfilled')matches.bl2=results[1].value;else console.warn('BL2 Live-Abruf fehlgeschlagen:',results[1].reason);
