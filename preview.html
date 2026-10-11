@@ -190,8 +190,25 @@ const extra=raw.match(/(45|90)\s*\+\s*(\d+)/);
 if(extra)return `${extra[1]}+${extra[2]}'`;
 const minute=raw.match(/(\d{1,3})\s*(?:['′]|:00\b|\bmin)/i);
 if(minute)return `${minute[1]}'`;
+const digits=raw.match(/^(\d{1,3})$/);
+if(digits)return `${digits[1]}'`;
 }
-return '';
+const candidate=findFootballMatch(match,key);
+const status=apiStatus(candidate);
+const elapsed=Number(candidate?.fixture?.status?.elapsed??candidate?.elapsed??NaN);
+if(Number.isFinite(elapsed)&&elapsed>0){
+const extra=Number(candidate?.fixture?.status?.extra??candidate?.extra??NaN);
+if(Number.isFinite(extra)&&extra>0)return elapsed>=90?`90+${extra}'`:`${elapsed}+${extra}'`;
+return `${elapsed}'`;
+}
+const kickoff=gameDate(match);
+if(!kickoff)return '';
+const mins=Math.max(1,Math.floor((Date.now()-new Date(kickoff).getTime())/60000));
+if(['HT','BREAK','PAUSED'].includes(status))return '45′';
+if(mins<=45)return `${mins}'`;
+if(mins<=65)return `${Math.max(46,mins-20)}'`;
+if(mins<=110)return `${Math.min(90,mins-20)}'`;
+return `90+${Math.max(1,mins-110)}'`;
 }
 function findFootballMatch(match,key){
 const list=footballMatches[key]||[],home=normalizeName(match.team1?.teamName),away=normalizeName(match.team2?.teamName),kickoff=gameDate(match)?new Date(gameDate(match)).getTime():null;
@@ -357,7 +374,7 @@ return 'Sky · WOW';
 function liveGamesHTML(){
 const all=[...getGames('bl1').map(match=>({match,key:'bl1'})),...getGames('bl2').map(match=>({match,key:'bl2'}))].filter(item=>isLive(item.match,item.key)).sort((a,b)=>new Date(gameDate(a.match)||0)-new Date(gameDate(b.match)||0));
 if(!all.length)return '<p class="muted">Aktuell keine Live-Spiele in der 1. oder 2. Bundesliga.</p>';
-return all.map(({match,key})=>{const names=teamNames(match),homeLogo=teamLogoHTML(match.team1,key),awayLogo=teamLogoHTML(match.team2,key),index=selectedGames(key).findIndex(g=>matchKey(g)===matchKey(match)),id=key+'|'+matchKey(match),expanded=window.liveExpandedKey===id;return `<div class="match live-match"><button type="button" class="match-button" onclick="toggleLiveDetails('${key}',${index})" aria-expanded="${expanded}"><div class="match-date"><span class="live-meta"><span class="live-badge">● LIVE ${esc(liveMinute(match,key))}</span>${esc(key==='bl1'?'1. Bundesliga':'2. Bundesliga')} · ${esc(formatDate(gameDate(match)))}</span><span class="scheduled-tv-badge">📺 ${esc(tvProvider(match,key))}</span></div><div class="match-scoreline"><span class="match-team"><span class="team-logo-slot">${homeLogo}</span><span class="team-name">${esc(names.home)}</span></span><span class="score">${esc(gameScore(match,key))}</span><span class="match-team away"><span class="team-logo-slot">${awayLogo}</span><span class="team-name">${esc(names.away)}</span></span></div></button><div class="details-slot" id="live-details-${key}-${index}" ${expanded?'':'hidden'}>${expanded?detailsHTML(match,key):''}</div></div>`;}).join('');
+return all.map(({match,key})=>{const names=teamNames(match),homeLogo=teamLogoHTML(match.team1,key),awayLogo=teamLogoHTML(match.team2,key),index=selectedGames(key).findIndex(g=>matchKey(g)===matchKey(match)),id=key+'|'+matchKey(match),expanded=window.liveExpandedKey===id;return `<div class="match live-match"><button type="button" class="match-button" onclick="toggleLiveDetails('${key}',${index})" aria-expanded="${expanded}"><div class="match-date"><span class="live-meta"><span class="live-badge">● LIVE${liveMinute(match,key)?' '+esc(liveMinute(match,key)):''}</span>${esc(key==='bl1'?'1. Bundesliga':'2. Bundesliga')} · ${esc(formatDate(gameDate(match)))}</span><span class="scheduled-tv-badge">📺 ${esc(tvProvider(match,key))}</span></div><div class="match-scoreline"><span class="match-team"><span class="team-logo-slot">${homeLogo}</span><span class="team-name">${esc(names.home)}</span></span><span class="score">${esc(gameScore(match,key))}</span><span class="match-team away"><span class="team-logo-slot">${awayLogo}</span><span class="team-name">${esc(names.away)}</span></span></div></button><div class="details-slot" id="live-details-${key}-${index}" ${expanded?'':'hidden'}>${expanded?detailsHTML(match,key):''}</div></div>`;}).join('');
 }
 function toggleLiveDetails(key,index){const match=selectedGames(key)[index];if(!match)return;const id=key+'|'+matchKey(match);window.liveExpandedKey=window.liveExpandedKey===id?null:id;renderLiveGames();const slot=document.getElementById('live-details-'+key+'-'+index);if(window.liveExpandedKey===id&&slot){slot.innerHTML=detailsHTML(match,key);slot.hidden=false;}}
 function renderLiveGames(){
