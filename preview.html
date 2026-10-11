@@ -308,13 +308,11 @@ for(const e of espn){
 const duplicate=bookings.some(x=>x.type===e.type&&normalizeName(x.team)===e.team&&x.player===e.player&&String(x.minute)===String(e.minute));
 if(!duplicate)bookings.push({minute:e.minute,type:e.type,player:e.player||'Spieler unbekannt',team:e.teamName||''});
 }
-if(!bookings.length){
-if(!apiMatch)return '<p class="no-data">Kartendaten für dieses Spiel derzeit nicht verfügbar.</p>';
-if(apiMatch._savedDetailsComplete)return '<p class="no-data">Keine Kartenereignisse gemeldet.</p>';
-return '<p class="no-data">Kartendaten von den Anbietern noch nicht verfügbar.</p>';
-}
 bookings.sort((a,b)=>(parseInt(a.minute,10)||0)-(parseInt(b.minute,10)||0));
-return bookings.map(e=>{const label=e.type==='red'?'🟥 Rote Karte': '🟨 Gelbe Karte';return `<div class="scorer"><b>${esc(String(e.minute||'').replace(/′$/,''))}${String(e.minute||'').includes("'")||String(e.minute||'').includes('′')?'':"′"}</b> ${label} – ${esc(e.player)}${e.team?`<div class="detail-label">${esc(e.team)}</div>`:''}</div>`;}).join('');
+const list=bookings.length?bookings.map(e=>{const label=e.type==='red'?'🟥 Rote Karte':'🟨 Gelbe Karte';return `<div class="scorer"><b>${esc(String(e.minute||'').replace(/′$/,''))}${String(e.minute||'').includes("'")||String(e.minute||'').includes('′')?'':"′"}</b> ${label} – ${esc(e.player)}${e.team?`<div class="detail-label">${esc(e.team)}</div>`:''}</div>`;}).join(''):'<p class="no-data">Die Kartenereignisse werden im offiziellen Bundesliga-Liveticker angezeigt.</p>';
+const round=roundNumber(match),leaguePath=key==='bl1'?'bundesliga':'2bundesliga',seasonPath=`${season}-${season+1}`,matchup=`${teamSlug(names.home)}-vs-${teamSlug(names.away)}`;
+const url=`https://www.bundesliga.com/de/${leaguePath}/spieltag/${seasonPath}/${round}/${matchup}/liveticker`;
+return list+`<p class="section-note"><a href="${url}" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline">Offiziellen Bundesliga-Liveticker mit Kartenereignissen öffnen ↗</a></p>`;
 }
 function renderSubs(apiMatch){
 const subs=apiEvents(apiMatch).filter(e=>e.type==='subst');
