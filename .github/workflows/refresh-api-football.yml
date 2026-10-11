@@ -135,7 +135,7 @@ jobs:
               } catch {
                 execFileSync('git', ['config', 'user.name', 'github-actions[bot]']);
                 execFileSync('git', ['config', 'user.email', '41898282+github-actions[bot]@users.noreply.github.com']);
-                execFileSync('git', ['commit', '-m', `Refresh Bundesliga card events (${new Date().toISOString()})']);
+                execFileSync('git', ['commit', '-m', `Refresh Bundesliga card events (${new Date().toISOString()})`]);
                 execFileSync('git', ['push']);
               }
               console.log(`Minute poll ${cycle + 1}: checked ${checked} live match pages; extracted ${found} card events.`);
