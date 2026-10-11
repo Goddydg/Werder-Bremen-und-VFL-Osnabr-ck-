@@ -247,7 +247,11 @@ return entries.map(g=>`<div class="scorer"><b>${esc(g.minute==null?'':String(g.m
 }
 function renderBookings(apiMatch){
 const bookings=apiEvents(apiMatch).filter(e=>e.type==='Card');
-if(!bookings.length)return '<p class="no-data">Keine Kartendaten hinterlegt.</p>';
+if(!bookings.length){
+if(!apiMatch)return '<p class="no-data">Kartendaten derzeit nicht verfügbar – keine passende API-Football-Partie gefunden.</p>';
+if(apiMatch._savedDetailsComplete)return '<p class="no-data">Keine Kartenereignisse gemeldet.</p>';
+return '<p class="no-data">Kartendaten noch nicht geladen. Sie werden automatisch nachgeladen.</p>';
+}
 return bookings.map(e=>{const type=String(e.detail||'').toLowerCase();let label='🟨 Karte';if(type.includes('yellow-red')||type.includes('second yellow'))label='🟨🟥 Gelb-Rote Karte';else if(type.includes('red'))label='🟥 Rote Karte';else if(type.includes('yellow'))label='🟨 Gelbe Karte';return `<div class="scorer"><b>${esc(eventMinute(e))}</b> ${label} – ${esc(e.player?.name||'Spieler unbekannt')}${e.team?.name?`<div class="detail-label">${esc(e.team.name)}</div>`:''}</div>`;}).join('');
 }
 function renderSubs(apiMatch){
