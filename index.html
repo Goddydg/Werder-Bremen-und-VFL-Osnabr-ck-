@@ -125,11 +125,13 @@ let loading=false;
 let initialRenderDone=false;
 let lastRenderedTableHTML={bl1:null,bl2:null};
 
-/* Zustand der beiden Vereinswappen */
 const clubLogoState={
   bl1:{url:'',img:null,failedUrl:''},
   bl2:{url:'',img:null,failedUrl:''}
 };
+
+/* Bereits gefundene Wappenadressen nach normalisiertem Vereinsnamen. */
+const teamLogoCache=new Map();
 
 function esc(value){
   return String(value??'').replace(/[&<>"']/g,c=>({
@@ -169,10 +171,11 @@ function normalizeName(value){
     .normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]/g,'');
 }
 
-/* Bayer 04 Leverkusen und Bayer Leverkusen als denselben Verein erkennen. */
+/* Einheitliche Namen für Vergleiche, unter anderem Bayer 04 Leverkusen. */
 function canonicalTeamName(value){
-  const name=normalizeName(value);
-  if(name==='bayer04leverkusen')return 'bayerleverkusen';
+  let name=normalizeName(value);
+  if(name==='bayer04leverkusen'||name==='bayer04')name='bayerleverkusen';
+  if(name==='bayerleverkusen')name='bayerleverkusen';
   return name;
 }
 
@@ -180,6 +183,46 @@ function isSameTeamName(a,b){
   const x=canonicalTeamName(a),y=canonicalTeamName(b);
   return Boolean(x&&y&&(x===y||
     (Math.min(x.length,y.length)>=5&&(x.includes(y)||y.includes(x)))));
+}
+
+function getTableRows(data){
+  if(Array.isArray(data))return data;
+  if(Array.isArray(data?.table))return data.table;
+  if(Array.isArray(data?.standings)){
+    const total=data.standings.find(s=>s.type==='TOTAL');
+    return total?.table||data.standings[0]?.table||[];
+  }
+  return [];
+}
+
+function tableTeamName(row){
+  return row.team?.name||row.teamName||row.name||row.team?.shortName||'';
+}
+
+/*
+ * Holt die Wappenadressen aus den Tabellendaten.
+ * Das ist dieselbe Datenquelle, aus der das Tabellenwappen angezeigt wird.
+ */
+function rebuildTeamLogoCache(){
+  teamLogoCache.clear();
+
+  for(const data of Object.values(standings)){
+    for(const row of getTableRows(data)){
+      const name=tableTeamName(row);
+      const logo=[
+        row?.team?.teamIconUrl,
+        row?.team?.crest,
+        row?.team?.logo,
+        row?.teamIconUrl,
+        row?.crest,
+        row?.logo
+      ].find(url=>typeof url==='string'&&url.trim()!=='');
+
+      if(name&&logo){
+        teamLogoCache.set(canonicalTeamName(name),logo);
+      }
+    }
+  }
 }
 
 function teamLogoUrl(name,key,row=null){
@@ -194,6 +237,15 @@ function teamLogoUrl(name,key,row=null){
 
   if(direct)return direct;
 
+  /* Erst die Wappenadresse aus der Tabelle verwenden. */
+  const canonical=canonicalTeamName(name);
+  if(teamLogoCache.has(canonical))return teamLogoCache.get(canonical);
+
+  /* Falls die Schreibweise abweicht, die gespeicherten Namen vergleichen. */
+  for(const [cachedName,cachedUrl] of teamLogoCache.entries()){
+    if(isSameTeamName(name,cachedName))return cachedUrl;
+  }
+
   const ids=[
     row?.team?.teamId,
     row?.team?.teamID,
@@ -202,9 +254,7 @@ function teamLogoUrl(name,key,row=null){
     row?.teamID
   ].filter(id=>id!==undefined&&id!==null).map(String);
 
-  const allGames=Object.values(matches).flat();
-
-  for(const game of allGames){
+  for(const game of Object.values(matches).flat()){
     for(const team of [game.team1,game.team2]){
       if(!team?.teamIconUrl)continue;
       if(ids.length&&ids.includes(String(team.teamId)))return team.teamIconUrl;
@@ -212,9 +262,7 @@ function teamLogoUrl(name,key,row=null){
     }
   }
 
-  const allFootballMatches=Object.values(footballMatches).flat();
-
-  for(const game of allFootballMatches){
+  for(const game of Object.values(footballMatches).flat()){
     for(const team of [
       game.teams?.home,game.teams?.away,
       game.homeTeam,game.awayTeam
@@ -233,10 +281,7 @@ function teamLogoHTML(name,key,row=null){
   return `<img class="team-logo" src="${esc(url)}" alt="${esc(name)}" loading="lazy" onerror="this.style.display='none'">`;
 }
 
-/*
- * Vereinswappen nicht bei jedem Refresh neu einsetzen.
- * Ein vorhandenes, geladenes Bild bleibt unverändert im DOM.
- */
+/* Vereinswappen nicht bei jedem Refresh neu einsetzen. */
 function renderClubLogo(key,name){
   const el=document.getElementById(key+'-club');
   if(!el)return;
@@ -268,11 +313,8 @@ function renderClubLogo(key,name){
 
   img.addEventListener('load',()=>{
     const old=el.querySelector('img.team-logo');
-
-    /* Erst nach erfolgreichem Laden das alte Wappen ersetzen. */
     if(old&&old!==img)old.remove();
     if(label.parentNode===el)el.insertBefore(img,label);
-
     state.url=url;
     state.img=img;
     state.failedUrl='';
@@ -595,16 +637,6 @@ function gamesHTML(key){
   }).join('');
 }
 
-function getTableRows(data){
-  if(Array.isArray(data))return data;
-  if(Array.isArray(data?.table))return data.table;
-  if(Array.isArray(data?.standings)){
-    const total=data.standings.find(s=>s.type==='TOTAL');
-    return total?.table||data.standings[0]?.table||[];
-  }
-  return [];
-}
-
 function liveTableFromMatches(key){
   const games=getGames(key);
   if(!games.length||!games.some(g=>!isFinished(g)&&isLive(g,key)))return null;
@@ -658,10 +690,6 @@ function liveTableFromMatches(key){
   return rows;
 }
 
-function tableTeamName(row){
-  return row.team?.name||row.teamName||row.name||row.team?.shortName||'';
-}
-
 function tableHTML(data,key){
   const rows=getTableRows(data);
   if(!rows.length)return '<p class="muted">Tabelle nicht verfügbar.</p>';
@@ -695,7 +723,6 @@ function renderGames(key){
   document.getElementById(key+'-games').innerHTML=gamesHTML(key);
 }
 
-/* Tabellen-DOM nur verändern, wenn sich der fertige Tabelleninhalt ändert. */
 function renderTables(){
   for(const key of ['bl1','bl2']){
     const html=tableHTML(liveTableFromMatches(key)||standings[key],key);
@@ -818,6 +845,9 @@ async function refreshData(showError=false){
 
     if(tableResults[0].status==='fulfilled')standings.bl1=tableResults[0].value;
     if(tableResults[1].status==='fulfilled')standings.bl2=tableResults[1].value;
+
+    /* Cache erst nach dem Laden der Tabellen neu aufbauen. */
+    rebuildTeamLogoCache();
 
     if(selectedRound.bl1===null)selectedRound.bl1=findDefaultRound(getGames('bl1'));
     if(selectedRound.bl2===null)selectedRound.bl2=findDefaultRound(getGames('bl2'));
