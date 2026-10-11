@@ -176,10 +176,12 @@ return `${elapsed}'`;
 const kickoff=gameDate(match);
 if(!kickoff)return '';
 const mins=Math.max(1,Math.floor((Date.now()-new Date(kickoff).getTime())/60000));
+const halftime=['HT','BREAK','PAUSED'].includes(apiStatus(candidate));
+if(halftime)return '45\u2032';
 if(mins<=45)return `${mins}'`;
-if(mins<=60)return '45+';
-if(mins<=90)return `${Math.min(90,mins-15)}'`;
-return `90+${mins-90}'`;
+if(mins<=60)return `${Math.max(46,mins-15)}'`;
+if(mins<=105)return `${Math.min(90,mins-15)}'`;
+return `90+${Math.max(1,mins-105)}'`;
 }
 function findFootballMatch(match,key){
 const list=footballMatches[key]||[],home=normalizeName(match.team1?.teamName),away=normalizeName(match.team2?.teamName),kickoff=gameDate(match)?new Date(gameDate(match)).getTime():null;
