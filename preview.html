@@ -560,7 +560,7 @@ if(loading)return;
 loading=true;
 try{
 await refreshESPNLiveMatches().catch(error=>console.warn('ESPN-Live-Minuten nicht verfügbar:',error));
-await refreshESPNCardEvents().catch(error=>console.warn('ESPN-Kartendaten nicht verfügbar:',error));
+refreshESPNCardEvents().catch(error=>console.warn('ESPN-Kartendaten nicht verfügbar:',error));
 const results=await Promise.allSettled([loadLiveGames('bl1'),loadLiveGames('bl2')]);
 if(results[0].status==='fulfilled')matches.bl1=results[0].value;else console.warn('BL1 Live-Abruf fehlgeschlagen:',results[0].reason);
 if(results[1].status==='fulfilled')matches.bl2=results[1].value;else console.warn('BL2 Live-Abruf fehlgeschlagen:',results[1].reason);
