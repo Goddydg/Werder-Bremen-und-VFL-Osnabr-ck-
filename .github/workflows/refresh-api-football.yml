@@ -115,7 +115,14 @@ jobs:
                   const html = await page.text();
                   const cards = extractCards(html);
                   if (cards.length) found += cards.length;
-                  output[id] = { matchId: id, home, away, round, url, cards, checkedAt: new Date().toISOString() };
+                  const previous = output[id] || {};
+                  const merged = [...(previous.cards || [])];
+                  const seen = new Set(merged.map(c => [c.minute || '', c.type || '', c.player || ''].join('|').toLowerCase()));
+                  for (const card of cards) {
+                    const key = [card.minute || '', card.type || '', card.player || ''].join('|').toLowerCase();
+                    if (!seen.has(key)) { merged.push(card); seen.add(key); }
+                  }
+                  output[id] = { ...previous, matchId: id, home, away, round, url, cards: merged, checkedAt: new Date().toISOString() };
                   checked++;
                   console.log(`${leagueKey} ${home} - ${away}: ${cards.length} cards`);
                 } catch (error) {
