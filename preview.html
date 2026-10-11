@@ -301,7 +301,13 @@ if(!entries.length)return '<p class="no-data">Für dieses Spiel sind keine Torsc
 return entries.map(g=>`<div class="scorer"><b>${esc(g.minute==null?'':String(g.minute).includes('′')?g.minute:g.minute+'′')}</b> ${esc(g.player)} ${g.detail?`<span class="detail-label">(${esc(g.detail)})</span>`:''}${g.team?`<div class="detail-label">${esc(g.team)}</div>`:''}</div>`).join('');
 }
 function renderBookings(match,key,apiMatch){
-const saved=websiteCardEvents[key]?.[String(match.matchID)]||[];
+const savedById=websiteCardEvents[key]?.[String(match.matchID)];
+const names=teamNames(match);
+const normalizeTeam=value=>normalizeName(String(value||'').replace(/\\bSV\\b|\\bFC\\b|\\bSC\\b|\\bTSG\\b|\\bVfL\\b|\\bBorussia\\b/gi,'').replace(/[^a-z0-9]/gi,''));
+const savedByTeams=Object.values(websiteCardEvents[key]||{}).find(item=>
+  normalizeTeam(item.home)===normalizeTeam(names.home)&&normalizeTeam(item.away)===normalizeTeam(names.away)
+);
+const saved=(savedById||savedByTeams)?.cards||[];
 const bookings=[...saved];
 for(const e of apiEvents(apiMatch).filter(e=>e.type==='Card')){
 const type=/second yellow|yellow-red/i.test(String(e.detail||''))?'yellow-red':/red/i.test(String(e.detail||''))?'red':'yellow';
