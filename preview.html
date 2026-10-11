@@ -300,14 +300,21 @@ entries.sort((a,b)=>(parseInt(a.minute,10)||0)-(parseInt(b.minute,10)||0));
 if(!entries.length)return '<p class="no-data">Für dieses Spiel sind keine Torschützen hinterlegt.</p>';
 return entries.map(g=>`<div class="scorer"><b>${esc(g.minute==null?'':String(g.minute).includes('′')?g.minute:g.minute+'′')}</b> ${esc(g.player)} ${g.detail?`<span class="detail-label">(${esc(g.detail)})</span>`:''}${g.team?`<div class="detail-label">${esc(g.team)}</div>`:''}</div>`).join('');
 }
-function renderBookings(apiMatch){
-const bookings=apiEvents(apiMatch).filter(e=>e.type==='Card');
-if(!bookings.length){
-if(!apiMatch)return '<p class="no-data">Kartendaten derzeit nicht verfügbar – keine passende API-Football-Partie gefunden.</p>';
-if(apiMatch._savedDetailsComplete)return '<p class="no-data">Keine Kartenereignisse gemeldet.</p>';
-return '<p class="no-data">Kartendaten noch nicht geladen. Sie werden automatisch nachgeladen.</p>';
+function renderBookings(match,key,apiMatch){
+const bookings=apiEvents(apiMatch).filter(e=>e.type==='Card').map(e=>({minute:eventMinute(e),type:/red|second yellow|yellow-red/i.test(String(e.detail||''))?'red':'yellow',player:e.player?.name||'Spieler unbekannt',team:e.team?.name||''}));
+const names=teamNames(match),home=normalizeName(names.home),away=normalizeName(names.away);
+const espn=(espnCardEvents[key]||[]).filter(game=>game.home===home&&game.away===away).flatMap(game=>game.events||[]);
+for(const e of espn){
+const duplicate=bookings.some(x=>x.type===e.type&&normalizeName(x.team)===e.team&&x.player===e.player&&String(x.minute)===String(e.minute));
+if(!duplicate)bookings.push({minute:e.minute,type:e.type,player:e.player||'Spieler unbekannt',team:e.teamName||''});
 }
-return bookings.map(e=>{const type=String(e.detail||'').toLowerCase();let label='🟨 Karte';if(type.includes('yellow-red')||type.includes('second yellow'))label='🟨🟥 Gelb-Rote Karte';else if(type.includes('red'))label='🟥 Rote Karte';else if(type.includes('yellow'))label='🟨 Gelbe Karte';return `<div class="scorer"><b>${esc(eventMinute(e))}</b> ${label} – ${esc(e.player?.name||'Spieler unbekannt')}${e.team?.name?`<div class="detail-label">${esc(e.team.name)}</div>`:''}</div>`;}).join('');
+if(!bookings.length){
+if(!apiMatch)return '<p class="no-data">Kartendaten für dieses Spiel derzeit nicht verfügbar.</p>';
+if(apiMatch._savedDetailsComplete)return '<p class="no-data">Keine Kartenereignisse gemeldet.</p>';
+return '<p class="no-data">Kartendaten von den Anbietern noch nicht verfügbar.</p>';
+}
+bookings.sort((a,b)=>(parseInt(a.minute,10)||0)-(parseInt(b.minute,10)||0));
+return bookings.map(e=>{const label=e.type==='red'?'🟥 Rote Karte': '🟨 Gelbe Karte';return `<div class="scorer"><b>${esc(String(e.minute||'').replace(/′$/,''))}${String(e.minute||'').includes("'")||String(e.minute||'').includes('′')?'':"′"}</b> ${label} – ${esc(e.player)}${e.team?`<div class="detail-label">${esc(e.team)}</div>`:''}</div>`;}).join('');
 }
 function renderSubs(apiMatch){
 const subs=apiEvents(apiMatch).filter(e=>e.type==='subst');
@@ -342,7 +349,7 @@ if(ft?.home!=null)html+=detailLine('Endstand',`${ft.home} : ${ft.away}`);
 if(et?.home!=null)html+=detailLine('Verlängerung',`${et.home} : ${et.away}`);
 if(pen?.home!=null)html+=detailLine('Elfmeterschießen',`${pen.home} : ${pen.away}`);
 if(results.length){html+='<h4>Ergebnisse OpenLigaDB</h4>';results.forEach(r=>html+=detailLine(r.resultName||(Number(r.resultTypeID)===1?'Halbzeit':Number(r.resultTypeID)===2?'Endstand':'Spielstand'),`${r.pointsTeam1} : ${r.pointsTeam2}`));}
-html+='<h4>⚽ Torschützen</h4>'+renderGoals(match,apiMatch)+'<h4>🟨 Karten</h4>'+renderBookings(apiMatch)+'<h4>🔄 Auswechslungen</h4>'+renderSubs(apiMatch)+'<h4>📊 Spielstatistiken</h4>'+renderStatistics(apiMatch)+'<h4>👥 Aufstellungen & Ersatzbank</h4>'+renderLineups(apiMatch);
+html+='<h4>⚽ Torschützen</h4>'+renderGoals(match,apiMatch)+'<h4>🟨 Karten</h4>'+renderBookings(match,key,apiMatch)+'<h4>🔄 Auswechslungen</h4>'+renderSubs(apiMatch)+'<h4>📊 Spielstatistiken</h4>'+renderStatistics(apiMatch)+'<h4>👥 Aufstellungen & Ersatzbank</h4>'+renderLineups(apiMatch);
 const lineupIndex=selectedGames(key).findIndex(g=>matchKey(g)===matchKey(match));html+=`<button type="button" class="lineup-button" onclick="aufstellungAbrufen('${key}',${lineupIndex})">👥 Aufstellung, Spielerbilder &amp; Statistiken öffnen</button>`;
 html+=`<p class="no-data">Zusatzdaten: ${apiMatch?'API-Football':'Noch keine passenden API-Football-Daten für dieses Spiel'}. Aufstellungen und Statistiken sind abhängig von der Verfügbarkeit beim Anbieter.</p></div>`;
 return html;
@@ -385,24 +392,30 @@ async function refreshESPNCardEvents(){
 if(Date.now()-lastEspnCardsCheck<20000)return;
 lastEspnCardsCheck=Date.now();
 for(const key of ['bl1','bl2']){
-const live=(espnLiveMatches[key]||[]).filter(x=>x.state==='in'&&x.id);
-const results=await Promise.allSettled(live.map(async item=>{
+const events=(espnLiveMatches[key]||[]).filter(x=>x.id);
+const results=await Promise.allSettled(events.map(async item=>{
 const league=key==='bl1'?'ger.1':'ger.2';
 const data=await loadJSON(`https://site.api.espn.com/apis/site/v2/sports/soccer/${league}/summary?event=${encodeURIComponent(item.id)}`);
-const found=[];
-function walk(value){
+const found=[],seen=new Set();
+function walk(value,context={}){
 if(!value)return;
-if(Array.isArray(value)){value.forEach(walk);return;}
+if(Array.isArray(value)){value.forEach(v=>walk(v,context));return;}
 if(typeof value!=='object')return;
-const txt=[value.text,value.shortText,value.description,value.type?.text,value.type?.name,value.detail].filter(x=>typeof x==='string').join(' ');
-if(/red card|sent off|sending off|second yellow|yellow-red|rote karte|gelb-rot/i.test(txt)){
-const tn=value.team?.displayName||value.team?.name||value.teamName||'';
-if(tn)found.push({team:normalizeName(tn),text:txt});
+const player=value.athlete?.displayName||value.player?.displayName||value.player?.name||context.player||'';
+const team=value.team?.displayName||value.team?.name||value.teamName||context.team||'';
+const minute=value.clock?.displayValue||value.time?.displayValue||value.time?.elapsed||value.minute||value.clock||context.minute||'';
+const texts=[value.text,value.shortText,value.description,value.type?.text,value.type?.name,value.type?.abbreviation,value.detail,value.name].filter(x=>typeof x==='string').join(' ');
+const isCard=/red card|sent off|sending off|second yellow|yellow-red|yellow card|booking|rote karte|gelb-rot|gelbe karte/i.test(texts);
+if(isCard&&team){
+const red=/red card|sent off|sending off|second yellow|yellow-red|rote karte|gelb-rot/i.test(texts);
+const type=red?'red':'yellow',id=[type,team,player,minute,texts].join('|');
+if(!seen.has(id)){seen.add(id);found.push({team:normalizeName(team),teamName:team,player,minute:String(minute||''),type,detail:texts});}
 }
-Object.entries(value).forEach(([k,v])=>{if(k!=='team')walk(v);});
+const next={player:player||context.player,team:team||context.team,minute:minute||context.minute};
+Object.entries(value).forEach(([k,v])=>{if(k!=='team'&&k!=='athlete'&&k!=='player')walk(v,next);});
 }
 walk(data);
-return {home:item.home,away:item.away,events:found};
+return {id:item.id,home:item.home,away:item.away,events:found};
 }));
 espnCardEvents[key]=results.filter(x=>x.status==='fulfilled').map(x=>x.value);
 }
