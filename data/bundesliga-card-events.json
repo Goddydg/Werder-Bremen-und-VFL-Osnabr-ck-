@@ -1,0 +1,369 @@
+{
+  "updatedAt": "2026-10-11T18:46:10.445Z",
+  "leagues": {
+    "bl1": {
+      "83192": {
+        "matchId": "83192",
+        "home": "Borussia Dortmund",
+        "away": "SV Werder Bremen",
+        "round": 5,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/5/borussia-dortmund-vs-sv-werder-bremen/liveticker/",
+        "cards": [
+          {
+            "minute": "90+8′",
+            "type": "yellow",
+            "player": "Daniel Thioune"
+          },
+          {
+            "minute": "90+4′",
+            "type": "yellow",
+            "player": "Felix Nmecha War noch nicht die Entscheidung S"
+          },
+          {
+            "minute": "90+2′",
+            "type": "yellow",
+            "player": "Joey Veerman"
+          },
+          {
+            "minute": "90′",
+            "type": "yellow",
+            "player": "Dariusz Stalmach"
+          }
+        ],
+        "checkedAt": "2026-10-11T18:45:38.669Z"
+      },
+      "83193": {
+        "matchId": "83193",
+        "home": "RB Leipzig",
+        "away": "Eintracht Frankfurt",
+        "round": 5,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/5/rb-leipzig-vs-eintracht-frankfurt/liveticker/",
+        "cards": [
+          {
+            "minute": "84′",
+            "type": "yellow",
+            "player": "Raphael Onyedika"
+          },
+          {
+            "minute": "76′",
+            "type": "yellow",
+            "player": "Ansgar Knauff"
+          },
+          {
+            "minute": "62′",
+            "type": "yellow",
+            "player": "Elias Baum"
+          },
+          {
+            "minute": "27′",
+            "type": "yellow",
+            "player": "Neil El Aynaoui"
+          }
+        ],
+        "checkedAt": "2026-10-11T18:45:44.924Z"
+      },
+      "83194": {
+        "matchId": "83194",
+        "home": "TSG Hoffenheim",
+        "away": "Hamburger SV",
+        "round": 5,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/5/tsg-hoffenheim-vs-hamburger-sv/liveticker/",
+        "cards": [
+          {
+            "minute": "80′",
+            "type": "yellow",
+            "player": "Leon Avdullahu"
+          },
+          {
+            "minute": "65′",
+            "type": "yellow-red",
+            "player": "Bernardo"
+          },
+          {
+            "minute": "55′",
+            "type": "yellow",
+            "player": "Bernardo"
+          }
+        ],
+        "checkedAt": "2026-10-11T18:45:39.708Z"
+      },
+      "83196": {
+        "matchId": "83196",
+        "home": "FC Augsburg",
+        "away": "FC Bayern München",
+        "round": 5,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/5/fc-augsburg-vs-fc-bayern-muenchen/liveticker/",
+        "cards": [
+          {
+            "minute": "62′",
+            "type": "yellow",
+            "player": "Hennes Behrens"
+          },
+          {
+            "minute": "43′",
+            "type": "yellow",
+            "player": "Rodrigo Ribeiro"
+          },
+          {
+            "minute": "42′",
+            "type": "yellow",
+            "player": "Chrislain Matsima"
+          }
+        ],
+        "checkedAt": "2026-10-11T18:45:40.647Z"
+      },
+      "83197": {
+        "matchId": "83197",
+        "home": "1. FSV Mainz 05",
+        "away": "Bayer 04 Leverkusen",
+        "round": 5,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/5/1-fsv-mainz-05-vs-bayer-04-leverkusen/liveticker/",
+        "cards": [
+          {
+            "minute": "90+3′",
+            "type": "yellow",
+            "player": "Jarell Quansah"
+          },
+          {
+            "minute": "76′",
+            "type": "yellow",
+            "player": "Jaesung Lee"
+          },
+          {
+            "minute": "35′",
+            "type": "yellow",
+            "player": "Sheraldo Becker"
+          },
+          {
+            "minute": "20′",
+            "type": "yellow",
+            "player": "Phillip Tietz"
+          }
+        ],
+        "checkedAt": "2026-10-11T18:45:41.710Z"
+      },
+      "83199": {
+        "matchId": "83199",
+        "home": "1. FC Köln",
+        "away": "Borussia Mönchengladbach",
+        "round": 5,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/5/1-fc-koeln-vs-borussia-moenchengladbach/liveticker/",
+        "cards": [
+          {
+            "minute": "90+6′",
+            "type": "yellow",
+            "player": "Shūto Machino"
+          },
+          {
+            "minute": "81′",
+            "type": "yellow",
+            "player": "Zento Uno"
+          },
+          {
+            "minute": "24′",
+            "type": "yellow",
+            "player": "Jan Leszczyński Blessin mit seinem Debüt Der n"
+          },
+          {
+            "minute": "14′",
+            "type": "yellow",
+            "player": "Marius Bülter"
+          }
+        ],
+        "checkedAt": "2026-10-11T18:45:45.989Z"
+      },
+      "83200": {
+        "matchId": "83200",
+        "home": "SC Paderborn 07",
+        "away": "VfB Stuttgart",
+        "round": 5,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/5/sc-paderborn-07-vs-vfb-stuttgart/liveticker/",
+        "cards": [
+          {
+            "minute": "45′",
+            "type": "yellow",
+            "player": "Marvin Pieringer"
+          }
+        ],
+        "checkedAt": "2026-10-11T18:45:43.887Z"
+      }
+    },
+    "bl2": {
+      "83608": {
+        "matchId": "83608",
+        "home": "FC St. Pauli",
+        "away": "Karlsruher SC",
+        "round": 7,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/7/fc-st-pauli-vs-karlsruher-sc/liveticker/",
+        "cards": [
+          {
+            "minute": "87′",
+            "type": "yellow",
+            "player": "Branimir Hrgota"
+          },
+          {
+            "minute": "48′",
+            "type": "yellow",
+            "player": "Marvin Wanitzek"
+          },
+          {
+            "minute": "34′",
+            "type": "yellow",
+            "player": "Sandro Trémoulet Ceesay bringt St. Pauli in Fü"
+          }
+        ],
+        "checkedAt": "2026-10-11T18:46:06.294Z"
+      },
+      "83609": {
+        "matchId": "83609",
+        "home": "1. FC Heidenheim 1846",
+        "away": "1. FC Kaiserslautern",
+        "round": 7,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/7/1-fc-heidenheim-1846-vs-1-fc-kaiserslautern/liveticker/",
+        "cards": [],
+        "checkedAt": "2026-10-11T18:45:51.454Z"
+      },
+      "83613": {
+        "matchId": "83613",
+        "home": "Hertha BSC",
+        "away": "SpVgg Greuther Fürth",
+        "round": 7,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/7/hertha-bsc-vs-spvgg-greuther-fuerth/liveticker/",
+        "cards": [
+          {
+            "minute": "72′",
+            "type": "yellow",
+            "player": "Eitschberger lässt Ademi auf der linken Seite"
+          },
+          {
+            "minute": "72′",
+            "type": "yellow",
+            "player": "Julian Eitschberger"
+          },
+          {
+            "minute": "60′",
+            "type": "yellow",
+            "player": "Gechter ist zu spät dran gegen Appelkamp und s"
+          },
+          {
+            "minute": "60′",
+            "type": "yellow",
+            "player": "Linus Gechter"
+          }
+        ],
+        "checkedAt": "2026-10-11T18:46:09.204Z"
+      },
+      "83615": {
+        "matchId": "83615",
+        "home": "1. FC Nürnberg",
+        "away": "VfL Wolfsburg",
+        "round": 7,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/7/1-fc-nuernberg-vs-vfl-wolfsburg/liveticker/",
+        "cards": [
+          {
+            "minute": "90+7′",
+            "type": "yellow",
+            "player": "Ioannis Masouras"
+          },
+          {
+            "minute": "88′",
+            "type": "yellow",
+            "player": "Alexios Kalogeropoulos"
+          },
+          {
+            "minute": "87′",
+            "type": "yellow",
+            "player": "Kento Shiogai"
+          },
+          {
+            "minute": "77′",
+            "type": "yellow",
+            "player": "Mathys Angély"
+          },
+          {
+            "minute": "62′",
+            "type": "yellow",
+            "player": "Hauke Wahl"
+          },
+          {
+            "minute": "20′",
+            "type": "yellow",
+            "player": "Mohamed Alì Zoma"
+          }
+        ],
+        "checkedAt": "2026-10-11T18:46:03.041Z"
+      },
+      "83617": {
+        "matchId": "83617",
+        "home": "1. FC Magdeburg",
+        "away": "Hannover 96",
+        "round": 7,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/7/1-fc-magdeburg-vs-hannover-96/liveticker/",
+        "cards": [
+          {
+            "minute": "62′",
+            "type": "yellow",
+            "player": "Mateusz Żukowski"
+          },
+          {
+            "minute": "62′",
+            "type": "yellow",
+            "player": "Boris Tomiak"
+          },
+          {
+            "minute": "18′",
+            "type": "yellow",
+            "player": "Emir Sahiti Magdeburger Jubel Die Hausherren f"
+          }
+        ],
+        "checkedAt": "2026-10-11T18:45:57.515Z"
+      },
+      "83620": {
+        "matchId": "83620",
+        "home": "Eintracht Braunschweig",
+        "away": "Holstein Kiel",
+        "round": 7,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/7/eintracht-braunschweig-vs-holstein-kiel/liveticker/",
+        "cards": [
+          {
+            "minute": "82′",
+            "type": "yellow",
+            "player": "Jonas Therkelsen"
+          },
+          {
+            "minute": "65′",
+            "type": "yellow",
+            "player": "Yann Sturm"
+          },
+          {
+            "minute": "62′",
+            "type": "yellow",
+            "player": "Fabio Di Michele Sanchez"
+          },
+          {
+            "minute": "45+1′",
+            "type": "yellow",
+            "player": "Guillermo Balzi"
+          },
+          {
+            "minute": "44′",
+            "type": "yellow",
+            "player": "Isidoros Koutsidis"
+          },
+          {
+            "minute": "29′",
+            "type": "yellow",
+            "player": "Max Marie"
+          },
+          {
+            "minute": "15′",
+            "type": "yellow",
+            "player": "Ivan Nekić Wieder Urbich"
+          }
+        ],
+        "checkedAt": "2026-10-11T18:45:53.679Z"
+      }
+    }
+  },
+  "source": "bundesliga.com"
+}
