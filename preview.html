@@ -57,7 +57,7 @@ h4{font-size:15px;margin:12px 0}
 .match-team .team-logo{display:block;width:26px;height:26px;max-width:26px;max-height:26px;object-fit:contain}
 .match-team .team-name{display:block;min-width:0;overflow-wrap:break-word;word-break:normal;font-size:14px;font-weight:bold;line-height:1.2;text-align:left}
 .match-scoreline .score{font-size:16px;padding:0 2px;white-space:nowrap;text-align:center;font-weight:bold;justify-self:center}
-.team-logo[hidden],.club-logo[hidden]{display:none!important}.club-schedule{margin:12px 0 18px;padding:12px;border:1px solid rgba(255,255,255,.18);border-radius:10px;background:rgba(0,0,0,.14)}.club-schedule h4{margin:0 0 9px;font-size:15px}.club-schedule-list{display:grid;gap:6px}.club-schedule-row{display:grid;grid-template-columns:104px minmax(0,1fr) auto;gap:8px;align-items:center;padding:9px;border-radius:7px;background:rgba(255,255,255,.06);font-size:12px}.club-schedule-date{opacity:.8}.club-schedule-comp{opacity:.75;font-size:11px;text-align:right}.club-schedule-more{margin-top:9px;padding:8px 12px;border:1px solid rgba(255,255,255,.3);border-radius:7px;background:rgba(255,255,255,.08);color:inherit;font-weight:700;cursor:pointer}.club-schedule-empty{font-size:12px;opacity:.8}
+.team-logo[hidden],.club-logo[hidden]{display:none!important}.club-schedule{margin:12px 0 18px;padding:12px;border:1px solid rgba(255,255,255,.18);border-radius:10px;background:rgba(0,0,0,.14)}.club-schedule h4{margin:0 0 9px;font-size:15px}.club-schedule-list{display:grid;gap:6px}.club-schedule-row{display:grid;grid-template-columns:104px minmax(0,1fr) auto;gap:8px;align-items:center;padding:9px;border-radius:7px;background:rgba(255,255,255,.06);font-size:12px}.club-schedule-date{opacity:.8}.club-schedule-row strong{min-width:0;overflow-wrap:anywhere}.club-schedule-comp{opacity:.75;font-size:11px;text-align:right;max-width:95px}@media(max-width:560px){.club-schedule{padding:10px}.club-schedule-row{grid-template-columns:1fr auto;gap:4px 8px}.club-schedule-date{grid-column:1}.club-schedule-row strong{grid-column:1;grid-row:2;font-size:13px;line-height:1.35}.club-schedule-comp{grid-column:2;grid-row:1 / span 2;max-width:72px;font-size:10px;overflow-wrap:anywhere;text-align:right}}.club-schedule-more{margin-top:9px;padding:8px 12px;border:1px solid rgba(255,255,255,.3);border-radius:7px;background:rgba(255,255,255,.08);color:inherit;font-weight:700;cursor:pointer}.club-schedule-empty{font-size:12px;opacity:.8}
 @media(max-width:520px){
 .match-scoreline{grid-template-columns:minmax(0,1fr) 43px minmax(0,1fr);gap:4px;padding:3px 0 4px}
 .match-team{grid-template-columns:23px minmax(0,1fr);column-gap:4px;min-height:28px}
@@ -522,10 +522,13 @@ const home=teams.find(t=>t.homeAway==='home'),away=teams.find(t=>t.homeAway==='a
 const nameParts=String(event.name||'').split(' at ');
 const homeName=(home&&home.team&&(home.team.displayName||home.team.name))||nameParts[1]||'Heimteam';
 const awayName=(away&&away.team&&(away.team.displayName||away.team.name))||nameParts[0]||'Gastteam';
-const h=home&&home.score,a=away&&away.score;
-const score=(h!=null&&a!=null)?String(h)+' : '+String(a):'';
-const status=(comp.status&&comp.status.type&&(comp.status.type.shortDetail||comp.status.type.description))||(event.status&&event.status.type&&event.status.type.shortDetail)||'';
-const competition=(comp.league&&comp.league.name)||(comp.season&&comp.season.name)||(event.season&&event.season.name)||'Spiel';
+const scoreValue=value=>value&&typeof value==='object'?(value.displayValue||value.value||value.alternateDisplayValue||''):value;
+const h=scoreValue(home&&home.score),a=scoreValue(away&&away.score);
+const score=(h!==''&&h!=null&&a!==''&&a!=null)?String(h)+' : '+String(a):'';
+const statusValue=(comp.status&&comp.status.type&&(comp.status.type.shortDetail||comp.status.type.description))||(event.status&&event.status.type&&event.status.type.shortDetail)||'';
+const status=typeof statusValue==='string'?statusValue:'';
+const competitionValue=(comp.league&&comp.league.name)||(comp.season&&comp.season.name)||(event.season&&event.season.name)||'Spiel';
+const competition=typeof competitionValue==='string'?competitionValue:String(competitionValue);
 return {homeName,awayName,score,status,competition};
 }
 function renderClubSchedule(key){
