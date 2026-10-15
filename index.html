@@ -408,12 +408,58 @@ const lineupIndex=selectedGames(key).findIndex(g=>matchKey(g)===matchKey(match))
 html+=`<p class="no-data">Zusatzdaten: ${apiMatch?'API-Football':'Noch keine passenden API-Football-Daten für dieses Spiel'}. Aufstellungen und Statistiken sind abhängig von der Verfügbarkeit beim Anbieter.</p></div>`;
 return html;
 }
+async function loadESPNSubstitutions(match,key,index){
+const slot=document.getElementById('details-'+key+'-'+index);
+if(!slot||!slot.innerHTML.includes('Für dieses Spiel sind beim gespeicherten Datenanbieter'))return;
+const names=teamNames(match),league=key==='bl1'?'ger.1':'ger.2',kickoff=gameDate(match);
+const dates=kickoff?new Date(kickoff).toISOString().slice(0,10).replace(/-/g,''):'';
+const candidates=[];
+const addEvents=data=>(data?.events||[]).forEach(event=>{
+const comp=event.competitions?.[0],teams=comp?.competitors||[];
+const home=teams.find(t=>t.homeAway==='home')?.team?.displayName||teams.find(t=>t.homeAway==='home')?.team?.name||'';
+const away=teams.find(t=>t.homeAway==='away')?.team?.displayName||teams.find(t=>t.homeAway==='away')?.team?.name||'';
+if(sameTeamName(home,names.home)&&sameTeamName(away,names.away)||sameTeamName(home,names.away)&&sameTeamName(away,names.home))candidates.push({id:String(event.id),home,away,date:event.date||comp?.date||''});
+});
+const urls=[`https://site.api.espn.com/apis/site/v2/sports/soccer/${league}/scoreboard${dates?'?dates='+dates:''}`];
+for(const url of urls){try{addEvents(await loadJSON(url));}catch(error){console.warn('ESPN-Spielplan nicht verfügbar:',error);}}
+if(!candidates.length){const msg=slot.querySelector('h4');if(msg){const p=[...slot.querySelectorAll('p.no-data')].find(x=>x.textContent.includes('gespeicherten Datenanbieter'));if(p)p.textContent='Für dieses Spiel konnten auch im ESPN-Spielplan keine passenden Ereignisdaten gefunden werden.';}return;}
+let selected=candidates[0];
+if(kickoff){selected=candidates.sort((a,b)=>Math.abs(new Date(a.date||kickoff)-new Date(kickoff))-Math.abs(new Date(b.date||kickoff)-new Date(kickoff)))[0];}
+try{
+const summary=await loadJSON(`https://site.api.espn.com/apis/site/v2/sports/soccer/${league}/summary?event=${encodeURIComponent(selected.id)}`);
+const events=[],seen=new Set();
+const walk=(value,context={})=>{
+if(!value)return;
+if(Array.isArray(value)){value.forEach(v=>walk(v,context));return;}
+if(typeof value!=='object')return;
+const teamObj=value.team||value.competitor||{},athlete=value.athlete||value.player||{};
+const team=teamObj.displayName||teamObj.name||value.teamName||context.team||'';
+const player=athlete.displayName||athlete.fullName||athlete.name||context.player||'';
+const textParts=[value.text,value.shortText,value.description,value.type?.text,value.type?.name,value.type?.description,value.detail].filter(v=>typeof v==='string');
+const text=textParts.join(' ');
+if(/substitut|replaced by|replaces|enters the match|leaves the match|wechsel/i.test(text)){
+const minute=value.clock?.displayValue||value.time?.displayValue||value.minute||context.minute||'';
+const inName=value.athlete?.displayName||value.player?.displayName||value.in?.name||player;
+const outName=value.substitution?.out?.athlete?.displayName||value.out?.name||value.playerOut?.name||value.assist?.name||'';
+const sig=[minute,normalizeName(inName),normalizeName(outName),normalizeName(team)].join('|');
+if(!seen.has(sig)){seen.add(sig);events.push({minute,incoming:inName,outgoing:outName,team});}
+}
+const next={team:team||context.team,player:player||context.player,minute:value.clock?.displayValue||value.minute||context.minute};
+Object.entries(value).forEach(([k,v])=>{if(!['team','competitor','athlete','player'].includes(k))walk(v,next);});
+};
+walk(summary);
+walk(summary.plays?.items||summary.plays||[]);
+if(!events.length){const p=[...slot.querySelectorAll('p.no-data')].find(x=>x.textContent.includes('gespeicherten Datenanbieter')||x.textContent.includes('ESPN'));if(p)p.textContent='ESPN liefert für dieses Spiel keine auswertbaren Auswechslungen.';return;}
+const target=[...slot.querySelectorAll('h4')].find(h=>h.textContent.includes('Auswechslungen'));
+if(target){let html='';events.sort((a,b)=>(parseInt(a.minute,10)||0)-(parseInt(b.minute,10)||0)).forEach(e=>{html+=`<div class="scorer"><b>${esc(e.minute||'')}</b> ${e.outgoing?`<span class="detail-label">↓ raus:</span> ${esc(e.outgoing)}<br>`:''}${e.incoming?`<span class="detail-label">↑ rein:</span> ${esc(e.incoming)}`:''}${teamPlayerLabel(e.team,key)}</div>`;});let next=target.nextElementSibling;while(next&&!next.matches('h4')){const n=next.nextElementSibling;next.remove();next=n;}target.insertAdjacentHTML('afterend',html);}
+}catch(error){console.warn('ESPN-Auswechslungen konnten nicht geladen werden:',error);}
+}
 function toggleDetails(key,index){
 const match=selectedGames(key)[index];if(!match)return;
 const id=matchKey(match),slot=document.getElementById('details-'+key+'-'+index),hint=document.getElementById('hint-'+key+'-'+index),button=document.getElementById('button-'+key+'-'+index);
 if(!slot)return;
 if(expandedMatch[key]===id){expandedMatch[key]=null;slot.innerHTML='';slot.hidden=true;if(hint)hint.textContent='▼ Tippen für Spieldetails und Torschützen';if(button)button.setAttribute('aria-expanded','false');}
-else{expandedMatch[key]=id;slot.innerHTML=detailsHTML(match,key);slot.hidden=false;if(hint)hint.textContent='▲ Details ausblenden';if(button)button.setAttribute('aria-expanded','true');}
+else{expandedMatch[key]=id;slot.innerHTML=detailsHTML(match,key);slot.hidden=false;if(hint)hint.textContent='▲ Details ausblenden';if(button)button.setAttribute('aria-expanded','true');loadESPNSubstitutions(match,key,index);}
 }
 function directLogo(team){const name=team?.teamName||team?.name||team?.shortName||team?.team?.teamName||team?.team?.name||team?.team?.shortName||'';if(normalizeName(name).includes('leverkusen'))return 'https://crests.football-data.org/3.png';return team?.teamIconUrl||team?.team?.teamIconUrl||team?.crest||team?.logo||team?.team?.crest||team?.team?.logo||'';}
 function sameTeamName(a,b){const x=normalizeName(a),y=normalizeName(b);if(!x||!y)return false;return x===y||(x.includes('werder')&&y.includes('werder'))||(x.includes('osnabruck')&&y.includes('osnabruck'))||(x.includes('leverkusen')&&y.includes('leverkusen'));}
