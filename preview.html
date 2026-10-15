@@ -546,8 +546,7 @@ if(!events.length){el.innerHTML='<h4>'+heading+'</h4><p class="club-schedule-emp
 const dated=events.filter(event=>eventDate(event)&&Number.isFinite(new Date(eventDate(event)).getTime()));
 const past=dated.filter(event=>new Date(eventDate(event)).getTime()<Date.now()).sort((a,b)=>new Date(eventDate(b))-new Date(eventDate(a)));
 const upcoming=dated.filter(event=>new Date(eventDate(event)).getTime()>=Date.now()).sort((a,b)=>new Date(eventDate(a))-new Date(eventDate(b)));
-const getRound=event=>{const p=scheduleEventParts(event);return Number(p.round)||0;};
-const orderedPast=past.slice().sort((a,b)=>{const ra=getRound(a),rb=getRound(b);return (ra-rb)|| (new Date(eventDate(a))-new Date(eventDate(b)));});
+const orderedPast=past.slice().sort((a,b)=>new Date(eventDate(b))-new Date(eventDate(a)));
 const visibleUpcoming=clubScheduleExpanded[key]?upcoming:upcoming.slice(0,3);
 const renderRows=list=>list.map(event=>{
 const p=scheduleEventParts(event);
@@ -597,12 +596,17 @@ try{
 const teamId=key==='bl1'?'137':'7013';
 const data=await loadJSON('https://site.api.espn.com/apis/site/v2/sports/soccer/all/teams/'+teamId+'/schedule?fixture=true');
 const extra=Array.isArray(data.events)?data.events:(Array.isArray(data.items)?data.items:[]);
-const existing=new Set(events.map(e=>{const p=scheduleEventParts(e);return normalizeName(p.homeName)+'|'+normalizeName(p.awayName)+'|'+new Date(eventDate(e)||0).toISOString().slice(0,10);}));
+const fixtureKey=event=>{
+const p=scheduleEventParts(event),date=new Date(eventDate(event)||0);
+const teams=[normalizeName(p.homeName),normalizeName(p.awayName)].sort();
+return teams.join('|')+'|'+(Number.isFinite(date.getTime())?date.toISOString().slice(0,10):'');
+};
+const existing=new Set(events.map(fixtureKey));
 extra.forEach(event=>{
 if(!eventDate(event))return;
-const p=scheduleEventParts(event),d=new Date(eventDate(event));
-if(!d||!Number.isFinite(d.getTime()))return;
-const id=normalizeName(p.homeName)+'|'+normalizeName(p.awayName)+'|'+d.toISOString().slice(0,10);
+const d=new Date(eventDate(event));
+if(!Number.isFinite(d.getTime()))return;
+const id=fixtureKey(event);
 if(!existing.has(id)){events.push(event);existing.add(id);}
 });
 }catch(error){console.warn('Zusatzwettbewerbe nicht verfügbar:',error);}
