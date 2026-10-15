@@ -12,22 +12,30 @@
           {
             "minute": "90+8′",
             "type": "yellow",
-            "player": "Daniel Thioune"
+            "player": "Daniel Thioune",
+            "team": "SV Werder Bremen",
+            "teamSide": "away"
           },
           {
             "minute": "90+4′",
             "type": "yellow",
-            "player": "Felix Nmecha War noch nicht die Entscheidung S"
+            "player": "Felix Nmecha War noch nicht die Entscheidung S",
+            "team": "Borussia Dortmund",
+            "teamSide": "home"
           },
           {
             "minute": "90+2′",
             "type": "yellow",
-            "player": "Joey Veerman"
+            "player": "Joey Veerman",
+            "team": "Borussia Dortmund",
+            "teamSide": "home"
           },
           {
             "minute": "90′",
             "type": "yellow",
-            "player": "Dariusz Stalmach"
+            "player": "Dariusz Stalmach",
+            "team": "SV Werder Bremen",
+            "teamSide": "away"
           }
         ],
         "checkedAt": "2026-10-11T18:45:38.669Z"
@@ -42,22 +50,30 @@
           {
             "minute": "84′",
             "type": "yellow",
-            "player": "Raphael Onyedika"
+            "player": "Raphael Onyedika",
+            "team": "Eintracht Frankfurt",
+            "teamSide": "away"
           },
           {
             "minute": "76′",
             "type": "yellow",
-            "player": "Ansgar Knauff"
+            "player": "Ansgar Knauff",
+            "team": "Eintracht Frankfurt",
+            "teamSide": "away"
           },
           {
             "minute": "62′",
             "type": "yellow",
-            "player": "Elias Baum"
+            "player": "Elias Baum",
+            "team": "Eintracht Frankfurt",
+            "teamSide": "away"
           },
           {
             "minute": "27′",
             "type": "yellow",
-            "player": "Neil El Aynaoui"
+            "player": "Neil El Aynaoui",
+            "team": "RB Leipzig",
+            "teamSide": "home"
           }
         ],
         "checkedAt": "2026-10-11T18:45:44.924Z"
@@ -72,17 +88,23 @@
           {
             "minute": "80′",
             "type": "yellow",
-            "player": "Leon Avdullahu"
+            "player": "Leon Avdullahu",
+            "team": "TSG Hoffenheim",
+            "teamSide": "home"
           },
           {
             "minute": "65′",
             "type": "yellow-red",
-            "player": "Bernardo"
+            "player": "Bernardo",
+            "team": "TSG Hoffenheim",
+            "teamSide": "home"
           },
           {
             "minute": "55′",
             "type": "yellow",
-            "player": "Bernardo"
+            "player": "Bernardo",
+            "team": "TSG Hoffenheim",
+            "teamSide": "home"
           }
         ],
         "checkedAt": "2026-10-11T18:45:39.708Z"
@@ -97,17 +119,23 @@
           {
             "minute": "62′",
             "type": "yellow",
-            "player": "Hennes Behrens"
+            "player": "Hennes Behrens",
+            "team": "FC Augsburg",
+            "teamSide": "home"
           },
           {
             "minute": "43′",
             "type": "yellow",
-            "player": "Rodrigo Ribeiro"
+            "player": "Rodrigo Ribeiro",
+            "team": "FC Augsburg",
+            "teamSide": "home"
           },
           {
             "minute": "42′",
             "type": "yellow",
-            "player": "Chrislain Matsima"
+            "player": "Chrislain Matsima",
+            "team": "FC Augsburg",
+            "teamSide": "home"
           }
         ],
         "checkedAt": "2026-10-11T18:45:40.647Z"
@@ -122,22 +150,30 @@
           {
             "minute": "90+3′",
             "type": "yellow",
-            "player": "Jarell Quansah"
+            "player": "Jarell Quansah",
+            "team": "Bayer 04 Leverkusen",
+            "teamSide": "away"
           },
           {
             "minute": "76′",
             "type": "yellow",
-            "player": "Jaesung Lee"
+            "player": "Jaesung Lee",
+            "team": "1. FSV Mainz 05",
+            "teamSide": "home"
           },
           {
             "minute": "35′",
             "type": "yellow",
-            "player": "Sheraldo Becker"
+            "player": "Sheraldo Becker",
+            "team": "1. FSV Mainz 05",
+            "teamSide": "home"
           },
           {
             "minute": "20′",
             "type": "yellow",
-            "player": "Phillip Tietz"
+            "player": "Phillip Tietz",
+            "team": "1. FSV Mainz 05",
+            "teamSide": "home"
           }
         ],
         "checkedAt": "2026-10-11T18:45:41.710Z"
@@ -152,22 +188,30 @@
           {
             "minute": "90+6′",
             "type": "yellow",
-            "player": "Shūto Machino"
+            "player": "Shūto Machino",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "away"
           },
           {
             "minute": "81′",
             "type": "yellow",
-            "player": "Zento Uno"
+            "player": "Zento Uno",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "away"
           },
           {
             "minute": "24′",
             "type": "yellow",
-            "player": "Jan Leszczyński Blessin mit seinem Debüt Der n"
+            "player": "Jan Leszczyński Blessin mit seinem Debüt Der n",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "away"
           },
           {
             "minute": "14′",
             "type": "yellow",
-            "player": "Marius Bülter"
+            "player": "Marius Bülter",
+            "team": "1. FC Köln",
+            "teamSide": "home"
           }
         ],
         "checkedAt": "2026-10-11T18:45:45.989Z"
@@ -182,7 +226,9 @@
           {
             "minute": "45′",
             "type": "yellow",
-            "player": "Marvin Pieringer"
+            "player": "Marvin Pieringer",
+            "team": "SC Paderborn 07",
+            "teamSide": "home"
           }
         ],
         "checkedAt": "2026-10-11T18:45:43.887Z"
@@ -199,17 +245,23 @@
           {
             "minute": "87′",
             "type": "yellow",
-            "player": "Branimir Hrgota"
+            "player": "Branimir Hrgota",
+            "team": "FC St. Pauli",
+            "teamSide": "home"
           },
           {
             "minute": "48′",
             "type": "yellow",
-            "player": "Marvin Wanitzek"
+            "player": "Marvin Wanitzek",
+            "team": "Karlsruher SC",
+            "teamSide": "away"
           },
           {
             "minute": "34′",
             "type": "yellow",
-            "player": "Sandro Trémoulet Ceesay bringt St. Pauli in Fü"
+            "player": "Sandro Trémoulet Ceesay bringt St. Pauli in Fü",
+            "team": "Karlsruher SC",
+            "teamSide": "away"
           }
         ],
         "checkedAt": "2026-10-11T18:46:06.294Z"
@@ -233,22 +285,30 @@
           {
             "minute": "72′",
             "type": "yellow",
-            "player": "Eitschberger lässt Ademi auf der linken Seite"
+            "player": "Eitschberger lässt Ademi auf der linken Seite",
+            "team": "Hertha BSC",
+            "teamSide": "home"
           },
           {
             "minute": "72′",
             "type": "yellow",
-            "player": "Julian Eitschberger"
+            "player": "Julian Eitschberger",
+            "team": "Hertha BSC",
+            "teamSide": "home"
           },
           {
             "minute": "60′",
             "type": "yellow",
-            "player": "Gechter ist zu spät dran gegen Appelkamp und s"
+            "player": "Gechter ist zu spät dran gegen Appelkamp und s",
+            "team": "Hertha BSC",
+            "teamSide": "home"
           },
           {
             "minute": "60′",
             "type": "yellow",
-            "player": "Linus Gechter"
+            "player": "Linus Gechter",
+            "team": "Hertha BSC",
+            "teamSide": "home"
           }
         ],
         "checkedAt": "2026-10-11T18:46:09.204Z"
@@ -263,32 +323,44 @@
           {
             "minute": "90+7′",
             "type": "yellow",
-            "player": "Ioannis Masouras"
+            "player": "Ioannis Masouras",
+            "team": "1. FC Nürnberg",
+            "teamSide": "home"
           },
           {
             "minute": "88′",
             "type": "yellow",
-            "player": "Alexios Kalogeropoulos"
+            "player": "Alexios Kalogeropoulos",
+            "team": "1. FC Nürnberg",
+            "teamSide": "home"
           },
           {
             "minute": "87′",
             "type": "yellow",
-            "player": "Kento Shiogai"
+            "player": "Kento Shiogai",
+            "team": "VfL Wolfsburg",
+            "teamSide": "away"
           },
           {
             "minute": "77′",
             "type": "yellow",
-            "player": "Mathys Angély"
+            "player": "Mathys Angély",
+            "team": "VfL Wolfsburg",
+            "teamSide": "away"
           },
           {
             "minute": "62′",
             "type": "yellow",
-            "player": "Hauke Wahl"
+            "player": "Hauke Wahl",
+            "team": "VfL Wolfsburg",
+            "teamSide": "away"
           },
           {
             "minute": "20′",
             "type": "yellow",
-            "player": "Mohamed Alì Zoma"
+            "player": "Mohamed Alì Zoma",
+            "team": "1. FC Nürnberg",
+            "teamSide": "home"
           }
         ],
         "checkedAt": "2026-10-11T18:46:03.041Z"
@@ -303,17 +375,23 @@
           {
             "minute": "62′",
             "type": "yellow",
-            "player": "Mateusz Żukowski"
+            "player": "Mateusz Żukowski",
+            "team": "1. FC Magdeburg",
+            "teamSide": "home"
           },
           {
             "minute": "62′",
             "type": "yellow",
-            "player": "Boris Tomiak"
+            "player": "Boris Tomiak",
+            "team": "Hannover 96",
+            "teamSide": "away"
           },
           {
             "minute": "18′",
             "type": "yellow",
-            "player": "Emir Sahiti Magdeburger Jubel Die Hausherren f"
+            "player": "Emir Sahiti Magdeburger Jubel Die Hausherren f",
+            "team": "Hannover 96",
+            "teamSide": "away"
           }
         ],
         "checkedAt": "2026-10-11T18:45:57.515Z"
@@ -328,37 +406,51 @@
           {
             "minute": "82′",
             "type": "yellow",
-            "player": "Jonas Therkelsen"
+            "player": "Jonas Therkelsen",
+            "team": "Holstein Kiel",
+            "teamSide": "away"
           },
           {
             "minute": "65′",
             "type": "yellow",
-            "player": "Yann Sturm"
+            "player": "Yann Sturm",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "home"
           },
           {
             "minute": "62′",
             "type": "yellow",
-            "player": "Fabio Di Michele Sanchez"
+            "player": "Fabio Di Michele Sanchez",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "home"
           },
           {
             "minute": "45+1′",
             "type": "yellow",
-            "player": "Guillermo Balzi"
+            "player": "Guillermo Balzi",
+            "team": "Holstein Kiel",
+            "teamSide": "away"
           },
           {
             "minute": "44′",
             "type": "yellow",
-            "player": "Isidoros Koutsidis"
+            "player": "Isidoros Koutsidis",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "home"
           },
           {
             "minute": "29′",
             "type": "yellow",
-            "player": "Max Marie"
+            "player": "Max Marie",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "home"
           },
           {
             "minute": "15′",
             "type": "yellow",
-            "player": "Ivan Nekić Wieder Urbich"
+            "player": "Ivan Nekić Wieder Urbich",
+            "team": "Holstein Kiel",
+            "teamSide": "away"
           }
         ],
         "checkedAt": "2026-10-11T18:45:53.679Z"

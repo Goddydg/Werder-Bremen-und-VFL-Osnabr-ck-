@@ -124,6 +124,8 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 .detail-line span:last-child{text-align:right;overflow-wrap:anywhere}
 .detail-label{opacity:.8}
 .scorer{padding:9px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:13px}
+.card-player{display:inline-flex;align-items:center;gap:6px;vertical-align:middle}
+.card-player .team-logo{width:18px;height:18px;flex:0 0 18px}
 .no-data{font-size:13px;line-height:1.5;opacity:.85}
 .lineup-button{display:block;width:100%;margin-top:8px;padding:8px 9px;border:1px solid rgba(255,255,255,.4);border-radius:8px;background:rgba(0,0,0,.22);color:white;font-size:12px;font-weight:bold;line-height:1.3;text-align:center;cursor:pointer;touch-action:manipulation}
 .lineup-button:active{opacity:.75}
@@ -350,7 +352,7 @@ if(!bookings.some(x=>x.type===type&&normalizeName(x.player)===normalizeName(e.pl
 }
 if(!bookings.length)return '<p class="no-data">Für dieses Spiel wurden noch keine Kartenereignisse aus dem offiziellen Bundesliga-Liveticker gespeichert.</p>';
 bookings.sort((a,b)=>(parseInt(a.minute,10)||0)-(parseInt(b.minute,10)||0));
-return bookings.map(e=>{const label=e.type==='red'?'🟥 Rote Karte':e.type==='yellow-red'?'🟨🟥 Gelb-Rote Karte':'🟨 Gelbe Karte';return `<div class="scorer"><b>${esc(String(e.minute||'').replace(/′$/,''))}${String(e.minute||'').includes("'")||String(e.minute||'').includes('′')?'':"′"}</b> ${label} – ${esc(e.player||'Spieler unbekannt')}${e.team?`<div class="detail-label">${esc(e.team)}</div>`:''}</div>`;}).join('');
+return bookings.map(e=>{const label=e.type==='red'?'🟥 Rote Karte':e.type==='yellow-red'?'🟨🟥 Gelb-Rote Karte':'🟨 Gelbe Karte';const crest=e.team?teamLogoHTML({teamName:e.team},key):'';return `<div class="scorer"><b>${esc(String(e.minute||'').replace(/′$/,''))}${String(e.minute||'').includes("'")||String(e.minute||'').includes('′')?'':"′"}</b> ${label} – <span class="card-player">${crest}${esc(e.player||'Spieler unbekannt')}</span>${e.team?`<div class="detail-label">${esc(e.team)}</div>`:''}</div>`;}).join('');
 }
 function renderSubs(apiMatch){
 const subs=apiEvents(apiMatch).filter(e=>e.type==='subst');
