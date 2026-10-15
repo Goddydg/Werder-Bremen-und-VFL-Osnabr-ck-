@@ -133,6 +133,16 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 .matchday-scroll .match{margin:0;flex-shrink:0;}
 .matchday-more{display:block;margin:9px auto 2px;padding:8px 13px;border:1px solid rgba(255,255,255,.25);border-radius:8px;background:rgba(255,255,255,.08);color:inherit;font-weight:700;cursor:pointer;}
 .matchday-focus{outline:2px solid rgba(255,255,255,.58);outline-offset:1px;}
+
+.matchday-section{margin:10px 0 18px;padding:13px;border:1px solid rgba(255,255,255,.19);border-radius:12px;background:rgba(0,0,0,.19);box-shadow:inset 0 3px 0 rgba(255,255,255,.10);}
+.matchday-section-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 10px;padding:0 0 10px;border-bottom:1px solid rgba(255,255,255,.14);}
+.matchday-section-heading h3{margin:2px 0 0;font-size:17px;}
+.section-eyebrow{display:block;font-size:10px;font-weight:800;letter-spacing:1.15px;opacity:.72;}
+.section-context{flex-shrink:0;padding:5px 8px;border:1px solid rgba(255,255,255,.18);border-radius:6px;background:rgba(255,255,255,.07);font-size:10px;font-weight:700;opacity:.85;text-align:center;}
+.club-schedule-team{margin:22px 0 18px;padding:14px;border:1px solid rgba(100,220,150,.36);border-radius:12px;background:linear-gradient(145deg,rgba(15,90,54,.19),rgba(0,0,0,.14));position:relative;}
+.club-schedule-team:before{content:"";display:block;height:3px;width:48px;border-radius:4px;background:#4ed28a;margin:0 0 11px;}
+.club-schedule-team h4{font-size:16px;margin:0 0 10px;}
+@media(max-width:560px){.matchday-section{padding:10px}.matchday-section-heading{align-items:flex-start}.section-context{max-width:112px;white-space:normal}.club-schedule-team{margin-top:20px;padding:11px;}}
 </style>
 </head>
 <body>
@@ -142,8 +152,11 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 <section class="league league-green">
 <h2 class="league-title"><img class="league-logo" src="https://crests.football-data.org/BL1.png" alt="Bundesliga-Logo">1. Bundesliga</h2>
 <div class="club"><img class="club-logo" id="bl1-club-logo" alt="" hidden><span>SV Werder Bremen</span></div>
-<h3>Spiele des Spieltags</h3><div id="bl1-selector"></div><div id="bl1-games">Daten werden geladen …</div>
-<div class="club-schedule" id="bl1-club-schedule"><h4>Alle Spiele von Werder Bremen</h4><p class="club-schedule-empty">Spielplan wird geladen …</p></div>
+<section class="matchday-section matchday-section-league" aria-label="Alle Spiele der Bundesliga">
+<div class="matchday-section-heading"><div><span class="section-eyebrow">LIGAÜBERSICHT</span><h3>Spiele des Spieltags</h3></div><span class="section-context">Alle Bundesliga-Partien</span></div>
+<div id="bl1-selector"></div><div id="bl1-games">Daten werden geladen …</div>
+</section>
+<div class="club-schedule club-schedule-team" id="bl1-club-schedule"><h4>Alle Spiele von Werder Bremen</h4><p class="club-schedule-empty">Spielplan wird geladen …</p></div>
 <h3>Tabelle</h3><div id="bl1-table">Tabelle wird geladen …</div>
 <div class="update-info" id="bl1-update"></div>
 
@@ -151,8 +164,11 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 <section class="league league-purple">
 <h2 class="league-title"><img class="league-logo" src="https://crests.football-data.org/BL2.png" alt="2. Bundesliga-Logo">2. Bundesliga</h2>
 <div class="club"><img class="club-logo" id="bl2-club-logo" alt="" hidden><span>VfL Osnabrück</span></div>
-<h3>Spiele des Spieltags</h3><div id="bl2-selector"></div><div id="bl2-games">Daten werden geladen …</div>
-<div class="club-schedule" id="bl2-club-schedule"><h4>Alle Spiele des VfL Osnabrück</h4><p class="club-schedule-empty">Spielplan wird geladen …</p></div>
+<section class="matchday-section matchday-section-league" aria-label="Alle Spiele der 2. Bundesliga">
+<div class="matchday-section-heading"><div><span class="section-eyebrow">LIGAÜBERSICHT</span><h3>Spiele des Spieltags</h3></div><span class="section-context">Alle Liga-Partien</span></div>
+<div id="bl2-selector"></div><div id="bl2-games">Daten werden geladen …</div>
+</section>
+<div class="club-schedule club-schedule-team" id="bl2-club-schedule"><h4>Alle Spiele des VfL Osnabrück</h4><p class="club-schedule-empty">Spielplan wird geladen …</p></div>
 <h3>Tabelle</h3><div id="bl2-table">Tabelle wird geladen …</div>
 <div class="update-info" id="bl2-update"></div>
 <button class="refresh" type="button" onclick="refreshData(true)">Daten jetzt aktualisieren</button>
