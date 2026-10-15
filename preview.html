@@ -57,7 +57,7 @@ h4{font-size:15px;margin:12px 0}
 .match-team .team-logo{display:block;width:26px;height:26px;max-width:26px;max-height:26px;object-fit:contain}
 .match-team .team-name{display:block;min-width:0;overflow-wrap:break-word;word-break:normal;font-size:14px;font-weight:bold;line-height:1.2;text-align:left}
 .match-scoreline .score{font-size:16px;padding:0 2px;white-space:nowrap;text-align:center;font-weight:bold;justify-self:center}
-.team-logo[hidden],.club-logo[hidden]{display:none!important}.club-schedule{margin:12px 0 18px;padding:12px;border:1px solid rgba(255,255,255,.18);border-radius:10px;background:rgba(0,0,0,.14)}.club-schedule h4{margin:0 0 9px;font-size:15px}.club-schedule-list{display:grid;gap:6px}.club-schedule-row{display:grid;grid-template-columns:104px minmax(0,1fr) auto;gap:8px;align-items:center;padding:9px;border-radius:7px;background:rgba(255,255,255,.06);font-size:12px}.club-schedule-date{opacity:.8}.club-schedule-row strong{min-width:0;overflow-wrap:anywhere}.club-schedule-comp{opacity:.75;font-size:11px;text-align:right;max-width:95px}@media(max-width:560px){.club-schedule{padding:10px}.club-schedule-row{grid-template-columns:1fr auto;gap:4px 8px}.club-schedule-date{grid-column:1}.club-schedule-row strong{grid-column:1;grid-row:2;font-size:13px;line-height:1.35}.club-schedule-comp{grid-column:2;grid-row:1 / span 2;max-width:72px;font-size:10px;overflow-wrap:anywhere;text-align:right}}.club-schedule-more{margin-top:9px;padding:8px 12px;border:1px solid rgba(255,255,255,.3);border-radius:7px;background:rgba(255,255,255,.08);color:inherit;font-weight:700;cursor:pointer}.club-schedule-empty{font-size:12px;opacity:.8}
+.team-logo[hidden],.club-logo[hidden]{display:none!important}.club-schedule{margin:12px 0 18px;padding:12px;border:1px solid rgba(255,255,255,.18);border-radius:10px;background:rgba(0,0,0,.14)}.club-schedule h4{margin:0 0 9px;font-size:15px}.club-schedule-list{display:grid;gap:6px;max-height:230px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.3) transparent;scroll-behavior:auto}.club-schedule-list.is-expanded{max-height:520px}.club-schedule-list .club-schedule-row{flex-shrink:0}.club-schedule-past-title{margin:10px 0 4px;font-size:12px;opacity:.8}.club-schedule-row{display:grid;grid-template-columns:104px minmax(0,1fr) auto;gap:8px;align-items:center;padding:9px;border-radius:7px;background:rgba(255,255,255,.06);font-size:12px}.club-schedule-date{opacity:.8}.club-schedule-row strong{min-width:0;overflow-wrap:anywhere}.club-schedule-comp{opacity:.75;font-size:11px;text-align:right;max-width:95px}@media(max-width:560px){.club-schedule{padding:10px}.club-schedule-row{grid-template-columns:1fr auto;gap:4px 8px}.club-schedule-date{grid-column:1}.club-schedule-row strong{grid-column:1;grid-row:2;font-size:13px;line-height:1.35}.club-schedule-comp{grid-column:2;grid-row:1 / span 2;max-width:72px;font-size:10px;overflow-wrap:anywhere;text-align:right}}.club-schedule-more{margin-top:9px;padding:8px 12px;border:1px solid rgba(255,255,255,.3);border-radius:7px;background:rgba(255,255,255,.08);color:inherit;font-weight:700;cursor:pointer}.club-schedule-empty{font-size:12px;opacity:.8}
 @media(max-width:520px){
 .match-scoreline{grid-template-columns:minmax(0,1fr) 43px minmax(0,1fr);gap:4px;padding:3px 0 4px}
 .match-team{grid-template-columns:23px minmax(0,1fr);column-gap:4px;min-height:28px}
@@ -537,20 +537,19 @@ const el=document.getElementById(key+'-club-schedule');if(!el)return;
 const events=clubSchedules[key]||[];
 const heading=key==='bl1'?'Alle Spiele von Werder Bremen':'Alle Spiele des VfL Osnabrück';
 if(!events.length){el.innerHTML='<h4>'+heading+'</h4><p class="club-schedule-empty">'+(clubScheduleLoaded[key]?'Der externe Spielplan lieferte keine Spiele.':'Spielplan wird geladen …')+'</p>';return;}
-const now=Date.now();
-const dated=events.filter(event=>{const date=event.date||(event.competitions&&event.competitions[0]&&event.competitions[0].date);return date&&Number.isFinite(new Date(date).getTime());});
-const future=dated.filter(event=>new Date(event.date||(event.competitions&&event.competitions[0]&&event.competitions[0].date)).getTime()>=now);
-const past=dated.filter(event=>new Date(event.date||(event.competitions&&event.competitions[0]&&event.competitions[0].date)).getTime()<now).sort((a,b)=>new Date(b.date||(b.competitions&&b.competitions[0]&&b.competitions[0].date))-new Date(a.date||(a.competitions&&a.competitions[0]&&a.competitions[0].date)));
-const upcoming=future.sort((a,b)=>new Date(a.date||(a.competitions&&a.competitions[0]&&a.competitions[0].date))-new Date(b.date||(b.competitions&&b.competitions[0]&&b.competitions[0].date)));
+const dated=events.filter(event=>eventDate(event)&&Number.isFinite(new Date(eventDate(event)).getTime()));
+const past=dated.filter(event=>new Date(eventDate(event)).getTime()<Date.now()).sort((a,b)=>new Date(eventDate(a))-new Date(eventDate(b)));
+const upcoming=dated.filter(event=>new Date(eventDate(event)).getTime()>=Date.now()).sort((a,b)=>new Date(eventDate(a))-new Date(eventDate(b)));
 const visibleUpcoming=clubScheduleExpanded[key]?upcoming:upcoming.slice(0,3);
 const renderRows=list=>list.map(event=>{
 const p=scheduleEventParts(event);
 return '<div class="club-schedule-row"><span class="club-schedule-date">'+esc(scheduleDate(event))+'</span><strong>'+esc(p.homeName)+' – '+esc(p.awayName)+(p.score?' · '+esc(p.score):'')+'</strong><span class="club-schedule-comp">'+esc(p.competition)+(p.status?' · '+esc(p.status):'')+'</span></div>';
 }).join('');
+const rows=past.length?renderRows(past):'';
 const upcomingHTML=visibleUpcoming.length?renderRows(visibleUpcoming):'<p class="club-schedule-empty">Keine weiteren terminierten Spiele gefunden.</p>';
 const button=upcoming.length>3?'<button class="club-schedule-more" type="button" onclick="toggleClubSchedule(&quot;'+key+'&quot;)">'+(clubScheduleExpanded[key]?'Weniger Zukunftsspiele anzeigen':'Alle '+upcoming.length+' zukünftigen Spiele anzeigen')+'</button>':'';
-const pastHTML=clubScheduleExpanded[key]&&past.length?'<h4 class="club-schedule-past-title">Bereits gespielte Spiele</h4>'+renderRows(past):'';
-el.innerHTML='<h4>'+heading+'</h4><div class="club-schedule-list">'+upcomingHTML+'</div>'+button+pastHTML;
+el.innerHTML='<h4>'+heading+'</h4><div class="club-schedule-list '+(clubScheduleExpanded[key]?'is-expanded':'')+'" id="'+key+'-schedule-scroll">'+rows+upcomingHTML+'</div>'+button;
+const list=document.getElementById(key+'-schedule-scroll');if(list)list.scrollTop=list.scrollHeight;
 }
 function toggleClubSchedule(key){clubScheduleExpanded[key]=!clubScheduleExpanded[key];renderClubSchedule(key);}
 async function loadClubSchedule(key){
