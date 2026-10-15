@@ -547,7 +547,7 @@ const dated=events.filter(event=>eventDate(event)&&Number.isFinite(new Date(even
 const past=dated.filter(event=>new Date(eventDate(event)).getTime()<Date.now()).sort((a,b)=>new Date(eventDate(b))-new Date(eventDate(a)));
 const upcoming=dated.filter(event=>new Date(eventDate(event)).getTime()>=Date.now()).sort((a,b)=>new Date(eventDate(a))-new Date(eventDate(b)));
 const getRound=event=>{const p=scheduleEventParts(event);return Number(p.round)||0;};
-const orderedPast=past.slice().sort((a,b)=>{const ra=getRound(a),rb=getRound(b);return (rb-ra)|| (new Date(eventDate(b))-new Date(eventDate(a)));});
+const orderedPast=past.slice().sort((a,b)=>{const ra=getRound(a),rb=getRound(b);return (ra-rb)|| (new Date(eventDate(a))-new Date(eventDate(b)));});
 const visibleUpcoming=clubScheduleExpanded[key]?upcoming:upcoming.slice(0,3);
 const renderRows=list=>list.map(event=>{
 const p=scheduleEventParts(event);
