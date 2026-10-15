@@ -536,13 +536,20 @@ const el=document.getElementById(key+'-club-schedule');if(!el)return;
 const events=clubSchedules[key]||[];
 const heading=key==='bl1'?'Alle Spiele von Werder Bremen':'Alle Spiele des VfL Osnabrück';
 if(!events.length){el.innerHTML='<h4>'+heading+'</h4><p class="club-schedule-empty">'+(clubScheduleLoaded[key]?'Der externe Spielplan lieferte keine Spiele.':'Spielplan wird geladen …')+'</p>';return;}
-const visible=clubScheduleExpanded[key]?events:events.slice(0,3);
-const rows=visible.map(event=>{
+const now=Date.now();
+const dated=events.filter(event=>{const date=event.date||(event.competitions&&event.competitions[0]&&event.competitions[0].date);return date&&Number.isFinite(new Date(date).getTime());});
+const future=dated.filter(event=>new Date(event.date||(event.competitions&&event.competitions[0]&&event.competitions[0].date)).getTime()>=now);
+const past=dated.filter(event=>new Date(event.date||(event.competitions&&event.competitions[0]&&event.competitions[0].date)).getTime()<now).sort((a,b)=>new Date(b.date||(b.competitions&&b.competitions[0]&&b.competitions[0].date))-new Date(a.date||(a.competitions&&a.competitions[0]&&a.competitions[0].date)));
+const upcoming=future.sort((a,b)=>new Date(a.date||(a.competitions&&a.competitions[0]&&a.competitions[0].date))-new Date(b.date||(b.competitions&&b.competitions[0]&&b.competitions[0].date)));
+const visibleUpcoming=clubScheduleExpanded[key]?upcoming:upcoming.slice(0,3);
+const renderRows=list=>list.map(event=>{
 const p=scheduleEventParts(event);
 return '<div class="club-schedule-row"><span class="club-schedule-date">'+esc(scheduleDate(event))+'</span><strong>'+esc(p.homeName)+' – '+esc(p.awayName)+(p.score?' · '+esc(p.score):'')+'</strong><span class="club-schedule-comp">'+esc(p.competition)+(p.status?' · '+esc(p.status):'')+'</span></div>';
 }).join('');
-const button=events.length>3?'<button class="club-schedule-more" type="button" onclick="toggleClubSchedule(\''+key+'\')">'+(clubScheduleExpanded[key]?'Weniger anzeigen':'Alle '+events.length+' Spiele anzeigen')+'</button>':'';
-el.innerHTML='<h4>'+heading+'</h4><div class="club-schedule-list">'+rows+'</div>'+button;
+const upcomingHTML=visibleUpcoming.length?renderRows(visibleUpcoming):'<p class="club-schedule-empty">Keine weiteren terminierten Spiele gefunden.</p>';
+const button=upcoming.length>3?'<button class="club-schedule-more" type="button" onclick="toggleClubSchedule(\\''+key+'\\')">'+(clubScheduleExpanded[key]?'Weniger Zukunftsspiele anzeigen':'Alle '+upcoming.length+' zukünftigen Spiele anzeigen')+'</button>':'';
+const pastHTML=clubScheduleExpanded[key]&&past.length?'<h4 class="club-schedule-past-title">Bereits gespielte Spiele</h4>'+renderRows(past):'';
+el.innerHTML='<h4>'+heading+'</h4><div class="club-schedule-list">'+upcomingHTML+'</div>'+button+pastHTML;
 }
 function toggleClubSchedule(key){clubScheduleExpanded[key]=!clubScheduleExpanded[key];renderClubSchedule(key);}
 async function loadClubSchedule(key){
