@@ -333,7 +333,7 @@ return `<div class="player-club">${logo?`<img src="${esc(logo)}" alt="" loading=
 }
 function renderGoals(match,apiMatch,key){
 const entries=[];
-for(const g of (Array.isArray(match.goals)?match.goals:[]))entries.push({minute:g.matchMinute,player:g.goalGetterName||'Torschütze nicht angegeben',team:g.teamName||'',detail:[g.isPenalty?'Elfmeter':'',g.isOwnGoal?'Eigentor':''].filter(Boolean).join(' · ')});
+for(const g of (Array.isArray(match.goals)?match.goals:[])){const scoringId=String(g.scoringTeamId??'');const scoringTeam=[match.team1,match.team2].find(t=>scoringId&&String(t?.teamId??'')===scoringId);entries.push({minute:g.matchMinute,player:g.goalGetterName||'Torschütze nicht angegeben',team:g.teamName||scoringTeam?.teamName||'',detail:[g.isPenalty?'Elfmeter':'',g.isOwnGoal?'Eigentor':''].filter(Boolean).join(' · ')});}
 for(const e of apiEvents(apiMatch)){if(String(e.type||'').toLowerCase()!=='goal')continue;const player=e.player?.name||'Torschütze nicht angegeben',minute=eventMinute(e),duplicate=entries.some(x=>normalizeName(x.player)===normalizeName(player)&&String(x.minute??'')===String(minute??''));if(!duplicate)entries.push({minute:minute.replace('′',''),player,team:e.team?.name||'',detail:e.detail||''});}
 entries.sort((a,b)=>(parseInt(a.minute,10)||0)-(parseInt(b.minute,10)||0));
 if(!entries.length)return '<p class="no-data">Für dieses Spiel sind keine Torschützen hinterlegt.</p>';
