@@ -554,24 +554,35 @@ const list=document.getElementById(key+'-schedule-scroll');if(list)list.scrollTo
 }
 function toggleClubSchedule(key){clubScheduleExpanded[key]=!clubScheduleExpanded[key];renderClubSchedule(key);}
 async function loadClubSchedule(key){
-const teamId=key==='bl1'?'137':'7013';
 try{
-const data=await loadJSON('https://site.api.espn.com/apis/site/v2/sports/soccer/all/teams/'+teamId+'/schedule?fixture=true');
-let events=Array.isArray(data.events)?data.events:(Array.isArray(data.items)?data.items:[]);
-if(!events.length){
-const league=key==='bl1'?'ger.1':'ger.2';
-const fallback=await loadJSON('https://site.api.espn.com/apis/site/v2/sports/soccer/'+league+'/scoreboard');
-events=(fallback.events||[]).filter(event=>{
-const teams=(event.competitions&&event.competitions[0]&&event.competitions[0].competitors)||[];
-const target=key==='bl1'?/werder|bremen/i:/osnabr[uü]ck/i;
-return teams.some(t=>target.test((t.team&&(t.team.displayName||t.team.name))||''));
+const leagueMatches=await loadLiveGames(key);
+const target=key==='bl1'?isWerder:isVfL;
+const events=leagueMatches.filter(match=>{
+const names=teamNames(match);
+return target(names.home)||target(names.away);
+}).map(match=>{
+const names=teamNames(match);
+const homeResult=(match.matchResults||[]).slice().sort((a,b)=>Number(b.resultTypeID||0)-Number(a.resultTypeID||0))[0];
+const scoreHome=homeResult&&homeResult.pointsTeam1,scoreAway=homeResult&&homeResult.pointsTeam2;
+const finished=Boolean(match.matchIsFinished);
+return {
+date:match.matchDateTime,
+name:names.away+' at '+names.home,
+competitions:[{
+league:{name:key==='bl1'?'Bundesliga':'2. Bundesliga'},
+competitors:[
+{homeAway:'home',team:{displayName:names.home,name:names.home},score:finished&&scoreHome!=null?String(scoreHome):null},
+{homeAway:'away',team:{displayName:names.away,name:names.away},score:finished&&scoreAway!=null?String(scoreAway):null}
+],
+status:{type:{description:finished?'Finished':'Scheduled',shortDetail:finished?'Beendet':''}}
+}]
+};
 });
+clubSchedules[key]=events.sort((a,b)=>new Date(eventDate(a)||0)-new Date(eventDate(b)||0));
+}catch(error){
+console.warn('Vereins-Spielplan '+key+' nicht verfügbar:',error);
+clubSchedules[key]=[];
 }
-clubSchedules[key]=events.filter(event=>event&&(event.date||(event.competitions&&event.competitions[0]&&event.competitions[0].date))).sort((a,b)=>{
-const da=new Date(eventDate(a)||0).getTime(),db=new Date(eventDate(b)||0).getTime();
-return da-db;
-});
-}catch(error){console.warn('Vereins-Spielplan '+key+' nicht verfügbar:',error);clubSchedules[key]=[];}
 clubScheduleLoaded[key]=true;
 renderClubSchedule(key);
 }
