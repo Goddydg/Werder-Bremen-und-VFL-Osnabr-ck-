@@ -72,7 +72,12 @@ h4{font-size:15px;margin:12px 0}
 .tap-hint{min-height:0;display:flex;align-items:center;margin-top:4px;padding:2px 0 0;line-height:1.2}
 .lineup-button{min-height:40px;display:flex;align-items:center;justify-content:center;margin-top:8px;padding:10px 9px;line-height:1.3}
 }
-.selector{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:12px 0}
+.selector{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:12px 0}
+.round-nav-button{display:inline-flex;align-items:center;justify-content:center;min-width:40px;min-height:40px;padding:6px 12px;border:1px solid #477258;border-radius:9px;background:#173c2a;color:#fff;font-size:22px;line-height:1;cursor:pointer}
+.league-purple .round-nav-button{background:#35194b;border-color:#8b5bb4}
+.round-nav-button:disabled{opacity:.35;cursor:default}
+.table-round-nav{display:flex;align-items:center;justify-content:center;gap:8px;margin:4px 0 12px}
+.round-nav-label{min-width:96px;text-align:center;font-weight:700;font-size:14px}
 select{max-width:100%;padding:11px;border-radius:9px;background:#173c2a;color:white;border:1px solid #477258;font-size:15px}
 .league-purple select{background:#35194b;border-color:#8b5bb4}
 .table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
@@ -157,7 +162,7 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 <div id="bl1-selector"></div><div id="bl1-games">Daten werden geladen …</div>
 </section>
 <div class="club-schedule club-schedule-team" id="bl1-club-schedule"><h4>Alle Spiele von Werder Bremen</h4><p class="club-schedule-empty">Spielplan wird geladen …</p></div>
-<h3>Tabelle</h3><div id="bl1-table">Tabelle wird geladen …</div>
+<h3>Tabelle</h3><div id="bl1-table-round-nav"></div><div id="bl1-table">Tabelle wird geladen …</div>
 <div class="update-info" id="bl1-update"></div>
 
 </section>
@@ -169,9 +174,8 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 <div id="bl2-selector"></div><div id="bl2-games">Daten werden geladen …</div>
 </section>
 <div class="club-schedule club-schedule-team" id="bl2-club-schedule"><h4>Alle Spiele des VfL Osnabrück</h4><p class="club-schedule-empty">Spielplan wird geladen …</p></div>
-<h3>Tabelle</h3><div id="bl2-table">Tabelle wird geladen …</div>
+<h3>Tabelle</h3><div id="bl2-table-round-nav"></div><div id="bl2-table">Tabelle wird geladen …</div>
 <div class="update-info" id="bl2-update"></div>
-<button class="refresh" type="button" onclick="refreshData(true)">Daten jetzt aktualisieren</button>
 </section>
 </main>
 <script>
@@ -265,12 +269,15 @@ if(unfinished.length)return roundNumber(unfinished[0]);
 return Math.max(...rounds);
 }
 function ensureRound(key){if(selectedRound[key]===null)selectedRound[key]=findDefaultRound(getGames(key));}
-function changeRound(key,value){selectedRound[key]=Number(value);expandedMatch[key]=null;renderGames(key);}
+function changeRound(key,value){selectedRound[key]=Number(value);expandedMatch[key]=null;renderGames(key);renderTables();}
+function stepRound(key,direction){const rounds=[...new Set(getGames(key).map(g=>roundNumber(g)).filter(n=>n>0))].sort((a,b)=>a-b);if(!rounds.length)return;ensureRound(key);let index=rounds.indexOf(Number(selectedRound[key]));if(index<0)index=0;const next=Math.max(0,Math.min(rounds.length-1,index+direction));if(next===index)return;selectedRound[key]=rounds[next];expandedMatch[key]=null;renderGames(key);renderTables();}
+function tableRoundNavHTML(key){const rounds=[...new Set(getGames(key).map(g=>roundNumber(g)).filter(n=>n>0))].sort((a,b)=>a-b);ensureRound(key);if(!rounds.length)return '';const current=Number(selectedRound[key]);return '<div class="table-round-nav"><button class="round-nav-button" type="button" onclick="stepRound(\\''+key+'\\',-1)" aria-label="Vorheriger Spieltag" '+(current<=rounds[0]?'disabled':'')+'>‹</button><span class="round-nav-label">'+current+'. Spieltag</span><button class="round-nav-button" type="button" onclick="stepRound(\\''+key+'\\',1)" aria-label="Nächster Spieltag" '+(current>=rounds[rounds.length-1]?'disabled':'')+'>›</button></div>';}
+function renderTableRoundNav(key){const el=document.getElementById(key+'-table-round-nav');if(el)el.innerHTML=tableRoundNavHTML(key);}
 function roundSelector(key){
 const rounds=[...new Set(getGames(key).map(roundNumber).filter(n=>n>0))].sort((a,b)=>a-b);
 ensureRound(key);
 if(!rounds.length)return '<p class="muted">Keine Spieltage verfügbar.</p>';
-return `<div class="selector"><label for="${key}-round"><b>Spieltag:</b></label><select id="${key}-round" onchange="changeRound('${key}',this.value)">${rounds.map(n=>`<option value="${n}" ${n===selectedRound[key]?'selected':''}>${n}. Spieltag</option>`).join('')}</select></div>`;
+return `<div class="selector"><button class="round-nav-button" type="button" onclick="stepRound('${key}',-1)" aria-label="Vorheriger Spieltag" ${selectedRound[key]<=rounds[0]?'disabled':''}>‹</button><label for="${key}-round"><b>Spieltag:</b></label><select id="${key}-round" onchange="changeRound('${key}',this.value)">${rounds.map(n=>`<option value="${n}" ${n===selectedRound[key]?'selected':''}>${n}. Spieltag</option>`).join('')}</select><button class="round-nav-button" type="button" onclick="stepRound('${key}',1)" aria-label="Nächster Spieltag" ${selectedRound[key]>=rounds[rounds.length-1]?'disabled':''}>›</button></div>`;
 }
 function selectedGames(key){ensureRound(key);return getGames(key).filter(g=>roundNumber(g)===selectedRound[key]).sort((a,b)=>new Date(gameDate(a)||0)-new Date(gameDate(b)||0));}
 function teamNames(match){return {home:match.team1?.teamName||'Unbekannt',away:match.team2?.teamName||'Unbekannt'};}
@@ -501,14 +508,14 @@ const expandButton=games.length>3?'<button class="matchday-more" type="button" o
 return '<div class="matchday-scroll '+(matchdayExpanded[key]?'is-expanded':'')+'" id="'+key+'-matchday-scroll">'+cards+'</div>'+expandButton;
 }
 function getTableRows(data){if(Array.isArray(data))return data;if(Array.isArray(data?.table))return data.table;if(Array.isArray(data?.standings)){const total=data.standings.find(s=>s.type==='TOTAL');return total?.table||data.standings[0]?.table||[];}return [];}
-function liveTableFromMatches(key){
-const games=getGames(key);if(!games.length)return null;
+function liveTableFromMatches(key,throughRound=null){
+const games=getGames(key).filter(g=>throughRound===null||roundNumber(g)<=Number(throughRound));if(!games.length)return null;
 const teams=new Map();
 const ensureTeam=(team)=>{const id=String(team?.teamId??team?.teamName??'');if(!id)return null;if(!teams.has(id))teams.set(id,{position:0,team:{id:team?.teamId,name:team?.teamName,shortName:team?.shortName||team?.teamName},playedGames:0,won:0,draw:0,lost:0,goalsFor:0,goalsAgainst:0,goalDifference:0,points:0});return teams.get(id);};
 games.forEach(g=>{ensureTeam(g.team1);ensureTeam(g.team2);});
 let counted=0;
 games.forEach(g=>{
-const finished=isFinished(g),live=!finished&&isLive(g,key);if(!finished&&!live)return;
+const finished=isFinished(g),live=throughRound===null&&!finished&&isLive(g,key);if(!finished&&!live)return;
 const result=(g.matchResults||[]).filter(r=>r.pointsTeam1!=null&&r.pointsTeam2!=null).sort((a,b)=>Number(b.resultTypeID||0)-Number(a.resultTypeID||0))[0];
 let home,away;if(result){home=Number(result.pointsTeam1);away=Number(result.pointsTeam2);}else{return;}
 const h=ensureTeam(g.team1),a=ensureTeam(g.team2);if(!h||!a)return;
@@ -675,8 +682,9 @@ renderClubSchedule(key);
 }
 function loadClubSchedules(){loadClubSchedule('bl1');loadClubSchedule('bl2');}
 
-function renderInitial(){renderLiveGames();renderGames('bl1');renderGames('bl2');setTableHTML('bl1-table',tableHTML(liveTableFromMatches('bl1')||standings.bl1,'bl1'));setTableHTML('bl2-table',tableHTML(liveTableFromMatches('bl2')||standings.bl2,'bl2'));updateClubLogos();initialRenderDone=true;}
-function renderTables(){setTableHTML('bl1-table',tableHTML(liveTableFromMatches('bl1')||standings.bl1,'bl1'));setTableHTML('bl2-table',tableHTML(liveTableFromMatches('bl2')||standings.bl2,'bl2'));updateClubLogos();}
+function tableDataForRound(key){const round=selectedRound[key];return round==null?(liveTableFromMatches(key)||standings[key]):(liveTableFromMatches(key,round)||liveTableFromMatches(key)||standings[key]);}
+function renderInitial(){renderLiveGames();renderGames('bl1');renderGames('bl2');setTableHTML('bl1-table',tableHTML(tableDataForRound('bl1'),'bl1'));setTableHTML('bl2-table',tableHTML(tableDataForRound('bl2'),'bl2'));renderTableRoundNav('bl1');renderTableRoundNav('bl2');updateClubLogos();initialRenderDone=true;}
+function renderTables(){setTableHTML('bl1-table',tableHTML(tableDataForRound('bl1'),'bl1'));setTableHTML('bl2-table',tableHTML(tableDataForRound('bl2'),'bl2'));renderTableRoundNav('bl1');renderTableRoundNav('bl2');updateClubLogos();}
 function updateLiveDisplay(key){selectedGames(key).forEach((match,index)=>{const date=document.getElementById(`date-${key}-${index}`),score=document.getElementById(`score-${key}-${index}`),slot=document.getElementById(`details-${key}-${index}`);if(date)date.innerHTML=statusHTML(match,key);if(score)score.textContent=gameScore(match,key);if(slot&&!slot.hidden&&expandedMatch[key]===matchKey(match))slot.innerHTML=detailsHTML(match,key);});}
 async function loadSavedSources(){
 const jobs=[
