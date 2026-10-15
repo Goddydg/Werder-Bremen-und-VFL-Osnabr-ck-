@@ -547,7 +547,7 @@ const result=p.score||'– : –';
 return '<div class="club-schedule-row"><span class="club-schedule-date">'+esc(scheduleDate(event))+'</span><strong>'+esc(p.homeName)+' – '+esc(p.awayName)+'</strong><span class="club-schedule-result">'+esc(result)+'</span></div>';
 }).join('');
 const upcomingHTML=visibleUpcoming.length?renderRows(visibleUpcoming):'<p class="club-schedule-empty">Keine weiteren terminierten Spiele gefunden.</p>';
-const pastHTML=past.length?'<div class="club-schedule-past-title">Bereits gespielte Spiele</div>'+renderRows(past):'';
+const pastHTML=past.length?'<div class="club-schedule-past-title">Zuletzt gespielt – Ergebnisse</div>'+renderRows(past):'';
 const button=upcoming.length>3?'<button class="club-schedule-more" type="button" onclick="toggleClubSchedule(&quot;'+key+'&quot;)">'+(clubScheduleExpanded[key]?'Weniger Zukunftsspiele anzeigen':'Alle '+upcoming.length+' zukünftigen Spiele anzeigen')+'</button>':'';
 el.innerHTML='<h4>'+heading+'</h4><div class="club-schedule-list '+(clubScheduleExpanded[key]?'is-expanded':'')+'" id="'+key+'-schedule-scroll">'+upcomingHTML+pastHTML+'</div>'+button;
 const list=document.getElementById(key+'-schedule-scroll');if(list)list.scrollTop=0;
