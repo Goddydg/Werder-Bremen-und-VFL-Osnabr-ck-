@@ -99,8 +99,9 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 .league-purple .muted{color:#c8b3d9}
 .refresh{display:block;width:100%;margin:12px 0;padding:12px;border:1px solid #37684f;border-radius:10px;background:#194a34;color:white;font-size:14px}
 .league-purple .refresh{background:#4c1d72;border-color:#8b5bb4}
-.match.werder-match{background:#1d7045;border:1px solid #35a66b;color:#fff}
-.match.vfl-match{background:#6b21a8;border:1px solid #a855f7;color:#fff}
+.match.werder-match{background:transparent!important;border:1px solid #35a66b;color:inherit}
+.match.vfl-match{background:transparent!important;border:1px solid #a855f7;color:inherit}
+.match.werder-match .match-date,.match.vfl-match .match-date{color:inherit}
 .match.werder-match .match-date,.match.vfl-match .match-date{color:#fff}
 .team-highlight{display:inline-block;padding:3px 6px;border-radius:5px;background:rgba(255,255,255,.18);font-weight:bold}
 .live-badge{display:inline-block;background:#e32636;color:#fff;border-radius:5px;padding:3px 7px;font-size:11px;font-weight:bold;margin-right:5px}
@@ -548,17 +549,17 @@ const past=dated.filter(event=>new Date(eventDate(event)).getTime()<Date.now()).
 const upcoming=dated.filter(event=>new Date(eventDate(event)).getTime()>=Date.now()).sort((a,b)=>new Date(eventDate(a))-new Date(eventDate(b)));
 const orderedPast=past.slice().sort((a,b)=>new Date(eventDate(a))-new Date(eventDate(b)));
 const visibleUpcoming=clubScheduleExpanded[key]?upcoming:upcoming.slice(0,3);
-const renderRows=list=>list.map(event=>{
+const renderRows=(list,markNext=false)=>list.map((event,index)=>{
 const p=scheduleEventParts(event);
 const result=p.score||'– : –';
 const roundLabel=p.round?(String(p.round).match(/spieltag/i)?String(p.round):'Spieltag '+p.round):'';
-return '<div class="club-schedule-row"><span class="club-schedule-date"><span>'+esc(scheduleDate(event))+'</span><span class="club-schedule-competition-inline">'+esc(p.competition)+'</span>'+(roundLabel?'<small class="club-schedule-round">'+esc(roundLabel)+'</small>':'')+'</span><strong>'+esc(p.homeName)+' – '+esc(p.awayName)+'</strong><span class="club-schedule-result">'+esc(result)+'</span></div>';
+return '<div '+(markNext&&index===0?'id="'+key+'-next-fixture" ':'')+'class="club-schedule-row"><span class="club-schedule-date"><span>'+esc(scheduleDate(event))+'</span><span class="club-schedule-competition-inline">'+esc(p.competition)+'</span>'+(roundLabel?'<small class="club-schedule-round">'+esc(roundLabel)+'</small>':'')+'</span><strong>'+esc(p.homeName)+' – '+esc(p.awayName)+'</strong><span class="club-schedule-result">'+esc(result)+'</span></div>';
 }).join('');
-const upcomingHTML=visibleUpcoming.length?renderRows(visibleUpcoming):'<p class="club-schedule-empty">Keine weiteren terminierten Spiele gefunden.</p>';
+const upcomingHTML=visibleUpcoming.length?renderRows(visibleUpcoming,true):'<p class="club-schedule-empty">Keine weiteren terminierten Spiele gefunden.</p>';
 const pastHTML=orderedPast.length?'<div class="club-schedule-past" id="'+key+'-schedule-past"><div class="club-schedule-past-title">Bisherige Spieltage – Ergebnisse</div>'+renderRows(orderedPast)+'</div>':'';
 const button=upcoming.length>3?'<button class="club-schedule-more" type="button" onclick="toggleClubSchedule(&quot;'+key+'&quot;)">'+(clubScheduleExpanded[key]?'Weniger Zukunftsspiele anzeigen':'Alle '+upcoming.length+' zukünftigen Spiele anzeigen')+'</button>':'';
 el.innerHTML='<h4>'+heading+'</h4><div class="club-schedule-list '+(clubScheduleExpanded[key]?'is-expanded':'')+'" id="'+key+'-schedule-scroll">'+pastHTML+upcomingHTML+'</div>'+button;
-const list=document.getElementById(key+'-schedule-scroll'),pastBlock=document.getElementById(key+'-schedule-past');if(list){list.scrollTop=pastBlock?pastBlock.offsetHeight:0;}
+const list=document.getElementById(key+'-schedule-scroll'),nextFixture=document.getElementById(key+'-next-fixture');if(list&&nextFixture){list.scrollTop=Math.max(0,nextFixture.offsetTop-list.offsetTop);}
 }
 function toggleClubSchedule(key){clubScheduleExpanded[key]=!clubScheduleExpanded[key];renderClubSchedule(key);}
 async function loadClubSchedule(key){
