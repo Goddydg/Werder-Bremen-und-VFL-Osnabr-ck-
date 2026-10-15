@@ -357,9 +357,23 @@ bookings.sort((a,b)=>(parseInt(a.minute,10)||0)-(parseInt(b.minute,10)||0));
 return bookings.map(e=>{const label=e.type==='red'?'🟥 Rote Karte':e.type==='yellow-red'?'🟨🟥 Gelb-Rote Karte':'🟨 Gelbe Karte';return `<div class="scorer"><b>${esc(String(e.minute||'').replace(/′$/,''))}${String(e.minute||'').includes("'")||String(e.minute||'').includes('′')?'':"′"}</b> ${label} – ${esc(e.player||'Spieler unbekannt')}${e.team?`<div class="detail-label">${esc(e.team)}</div>`:''}</div>`;}).join('');
 }
 function renderSubs(apiMatch,key){
-const subs=apiEvents(apiMatch).filter(e=>/^(subst|substitution|substitutions)$/i.test(String(e.type||'').trim()));
-if(!subs.length)return '<p class="no-data">Für dieses Spiel sind beim Datenanbieter keine Auswechslungen verfügbar. Sobald Ereignisdaten geliefert werden, erscheinen hier Ein- und Auswechslungen mit Spielminute und Verein.</p>';
-return subs.map(e=>`<div class="scorer"><b>${esc(eventMinute(e))}</b> <span class="detail-label">↓ raus:</span> ${esc(e.assist?.name||'Nicht angegeben')}<br><span class="detail-label">↑ rein:</span> ${esc(e.player?.name||'Nicht angegeben')}${teamPlayerLabel(e.team?.name,key)}</div>`).join('');
+const raw=apiEvents(apiMatch).filter(e=>{
+const type=String(e.type||e.detail||'').toLowerCase().trim();
+return /^(subst|substitution|substitutions|player substitution|substitution in|substitution out)$/i.test(type)||/substitut|wechsel/i.test(type);
+});
+const seen=new Set(),subs=[];
+for(const e of raw){
+const incoming=e.player?.name||e.player?.player?.name||e.in?.name||e.assist?.name||e.assist?.player?.name||'';
+const outgoing=e.assist?.name||e.assist?.player?.name||e.playerOut?.name||e.out?.name||e.player_out?.name||'';
+const minute=eventMinute(e),team=e.team?.name||e.teamName||'';
+const signature=[minute,normalizeName(incoming),normalizeName(outgoing),normalizeName(team)].join('|');
+if(seen.has(signature))continue;
+seen.add(signature);
+subs.push({minute,incoming,outgoing,team});
+}
+if(!subs.length)return '<p class="no-data">Für dieses Spiel sind beim gespeicherten Datenanbieter noch keine Auswechslungen hinterlegt. Die Anzeige erkennt jetzt auch alternative Bezeichnungen für Wechselereignisse.</p>';
+subs.sort((a,b)=>(parseInt(a.minute,10)||0)-(parseInt(b.minute,10)||0));
+return subs.map(e=>`<div class="scorer"><b>${esc(e.minute)}</b> ${e.outgoing?`<span class="detail-label">↓ raus:</span> ${esc(e.outgoing)}<br>`:''}${e.incoming?`<span class="detail-label">↑ rein:</span> ${esc(e.incoming)}`:''}${teamPlayerLabel(e.team,key)}</div>`).join('');
 }
 function renderLineups(apiMatch,key){
 const lineups=Array.isArray(apiMatch?.lineups)?apiMatch.lineups:[];
