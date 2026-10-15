@@ -87,6 +87,48 @@ jobs:
             return cards.map(({signature,...card})=>card);
           }
 
+          // --- Club crest per card -------------------------------------------------
+          // On the live ticker every card entry shows the club crest (an image whose
+          // file name is the DFL club id, e.g. DFL-CLU-00000E) next to the player.
+          // The id is stored as card.crestId and resolved to a team name via
+          // saved.clubs (crest id -> OpenLigaDB team name). Everything here is
+          // best effort: any problem only means a card has no crest, never that a
+          // card is lost.
+          const clubs = (saved.clubs ||= {});
+          const normWords = value => ' ' + String(value || '').normalize('NFD').replace(/[̀-ͯ]/g,'')
+            .toLowerCase().replace(/[^a-z]+/g,' ').trim() + ' ';
+          function attachCrestIds(html, cards) {
+            const markers = [...html.matchAll(/(?:yellowRedCard|yellowCard|redCard)[^"'\s>]*\.svg/gi)].map(m => m.index);
+            const entries = markers.map((start, i) => {
+              const end = Math.min(markers[i + 1] ?? html.length, start + 3000);
+              const windowHtml = html.slice(start, end);
+              const crest = (windowHtml.match(/DFL-CLU-([0-9A-Z]{4,8})/) || [])[1] || '';
+              return { crest, words: normWords(decode(windowHtml)) };
+            }).filter(entry => entry.crest);
+            for (const card of cards) {
+              const tokens = normWords(card.player).trim().split(' ').filter(t => t.length > 1);
+              for (const size of [2, 1]) {
+                const name = tokens.slice(0, size).join(' ');
+                if (!name) continue;
+                const found = entries.find(entry => entry.words.includes(' ' + name + ' '));
+                if (found) { card.crestId = found.crest; break; }
+              }
+            }
+          }
+          function assignTeam(card, home, away) {
+            if (!card.crestId || card.team) return;
+            const idOf = team => Object.keys(clubs).find(key => clubs[key] === team);
+            const known = clubs[card.crestId];
+            if (known === home || known === away) { card.team = known; }
+            else if (!known) {
+              const homeId = idOf(home), awayId = idOf(away);
+              if (homeId && !awayId && card.crestId !== homeId) card.team = away;
+              else if (awayId && !homeId && card.crestId !== awayId) card.team = home;
+              if (card.team) clubs[card.crestId] = card.team;
+            }
+            if (card.team) card.teamSide = card.team === home ? 'home' : 'away';
+          }
+
           (async () => {
             let checked = 0, found = 0;
             // GitHub Actions scheduled workflows have a 5-minute minimum interval.
@@ -114,14 +156,24 @@ jobs:
                   const page = await get(url);
                   const html = await page.text();
                   const cards = extractCards(html);
+                  try { attachCrestIds(html, cards); } catch (error) { console.warn('Crest ids not read:', String(error)); }
                   if (cards.length) found += cards.length;
                   const previous = output[id] || {};
                   const merged = [...(previous.cards || [])];
-                  const seen = new Set(merged.map(c => [c.minute || '', c.type || '', c.player || ''].join('|').toLowerCase()));
+                  const keyOf = c => [c.minute || '', c.type || '', c.player || ''].join('|').toLowerCase();
+                  const seen = new Set(merged.map(keyOf));
                   for (const card of cards) {
-                    const key = [card.minute || '', card.type || '', card.player || ''].join('|').toLowerCase();
+                    const key = keyOf(card);
                     if (!seen.has(key)) { merged.push(card); seen.add(key); }
+                    else if (card.crestId) {
+                      const old = merged.find(c => keyOf(c) === key);
+                      if (old && !old.crestId) old.crestId = card.crestId;
+                    }
                   }
+                  try {
+                    for (const card of merged) assignTeam(card, home, away);
+                    console.log(`${leagueKey} ${home} - ${away}: ${merged.filter(c => c.crestId).length}/${merged.length} cards with crest, ${merged.filter(c => c.team).length} with team`);
+                  } catch (error) { console.warn('Teams not resolved:', String(error)); }
                   output[id] = { ...previous, matchId: id, home, away, round, url, cards: merged, checkedAt: new Date().toISOString() };
                   checked++;
                   console.log(`${leagueKey} ${home} - ${away}: ${cards.length} cards`);
