@@ -128,7 +128,7 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 .stat{padding:8px;border-radius:7px;background:rgba(255,255,255,.06);font-size:12px}
 .stat strong{display:block;margin-bottom:3px}
 .zone-mark{display:inline-block;width:4px;height:17px;border-radius:2px;margin-left:0;vertical-align:middle;position:absolute;left:29px;top:50%;transform:translateY(-50%)}.zone-ucl{background:#38bdf8}.zone-uel{background:#22c55e}.zone-conference{background:#c084fc}.zone-promotion{background:#22c55e}.zone-playoff{background:#facc15}.zone-relegation{background:#ef4444}.table-legend{display:flex;flex-wrap:wrap;gap:7px 12px;padding:10px 2px 3px;font-size:11px;color:#c8d8ce}.table-legend span{display:inline-flex;align-items:center;gap:5px}.table-legend i{display:inline-block;width:8px;height:8px;border-radius:50%;flex-shrink:0}.league-purple .table-legend{color:#dfc9f1}.scheduled-tv-badge{position:absolute;right:7px;top:5px;z-index:1;max-width:115px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;border:1px solid #6f8b7a;border-radius:5px;padding:2px 5px;font-size:10px;font-weight:bold;line-height:1.2;color:#f5f7f5;background:#173c2a;pointer-events:none}
-.matchday-scroll{display:grid;gap:8px;height:300px;max-height:300px;overflow-y:auto;overflow-x:hidden;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.3) transparent;padding:2px 3px 2px 0;}
+.matchday-scroll{display:grid;gap:8px;height:188px;max-height:188px;overflow-y:auto;overflow-x:hidden;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.3) transparent;padding:2px 3px 2px 0;}
 .matchday-scroll.is-expanded{height:auto;max-height:none;overflow:visible;}
 .matchday-scroll .match{margin:0;flex-shrink:0;}
 .matchday-more{display:block;margin:9px auto 2px;padding:8px 13px;border:1px solid rgba(255,255,255,.25);border-radius:8px;background:rgba(255,255,255,.08);color:inherit;font-weight:700;cursor:pointer;}
@@ -138,7 +138,7 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 .matchday-section-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 10px;padding:0 0 10px;border-bottom:1px solid rgba(255,255,255,.14);}
 .matchday-section-heading h3{margin:2px 0 0;font-size:17px;}
 .section-eyebrow{display:block;font-size:10px;font-weight:800;letter-spacing:1.15px;opacity:.72;}
-.section-context{flex-shrink:0;padding:5px 8px;border:1px solid rgba(255,255,255,.18);border-radius:6px;background:rgba(255,255,255,.07);font-size:10px;font-weight:700;opacity:.85;text-align:center;}
+.section-context{flex-shrink:0;padding:7px 10px;border:1px solid rgba(255,255,255,.24);border-radius:7px;background:rgba(255,255,255,.09);color:inherit;font-size:11px;font-weight:800;text-align:center;cursor:pointer;line-height:1.2;}.section-context:hover{background:rgba(255,255,255,.16);}
 .club-schedule-team{margin:22px 0 18px;padding:14px;border:1px solid rgba(100,220,150,.36);border-radius:12px;background:linear-gradient(145deg,rgba(15,90,54,.19),rgba(0,0,0,.14));position:relative;}
 .club-schedule-team:before{content:"";display:block;height:3px;width:48px;border-radius:4px;background:#4ed28a;margin:0 0 11px;}
 .club-schedule-team h4{font-size:16px;margin:0 0 10px;}
@@ -153,7 +153,7 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 <h2 class="league-title"><img class="league-logo" src="https://crests.football-data.org/BL1.png" alt="Bundesliga-Logo">1. Bundesliga</h2>
 <div class="club"><img class="club-logo" id="bl1-club-logo" alt="" hidden><span>SV Werder Bremen</span></div>
 <section class="matchday-section matchday-section-league" aria-label="Alle Spiele der Bundesliga">
-<div class="matchday-section-heading"><div><span class="section-eyebrow">LIGAÜBERSICHT</span><h3>Spiele des Spieltags</h3></div><span class="section-context">Alle Bundesliga-Partien</span></div>
+<div class="matchday-section-heading"><div><span class="section-eyebrow">LIGAÜBERSICHT</span><h3>Spiele des Spieltags</h3></div><button class="section-context matchday-more" type="button" onclick="toggleMatchday('bl1')">'+(matchdayExpanded['bl1']?'Weniger Spiele anzeigen':'Alle Bundesliga-Spiele anzeigen')+'</button></div>
 <div id="bl1-selector"></div><div id="bl1-games">Daten werden geladen …</div>
 </section>
 <div class="club-schedule club-schedule-team" id="bl1-club-schedule"><h4>Alle Spiele von Werder Bremen</h4><p class="club-schedule-empty">Spielplan wird geladen …</p></div>
@@ -165,7 +165,7 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 <h2 class="league-title"><img class="league-logo" src="https://crests.football-data.org/BL2.png" alt="2. Bundesliga-Logo">2. Bundesliga</h2>
 <div class="club"><img class="club-logo" id="bl2-club-logo" alt="" hidden><span>VfL Osnabrück</span></div>
 <section class="matchday-section matchday-section-league" aria-label="Alle Spiele der 2. Bundesliga">
-<div class="matchday-section-heading"><div><span class="section-eyebrow">LIGAÜBERSICHT</span><h3>Spiele des Spieltags</h3></div><span class="section-context">Alle Liga-Partien</span></div>
+<div class="matchday-section-heading"><div><span class="section-eyebrow">LIGAÜBERSICHT</span><h3>Spiele des Spieltags</h3></div><button class="section-context matchday-more" type="button" onclick="toggleMatchday('bl2')">'+(matchdayExpanded['bl2']?'Weniger Spiele anzeigen':'Alle Spiele anzeigen')+'</button></div>
 <div id="bl2-selector"></div><div id="bl2-games">Daten werden geladen …</div>
 </section>
 <div class="club-schedule club-schedule-team" id="bl2-club-schedule"><h4>Alle Spiele des VfL Osnabrück</h4><p class="club-schedule-empty">Spielplan wird geladen …</p></div>
