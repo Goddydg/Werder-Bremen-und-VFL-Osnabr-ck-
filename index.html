@@ -122,7 +122,7 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 .detail-line{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:13px}
 .detail-line span:last-child{text-align:right;overflow-wrap:anywhere}
 .detail-label{opacity:.8}
-.scorer{padding:9px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:13px}
+.scorer{padding:9px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:13px}.player-club{display:flex;align-items:center;gap:5px;margin-top:4px;font-size:11px;line-height:1.25;opacity:.82}.player-club img{width:16px;height:16px;object-fit:contain;flex:0 0 16px}.player-club span{overflow-wrap:anywhere}
 .no-data{font-size:13px;line-height:1.5;opacity:.85}
 .lineup-button{display:block;width:100%;margin-top:8px;padding:8px 9px;border:1px solid rgba(255,255,255,.4);border-radius:8px;background:rgba(0,0,0,.22);color:white;font-size:12px;font-weight:bold;line-height:1.3;text-align:center;cursor:pointer;touch-action:manipulation}
 .lineup-button:active{opacity:.75}
@@ -326,13 +326,18 @@ window.open(url,'_blank','noopener,noreferrer');
 function detailLine(label,value){if(value===undefined||value===null||value==='')return '';return `<div class="detail-line"><span class="detail-label">${esc(label)}</span><span>${esc(value)}</span></div>`;}
 function eventMinute(event){const t=event?.time||{};const minute=t.elapsed??event.minute??event.matchMinute;const extra=t.extra??event.injuryTime;return minute==null?'':`${minute}${extra?`+${extra}`:''}′`;}
 function apiEvents(apiMatch){return Array.isArray(apiMatch?.events)?apiMatch.events:[];}
-function renderGoals(match,apiMatch){
+function teamPlayerLabel(teamName,key){
+if(!teamName)return '';
+const logo=logoForTeam(teamName,key);
+return `<div class="player-club">${logo?`<img src="${esc(logo)}" alt="" loading="lazy" onerror="this.hidden=true">`:''}<span>${esc(teamName)}</span></div>`;
+}
+function renderGoals(match,apiMatch,key){
 const entries=[];
 for(const g of (Array.isArray(match.goals)?match.goals:[]))entries.push({minute:g.matchMinute,player:g.goalGetterName||'Torschütze nicht angegeben',team:g.teamName||'',detail:[g.isPenalty?'Elfmeter':'',g.isOwnGoal?'Eigentor':''].filter(Boolean).join(' · ')});
-for(const e of apiEvents(apiMatch)){if(e.type!=='Goal')continue;const player=e.player?.name||'Torschütze nicht angegeben',minute=eventMinute(e),duplicate=entries.some(x=>normalizeName(x.player)===normalizeName(player)&&String(x.minute??'')===String(minute??''));if(!duplicate)entries.push({minute:minute.replace('′',''),player,team:e.team?.name||'',detail:e.detail||''});}
+for(const e of apiEvents(apiMatch)){if(String(e.type||'').toLowerCase()!=='goal')continue;const player=e.player?.name||'Torschütze nicht angegeben',minute=eventMinute(e),duplicate=entries.some(x=>normalizeName(x.player)===normalizeName(player)&&String(x.minute??'')===String(minute??''));if(!duplicate)entries.push({minute:minute.replace('′',''),player,team:e.team?.name||'',detail:e.detail||''});}
 entries.sort((a,b)=>(parseInt(a.minute,10)||0)-(parseInt(b.minute,10)||0));
 if(!entries.length)return '<p class="no-data">Für dieses Spiel sind keine Torschützen hinterlegt.</p>';
-return entries.map(g=>`<div class="scorer"><b>${esc(g.minute==null?'':String(g.minute).includes('′')?g.minute:g.minute+'′')}</b> ${esc(g.player)} ${g.detail?`<span class="detail-label">(${esc(g.detail)})</span>`:''}${g.team?`<div class="detail-label">${esc(g.team)}</div>`:''}</div>`).join('');
+return entries.map(g=>`<div class="scorer"><b>${esc(g.minute==null?'':String(g.minute).includes('′')?g.minute:g.minute+'′')}</b> ${esc(g.player)} ${g.detail?`<span class="detail-label">(${esc(g.detail)})</span>`:''}${teamPlayerLabel(g.team,key)}</div>`).join('');
 }
 function renderBookings(match,key,apiMatch){
 const savedById=websiteCardEvents[key]?.[String(match.matchID)];
@@ -351,15 +356,15 @@ if(!bookings.length)return '<p class="no-data">Für dieses Spiel wurden noch kei
 bookings.sort((a,b)=>(parseInt(a.minute,10)||0)-(parseInt(b.minute,10)||0));
 return bookings.map(e=>{const label=e.type==='red'?'🟥 Rote Karte':e.type==='yellow-red'?'🟨🟥 Gelb-Rote Karte':'🟨 Gelbe Karte';return `<div class="scorer"><b>${esc(String(e.minute||'').replace(/′$/,''))}${String(e.minute||'').includes("'")||String(e.minute||'').includes('′')?'':"′"}</b> ${label} – ${esc(e.player||'Spieler unbekannt')}${e.team?`<div class="detail-label">${esc(e.team)}</div>`:''}</div>`;}).join('');
 }
-function renderSubs(apiMatch){
-const subs=apiEvents(apiMatch).filter(e=>e.type==='subst');
-if(!subs.length)return '<p class="no-data">Keine Auswechslungen hinterlegt.</p>';
-return subs.map(e=>`<div class="scorer"><b>${esc(eventMinute(e))}</b> ${esc(e.assist?.name||'')} ${e.assist?.name?'→ ':''}${esc(e.player?.name||'Spieler unbekannt')}${e.team?.name?`<div class="detail-label">${esc(e.team.name)}</div>`:''}</div>`).join('');
+function renderSubs(apiMatch,key){
+const subs=apiEvents(apiMatch).filter(e=>/^(subst|substitution|substitutions)$/i.test(String(e.type||'').trim()));
+if(!subs.length)return '<p class="no-data">Für dieses Spiel sind beim Datenanbieter keine Auswechslungen verfügbar. Sobald Ereignisdaten geliefert werden, erscheinen hier Ein- und Auswechslungen mit Spielminute und Verein.</p>';
+return subs.map(e=>`<div class="scorer"><b>${esc(eventMinute(e))}</b> <span class="detail-label">↓ raus:</span> ${esc(e.assist?.name||'Nicht angegeben')}<br><span class="detail-label">↑ rein:</span> ${esc(e.player?.name||'Nicht angegeben')}${teamPlayerLabel(e.team?.name,key)}</div>`).join('');
 }
-function renderLineups(apiMatch){
+function renderLineups(apiMatch,key){
 const lineups=Array.isArray(apiMatch?.lineups)?apiMatch.lineups:[];
 if(!lineups.length)return '<p class="no-data">Noch keine Aufstellungen verfügbar. Sie werden häufig erst 20–40 Minuten vor Anstoß veröffentlicht.</p>';
-return lineups.map(team=>{const start=team.startXI||[],bench=team.substitutes||[];const players=(list)=>list.length?list.map(p=>`<div class="scorer">${p.player?.number!=null?esc(p.player.number)+' · ':''}${esc(p.player?.name||'Spieler unbekannt')}${p.player?.pos?` <span class="detail-label">(${esc(p.player.pos)})</span>`:''}</div>`).join(''):'<p class="no-data">Keine Angaben.</p>';return `<h4>${esc(team.team?.name||'Mannschaft')}${team.formation?' · '+esc(team.formation):''}</h4><div class="scorer"><b>Startaufstellung</b></div>${players(start)}<div class="scorer"><b>Ersatzbank</b></div>${players(bench)}${team.coach?.name?`<div class="scorer">Trainer: ${esc(team.coach.name)}</div>`:''}`;}).join('');
+return lineups.map(team=>{const start=team.startXI||[],bench=team.substitutes||[],teamName=team.team?.name||'Mannschaft';const players=(list)=>list.length?list.map(p=>`<div class="scorer">${p.player?.number!=null?esc(p.player.number)+' · ':''}${esc(p.player?.name||'Spieler unbekannt')}${p.player?.pos?` <span class="detail-label">(${esc(p.player.pos)})</span>`:''}${teamPlayerLabel(teamName,key)}</div>`).join(''):'<p class="no-data">Keine Angaben.</p>';return `<h4>${esc(teamName)}${team.formation?' · '+esc(team.formation):''}</h4><div class="scorer"><b>Startaufstellung</b></div>${players(start)}<div class="scorer"><b>Ersatzbank</b></div>${players(bench)}${team.coach?.name?`<div class="scorer">Trainer: ${esc(team.coach.name)}</div>`:''}`;}).join('');
 }
 function renderStatistics(apiMatch){
 const stats=Array.isArray(apiMatch?.statistics)?apiMatch.statistics:[];
@@ -384,7 +389,7 @@ if(ft?.home!=null)html+=detailLine('Endstand',`${ft.home} : ${ft.away}`);
 if(et?.home!=null)html+=detailLine('Verlängerung',`${et.home} : ${et.away}`);
 if(pen?.home!=null)html+=detailLine('Elfmeterschießen',`${pen.home} : ${pen.away}`);
 if(results.length){html+='<h4>Ergebnisse OpenLigaDB</h4>';results.forEach(r=>html+=detailLine(r.resultName||(Number(r.resultTypeID)===1?'Halbzeit':Number(r.resultTypeID)===2?'Endstand':'Spielstand'),`${r.pointsTeam1} : ${r.pointsTeam2}`));}
-html+='<h4>⚽ Torschützen</h4>'+renderGoals(match,apiMatch)+'<h4>🟨 Karten</h4>'+renderBookings(match,key,apiMatch)+'<h4>🔄 Auswechslungen</h4>'+renderSubs(apiMatch)+'<h4>📊 Spielstatistiken</h4>'+renderStatistics(apiMatch)+'<h4>👥 Aufstellungen & Ersatzbank</h4>'+renderLineups(apiMatch);
+html+='<h4>⚽ Torschützen</h4>'+renderGoals(match,apiMatch,key)+'<h4>🟨 Karten</h4>'+renderBookings(match,key,apiMatch)+'<h4>🔄 Auswechslungen</h4>'+renderSubs(apiMatch,key)+'<h4>📊 Spielstatistiken</h4>'+renderStatistics(apiMatch)+'<h4>👥 Aufstellungen & Ersatzbank</h4>'+renderLineups(apiMatch,key);
 const lineupIndex=selectedGames(key).findIndex(g=>matchKey(g)===matchKey(match));html+=`<button type="button" class="lineup-button" onclick="aufstellungAbrufen('${key}',${lineupIndex})">👥 Aufstellung, Spielerbilder &amp; Statistiken öffnen</button>`;
 html+=`<p class="no-data">Zusatzdaten: ${apiMatch?'API-Football':'Noch keine passenden API-Football-Daten für dieses Spiel'}. Aufstellungen und Statistiken sind abhängig von der Verfügbarkeit beim Anbieter.</p></div>`;
 return html;
