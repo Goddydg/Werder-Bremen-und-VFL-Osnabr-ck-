@@ -784,7 +784,7 @@ console.error('Aktualisierung fehlgeschlagen:',error);
 if(showError)alert('Live-Daten konnten nicht geladen werden. Bitte später erneut versuchen.');
 }finally{loading=false;}
 }
-async function refreshLoop(){await refreshData();setTimeout(refreshLoop,2000);}
+async function refreshLoop(){await refreshData();setTimeout(refreshLoop,15000);}
 refreshLoop();
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshData();});
 </script>
