@@ -11,19 +11,21 @@
 <title>Werder Bremen & VfL Osnabrück</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:linear-gradient(to bottom,#00190b 0%,#293b31 28%,#293b31 48%,#170522 70%,#293b31 100%);background-attachment:fixed;color:#f5f7f5;font-family:Arial,sans-serif}
-header{padding:20px 16px;background:linear-gradient(to bottom,#00843d 0%,#07542e 30%,#351052 77%,#351052 100%)}
+body{margin:0;background:linear-gradient(180deg,#061810 0%,#0b2118 45%,#10151b 100%);background-attachment:fixed;color:#f5f7f5;font-family:Arial,sans-serif}
+header{position:relative;overflow:hidden;padding:22px 16px 20px;background:radial-gradient(ellipse at 16% 0%,rgba(0,132,61,.32),transparent 48%),radial-gradient(ellipse at 88% 100%,rgba(107,33,168,.28),transparent 48%),linear-gradient(145deg,#10271e 0%,#111d1a 58%,#21162b 100%);border-bottom:1px solid rgba(255,255,255,.10);border-radius:0 0 28px 28px;box-shadow:0 12px 32px rgba(0,0,0,.16)}
 header h1{margin:0;font-size:22px;line-height:1.25}
 .header-werder{font-family:Georgia,'Times New Roman',serif;font-weight:700;letter-spacing:-.5px}
 .header-vfl{font-family:'Arial Narrow','Roboto Condensed',Impact,sans-serif;font-stretch:condensed;font-weight:800;letter-spacing:-.4px}
-.header-clubs{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;max-width:100%}
-.header-club{display:flex;align-items:center;justify-content:center;gap:10px;min-width:0;width:100%}
-.header-club img.crest{width:48px;height:48px;object-fit:contain;flex:0 0 48px}
-.header-club img.stadium{width:64px;height:44px;object-fit:cover;border-radius:5px;border:1px solid rgba(255,255,255,.25);flex:0 0 64px}
-.header-club-name{font-size:25px;line-height:1.1}
-.header-center{display:flex;justify-content:center;margin:0;font-size:24px;font-weight:bold;line-height:1}
-@media(max-width:520px){header{padding:16px 8px}.header-clubs{gap:3px}.header-club{gap:7px}.header-club img.crest{width:42px;height:42px;flex-basis:42px}.header-club img.stadium{width:48px;height:34px;flex-basis:48px}.header-club-name{font-size:20px}.header-center{font-size:21px}}
-header p{margin:8px 0 0;color:#c5d5cb;text-align:center}
+.header-clubs{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;max-width:100%}
+.header-club{display:flex;align-items:center;justify-content:center;gap:12px;min-width:0;width:100%;padding:8px 10px;border-radius:16px;border:1px solid rgba(255,255,255,.08)}
+.header-club:first-child{background:linear-gradient(100deg,rgba(0,132,61,.22),rgba(0,132,61,.05));border-color:rgba(53,166,107,.24)}
+.header-club:last-child{background:linear-gradient(100deg,rgba(107,33,168,.06),rgba(107,33,168,.24));border-color:rgba(168,85,247,.24)}
+.header-club img.crest{width:42px;height:42px;object-fit:contain;flex:0 0 42px;filter:drop-shadow(0 2px 5px rgba(0,0,0,.18))}
+.header-club img.stadium{width:54px;height:38px;object-fit:cover;border-radius:11px;border:1px solid rgba(255,255,255,.2);flex:0 0 54px;box-shadow:0 3px 10px rgba(0,0,0,.18)}
+.header-club-name{font-size:clamp(18px,4.8vw,25px);line-height:1.12;letter-spacing:-.35px}
+.header-center{display:flex;align-items:center;justify-content:center;margin:0;width:26px;height:26px;border:1px solid rgba(255,255,255,.14);border-radius:50%;background:rgba(255,255,255,.06);font-size:15px;font-weight:700;line-height:1;color:#dce8df}
+@media(max-width:520px){header{padding:18px 8px 17px}.header-clubs{gap:5px}.header-club{gap:7px;padding:7px 5px}.header-club img.crest{width:36px;height:36px;flex-basis:36px}.header-club img.stadium{width:43px;height:31px;flex-basis:43px;border-radius:9px}.header-club-name{font-size:clamp(17px,4.5vw,20px)}.header-center{width:24px;height:24px;font-size:14px}}
+header p{margin:12px 0 0;color:#b7c9be;text-align:center;font-size:14px;letter-spacing:.25px}
 main{padding:12px}
 .league{margin-bottom:30px;padding:14px;border-radius:16px;background:#10291e;border:1px solid #244a37}
 .league-green{border-top:5px solid #35a66b}
