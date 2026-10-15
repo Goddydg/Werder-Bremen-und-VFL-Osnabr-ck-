@@ -547,7 +547,7 @@ const p=scheduleEventParts(event);
 return '<div class="club-schedule-row"><span class="club-schedule-date">'+esc(scheduleDate(event))+'</span><strong>'+esc(p.homeName)+' – '+esc(p.awayName)+(p.score?' · '+esc(p.score):'')+'</strong><span class="club-schedule-comp">'+esc(p.competition)+(p.status?' · '+esc(p.status):'')+'</span></div>';
 }).join('');
 const upcomingHTML=visibleUpcoming.length?renderRows(visibleUpcoming):'<p class="club-schedule-empty">Keine weiteren terminierten Spiele gefunden.</p>';
-const button=upcoming.length>3?'<button class="club-schedule-more" type="button" onclick="toggleClubSchedule(\\''+key+'\\')">'+(clubScheduleExpanded[key]?'Weniger Zukunftsspiele anzeigen':'Alle '+upcoming.length+' zukünftigen Spiele anzeigen')+'</button>':'';
+const button=upcoming.length>3?'<button class="club-schedule-more" type="button" onclick="toggleClubSchedule(&quot;'+key+'&quot;)">'+(clubScheduleExpanded[key]?'Weniger Zukunftsspiele anzeigen':'Alle '+upcoming.length+' zukünftigen Spiele anzeigen')+'</button>':'';
 const pastHTML=clubScheduleExpanded[key]&&past.length?'<h4 class="club-schedule-past-title">Bereits gespielte Spiele</h4>'+renderRows(past):'';
 el.innerHTML='<h4>'+heading+'</h4><div class="club-schedule-list">'+upcomingHTML+'</div>'+button+pastHTML;
 }
