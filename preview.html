@@ -533,7 +533,7 @@ function previousRoundPositions(key){
 const games=getGames(key);const ids=[...new Set(games.map(g=>Number((g.group||{}).groupOrderID??g.groupOrderID)).filter(Number.isFinite))].sort((a,b)=>a-b);
 const current=Number(selectedRound[key]);const prior=ids.filter(id=>id<current);const prevId=prior.length?prior[prior.length-1]:(ids.length>1?ids[ids.length-2]:null);if(prevId==null)return null;
 const map=new Map();const add=(team,points,gf,ga)=>{const name=team?.teamName||team?.name||'';if(!name)return;const k=normalizeName(name);if(!map.has(k))map.set(k,{name:name,points:0,gf:0,ga:0});const t=map.get(k);t.points+=points;t.gf+=gf;t.ga+=ga;};
-for(const g of games){if(Number((g.group||{}).groupOrderID??g.groupOrderID)!==prevId||!isFinished(g))continue;const result=(g.matchResults||[]).filter(x=>x.pointsTeam1!=null&&x.pointsTeam2!=null).sort((a,b)=>Number(b.resultTypeID||0)-Number(a.resultTypeID||0))[0];if(!result)continue;const h=Number(result.pointsTeam1),a=Number(result.pointsTeam2);add(g.team1,h>a?3:h===a?1:0,h,a);add(g.team2,a>h?3:a===h?1:0,a,h);}
+for(const g of games){if(Number((g.group||{}).groupOrderID??g.groupOrderID)>prevId||!isFinished(g))continue;const result=(g.matchResults||[]).filter(x=>x.pointsTeam1!=null&&x.pointsTeam2!=null).sort((a,b)=>Number(b.resultTypeID||0)-Number(a.resultTypeID||0))[0];if(!result)continue;const h=Number(result.pointsTeam1),a=Number(result.pointsTeam2);add(g.team1,h>a?3:h===a?1:0,h,a);add(g.team2,a>h?3:a===h?1:0,a,h);}
 const rows=[...map.values()].sort((a,b)=>b.points-a.points||(b.gf-b.ga)-(a.gf-a.ga)||b.gf-a.gf||a.name.localeCompare(b.name,'de'));return new Map(rows.map((r,i)=>[normalizeName(r.name),i+1]));
 }
 function tableHTML(data,key){
