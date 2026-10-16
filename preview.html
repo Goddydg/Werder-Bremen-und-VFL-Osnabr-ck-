@@ -127,6 +127,7 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 .card-player{display:inline-flex;align-items:center;gap:6px;vertical-align:middle}
 .card-player .team-logo{width:18px;height:18px;flex:0 0 18px}
 .sub-names{display:inline-flex;flex-direction:column;gap:1px}.sub-in{color:#7ee2a8}.sub-out{color:#ff9d9d;opacity:.95}
+.stat-teams{display:flex;justify-content:space-between;margin:0 2px 6px;font-size:12px;opacity:.75}
 .no-data{font-size:13px;line-height:1.5;opacity:.85}
 .lineup-button{display:block;width:100%;margin-top:8px;padding:8px 9px;border:1px solid rgba(255,255,255,.4);border-radius:8px;background:rgba(0,0,0,.22);color:white;font-size:12px;font-weight:bold;line-height:1.3;text-align:center;cursor:pointer;touch-action:manipulation}
 .lineup-button:active{opacity:.75}
@@ -340,7 +341,7 @@ return Object.values(websiteCardEvents[key]||{}).find(item=>normalizeTeam(item.h
 function minuteValue(m){const t=String(m??'').replace(/[′’']/g,'');const p=t.split('+');return (parseInt(p[0],10)||0)+(parseInt(p[1],10)||0)/100;}
 function sideOfTeam(match,name){const n=teamNames(match);return name&&sameTeamName(name,n.home)?'home':name&&sameTeamName(name,n.away)?'away':'';}
 function crestForSide(match,key,side,teamName){const t=side==='home'?match.team1:side==='away'?match.team2:(teamName?{teamName}:null);return t?teamLogoHTML(t,key):'';}
-function renderGoals(match,key,apiMatch){
+function collectGoals(match,apiMatch){
 const names=teamNames(match),entries=[];
 const raw=(Array.isArray(match.goals)?match.goals:[]).slice().sort((x,y)=>((x.scoreTeam1||0)+(x.scoreTeam2||0))-((y.scoreTeam1||0)+(y.scoreTeam2||0))||(x.goalID||0)-(y.goalID||0));
 let hh=0,aa=0;
@@ -348,33 +349,44 @@ for(const g of raw){
 let side='';
 if(g.scoreTeam1!=null&&g.scoreTeam2!=null){if(g.scoreTeam1>hh)side='home';else if(g.scoreTeam2>aa)side='away';hh=g.scoreTeam1;aa=g.scoreTeam2;}
 if(!side&&g.scoringTeamId!=null)side=Number(g.scoringTeamId)===Number(match.team1?.teamId)?'home':Number(g.scoringTeamId)===Number(match.team2?.teamId)?'away':'';
-entries.push({minute:g.matchMinute,player:g.goalGetterName||'Torschütze nicht angegeben',side,team:g.teamName||(side==='home'?names.home:side==='away'?names.away:''),detail:[g.isPenalty?'Elfmeter':'',g.isOwnGoal?'Eigentor':''].filter(Boolean).join(' · ')});
+entries.push({minute:g.matchMinute,player:g.goalGetterName||'Torschütze nicht angegeben',side,team:g.teamName||(side==='home'?names.home:side==='away'?names.away:''),penalty:!!g.isPenalty,ownGoal:!!g.isOwnGoal,detail:[g.isPenalty?'Elfmeter':'',g.isOwnGoal?'Eigentor':''].filter(Boolean).join(' · ')});
 }
-for(const e of apiEvents(apiMatch)){if(e.type!=='Goal')continue;const player=e.player?.name||'Torschütze nicht angegeben',minute=eventMinute(e),duplicate=entries.some(x=>normalizeName(x.player)===normalizeName(player)&&String(x.minute??'')===String(minute??''));if(!duplicate){const tn=e.team?.name||'';entries.push({minute:minute.replace('′',''),player,side:sideOfTeam(match,tn),team:tn,detail:e.detail||''});}}
+for(const e of apiEvents(apiMatch)){if(e.type!=='Goal')continue;const player=e.player?.name||'Torschütze nicht angegeben',minute=eventMinute(e),duplicate=entries.some(x=>normalizeName(x.player)===normalizeName(player)&&String(x.minute??'')===String(minute??''));if(!duplicate){const tn=e.team?.name||'';entries.push({minute:minute.replace('′',''),player,side:sideOfTeam(match,tn),team:tn,penalty:/penalty/i.test(e.detail||''),ownGoal:/own/i.test(e.detail||''),detail:e.detail||''});}}
 entries.sort((x,y)=>minuteValue(x.minute)-minuteValue(y.minute));
+return entries;
+}
+function renderGoals(match,key,apiMatch){
+const entries=collectGoals(match,apiMatch);
 if(!entries.length)return '<p class="no-data">Für dieses Spiel sind keine Torschützen hinterlegt.</p>';
 return entries.map(g=>`<div class="scorer"><b>${esc(g.minute==null?'':String(g.minute).includes('′')?g.minute:g.minute+'′')}</b> <span class="card-player">${crestForSide(match,key,g.side,g.team)}${esc(g.player)}</span> ${g.detail?`<span class="detail-label">(${esc(g.detail)})</span>`:''}${g.team?`<div class="detail-label">${esc(g.team)}</div>`:''}</div>`).join('');
 }
-function renderBookings(match,key,apiMatch){
-const saved=savedWebsiteMatch(match,key)?.cards||[];
-const bookings=[...saved];
+function collectBookings(match,key,apiMatch){
+const bookings=[...(savedWebsiteMatch(match,key)?.cards||[])];
 for(const e of apiEvents(apiMatch).filter(e=>e.type==='Card')){
 const type=/second yellow|yellow-red/i.test(String(e.detail||''))?'yellow-red':/red/i.test(String(e.detail||''))?'red':'yellow';
 if(!bookings.some(x=>x.type===type&&normalizeName(x.player)===normalizeName(e.player?.name)&&String(x.minute)===String(eventMinute(e))))bookings.push({minute:eventMinute(e),type,player:e.player?.name||'Spieler unbekannt',team:e.team?.name||''});
 }
+bookings.sort((x,y)=>minuteValue(x.minute)-minuteValue(y.minute));
+return bookings;
+}
+function renderBookings(match,key,apiMatch){
+const bookings=collectBookings(match,key,apiMatch);
 if(!bookings.length)return '<p class="no-data">Für dieses Spiel wurden noch keine Kartenereignisse aus dem offiziellen Bundesliga-Liveticker gespeichert.</p>';
-bookings.sort((a,b)=>(parseInt(a.minute,10)||0)-(parseInt(b.minute,10)||0));
 return bookings.map(e=>{const label=e.type==='red'?'🟥 Rote Karte':e.type==='yellow-red'?'🟨🟥 Gelb-Rote Karte':'🟨 Gelbe Karte';const crest=e.team?teamLogoHTML({teamName:e.team},key):'';return `<div class="scorer"><b>${esc(String(e.minute||'').replace(/[′’']/g,''))}′</b> ${label} – <span class="card-player">${crest}${esc(e.player||'Spieler unbekannt')}</span>${e.team?`<div class="detail-label">${esc(e.team)}</div>`:''}</div>`;}).join('');
 }
-function renderSubs(match,key,apiMatch){
+function collectSubs(match,key,apiMatch){
 const subs=[];
 for(const e of apiEvents(apiMatch).filter(e=>e.type==='subst')){const tn=e.team?.name||'';subs.push({minute:eventMinute(e),in:e.player?.name||'Spieler unbekannt',out:e.assist?.name||'',team:tn,side:sideOfTeam(match,tn)});}
 for(const s of (savedWebsiteMatch(match,key)?.subs||[])){
 if(subs.some(x=>normalizeName(x.in)===normalizeName(s.in)&&Math.floor(minuteValue(x.minute))===Math.floor(minuteValue(s.minute))))continue;
 subs.push({minute:s.minute,in:s.in,out:s.out,team:s.team||'',side:s.teamSide||sideOfTeam(match,s.team)});
 }
-if(!subs.length)return '<p class="no-data">Keine Auswechslungen hinterlegt.</p>';
 subs.sort((x,y)=>minuteValue(x.minute)-minuteValue(y.minute));
+return subs;
+}
+function renderSubs(match,key,apiMatch){
+const subs=collectSubs(match,key,apiMatch);
+if(!subs.length)return '<p class="no-data">Keine Auswechslungen hinterlegt.</p>';
 return subs.map(x=>`<div class="scorer"><b>${esc(String(x.minute||'').replace(/[′’']/g,''))}′</b> <span class="card-player">${crestForSide(match,key,x.side,x.team)}<span class="sub-names"><span class="sub-in">▲ ${esc(x.in)}</span>${x.out?`<span class="sub-out">▼ ${esc(x.out)}</span>`:''}</span></span>${x.team?`<div class="detail-label">${esc(x.team)}</div>`:''}</div>`).join('');
 }
 function renderLineups(apiMatch){
@@ -382,13 +394,34 @@ const lineups=Array.isArray(apiMatch?.lineups)?apiMatch.lineups:[];
 if(!lineups.length)return '<p class="no-data">Noch keine Aufstellungen verfügbar. Sie werden häufig erst 20–40 Minuten vor Anstoß veröffentlicht.</p>';
 return lineups.map(team=>{const start=team.startXI||[],bench=team.substitutes||[];const players=(list)=>list.length?list.map(p=>`<div class="scorer">${p.player?.number!=null?esc(p.player.number)+' · ':''}${esc(p.player?.name||'Spieler unbekannt')}${p.player?.pos?` <span class="detail-label">(${esc(p.player.pos)})</span>`:''}</div>`).join(''):'<p class="no-data">Keine Angaben.</p>';return `<h4>${esc(team.team?.name||'Mannschaft')}${team.formation?' · '+esc(team.formation):''}</h4><div class="scorer"><b>Startaufstellung</b></div>${players(start)}<div class="scorer"><b>Ersatzbank</b></div>${players(bench)}${team.coach?.name?`<div class="scorer">Trainer: ${esc(team.coach.name)}</div>`:''}`;}).join('');
 }
-function renderStatistics(apiMatch){
-const stats=Array.isArray(apiMatch?.statistics)?apiMatch.statistics:[];
-if(!stats.length)return '<p class="no-data">Keine Spielstatistiken hinterlegt.</p>';
+function renderStatistics(match,key,apiMatch){
 const rows=[];
+// 1) Werte des Datenanbieters (API-Football), falls vorhanden
+const stats=Array.isArray(apiMatch?.statistics)?apiMatch.statistics:[];
 for(const teamStats of stats){for(const stat of (teamStats.statistics||[])){const label=stat.type||'';let row=rows.find(r=>r.label===label);if(!row){row={label,home:'–',away:'–'};rows.push(row);}const teamName=normalizeName(teamStats.team?.name),homeName=normalizeName(apiMatch.teams?.home?.name);if(teamName===homeName)row.home=stat.value??'–';else row.away=stat.value??'–';}}
+const fromProvider=rows.length;
+// 2) Aus den vorhandenen Spieldaten berechnete Werte
+const add=(label,home,away)=>{if(!rows.some(r=>r.label===label))rows.push({label,home,away});};
+const sideOf=item=>item.teamSide||item.side||sideOfTeam(match,item.team);
+const count=(list,side)=>list.filter(x=>sideOf(x)===side).length;
+const results=[...(match.matchResults||[])],half=results.find(r=>Number(r.resultTypeID)===1),full=results.find(r=>Number(r.resultTypeID)===2);
+const goals=collectGoals(match,apiMatch);
+if(full)add('Tore',full.pointsTeam1,full.pointsTeam2);else if(goals.length)add('Tore',count(goals,'home'),count(goals,'away'));
+if(half)add('Halbzeit',half.pointsTeam1,half.pointsTeam2);
+const pens=goals.filter(g=>g.penalty);if(pens.length)add('Elfmetertore',count(pens,'home'),count(pens,'away'));
+const owns=goals.filter(g=>g.ownGoal);if(owns.length)add('Eigentore',count(owns,'home'),count(owns,'away'));
+const hasCardData=!!savedWebsiteMatch(match,key)||apiEvents(apiMatch).some(e=>e.type==='Card');
+if(hasCardData){
+const cards=collectBookings(match,key,apiMatch);
+add('Gelbe Karten',count(cards.filter(c=>c.type==='yellow'),'home'),count(cards.filter(c=>c.type==='yellow'),'away'));
+const yr=cards.filter(c=>c.type==='yellow-red');if(yr.length)add('Gelb-Rote Karten',count(yr,'home'),count(yr,'away'));
+const rd=cards.filter(c=>c.type==='red');if(rd.length)add('Rote Karten',count(rd,'home'),count(rd,'away'));
+}
+const subs=collectSubs(match,key,apiMatch);
+if(subs.length)add('Auswechslungen',count(subs,'home'),count(subs,'away'));
 if(!rows.length)return '<p class="no-data">Keine Spielstatistiken hinterlegt.</p>';
-return `<div class="stats-grid">${rows.map(r=>`<div class="stat"><strong>${esc(r.label)}</strong><span>${esc(r.home)} : ${esc(r.away)}</span></div>`).join('')}</div>`;
+const names=teamNames(match),short=m=>m?.shortName||m?.teamName||'';
+return `<div class="stat-teams"><span>${esc(short(match.team1)||names.home)}</span><span>${esc(short(match.team2)||names.away)}</span></div><div class="stats-grid">${rows.map(r=>`<div class="stat"><strong>${esc(r.label)}</strong><span>${esc(r.home)} : ${esc(r.away)}</span></div>`).join('')}</div>${fromProvider?'':'<p class="no-data">Ballbesitz, Torschüsse und weitere Werte liefert aktuell keine der eingebundenen Datenquellen. Angezeigt werden die aus Tor-, Karten- und Wechseldaten berechneten Werte.</p>'}`;
 }
 function detailsHTML(match,key){
 const names=teamNames(match),apiMatch=findFootballMatch(match,key),results=[...(match.matchResults||[])].sort((a,b)=>Number(a.resultTypeID||0)-Number(b.resultTypeID||0));
@@ -405,7 +438,7 @@ if(ft?.home!=null)html+=detailLine('Endstand',`${ft.home} : ${ft.away}`);
 if(et?.home!=null)html+=detailLine('Verlängerung',`${et.home} : ${et.away}`);
 if(pen?.home!=null)html+=detailLine('Elfmeterschießen',`${pen.home} : ${pen.away}`);
 if(results.length){html+='<h4>Ergebnisse OpenLigaDB</h4>';results.forEach(r=>html+=detailLine(r.resultName||(Number(r.resultTypeID)===1?'Halbzeit':Number(r.resultTypeID)===2?'Endstand':'Spielstand'),`${r.pointsTeam1} : ${r.pointsTeam2}`));}
-html+='<h4>⚽ Torschützen</h4>'+renderGoals(match,key,apiMatch)+'<h4>🟨 Karten</h4>'+renderBookings(match,key,apiMatch)+'<h4>🔄 Auswechslungen</h4>'+renderSubs(match,key,apiMatch)+'<h4>📊 Spielstatistiken</h4>'+renderStatistics(apiMatch)+'<h4>👥 Aufstellungen & Ersatzbank</h4>'+renderLineups(apiMatch);
+html+='<h4>⚽ Torschützen</h4>'+renderGoals(match,key,apiMatch)+'<h4>🟨 Karten</h4>'+renderBookings(match,key,apiMatch)+'<h4>🔄 Auswechslungen</h4>'+renderSubs(match,key,apiMatch)+'<h4>📊 Spielstatistiken</h4>'+renderStatistics(match,key,apiMatch)+'<h4>👥 Aufstellungen & Ersatzbank</h4>'+renderLineups(apiMatch);
 const lineupIndex=selectedGames(key).findIndex(g=>matchKey(g)===matchKey(match));html+=`<button type="button" class="lineup-button" onclick="aufstellungAbrufen('${key}',${lineupIndex})">👥 Aufstellung, Spielerbilder &amp; Statistiken öffnen</button>`;
 html+=`<p class="no-data">Zusatzdaten: ${apiMatch?'API-Football':'Noch keine passenden API-Football-Daten für dieses Spiel'}. Aufstellungen und Statistiken sind abhängig von der Verfügbarkeit beim Anbieter.</p></div>`;
 return html;
