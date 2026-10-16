@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T01:13:47.689Z",
+  "updatedAt": "2026-10-16T05:00:00.000Z",
   "leagues": {
     "bl1": {
       "83192": {
@@ -20,7 +20,7 @@
           {
             "minute": "90+4′",
             "type": "yellow",
-            "player": "Felix Nmecha War noch nicht die Entscheidung S",
+            "player": "Felix Nmecha",
             "team": "Borussia Dortmund",
             "teamSide": "home",
             "crestId": "000007"
@@ -42,7 +42,74 @@
             "crestId": "00000E"
           }
         ],
-        "checkedAt": "2026-10-11T18:45:38.669Z"
+        "checkedAt": "2026-10-11T18:45:38.669Z",
+        "subs": [
+          {
+            "minute": "19′",
+            "in": "Oskar Wójcik",
+            "out": "Amos Pieper",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "away"
+          },
+          {
+            "minute": "63′",
+            "in": "Fabio Silva",
+            "out": "Ethan Nwaneri",
+            "crestId": "000007",
+            "team": "Borussia Dortmund",
+            "teamSide": "home"
+          },
+          {
+            "minute": "65′",
+            "in": "Dariusz Stalmach",
+            "out": "Youri Regeer",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "away"
+          },
+          {
+            "minute": "65′",
+            "in": "Mitchell Weiser",
+            "out": "Arthur",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "away"
+          },
+          {
+            "minute": "72′",
+            "in": "Joey Veerman",
+            "out": "Jobe Bellingham",
+            "crestId": "000007",
+            "team": "Borussia Dortmund",
+            "teamSide": "home"
+          },
+          {
+            "minute": "72′",
+            "in": "Konstantinos Karetsas",
+            "out": "Marcel Sabitzer",
+            "crestId": "000007",
+            "team": "Borussia Dortmund",
+            "teamSide": "home"
+          },
+          {
+            "minute": "81′",
+            "in": "Mick Schmetgens",
+            "out": "Eren Dinkçi",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "away"
+          },
+          {
+            "minute": "81′",
+            "in": "Paul Erevbenagie",
+            "out": "Chuki",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "away"
+          }
+        ],
+        "finalChecked": true
       },
       "83193": {
         "matchId": "83193",
@@ -84,7 +151,82 @@
             "crestId": "000017"
           }
         ],
-        "checkedAt": "2026-10-11T18:45:44.924Z"
+        "checkedAt": "2026-10-11T18:45:44.924Z",
+        "subs": [
+          {
+            "minute": "45+2′",
+            "in": "Elias Baum",
+            "out": "Robin Koch",
+            "crestId": "00000F",
+            "team": "Eintracht Frankfurt",
+            "teamSide": "away"
+          },
+          {
+            "minute": "45+2′",
+            "in": "Younes Ebnoutalib",
+            "out": "Keita Kosugi",
+            "crestId": "00000F",
+            "team": "Eintracht Frankfurt",
+            "teamSide": "away"
+          },
+          {
+            "minute": "58′",
+            "in": "Benjamin Henrichs",
+            "out": "Ridle Baku",
+            "crestId": "000017",
+            "team": "RB Leipzig",
+            "teamSide": "home"
+          },
+          {
+            "minute": "58′",
+            "in": "Nicolas Seiwald",
+            "out": "Neil El Aynaoui",
+            "crestId": "000017",
+            "team": "RB Leipzig",
+            "teamSide": "home"
+          },
+          {
+            "minute": "65′",
+            "in": "Tidiam Gomis",
+            "out": "Christopher Nkunku",
+            "crestId": "000017",
+            "team": "RB Leipzig",
+            "teamSide": "home"
+          },
+          {
+            "minute": "65′",
+            "in": "Max Finkgräfe",
+            "out": "Antonio Nusa",
+            "crestId": "000017",
+            "team": "RB Leipzig",
+            "teamSide": "home"
+          },
+          {
+            "minute": "73′",
+            "in": "Love Arrhov",
+            "out": "Ritsu Dōan",
+            "crestId": "00000F",
+            "team": "Eintracht Frankfurt",
+            "teamSide": "away"
+          },
+          {
+            "minute": "73′",
+            "in": "Farès Chaïbi",
+            "out": "Noëll Aséko",
+            "crestId": "00000F",
+            "team": "Eintracht Frankfurt",
+            "teamSide": "away"
+          },
+          {
+            "minute": "73′",
+            "in": "Rocco Reitz",
+            "out": "Ezechiel Banzuzi",
+            "crestId": "000017",
+            "team": "RB Leipzig",
+            "teamSide": "home"
+          }
+        ],
+        "finalChecked": true
       },
       "83194": {
         "matchId": "83194",
@@ -118,7 +260,90 @@
             "crestId": "000002"
           }
         ],
-        "checkedAt": "2026-10-11T18:45:39.708Z"
+        "checkedAt": "2026-10-11T18:45:39.708Z",
+        "subs": [
+          {
+            "minute": "41′",
+            "in": "Miro Muheim",
+            "out": "Nicolai Remberg",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "away"
+          },
+          {
+            "minute": "59′",
+            "in": "Otto Stange",
+            "out": "Yussuf Poulsen",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "away"
+          },
+          {
+            "minute": "63′",
+            "in": "Andrej Kramarić",
+            "out": "Fisnik Asllani",
+            "crestId": "000002",
+            "team": "TSG Hoffenheim",
+            "teamSide": "home"
+          },
+          {
+            "minute": "63′",
+            "in": "Adam Hložek",
+            "out": "Tim Lemperle",
+            "crestId": "000002",
+            "team": "TSG Hoffenheim",
+            "teamSide": "home"
+          },
+          {
+            "minute": "74′",
+            "in": "Alexander Prass",
+            "out": "Adam Daghim",
+            "crestId": "000002",
+            "team": "TSG Hoffenheim",
+            "teamSide": "home"
+          },
+          {
+            "minute": "74′",
+            "in": "Robin Hranáč",
+            "out": "Kōki Machida",
+            "crestId": "000002",
+            "team": "TSG Hoffenheim",
+            "teamSide": "home"
+          },
+          {
+            "minute": "76′",
+            "in": "Kofi Amoako",
+            "out": "Albert Sambi Lokonga",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "away"
+          },
+          {
+            "minute": "76′",
+            "in": "Terem Moffi",
+            "out": "Martin Adeline",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "away"
+          },
+          {
+            "minute": "76′",
+            "in": "Alexander Røssing-Lelesiit",
+            "out": "Louis Lemke",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "away"
+          },
+          {
+            "minute": "87′",
+            "in": "Valentin Gendrey",
+            "out": "Bambasé Conté",
+            "crestId": "000002",
+            "team": "TSG Hoffenheim",
+            "teamSide": "home"
+          }
+        ],
+        "finalChecked": true
       },
       "83196": {
         "matchId": "83196",
@@ -152,7 +377,74 @@
             "crestId": "000010"
           }
         ],
-        "checkedAt": "2026-10-11T18:45:40.647Z"
+        "checkedAt": "2026-10-11T18:45:40.647Z",
+        "subs": [
+          {
+            "minute": "87′",
+            "in": "Tom Bischof",
+            "out": "Aleksandar Pavlović",
+            "crestId": "00000G",
+            "team": "FC Bayern München",
+            "teamSide": "away"
+          },
+          {
+            "minute": "87′",
+            "in": "Lennart Karl",
+            "out": "Luis Díaz",
+            "crestId": "00000G",
+            "team": "FC Bayern München",
+            "teamSide": "away"
+          },
+          {
+            "minute": "82′",
+            "in": "Jeffrey Gouweleeuw",
+            "out": "Juma Bah",
+            "crestId": "000010",
+            "team": "FC Augsburg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "81′",
+            "in": "Michael Gregoritsch",
+            "out": "Arijon Ibrahimović",
+            "crestId": "000010",
+            "team": "FC Augsburg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "75′",
+            "in": "Mert Kömür",
+            "out": "Rodrigo Ribeiro",
+            "crestId": "000010",
+            "team": "FC Augsburg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "67′",
+            "in": "Nathaniel Brown",
+            "out": "Josip Stanišić",
+            "crestId": "00000G",
+            "team": "FC Bayern München",
+            "teamSide": "away"
+          },
+          {
+            "minute": "67′",
+            "in": "Serge Gnabry",
+            "out": "Ismael Saibari",
+            "crestId": "00000G",
+            "team": "FC Bayern München",
+            "teamSide": "away"
+          },
+          {
+            "minute": "62′",
+            "in": "Anton Kade",
+            "out": "Youngwoo Seol",
+            "crestId": "000010",
+            "team": "FC Augsburg",
+            "teamSide": "home"
+          }
+        ],
+        "finalChecked": true
       },
       "83197": {
         "matchId": "83197",
@@ -194,7 +486,90 @@
             "crestId": "000006"
           }
         ],
-        "checkedAt": "2026-10-11T18:45:41.710Z"
+        "checkedAt": "2026-10-11T18:45:41.710Z",
+        "subs": [
+          {
+            "minute": "66′",
+            "in": "Martin Terrier",
+            "out": "Ibrahim Maza",
+            "crestId": "00000B",
+            "team": "Bayer 04 Leverkusen",
+            "teamSide": "away"
+          },
+          {
+            "minute": "70′",
+            "in": "Ransford-Yeboah Königsdörffer",
+            "out": "Kacper Potulski",
+            "crestId": "000006",
+            "team": "1. FSV Mainz 05",
+            "teamSide": "home"
+          },
+          {
+            "minute": "70′",
+            "in": "Danny da Costa",
+            "out": "Anthony Caci",
+            "crestId": "000006",
+            "team": "1. FSV Mainz 05",
+            "teamSide": "home"
+          },
+          {
+            "minute": "70′",
+            "in": "Jaesung Lee",
+            "out": "Eric Martel",
+            "crestId": "000006",
+            "team": "1. FSV Mainz 05",
+            "teamSide": "home"
+          },
+          {
+            "minute": "75′",
+            "in": "Nathan Tella",
+            "out": "Afonso Moreira",
+            "crestId": "00000B",
+            "team": "Bayer 04 Leverkusen",
+            "teamSide": "away"
+          },
+          {
+            "minute": "75′",
+            "in": "Malik Tillman",
+            "out": "Moussa Diaby",
+            "crestId": "00000B",
+            "team": "Bayer 04 Leverkusen",
+            "teamSide": "away"
+          },
+          {
+            "minute": "78′",
+            "in": "Benedict Hollerbach",
+            "out": "Sheraldo Becker",
+            "crestId": "000006",
+            "team": "1. FSV Mainz 05",
+            "teamSide": "home"
+          },
+          {
+            "minute": "81′",
+            "in": "Lennard Maloney",
+            "out": "Kaishu Sano",
+            "crestId": "000006",
+            "team": "1. FSV Mainz 05",
+            "teamSide": "home"
+          },
+          {
+            "minute": "84′",
+            "in": "Ezequiel Fernández",
+            "out": "Aleix García",
+            "crestId": "00000B",
+            "team": "Bayer 04 Leverkusen",
+            "teamSide": "away"
+          },
+          {
+            "minute": "84′",
+            "in": "Jonas Hofmann",
+            "out": "Patrik Schick",
+            "crestId": "00000B",
+            "team": "Bayer 04 Leverkusen",
+            "teamSide": "away"
+          }
+        ],
+        "finalChecked": true
       },
       "83199": {
         "matchId": "83199",
@@ -236,7 +611,90 @@
             "crestId": "000008"
           }
         ],
-        "checkedAt": "2026-10-11T18:45:45.989Z"
+        "checkedAt": "2026-10-11T18:45:45.989Z",
+        "subs": [
+          {
+            "minute": "45+6′",
+            "in": "Tom Krauß",
+            "out": "Ellyes Skhiri",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "home"
+          },
+          {
+            "minute": "64′",
+            "in": "Shūto Machino",
+            "out": "Isac Lidberg",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "away"
+          },
+          {
+            "minute": "64′",
+            "in": "Wael Mohya",
+            "out": "Robin Hack",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "away"
+          },
+          {
+            "minute": "68′",
+            "in": "Zento Uno",
+            "out": "Florian Neuhaus",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "away"
+          },
+          {
+            "minute": "78′",
+            "in": "Jan Thielmann",
+            "out": "Saïd El Mala",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "home"
+          },
+          {
+            "minute": "78′",
+            "in": "Joël Schmied",
+            "out": "Luka Lochoshvili",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "home"
+          },
+          {
+            "minute": "80′",
+            "in": "Fabio Chiarodia",
+            "out": "Jan Leszczyński",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "away"
+          },
+          {
+            "minute": "80′",
+            "in": "Fritz Fleck",
+            "out": "Daiki Hashioka",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "away"
+          },
+          {
+            "minute": "85′",
+            "in": "Imad Rondić",
+            "out": "Mikey Moore",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "home"
+          },
+          {
+            "minute": "90+2′",
+            "in": "Luca Waldschmidt",
+            "out": "Linton Maina",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "home"
+          }
+        ],
+        "finalChecked": true
       },
       "83200": {
         "matchId": "83200",
@@ -250,10 +708,94 @@
             "type": "yellow",
             "player": "Marvin Pieringer",
             "team": "SC Paderborn 07",
+            "teamSide": "home",
+            "crestId": "00000L"
+          }
+        ],
+        "checkedAt": "2026-10-11T18:45:43.887Z",
+        "subs": [
+          {
+            "minute": "85′",
+            "in": "Leo Sauer",
+            "out": "Chris Führich",
+            "crestId": "00000D",
+            "team": "VfB Stuttgart",
+            "teamSide": "away"
+          },
+          {
+            "minute": "85′",
+            "in": "Grischa Prömel",
+            "out": "Deniz Undav",
+            "crestId": "00000D",
+            "team": "VfB Stuttgart",
+            "teamSide": "away"
+          },
+          {
+            "minute": "85′",
+            "in": "Felix Götze",
+            "out": "Mattes Hansen",
+            "crestId": "00000L",
+            "team": "SC Paderborn 07",
+            "teamSide": "home"
+          },
+          {
+            "minute": "85′",
+            "in": "Jonah Sticker",
+            "out": "Tjark Scheller",
+            "crestId": "00000L",
+            "team": "SC Paderborn 07",
+            "teamSide": "home"
+          },
+          {
+            "minute": "80′",
+            "in": "Oliver Batista Meier",
+            "out": "Laurin Ulrich",
+            "crestId": "00000L",
+            "team": "SC Paderborn 07",
+            "teamSide": "home"
+          },
+          {
+            "minute": "77′",
+            "in": "Bilal El Khannouss",
+            "out": "Jamie Leweling",
+            "crestId": "00000D",
+            "team": "VfB Stuttgart",
+            "teamSide": "away"
+          },
+          {
+            "minute": "77′",
+            "in": "Dženan Pejčinović",
+            "out": "Ermedin Demirović",
+            "crestId": "00000D",
+            "team": "VfB Stuttgart",
+            "teamSide": "away"
+          },
+          {
+            "minute": "71′",
+            "in": "Finn Jeltsch",
+            "out": "Jeff Chabot",
+            "crestId": "00000D",
+            "team": "VfB Stuttgart",
+            "teamSide": "away"
+          },
+          {
+            "minute": "70′",
+            "in": "Rayan Philippe",
+            "out": "Marvin Pieringer",
+            "crestId": "00000L",
+            "team": "SC Paderborn 07",
+            "teamSide": "home"
+          },
+          {
+            "minute": "70′",
+            "in": "Steffen Tigges",
+            "out": "Stefano Marino",
+            "crestId": "00000L",
+            "team": "SC Paderborn 07",
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-11T18:45:43.887Z"
+        "finalChecked": true
       }
     },
     "bl2": {
@@ -289,7 +831,90 @@
             "crestId": "00000T"
           }
         ],
-        "checkedAt": "2026-10-11T18:46:06.294Z"
+        "checkedAt": "2026-10-11T18:46:06.294Z",
+        "subs": [
+          {
+            "minute": "82′",
+            "in": "Branimir Hrgota",
+            "out": "Connor Metcalfe",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "home"
+          },
+          {
+            "minute": "82′",
+            "in": "Adam Dźwigała",
+            "out": "Lars Ritzka",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "home"
+          },
+          {
+            "minute": "80′",
+            "in": "Tim Civeja",
+            "out": "Danyal Zor",
+            "crestId": "00000T",
+            "team": "Karlsruher SC",
+            "teamSide": "away"
+          },
+          {
+            "minute": "73′",
+            "in": "Ricky-Jade Jones",
+            "out": "Abdoulie Ceesay",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "home"
+          },
+          {
+            "minute": "73′",
+            "in": "Sam Klein",
+            "out": "Mathias Rasmussen",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "home"
+          },
+          {
+            "minute": "70′",
+            "in": "Lilian Egloff",
+            "out": "Louey Ben Farhat",
+            "crestId": "00000T",
+            "team": "Karlsruher SC",
+            "teamSide": "away"
+          },
+          {
+            "minute": "70′",
+            "in": "Sebastian Jung",
+            "out": "Sandro Trémoulet",
+            "crestId": "00000T",
+            "team": "Karlsruher SC",
+            "teamSide": "away"
+          },
+          {
+            "minute": "70′",
+            "in": "Jason Ponente-Ramirez",
+            "out": "Viktor Bergh",
+            "crestId": "00000T",
+            "team": "Karlsruher SC",
+            "teamSide": "away"
+          },
+          {
+            "minute": "68′",
+            "in": "Kevin Wiethaup",
+            "out": "Rafael Pinto Pedrosa",
+            "crestId": "00000T",
+            "team": "Karlsruher SC",
+            "teamSide": "away"
+          },
+          {
+            "minute": "68′",
+            "in": "Martijn Kaars",
+            "out": "Youssoupha Niang",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "home"
+          }
+        ],
+        "finalChecked": true
       },
       "83609": {
         "matchId": "83609",
@@ -298,7 +923,74 @@
         "round": 7,
         "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/7/1-fc-heidenheim-1846-vs-1-fc-kaiserslautern/liveticker/",
         "cards": [],
-        "checkedAt": "2026-10-11T18:45:51.454Z"
+        "checkedAt": "2026-10-11T18:45:51.454Z",
+        "subs": [
+          {
+            "minute": "80′",
+            "in": "Yannik Wagner",
+            "out": "Paul Hennrich",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "home"
+          },
+          {
+            "minute": "80′",
+            "in": "Erencan Yardımcı",
+            "out": "Naatan Skyttä",
+            "crestId": "00000I",
+            "team": "1. FC Kaiserslautern",
+            "teamSide": "away"
+          },
+          {
+            "minute": "80′",
+            "in": "Leon Robinson",
+            "out": "Jacob Rasmussen",
+            "crestId": "00000I",
+            "team": "1. FC Kaiserslautern",
+            "teamSide": "away"
+          },
+          {
+            "minute": "64′",
+            "in": "Ibrahim Kanaté",
+            "out": "Marlon Ritter",
+            "crestId": "00000I",
+            "team": "1. FC Kaiserslautern",
+            "teamSide": "away"
+          },
+          {
+            "minute": "64′",
+            "in": "Thierry Tazemeta",
+            "out": "Mërgim Berisha",
+            "crestId": "00000I",
+            "team": "1. FC Kaiserslautern",
+            "teamSide": "away"
+          },
+          {
+            "minute": "64′",
+            "in": "Alessandro Vogt",
+            "out": "Christian Conteh",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "home"
+          },
+          {
+            "minute": "59′",
+            "in": "Alex Murphy",
+            "out": "Maxwell Gyamfi",
+            "crestId": "00000I",
+            "team": "1. FC Kaiserslautern",
+            "teamSide": "away"
+          },
+          {
+            "minute": "45+3′",
+            "in": "Budu Zivzivadze",
+            "out": "Mikkel Kaufmann",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "home"
+          }
+        ],
+        "finalChecked": true
       },
       "83613": {
         "matchId": "83613",
@@ -310,7 +1002,7 @@
           {
             "minute": "72′",
             "type": "yellow",
-            "player": "Eitschberger lässt Ademi auf der linken Seite",
+            "player": "Julian Eitschberger",
             "team": "Hertha BSC",
             "teamSide": "home",
             "crestId": "00000Z"
@@ -326,7 +1018,7 @@
           {
             "minute": "60′",
             "type": "yellow",
-            "player": "Gechter ist zu spät dran gegen Appelkamp und s",
+            "player": "Linus Gechter",
             "team": "Hertha BSC",
             "teamSide": "home",
             "crestId": "00000Z"
@@ -340,7 +1032,90 @@
             "crestId": "00000Z"
           }
         ],
-        "checkedAt": "2026-10-11T18:46:09.204Z"
+        "checkedAt": "2026-10-11T18:46:09.204Z",
+        "subs": [
+          {
+            "minute": "87′",
+            "in": "Pascal Klemens",
+            "out": "Kevin Sessa",
+            "crestId": "00000Z",
+            "team": "Hertha BSC",
+            "teamSide": "home"
+          },
+          {
+            "minute": "87′",
+            "in": "Soufian Gouram",
+            "out": "Jón Dagur Thorsteinsson",
+            "crestId": "00000Z",
+            "team": "Hertha BSC",
+            "teamSide": "home"
+          },
+          {
+            "minute": "81′",
+            "in": "Olgherto Balliu",
+            "out": "Ole Pohlmann",
+            "crestId": "00000W",
+            "team": "SpVgg Greuther Fürth",
+            "teamSide": "away"
+          },
+          {
+            "minute": "81′",
+            "in": "Dennis Srbeny",
+            "out": "Omar Sillah",
+            "crestId": "00000W",
+            "team": "SpVgg Greuther Fürth",
+            "teamSide": "away"
+          },
+          {
+            "minute": "81′",
+            "in": "Aaron Keller",
+            "out": "Lukas Reich",
+            "crestId": "00000W",
+            "team": "SpVgg Greuther Fürth",
+            "teamSide": "away"
+          },
+          {
+            "minute": "76′",
+            "in": "Jordan",
+            "out": "Sacha Bansé",
+            "crestId": "00000W",
+            "team": "SpVgg Greuther Fürth",
+            "teamSide": "away"
+          },
+          {
+            "minute": "76′",
+            "in": "Deyovaisio Zeefuik",
+            "out": "Mads Pedersen",
+            "crestId": "00000Z",
+            "team": "Hertha BSC",
+            "teamSide": "home"
+          },
+          {
+            "minute": "66′",
+            "in": "Faton Ademi",
+            "out": "Shinta Appelkamp",
+            "crestId": "00000W",
+            "team": "SpVgg Greuther Fürth",
+            "teamSide": "away"
+          },
+          {
+            "minute": "64′",
+            "in": "Gustaf Nilsson",
+            "out": "Luca Schuler",
+            "crestId": "00000Z",
+            "team": "Hertha BSC",
+            "teamSide": "home"
+          },
+          {
+            "minute": "64′",
+            "in": "Farid Alfa-Ruprecht",
+            "out": "Oluwaseun Victor Adewumi",
+            "crestId": "00000Z",
+            "team": "Hertha BSC",
+            "teamSide": "home"
+          }
+        ],
+        "finalChecked": true
       },
       "83615": {
         "matchId": "83615",
@@ -398,7 +1173,82 @@
             "crestId": "000005"
           }
         ],
-        "checkedAt": "2026-10-11T18:46:03.041Z"
+        "checkedAt": "2026-10-11T18:46:03.041Z",
+        "subs": [
+          {
+            "minute": "90+8′",
+            "in": "Sigurd Haugen",
+            "out": "Mohamed Alì Zoma",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "81′",
+            "in": "Andrea Ceresoli",
+            "out": "Eric Porstner",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "81′",
+            "in": "William Bøving",
+            "out": "Julian Justvan",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "79′",
+            "in": "Maximilian Arnold",
+            "out": "Vinicius Souza",
+            "crestId": "000003",
+            "team": "VfL Wolfsburg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "75′",
+            "in": "Kento Shiogai",
+            "out": "Fabian Reese",
+            "crestId": "000003",
+            "team": "VfL Wolfsburg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "75′",
+            "in": "Alessio Besio",
+            "out": "Alexander Bernhardsson",
+            "crestId": "000003",
+            "team": "VfL Wolfsburg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "63′",
+            "in": "Rafael Lubach",
+            "out": "Rayan Ghrieb",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "63′",
+            "in": "Ioannis Masouras",
+            "out": "Tim Janisch",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "62′",
+            "in": "Elvis Rexhbeçaj",
+            "out": "Yannick Gerhardt",
+            "crestId": "000003",
+            "team": "VfL Wolfsburg",
+            "teamSide": "away"
+          }
+        ],
+        "finalChecked": true
       },
       "83617": {
         "matchId": "83617",
@@ -432,7 +1282,90 @@
             "crestId": "000001"
           }
         ],
-        "checkedAt": "2026-10-11T18:45:57.515Z"
+        "checkedAt": "2026-10-11T18:45:57.515Z",
+        "subs": [
+          {
+            "minute": "45+2′",
+            "in": "Waniss Taïbi",
+            "out": "Franz Roggow",
+            "crestId": "000001",
+            "team": "Hannover 96",
+            "teamSide": "away"
+          },
+          {
+            "minute": "45+2′",
+            "in": "Husseyn Chakroun",
+            "out": "Emir Sahiti",
+            "crestId": "000001",
+            "team": "Hannover 96",
+            "teamSide": "away"
+          },
+          {
+            "minute": "88′",
+            "in": "Roko Šimić",
+            "out": "Mateusz Żukowski",
+            "crestId": "000N5D",
+            "team": "1. FC Magdeburg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "88′",
+            "in": "Richmond Tachie",
+            "out": "Emmanuel Iyoha",
+            "crestId": "000N5D",
+            "team": "1. FC Magdeburg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "88′",
+            "in": "Paul Jaeckel",
+            "out": "Pierre Nadjombe",
+            "crestId": "000N5D",
+            "team": "1. FC Magdeburg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "73′",
+            "in": "Taycan Etçibaşı",
+            "out": "Kolja Oudenne",
+            "crestId": "000001",
+            "team": "Hannover 96",
+            "teamSide": "away"
+          },
+          {
+            "minute": "73′",
+            "in": "Felipe Chávez",
+            "out": "Luka Hyryläinen",
+            "crestId": "000N5D",
+            "team": "1. FC Magdeburg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "71′",
+            "in": "Virgil Ghiță",
+            "out": "Jean Hugonet",
+            "crestId": "000001",
+            "team": "Hannover 96",
+            "teamSide": "away"
+          },
+          {
+            "minute": "64′",
+            "in": "Benedikt Pichler",
+            "out": "Benjamin Källman",
+            "crestId": "000001",
+            "team": "Hannover 96",
+            "teamSide": "away"
+          },
+          {
+            "minute": "60′",
+            "in": "Daniel Heber",
+            "out": "Tobias Müller",
+            "crestId": "000N5D",
+            "team": "1. FC Magdeburg",
+            "teamSide": "home"
+          }
+        ],
+        "finalChecked": true
       },
       "83620": {
         "matchId": "83620",
@@ -498,7 +1431,247 @@
             "crestId": "000N5P"
           }
         ],
-        "checkedAt": "2026-10-11T18:45:53.679Z"
+        "checkedAt": "2026-10-11T18:45:53.679Z",
+        "subs": [
+          {
+            "minute": "57′",
+            "in": "Robin Heußer",
+            "out": "Samuele Di Benedetto",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "home"
+          },
+          {
+            "minute": "57′",
+            "in": "Lukas Frenkert",
+            "out": "Isidoros Koutsidis",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "home"
+          },
+          {
+            "minute": "67′",
+            "in": "Jovan Mijatović",
+            "out": "Jan Urbich",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "home"
+          },
+          {
+            "minute": "70′",
+            "in": "Giorgi Kvilitaia",
+            "out": "Jonas Meffert",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "away"
+          },
+          {
+            "minute": "80′",
+            "in": "Junior Zé",
+            "out": "Aaron Opoku",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "home"
+          },
+          {
+            "minute": "82′",
+            "in": "Gyan de Regt",
+            "out": "Adrián Kaprálik",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "away"
+          },
+          {
+            "minute": "82′",
+            "in": "Leon Parduzi",
+            "out": "John Tolkin",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "away"
+          },
+          {
+            "minute": "82′",
+            "in": "Till Wiese",
+            "out": "Ikem Ugoh",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "away"
+          },
+          {
+            "minute": "88′",
+            "in": "Faride Alidou",
+            "out": "Jonas Therkelsen",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "away"
+          }
+        ],
+        "finalChecked": true
+      },
+      "83622": {
+        "matchId": "83622",
+        "home": "VfL Osnabrück",
+        "away": "Dynamo Dresden",
+        "round": 7,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/7/vfl-osnabrueck-vs-sg-dynamo-dresden/liveticker/",
+        "cards": [
+          {
+            "minute": "45′",
+            "type": "yellow",
+            "player": "Robin Meißner",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          },
+          {
+            "minute": "68′",
+            "type": "yellow",
+            "player": "Nicolai Rapp",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "away"
+          },
+          {
+            "minute": "72′",
+            "type": "yellow",
+            "player": "Jonas Sterner",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "away"
+          },
+          {
+            "minute": "75′",
+            "type": "yellow",
+            "player": "Robin Fabinski",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          },
+          {
+            "minute": "81′",
+            "type": "yellow",
+            "player": "Patrice Čović",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "away"
+          },
+          {
+            "minute": "82′",
+            "type": "yellow",
+            "player": "Simon Straudi",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "away"
+          },
+          {
+            "minute": "84′",
+            "type": "yellow",
+            "player": "Konrad Faber",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          },
+          {
+            "minute": "90+1′",
+            "type": "yellow",
+            "player": "Adrian Beck",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          },
+          {
+            "minute": "90+1′",
+            "type": "yellow",
+            "player": "Leon Flach",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          }
+        ],
+        "checkedAt": "2026-10-16T05:00:00.000Z",
+        "subs": [
+          {
+            "minute": "45+2′",
+            "in": "Leon Flach",
+            "out": "Fridolin Wagner",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          },
+          {
+            "minute": "61′",
+            "in": "Ismail Badjie",
+            "out": "Jonathan Gómez",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          },
+          {
+            "minute": "61′",
+            "in": "Daniel Kofi Kyereh",
+            "out": "Bernd Riesselmann",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          },
+          {
+            "minute": "61′",
+            "in": "Konrad Faber",
+            "out": "Patrick Kammerbauer",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          },
+          {
+            "minute": "69′",
+            "in": "Christoph Daferner",
+            "out": "Vincent Vermeij",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "away"
+          },
+          {
+            "minute": "82′",
+            "in": "Luca Raimund",
+            "out": "Bjarke Jacobsen",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          },
+          {
+            "minute": "82′",
+            "in": "Jakob Lemmer",
+            "out": "Niklas Hauptmann",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "away"
+          },
+          {
+            "minute": "88′",
+            "in": "Kennedy Okpala",
+            "out": "Patrice Čović",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "away"
+          },
+          {
+            "minute": "88′",
+            "in": "Ahmet Muhamedbegović",
+            "out": "Ben Bobzien",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "away"
+          },
+          {
+            "minute": "88′",
+            "in": "Alexander Rossipal",
+            "out": "Simon Straudi",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "away"
+          }
+        ],
+        "finalChecked": true
       }
     }
   },
@@ -514,11 +1687,14 @@
     "000008": "1. FC Köln",
     "00000B": "Bayer 04 Leverkusen",
     "00000C": "Hamburger SV",
+    "00000D": "VfB Stuttgart",
     "00000E": "SV Werder Bremen",
     "00000F": "Eintracht Frankfurt",
     "00000G": "FC Bayern München",
     "00000H": "FC St. Pauli",
     "00000I": "1. FC Kaiserslautern",
+    "00000L": "SC Paderborn 07",
+    "00000N": "Dynamo Dresden",
     "00000T": "Karlsruher SC",
     "00000W": "SpVgg Greuther Fürth",
     "00000X": "Eintracht Braunschweig",
