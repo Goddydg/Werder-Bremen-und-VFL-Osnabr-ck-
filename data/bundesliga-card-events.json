@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T04:18:27.888Z",
+  "updatedAt": "2026-10-16T18:27:57.935Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2685,6 +2685,240 @@
           }
         ],
         "finalChecked": true
+      },
+      "83632": {
+        "matchId": "83632",
+        "home": "Holstein Kiel",
+        "away": "Hertha BSC",
+        "round": 8,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/8/holstein-kiel-vs-hertha-bsc/liveticker/",
+        "cards": [
+          {
+            "minute": "90′",
+            "type": "yellow",
+            "player": "Paul Seguin",
+            "crestId": "00000Z",
+            "team": "Hertha BSC",
+            "teamSide": "away"
+          },
+          {
+            "minute": "68′",
+            "type": "yellow",
+            "player": "David Zec",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
+          },
+          {
+            "minute": "38′",
+            "type": "yellow",
+            "player": "Sebastian Schonlau",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
+          },
+          {
+            "minute": "34′",
+            "type": "yellow",
+            "player": "Deyovaisio Zeefuik",
+            "crestId": "00000Z",
+            "team": "Hertha BSC",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "89′",
+            "in": "Soufian Gouram",
+            "out": "Oluwaseun Victor Adewumi",
+            "crestId": "00000Z",
+            "team": "Hertha BSC",
+            "teamSide": "away"
+          },
+          {
+            "minute": "82′",
+            "in": "Mark Richter Monserrat",
+            "out": "Adrián Kaprálik",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
+          },
+          {
+            "minute": "82′",
+            "in": "Giorgi Kvilitaia",
+            "out": "Jonas Therkelsen",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
+          },
+          {
+            "minute": "76′",
+            "in": "Farid Alfa-Ruprecht",
+            "out": "Jón Dagur Thorsteinsson",
+            "crestId": "00000Z",
+            "team": "Hertha BSC",
+            "teamSide": "away"
+          },
+          {
+            "minute": "69′",
+            "in": "Mads Pedersen",
+            "out": "Julian Eitschberger",
+            "crestId": "00000Z",
+            "team": "Hertha BSC",
+            "teamSide": "away"
+          },
+          {
+            "minute": "69′",
+            "in": "Luca Schuler",
+            "out": "Sebastian Grønning",
+            "crestId": "00000Z",
+            "team": "Hertha BSC",
+            "teamSide": "away"
+          },
+          {
+            "minute": "64′",
+            "in": "Ikem Ugoh",
+            "out": "Till Wiese",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
+          },
+          {
+            "minute": "64′",
+            "in": "Gyan de Regt",
+            "out": "Guillermo Balzi",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
+          },
+          {
+            "minute": "50′",
+            "in": "David Zec",
+            "out": "Sebastian Schonlau",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
+          }
+        ],
+        "checkedAt": "2026-10-16T18:27:49.595Z",
+        "finalChecked": true
+      },
+      "83641": {
+        "matchId": "83641",
+        "home": "Energie Cottbus",
+        "away": "1. FC Nürnberg",
+        "round": 8,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/8/fc-energie-cottbus-vs-1-fc-nuernberg/liveticker/",
+        "cards": [
+          {
+            "minute": "90+1′",
+            "type": "yellow",
+            "player": "Christian Kinsombi",
+            "crestId": "00000O",
+            "team": "Energie Cottbus",
+            "teamSide": "home"
+          },
+          {
+            "minute": "68′",
+            "type": "yellow",
+            "player": "Tolcay Ciğerci",
+            "crestId": "00000O",
+            "team": "Energie Cottbus",
+            "teamSide": "home"
+          },
+          {
+            "minute": "61′",
+            "type": "yellow",
+            "player": "Alexios Kalogeropoulos",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "45+1′",
+            "type": "yellow",
+            "player": "Henry Rorig",
+            "crestId": "00000O",
+            "team": "Energie Cottbus",
+            "teamSide": "home"
+          },
+          {
+            "minute": "34′",
+            "type": "yellow",
+            "player": "Adam Markhiyev",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "82′",
+            "in": "Tim Campulka",
+            "out": "King Manu",
+            "crestId": "00000O",
+            "team": "Energie Cottbus",
+            "teamSide": "home"
+          },
+          {
+            "minute": "80′",
+            "in": "Dmytro Bogdanov",
+            "out": "Justin Butler",
+            "crestId": "00000O",
+            "team": "Energie Cottbus",
+            "teamSide": "home"
+          },
+          {
+            "minute": "80′",
+            "in": "Christian Kinsombi",
+            "out": "Henry Rorig",
+            "crestId": "00000O",
+            "team": "Energie Cottbus",
+            "teamSide": "home"
+          },
+          {
+            "minute": "66′",
+            "in": "Styopa Mkrtchyan",
+            "out": "Alexios Kalogeropoulos",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "66′",
+            "in": "Rafael Lubach",
+            "out": "Rayan Ghrieb",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "65′",
+            "in": "Dominik Pelivan",
+            "out": "Leonardo Bittencourt",
+            "crestId": "00000O",
+            "team": "Energie Cottbus",
+            "teamSide": "home"
+          },
+          {
+            "minute": "65′",
+            "in": "Fousseny Doumbia",
+            "out": "Leon Guwara",
+            "crestId": "00000O",
+            "team": "Energie Cottbus",
+            "teamSide": "home"
+          },
+          {
+            "minute": "33′",
+            "in": "William Bøving",
+            "out": "Mohamed Alì Zoma",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-10-16T18:27:57.934Z",
+        "finalChecked": true
       }
     }
   },
@@ -2717,6 +2951,7 @@
     "000017": "RB Leipzig",
     "000018": "1. FC Heidenheim 1846",
     "000N5D": "1. FC Magdeburg",
-    "000N5P": "Holstein Kiel"
+    "000N5P": "Holstein Kiel",
+    "00000O": "Energie Cottbus"
   }
 }
