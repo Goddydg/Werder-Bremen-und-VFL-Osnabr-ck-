@@ -179,6 +179,11 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 .league-head .club{margin:0;padding:5px 9px;gap:6px;font-size:14px;min-width:0;flex:0 1 auto}
 .league-head .club span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .league-head .club-logo{width:26px;height:26px;flex:0 0 26px}
+/* TV-Anbieter: eigene Zeile neben dem Datum statt über den Mannschaftsnamen */
+.matchday-section .match-button{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:8px;row-gap:5px}
+.matchday-section .scheduled-tv-badge{position:static;grid-column:2;grid-row:1;justify-self:end;max-width:none;padding:2px 7px;font-size:10.5px;white-space:nowrap}
+.matchday-section .match-button .match-date{grid-column:1;grid-row:1;min-width:0;margin:0}
+.matchday-section .match-button .match-scoreline{grid-column:1 / -1;grid-row:2;padding:2px 0 3px}
 </style>
 </head>
 <body>
