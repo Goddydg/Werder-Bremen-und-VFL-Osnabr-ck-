@@ -347,7 +347,12 @@ jobs:
                   })
               except Exception as error:
                   print(f"Spielplan fehlgeschlagen: {error}")
+                  # Grund in der Datei festhalten (z. B. "Free plans do not have
+                  # access to this season"), damit er ohne Log sichtbar ist.
+                  output.setdefault("errors", {})[league_key] = str(error)[:300]
                   continue
+
+              output.get("errors", {}).pop(league_key, None)
 
               # Spielplan vollständig speichern.
               league_data = output["leagues"].setdefault(
