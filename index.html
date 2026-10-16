@@ -12,7 +12,8 @@
 <style>
 *{box-sizing:border-box}
 body{margin:0;background:linear-gradient(to bottom,#00190b 0%,#293b31 28%,#293b31 48%,#170522 70%,#293b31 100%);background-attachment:fixed;color:#f5f7f5;font-family:Arial,sans-serif}
-header{padding:20px 16px;background:linear-gradient(to bottom,#00843d 0%,#07542e 30%,#351052 77%,#351052 100%)}
+header{padding:20px 16px;background:transparent;}
+.header-clubs{border-radius:20px;overflow:hidden;background:linear-gradient(to bottom,#00843d 0%,#07542e 30%,#351052 77%,#351052 100%);}
 header h1{margin:0;font-size:22px;line-height:1.25}
 .header-werder{font-family:Georgia,'Times New Roman',serif;font-weight:700;letter-spacing:-.5px}
 .header-vfl{font-family:'Arial Narrow','Roboto Condensed',Impact,sans-serif;font-stretch:condensed;font-weight:800;letter-spacing:-.4px}
@@ -122,7 +123,10 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 .detail-line{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:13px}
 .detail-line span:last-child{text-align:right;overflow-wrap:anywhere}
 .detail-label{opacity:.8}
-.scorer{padding:9px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:13px}.player-club{display:flex;align-items:center;gap:5px;margin-top:4px;font-size:11px;line-height:1.25;opacity:.82}.player-club img{width:16px;height:16px;object-fit:contain;flex:0 0 16px}.player-club span{overflow-wrap:anywhere}
+.scorer{padding:9px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:13px}
+.card-player{display:inline-flex;align-items:center;gap:6px;vertical-align:middle}
+.card-player .team-logo{width:18px;height:18px;flex:0 0 18px}
+.sub-names{display:inline-flex;flex-direction:column;gap:1px}.sub-in{color:#7ee2a8}.sub-out{color:#ff9d9d;opacity:.95}
 .no-data{font-size:13px;line-height:1.5;opacity:.85}
 .lineup-button{display:block;width:100%;margin-top:8px;padding:8px 9px;border:1px solid rgba(255,255,255,.4);border-radius:8px;background:rgba(0,0,0,.22);color:white;font-size:12px;font-weight:bold;line-height:1.3;text-align:center;cursor:pointer;touch-action:manipulation}
 .lineup-button:active{opacity:.75}
@@ -326,27 +330,33 @@ window.open(url,'_blank','noopener,noreferrer');
 function detailLine(label,value){if(value===undefined||value===null||value==='')return '';return `<div class="detail-line"><span class="detail-label">${esc(label)}</span><span>${esc(value)}</span></div>`;}
 function eventMinute(event){const t=event?.time||{};const minute=t.elapsed??event.minute??event.matchMinute;const extra=t.extra??event.injuryTime;return minute==null?'':`${minute}${extra?`+${extra}`:''}′`;}
 function apiEvents(apiMatch){return Array.isArray(apiMatch?.events)?apiMatch.events:[];}
-function teamPlayerLabel(teamName,key){
-if(!teamName)return '';
-const logo=logoForTeam(teamName,key);
-return `<div class="player-club">${logo?`<img src="${esc(logo)}" alt="" loading="lazy" onerror="this.hidden=true">`:''}<span>${esc(teamName)}</span></div>`;
+function savedWebsiteMatch(match,key){
+const savedById=websiteCardEvents[key]?.[String(match.matchID)];
+if(savedById)return savedById;
+const names=teamNames(match);
+const normalizeTeam=value=>normalizeName(String(value||'').replace(/\b(?:SV|FC|SC|TSG|VfL|Borussia)\b/gi,''));
+return Object.values(websiteCardEvents[key]||{}).find(item=>normalizeTeam(item.home)===normalizeTeam(names.home)&&normalizeTeam(item.away)===normalizeTeam(names.away))||null;
 }
-function renderGoals(match,apiMatch,key){
-const entries=[];
-for(const g of (Array.isArray(match.goals)?match.goals:[])){const scoringId=String(g.scoringTeamId??'');const scoringTeam=[match.team1,match.team2].find(t=>scoringId&&String(t?.teamId??'')===scoringId);entries.push({minute:g.matchMinute,player:g.goalGetterName||'Torschütze nicht angegeben',team:g.teamName||scoringTeam?.teamName||'',detail:[g.isPenalty?'Elfmeter':'',g.isOwnGoal?'Eigentor':''].filter(Boolean).join(' · ')});}
-for(const e of apiEvents(apiMatch)){if(String(e.type||'').toLowerCase()!=='goal')continue;const player=e.player?.name||'Torschütze nicht angegeben',minute=eventMinute(e),duplicate=entries.some(x=>normalizeName(x.player)===normalizeName(player)&&String(x.minute??'')===String(minute??''));if(!duplicate)entries.push({minute:minute.replace('′',''),player,team:e.team?.name||'',detail:e.detail||''});}
-entries.sort((a,b)=>(parseInt(a.minute,10)||0)-(parseInt(b.minute,10)||0));
+function minuteValue(m){const t=String(m??'').replace(/[′’']/g,'');const p=t.split('+');return (parseInt(p[0],10)||0)+(parseInt(p[1],10)||0)/100;}
+function sideOfTeam(match,name){const n=teamNames(match);return name&&sameTeamName(name,n.home)?'home':name&&sameTeamName(name,n.away)?'away':'';}
+function crestForSide(match,key,side,teamName){const t=side==='home'?match.team1:side==='away'?match.team2:(teamName?{teamName}:null);return t?teamLogoHTML(t,key):'';}
+function renderGoals(match,key,apiMatch){
+const names=teamNames(match),entries=[];
+const raw=(Array.isArray(match.goals)?match.goals:[]).slice().sort((x,y)=>((x.scoreTeam1||0)+(x.scoreTeam2||0))-((y.scoreTeam1||0)+(y.scoreTeam2||0))||(x.goalID||0)-(y.goalID||0));
+let hh=0,aa=0;
+for(const g of raw){
+let side='';
+if(g.scoreTeam1!=null&&g.scoreTeam2!=null){if(g.scoreTeam1>hh)side='home';else if(g.scoreTeam2>aa)side='away';hh=g.scoreTeam1;aa=g.scoreTeam2;}
+if(!side&&g.scoringTeamId!=null)side=Number(g.scoringTeamId)===Number(match.team1?.teamId)?'home':Number(g.scoringTeamId)===Number(match.team2?.teamId)?'away':'';
+entries.push({minute:g.matchMinute,player:g.goalGetterName||'Torschütze nicht angegeben',side,team:g.teamName||(side==='home'?names.home:side==='away'?names.away:''),detail:[g.isPenalty?'Elfmeter':'',g.isOwnGoal?'Eigentor':''].filter(Boolean).join(' · ')});
+}
+for(const e of apiEvents(apiMatch)){if(e.type!=='Goal')continue;const player=e.player?.name||'Torschütze nicht angegeben',minute=eventMinute(e),duplicate=entries.some(x=>normalizeName(x.player)===normalizeName(player)&&String(x.minute??'')===String(minute??''));if(!duplicate){const tn=e.team?.name||'';entries.push({minute:minute.replace('′',''),player,side:sideOfTeam(match,tn),team:tn,detail:e.detail||''});}}
+entries.sort((x,y)=>minuteValue(x.minute)-minuteValue(y.minute));
 if(!entries.length)return '<p class="no-data">Für dieses Spiel sind keine Torschützen hinterlegt.</p>';
-return entries.map(g=>`<div class="scorer"><b>${esc(g.minute==null?'':String(g.minute).includes('′')?g.minute:g.minute+'′')}</b> ${esc(g.player)} ${g.detail?`<span class="detail-label">(${esc(g.detail)})</span>`:''}${teamPlayerLabel(g.team,key)}</div>`).join('');
+return entries.map(g=>`<div class="scorer"><b>${esc(g.minute==null?'':String(g.minute).includes('′')?g.minute:g.minute+'′')}</b> <span class="card-player">${crestForSide(match,key,g.side,g.team)}${esc(g.player)}</span> ${g.detail?`<span class="detail-label">(${esc(g.detail)})</span>`:''}${g.team?`<div class="detail-label">${esc(g.team)}</div>`:''}</div>`).join('');
 }
 function renderBookings(match,key,apiMatch){
-const savedById=websiteCardEvents[key]?.[String(match.matchID)];
-const names=teamNames(match);
-const normalizeTeam=value=>normalizeName(String(value||'').replace(/\\bSV\\b|\\bFC\\b|\\bSC\\b|\\bTSG\\b|\\bVfL\\b|\\bBorussia\\b/gi,'').replace(/[^a-z0-9]/gi,''));
-const savedByTeams=Object.values(websiteCardEvents[key]||{}).find(item=>
-  normalizeTeam(item.home)===normalizeTeam(names.home)&&normalizeTeam(item.away)===normalizeTeam(names.away)
-);
-const saved=(savedById||savedByTeams)?.cards||[];
+const saved=savedWebsiteMatch(match,key)?.cards||[];
 const bookings=[...saved];
 for(const e of apiEvents(apiMatch).filter(e=>e.type==='Card')){
 const type=/second yellow|yellow-red/i.test(String(e.detail||''))?'yellow-red':/red/i.test(String(e.detail||''))?'red':'yellow';
@@ -354,31 +364,23 @@ if(!bookings.some(x=>x.type===type&&normalizeName(x.player)===normalizeName(e.pl
 }
 if(!bookings.length)return '<p class="no-data">Für dieses Spiel wurden noch keine Kartenereignisse aus dem offiziellen Bundesliga-Liveticker gespeichert.</p>';
 bookings.sort((a,b)=>(parseInt(a.minute,10)||0)-(parseInt(b.minute,10)||0));
-return bookings.map(e=>{const label=e.type==='red'?'🟥 Rote Karte':e.type==='yellow-red'?'🟨🟥 Gelb-Rote Karte':'🟨 Gelbe Karte';return `<div class="scorer"><b>${esc(String(e.minute||'').replace(/′$/,''))}${String(e.minute||'').includes("'")||String(e.minute||'').includes('′')?'':"′"}</b> ${label} – ${esc(e.player||'Spieler unbekannt')}${e.team?`<div class="detail-label">${esc(e.team)}</div>`:''}</div>`;}).join('');
+return bookings.map(e=>{const label=e.type==='red'?'🟥 Rote Karte':e.type==='yellow-red'?'🟨🟥 Gelb-Rote Karte':'🟨 Gelbe Karte';const crest=e.team?teamLogoHTML({teamName:e.team},key):'';return `<div class="scorer"><b>${esc(String(e.minute||'').replace(/[′’']/g,''))}′</b> ${label} – <span class="card-player">${crest}${esc(e.player||'Spieler unbekannt')}</span>${e.team?`<div class="detail-label">${esc(e.team)}</div>`:''}</div>`;}).join('');
 }
-function renderSubs(apiMatch,key){
-const raw=apiEvents(apiMatch).filter(e=>{
-const type=String(e.type||e.detail||'').toLowerCase().trim();
-return /^(subst|substitution|substitutions|player substitution|substitution in|substitution out)$/i.test(type)||/substitut|wechsel/i.test(type);
-});
-const seen=new Set(),subs=[];
-for(const e of raw){
-const incoming=e.player?.name||e.player?.player?.name||e.in?.name||e.assist?.name||e.assist?.player?.name||'';
-const outgoing=e.assist?.name||e.assist?.player?.name||e.playerOut?.name||e.out?.name||e.player_out?.name||'';
-const minute=eventMinute(e),team=e.team?.name||e.teamName||'';
-const signature=[minute,normalizeName(incoming),normalizeName(outgoing),normalizeName(team)].join('|');
-if(seen.has(signature))continue;
-seen.add(signature);
-subs.push({minute,incoming,outgoing,team});
+function renderSubs(match,key,apiMatch){
+const subs=[];
+for(const e of apiEvents(apiMatch).filter(e=>e.type==='subst')){const tn=e.team?.name||'';subs.push({minute:eventMinute(e),in:e.player?.name||'Spieler unbekannt',out:e.assist?.name||'',team:tn,side:sideOfTeam(match,tn)});}
+for(const s of (savedWebsiteMatch(match,key)?.subs||[])){
+if(subs.some(x=>normalizeName(x.in)===normalizeName(s.in)&&Math.floor(minuteValue(x.minute))===Math.floor(minuteValue(s.minute))))continue;
+subs.push({minute:s.minute,in:s.in,out:s.out,team:s.team||'',side:s.teamSide||sideOfTeam(match,s.team)});
 }
-if(!subs.length)return '<p class="no-data">Für dieses Spiel sind beim gespeicherten Datenanbieter noch keine Auswechslungen hinterlegt. Die Anzeige erkennt jetzt auch alternative Bezeichnungen für Wechselereignisse.</p>';
-subs.sort((a,b)=>(parseInt(a.minute,10)||0)-(parseInt(b.minute,10)||0));
-return subs.map(e=>`<div class="scorer"><b>${esc(e.minute)}</b> ${e.outgoing?`<span class="detail-label">↓ raus:</span> ${esc(e.outgoing)}<br>`:''}${e.incoming?`<span class="detail-label">↑ rein:</span> ${esc(e.incoming)}`:''}${teamPlayerLabel(e.team,key)}</div>`).join('');
+if(!subs.length)return '<p class="no-data">Keine Auswechslungen hinterlegt.</p>';
+subs.sort((x,y)=>minuteValue(x.minute)-minuteValue(y.minute));
+return subs.map(x=>`<div class="scorer"><b>${esc(String(x.minute||'').replace(/[′’']/g,''))}′</b> <span class="card-player">${crestForSide(match,key,x.side,x.team)}<span class="sub-names"><span class="sub-in">▲ ${esc(x.in)}</span>${x.out?`<span class="sub-out">▼ ${esc(x.out)}</span>`:''}</span></span>${x.team?`<div class="detail-label">${esc(x.team)}</div>`:''}</div>`).join('');
 }
-function renderLineups(apiMatch,key){
+function renderLineups(apiMatch){
 const lineups=Array.isArray(apiMatch?.lineups)?apiMatch.lineups:[];
 if(!lineups.length)return '<p class="no-data">Noch keine Aufstellungen verfügbar. Sie werden häufig erst 20–40 Minuten vor Anstoß veröffentlicht.</p>';
-return lineups.map(team=>{const start=team.startXI||[],bench=team.substitutes||[],teamName=team.team?.name||'Mannschaft';const players=(list)=>list.length?list.map(p=>`<div class="scorer">${p.player?.number!=null?esc(p.player.number)+' · ':''}${esc(p.player?.name||'Spieler unbekannt')}${p.player?.pos?` <span class="detail-label">(${esc(p.player.pos)})</span>`:''}${teamPlayerLabel(teamName,key)}</div>`).join(''):'<p class="no-data">Keine Angaben.</p>';return `<h4>${esc(teamName)}${team.formation?' · '+esc(team.formation):''}</h4><div class="scorer"><b>Startaufstellung</b></div>${players(start)}<div class="scorer"><b>Ersatzbank</b></div>${players(bench)}${team.coach?.name?`<div class="scorer">Trainer: ${esc(team.coach.name)}</div>`:''}`;}).join('');
+return lineups.map(team=>{const start=team.startXI||[],bench=team.substitutes||[];const players=(list)=>list.length?list.map(p=>`<div class="scorer">${p.player?.number!=null?esc(p.player.number)+' · ':''}${esc(p.player?.name||'Spieler unbekannt')}${p.player?.pos?` <span class="detail-label">(${esc(p.player.pos)})</span>`:''}</div>`).join(''):'<p class="no-data">Keine Angaben.</p>';return `<h4>${esc(team.team?.name||'Mannschaft')}${team.formation?' · '+esc(team.formation):''}</h4><div class="scorer"><b>Startaufstellung</b></div>${players(start)}<div class="scorer"><b>Ersatzbank</b></div>${players(bench)}${team.coach?.name?`<div class="scorer">Trainer: ${esc(team.coach.name)}</div>`:''}`;}).join('');
 }
 function renderStatistics(apiMatch){
 const stats=Array.isArray(apiMatch?.statistics)?apiMatch.statistics:[];
@@ -403,63 +405,17 @@ if(ft?.home!=null)html+=detailLine('Endstand',`${ft.home} : ${ft.away}`);
 if(et?.home!=null)html+=detailLine('Verlängerung',`${et.home} : ${et.away}`);
 if(pen?.home!=null)html+=detailLine('Elfmeterschießen',`${pen.home} : ${pen.away}`);
 if(results.length){html+='<h4>Ergebnisse OpenLigaDB</h4>';results.forEach(r=>html+=detailLine(r.resultName||(Number(r.resultTypeID)===1?'Halbzeit':Number(r.resultTypeID)===2?'Endstand':'Spielstand'),`${r.pointsTeam1} : ${r.pointsTeam2}`));}
-html+='<h4>⚽ Torschützen</h4>'+renderGoals(match,apiMatch,key)+'<h4>🟨 Karten</h4>'+renderBookings(match,key,apiMatch)+'<h4>🔄 Auswechslungen</h4>'+renderSubs(apiMatch,key)+'<h4>📊 Spielstatistiken</h4>'+renderStatistics(apiMatch)+'<h4>👥 Aufstellungen & Ersatzbank</h4>'+renderLineups(apiMatch,key);
+html+='<h4>⚽ Torschützen</h4>'+renderGoals(match,key,apiMatch)+'<h4>🟨 Karten</h4>'+renderBookings(match,key,apiMatch)+'<h4>🔄 Auswechslungen</h4>'+renderSubs(match,key,apiMatch)+'<h4>📊 Spielstatistiken</h4>'+renderStatistics(apiMatch)+'<h4>👥 Aufstellungen & Ersatzbank</h4>'+renderLineups(apiMatch);
 const lineupIndex=selectedGames(key).findIndex(g=>matchKey(g)===matchKey(match));html+=`<button type="button" class="lineup-button" onclick="aufstellungAbrufen('${key}',${lineupIndex})">👥 Aufstellung, Spielerbilder &amp; Statistiken öffnen</button>`;
 html+=`<p class="no-data">Zusatzdaten: ${apiMatch?'API-Football':'Noch keine passenden API-Football-Daten für dieses Spiel'}. Aufstellungen und Statistiken sind abhängig von der Verfügbarkeit beim Anbieter.</p></div>`;
 return html;
-}
-async function loadESPNSubstitutions(match,key,index){
-const slot=document.getElementById('details-'+key+'-'+index);
-if(!slot||!slot.innerHTML.includes('Für dieses Spiel sind beim gespeicherten Datenanbieter'))return;
-const names=teamNames(match),league=key==='bl1'?'ger.1':'ger.2',kickoff=gameDate(match);
-const dates=kickoff?new Date(kickoff).toISOString().slice(0,10).replace(/-/g,''):'';
-const candidates=[];
-const addEvents=data=>(data?.events||[]).forEach(event=>{
-const comp=event.competitions?.[0],teams=comp?.competitors||[];
-const home=teams.find(t=>t.homeAway==='home')?.team?.displayName||teams.find(t=>t.homeAway==='home')?.team?.name||'';
-const away=teams.find(t=>t.homeAway==='away')?.team?.displayName||teams.find(t=>t.homeAway==='away')?.team?.name||'';
-if(sameTeamName(home,names.home)&&sameTeamName(away,names.away)||sameTeamName(home,names.away)&&sameTeamName(away,names.home))candidates.push({id:String(event.id),home,away,date:event.date||comp?.date||''});
-});
-const urls=[`https://site.api.espn.com/apis/site/v2/sports/soccer/${league}/scoreboard${dates?'?dates='+dates:''}`];
-for(const url of urls){try{addEvents(await loadJSON(url));}catch(error){console.warn('ESPN-Spielplan nicht verfügbar:',error);}}
-if(!candidates.length){const msg=slot.querySelector('h4');if(msg){const p=[...slot.querySelectorAll('p.no-data')].find(x=>x.textContent.includes('gespeicherten Datenanbieter'));if(p)p.textContent='Für dieses Spiel konnten auch im ESPN-Spielplan keine passenden Ereignisdaten gefunden werden.';}return;}
-let selected=candidates[0];
-if(kickoff){selected=candidates.sort((a,b)=>Math.abs(new Date(a.date||kickoff)-new Date(kickoff))-Math.abs(new Date(b.date||kickoff)-new Date(kickoff)))[0];}
-try{
-const summary=await loadJSON(`https://site.api.espn.com/apis/site/v2/sports/soccer/${league}/summary?event=${encodeURIComponent(selected.id)}`);
-const events=[],seen=new Set();
-const walk=(value,context={})=>{
-if(!value)return;
-if(Array.isArray(value)){value.forEach(v=>walk(v,context));return;}
-if(typeof value!=='object')return;
-const teamObj=value.team||value.competitor||{},athlete=value.athlete||value.player||{};
-const team=teamObj.displayName||teamObj.name||value.teamName||context.team||'';
-const player=athlete.displayName||athlete.fullName||athlete.name||context.player||'';
-const textParts=[value.text,value.shortText,value.description,value.type?.text,value.type?.name,value.type?.description,value.detail].filter(v=>typeof v==='string');
-const text=textParts.join(' ');
-if(/substitut|replaced by|replaces|enters the match|leaves the match|wechsel/i.test(text)){
-const minute=value.clock?.displayValue||value.time?.displayValue||value.minute||context.minute||'';
-const inName=value.athlete?.displayName||value.player?.displayName||value.in?.name||player;
-const outName=value.substitution?.out?.athlete?.displayName||value.out?.name||value.playerOut?.name||value.assist?.name||'';
-const sig=[minute,normalizeName(inName),normalizeName(outName),normalizeName(team)].join('|');
-if(!seen.has(sig)){seen.add(sig);events.push({minute,incoming:inName,outgoing:outName,team});}
-}
-const next={team:team||context.team,player:player||context.player,minute:value.clock?.displayValue||value.minute||context.minute};
-Object.entries(value).forEach(([k,v])=>{if(!['team','competitor','athlete','player'].includes(k))walk(v,next);});
-};
-walk(summary);
-walk(summary.plays?.items||summary.plays||[]);
-if(!events.length){const p=[...slot.querySelectorAll('p.no-data')].find(x=>x.textContent.includes('gespeicherten Datenanbieter')||x.textContent.includes('ESPN'));if(p)p.textContent='ESPN liefert für dieses Spiel keine auswertbaren Auswechslungen.';return;}
-const target=[...slot.querySelectorAll('h4')].find(h=>h.textContent.includes('Auswechslungen'));
-if(target){let html='';events.sort((a,b)=>(parseInt(a.minute,10)||0)-(parseInt(b.minute,10)||0)).forEach(e=>{html+=`<div class="scorer"><b>${esc(e.minute||'')}</b> ${e.outgoing?`<span class="detail-label">↓ raus:</span> ${esc(e.outgoing)}<br>`:''}${e.incoming?`<span class="detail-label">↑ rein:</span> ${esc(e.incoming)}`:''}${teamPlayerLabel(e.team,key)}</div>`;});let next=target.nextElementSibling;while(next&&!next.matches('h4')){const n=next.nextElementSibling;next.remove();next=n;}target.insertAdjacentHTML('afterend',html);}
-}catch(error){console.warn('ESPN-Auswechslungen konnten nicht geladen werden:',error);}
 }
 function toggleDetails(key,index){
 const match=selectedGames(key)[index];if(!match)return;
 const id=matchKey(match),slot=document.getElementById('details-'+key+'-'+index),hint=document.getElementById('hint-'+key+'-'+index),button=document.getElementById('button-'+key+'-'+index);
 if(!slot)return;
-if(expandedMatch[key]===id){expandedMatch[key]=null;slot.innerHTML='';slot.hidden=true;if(hint)hint.textContent='▼ Tippen für Spieldetails und Torschützen';if(button)button.setAttribute('aria-expanded','false');}
-else{expandedMatch[key]=id;slot.innerHTML=detailsHTML(match,key);slot.hidden=false;if(hint)hint.textContent='▲ Details ausblenden';if(button)button.setAttribute('aria-expanded','true');loadESPNSubstitutions(match,key,index);}
+if(expandedMatch[key]===id){expandedMatch[key]=null;slot.innerHTML='';delete slot.dataset.markup;slot.hidden=true;if(hint)hint.textContent='▼ Tippen für Spieldetails und Torschützen';if(button)button.setAttribute('aria-expanded','false');}
+else{expandedMatch[key]=id;{const html=detailsHTML(match,key);slot.innerHTML=html;slot.dataset.markup=html;}slot.hidden=false;if(hint)hint.textContent='▲ Details ausblenden';if(button)button.setAttribute('aria-expanded','true');}
 }
 function directLogo(team){const name=team?.teamName||team?.name||team?.shortName||team?.team?.teamName||team?.team?.name||team?.team?.shortName||'';if(normalizeName(name).includes('leverkusen'))return 'https://crests.football-data.org/3.png';return team?.teamIconUrl||team?.team?.teamIconUrl||team?.crest||team?.logo||team?.team?.crest||team?.team?.logo||'';}
 function sameTeamName(a,b){const x=normalizeName(a),y=normalizeName(b);if(!x||!y)return false;return x===y||(x.includes('werder')&&y.includes('werder'))||(x.includes('osnabruck')&&y.includes('osnabruck'))||(x.includes('leverkusen')&&y.includes('leverkusen'));}
@@ -478,7 +434,7 @@ return url?`<img class="team-logo" src="${esc(url)}" alt="" loading="lazy" ${log
 function updateClubLogos(){
 for(const [id,name,key] of [['header-werder-crest','SV Werder Bremen','bl1'],['header-vfl-crest','VfL Osnabrück','bl2'],['bl1-club-logo','SV Werder Bremen','bl1'],['bl2-club-logo','VfL Osnabrück','bl2']]){
 const img=document.getElementById(id),url=logoForTeam(name,key);
-if(img&&url&&img.src!==url){img.src=url;img.hidden=false;img.onerror=()=>{img.hidden=true;};}
+if(img&&url&&img.dataset.logoUrl!==url){img.dataset.logoUrl=url;img.src=url;img.hidden=false;img.onerror=()=>{img.hidden=true;};}
 }
 }
 function tvProvider(match,key){
@@ -750,7 +706,7 @@ function loadClubSchedules(){loadClubSchedule('bl1');loadClubSchedule('bl2');}
 function tableDataForRound(key){const round=selectedRound[key];return round==null?(liveTableFromMatches(key)||standings[key]):(liveTableFromMatches(key,round)||liveTableFromMatches(key)||standings[key]);}
 function renderInitial(){renderLiveGames();renderGames('bl1');renderGames('bl2');setTableHTML('bl1-table',tableHTML(tableDataForRound('bl1'),'bl1'));setTableHTML('bl2-table',tableHTML(tableDataForRound('bl2'),'bl2'));renderTableRoundNav('bl1');renderTableRoundNav('bl2');updateClubLogos();initialRenderDone=true;}
 function renderTables(){setTableHTML('bl1-table',tableHTML(tableDataForRound('bl1'),'bl1'));setTableHTML('bl2-table',tableHTML(tableDataForRound('bl2'),'bl2'));renderTableRoundNav('bl1');renderTableRoundNav('bl2');updateClubLogos();}
-function updateLiveDisplay(key){selectedGames(key).forEach((match,index)=>{const date=document.getElementById(`date-${key}-${index}`),score=document.getElementById(`score-${key}-${index}`);if(date)date.innerHTML=statusHTML(match,key);if(score)score.textContent=gameScore(match,key);/* Spieldetails absichtlich nicht bei jedem Live-Poll neu rendern: verhindert blinkende Vereinswappen und Bild-Neuladungen. Beim Öffnen werden Details frisch geladen. */});}
+function updateLiveDisplay(key){selectedGames(key).forEach((match,index)=>{const date=document.getElementById(`date-${key}-${index}`),score=document.getElementById(`score-${key}-${index}`),slot=document.getElementById(`details-${key}-${index}`);if(date){const html=statusHTML(match,key);if(date.dataset.markup!==html){date.innerHTML=html;date.dataset.markup=html;}}if(score){const text=gameScore(match,key);if(score.textContent!==text)score.textContent=text;}if(slot&&!slot.hidden&&expandedMatch[key]===matchKey(match)){const html=detailsHTML(match,key);if(slot.dataset.markup!==html){slot.innerHTML=html;slot.dataset.markup=html;}}});}
 async function loadSavedSources(){
 const jobs=[
 ['bl1-matches',()=>loadFile('bundesliga-spiele.json')],
