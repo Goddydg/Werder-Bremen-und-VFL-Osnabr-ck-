@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T20:14:58.511Z",
+  "updatedAt": "2026-10-16T20:17:04.337Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1174,6 +1174,22 @@
         ],
         "subs": [
           {
+            "minute": "84′",
+            "in": "Luca Waldschmidt",
+            "out": "Sebastian Sebulonsen",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "away"
+          },
+          {
+            "minute": "84′",
+            "in": "Reigan Heskey",
+            "out": "Saïd El Mala",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "away"
+          },
+          {
             "minute": "82′",
             "in": "Elias Baum",
             "out": "Jonathan Burkardt",
@@ -1222,7 +1238,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-16T20:14:58.340Z"
+        "checkedAt": "2026-10-16T20:17:04.166Z"
       }
     },
     "bl2": {
