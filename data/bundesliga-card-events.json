@@ -1,7 +1,350 @@
 {
-  "updatedAt": "2026-10-16T05:00:00.000Z",
+  "updatedAt": "2026-10-16T04:14:25.690Z",
   "leagues": {
     "bl1": {
+      "83159": {
+        "matchId": "83159",
+        "home": "SC Freiburg",
+        "away": "SV Werder Bremen",
+        "round": 1,
+        "cards": [],
+        "finalAttempts": 1
+      },
+      "83171": {
+        "matchId": "83171",
+        "home": "SV Werder Bremen",
+        "away": "RB Leipzig",
+        "round": 2,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/2/sv-werder-bremen-vs-rb-leipzig/liveticker/",
+        "cards": [
+          {
+            "minute": "23′",
+            "type": "yellow",
+            "player": "Chuki",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "home"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "84′",
+            "in": "Andrija Maksimović",
+            "out": "Christopher Nkunku",
+            "crestId": "000017",
+            "team": "RB Leipzig",
+            "teamSide": "away"
+          },
+          {
+            "minute": "84′",
+            "in": "Samba Konaté",
+            "out": "Antonio Nusa",
+            "crestId": "000017",
+            "team": "RB Leipzig",
+            "teamSide": "away"
+          },
+          {
+            "minute": "83′",
+            "in": "Dariusz Stalmach",
+            "out": "Youri Regeer",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "home"
+          },
+          {
+            "minute": "83′",
+            "in": "Salim Musah",
+            "out": "Chuki",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "home"
+          },
+          {
+            "minute": "75′",
+            "in": "Marc Guiu",
+            "out": "Neil El Aynaoui",
+            "crestId": "000017",
+            "team": "RB Leipzig",
+            "teamSide": "away"
+          },
+          {
+            "minute": "74′",
+            "in": "Cedric Itten",
+            "out": "Niclas Füllkrug",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "home"
+          },
+          {
+            "minute": "67′",
+            "in": "Paul Erevbenagie",
+            "out": "Eren Dinkçi",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "home"
+          },
+          {
+            "minute": "67′",
+            "in": "Mick Schmetgens",
+            "out": "Arthur",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "home"
+          },
+          {
+            "minute": "63′",
+            "in": "Tidiam Gomis",
+            "out": "Johan Bakayoko",
+            "crestId": "000017",
+            "team": "RB Leipzig",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-10-16T04:14:10.975Z",
+        "finalChecked": true
+      },
+      "83181": {
+        "matchId": "83181",
+        "home": "1. FC Köln",
+        "away": "SV Werder Bremen",
+        "round": 3,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/3/1-fc-koeln-vs-sv-werder-bremen/liveticker/",
+        "cards": [
+          {
+            "minute": "90+2′",
+            "type": "yellow",
+            "player": "Paul Okon-Engstler",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "home"
+          },
+          {
+            "minute": "86′",
+            "type": "yellow",
+            "player": "Gideon Mensah",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "home"
+          },
+          {
+            "minute": "72′",
+            "type": "yellow",
+            "player": "Olivier Deman",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "90′",
+            "in": "Paul Okon-Engstler",
+            "out": "Tom Krauß",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "home"
+          },
+          {
+            "minute": "83′",
+            "in": "Mitchell Weiser",
+            "out": "Youri Regeer",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "away"
+          },
+          {
+            "minute": "83′",
+            "in": "Paul Erevbenagie",
+            "out": "Eren Dinkçi",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "away"
+          },
+          {
+            "minute": "81′",
+            "in": "Cedric Itten",
+            "out": "Niclas Füllkrug",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "away"
+          },
+          {
+            "minute": "81′",
+            "in": "Mick Schmetgens",
+            "out": "Arthur",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "away"
+          },
+          {
+            "minute": "74′",
+            "in": "Saïd El Mala",
+            "out": "Mikey Moore",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "home"
+          },
+          {
+            "minute": "70′",
+            "in": "Dariusz Stalmach",
+            "out": "Ludovit Reis",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "away"
+          },
+          {
+            "minute": "65′",
+            "in": "Ragnar Ache",
+            "out": "Thijs Dallinga",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "home"
+          },
+          {
+            "minute": "65′",
+            "in": "Ísak Jóhannesson",
+            "out": "Linton Maina",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "home"
+          },
+          {
+            "minute": "64′",
+            "in": "Sebastian Sebulonsen",
+            "out": "Alessio Castro-Montes",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "home"
+          }
+        ],
+        "checkedAt": "2026-10-16T04:14:14.186Z",
+        "finalChecked": true
+      },
+      "83189": {
+        "matchId": "83189",
+        "home": "SV Werder Bremen",
+        "away": "FC Augsburg",
+        "round": 4,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/4/sv-werder-bremen-vs-fc-augsburg/liveticker/",
+        "cards": [
+          {
+            "minute": "77′",
+            "type": "yellow",
+            "player": "Hennes Behrens",
+            "crestId": "000010",
+            "team": "FC Augsburg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "73′",
+            "type": "yellow",
+            "player": "Manuel Baum",
+            "crestId": "000010",
+            "team": "FC Augsburg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "60′",
+            "type": "yellow",
+            "player": "Marco Grüll",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "home"
+          },
+          {
+            "minute": "27′",
+            "type": "yellow",
+            "player": "Arthur",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "home"
+          },
+          {
+            "minute": "5′",
+            "type": "yellow",
+            "player": "Han-Noah Massengo",
+            "crestId": "000010",
+            "team": "FC Augsburg",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "90+4′",
+            "in": "Mick Schmetgens",
+            "out": "Arthur",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "home"
+          },
+          {
+            "minute": "83′",
+            "in": "Jeffrey Gouweleeuw",
+            "out": "Calvin Brackelmann",
+            "crestId": "000010",
+            "team": "FC Augsburg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "78′",
+            "in": "Oskar Wójcik",
+            "out": "Amos Pieper",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "home"
+          },
+          {
+            "minute": "78′",
+            "in": "Salim Musah",
+            "out": "Ludovit Reis",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "home"
+          },
+          {
+            "minute": "74′",
+            "in": "Youngwoo Seol",
+            "out": "Marius Wolf",
+            "crestId": "000010",
+            "team": "FC Augsburg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "68′",
+            "in": "Mitchell Weiser",
+            "out": "Eren Dinkçi",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "home"
+          },
+          {
+            "minute": "53′",
+            "in": "Yannik Keitel",
+            "out": "Han-Noah Massengo",
+            "crestId": "000010",
+            "team": "FC Augsburg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "53′",
+            "in": "Alexis Claude-Maurice",
+            "out": "Mert Kömür",
+            "crestId": "000010",
+            "team": "FC Augsburg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "53′",
+            "in": "Rodrigo Ribeiro",
+            "out": "Michael Gregoritsch",
+            "crestId": "000010",
+            "team": "FC Augsburg",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-10-16T04:14:17.855Z",
+        "finalChecked": true
+      },
       "83192": {
         "matchId": "83192",
         "home": "Borussia Dortmund",
@@ -799,6 +1142,248 @@
       }
     },
     "bl2": {
+      "83513": {
+        "matchId": "83513",
+        "home": "1. FC Heidenheim 1846",
+        "away": "VfL Osnabrück",
+        "round": 1,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/1/1-fc-heidenheim-1846-vs-vfl-osnabrueck/liveticker/",
+        "cards": [
+          {
+            "minute": "54′",
+            "type": "yellow",
+            "player": "Oualid Mhamdi",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "home"
+          },
+          {
+            "minute": "45′",
+            "type": "yellow",
+            "player": "Fridolin Wagner",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "away"
+          },
+          {
+            "minute": "13′",
+            "type": "yellow",
+            "player": "Ismail Badjie",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "90′",
+            "in": "Leon Opitz",
+            "out": "Patrick Kammerbauer",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "away"
+          },
+          {
+            "minute": "87′",
+            "in": "Maximilian Breunig",
+            "out": "Budu Zivzivadze",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "home"
+          },
+          {
+            "minute": "87′",
+            "in": "Paul Hennrich",
+            "out": "Adrian Beck",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "home"
+          },
+          {
+            "minute": "80′",
+            "in": "Bernd Riesselmann",
+            "out": "David Kopacz",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "away"
+          },
+          {
+            "minute": "80′",
+            "in": "Leonhard Münst",
+            "out": "Ismail Badjie",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "away"
+          },
+          {
+            "minute": "80′",
+            "in": "Bryan Henning",
+            "out": "Fridolin Wagner",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "away"
+          },
+          {
+            "minute": "69′",
+            "in": "Tony Lesueur",
+            "out": "Konrad Faber",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "away"
+          },
+          {
+            "minute": "66′",
+            "in": "Luca Kerber",
+            "out": "Christian Conteh",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "home"
+          },
+          {
+            "minute": "59′",
+            "in": "Marnon Busch",
+            "out": "Oualid Mhamdi",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "home"
+          },
+          {
+            "minute": "59′",
+            "in": "Christian Conteh",
+            "out": "Mathias Honsak",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "home"
+          }
+        ],
+        "checkedAt": "2026-10-16T04:14:22.461Z",
+        "finalChecked": true
+      },
+      "83538": {
+        "matchId": "83538",
+        "home": "VfL Osnabrück",
+        "away": "1. FC Magdeburg",
+        "round": 2,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/2/vfl-osnabrueck-vs-1-fc-magdeburg/liveticker/",
+        "cards": [
+          {
+            "minute": "77′",
+            "type": "yellow",
+            "player": "Faber räumt Nollenberger von hinten ab und sie",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          },
+          {
+            "minute": "77′",
+            "type": "yellow",
+            "player": "Konrad Faber",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          },
+          {
+            "minute": "67′",
+            "type": "yellow",
+            "player": "Nadjombe kommt gegen Kammerbauer zu spät und s",
+            "crestId": "000N5D",
+            "team": "1. FC Magdeburg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "67′",
+            "type": "yellow",
+            "player": "Pierre Nadjombe",
+            "crestId": "000N5D",
+            "team": "1. FC Magdeburg",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "89′",
+            "in": "Paul Jaeckel",
+            "out": "Luka Hyryläinen",
+            "crestId": "000N5D",
+            "team": "1. FC Magdeburg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "89′",
+            "in": "Magnus Baars",
+            "out": "Baris Atik",
+            "crestId": "000N5D",
+            "team": "1. FC Magdeburg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "88′",
+            "in": "Leon Opitz",
+            "out": "Patrick Kammerbauer",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          },
+          {
+            "minute": "83′",
+            "in": "Eldin Dzogovic",
+            "out": "Alexander Nollenberger",
+            "crestId": "000N5D",
+            "team": "1. FC Magdeburg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "83′",
+            "in": "Tony Reitz",
+            "out": "Leon Mergner",
+            "crestId": "000N5D",
+            "team": "1. FC Magdeburg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "78′",
+            "in": "Bryan Henning",
+            "out": "Bjarke Jacobsen",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          },
+          {
+            "minute": "71′",
+            "in": "Richmond Tachie",
+            "out": "Pierre Nadjombe",
+            "crestId": "000N5D",
+            "team": "1. FC Magdeburg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "45+1′",
+            "in": "Leonhard Münst",
+            "out": "David Kopacz",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          },
+          {
+            "minute": "45+1′",
+            "in": "Bernd Riesselmann",
+            "out": "Ismail Badjie",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          },
+          {
+            "minute": "45+1′",
+            "in": "Konrad Faber",
+            "out": "Tony Lesueur",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          }
+        ],
+        "checkedAt": "2026-10-16T04:14:25.689Z",
+        "finalChecked": true
+      },
       "83608": {
         "matchId": "83608",
         "home": "FC St. Pauli",
