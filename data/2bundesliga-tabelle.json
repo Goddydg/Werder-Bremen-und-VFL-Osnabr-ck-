@@ -17,11 +17,11 @@
             "tla": "",
             "crest": ""
           },
-          "playedGames": 7,
+          "playedGames": 8,
           "won": 7,
-          "draw": 0,
+          "draw": 1,
           "lost": 0,
-          "points": 21,
+          "points": 22,
           "goalsFor": 19,
           "goalsAgainst": 8,
           "goalDifference": 11
@@ -35,13 +35,13 @@
             "tla": "",
             "crest": ""
           },
-          "playedGames": 7,
+          "playedGames": 8,
           "won": 5,
-          "draw": 2,
+          "draw": 3,
           "lost": 0,
-          "points": 17,
-          "goalsFor": 20,
-          "goalsAgainst": 10,
+          "points": 18,
+          "goalsFor": 21,
+          "goalsAgainst": 11,
           "goalDifference": 10
         },
         {
@@ -143,13 +143,13 @@
             "tla": "",
             "crest": ""
           },
-          "playedGames": 7,
+          "playedGames": 8,
           "won": 2,
-          "draw": 2,
+          "draw": 3,
           "lost": 3,
-          "points": 8,
-          "goalsFor": 15,
-          "goalsAgainst": 16,
+          "points": 9,
+          "goalsFor": 16,
+          "goalsAgainst": 17,
           "goalDifference": -1
         },
         {
@@ -281,6 +281,24 @@
         {
           "position": 16,
           "team": {
+            "id": 104,
+            "name": "Holstein Kiel",
+            "shortName": "Holstein Kiel",
+            "tla": "",
+            "crest": ""
+          },
+          "playedGames": 8,
+          "won": 0,
+          "draw": 5,
+          "lost": 3,
+          "points": 5,
+          "goalsFor": 7,
+          "goalsAgainst": 11,
+          "goalDifference": -4
+        },
+        {
+          "position": 17,
+          "team": {
             "id": 177,
             "name": "Dynamo Dresden",
             "shortName": "Dynamo Dresden",
@@ -297,7 +315,7 @@
           "goalDifference": -6
         },
         {
-          "position": 17,
+          "position": 18,
           "team": {
             "id": 105,
             "name": "Karlsruher SC",
@@ -313,24 +331,6 @@
           "goalsFor": 6,
           "goalsAgainst": 14,
           "goalDifference": -8
-        },
-        {
-          "position": 18,
-          "team": {
-            "id": 104,
-            "name": "Holstein Kiel",
-            "shortName": "Holstein Kiel",
-            "tla": "",
-            "crest": ""
-          },
-          "playedGames": 7,
-          "won": 0,
-          "draw": 4,
-          "lost": 3,
-          "points": 4,
-          "goalsFor": 7,
-          "goalsAgainst": 11,
-          "goalDifference": -4
         }
       ]
     }
