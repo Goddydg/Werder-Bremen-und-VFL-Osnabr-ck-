@@ -391,7 +391,7 @@ return subs.map(x=>`<div class="scorer"><b>${esc(String(x.minute||'').replace(/[
 }
 function renderLineups(apiMatch){
 const lineups=Array.isArray(apiMatch?.lineups)?apiMatch.lineups:[];
-if(!lineups.length)return '<p class="no-data">Noch keine Aufstellungen verfügbar. Sie werden häufig erst 20–40 Minuten vor Anstoß veröffentlicht.</p>';
+if(!lineups.length)return '';
 return lineups.map(team=>{const start=team.startXI||[],bench=team.substitutes||[];const players=(list)=>list.length?list.map(p=>`<div class="scorer">${p.player?.number!=null?esc(p.player.number)+' · ':''}${esc(p.player?.name||'Spieler unbekannt')}${p.player?.pos?` <span class="detail-label">(${esc(p.player.pos)})</span>`:''}</div>`).join(''):'<p class="no-data">Keine Angaben.</p>';return `<h4>${esc(team.team?.name||'Mannschaft')}${team.formation?' · '+esc(team.formation):''}</h4><div class="scorer"><b>Startaufstellung</b></div>${players(start)}<div class="scorer"><b>Ersatzbank</b></div>${players(bench)}${team.coach?.name?`<div class="scorer">Trainer: ${esc(team.coach.name)}</div>`:''}`;}).join('');
 }
 function renderStatistics(match,key,apiMatch){
@@ -419,9 +419,9 @@ const rd=cards.filter(c=>c.type==='red');if(rd.length)add('Rote Karten',count(rd
 }
 const subs=collectSubs(match,key,apiMatch);
 if(subs.length)add('Auswechslungen',count(subs,'home'),count(subs,'away'));
-if(!rows.length)return '<p class="no-data">Keine Spielstatistiken hinterlegt.</p>';
+if(!rows.length)return '';
 const names=teamNames(match),short=m=>m?.shortName||m?.teamName||'';
-return `<div class="stat-teams"><span>${esc(short(match.team1)||names.home)}</span><span>${esc(short(match.team2)||names.away)}</span></div><div class="stats-grid">${rows.map(r=>`<div class="stat"><strong>${esc(r.label)}</strong><span>${esc(r.home)} : ${esc(r.away)}</span></div>`).join('')}</div>${fromProvider?'':'<p class="no-data">Ballbesitz, Torschüsse und weitere Werte liefert aktuell keine der eingebundenen Datenquellen. Angezeigt werden die aus Tor-, Karten- und Wechseldaten berechneten Werte.</p>'}`;
+return `<div class="stat-teams"><span>${esc(short(match.team1)||names.home)}</span><span>${esc(short(match.team2)||names.away)}</span></div><div class="stats-grid">${rows.map(r=>`<div class="stat"><strong>${esc(r.label)}</strong><span>${esc(r.home)} : ${esc(r.away)}</span></div>`).join('')}</div>`;
 }
 function detailsHTML(match,key){
 const names=teamNames(match),apiMatch=findFootballMatch(match,key),results=[...(match.matchResults||[])].sort((a,b)=>Number(a.resultTypeID||0)-Number(b.resultTypeID||0));
@@ -438,9 +438,9 @@ if(ft?.home!=null)html+=detailLine('Endstand',`${ft.home} : ${ft.away}`);
 if(et?.home!=null)html+=detailLine('Verlängerung',`${et.home} : ${et.away}`);
 if(pen?.home!=null)html+=detailLine('Elfmeterschießen',`${pen.home} : ${pen.away}`);
 if(results.length){html+='<h4>Ergebnisse OpenLigaDB</h4>';results.forEach(r=>html+=detailLine(r.resultName||(Number(r.resultTypeID)===1?'Halbzeit':Number(r.resultTypeID)===2?'Endstand':'Spielstand'),`${r.pointsTeam1} : ${r.pointsTeam2}`));}
-html+='<h4>⚽ Torschützen</h4>'+renderGoals(match,key,apiMatch)+'<h4>🟨 Karten</h4>'+renderBookings(match,key,apiMatch)+'<h4>🔄 Auswechslungen</h4>'+renderSubs(match,key,apiMatch)+'<h4>📊 Spielstatistiken</h4>'+renderStatistics(match,key,apiMatch)+'<h4>👥 Aufstellungen & Ersatzbank</h4>'+renderLineups(apiMatch);
+html+='<h4>⚽ Torschützen</h4>'+renderGoals(match,key,apiMatch)+'<h4>🟨 Karten</h4>'+renderBookings(match,key,apiMatch)+'<h4>🔄 Auswechslungen</h4>'+renderSubs(match,key,apiMatch);{const stats=renderStatistics(match,key,apiMatch),lineups=renderLineups(apiMatch);if(stats)html+='<h4>📊 Spielstatistiken</h4>'+stats;if(lineups)html+='<h4>👥 Aufstellungen & Ersatzbank</h4>'+lineups;}
 const lineupIndex=selectedGames(key).findIndex(g=>matchKey(g)===matchKey(match));html+=`<button type="button" class="lineup-button" onclick="aufstellungAbrufen('${key}',${lineupIndex})">👥 Aufstellung, Spielerbilder &amp; Statistiken öffnen</button>`;
-html+=`<p class="no-data">Zusatzdaten: ${apiMatch?'API-Football':'Noch keine passenden API-Football-Daten für dieses Spiel'}. Aufstellungen und Statistiken sind abhängig von der Verfügbarkeit beim Anbieter.</p></div>`;
+html+=`</div>`;
 return html;
 }
 function toggleDetails(key,index){
