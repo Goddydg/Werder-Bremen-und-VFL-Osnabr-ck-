@@ -12,9 +12,15 @@ on:
 permissions:
   contents: write
 
+# Only one poller at a time; a newer run waits instead of cancelling a live one.
+concurrency:
+  group: card-events
+  cancel-in-progress: false
+
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    timeout-minutes: 350
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -208,9 +214,12 @@ jobs:
             let checked = 0, found = 0;
             let lastContent = contentKey(saved);
             // GitHub Actions scheduled workflows have a 5-minute minimum interval.
-            // Poll live match pages once per minute during this run.
-            for (let cycle = 0; cycle < 5; cycle++) {
+            // Poll once per minute. GitHub's cron is unreliable (runs can be hours apart),
+            // so while a match is live (or about to start) this run keeps polling for up to
+            // ~5.5 hours instead of stopping after 5 minutes.
+            for (let cycle = 0; cycle < 330; cycle++) {
               checked = 0; found = 0;
+              let active = false;
               const cycleNow = Date.now();
               const liveFrom = cycleNow - 3 * 60 * 60 * 1000;
               let finalBudget = 6; // finished matches that are read (once each) per poll
@@ -234,6 +243,8 @@ jobs:
                 if (!finished && date >= liveFrom && date <= cycleNow) mode = 'live';
                 else if (finished && date <= cycleNow && !previous.finalChecked && (previous.finalAttempts || 0) < 3 && finalBudget > 0
                   && (date > cycleNow - 24 * 3600 * 1000 || /werder|osnabr/i.test(home + ' ' + away))) { mode = 'final'; finalBudget--; }
+                if (!finished && date > cycleNow && date - cycleNow < 20 * 60 * 1000) active = true;
+                if (mode === 'live') active = true;
                 if (!mode) continue;
                 try {
                   const { url, html } = await fetchTicker(config, round, home, away, previous.url);
@@ -285,13 +296,16 @@ jobs:
                   execFileSync('git', ['config', 'user.name', 'github-actions[bot]']);
                   execFileSync('git', ['config', 'user.email', '41898282+github-actions[bot]@users.noreply.github.com']);
                   execFileSync('git', ['commit', '-m', `Refresh Bundesliga card events (${new Date().toISOString()})`]);
-                  execFileSync('git', ['push']);
+                  // other workflows also push to main; rebase first so the push is not rejected
+                  try { execFileSync('git', ['pull', '--rebase', '--autostash', 'origin', 'main']); } catch (error) { console.warn('rebase failed:', String(error)); }
+                  try { execFileSync('git', ['push']); } catch (error) { console.warn('push failed, retry next poll:', String(error)); lastContent = ''; }
                 }
               } else {
                 console.log(`Minute poll ${cycle + 1}: no card data changes.`);
               }
               console.log(`Minute poll ${cycle + 1}: read ${checked} match pages; extracted ${found} card events.`);
-              if (cycle < 4) await wait(60000);
+              if (!active && cycle >= 4) break;
+              await wait(60000);
             }
           })().catch(error => { console.error(error); process.exit(1); });
           NODE

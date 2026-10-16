@@ -360,11 +360,17 @@ const entries=collectGoals(match,apiMatch);
 if(!entries.length)return '<p class="no-data">Für dieses Spiel sind keine Torschützen hinterlegt.</p>';
 return entries.map(g=>`<div class="scorer"><b>${esc(g.minute==null?'':String(g.minute).includes('′')?g.minute:g.minute+'′')}</b> <span class="card-player">${crestForSide(match,key,g.side,g.team)}${esc(g.player)}</span> ${g.detail?`<span class="detail-label">(${esc(g.detail)})</span>`:''}${g.team?`<div class="detail-label">${esc(g.team)}</div>`:''}</div>`).join('');
 }
+function looseSameName(a,b){const x=normalizeName(a),y=normalizeName(b);return !!x&&!!y&&(x===y||x.includes(y)||y.includes(x));}
+function espnGameFor(match,key){const n=teamNames(match);return (espnCardEvents[key]||[]).find(g=>sameTeamName(g.home,n.home)&&sameTeamName(g.away,n.away))||null;}
 function collectBookings(match,key,apiMatch){
 const bookings=[...(savedWebsiteMatch(match,key)?.cards||[])];
 for(const e of apiEvents(apiMatch).filter(e=>e.type==='Card')){
 const type=/second yellow|yellow-red/i.test(String(e.detail||''))?'yellow-red':/red/i.test(String(e.detail||''))?'red':'yellow';
 if(!bookings.some(x=>x.type===type&&normalizeName(x.player)===normalizeName(e.player?.name)&&String(x.minute)===String(eventMinute(e))))bookings.push({minute:eventMinute(e),type,player:e.player?.name||'Spieler unbekannt',team:e.team?.name||''});
+}
+for(const c of (espnGameFor(match,key)?.cards||[])){
+if(bookings.some(x=>x.type===c.type&&looseSameName(x.player,c.player)&&Math.floor(minuteValue(x.minute))===Math.floor(minuteValue(c.minute))))continue;
+bookings.push({minute:c.minute,type:c.type,player:c.player,team:c.team,teamSide:c.teamSide});
 }
 bookings.sort((x,y)=>minuteValue(x.minute)-minuteValue(y.minute));
 return bookings;
@@ -380,6 +386,10 @@ for(const e of apiEvents(apiMatch).filter(e=>e.type==='subst')){const tn=e.team?
 for(const s of (savedWebsiteMatch(match,key)?.subs||[])){
 if(subs.some(x=>normalizeName(x.in)===normalizeName(s.in)&&Math.floor(minuteValue(x.minute))===Math.floor(minuteValue(s.minute))))continue;
 subs.push({minute:s.minute,in:s.in,out:s.out,team:s.team||'',side:s.teamSide||sideOfTeam(match,s.team)});
+}
+for(const s of (espnGameFor(match,key)?.subs||[])){
+if(subs.some(x=>looseSameName(x.in,s.in)&&Math.floor(minuteValue(x.minute))===Math.floor(minuteValue(s.minute))))continue;
+subs.push({minute:s.minute,in:s.in,out:s.out,team:s.team,side:s.teamSide||sideOfTeam(match,s.team)});
 }
 subs.sort((x,y)=>minuteValue(x.minute)-minuteValue(y.minute));
 return subs;
@@ -410,7 +420,7 @@ if(full)add('Tore',full.pointsTeam1,full.pointsTeam2);else if(goals.length)add('
 if(half)add('Halbzeit',half.pointsTeam1,half.pointsTeam2);
 const pens=goals.filter(g=>g.penalty);if(pens.length)add('Elfmetertore',count(pens,'home'),count(pens,'away'));
 const owns=goals.filter(g=>g.ownGoal);if(owns.length)add('Eigentore',count(owns,'home'),count(owns,'away'));
-const hasCardData=!!savedWebsiteMatch(match,key)||apiEvents(apiMatch).some(e=>e.type==='Card');
+const hasCardData=!!savedWebsiteMatch(match,key)||apiEvents(apiMatch).some(e=>e.type==='Card')||!!espnGameFor(match,key);
 if(hasCardData){
 const cards=collectBookings(match,key,apiMatch);
 add('Gelbe Karten',count(cards.filter(c=>c.type==='yellow'),'home'),count(cards.filter(c=>c.type==='yellow'),'away'));
@@ -514,7 +524,26 @@ Object.entries(value).forEach(([k,v])=>{if(!['team','competitor','athlete','play
 collect(data);
 const plays=data.plays?.items||data.plays||data.commentary?.items||data.commentary||[];
 collect(plays);
-return {id:item.id,home:item.home,away:item.away,events:found};
+const cards=[],subs=[];
+const cleanMin=v=>String(v||'').replace(/[′’'\s]/g,'');
+const sideOfId=id=>id&&String(id)===String(item.homeId)?'home':id&&String(id)===String(item.awayId)?'away':'';
+for(const e of (Array.isArray(data.keyEvents)?data.keyEvents:[])){
+const kind=[e.type?.text,e.type?.type].filter(Boolean).join(' ').toLowerCase();
+const minute=cleanMin(e.clock?.displayValue||e.time?.displayValue||'');
+const teamName=e.team?.displayName||e.team?.name||'';
+const side=sideOfId(e.team?.id)||sideOfTeam({team1:{teamName:item.homeName},team2:{teamName:item.awayName}},teamName);
+const names=(e.participants||[]).map(p=>p.athlete?.displayName||p.athlete?.fullName||'').filter(Boolean);
+if(/yellow.?card|red.?card|second yellow/.test(kind)){
+const type=/second yellow|yellow.?red/.test(kind+' '+String(e.text||'').toLowerCase())?'yellow-red':/red/.test(kind)?'red':'yellow';
+const player=names[0]||(String(e.text||'').match(/^([^(.]+?)\s*\(/)||[])[1]||'';
+if(player)cards.push({minute,type,player:player.trim(),team:teamName,teamSide:side});
+}else if(/substitution/.test(kind)){
+const m=String(e.text||'').match(/\.\s*(.+?)\s+replaces\s+(.+?)(?:\.|\s+because|\s+due\s|$)/i);
+const inName=m?m[1]:names[0]||'',outName=m?m[2]:names[1]||'';
+if(inName)subs.push({minute,in:inName.trim(),out:outName.trim(),team:teamName,teamSide:side});
+}
+}
+return {id:item.id,home:item.home,away:item.away,events:found,cards,subs};
 }));
 espnCardEvents[key]=results.filter(x=>x.status==='fulfilled').map(x=>x.value);
 }
