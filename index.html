@@ -172,6 +172,13 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 .matchday-section .match-team{min-height:24px}
 .matchday-scroll{height:156px;max-height:156px;gap:6px}
 #bl1-games .matchday-more,#bl2-games .matchday-more{margin:6px auto 0;padding:5px 12px;font-size:13px}
+/* Liga-Überschrift und Vereinsknopf nebeneinander */
+.league-head{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:nowrap;margin:0 0 10px}
+.league-head .league-title{margin:0;font-size:18px;gap:6px;min-width:0;white-space:nowrap}
+.league-head .league-logo{width:22px;height:22px;flex:0 0 22px}
+.league-head .club{margin:0;padding:5px 9px;gap:6px;font-size:14px;min-width:0;flex:0 1 auto}
+.league-head .club span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.league-head .club-logo{width:26px;height:26px;flex:0 0 26px}
 </style>
 </head>
 <body>
@@ -179,8 +186,7 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 <main>
 <section class="league live-league" id="live-league"><h2>🔴 Live-Spiele · 1. &amp; 2. Bundesliga</h2><div id="live-games"><p class="muted">Live-Spiele werden geladen …</p></div></section>
 <section class="league league-green">
-<h2 class="league-title"><img class="league-logo" src="https://crests.football-data.org/BL1.png" alt="Bundesliga-Logo">1. Bundesliga</h2>
-<div class="club"><img class="club-logo" id="bl1-club-logo" alt="" hidden><span>SV Werder Bremen</span></div>
+<div class="league-head"><h2 class="league-title"><img class="league-logo" src="https://crests.football-data.org/BL1.png" alt="Bundesliga-Logo">1. Bundesliga</h2><div class="club"><img class="club-logo" id="bl1-club-logo" alt="" hidden><span>SV Werder Bremen</span></div></div>
 <section class="matchday-section matchday-section-league" aria-label="Alle Spiele der Bundesliga">
 <div class="matchday-section-heading"><div><span class="section-eyebrow">LIGAÜBERSICHT</span><h3>Spiele des Spieltags</h3></div><button class="section-context matchday-more" type="button" onclick="toggleMatchday('bl1')" id="bl1-matchday-toggle">Alle Spiele anzeigen</button></div>
 <div id="bl1-selector"></div><div id="bl1-games">Daten werden geladen …</div>
@@ -191,8 +197,7 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 
 </section>
 <section class="league league-purple">
-<h2 class="league-title"><img class="league-logo" src="https://crests.football-data.org/BL2.png" alt="2. Bundesliga-Logo">2. Bundesliga</h2>
-<div class="club"><img class="club-logo" id="bl2-club-logo" alt="" hidden><span>VfL Osnabrück</span></div>
+<div class="league-head"><h2 class="league-title"><img class="league-logo" src="https://crests.football-data.org/BL2.png" alt="2. Bundesliga-Logo">2. Bundesliga</h2><div class="club"><img class="club-logo" id="bl2-club-logo" alt="" hidden><span>VfL Osnabrück</span></div></div>
 <section class="matchday-section matchday-section-league" aria-label="Alle Spiele der 2. Bundesliga">
 <div class="matchday-section-heading"><div><span class="section-eyebrow">LIGAÜBERSICHT</span><h3>Spiele des Spieltags</h3></div><button class="section-context matchday-more" type="button" onclick="toggleMatchday('bl2')" id="bl2-matchday-toggle">Alle Spiele anzeigen</button></div>
 <div id="bl2-selector"></div><div id="bl2-games">Daten werden geladen …</div>
