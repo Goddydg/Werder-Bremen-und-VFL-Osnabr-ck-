@@ -216,7 +216,7 @@ const data=await loadJSON(`https://site.api.espn.com/apis/site/v2/sports/soccer/
 return (data.events||[]).map(event=>{
 const competition=event.competitions?.[0],teams=competition?.competitors||[];
 const home=teams.find(team=>team.homeAway==='home'),away=teams.find(team=>team.homeAway==='away'),status=event.status||competition?.status||{};
-return {id:String(event.id||''),home:normalizeName(home?.team?.displayName||home?.team?.name),away:normalizeName(away?.team?.displayName||away?.team?.name),homeName:home?.team?.displayName||home?.team?.name||'',awayName:away?.team?.displayName||away?.team?.name||'',homeId:String(home?.team?.id||''),awayId:String(away?.team?.id||''),clock:status.displayClock||'',detail:status.type?.shortDetail||status.type?.detail||'',state:status.type?.state||'',period:status.period||0};
+return {id:String(event.id||''),home:normalizeName(home?.team?.displayName||home?.team?.name),away:normalizeName(away?.team?.displayName||away?.team?.name),homeName:home?.team?.displayName||home?.team?.name||'',awayName:away?.team?.displayName||away?.team?.name||'',homeId:String(home?.team?.id||''),awayId:String(away?.team?.id||''),homeScore:home?.score,awayScore:away?.score,clock:status.displayClock||'',detail:status.type?.shortDetail||status.type?.detail||'',state:status.type?.state||'',period:status.period||0};
 }).filter(item=>item.home&&item.away);
 }
 async function refreshESPNLiveMatches(){
@@ -225,6 +225,16 @@ lastEspnCheck=Date.now();
 const results=await Promise.allSettled([loadESPNLiveMatches('bl1'),loadESPNLiveMatches('bl2')]);
 if(results[0].status==='fulfilled')espnLiveMatches.bl1=results[0].value;
 if(results[1].status==='fulfilled')espnLiveMatches.bl2=results[1].value;
+}
+function liveScorePair(match,key){
+const names=teamNames(match),cands=[];
+const item=(espnLiveMatches[key]||[]).find(game=>sameTeamName(game.home,names.home)&&sameTeamName(game.away,names.away));
+if(item&&item.state!=='pre'&&item.homeScore!=null&&item.awayScore!=null&&item.homeScore!==''&&item.awayScore!==''){const h=Number(item.homeScore),a=Number(item.awayScore);if(Number.isFinite(h)&&Number.isFinite(a))cands.push([h,a]);}
+const shown=String(gameScore(match,key)).match(/^\s*(\d+)\s*:\s*(\d+)\s*$/);if(shown)cands.push([Number(shown[1]),Number(shown[2])]);
+const goals=(Array.isArray(match.goals)?match.goals:[]).filter(g=>g.scoreTeam1!=null&&g.scoreTeam2!=null);
+if(goals.length){const last=goals.reduce((b,g)=>(g.scoreTeam1+g.scoreTeam2)>=(b.scoreTeam1+b.scoreTeam2)?g:b);cands.push([Number(last.scoreTeam1),Number(last.scoreTeam2)]);}
+if(!cands.length)return [0,0];
+return cands.reduce((b,c)=>(c[0]+c[1])>(b[0]+b[1])?c:b);
 }
 function liveMinute(match,key){
 const names=teamNames(match),home=normalizeName(names.home),away=normalizeName(names.away);
@@ -600,7 +610,7 @@ let counted=0;
 games.forEach(g=>{
 const finished=isFinished(g),live=!finished&&isLive(g,key);if(!finished&&!live)return;
 const result=(g.matchResults||[]).filter(r=>r.pointsTeam1!=null&&r.pointsTeam2!=null).sort((a,b)=>Number(b.resultTypeID||0)-Number(a.resultTypeID||0))[0];
-let home,away;const shown=live?String(gameScore(g,key)).match(/^\s*(\d+)\s*:\s*(\d+)\s*$/):null;if(shown){home=Number(shown[1]);away=Number(shown[2]);}else if(result){home=Number(result.pointsTeam1);away=Number(result.pointsTeam2);}else{return;}
+let home,away;if(live){[home,away]=liveScorePair(g,key);}else if(result){home=Number(result.pointsTeam1);away=Number(result.pointsTeam2);}else{return;}
 const h=ensureTeam(g.team1),a=ensureTeam(g.team2);if(!h||!a)return;
 h.playedGames++;a.playedGames++;h.goalsFor+=home;h.goalsAgainst+=away;a.goalsFor+=away;a.goalsAgainst+=home;
 if(home>away){h.won++;a.lost++;h.points+=3;}else if(home<away){a.won++;h.lost++;a.points+=3;}else{h.draw++;a.draw++;h.points++;a.points++;}
