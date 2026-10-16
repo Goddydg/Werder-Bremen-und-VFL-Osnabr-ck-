@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T18:31:02.624Z",
+  "updatedAt": "2026-10-16T20:09:46.158Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1146,9 +1146,75 @@
         "away": "1. FC Köln",
         "round": 6,
         "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/6/eintracht-frankfurt-vs-1-fc-koeln/liveticker/",
-        "cards": [],
-        "subs": [],
-        "checkedAt": "2026-10-16T18:31:02.498Z"
+        "cards": [
+          {
+            "minute": "45′",
+            "type": "yellow",
+            "player": "Ísak Jóhannesson",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "away"
+          },
+          {
+            "minute": "39′",
+            "type": "yellow",
+            "player": "Lilian Brassier",
+            "crestId": "00000F",
+            "team": "Eintracht Frankfurt",
+            "teamSide": "home"
+          },
+          {
+            "minute": "24′",
+            "type": "yellow",
+            "player": "Mario Götze",
+            "crestId": "00000F",
+            "team": "Eintracht Frankfurt",
+            "teamSide": "home"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "71′",
+            "in": "Ansgar Knauff",
+            "out": "Nnamdi Collins",
+            "crestId": "00000F",
+            "team": "Eintracht Frankfurt",
+            "teamSide": "home"
+          },
+          {
+            "minute": "71′",
+            "in": "Noëll Aséko",
+            "out": "Mario Götze",
+            "crestId": "00000F",
+            "team": "Eintracht Frankfurt",
+            "teamSide": "home"
+          },
+          {
+            "minute": "68′",
+            "in": "Alessio Castro-Montes",
+            "out": "Joël Schmied",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "away"
+          },
+          {
+            "minute": "68′",
+            "in": "Mikey Moore",
+            "out": "Linton Maina",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "away"
+          },
+          {
+            "minute": "68′",
+            "in": "Paul Okon-Engstler",
+            "out": "Ísak Jóhannesson",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-10-16T20:09:45.988Z"
       }
     },
     "bl2": {
