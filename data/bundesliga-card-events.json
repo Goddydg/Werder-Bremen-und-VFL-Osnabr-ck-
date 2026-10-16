@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T04:17:17.454Z",
+  "updatedAt": "2026-10-16T04:18:27.888Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1390,7 +1390,7 @@
         "away": "VfL Osnabrück",
         "round": 3,
         "cards": [],
-        "finalAttempts": 2
+        "finalAttempts": 3
       },
       "83561": {
         "matchId": "83561",
