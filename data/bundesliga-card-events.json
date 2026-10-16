@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T04:14:25.690Z",
+  "updatedAt": "2026-10-16T04:15:57.973Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -8,7 +8,7 @@
         "away": "SV Werder Bremen",
         "round": 1,
         "cards": [],
-        "finalAttempts": 1
+        "finalAttempts": 2
       },
       "83171": {
         "matchId": "83171",
@@ -1382,6 +1382,434 @@
           }
         ],
         "checkedAt": "2026-10-16T04:14:25.689Z",
+        "finalChecked": true
+      },
+      "83543": {
+        "matchId": "83543",
+        "home": "VfL Bochum",
+        "away": "VfL Osnabrück",
+        "round": 3,
+        "cards": [],
+        "finalAttempts": 1
+      },
+      "83561": {
+        "matchId": "83561",
+        "home": "VfL Osnabrück",
+        "away": "Eintracht Braunschweig",
+        "round": 4,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/4/vfl-osnabrueck-vs-eintracht-braunschweig/liveticker/",
+        "cards": [
+          {
+            "minute": "90+1′",
+            "type": "yellow",
+            "player": "Florian Flick",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "away"
+          },
+          {
+            "minute": "80′",
+            "type": "yellow",
+            "player": "Noah Katterbach",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "away"
+          },
+          {
+            "minute": "79′",
+            "type": "yellow",
+            "player": "Di Michele Sanchez stößt seinen Gegenspieler a",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "away"
+          },
+          {
+            "minute": "78′",
+            "type": "yellow",
+            "player": "Fabio Di Michele Sanchez",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "away"
+          },
+          {
+            "minute": "75′",
+            "type": "yellow",
+            "player": "Aydin hält seinen Gegenspieler fest und sieht die",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "away"
+          },
+          {
+            "minute": "75′",
+            "type": "yellow",
+            "player": "Mehmet Can Aydin",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "away"
+          },
+          {
+            "minute": "59′",
+            "type": "yellow",
+            "player": "Nachdem Ehlers in einem Zweikampf zu spät komm"
+          },
+          {
+            "minute": "59′",
+            "type": "yellow",
+            "player": "Kevin Ehlers",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "away"
+          },
+          {
+            "minute": "22′",
+            "type": "yellow",
+            "player": "Fridolin Wagner",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "86′",
+            "in": "Luca Raimund",
+            "out": "Robin Meißner",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          },
+          {
+            "minute": "86′",
+            "in": "Konrad Faber",
+            "out": "Jonathan Gómez",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          },
+          {
+            "minute": "79′",
+            "in": "Noah Katterbach",
+            "out": "Fabio Di Michele Sanchez",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "away"
+          },
+          {
+            "minute": "79′",
+            "in": "Lino Tempelmann",
+            "out": "Samuele Di Benedetto",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "away"
+          },
+          {
+            "minute": "73′",
+            "in": "Leonhard Münst",
+            "out": "Ismail Badjie",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          },
+          {
+            "minute": "73′",
+            "in": "Jovan Mijatović",
+            "out": "Maximilian Entrup",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "away"
+          },
+          {
+            "minute": "61′",
+            "in": "Junior Zé",
+            "out": "Aaron Opoku",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "away"
+          },
+          {
+            "minute": "61′",
+            "in": "Jan Urbich",
+            "out": "Max Marie",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "away"
+          },
+          {
+            "minute": "45+1′",
+            "in": "Daniel Kofi Kyereh",
+            "out": "Fridolin Wagner",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          }
+        ],
+        "checkedAt": "2026-10-16T04:15:51.912Z",
+        "finalChecked": true
+      },
+      "83589": {
+        "matchId": "83589",
+        "home": "VfL Osnabrück",
+        "away": "Hertha BSC",
+        "round": 5,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/5/vfl-osnabrueck-vs-hertha-bsc/liveticker/",
+        "cards": [
+          {
+            "minute": "56′",
+            "type": "yellow",
+            "player": "Robin Fabinski",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          },
+          {
+            "minute": "50′",
+            "type": "yellow",
+            "player": "Adrian Beck",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          },
+          {
+            "minute": "37′",
+            "type": "yellow",
+            "player": "Linus Gechter",
+            "crestId": "00000Z",
+            "team": "Hertha BSC",
+            "teamSide": "away"
+          },
+          {
+            "minute": "10′",
+            "type": "yellow",
+            "player": "Josip Brekalo",
+            "crestId": "00000Z",
+            "team": "Hertha BSC",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "90+1′",
+            "in": "Luca Raimund",
+            "out": "Jonathan Gómez",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          },
+          {
+            "minute": "90+1′",
+            "in": "Theo Janotta",
+            "out": "Jannik Müller",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          },
+          {
+            "minute": "87′",
+            "in": "Soufian Gouram",
+            "out": "Jón Dagur Thorsteinsson",
+            "crestId": "00000Z",
+            "team": "Hertha BSC",
+            "teamSide": "away"
+          },
+          {
+            "minute": "87′",
+            "in": "Selim Telib",
+            "out": "Pascal Klemens",
+            "crestId": "00000Z",
+            "team": "Hertha BSC",
+            "teamSide": "away"
+          },
+          {
+            "minute": "77′",
+            "in": "Bernd Riesselmann",
+            "out": "Fridolin Wagner",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          },
+          {
+            "minute": "77′",
+            "in": "Konrad Faber",
+            "out": "Patrick Kammerbauer",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          },
+          {
+            "minute": "77′",
+            "in": "Farid Alfa-Ruprecht",
+            "out": "Oluwaseun Victor Adewumi",
+            "crestId": "00000Z",
+            "team": "Hertha BSC",
+            "teamSide": "away"
+          },
+          {
+            "minute": "77′",
+            "in": "Deyovaisio Zeefuik",
+            "out": "Mads Pedersen",
+            "crestId": "00000Z",
+            "team": "Hertha BSC",
+            "teamSide": "away"
+          },
+          {
+            "minute": "68′",
+            "in": "Gustaf Nilsson",
+            "out": "Sebastian Grønning",
+            "crestId": "00000Z",
+            "team": "Hertha BSC",
+            "teamSide": "away"
+          },
+          {
+            "minute": "68′",
+            "in": "Daniel Kofi Kyereh",
+            "out": "Leonhard Münst",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          }
+        ],
+        "checkedAt": "2026-10-16T04:15:55.189Z",
+        "finalChecked": true
+      },
+      "83600": {
+        "matchId": "83600",
+        "home": "Holstein Kiel",
+        "away": "VfL Osnabrück",
+        "round": 6,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/6/holstein-kiel-vs-vfl-osnabrueck/liveticker/",
+        "cards": [
+          {
+            "minute": "90+1′",
+            "type": "yellow",
+            "player": "Timo Schultz",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "away"
+          },
+          {
+            "minute": "75′",
+            "type": "yellow-red",
+            "player": "David Zec",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
+          },
+          {
+            "minute": "70′",
+            "type": "yellow",
+            "player": "Noah Madsen",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
+          },
+          {
+            "minute": "29′",
+            "type": "yellow",
+            "player": "Hiroki Sekine",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
+          },
+          {
+            "minute": "19′",
+            "type": "yellow",
+            "player": "Fridolin Wagner",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "away"
+          },
+          {
+            "minute": "10′",
+            "type": "yellow",
+            "player": "David Zec",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
+          },
+          {
+            "minute": "9′",
+            "type": "yellow",
+            "player": "Jonathan Gómez",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "away"
+          },
+          {
+            "minute": "1′",
+            "type": "yellow",
+            "player": "Robin Fabinski",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "89′",
+            "in": "Ikem Ugoh",
+            "out": "Hiroki Sekine",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
+          },
+          {
+            "minute": "89′",
+            "in": "Giorgi Kvilitaia",
+            "out": "Guillermo Balzi",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
+          },
+          {
+            "minute": "87′",
+            "in": "Leon Opitz",
+            "out": "Robin Meißner",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "away"
+          },
+          {
+            "minute": "87′",
+            "in": "Joel Abu Hanna",
+            "out": "Jonathan Gómez",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "away"
+          },
+          {
+            "minute": "74′",
+            "in": "Konrad Faber",
+            "out": "Patrick Kammerbauer",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "away"
+          },
+          {
+            "minute": "73′",
+            "in": "Luca Raimund",
+            "out": "Bernd Riesselmann",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "away"
+          },
+          {
+            "minute": "69′",
+            "in": "Steven Skrzybski",
+            "out": "Gyan de Regt",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
+          },
+          {
+            "minute": "63′",
+            "in": "Daniel Kofi Kyereh",
+            "out": "Fridolin Wagner",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-10-16T04:15:57.972Z",
         "finalChecked": true
       },
       "83608": {
