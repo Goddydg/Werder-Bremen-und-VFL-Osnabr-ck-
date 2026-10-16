@@ -598,9 +598,9 @@ const ensureTeam=(team)=>{const id=String(team?.teamId??team?.teamName??'');if(!
 games.forEach(g=>{ensureTeam(g.team1);ensureTeam(g.team2);});
 let counted=0;
 games.forEach(g=>{
-const finished=isFinished(g),live=throughRound===null&&!finished&&isLive(g,key);if(!finished&&!live)return;
+const finished=isFinished(g),live=!finished&&isLive(g,key);if(!finished&&!live)return;
 const result=(g.matchResults||[]).filter(r=>r.pointsTeam1!=null&&r.pointsTeam2!=null).sort((a,b)=>Number(b.resultTypeID||0)-Number(a.resultTypeID||0))[0];
-let home,away;if(result){home=Number(result.pointsTeam1);away=Number(result.pointsTeam2);}else{return;}
+let home,away;const shown=live?String(gameScore(g,key)).match(/^\s*(\d+)\s*:\s*(\d+)\s*$/):null;if(shown){home=Number(shown[1]);away=Number(shown[2]);}else if(result){home=Number(result.pointsTeam1);away=Number(result.pointsTeam2);}else{return;}
 const h=ensureTeam(g.team1),a=ensureTeam(g.team2);if(!h||!a)return;
 h.playedGames++;a.playedGames++;h.goalsFor+=home;h.goalsAgainst+=away;a.goalsFor+=away;a.goalsAgainst+=home;
 if(home>away){h.won++;a.lost++;h.points+=3;}else if(home<away){a.won++;h.lost++;a.points+=3;}else{h.draw++;a.draw++;h.points++;a.points++;}
