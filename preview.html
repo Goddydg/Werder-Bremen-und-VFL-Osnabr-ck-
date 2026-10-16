@@ -153,6 +153,7 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 .club-schedule-team:before{content:"";display:block;height:3px;width:48px;border-radius:4px;background:#4ed28a;margin:0 0 11px;}
 .club-schedule-team h4{font-size:16px;margin:0 0 10px;}
 @media(max-width:560px){.matchday-section{padding:10px}.matchday-section-heading{align-items:flex-start}.section-context{max-width:112px;white-space:normal}.club-schedule-team{margin-top:20px;padding:11px;}}
+.club-schedule-row.is-tbd{opacity:.78}.tbd-badge{display:inline-block;margin-left:6px;padding:1px 7px;border-radius:999px;font-size:11px;font-weight:700;line-height:1.5;background:rgba(255,196,0,.18);color:#ffc400;border:1px solid rgba(255,196,0,.45);white-space:nowrap}.tbd-note{margin:2px 0 8px;font-size:12px;opacity:.85}
 </style>
 </head>
 <body>
@@ -669,6 +670,32 @@ else if(event._source==='openligadb')competition=event._competitionLabel||'Bunde
 else competition='Wettbewerb nicht angegeben';
 return {homeName,awayName,score,status:'',competition:String(competition),round};
 }
+let clubRoundHorizon={bl1:null,bl2:null};
+// Bis zu welchem Spieltag sind die Ansetzungen fest? Die DFL legt Termine nur schrittweise fest; bei OpenLigaDB
+// erkennt man das daran, dass noch nicht gespielte Spiele nach der ersten Spielplan-Anlage nochmals geändert wurden.
+function computeFixedHorizon(list){
+const days=list.map(m=>String(m.lastUpdateDateTime||'').slice(0,10)).filter(Boolean);
+if(!days.length)return null;
+const count={};days.forEach(d=>{count[d]=(count[d]||0)+1;});
+const base=Object.keys(count).sort((a,b)=>count[b]-count[a])[0];
+const limit=new Date(base).getTime()+7*86400000;
+let horizon=0;
+for(const m of list){if(m.matchIsFinished||!m.lastUpdateDateTime)continue;if(new Date(m.lastUpdateDateTime).getTime()>limit)horizon=Math.max(horizon,Number(m.group?.groupOrderID||0));}
+return horizon||null;
+}
+function isDateTbd(event,key){
+const m=event&&event._match;if(!m||m.matchIsFinished)return false;
+const t=new Date(eventDate(event)).getTime();if(!Number.isFinite(t)||t<Date.now())return false;
+const status=apiStatus(findFootballMatch(m,key));
+if(status==='SCHEDULED')return true;
+if(status==='TIMED')return false;
+const horizon=clubRoundHorizon[key];
+return horizon!=null&&roundNumber(m)>horizon;
+}
+function scheduleDateOnly(event){
+const date=eventDate(event);if(!date)return 'Termin offen';
+return 'ca. '+new Date(date).toLocaleDateString('de-DE',{weekday:'short',day:'2-digit',month:'2-digit',year:'numeric'});
+}
 function renderClubSchedule(key){
 const el=document.getElementById(key+'-club-schedule');if(!el)return;
 const events=clubSchedules[key]||[];
@@ -681,11 +708,13 @@ const orderedPast=past.slice().sort((a,b)=>new Date(eventDate(a))-new Date(event
 const visibleUpcoming=clubScheduleExpanded[key]?upcoming:upcoming.slice(0,3);
 const renderRows=(list,markNext=false)=>list.map((event,index)=>{
 const p=scheduleEventParts(event);
+const tbd=isDateTbd(event,key);
 const result=p.score||'– : –';
 const roundLabel=p.round?(String(p.round).match(/spieltag/i)?String(p.round):'Spieltag '+p.round):'';
-return '<div '+(markNext&&index===0?'id="'+key+'-next-fixture" ':'')+'class="club-schedule-row"><span class="club-schedule-date"><span>'+esc(scheduleDate(event))+'</span><span class="club-schedule-competition-inline">'+esc(p.competition)+'</span>'+(roundLabel?'<small class="club-schedule-round">'+esc(roundLabel)+'</small>':'')+'</span><strong>'+esc(p.homeName)+' – '+esc(p.awayName)+'</strong><span class="club-schedule-result">'+esc(result)+'</span></div>';
+return '<div '+(markNext&&index===0?'id="'+key+'-next-fixture" ':'')+'class="club-schedule-row'+(tbd?' is-tbd':'')+'"><span class="club-schedule-date"><span>'+esc(tbd?scheduleDateOnly(event):scheduleDate(event))+(tbd?'<span class="tbd-badge">Termin offen</span>':'')+'</span><span class="club-schedule-competition-inline">'+esc(p.competition)+'</span>'+(roundLabel?'<small class="club-schedule-round">'+esc(roundLabel)+'</small>':'')+'</span><strong>'+esc(p.homeName)+' – '+esc(p.awayName)+'</strong><span class="club-schedule-result">'+esc(result)+'</span></div>';
 }).join('');
-const upcomingHTML=visibleUpcoming.length?renderRows(visibleUpcoming,true):'<p class="club-schedule-empty">Keine weiteren terminierten Spiele gefunden.</p>';
+const tbdNote=visibleUpcoming.some(event=>isDateTbd(event,key))?'<p class="tbd-note"><span class="tbd-badge">Termin offen</span> = noch nicht fest angesetzt, Datum und Uhrzeit sind vorläufig.</p>':'';
+const upcomingHTML=visibleUpcoming.length?tbdNote+renderRows(visibleUpcoming,true):'<p class="club-schedule-empty">Keine weiteren terminierten Spiele gefunden.</p>';
 const pastHTML=orderedPast.length?'<div class="club-schedule-past" id="'+key+'-schedule-past"><div class="club-schedule-past-title">Bisherige Spieltage – Ergebnisse</div>'+renderRows(orderedPast)+'</div>':'';
 const button=upcoming.length>3?'<button class="club-schedule-more" type="button" onclick="toggleClubSchedule(&quot;'+key+'&quot;)">'+(clubScheduleExpanded[key]?'Weniger Zukunftsspiele anzeigen':'Alle '+upcoming.length+' zukünftigen Spiele anzeigen')+'</button>':'';
 el.innerHTML='<h4>'+heading+'</h4><div class="club-schedule-list '+(clubScheduleExpanded[key]?'is-expanded':'')+'" id="'+key+'-schedule-scroll">'+pastHTML+upcomingHTML+'</div>'+button;
@@ -698,6 +727,7 @@ const target=key==='bl1'?isWerder:isVfL;
 let events=[];
 try{
 const leagueMatches=await loadLiveGames(key);
+clubRoundHorizon[key]=computeFixedHorizon(leagueMatches);
 events=leagueMatches.filter(match=>{
 const names=teamNames(match);
 return target(names.home)||target(names.away);
@@ -707,6 +737,7 @@ const homeResult=(match.matchResults||[]).slice().sort((a,b)=>Number(b.resultTyp
 const scoreHome=homeResult&&homeResult.pointsTeam1,scoreAway=homeResult&&homeResult.pointsTeam2;
 const finished=Boolean(match.matchIsFinished);
 return {
+_match:match,
 date:match.matchDateTime,
 name:names.away+' at '+names.home,
 _source:'openligadb',
@@ -857,6 +888,7 @@ if(results[0].status==='fulfilled')matches.bl1=results[0].value;else console.war
 if(results[1].status==='fulfilled')matches.bl2=results[1].value;else console.warn('BL2 Live-Abruf fehlgeschlagen:',results[1].reason);
 if(!savedSourcesLoaded||Date.now()-lastSavedSourcesCheck>60000){
 await loadSavedSources();
+if(!savedSourcesLoaded){renderClubSchedule('bl1');renderClubSchedule('bl2');}
 const tableResults=await Promise.allSettled([loadFile('bundesliga.json'),loadFile('2bundesliga-tabelle.json')]);
 if(tableResults[0].status==='fulfilled')standings.bl1=tableResults[0].value;
 if(tableResults[1].status==='fulfilled')standings.bl2=tableResults[1].value;
