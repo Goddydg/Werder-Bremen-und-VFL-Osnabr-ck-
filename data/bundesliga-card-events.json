@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T20:17:04.337Z",
+  "updatedAt": "2026-10-16T20:27:27.340Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1170,6 +1170,14 @@
             "crestId": "00000F",
             "team": "Eintracht Frankfurt",
             "teamSide": "home"
+          },
+          {
+            "minute": "90+4′",
+            "type": "yellow",
+            "player": "Borna Sosa",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "away"
           }
         ],
         "subs": [
@@ -1238,7 +1246,8 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-16T20:17:04.166Z"
+        "checkedAt": "2026-10-16T20:27:27.169Z",
+        "finalChecked": true
       }
     },
     "bl2": {
