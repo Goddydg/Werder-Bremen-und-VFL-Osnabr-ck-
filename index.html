@@ -154,6 +154,7 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 .club-schedule-team h4{font-size:16px;margin:0 0 10px;}
 @media(max-width:560px){.matchday-section{padding:10px}.matchday-section-heading{align-items:flex-start}.section-context{max-width:112px;white-space:normal}.club-schedule-team{margin-top:20px;padding:11px;}}
 .club-schedule-row.is-tbd{opacity:.78}.tbd-badge{display:inline-block;margin-left:6px;padding:1px 7px;border-radius:999px;font-size:11px;font-weight:700;line-height:1.5;background:rgba(255,196,0,.18);color:#ffc400;border:1px solid rgba(255,196,0,.45);white-space:nowrap}.tbd-note{margin:2px 0 8px;font-size:12px;opacity:.85}
+.club-schedule-toggle{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:0!important;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent}.club-schedule-toggle.is-open{margin-bottom:9px!important}.club-schedule-chevron{font-size:12px;opacity:.75}
 </style>
 </head>
 <body>
@@ -670,7 +671,8 @@ else if(event._source==='openligadb')competition=event._competitionLabel||'Bunde
 else competition='Wettbewerb nicht angegeben';
 return {homeName,awayName,score,status:'',competition:String(competition),round};
 }
-let clubRoundHorizon={bl1:null,bl2:null};
+let clubRoundHorizon={bl1:null,bl2:null},clubScheduleOpen={bl1:false,bl2:false};
+function toggleClubScheduleOpen(key){clubScheduleOpen[key]=!clubScheduleOpen[key];renderClubSchedule(key);}
 // Bis zu welchem Spieltag sind die Ansetzungen fest? Die DFL legt Termine nur schrittweise fest; bei OpenLigaDB
 // erkennt man das daran, dass noch nicht gespielte Spiele nach der ersten Spielplan-Anlage nochmals geändert wurden.
 function computeFixedHorizon(list){
@@ -699,8 +701,11 @@ return 'ca. '+new Date(date).toLocaleDateString('de-DE',{weekday:'short',day:'2-
 function renderClubSchedule(key){
 const el=document.getElementById(key+'-club-schedule');if(!el)return;
 const events=clubSchedules[key]||[];
-const heading=key==='bl1'?'Alle Spiele von Werder Bremen':'Alle Spiele des VfL Osnabrück';
-if(!events.length){el.innerHTML='<h4>'+heading+'</h4><p class="club-schedule-empty">'+(clubScheduleLoaded[key]?'Der externe Spielplan lieferte keine Spiele.':'Spielplan wird geladen …')+'</p>';return;}
+const title=key==='bl1'?'Alle Spiele von Werder Bremen':'Alle Spiele des VfL Osnabrück';
+const open=clubScheduleOpen[key];
+const head='<h4 class="club-schedule-toggle'+(open?' is-open':'')+'" role="button" tabindex="0" aria-expanded="'+open+'" onclick="toggleClubScheduleOpen(&quot;'+key+'&quot;)" onkeydown="if(event.key===&quot;Enter&quot;||event.key===&quot; &quot;){event.preventDefault();toggleClubScheduleOpen(&quot;'+key+'&quot;);}"><span>'+title+'</span><span class="club-schedule-chevron" aria-hidden="true">'+(open?'▲':'▼')+'</span></h4>';
+if(!open){el.innerHTML=head;return;}
+if(!events.length){el.innerHTML=head+'<p class="club-schedule-empty">'+(clubScheduleLoaded[key]?'Der externe Spielplan lieferte keine Spiele.':'Spielplan wird geladen …')+'</p>';return;}
 const dated=events.filter(event=>eventDate(event)&&Number.isFinite(new Date(eventDate(event)).getTime()));
 const past=dated.filter(event=>new Date(eventDate(event)).getTime()<Date.now()).sort((a,b)=>new Date(eventDate(b))-new Date(eventDate(a)));
 const upcoming=dated.filter(event=>new Date(eventDate(event)).getTime()>=Date.now()).sort((a,b)=>new Date(eventDate(a))-new Date(eventDate(b)));
@@ -717,7 +722,7 @@ const tbdNote=visibleUpcoming.some(event=>isDateTbd(event,key))?'<p class="tbd-n
 const upcomingHTML=visibleUpcoming.length?tbdNote+renderRows(visibleUpcoming,true):'<p class="club-schedule-empty">Keine weiteren terminierten Spiele gefunden.</p>';
 const pastHTML=orderedPast.length?'<div class="club-schedule-past" id="'+key+'-schedule-past"><div class="club-schedule-past-title">Bisherige Spieltage – Ergebnisse</div>'+renderRows(orderedPast)+'</div>':'';
 const button=upcoming.length>3?'<button class="club-schedule-more" type="button" onclick="toggleClubSchedule(&quot;'+key+'&quot;)">'+(clubScheduleExpanded[key]?'Weniger Zukunftsspiele anzeigen':'Alle '+upcoming.length+' zukünftigen Spiele anzeigen')+'</button>':'';
-el.innerHTML='<h4>'+heading+'</h4><div class="club-schedule-list '+(clubScheduleExpanded[key]?'is-expanded':'')+'" id="'+key+'-schedule-scroll">'+pastHTML+upcomingHTML+'</div>'+button;
+el.innerHTML=head+'<div class="club-schedule-list '+(clubScheduleExpanded[key]?'is-expanded':'')+'" id="'+key+'-schedule-scroll">'+pastHTML+upcomingHTML+'</div>'+button;
 const list=document.getElementById(key+'-schedule-scroll'),nextFixture=document.getElementById(key+'-next-fixture');if(list&&nextFixture){list.scrollTop=Math.max(0,nextFixture.offsetTop-list.offsetTop);}
 }
 function toggleClubSchedule(key){clubScheduleExpanded[key]=!clubScheduleExpanded[key];renderClubSchedule(key);}
