@@ -230,7 +230,7 @@ function liveScorePair(match,key){
 const names=teamNames(match),cands=[];
 const item=(espnLiveMatches[key]||[]).find(game=>sameTeamName(game.home,names.home)&&sameTeamName(game.away,names.away));
 if(item&&item.state!=='pre'&&item.homeScore!=null&&item.awayScore!=null&&item.homeScore!==''&&item.awayScore!==''){const h=Number(item.homeScore),a=Number(item.awayScore);if(Number.isFinite(h)&&Number.isFinite(a))cands.push([h,a]);}
-const shown=String(gameScore(match,key)).match(/^\s*(\d+)\s*:\s*(\d+)\s*$/);if(shown)cands.push([Number(shown[1]),Number(shown[2])]);
+const shown=String(baseGameScore(match,key)).match(/^\s*(\d+)\s*:\s*(\d+)\s*$/);if(shown)cands.push([Number(shown[1]),Number(shown[2])]);
 const goals=(Array.isArray(match.goals)?match.goals:[]).filter(g=>g.scoreTeam1!=null&&g.scoreTeam2!=null);
 if(goals.length){const last=goals.reduce((b,g)=>(g.scoreTeam1+g.scoreTeam2)>=(b.scoreTeam1+b.scoreTeam2)?g:b);cands.push([Number(last.scoreTeam1),Number(last.scoreTeam2)]);}
 if(!cands.length)return [0,0];
@@ -302,13 +302,17 @@ if(goals?.home!=null&&goals?.away!=null)return `${goals.home} : ${goals.away}`;
 const score=match?.score,ft=score?.fulltime||score?.fullTime,regular=score?.regularTime,chosen=ft?.home!=null&&ft?.away!=null?ft:regular?.home!=null&&regular?.away!=null?regular:null;
 return chosen?`${chosen.home} : ${chosen.away}`:null;
 }
-function gameScore(match,key){
+function baseGameScore(match,key){
 const apiMatch=findFootballMatch(match,key),apiResult=footballScore(apiMatch);
 if(apiResult)return apiResult;
 const results=match.matchResults||[];
 if(!results.length)return '– : –';
 const result=results.reduce((best,r)=>!best||Number(r.resultTypeID||0)>Number(best.resultTypeID||0)?r:best,null);
 return !result||result.pointsTeam1==null||result.pointsTeam2==null?'– : –':`${result.pointsTeam1} : ${result.pointsTeam2}`;
+}
+function gameScore(match,key){
+if(!isFinished(match)&&isLive(match,key)){const p=liveScorePair(match,key);return `${p[0]} : ${p[1]}`;}
+return baseGameScore(match,key);
 }
 function isLive(match,key){
 const status=apiStatus(findFootballMatch(match,key));
@@ -874,6 +878,10 @@ if(showError)alert('Live-Daten konnten nicht geladen werden. Bitte später erneu
 }
 async function refreshLoop(){await refreshData();setTimeout(refreshLoop,2000);}
 refreshLoop();
+// Neue App-Version automatisch laden: die Seite prüft regelmäßig, ob sich ihr eigener Code geändert hat.
+(function(){let base=null;const hash=t=>{let h=5381;for(let i=0;i<t.length;i++)h=((h<<5)+h+t.charCodeAt(i))|0;return h;};
+async function check(){try{const r=await fetch(location.href.split('#')[0]+(location.href.includes('?')?'&':'?')+'v='+Date.now(),{cache:'no-store'});if(!r.ok)return;const h=hash(await r.text());if(base===null)base=h;else if(h!==base)location.reload();}catch(e){}}
+check();setInterval(check,60000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)check();});})();
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshData();});
 </script>
 </body>
