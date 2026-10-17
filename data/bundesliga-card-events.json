@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T20:15:16.031Z",
+  "updatedAt": "2026-10-17T20:20:27.245Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3503,6 +3503,14 @@
             "crestId": "000001",
             "team": "Hannover 96",
             "teamSide": "home"
+          },
+          {
+            "minute": "90+2′",
+            "type": "yellow",
+            "player": "Joel Chima Fujita",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "away"
           }
         ],
         "subs": [
@@ -3563,7 +3571,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-17T20:15:16.029Z"
+        "checkedAt": "2026-10-17T20:20:27.244Z"
       },
       "83628": {
         "matchId": "83628",
