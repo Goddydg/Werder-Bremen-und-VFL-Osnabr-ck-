@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T18:47:22.703Z",
+  "updatedAt": "2026-10-17T19:50:22.351Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3505,8 +3505,25 @@
             "teamSide": "home"
           }
         ],
-        "subs": [],
-        "checkedAt": "2026-10-17T18:47:22.702Z"
+        "subs": [
+          {
+            "minute": "62′",
+            "in": "Martijn Kaars",
+            "out": "Youssoupha Niang",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "away"
+          },
+          {
+            "minute": "62′",
+            "in": "Sam Klein",
+            "out": "Mathias Rasmussen",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-10-17T19:50:22.351Z"
       },
       "83628": {
         "matchId": "83628",
