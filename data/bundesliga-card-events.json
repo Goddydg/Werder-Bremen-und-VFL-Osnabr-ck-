@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T14:50:30.462Z",
+  "updatedAt": "2026-10-17T14:51:44.817Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1307,7 +1307,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T14:50:18.926Z"
+        "checkedAt": "2026-10-17T14:51:33.244Z"
       },
       "83206": {
         "matchId": "83206",
@@ -1325,8 +1325,17 @@
             "teamSide": "home"
           }
         ],
-        "subs": [],
-        "checkedAt": "2026-10-17T14:50:19.850Z"
+        "subs": [
+          {
+            "minute": "61′",
+            "in": "Otto Stange",
+            "out": "Yussuf Poulsen",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "home"
+          }
+        ],
+        "checkedAt": "2026-10-17T14:51:34.168Z"
       },
       "83207": {
         "matchId": "83207",
@@ -1354,7 +1363,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T14:50:20.871Z"
+        "checkedAt": "2026-10-17T14:51:35.188Z"
       },
       "83208": {
         "matchId": "83208",
@@ -1406,7 +1415,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T14:50:21.891Z"
+        "checkedAt": "2026-10-17T14:51:36.208Z"
       }
     },
     "bl2": {
