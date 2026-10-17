@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T15:15:13.835Z",
+  "updatedAt": "2026-10-17T15:16:28.240Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1363,7 +1363,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:15:02.177Z"
+        "checkedAt": "2026-10-17T15:16:16.610Z"
       },
       "83206": {
         "matchId": "83206",
@@ -1471,7 +1471,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:15:03.105Z"
+        "checkedAt": "2026-10-17T15:16:17.537Z"
       },
       "83207": {
         "matchId": "83207",
@@ -1487,6 +1487,14 @@
             "crestId": "00000L",
             "team": "SC Paderborn 07",
             "teamSide": "away"
+          },
+          {
+            "minute": "86′",
+            "type": "yellow",
+            "player": "Youri Regeer",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "home"
           }
         ],
         "subs": [
@@ -1547,7 +1555,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:15:04.126Z"
+        "checkedAt": "2026-10-17T15:16:18.559Z"
       },
       "83208": {
         "matchId": "83208",
@@ -1639,7 +1647,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:15:05.149Z"
+        "checkedAt": "2026-10-17T15:16:19.588Z"
       }
     },
     "bl2": {
