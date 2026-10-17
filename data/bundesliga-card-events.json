@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T20:14:12.371Z",
+  "updatedAt": "2026-10-17T20:15:16.031Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3515,7 +3515,7 @@
             "teamSide": "away"
           },
           {
-            "minute": "86′",
+            "minute": "85′",
             "in": "Ricky-Jade Jones",
             "out": "Abdoulie Ceesay",
             "crestId": "00000H",
@@ -3563,7 +3563,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-17T20:14:12.370Z"
+        "checkedAt": "2026-10-17T20:15:16.029Z"
       },
       "83628": {
         "matchId": "83628",
