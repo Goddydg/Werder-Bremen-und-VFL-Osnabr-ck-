@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T13:57:32.136Z",
+  "updatedAt": "2026-10-17T13:58:54.883Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1282,7 +1282,7 @@
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-17T13:57:00.625Z"
+        "checkedAt": "2026-10-17T13:58:34.846Z"
       },
       "83206": {
         "matchId": "83206",
@@ -1292,7 +1292,7 @@
         "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/6/hamburger-sv-vs-vfb-stuttgart/liveticker/",
         "cards": [],
         "subs": [],
-        "checkedAt": "2026-10-17T13:57:03.146Z"
+        "checkedAt": "2026-10-17T13:58:35.771Z"
       },
       "83207": {
         "matchId": "83207",
@@ -1300,9 +1300,18 @@
         "away": "SC Paderborn 07",
         "round": 6,
         "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/6/sv-werder-bremen-vs-sc-paderborn-07/liveticker/",
-        "cards": [],
+        "cards": [
+          {
+            "minute": "4′",
+            "type": "yellow",
+            "player": "Stefano Marino",
+            "crestId": "00000L",
+            "team": "SC Paderborn 07",
+            "teamSide": "away"
+          }
+        ],
         "subs": [],
-        "checkedAt": "2026-10-17T13:57:04.166Z"
+        "checkedAt": "2026-10-17T13:58:36.788Z"
       },
       "83208": {
         "matchId": "83208",
@@ -1312,7 +1321,7 @@
         "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/6/fc-schalke-04-vs-1-fsv-mainz-05/liveticker/",
         "cards": [],
         "subs": [],
-        "checkedAt": "2026-10-17T13:57:05.188Z"
+        "checkedAt": "2026-10-17T13:58:37.816Z"
       }
     },
     "bl2": {
@@ -2983,7 +2992,7 @@
         "away": "VfL Bochum",
         "round": 8,
         "cards": [],
-        "finalAttempts": 1
+        "finalAttempts": 2
       },
       "83632": {
         "matchId": "83632",
