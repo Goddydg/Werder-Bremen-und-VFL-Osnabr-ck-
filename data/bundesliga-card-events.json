@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T14:07:38.488Z",
+  "updatedAt": "2026-10-17T14:13:45.905Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1298,7 +1298,7 @@
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-17T14:07:26.870Z"
+        "checkedAt": "2026-10-17T14:13:34.256Z"
       },
       "83206": {
         "matchId": "83206",
@@ -1308,7 +1308,7 @@
         "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/6/hamburger-sv-vs-vfb-stuttgart/liveticker/",
         "cards": [],
         "subs": [],
-        "checkedAt": "2026-10-17T14:07:27.796Z"
+        "checkedAt": "2026-10-17T14:13:35.179Z"
       },
       "83207": {
         "matchId": "83207",
@@ -1327,7 +1327,7 @@
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-17T14:07:28.818Z"
+        "checkedAt": "2026-10-17T14:13:36.197Z"
       },
       "83208": {
         "matchId": "83208",
@@ -1335,9 +1335,18 @@
         "away": "1. FSV Mainz 05",
         "round": 6,
         "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/6/fc-schalke-04-vs-1-fsv-mainz-05/liveticker/",
-        "cards": [],
+        "cards": [
+          {
+            "minute": "41′",
+            "type": "yellow",
+            "player": "Nadiem Amiri",
+            "crestId": "000006",
+            "team": "1. FSV Mainz 05",
+            "teamSide": "away"
+          }
+        ],
         "subs": [],
-        "checkedAt": "2026-10-17T14:07:29.835Z"
+        "checkedAt": "2026-10-17T14:13:37.219Z"
       }
     },
     "bl2": {
