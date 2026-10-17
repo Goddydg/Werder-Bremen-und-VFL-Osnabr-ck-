@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T15:07:46.943Z",
+  "updatedAt": "2026-10-17T15:09:01.433Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1363,7 +1363,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:07:35.453Z"
+        "checkedAt": "2026-10-17T15:08:49.801Z"
       },
       "83206": {
         "matchId": "83206",
@@ -1382,6 +1382,46 @@
           }
         ],
         "subs": [
+          {
+            "minute": "78′",
+            "in": "Albert Grønbæk",
+            "out": "Martin Adeline",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "home"
+          },
+          {
+            "minute": "78′",
+            "in": "Terem Moffi",
+            "out": "Fábio Vieira",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "home"
+          },
+          {
+            "minute": "78′",
+            "in": "Zakaria El Ouahdi",
+            "out": "Louis Lemke",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "home"
+          },
+          {
+            "minute": "77′",
+            "in": "Dženan Pejčinović",
+            "out": "Ermedin Demirović",
+            "crestId": "00000D",
+            "team": "VfB Stuttgart",
+            "teamSide": "away"
+          },
+          {
+            "minute": "77′",
+            "in": "Leo Sauer",
+            "out": "Jamie Leweling",
+            "crestId": "00000D",
+            "team": "VfB Stuttgart",
+            "teamSide": "away"
+          },
           {
             "minute": "67′",
             "in": "Chris Führich",
@@ -1407,7 +1447,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:07:36.381Z"
+        "checkedAt": "2026-10-17T15:08:50.726Z"
       },
       "83207": {
         "matchId": "83207",
@@ -1475,7 +1515,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:07:37.402Z"
+        "checkedAt": "2026-10-17T15:08:51.751Z"
       },
       "83208": {
         "matchId": "83208",
@@ -1559,7 +1599,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:07:38.422Z"
+        "checkedAt": "2026-10-17T15:08:52.774Z"
       }
     },
     "bl2": {
