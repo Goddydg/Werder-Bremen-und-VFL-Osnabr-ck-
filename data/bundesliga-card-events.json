@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T15:12:45.048Z",
+  "updatedAt": "2026-10-17T15:13:59.323Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1363,7 +1363,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:12:33.421Z"
+        "checkedAt": "2026-10-17T15:13:47.789Z"
       },
       "83206": {
         "matchId": "83206",
@@ -1376,6 +1376,14 @@
             "minute": "55′",
             "type": "yellow",
             "player": "Warmed Omari",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "home"
+          },
+          {
+            "minute": "82′",
+            "type": "yellow",
+            "player": "Nicolás Capaldo",
             "crestId": "00000C",
             "team": "Hamburger SV",
             "teamSide": "home"
@@ -1447,7 +1455,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:12:34.343Z"
+        "checkedAt": "2026-10-17T15:13:48.711Z"
       },
       "83207": {
         "matchId": "83207",
@@ -1523,7 +1531,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:12:35.366Z"
+        "checkedAt": "2026-10-17T15:13:49.730Z"
       },
       "83208": {
         "matchId": "83208",
@@ -1615,7 +1623,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:12:36.385Z"
+        "checkedAt": "2026-10-17T15:13:50.749Z"
       }
     },
     "bl2": {
