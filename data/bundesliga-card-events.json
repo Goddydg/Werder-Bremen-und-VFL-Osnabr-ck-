@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T15:05:18.085Z",
+  "updatedAt": "2026-10-17T15:06:32.487Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1347,7 +1347,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:05:06.467Z"
+        "checkedAt": "2026-10-17T15:06:20.861Z"
       },
       "83206": {
         "matchId": "83206",
@@ -1391,7 +1391,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:05:07.392Z"
+        "checkedAt": "2026-10-17T15:06:21.787Z"
       },
       "83207": {
         "matchId": "83207",
@@ -1459,7 +1459,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:05:08.412Z"
+        "checkedAt": "2026-10-17T15:06:22.807Z"
       },
       "83208": {
         "matchId": "83208",
@@ -1494,6 +1494,14 @@
           }
         ],
         "subs": [
+          {
+            "minute": "75′",
+            "in": "Ransford-Yeboah Königsdörffer",
+            "out": "Sheraldo Becker",
+            "crestId": "000006",
+            "team": "1. FSV Mainz 05",
+            "teamSide": "away"
+          },
           {
             "minute": "75′",
             "in": "Paul Nebel",
@@ -1535,7 +1543,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:05:09.432Z"
+        "checkedAt": "2026-10-17T15:06:23.827Z"
       }
     },
     "bl2": {
