@@ -22,6 +22,15 @@ h2{font-size:22px;margin:4px 0 14px}
 #live-league h2{font-size:19px;white-space:nowrap;letter-spacing:-.3px}
 .red-card-indicator{display:inline-block;margin-right:4px;font-size:1em;vertical-align:baseline;filter:drop-shadow(0 0 1px rgba(0,0,0,.4))}@media(max-width:380px){#live-league h2{font-size:16px;letter-spacing:-.5px}}
 /* Testseite: Live-Spiele breiter, damit die Spielminute lesbar bleibt */
+/* Live-Überschrift: pulsierender LIVE-Pill statt rotem Emoji */
+#live-league h2.live-title{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:700;letter-spacing:.2px;white-space:nowrap}
+.live-pill{display:inline-flex;align-items:center;gap:7px;flex-shrink:0;padding:5px 13px 5px 10px;border-radius:999px;background:linear-gradient(135deg,#ff2d55,#ff7a00);color:#fff;font-size:15px;font-weight:900;letter-spacing:.14em;line-height:1;text-transform:uppercase;animation:livePillGlow 2s ease-out infinite}
+.live-pill i{display:block;width:8px;height:8px;border-radius:50%;background:#fff;animation:liveBlink 1.2s ease-in-out infinite}
+.live-title-sub{opacity:.92;overflow:hidden;text-overflow:ellipsis}
+@keyframes livePillGlow{0%{box-shadow:0 0 0 0 rgba(255,45,85,.55)}70%{box-shadow:0 0 0 11px rgba(255,45,85,0)}100%{box-shadow:0 0 0 0 rgba(255,45,85,0)}}
+@keyframes liveBlink{50%{opacity:.2;transform:scale(.65)}}
+@media(max-width:380px){#live-league h2.live-title{font-size:13.5px;gap:8px}.live-pill{font-size:13.5px;padding:5px 11px 5px 9px}}
+@media(prefers-reduced-motion:reduce){.live-pill,.live-pill i{animation:none}}
 #live-league{padding-left:8px;padding-right:8px}
 #live-league .live-match{padding:12px 8px}
 #live-league .live-match .match-button{padding-left:6px;padding-right:6px}
@@ -212,7 +221,7 @@ header.site-banner{padding:14px 16px 10px;background:transparent}
 <body>
 <header class="site-banner"><div class="sb-card" role="img" aria-label="SV Werder Bremen und VfL Osnabrück – Bundesliga, Live-Spiele, Spieltage, Tabellen"><div class="sb-side sb-green"><span class="sb-crest"><img id="header-werder-crest" alt="Werder-Wappen" hidden></span><strong>SV Werder Bremen</strong></div><div class="sb-mid" aria-hidden="true">×</div><div class="sb-side sb-purple"><span class="sb-crest"><img id="header-vfl-crest" alt="VfL-Wappen" hidden></span><strong>VfL Osnabrück</strong></div><span class="sb-tag">Bundesliga · Live · Spieltage · Tabellen</span><span class="sb-bar"></span></div></header>
 <main>
-<section class="league live-league" id="live-league"><h2>🔴 Live-Spiele · 1. &amp; 2. Bundesliga</h2><div id="live-games"><p class="muted">Live-Spiele werden geladen …</p></div></section>
+<section class="league live-league" id="live-league"><h2 class="live-title"><span class="live-pill"><i></i>Live</span><span class="live-title-sub">Spiele · 1. &amp; 2. Bundesliga</span></h2><div id="live-games"><p class="muted">Live-Spiele werden geladen …</p></div></section>
 <section class="league league-green">
 <div class="league-head"><h2 class="league-title"><img class="league-logo" src="https://crests.football-data.org/BL1.png" alt="Bundesliga-Logo">1. Bundesliga</h2><div class="club"><img class="club-logo" id="bl1-club-logo" alt="" hidden><span>SV Werder Bremen</span></div></div>
 <section class="matchday-section matchday-section-league" aria-label="Alle Spiele der Bundesliga">
