@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T17:36:54.615Z",
+  "updatedAt": "2026-10-17T17:43:07.457Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1146,7 +1146,16 @@
         "away": "RB Leipzig",
         "round": 6,
         "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/6/fc-bayern-muenchen-vs-rb-leipzig/liveticker/",
-        "cards": [],
+        "cards": [
+          {
+            "minute": "51′",
+            "type": "yellow",
+            "player": "Konrad Laimer",
+            "crestId": "00000G",
+            "team": "FC Bayern München",
+            "teamSide": "home"
+          }
+        ],
         "subs": [
           {
             "minute": "45+3′",
@@ -1165,7 +1174,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-17T17:36:54.441Z"
+        "checkedAt": "2026-10-17T17:43:07.283Z"
       },
       "83203": {
         "matchId": "83203",
