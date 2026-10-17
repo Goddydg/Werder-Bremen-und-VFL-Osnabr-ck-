@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T14:59:09.682Z",
+  "updatedAt": "2026-10-17T15:01:37.405Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1307,6 +1307,22 @@
         ],
         "subs": [
           {
+            "minute": "70′",
+            "in": "Mathis Albert",
+            "out": "Konstantinos Karetsas",
+            "crestId": "000007",
+            "team": "Borussia Dortmund",
+            "teamSide": "away"
+          },
+          {
+            "minute": "70′",
+            "in": "Mekhi Gray",
+            "out": "Tim Skarke",
+            "crestId": "00000V",
+            "team": "1. FC Union Berlin",
+            "teamSide": "home"
+          },
+          {
             "minute": "62′",
             "in": "Fabio Silva",
             "out": "Ethan Nwaneri",
@@ -1331,7 +1347,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T14:58:58.045Z"
+        "checkedAt": "2026-10-17T15:01:25.795Z"
       },
       "83206": {
         "matchId": "83206",
@@ -1375,7 +1391,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T14:58:58.973Z"
+        "checkedAt": "2026-10-17T15:01:26.719Z"
       },
       "83207": {
         "matchId": "83207",
@@ -1427,7 +1443,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T14:58:59.994Z"
+        "checkedAt": "2026-10-17T15:01:27.741Z"
       },
       "83208": {
         "matchId": "83208",
@@ -1463,6 +1479,22 @@
         ],
         "subs": [
           {
+            "minute": "71′",
+            "in": "Junior Adamu",
+            "out": "Adil Aouchiche",
+            "crestId": "000009",
+            "team": "FC Schalke 04",
+            "teamSide": "home"
+          },
+          {
+            "minute": "71′",
+            "in": "Maximilian Wöber",
+            "out": "Nikola Katić",
+            "crestId": "000009",
+            "team": "FC Schalke 04",
+            "teamSide": "home"
+          },
+          {
             "minute": "60′",
             "in": "Hee Chan Hwang",
             "out": "Edin Džeko",
@@ -1479,7 +1511,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T14:59:01.019Z"
+        "checkedAt": "2026-10-17T15:01:28.763Z"
       }
     },
     "bl2": {
