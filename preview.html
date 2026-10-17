@@ -176,21 +176,22 @@ header.site-banner{padding:14px 16px 10px;background:transparent}
 .sb-card{position:relative;isolation:isolate;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:112px;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.12);background:linear-gradient(90deg,#04130b,#0b0b12 50%,#140822);box-shadow:0 10px 30px rgba(0,0,0,.35)}
 .sb-card:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(60% 130% at 10% 50%,rgba(31,227,138,.32),transparent 70%),radial-gradient(60% 130% at 90% 50%,rgba(155,77,255,.38),transparent 70%)}
 .sb-card:after{content:"";position:absolute;z-index:-1;left:50%;top:-30%;width:150px;height:160%;margin-left:-75px;border:2px solid rgba(255,255,255,.07);border-radius:50%}
-.sb-side{align-self:stretch;display:flex;flex-direction:column;justify-content:center;gap:4px;min-width:0;padding:0 clamp(12px,3.5vw,44px) 16px}
-.sb-side{position:relative}.sb-green{align-items:flex-start;background:linear-gradient(90deg,rgba(43,212,122,.24),rgba(10,122,71,.04))}.sb-green:after,.sb-purple:before{content:"";position:absolute;top:16px;bottom:34px;width:5px;border-radius:2px}.sb-green:after{right:-3px;background:#2bd47a;transform:skewX(-14deg)}
-.sb-purple{align-items:flex-end;text-align:right;background:linear-gradient(270deg,rgba(161,77,255,.28),rgba(90,27,184,.05))}.sb-purple:before{left:-3px;background:#a14dff;transform:skewX(-14deg)}
-.sb-side small{font-size:11px;font-weight:600;letter-spacing:.35em;line-height:1;text-transform:uppercase}
-.sb-green small{color:#2bd47a}
-.sb-purple small{color:#b57dff;margin-right:-.35em}
-.sb-side strong{font-size:clamp(16px,4.6vw,46px);font-weight:800;letter-spacing:.02em;line-height:1;color:#fff;white-space:nowrap}
+.sb-side{align-self:stretch;display:flex;flex-direction:row;align-items:center;gap:clamp(8px,2vw,18px);min-width:0;padding:0 clamp(12px,3.5vw,44px) 16px}
+.sb-side{position:relative}.sb-green{background:linear-gradient(90deg,rgba(43,212,122,.24),rgba(10,122,71,.04))}.sb-green:after,.sb-purple:before{content:"";position:absolute;top:16px;bottom:34px;width:5px;border-radius:2px}.sb-green:after{right:-3px;background:#2bd47a;transform:skewX(-14deg)}
+.sb-purple{flex-direction:row-reverse;text-align:right;background:linear-gradient(270deg,rgba(161,77,255,.28),rgba(90,27,184,.05))}.sb-purple:before{left:-3px;background:#a14dff;transform:skewX(-14deg)}
+.sb-crest{position:relative;flex:0 0 auto;display:grid;place-items:center;width:clamp(38px,6vw,68px);height:clamp(38px,6vw,68px);padding:clamp(5px,.9vw,9px);box-sizing:border-box;border-radius:50%;background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.22),rgba(255,255,255,.04) 70%);border:1.5px solid var(--sbc);box-shadow:0 0 0 4px rgba(255,255,255,.04),0 0 22px var(--sbc),inset 0 0 14px rgba(255,255,255,.08)}
+.sb-crest img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 3px 6px rgba(0,0,0,.6))}
+.sb-crest img[hidden]{display:none}
+.sb-green{--sbc:#2bd47a}.sb-purple{--sbc:#a14dff}
+.sb-side strong{min-width:0;font-size:clamp(14px,3.4vw,40px);font-weight:800;letter-spacing:.01em;line-height:1.05;color:#fff;text-wrap:balance}
 .sb-mid{padding:0 10px 16px;font-size:40px;font-weight:300;line-height:1;color:rgba(255,255,255,.88);text-shadow:0 0 18px rgba(255,255,255,.5),0 0 30px #b76cff}
 .sb-tag{position:absolute;left:0;right:0;bottom:11px;text-align:center;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.72);white-space:nowrap}
 .sb-bar{position:absolute;left:0;right:0;bottom:0;height:5px;background:linear-gradient(90deg,#2bd47a,#0a7a47 40%,#5a1bb8 60%,#a14dff)}
-@media(max-width:650px){header.site-banner{padding:10px 8px 8px}.sb-card{height:92px;border-radius:16px}.sb-side small{font-size:9px}.sb-mid{font-size:28px;padding:0 4px 14px}.sb-tag{font-size:8.5px;letter-spacing:.12em;bottom:9px}.sb-side{padding-bottom:14px}}
+@media(max-width:650px){header.site-banner{padding:10px 8px 8px}.sb-card{height:100px;border-radius:16px}.sb-mid{font-size:28px;padding:0 4px 14px}.sb-tag{font-size:8.5px;letter-spacing:.12em;bottom:9px}.sb-side{padding-bottom:14px}}
 </style>
 </head>
 <body>
-<header class="site-banner"><div class="sb-card" role="img" aria-label="SV Werder Bremen und VfL Osnabrück – Bundesliga, Live-Spiele, Spieltage, Tabellen"><div class="sb-side sb-green"><small>SV</small><strong>WERDER</strong></div><div class="sb-mid" aria-hidden="true">×</div><div class="sb-side sb-purple"><small>VfL</small><strong>OSNABRÜCK</strong></div><span class="sb-tag">Bundesliga · Live · Spieltage · Tabellen</span><span class="sb-bar"></span></div></header>
+<header class="site-banner"><div class="sb-card" role="img" aria-label="SV Werder Bremen und VfL Osnabrück – Bundesliga, Live-Spiele, Spieltage, Tabellen"><div class="sb-side sb-green"><span class="sb-crest"><img id="header-werder-crest" alt="Werder-Wappen" hidden></span><strong>SV Werder Bremen</strong></div><div class="sb-mid" aria-hidden="true">×</div><div class="sb-side sb-purple"><span class="sb-crest"><img id="header-vfl-crest" alt="VfL-Wappen" hidden></span><strong>VfL Osnabrück</strong></div><span class="sb-tag">Bundesliga · Live · Spieltage · Tabellen</span><span class="sb-bar"></span></div></header>
 <main>
 <section class="league live-league" id="live-league"><h2>🔴 Live-Spiele · 1. &amp; 2. Bundesliga</h2><div id="live-games"><p class="muted">Live-Spiele werden geladen …</p></div></section>
 <section class="league league-green">
