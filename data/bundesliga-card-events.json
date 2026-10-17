@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T18:24:35.393Z",
+  "updatedAt": "2026-10-17T18:30:48.256Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3480,6 +3480,16 @@
         ],
         "checkedAt": "2026-10-17T13:57:19.323Z",
         "finalChecked": true
+      },
+      "83627": {
+        "matchId": "83627",
+        "home": "Hannover 96",
+        "away": "FC St. Pauli",
+        "round": 8,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/8/hannover-96-vs-fc-st-pauli/liveticker/",
+        "cards": [],
+        "subs": [],
+        "checkedAt": "2026-10-17T18:30:48.255Z"
       },
       "83628": {
         "matchId": "83628",
