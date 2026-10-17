@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T15:27:26.673Z",
+  "updatedAt": "2026-10-17T15:39:01.678Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1708,6 +1708,14 @@
         ],
         "checkedAt": "2026-10-17T15:24:56.467Z",
         "finalChecked": true
+      },
+      "83209": {
+        "matchId": "83209",
+        "home": "SV 07 Elversberg",
+        "away": "FC Augsburg",
+        "round": 6,
+        "cards": [],
+        "finalAttempts": 1
       }
     },
     "bl2": {
