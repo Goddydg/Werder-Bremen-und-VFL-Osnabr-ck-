@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T15:22:38.274Z",
+  "updatedAt": "2026-10-17T15:23:52.747Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1363,7 +1363,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:22:26.646Z"
+        "checkedAt": "2026-10-17T15:23:41.088Z"
       },
       "83206": {
         "matchId": "83206",
@@ -1479,7 +1479,8 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:22:27.573Z"
+        "checkedAt": "2026-10-17T15:23:42.014Z",
+        "finalChecked": true
       },
       "83207": {
         "matchId": "83207",
@@ -1579,7 +1580,8 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:22:28.596Z"
+        "checkedAt": "2026-10-17T15:23:43.039Z",
+        "finalChecked": true
       },
       "83208": {
         "matchId": "83208",
@@ -1695,7 +1697,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:22:29.616Z"
+        "checkedAt": "2026-10-17T15:23:44.060Z"
       }
     },
     "bl2": {
