@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T15:23:52.747Z",
+  "updatedAt": "2026-10-17T15:25:05.165Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1307,6 +1307,14 @@
         ],
         "subs": [
           {
+            "minute": "90+3′",
+            "in": "Linus Güther",
+            "out": "Woo-yeong Jeong",
+            "crestId": "00000V",
+            "team": "1. FC Union Berlin",
+            "teamSide": "home"
+          },
+          {
             "minute": "76′",
             "in": "Aljoscha Kemlein",
             "out": "András Schäfer",
@@ -1363,7 +1371,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:23:41.088Z"
+        "checkedAt": "2026-10-17T15:24:55.446Z"
       },
       "83206": {
         "matchId": "83206",
@@ -1697,7 +1705,8 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:23:44.060Z"
+        "checkedAt": "2026-10-17T15:24:56.467Z",
+        "finalChecked": true
       }
     },
     "bl2": {
