@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T18:03:52.831Z",
+  "updatedAt": "2026-10-17T18:10:06.807Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1158,6 +1158,14 @@
         ],
         "subs": [
           {
+            "minute": "77′",
+            "in": "Sacha Boey",
+            "out": "Minjae Kim",
+            "crestId": "00000G",
+            "team": "FC Bayern München",
+            "teamSide": "home"
+          },
+          {
             "minute": "71′",
             "in": "Andrija Maksimović",
             "out": "Rocco Reitz",
@@ -1230,7 +1238,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-17T18:03:52.656Z"
+        "checkedAt": "2026-10-17T18:10:06.633Z"
       },
       "83203": {
         "matchId": "83203",
