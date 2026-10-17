@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T14:54:13.481Z",
+  "updatedAt": "2026-10-17T14:55:27.901Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1295,6 +1295,14 @@
             "crestId": "00000V",
             "team": "1. FC Union Berlin",
             "teamSide": "home"
+          },
+          {
+            "minute": "63′",
+            "type": "yellow",
+            "player": "Tim Skarke",
+            "crestId": "00000V",
+            "team": "1. FC Union Berlin",
+            "teamSide": "home"
           }
         ],
         "subs": [
@@ -1323,7 +1331,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T14:54:01.919Z"
+        "checkedAt": "2026-10-17T14:55:16.295Z"
       },
       "83206": {
         "matchId": "83206",
@@ -1351,7 +1359,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T14:54:02.844Z"
+        "checkedAt": "2026-10-17T14:55:17.220Z"
       },
       "83207": {
         "matchId": "83207",
@@ -1387,7 +1395,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T14:54:03.863Z"
+        "checkedAt": "2026-10-17T14:55:18.239Z"
       },
       "83208": {
         "matchId": "83208",
@@ -1439,7 +1447,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T14:54:04.887Z"
+        "checkedAt": "2026-10-17T14:55:19.259Z"
       }
     },
     "bl2": {
