@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T15:13:59.323Z",
+  "updatedAt": "2026-10-17T15:15:13.835Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1363,7 +1363,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:13:47.789Z"
+        "checkedAt": "2026-10-17T15:15:02.177Z"
       },
       "83206": {
         "matchId": "83206",
@@ -1387,9 +1387,25 @@
             "crestId": "00000C",
             "team": "Hamburger SV",
             "teamSide": "home"
+          },
+          {
+            "minute": "85′",
+            "type": "yellow",
+            "player": "Otto Stange",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "home"
           }
         ],
         "subs": [
+          {
+            "minute": "84′",
+            "in": "Kofi Amoako",
+            "out": "Bilal Nadir",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "home"
+          },
           {
             "minute": "78′",
             "in": "Albert Grønbæk",
@@ -1455,7 +1471,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:13:48.711Z"
+        "checkedAt": "2026-10-17T15:15:03.105Z"
       },
       "83207": {
         "matchId": "83207",
@@ -1531,7 +1547,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:13:49.730Z"
+        "checkedAt": "2026-10-17T15:15:04.126Z"
       },
       "83208": {
         "matchId": "83208",
@@ -1623,7 +1639,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:13:50.749Z"
+        "checkedAt": "2026-10-17T15:15:05.149Z"
       }
     },
     "bl2": {
