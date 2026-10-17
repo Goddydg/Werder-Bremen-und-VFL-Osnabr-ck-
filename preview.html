@@ -626,12 +626,13 @@ else if(detail.includes('yellow'))apiTypes.push('yellow');
 }
 const names=teamNames(match),home=normalizeName(names.home),away=normalizeName(names.away);
 const espn=(espnCardEvents[key]||[]).filter(game=>game.home===home&&game.away===away).flatMap(game=>game.events||[]);
-const hasRed=espn.some(event=>event.team&&(event.team===team||event.team.includes(team)||team.includes(event.team)));
+const sameTeam=t=>t&&(t===team||t.includes(team)||team.includes(t));
+const hasRed=espn.some(event=>event.type==='red'&&sameTeam(event.team))||(espnCardEvents[key]||[]).filter(game=>game.home===home&&game.away===away).flatMap(game=>game.cards||[]).some(c=>(c.type==='red'||c.type==='yellow-red')&&sameTeam(normalizeName(c.team||'')));
 if(hasRed)apiTypes.push('red');
 return [...new Set(apiTypes)];
 }
-function redCardHTML(match,key,teamName){
-const types=teamCardTypes(match,key,teamName);
+function redCardHTML(match,key,teamName,redOnly=false){
+const types=teamCardTypes(match,key,teamName).filter(t=>!redOnly||t==='red');
 return types.map(type=>type==='red'?'<span class="red-card-indicator" title="Rote Karte" aria-label="Rote Karte">🟥</span>':'<span class="yellow-card-indicator" title="Gelbe Karte" aria-label="Gelbe Karte">🟨</span>').join('');
 }
 function liveGamesHTML(){
@@ -650,7 +651,7 @@ const games=selectedGames(key);
 if(!games.length)return '<p class="muted">Keine Spiele für diesen Spieltag gefunden.</p>';
 const cards=games.map((match,index)=>{
 const names=teamNames(match),hasWerder=key==='bl1'&&(isWerder(names.home)||isWerder(names.away)),hasVfL=key==='bl2'&&(isVfL(names.home)||isVfL(names.away)),cssClass=hasWerder?'werder-match':hasVfL?'vfl-match':'',homeClass=((key==='bl1'&&isWerder(names.home))||(key==='bl2'&&isVfL(names.home)))?'team-highlight':'',awayClass=((key==='bl1'&&isWerder(names.away))||(key==='bl2'&&isVfL(names.away)))?'team-highlight':'',expanded=expandedMatch[key]===matchKey(match),homeLogo=teamLogoHTML(match.team1,key),awayLogo=teamLogoHTML(match.team2,key);
-return `<div class="match ${cssClass} ${hasWerder||hasVfL?'matchday-focus':''}" id="card-${key}-${index}"><button type="button" class="match-button" id="button-${key}-${index}" onclick="toggleDetails('${key}',${index})" aria-expanded="${expanded}"><span class="scheduled-tv-badge">${esc(tvProvider(match,key))}</span><div class="match-date" id="date-${key}-${index}">${statusHTML(match,key)}</div><div class="match-scoreline"><span class="match-team"><span class="team-logo-slot">${homeLogo}</span><span class="team-name">${esc(names.home)}</span></span><span class="score" id="score-${key}-${index}">${esc(gameScore(match,key))}</span><span class="match-team away"><span class="team-logo-slot">${awayLogo}</span><span class="team-name">${esc(names.away)}</span></span></div></button><div class="details-slot" id="details-${key}-${index}" ${expanded?'':'hidden'}>${expanded?detailsHTML(match,key):''}</div></div>`;
+return `<div class="match ${cssClass} ${hasWerder||hasVfL?'matchday-focus':''}" id="card-${key}-${index}"><button type="button" class="match-button" id="button-${key}-${index}" onclick="toggleDetails('${key}',${index})" aria-expanded="${expanded}"><span class="scheduled-tv-badge">${esc(tvProvider(match,key))}</span><div class="match-date" id="date-${key}-${index}">${statusHTML(match,key)}</div><div class="match-scoreline"><span class="match-team"><span class="team-logo-slot">${homeLogo}</span><span class="team-name">${redCardHTML(match,key,names.home,true)}${esc(names.home)}</span></span><span class="score" id="score-${key}-${index}">${esc(gameScore(match,key))}</span><span class="match-team away"><span class="team-logo-slot">${awayLogo}</span><span class="team-name">${redCardHTML(match,key,names.away,true)}${esc(names.away)}</span></span></div></button><div class="details-slot" id="details-${key}-${index}" ${expanded?'':'hidden'}>${expanded?detailsHTML(match,key):''}</div></div>`;
 }).join('');
 const expandButton=games.length>3?'<button class="matchday-more" type="button" onclick="toggleMatchday(\''+key+'\')">'+(matchdayExpanded[key]?'Weniger Spiele anzeigen':'Alle '+games.length+' Spiele anzeigen')+'</button>':'';
 return '<div class="matchday-scroll '+(matchdayExpanded[key]?'is-expanded':'')+'" id="'+key+'-matchday-scroll">'+cards+'</div>'+expandButton;
