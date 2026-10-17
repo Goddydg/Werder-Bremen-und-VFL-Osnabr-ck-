@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T15:10:15.729Z",
+  "updatedAt": "2026-10-17T15:12:45.048Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1363,7 +1363,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:10:04.078Z"
+        "checkedAt": "2026-10-17T15:12:33.421Z"
       },
       "83206": {
         "matchId": "83206",
@@ -1447,7 +1447,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:10:05.002Z"
+        "checkedAt": "2026-10-17T15:12:34.343Z"
       },
       "83207": {
         "matchId": "83207",
@@ -1467,7 +1467,7 @@
         ],
         "subs": [
           {
-            "minute": "79′",
+            "minute": "80′",
             "in": "Dariusz Stalmach",
             "out": "Ludovit Reis",
             "crestId": "00000E",
@@ -1523,7 +1523,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:10:06.023Z"
+        "checkedAt": "2026-10-17T15:12:35.366Z"
       },
       "83208": {
         "matchId": "83208",
@@ -1615,7 +1615,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:10:07.045Z"
+        "checkedAt": "2026-10-17T15:12:36.385Z"
       }
     },
     "bl2": {
