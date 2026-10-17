@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T15:17:42.754Z",
+  "updatedAt": "2026-10-17T15:20:10.583Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1363,7 +1363,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:17:31.130Z"
+        "checkedAt": "2026-10-17T15:19:58.976Z"
       },
       "83206": {
         "matchId": "83206",
@@ -1398,6 +1398,14 @@
           }
         ],
         "subs": [
+          {
+            "minute": "89′",
+            "in": "Lorenz Assignon",
+            "out": "Ramon Hendriks",
+            "crestId": "00000D",
+            "team": "VfB Stuttgart",
+            "teamSide": "away"
+          },
           {
             "minute": "84′",
             "in": "Kofi Amoako",
@@ -1471,7 +1479,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:17:32.054Z"
+        "checkedAt": "2026-10-17T15:19:59.904Z"
       },
       "83207": {
         "matchId": "83207",
@@ -1571,7 +1579,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:17:33.077Z"
+        "checkedAt": "2026-10-17T15:20:00.928Z"
       },
       "83208": {
         "matchId": "83208",
@@ -1671,7 +1679,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:17:34.098Z"
+        "checkedAt": "2026-10-17T15:20:01.950Z"
       }
     },
     "bl2": {
