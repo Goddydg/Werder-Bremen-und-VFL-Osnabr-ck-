@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T14:13:45.905Z",
+  "updatedAt": "2026-10-17T14:17:26.512Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1298,7 +1298,7 @@
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-17T14:13:34.256Z"
+        "checkedAt": "2026-10-17T14:17:14.877Z"
       },
       "83206": {
         "matchId": "83206",
@@ -1308,7 +1308,7 @@
         "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/6/hamburger-sv-vs-vfb-stuttgart/liveticker/",
         "cards": [],
         "subs": [],
-        "checkedAt": "2026-10-17T14:13:35.179Z"
+        "checkedAt": "2026-10-17T14:17:15.807Z"
       },
       "83207": {
         "matchId": "83207",
@@ -1327,7 +1327,7 @@
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-17T14:13:36.197Z"
+        "checkedAt": "2026-10-17T14:17:16.824Z"
       },
       "83208": {
         "matchId": "83208",
@@ -1343,10 +1343,18 @@
             "crestId": "000006",
             "team": "1. FSV Mainz 05",
             "teamSide": "away"
+          },
+          {
+            "minute": "45′",
+            "type": "yellow",
+            "player": "Kaishu Sano",
+            "crestId": "000006",
+            "team": "1. FSV Mainz 05",
+            "teamSide": "away"
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-17T14:13:37.219Z"
+        "checkedAt": "2026-10-17T14:17:17.843Z"
       }
     },
     "bl2": {
