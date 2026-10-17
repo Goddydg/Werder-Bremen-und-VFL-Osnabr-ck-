@@ -12,22 +12,6 @@
 <style>
 *{box-sizing:border-box}
 body{margin:0;background:linear-gradient(to bottom,#00190b 0%,#293b31 28%,#293b31 48%,#170522 70%,#293b31 100%);background-attachment:fixed;color:#f5f7f5;font-family:Arial,sans-serif}
-header{padding:22px 16px 18px;background:transparent}
-.header-clubs{position:relative;isolation:isolate;min-height:390px;padding:30px 24px 88px;border:1px solid rgba(255,255,255,.25);border-radius:30px;overflow:hidden;background:linear-gradient(115deg,rgba(0,18,10,.20),rgba(4,28,20,.28) 42%,rgba(29,3,43,.30)),url('https://commons.wikimedia.org/wiki/Special:FilePath/Weserstadion.jpg?width=1800') center/cover,linear-gradient(115deg,#00a94f 0%,#063c2b 43%,#341052 66%,#8c22d0 100%);box-shadow:0 16px 42px rgba(0,0,0,.38),inset 0 0 0 1px rgba(255,255,255,.08)}
-.header-clubs:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(0,115,52,.94) 0%,rgba(0,55,34,.78) 43%,rgba(31,7,51,.82) 61%,rgba(96,12,135,.92) 100%);mix-blend-mode:multiply}
-.header-clubs:after{content:"";position:absolute;z-index:-1;left:-5%;right:-5%;bottom:45px;height:90px;background:linear-gradient(90deg,transparent,#25ff9b55 25%,#ffffff22 50%,#dc69ff77 78%,transparent);filter:blur(18px)}
-header h1{margin:0;font-size:22px;line-height:1.25}
-.header-werder{font-family:Georgia,'Times New Roman',serif;font-weight:700;letter-spacing:-.5px;text-shadow:0 3px 12px #00190bcc}
-.header-vfl{font-family:'Arial Narrow','Roboto Condensed',Impact,sans-serif;font-stretch:condensed;font-weight:900;letter-spacing:-.4px;text-shadow:0 3px 12px #10001acc}
-.header-clubs{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;max-width:100%}
-.header-club{display:flex;align-items:center;justify-content:center;gap:18px;min-width:0;width:100%;position:relative}
-.header-club img.crest{width:84px;height:84px;object-fit:contain;flex:0 0 84px;filter:drop-shadow(0 5px 9px #0009)}
-.header-club img.stadium{width:132px;height:86px;object-fit:cover;border-radius:15px;border:2px solid rgba(255,255,255,.65);box-shadow:0 7px 20px #0008;flex:0 0 132px}
-.header-club-name{font-size:clamp(24px,4.2vw,52px);line-height:1.05}
-.header-center{display:flex;justify-content:center;margin:-2px 0;font-family:Georgia,serif;font-size:54px;font-weight:bold;line-height:.9;color:#fff;text-shadow:0 0 22px #fff,0 0 40px #b76cff}
-header p{position:relative;margin:-75px auto 0;width:max-content;max-width:88%;padding:14px 30px;border:1px solid rgba(255,255,255,.55);border-radius:999px;background:linear-gradient(100deg,rgba(0,38,23,.94),rgba(21,10,35,.96));box-shadow:0 0 22px #29ed9a44,0 0 24px #c75cff44;color:#fff;text-align:center;font-size:clamp(13px,2.2vw,23px);font-weight:700;letter-spacing:.2px}
-@media(max-width:650px){header{padding:12px 8px 16px}.header-clubs{min-height:300px;padding:24px 8px 82px;gap:13px;border-radius:22px}.header-club{gap:8px}.header-club img.crest{width:47px;height:47px;flex-basis:47px}.header-club img.stadium{width:57px;height:42px;flex-basis:57px;border-radius:9px}.header-club-name{font-size:clamp(19px,5vw,28px);letter-spacing:-.7px}.header-center{font-size:37px}header p{margin-top:-69px;padding:12px 12px;max-width:94%;letter-spacing:0}}
-@media(max-width:390px){.header-club{gap:5px}.header-club img.crest{width:38px;height:38px;flex-basis:38px}.header-club img.stadium{width:45px;height:35px;flex-basis:45px}.header-club-name{font-size:18px}.header-clubs{min-height:270px}}
 
 main{padding:12px}
 .league{margin-bottom:30px;padding:14px;border-radius:16px;background:#10291e;border:1px solid #244a37}
@@ -188,10 +172,26 @@ tr.vfl-row{background:#6b21a8!important;color:white;font-weight:bold}
 .matchday-section .scheduled-tv-badge{position:static;grid-column:2;grid-row:1;justify-self:end;max-width:none;padding:2px 7px;font-size:10.5px;white-space:nowrap}
 .matchday-section .match-button .match-date{grid-column:1;grid-row:1;min-width:0;margin:0}
 .matchday-section .match-button .match-scoreline{grid-column:1 / -1;grid-row:2;padding:2px 0 3px}
+/* Banner: flach, modern, Vereinsfarben (kein Wappen-Nachbau) */
+header.site-banner{padding:14px 16px 10px;background:transparent}
+.sb-card{position:relative;isolation:isolate;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:112px;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.12);background:linear-gradient(90deg,#04130b,#0b0b12 50%,#140822);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.sb-card:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(60% 130% at 10% 50%,rgba(31,227,138,.32),transparent 70%),radial-gradient(60% 130% at 90% 50%,rgba(155,77,255,.38),transparent 70%)}
+.sb-card:after{content:"";position:absolute;z-index:-1;left:50%;top:-30%;width:150px;height:160%;margin-left:-75px;border:2px solid rgba(255,255,255,.07);border-radius:50%}
+.sb-side{align-self:stretch;display:flex;flex-direction:column;justify-content:center;gap:4px;min-width:0;padding:0 clamp(12px,3.5vw,44px) 16px}
+.sb-side{position:relative}.sb-green{align-items:flex-start;background:linear-gradient(90deg,rgba(43,212,122,.24),rgba(10,122,71,.04))}.sb-green:after,.sb-purple:before{content:"";position:absolute;top:16px;bottom:34px;width:5px;border-radius:2px}.sb-green:after{right:-3px;background:#2bd47a;transform:skewX(-14deg)}
+.sb-purple{align-items:flex-end;text-align:right;background:linear-gradient(270deg,rgba(161,77,255,.28),rgba(90,27,184,.05))}.sb-purple:before{left:-3px;background:#a14dff;transform:skewX(-14deg)}
+.sb-side small{font-size:11px;font-weight:600;letter-spacing:.35em;line-height:1;text-transform:uppercase}
+.sb-green small{color:#2bd47a}
+.sb-purple small{color:#b57dff;margin-right:-.35em}
+.sb-side strong{font-size:clamp(16px,4.6vw,46px);font-weight:800;letter-spacing:.02em;line-height:1;color:#fff;white-space:nowrap}
+.sb-mid{padding:0 10px 16px;font-size:40px;font-weight:300;line-height:1;color:rgba(255,255,255,.88);text-shadow:0 0 18px rgba(255,255,255,.5),0 0 30px #b76cff}
+.sb-tag{position:absolute;left:0;right:0;bottom:11px;text-align:center;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.72);white-space:nowrap}
+.sb-bar{position:absolute;left:0;right:0;bottom:0;height:5px;background:linear-gradient(90deg,#2bd47a,#0a7a47 40%,#5a1bb8 60%,#a14dff)}
+@media(max-width:650px){header.site-banner{padding:10px 8px 8px}.sb-card{height:92px;border-radius:16px}.sb-side small{font-size:9px}.sb-mid{font-size:28px;padding:0 4px 14px}.sb-tag{font-size:8.5px;letter-spacing:.12em;bottom:9px}.sb-side{padding-bottom:14px}}
 </style>
 </head>
 <body>
-<header><div class="header-clubs"><div class="header-club"><img class="crest" id="header-werder-crest" alt="Werder-Wappen"><span class="header-club-name header-werder">SV Werder Bremen</span><img class="stadium" src="https://commons.wikimedia.org/wiki/Special:FilePath/Germany_bremen_stadium.jpg?width=220" alt="Weserstadion" loading="eager"></div><div class="header-center">&amp;</div><div class="header-club"><img class="crest" id="header-vfl-crest" alt="VfL-Wappen"><span class="header-club-name header-vfl">VfL Osnabrück</span><img class="stadium" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bremer-bruecke.jpg?width=220" alt="Stadion an der Bremer Brücke" loading="eager"></div></div><p>Bundesliga · Live-Spiele · Spieltage · Tabellen</p></header>
+<header class="site-banner"><div class="sb-card" role="img" aria-label="SV Werder Bremen und VfL Osnabrück – Bundesliga, Live-Spiele, Spieltage, Tabellen"><div class="sb-side sb-green"><small>SV</small><strong>WERDER</strong></div><div class="sb-mid" aria-hidden="true">×</div><div class="sb-side sb-purple"><small>VfL</small><strong>OSNABRÜCK</strong></div><span class="sb-tag">Bundesliga · Live · Spieltage · Tabellen</span><span class="sb-bar"></span></div></header>
 <main>
 <section class="league live-league" id="live-league"><h2>🔴 Live-Spiele · 1. &amp; 2. Bundesliga</h2><div id="live-games"><p class="muted">Live-Spiele werden geladen …</p></div></section>
 <section class="league league-green">
