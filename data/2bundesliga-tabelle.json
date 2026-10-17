@@ -125,13 +125,13 @@
             "tla": "",
             "crest": ""
           },
-          "playedGames": 7,
+          "playedGames": 8,
           "won": 2,
-          "draw": 4,
+          "draw": 5,
           "lost": 1,
-          "points": 10,
-          "goalsFor": 10,
-          "goalsAgainst": 8,
+          "points": 11,
+          "goalsFor": 11,
+          "goalsAgainst": 9,
           "goalDifference": 2
         },
         {
@@ -209,6 +209,24 @@
         {
           "position": 12,
           "team": {
+            "id": 55,
+            "name": "Hannover 96",
+            "shortName": "Hannover 96",
+            "tla": "",
+            "crest": ""
+          },
+          "playedGames": 8,
+          "won": 2,
+          "draw": 2,
+          "lost": 4,
+          "points": 8,
+          "goalsFor": 8,
+          "goalsAgainst": 13,
+          "goalDifference": -5
+        },
+        {
+          "position": 13,
+          "team": {
             "id": 74,
             "name": "Eintracht Braunschweig",
             "shortName": "Eintracht Braunschweig",
@@ -225,7 +243,7 @@
           "goalDifference": -2
         },
         {
-          "position": 13,
+          "position": 14,
           "team": {
             "id": 129,
             "name": "VfL Bochum",
@@ -241,24 +259,6 @@
           "goalsFor": 5,
           "goalsAgainst": 9,
           "goalDifference": -4
-        },
-        {
-          "position": 14,
-          "team": {
-            "id": 55,
-            "name": "Hannover 96",
-            "shortName": "Hannover 96",
-            "tla": "",
-            "crest": ""
-          },
-          "playedGames": 7,
-          "won": 2,
-          "draw": 1,
-          "lost": 4,
-          "points": 7,
-          "goalsFor": 7,
-          "goalsAgainst": 12,
-          "goalDifference": -5
         },
         {
           "position": 15,
