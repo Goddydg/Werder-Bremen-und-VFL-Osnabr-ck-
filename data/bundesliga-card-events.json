@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T14:17:26.512Z",
+  "updatedAt": "2026-10-17T14:34:34.497Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1298,7 +1298,7 @@
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-17T14:17:14.877Z"
+        "checkedAt": "2026-10-17T14:34:22.877Z"
       },
       "83206": {
         "matchId": "83206",
@@ -1308,7 +1308,7 @@
         "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/6/hamburger-sv-vs-vfb-stuttgart/liveticker/",
         "cards": [],
         "subs": [],
-        "checkedAt": "2026-10-17T14:17:15.807Z"
+        "checkedAt": "2026-10-17T14:34:23.802Z"
       },
       "83207": {
         "matchId": "83207",
@@ -1326,8 +1326,17 @@
             "teamSide": "away"
           }
         ],
-        "subs": [],
-        "checkedAt": "2026-10-17T14:17:16.824Z"
+        "subs": [
+          {
+            "minute": "45+1′",
+            "in": "Mitchell Weiser",
+            "out": "Chuki",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "home"
+          }
+        ],
+        "checkedAt": "2026-10-17T14:34:24.821Z"
       },
       "83208": {
         "matchId": "83208",
@@ -1354,7 +1363,7 @@
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-17T14:17:17.843Z"
+        "checkedAt": "2026-10-17T14:34:25.841Z"
       }
     },
     "bl2": {
