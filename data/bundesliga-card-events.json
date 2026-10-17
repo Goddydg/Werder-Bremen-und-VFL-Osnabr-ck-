@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T14:55:27.901Z",
+  "updatedAt": "2026-10-17T14:56:42.244Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1331,7 +1331,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T14:55:16.295Z"
+        "checkedAt": "2026-10-17T14:56:30.719Z"
       },
       "83206": {
         "matchId": "83206",
@@ -1359,7 +1359,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T14:55:17.220Z"
+        "checkedAt": "2026-10-17T14:56:31.643Z"
       },
       "83207": {
         "matchId": "83207",
@@ -1379,6 +1379,22 @@
         ],
         "subs": [
           {
+            "minute": "66′",
+            "in": "Rayan Philippe",
+            "out": "Stefano Marino",
+            "crestId": "00000L",
+            "team": "SC Paderborn 07",
+            "teamSide": "away"
+          },
+          {
+            "minute": "66′",
+            "in": "Tom Baack",
+            "out": "Laurin Ulrich",
+            "crestId": "00000L",
+            "team": "SC Paderborn 07",
+            "teamSide": "away"
+          },
+          {
             "minute": "63′",
             "in": "Cedric Itten",
             "out": "Eren Dinkçi",
@@ -1395,7 +1411,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T14:55:18.239Z"
+        "checkedAt": "2026-10-17T14:56:32.664Z"
       },
       "83208": {
         "matchId": "83208",
@@ -1447,7 +1463,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T14:55:19.259Z"
+        "checkedAt": "2026-10-17T14:56:33.682Z"
       }
     },
     "bl2": {
