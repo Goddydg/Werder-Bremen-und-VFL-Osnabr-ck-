@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T14:51:44.817Z",
+  "updatedAt": "2026-10-17T14:52:59.142Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1307,7 +1307,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T14:51:33.244Z"
+        "checkedAt": "2026-10-17T14:52:47.512Z"
       },
       "83206": {
         "matchId": "83206",
@@ -1335,7 +1335,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T14:51:34.168Z"
+        "checkedAt": "2026-10-17T14:52:48.436Z"
       },
       "83207": {
         "matchId": "83207",
@@ -1355,6 +1355,14 @@
         ],
         "subs": [
           {
+            "minute": "63′",
+            "in": "Cedric Itten",
+            "out": "Eren Dinkçi",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "home"
+          },
+          {
             "minute": "45+1′",
             "in": "Mitchell Weiser",
             "out": "Chuki",
@@ -1363,7 +1371,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T14:51:35.188Z"
+        "checkedAt": "2026-10-17T14:52:49.456Z"
       },
       "83208": {
         "matchId": "83208",
@@ -1415,7 +1423,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T14:51:36.208Z"
+        "checkedAt": "2026-10-17T14:52:50.475Z"
       }
     },
     "bl2": {
