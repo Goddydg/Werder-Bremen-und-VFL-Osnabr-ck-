@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T15:20:10.583Z",
+  "updatedAt": "2026-10-17T15:22:38.274Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1363,7 +1363,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:19:58.976Z"
+        "checkedAt": "2026-10-17T15:22:26.646Z"
       },
       "83206": {
         "matchId": "83206",
@@ -1479,7 +1479,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:19:59.904Z"
+        "checkedAt": "2026-10-17T15:22:27.573Z"
       },
       "83207": {
         "matchId": "83207",
@@ -1579,7 +1579,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:20:00.928Z"
+        "checkedAt": "2026-10-17T15:22:28.596Z"
       },
       "83208": {
         "matchId": "83208",
@@ -1614,6 +1614,22 @@
           }
         ],
         "subs": [
+          {
+            "minute": "90+1′",
+            "in": "Silvan Widmer",
+            "out": "Anthony Caci",
+            "crestId": "000006",
+            "team": "1. FSV Mainz 05",
+            "teamSide": "away"
+          },
+          {
+            "minute": "90+1′",
+            "in": "Lennard Maloney",
+            "out": "Phillip Tietz",
+            "crestId": "000006",
+            "team": "1. FSV Mainz 05",
+            "teamSide": "away"
+          },
           {
             "minute": "86′",
             "in": "Eric Martel",
@@ -1679,7 +1695,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:20:01.950Z"
+        "checkedAt": "2026-10-17T15:22:29.616Z"
       }
     },
     "bl2": {
