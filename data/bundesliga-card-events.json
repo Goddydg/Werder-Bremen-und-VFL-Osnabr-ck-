@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T20:27:27.340Z",
+  "updatedAt": "2026-10-17T13:57:32.136Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1248,6 +1248,71 @@
         ],
         "checkedAt": "2026-10-16T20:27:27.169Z",
         "finalChecked": true
+      },
+      "83204": {
+        "matchId": "83204",
+        "home": "1. FC Union Berlin",
+        "away": "Borussia Dortmund",
+        "round": 6,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/6/1-fc-union-berlin-vs-borussia-dortmund/liveticker/",
+        "cards": [
+          {
+            "minute": "14′",
+            "type": "yellow",
+            "player": "Serhou Guirassy",
+            "crestId": "000007",
+            "team": "Borussia Dortmund",
+            "teamSide": "away"
+          },
+          {
+            "minute": "7′",
+            "type": "yellow",
+            "player": "Waldemar Anton",
+            "crestId": "000007",
+            "team": "Borussia Dortmund",
+            "teamSide": "away"
+          },
+          {
+            "minute": "1′",
+            "type": "yellow",
+            "player": "Ethan Nwaneri",
+            "crestId": "000007",
+            "team": "Borussia Dortmund",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [],
+        "checkedAt": "2026-10-17T13:57:00.625Z"
+      },
+      "83206": {
+        "matchId": "83206",
+        "home": "Hamburger SV",
+        "away": "VfB Stuttgart",
+        "round": 6,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/6/hamburger-sv-vs-vfb-stuttgart/liveticker/",
+        "cards": [],
+        "subs": [],
+        "checkedAt": "2026-10-17T13:57:03.146Z"
+      },
+      "83207": {
+        "matchId": "83207",
+        "home": "SV Werder Bremen",
+        "away": "SC Paderborn 07",
+        "round": 6,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/6/sv-werder-bremen-vs-sc-paderborn-07/liveticker/",
+        "cards": [],
+        "subs": [],
+        "checkedAt": "2026-10-17T13:57:04.166Z"
+      },
+      "83208": {
+        "matchId": "83208",
+        "home": "FC Schalke 04",
+        "away": "1. FSV Mainz 05",
+        "round": 6,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/6/fc-schalke-04-vs-1-fsv-mainz-05/liveticker/",
+        "cards": [],
+        "subs": [],
+        "checkedAt": "2026-10-17T13:57:05.188Z"
       }
     },
     "bl2": {
@@ -2795,6 +2860,131 @@
         ],
         "finalChecked": true
       },
+      "83626": {
+        "matchId": "83626",
+        "home": "VfL Wolfsburg",
+        "away": "1. FC Heidenheim 1846",
+        "round": 8,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/8/vfl-wolfsburg-vs-1-fc-heidenheim-1846/liveticker/",
+        "cards": [
+          {
+            "minute": "85′",
+            "type": "yellow",
+            "player": "Alessio Besio",
+            "crestId": "000003",
+            "team": "VfL Wolfsburg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "69′",
+            "type": "yellow",
+            "player": "Michael Heule",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "away"
+          },
+          {
+            "minute": "62′",
+            "type": "yellow",
+            "player": "Fabian Reese",
+            "crestId": "000003",
+            "team": "VfL Wolfsburg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "59′",
+            "type": "yellow",
+            "player": "Timon Wellenreuther",
+            "crestId": "000003",
+            "team": "VfL Wolfsburg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "32′",
+            "type": "yellow",
+            "player": "Hauke Wahl",
+            "crestId": "000003",
+            "team": "VfL Wolfsburg",
+            "teamSide": "home"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "89′",
+            "in": "Tim Siersleben",
+            "out": "Mikkel Kaufmann",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "away"
+          },
+          {
+            "minute": "89′",
+            "in": "Kento Shiogai",
+            "out": "Muhammed Damar",
+            "crestId": "000003",
+            "team": "VfL Wolfsburg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "89′",
+            "in": "Bence Dárdai",
+            "out": "Alexander Bernhardsson",
+            "crestId": "000003",
+            "team": "VfL Wolfsburg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "80′",
+            "in": "Alessio Besio",
+            "out": "Fabian Reese",
+            "crestId": "000003",
+            "team": "VfL Wolfsburg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "80′",
+            "in": "Yannik Wagner",
+            "out": "Paul Hennrich",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "away"
+          },
+          {
+            "minute": "67′",
+            "in": "Mathias Honsak",
+            "out": "Julian Niehues",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "away"
+          },
+          {
+            "minute": "64′",
+            "in": "Elvis Rexhbeçaj",
+            "out": "Yannick Gerhardt",
+            "crestId": "000003",
+            "team": "VfL Wolfsburg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "45+2′",
+            "in": "Marcel Costly",
+            "out": "Christian Conteh",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-10-17T13:57:19.323Z",
+        "finalChecked": true
+      },
+      "83628": {
+        "matchId": "83628",
+        "home": "1. FC Kaiserslautern",
+        "away": "VfL Bochum",
+        "round": 8,
+        "cards": [],
+        "finalAttempts": 1
+      },
       "83632": {
         "matchId": "83632",
         "home": "Holstein Kiel",
@@ -2910,6 +3100,99 @@
           }
         ],
         "checkedAt": "2026-10-16T18:27:49.595Z",
+        "finalChecked": true
+      },
+      "83639": {
+        "matchId": "83639",
+        "home": "SpVgg Greuther Fürth",
+        "away": "Eintracht Braunschweig",
+        "round": 8,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/8/spvgg-greuther-fuerth-vs-eintracht-braunschweig/liveticker/",
+        "cards": [
+          {
+            "minute": "74′",
+            "type": "yellow",
+            "player": "Felix Klaus",
+            "crestId": "00000W",
+            "team": "SpVgg Greuther Fürth",
+            "teamSide": "home"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "88′",
+            "in": "Faton Ademi",
+            "out": "Felix Klaus",
+            "crestId": "00000W",
+            "team": "SpVgg Greuther Fürth",
+            "teamSide": "home"
+          },
+          {
+            "minute": "88′",
+            "in": "Aaron Keller",
+            "out": "Ole Pohlmann",
+            "crestId": "00000W",
+            "team": "SpVgg Greuther Fürth",
+            "teamSide": "home"
+          },
+          {
+            "minute": "79′",
+            "in": "Junior Zé",
+            "out": "Lukas Frenkert",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "away"
+          },
+          {
+            "minute": "74′",
+            "in": "Krisztián Keresztes",
+            "out": "Luca Itter",
+            "crestId": "00000W",
+            "team": "SpVgg Greuther Fürth",
+            "teamSide": "home"
+          },
+          {
+            "minute": "74′",
+            "in": "Jordan",
+            "out": "Omar Sillah",
+            "crestId": "00000W",
+            "team": "SpVgg Greuther Fürth",
+            "teamSide": "home"
+          },
+          {
+            "minute": "66′",
+            "in": "Dennis Srbeny",
+            "out": "Shinta Appelkamp",
+            "crestId": "00000W",
+            "team": "SpVgg Greuther Fürth",
+            "teamSide": "home"
+          },
+          {
+            "minute": "64′",
+            "in": "Noah Katterbach",
+            "out": "Fabio Di Michele Sanchez",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "away"
+          },
+          {
+            "minute": "64′",
+            "in": "Jovan Mijatović",
+            "out": "Aaron Opoku",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "away"
+          },
+          {
+            "minute": "45+2′",
+            "in": "Robin Heußer",
+            "out": "Samuele Di Benedetto",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-10-17T13:57:32.134Z",
         "finalChecked": true
       },
       "83641": {
