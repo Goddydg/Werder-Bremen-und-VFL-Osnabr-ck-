@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T15:39:01.678Z",
+  "updatedAt": "2026-10-17T16:52:18.775Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1140,6 +1140,16 @@
         ],
         "finalChecked": true
       },
+      "83201": {
+        "matchId": "83201",
+        "home": "FC Bayern München",
+        "away": "RB Leipzig",
+        "round": 6,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/6/fc-bayern-muenchen-vs-rb-leipzig/liveticker/",
+        "cards": [],
+        "subs": [],
+        "checkedAt": "2026-10-17T16:52:18.069Z"
+      },
       "83203": {
         "matchId": "83203",
         "home": "Eintracht Frankfurt",
@@ -1715,7 +1725,7 @@
         "away": "FC Augsburg",
         "round": 6,
         "cards": [],
-        "finalAttempts": 1
+        "finalAttempts": 2
       }
     },
     "bl2": {
