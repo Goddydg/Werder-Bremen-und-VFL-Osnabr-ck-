@@ -37,8 +37,8 @@ h4{font-size:15px;margin:12px 0}
 .club-logo{width:32px;height:32px;object-fit:contain;flex:0 0 32px}
 .team-logo{width:30px;height:30px;object-fit:contain;flex:0 0 30px;vertical-align:middle}
 .table-team{display:flex;align-items:center;gap:4px;min-width:0;width:100%}
-.table-team-name{white-space:nowrap;font-size:11px;letter-spacing:-.1px;min-width:0}
-.rank-arrow{display:inline-block!important;font-size:0;line-height:0;width:0;height:0;margin:0 2px 0 2px;vertical-align:middle;border-left:5px solid transparent;border-right:5px solid transparent;position:relative;top:-1px}.rank-arrow.up{border-bottom:8px solid #20c965!important}.rank-arrow.down{border-top:8px solid #ff3848!important}.position-cell{text-align:left;vertical-align:middle;min-width:42px;width:42px;white-space:nowrap;font-variant-numeric:tabular-nums;position:relative;padding-right:10px}
+.table-team-name{white-space:nowrap;font-size:11px;letter-spacing:-.1px;min-width:0;overflow:hidden;text-overflow:ellipsis}
+.rank-arrow{display:inline-block!important;font-size:0;line-height:0;width:0;height:0;margin:0 2px 0 2px;vertical-align:middle;border-left:5px solid transparent;border-right:5px solid transparent;position:relative;top:-1px}.rank-arrow.up{border-bottom:8px solid #20c965!important}.rank-arrow.down{border-top:8px solid #ff3848!important}.position-cell{text-align:left;vertical-align:middle;min-width:40px;width:40px;white-space:nowrap;font-variant-numeric:tabular-nums;position:relative;padding-right:10px}
 .match-scoreline{display:grid;grid-template-columns:minmax(0,1fr) 48px minmax(0,1fr);align-items:center;gap:8px;width:100%;min-width:0;padding:4px 0 5px}
 .match-team{display:grid;grid-template-columns:28px minmax(0,1fr);align-items:center;column-gap:6px;min-width:0;min-height:30px;white-space:normal}
 .match-team.away{justify-content:stretch;text-align:left}
@@ -70,16 +70,16 @@ h4{font-size:15px;margin:12px 0}
 select{max-width:100%;padding:11px;border-radius:9px;background:#173c2a;color:white;border:1px solid #477258;font-size:15px}
 .league-purple select{background:#35194b;border-color:#8b5bb4}
 .table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
-table{width:100%;min-width:470px;border-collapse:collapse;table-layout:fixed;font-size:12px}
+table{width:100%;min-width:340px;border-collapse:collapse;table-layout:fixed;font-size:12px}
 th,td{padding:6px 2px;border-bottom:1px solid #294536;text-align:center;white-space:nowrap}
 td{font-size:14.5px;font-variant-numeric:tabular-nums}
-th:nth-child(1),td:nth-child(1){width:30px}
-th:nth-child(2),td:nth-child(2){text-align:left;width:153px}
-th:nth-child(3),td:nth-child(3){width:27px}
-th:nth-child(4),td:nth-child(4){width:36px}
-th:nth-child(5),td:nth-child(5){width:52px}
-th:nth-child(6),td:nth-child(6){width:36px}
-th:nth-child(7),td:nth-child(7),th:nth-child(8),td:nth-child(8),th:nth-child(9),td:nth-child(9){width:30px}
+th:nth-child(1),td:nth-child(1){width:40px}
+th:nth-child(2),td:nth-child(2){text-align:left;width:118px}
+th:nth-child(3),td:nth-child(3){width:22px}
+th:nth-child(4),td:nth-child(4){width:26px}
+th:nth-child(5),td:nth-child(5){width:40px}
+th:nth-child(6),td:nth-child(6){width:28px}
+th:nth-child(7),td:nth-child(7),th:nth-child(8),td:nth-child(8),th:nth-child(9),td:nth-child(9){width:22px}
 th{color:#b9d3c3;font-size:12px}
 .league-purple th{color:#dfc9f1}
 .league-purple th,.league-purple td{border-bottom-color:#493257}
