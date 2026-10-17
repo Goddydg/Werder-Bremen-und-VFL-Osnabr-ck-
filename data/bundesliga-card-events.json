@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T14:37:01.814Z",
+  "updatedAt": "2026-10-17T14:41:55.802Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1307,7 +1307,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T14:36:50.245Z"
+        "checkedAt": "2026-10-17T14:41:44.214Z"
       },
       "83206": {
         "matchId": "83206",
@@ -1317,7 +1317,7 @@
         "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/6/hamburger-sv-vs-vfb-stuttgart/liveticker/",
         "cards": [],
         "subs": [],
-        "checkedAt": "2026-10-17T14:36:51.168Z"
+        "checkedAt": "2026-10-17T14:41:45.136Z"
       },
       "83207": {
         "matchId": "83207",
@@ -1345,7 +1345,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T14:36:52.186Z"
+        "checkedAt": "2026-10-17T14:41:46.154Z"
       },
       "83208": {
         "matchId": "83208",
@@ -1369,10 +1369,18 @@
             "crestId": "000006",
             "team": "1. FSV Mainz 05",
             "teamSide": "away"
+          },
+          {
+            "minute": "42′",
+            "type": "yellow",
+            "player": "Nadiem Amiri",
+            "crestId": "000006",
+            "team": "1. FSV Mainz 05",
+            "teamSide": "away"
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-17T14:36:53.206Z"
+        "checkedAt": "2026-10-17T14:41:47.178Z"
       }
     },
     "bl2": {
