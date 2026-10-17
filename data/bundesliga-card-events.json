@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T20:20:27.245Z",
+  "updatedAt": "2026-10-17T20:23:34.908Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3515,6 +3515,14 @@
         ],
         "subs": [
           {
+            "minute": "90+5′",
+            "in": "Taichi Hara",
+            "out": "Ricky-Jade Jones",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "away"
+          },
+          {
             "minute": "86′",
             "in": "Branimir Hrgota",
             "out": "Connor Metcalfe",
@@ -3571,7 +3579,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-17T20:20:27.244Z"
+        "checkedAt": "2026-10-17T20:23:34.907Z"
       },
       "83628": {
         "matchId": "83628",
