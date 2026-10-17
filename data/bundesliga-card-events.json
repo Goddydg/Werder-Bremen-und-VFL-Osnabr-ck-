@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T15:16:28.240Z",
+  "updatedAt": "2026-10-17T15:17:42.754Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1363,7 +1363,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:16:16.610Z"
+        "checkedAt": "2026-10-17T15:17:31.130Z"
       },
       "83206": {
         "matchId": "83206",
@@ -1471,7 +1471,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:16:17.537Z"
+        "checkedAt": "2026-10-17T15:17:32.054Z"
       },
       "83207": {
         "matchId": "83207",
@@ -1498,6 +1498,22 @@
           }
         ],
         "subs": [
+          {
+            "minute": "88′",
+            "in": "Jonah Sticker",
+            "out": "Mattes Hansen",
+            "crestId": "00000L",
+            "team": "SC Paderborn 07",
+            "teamSide": "away"
+          },
+          {
+            "minute": "88′",
+            "in": "Paul Erevbenagie",
+            "out": "Youri Regeer",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "home"
+          },
           {
             "minute": "80′",
             "in": "Dariusz Stalmach",
@@ -1555,7 +1571,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:16:18.559Z"
+        "checkedAt": "2026-10-17T15:17:33.077Z"
       },
       "83208": {
         "matchId": "83208",
@@ -1591,6 +1607,14 @@
         ],
         "subs": [
           {
+            "minute": "86′",
+            "in": "Eric Martel",
+            "out": "Nadiem Amiri",
+            "crestId": "000006",
+            "team": "1. FSV Mainz 05",
+            "teamSide": "away"
+          },
+          {
             "minute": "79′",
             "in": "Vitalie Becker",
             "out": "Robin Gosens",
@@ -1599,7 +1623,7 @@
             "teamSide": "home"
           },
           {
-            "minute": "75′",
+            "minute": "76′",
             "in": "Ransford-Yeboah Königsdörffer",
             "out": "Sheraldo Becker",
             "crestId": "000006",
@@ -1607,7 +1631,7 @@
             "teamSide": "away"
           },
           {
-            "minute": "75′",
+            "minute": "76′",
             "in": "Paul Nebel",
             "out": "Jaesung Lee",
             "crestId": "000006",
@@ -1647,7 +1671,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:16:19.588Z"
+        "checkedAt": "2026-10-17T15:17:34.098Z"
       }
     },
     "bl2": {
