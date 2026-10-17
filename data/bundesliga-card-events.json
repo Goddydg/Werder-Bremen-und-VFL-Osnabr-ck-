@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T15:06:32.487Z",
+  "updatedAt": "2026-10-17T15:07:46.943Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1307,6 +1307,22 @@
         ],
         "subs": [
           {
+            "minute": "76′",
+            "in": "Aljoscha Kemlein",
+            "out": "András Schäfer",
+            "crestId": "00000V",
+            "team": "1. FC Union Berlin",
+            "teamSide": "home"
+          },
+          {
+            "minute": "76′",
+            "in": "Christopher Trimmel",
+            "out": "Janik Haberer",
+            "crestId": "00000V",
+            "team": "1. FC Union Berlin",
+            "teamSide": "home"
+          },
+          {
             "minute": "70′",
             "in": "Mathis Albert",
             "out": "Konstantinos Karetsas",
@@ -1347,7 +1363,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:06:20.861Z"
+        "checkedAt": "2026-10-17T15:07:35.453Z"
       },
       "83206": {
         "matchId": "83206",
@@ -1391,7 +1407,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:06:21.787Z"
+        "checkedAt": "2026-10-17T15:07:36.381Z"
       },
       "83207": {
         "matchId": "83207",
@@ -1459,7 +1475,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:06:22.807Z"
+        "checkedAt": "2026-10-17T15:07:37.402Z"
       },
       "83208": {
         "matchId": "83208",
@@ -1543,7 +1559,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T15:06:23.827Z"
+        "checkedAt": "2026-10-17T15:07:38.422Z"
       }
     },
     "bl2": {
