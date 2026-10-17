@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T16:53:31.503Z",
+  "updatedAt": "2026-10-17T17:36:54.615Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1147,8 +1147,25 @@
         "round": 6,
         "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/6/fc-bayern-muenchen-vs-rb-leipzig/liveticker/",
         "cards": [],
-        "subs": [],
-        "checkedAt": "2026-10-17T16:53:30.702Z"
+        "subs": [
+          {
+            "minute": "45+3′",
+            "in": "Tidiam Gomis",
+            "out": "Christopher Nkunku",
+            "crestId": "000017",
+            "team": "RB Leipzig",
+            "teamSide": "away"
+          },
+          {
+            "minute": "45+3′",
+            "in": "Nicolas Seiwald",
+            "out": "Ezechiel Banzuzi",
+            "crestId": "000017",
+            "team": "RB Leipzig",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-10-17T17:36:54.441Z"
       },
       "83203": {
         "matchId": "83203",
