@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T19:56:35.270Z",
+  "updatedAt": "2026-10-17T20:03:50.562Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3507,6 +3507,14 @@
         ],
         "subs": [
           {
+            "minute": "75′",
+            "in": "Hayate Matsuda",
+            "out": "Husseyn Chakroun",
+            "crestId": "000001",
+            "team": "Hannover 96",
+            "teamSide": "home"
+          },
+          {
             "minute": "68′",
             "in": "Benedikt Pichler",
             "out": "Kolja Oudenne",
@@ -3531,7 +3539,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-17T19:56:35.270Z"
+        "checkedAt": "2026-10-17T20:03:50.562Z"
       },
       "83628": {
         "matchId": "83628",
