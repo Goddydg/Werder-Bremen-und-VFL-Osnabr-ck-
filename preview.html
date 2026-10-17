@@ -246,7 +246,7 @@ let selectedRound={bl1:null,bl2:null};
 let expandedMatch={bl1:null,bl2:null};
 let lastUpdate=null,loading=false,initialRenderDone=false,savedSourcesLoaded=false,lastSavedSourcesCheck=0;
 let clubSchedules={bl1:[],bl2:[]},clubScheduleLoaded={bl1:false,bl2:false},clubScheduleExpanded={bl1:false,bl2:false};
-let matchdayExpanded={bl1:false,bl2:false};
+let matchdayExpanded={bl1:true,bl2:true};
 
 function esc(value){return String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 async function loadJSON(url){const response=await fetch(url,{cache:'no-store'});if(!response.ok)throw new Error('HTTP '+response.status);return response.json();}
