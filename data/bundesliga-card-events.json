@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T14:56:42.244Z",
+  "updatedAt": "2026-10-17T14:59:09.682Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1331,7 +1331,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T14:56:30.719Z"
+        "checkedAt": "2026-10-17T14:58:58.045Z"
       },
       "83206": {
         "matchId": "83206",
@@ -1351,6 +1351,22 @@
         ],
         "subs": [
           {
+            "minute": "67′",
+            "in": "Chris Führich",
+            "out": "Bilal El Khannouss",
+            "crestId": "00000D",
+            "team": "VfB Stuttgart",
+            "teamSide": "away"
+          },
+          {
+            "minute": "67′",
+            "in": "Grischa Prömel",
+            "out": "Atakan Karazor",
+            "crestId": "00000D",
+            "team": "VfB Stuttgart",
+            "teamSide": "away"
+          },
+          {
             "minute": "61′",
             "in": "Otto Stange",
             "out": "Yussuf Poulsen",
@@ -1359,7 +1375,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T14:56:31.643Z"
+        "checkedAt": "2026-10-17T14:58:58.973Z"
       },
       "83207": {
         "matchId": "83207",
@@ -1411,7 +1427,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T14:56:32.664Z"
+        "checkedAt": "2026-10-17T14:58:59.994Z"
       },
       "83208": {
         "matchId": "83208",
@@ -1463,7 +1479,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T14:56:33.682Z"
+        "checkedAt": "2026-10-17T14:59:01.019Z"
       }
     },
     "bl2": {
