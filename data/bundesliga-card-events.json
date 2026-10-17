@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T14:00:17.446Z",
+  "updatedAt": "2026-10-17T14:05:11.150Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1279,10 +1279,18 @@
             "crestId": "000007",
             "team": "Borussia Dortmund",
             "teamSide": "away"
+          },
+          {
+            "minute": "33′",
+            "type": "yellow",
+            "player": "Janik Haberer",
+            "crestId": "00000V",
+            "team": "1. FC Union Berlin",
+            "teamSide": "home"
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-17T13:59:57.618Z"
+        "checkedAt": "2026-10-17T14:04:59.607Z"
       },
       "83206": {
         "matchId": "83206",
@@ -1292,7 +1300,7 @@
         "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/6/hamburger-sv-vs-vfb-stuttgart/liveticker/",
         "cards": [],
         "subs": [],
-        "checkedAt": "2026-10-17T13:59:58.543Z"
+        "checkedAt": "2026-10-17T14:05:00.532Z"
       },
       "83207": {
         "matchId": "83207",
@@ -1311,7 +1319,7 @@
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-17T13:59:59.559Z"
+        "checkedAt": "2026-10-17T14:05:01.550Z"
       },
       "83208": {
         "matchId": "83208",
@@ -1321,7 +1329,7 @@
         "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/6/fc-schalke-04-vs-1-fsv-mainz-05/liveticker/",
         "cards": [],
         "subs": [],
-        "checkedAt": "2026-10-17T14:00:00.577Z"
+        "checkedAt": "2026-10-17T14:05:02.568Z"
       }
     },
     "bl2": {
@@ -3353,6 +3361,7 @@
     "000018": "1. FC Heidenheim 1846",
     "000N5D": "1. FC Magdeburg",
     "000N5P": "Holstein Kiel",
-    "00000O": "Energie Cottbus"
+    "00000O": "Energie Cottbus",
+    "00000V": "1. FC Union Berlin"
   }
 }
