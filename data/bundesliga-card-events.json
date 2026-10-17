@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T14:52:59.142Z",
+  "updatedAt": "2026-10-17T14:54:13.481Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1299,6 +1299,22 @@
         ],
         "subs": [
           {
+            "minute": "62′",
+            "in": "Fabio Silva",
+            "out": "Ethan Nwaneri",
+            "crestId": "000007",
+            "team": "Borussia Dortmund",
+            "teamSide": "away"
+          },
+          {
+            "minute": "62′",
+            "in": "Konstantinos Karetsas",
+            "out": "Maximilian Beier",
+            "crestId": "000007",
+            "team": "Borussia Dortmund",
+            "teamSide": "away"
+          },
+          {
             "minute": "45+5′",
             "in": "Emmanuel Latte Lath",
             "out": "Kastriot Imeri",
@@ -1307,7 +1323,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T14:52:47.512Z"
+        "checkedAt": "2026-10-17T14:54:01.919Z"
       },
       "83206": {
         "matchId": "83206",
@@ -1335,7 +1351,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T14:52:48.436Z"
+        "checkedAt": "2026-10-17T14:54:02.844Z"
       },
       "83207": {
         "matchId": "83207",
@@ -1371,7 +1387,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T14:52:49.456Z"
+        "checkedAt": "2026-10-17T14:54:03.863Z"
       },
       "83208": {
         "matchId": "83208",
@@ -1423,7 +1439,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-17T14:52:50.475Z"
+        "checkedAt": "2026-10-17T14:54:04.887Z"
       }
     },
     "bl2": {
