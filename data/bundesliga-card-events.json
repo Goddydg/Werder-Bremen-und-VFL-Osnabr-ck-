@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T18:39:05.681Z",
+  "updatedAt": "2026-10-17T18:47:22.703Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3495,10 +3495,18 @@
             "crestId": "000001",
             "team": "Hannover 96",
             "teamSide": "home"
+          },
+          {
+            "minute": "17′",
+            "type": "yellow",
+            "player": "Stefán Teitur Thórdarson",
+            "crestId": "000001",
+            "team": "Hannover 96",
+            "teamSide": "home"
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-17T18:39:05.681Z"
+        "checkedAt": "2026-10-17T18:47:22.702Z"
       },
       "83628": {
         "matchId": "83628",
