@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T18:30:48.256Z",
+  "updatedAt": "2026-10-17T18:39:05.681Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3487,9 +3487,18 @@
         "away": "FC St. Pauli",
         "round": 8,
         "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/8/hannover-96-vs-fc-st-pauli/liveticker/",
-        "cards": [],
+        "cards": [
+          {
+            "minute": "8′",
+            "type": "yellow",
+            "player": "Husseyn Chakroun",
+            "crestId": "000001",
+            "team": "Hannover 96",
+            "teamSide": "home"
+          }
+        ],
         "subs": [],
-        "checkedAt": "2026-10-17T18:30:48.255Z"
+        "checkedAt": "2026-10-17T18:39:05.681Z"
       },
       "83628": {
         "matchId": "83628",
