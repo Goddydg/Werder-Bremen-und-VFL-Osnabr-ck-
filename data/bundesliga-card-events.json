@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-18T16:16:57.152Z",
+  "updatedAt": "2026-10-18T16:19:02.927Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1497,10 +1497,18 @@
             "crestId": "000004",
             "team": "Borussia Mönchengladbach",
             "teamSide": "home"
+          },
+          {
+            "minute": "45+1′",
+            "type": "yellow",
+            "player": "Fisnik Asllani",
+            "crestId": "000002",
+            "team": "TSG Hoffenheim",
+            "teamSide": "away"
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-18T16:16:56.994Z"
+        "checkedAt": "2026-10-18T16:19:02.767Z"
       },
       "83206": {
         "matchId": "83206",
