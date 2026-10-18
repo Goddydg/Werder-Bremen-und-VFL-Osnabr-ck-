@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-18T17:12:01.622Z",
+  "updatedAt": "2026-10-18T17:21:20.224Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1513,6 +1513,30 @@
             "crestId": "000002",
             "team": "TSG Hoffenheim",
             "teamSide": "away"
+          },
+          {
+            "minute": "89′",
+            "type": "yellow",
+            "player": "Robin Hack",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "home"
+          },
+          {
+            "minute": "89′",
+            "type": "yellow",
+            "player": "Leon Avdullahu",
+            "crestId": "000002",
+            "team": "TSG Hoffenheim",
+            "teamSide": "away"
+          },
+          {
+            "minute": "89′",
+            "type": "yellow",
+            "player": "Alexander Prass",
+            "crestId": "000002",
+            "team": "TSG Hoffenheim",
+            "teamSide": "away"
           }
         ],
         "subs": [
@@ -1581,7 +1605,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-18T17:12:01.463Z"
+        "checkedAt": "2026-10-18T17:21:20.059Z"
       },
       "83206": {
         "matchId": "83206",
