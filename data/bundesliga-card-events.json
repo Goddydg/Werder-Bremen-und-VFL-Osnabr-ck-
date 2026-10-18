@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-18T17:10:58.406Z",
+  "updatedAt": "2026-10-18T17:12:01.622Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1518,16 +1518,16 @@
         "subs": [
           {
             "minute": "79′",
-            "in": "Iaia Manco Danfa",
-            "out": "Fabio Chiarodia",
+            "in": "Mathieu Nguefack",
+            "out": "Zento Uno",
             "crestId": "000004",
             "team": "Borussia Mönchengladbach",
             "teamSide": "home"
           },
           {
             "minute": "78′",
-            "in": "Mathieu Nguefack",
-            "out": "Zento Uno",
+            "in": "Iaia Manco Danfa",
+            "out": "Fabio Chiarodia",
             "crestId": "000004",
             "team": "Borussia Mönchengladbach",
             "teamSide": "home"
@@ -1581,7 +1581,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-18T17:10:58.247Z"
+        "checkedAt": "2026-10-18T17:12:01.463Z"
       },
       "83206": {
         "matchId": "83206",
