@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-18T15:30:20.065Z",
+  "updatedAt": "2026-10-18T16:16:57.152Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1489,9 +1489,18 @@
         "away": "TSG Hoffenheim",
         "round": 6,
         "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/6/borussia-moenchengladbach-vs-tsg-hoffenheim/liveticker/",
-        "cards": [],
+        "cards": [
+          {
+            "minute": "45′",
+            "type": "yellow",
+            "player": "Kevin Diks",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "home"
+          }
+        ],
         "subs": [],
-        "checkedAt": "2026-10-18T15:30:19.169Z"
+        "checkedAt": "2026-10-18T16:16:56.994Z"
       },
       "83206": {
         "matchId": "83206",
