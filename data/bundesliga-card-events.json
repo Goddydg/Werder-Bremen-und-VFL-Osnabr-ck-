@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-18T13:38:21.226Z",
+  "updatedAt": "2026-10-18T15:27:56.161Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1240,6 +1240,14 @@
         ],
         "checkedAt": "2026-10-17T18:24:35.216Z",
         "finalChecked": true
+      },
+      "83202": {
+        "matchId": "83202",
+        "home": "Bayer 04 Leverkusen",
+        "away": "SC Freiburg",
+        "round": 6,
+        "cards": [],
+        "finalAttempts": 1
       },
       "83203": {
         "matchId": "83203",
