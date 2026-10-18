@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-18T16:51:17.444Z",
+  "updatedAt": "2026-10-18T17:01:38.522Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1517,6 +1517,14 @@
         ],
         "subs": [
           {
+            "minute": "69′",
+            "in": "Adam Daghim",
+            "out": "Fisnik Asllani",
+            "crestId": "000002",
+            "team": "TSG Hoffenheim",
+            "teamSide": "away"
+          },
+          {
             "minute": "60′",
             "in": "Daiki Hashioka",
             "out": "Florian Neuhaus",
@@ -1533,7 +1541,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-18T16:51:17.285Z"
+        "checkedAt": "2026-10-18T17:01:38.364Z"
       },
       "83206": {
         "matchId": "83206",
