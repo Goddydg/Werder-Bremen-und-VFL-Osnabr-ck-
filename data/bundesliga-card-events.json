@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-18T15:29:07.346Z",
+  "updatedAt": "2026-10-18T15:30:20.065Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1247,7 +1247,7 @@
         "away": "SC Freiburg",
         "round": 6,
         "cards": [],
-        "finalAttempts": 2
+        "finalAttempts": 3
       },
       "83203": {
         "matchId": "83203",
@@ -1482,6 +1482,16 @@
         ],
         "checkedAt": "2026-10-17T15:27:18.098Z",
         "finalChecked": true
+      },
+      "83205": {
+        "matchId": "83205",
+        "home": "Borussia Mönchengladbach",
+        "away": "TSG Hoffenheim",
+        "round": 6,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/6/borussia-moenchengladbach-vs-tsg-hoffenheim/liveticker/",
+        "cards": [],
+        "subs": [],
+        "checkedAt": "2026-10-18T15:30:19.169Z"
       },
       "83206": {
         "matchId": "83206",
