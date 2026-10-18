@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-18T16:19:02.927Z",
+  "updatedAt": "2026-10-18T16:20:07.009Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1505,10 +1505,18 @@
             "crestId": "000002",
             "team": "TSG Hoffenheim",
             "teamSide": "away"
+          },
+          {
+            "minute": "45+1′",
+            "type": "yellow",
+            "player": "Asllani schießt den Ball nach einem Freistoß-P",
+            "crestId": "000002",
+            "team": "TSG Hoffenheim",
+            "teamSide": "away"
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-18T16:19:02.767Z"
+        "checkedAt": "2026-10-18T16:20:06.849Z"
       },
       "83206": {
         "matchId": "83206",
