@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-18T16:42:58.778Z",
+  "updatedAt": "2026-10-18T16:51:17.444Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1517,6 +1517,14 @@
         ],
         "subs": [
           {
+            "minute": "60′",
+            "in": "Daiki Hashioka",
+            "out": "Florian Neuhaus",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "home"
+          },
+          {
             "minute": "51′",
             "in": "Shūto Machino",
             "out": "Isac Lidberg",
@@ -1525,7 +1533,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-18T16:42:58.619Z"
+        "checkedAt": "2026-10-18T16:51:17.285Z"
       },
       "83206": {
         "matchId": "83206",
