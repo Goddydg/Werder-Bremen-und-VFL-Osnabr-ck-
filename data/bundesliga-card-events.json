@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-18T15:27:56.161Z",
+  "updatedAt": "2026-10-18T15:29:07.346Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1247,7 +1247,7 @@
         "away": "SC Freiburg",
         "round": 6,
         "cards": [],
-        "finalAttempts": 1
+        "finalAttempts": 2
       },
       "83203": {
         "matchId": "83203",
