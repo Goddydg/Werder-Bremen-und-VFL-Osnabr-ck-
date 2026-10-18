@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-18T17:01:38.522Z",
+  "updatedAt": "2026-10-18T17:09:54.956Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1517,6 +1517,38 @@
         ],
         "subs": [
           {
+            "minute": "78′",
+            "in": "Mathieu Nguefack",
+            "out": "Zento Uno",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "home"
+          },
+          {
+            "minute": "78′",
+            "in": "Robin Hack",
+            "out": "Hugo Bolin",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "home"
+          },
+          {
+            "minute": "78′",
+            "in": "Ozan Kabak",
+            "out": "Tim Lemperle",
+            "crestId": "000002",
+            "team": "TSG Hoffenheim",
+            "teamSide": "away"
+          },
+          {
+            "minute": "78′",
+            "in": "Andrej Kramarić",
+            "out": "Adam Hložek",
+            "crestId": "000002",
+            "team": "TSG Hoffenheim",
+            "teamSide": "away"
+          },
+          {
             "minute": "69′",
             "in": "Adam Daghim",
             "out": "Fisnik Asllani",
@@ -1541,7 +1573,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-18T17:01:38.364Z"
+        "checkedAt": "2026-10-18T17:09:54.794Z"
       },
       "83206": {
         "matchId": "83206",
