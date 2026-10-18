@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-17T21:11:05.540Z",
+  "updatedAt": "2026-10-18T13:38:21.226Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3590,6 +3590,216 @@
         "cards": [],
         "finalAttempts": 3
       },
+      "83629": {
+        "matchId": "83629",
+        "home": "Karlsruher SC",
+        "away": "SV Darmstadt 98",
+        "round": 8,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/8/karlsruher-sc-vs-sv-darmstadt-98/liveticker/",
+        "cards": [
+          {
+            "minute": "71′",
+            "type": "yellow",
+            "player": "Milan Smit",
+            "crestId": "000016",
+            "team": "SV Darmstadt 98",
+            "teamSide": "away"
+          },
+          {
+            "minute": "71′",
+            "type": "yellow",
+            "player": "Aleksandar Vukotić",
+            "crestId": "000016",
+            "team": "SV Darmstadt 98",
+            "teamSide": "away"
+          },
+          {
+            "minute": "71′",
+            "type": "yellow",
+            "player": "Sandro Trémoulet",
+            "crestId": "00000T",
+            "team": "Karlsruher SC",
+            "teamSide": "home"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "81′",
+            "in": "Danyal Zor",
+            "out": "Santeri Väänänen",
+            "crestId": "00000T",
+            "team": "Karlsruher SC",
+            "teamSide": "home"
+          },
+          {
+            "minute": "81′",
+            "in": "Paul Scholl",
+            "out": "Christoph Kobald",
+            "crestId": "00000T",
+            "team": "Karlsruher SC",
+            "teamSide": "home"
+          },
+          {
+            "minute": "72′",
+            "in": "Ibrahim El Kadiri",
+            "out": "Marco Richter",
+            "crestId": "000016",
+            "team": "SV Darmstadt 98",
+            "teamSide": "away"
+          },
+          {
+            "minute": "72′",
+            "in": "Yannik Lührs",
+            "out": "Lance Duijvestijn",
+            "crestId": "000016",
+            "team": "SV Darmstadt 98",
+            "teamSide": "away"
+          },
+          {
+            "minute": "72′",
+            "in": "Florian Kleinhansl",
+            "out": "Ho-jae Lee",
+            "crestId": "000016",
+            "team": "SV Darmstadt 98",
+            "teamSide": "away"
+          },
+          {
+            "minute": "72′",
+            "in": "Noah Weißhaupt",
+            "out": "Hiroki Akiyama",
+            "crestId": "000016",
+            "team": "SV Darmstadt 98",
+            "teamSide": "away"
+          },
+          {
+            "minute": "66′",
+            "in": "Deniz Ofli",
+            "out": "Sebastian Jung",
+            "crestId": "00000T",
+            "team": "Karlsruher SC",
+            "teamSide": "home"
+          },
+          {
+            "minute": "66′",
+            "in": "Tim Civeja",
+            "out": "Kevin Wiethaup",
+            "crestId": "00000T",
+            "team": "Karlsruher SC",
+            "teamSide": "home"
+          },
+          {
+            "minute": "62′",
+            "in": "Jason Ponente-Ramirez",
+            "out": "Noel Eichinger",
+            "crestId": "00000T",
+            "team": "Karlsruher SC",
+            "teamSide": "home"
+          }
+        ],
+        "checkedAt": "2026-10-18T13:38:15.659Z",
+        "finalChecked": true
+      },
+      "83630": {
+        "matchId": "83630",
+        "home": "Dynamo Dresden",
+        "away": "1. FC Magdeburg",
+        "round": 8,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/8/sg-dynamo-dresden-vs-1-fc-magdeburg/liveticker/",
+        "cards": [
+          {
+            "minute": "85′",
+            "type": "yellow",
+            "player": "Ahmet Muhamedbegović",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "home"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "87′",
+            "in": "Kaan İnanoğlu",
+            "out": "Niklas Hauptmann",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "home"
+          },
+          {
+            "minute": "87′",
+            "in": "Richmond Tachie",
+            "out": "Pierre Nadjombe",
+            "crestId": "000N5D",
+            "team": "1. FC Magdeburg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "87′",
+            "in": "Roko Šimić",
+            "out": "Mateusz Żukowski",
+            "crestId": "000N5D",
+            "team": "1. FC Magdeburg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "87′",
+            "in": "Luca Herrmann",
+            "out": "Patrice Čović",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "home"
+          },
+          {
+            "minute": "80′",
+            "in": "Nils Fröling",
+            "out": "Vincent Vermeij",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "home"
+          },
+          {
+            "minute": "80′",
+            "in": "Ahmet Muhamedbegović",
+            "out": "Nicolai Rapp",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "home"
+          },
+          {
+            "minute": "77′",
+            "in": "Magnus Baars",
+            "out": "Moritz-Broni Kwarteng",
+            "crestId": "000N5D",
+            "team": "1. FC Magdeburg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "72′",
+            "in": "Jakob Lemmer",
+            "out": "Ben Bobzien",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "home"
+          },
+          {
+            "minute": "55′",
+            "in": "Felipe Chávez",
+            "out": "Luka Hyryläinen",
+            "crestId": "000N5D",
+            "team": "1. FC Magdeburg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "55′",
+            "in": "Alexander Nollenberger",
+            "out": "Herbert Bockhorn",
+            "crestId": "000N5D",
+            "team": "1. FC Magdeburg",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-10-18T13:38:18.543Z",
+        "finalChecked": true
+      },
       "83632": {
         "matchId": "83632",
         "home": "Holstein Kiel",
@@ -3705,6 +3915,131 @@
           }
         ],
         "checkedAt": "2026-10-16T18:27:49.595Z",
+        "finalChecked": true
+      },
+      "83635": {
+        "matchId": "83635",
+        "home": "DSC Arminia Bielefeld",
+        "away": "VfL Osnabrück",
+        "round": 8,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/8/dsc-arminia-bielefeld-vs-vfl-osnabrueck/liveticker/",
+        "cards": [
+          {
+            "minute": "89′",
+            "type": "yellow",
+            "player": "Stefano Russo",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "home"
+          },
+          {
+            "minute": "86′",
+            "type": "yellow",
+            "player": "Maximilian Großer",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "home"
+          },
+          {
+            "minute": "38′",
+            "type": "yellow",
+            "player": "Benjamin Boakye",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "home"
+          },
+          {
+            "minute": "2′",
+            "type": "yellow",
+            "player": "Robin Fabinski",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "89′",
+            "in": "Bernd Riesselmann",
+            "out": "Adrian Beck",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "away"
+          },
+          {
+            "minute": "89′",
+            "in": "Leonhard Münst",
+            "out": "Jonathan Gómez",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "away"
+          },
+          {
+            "minute": "89′",
+            "in": "Theo Janotta",
+            "out": "Jannik Müller",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "away"
+          },
+          {
+            "minute": "88′",
+            "in": "Vincent Ocansey",
+            "out": "Joel Grodowski",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "home"
+          },
+          {
+            "minute": "83′",
+            "in": "Luca Raimund",
+            "out": "Leon Flach",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "away"
+          },
+          {
+            "minute": "81′",
+            "in": "Joel Felix",
+            "out": "Leon Jensen",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "home"
+          },
+          {
+            "minute": "81′",
+            "in": "Henri Koudossou",
+            "out": "Felix Hagmann",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "home"
+          },
+          {
+            "minute": "68′",
+            "in": "Daniel Kofi Kyereh",
+            "out": "Ismail Badjie",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "away"
+          },
+          {
+            "minute": "59′",
+            "in": "Jannik Rochelt",
+            "out": "Benjamin Boakye",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "home"
+          },
+          {
+            "minute": "59′",
+            "in": "Monju Momuluh",
+            "out": "Isaiah Young",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "home"
+          }
+        ],
+        "checkedAt": "2026-10-18T13:38:21.225Z",
         "finalChecked": true
       },
       "83639": {
@@ -3951,6 +4286,8 @@
     "000N5P": "Holstein Kiel",
     "00000O": "Energie Cottbus",
     "00000V": "1. FC Union Berlin",
-    "000009": "FC Schalke 04"
+    "000009": "FC Schalke 04",
+    "000016": "SV Darmstadt 98",
+    "000015": "DSC Arminia Bielefeld"
   }
 }
