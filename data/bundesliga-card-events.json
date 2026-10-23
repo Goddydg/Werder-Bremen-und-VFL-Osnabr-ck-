@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T17:54:57.782Z",
+  "updatedAt": "2026-10-23T17:58:29.584Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4431,6 +4431,14 @@
             "crestId": "000016",
             "team": "SV Darmstadt 98",
             "teamSide": "home"
+          },
+          {
+            "minute": "65′",
+            "type": "yellow",
+            "player": "Adam Dźwigała",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "away"
           }
         ],
         "subs": [
@@ -4475,7 +4483,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-23T17:54:49.620Z"
+        "checkedAt": "2026-10-23T17:58:21.421Z"
       }
     }
   },
