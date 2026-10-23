@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T19:45:44.725Z",
+  "updatedAt": "2026-10-23T19:46:48.459Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1997,10 +1997,18 @@
             "crestId": "000004",
             "team": "Borussia Mönchengladbach",
             "teamSide": "away"
+          },
+          {
+            "minute": "54′",
+            "type": "yellow",
+            "player": "Joe Scally",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "away"
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-23T19:45:44.551Z"
+        "checkedAt": "2026-10-23T19:46:48.282Z"
       }
     },
     "bl2": {
