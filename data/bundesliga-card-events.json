@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T19:16:41.014Z",
+  "updatedAt": "2026-10-23T19:19:49.358Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1981,10 +1981,18 @@
             "crestId": "00000D",
             "team": "VfB Stuttgart",
             "teamSide": "home"
+          },
+          {
+            "minute": "45+3′",
+            "type": "yellow",
+            "player": "Florian Neuhaus",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "away"
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-23T19:16:40.832Z"
+        "checkedAt": "2026-10-23T19:19:49.172Z"
       }
     },
     "bl2": {
