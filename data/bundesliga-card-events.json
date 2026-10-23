@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T19:46:48.459Z",
+  "updatedAt": "2026-10-23T19:47:51.889Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2007,8 +2007,33 @@
             "teamSide": "away"
           }
         ],
-        "subs": [],
-        "checkedAt": "2026-10-23T19:46:48.282Z"
+        "subs": [
+          {
+            "minute": "55′",
+            "in": "Bilal El Khannouss",
+            "out": "Lorenz Assignon",
+            "crestId": "00000D",
+            "team": "VfB Stuttgart",
+            "teamSide": "home"
+          },
+          {
+            "minute": "55′",
+            "in": "Jamie Leweling",
+            "out": "Leo Sauer",
+            "crestId": "00000D",
+            "team": "VfB Stuttgart",
+            "teamSide": "home"
+          },
+          {
+            "minute": "55′",
+            "in": "Deniz Undav",
+            "out": "Dženan Pejčinović",
+            "crestId": "00000D",
+            "team": "VfB Stuttgart",
+            "teamSide": "home"
+          }
+        ],
+        "checkedAt": "2026-10-23T19:47:51.714Z"
       }
     },
     "bl2": {
