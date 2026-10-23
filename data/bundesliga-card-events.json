@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T18:18:25.476Z",
+  "updatedAt": "2026-10-23T18:25:27.196Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4447,6 +4447,14 @@
             "crestId": "00000H",
             "team": "FC St. Pauli",
             "teamSide": "away"
+          },
+          {
+            "minute": "90+3′",
+            "type": "yellow",
+            "player": "William Mikelbrencis",
+            "crestId": "000016",
+            "team": "SV Darmstadt 98",
+            "teamSide": "home"
           }
         ],
         "subs": [
@@ -4515,7 +4523,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-23T18:18:17.308Z"
+        "checkedAt": "2026-10-23T18:25:19.025Z"
       }
     }
   },
