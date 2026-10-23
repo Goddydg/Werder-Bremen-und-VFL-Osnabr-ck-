@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T18:16:03.569Z",
+  "updatedAt": "2026-10-23T18:18:25.476Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4451,6 +4451,22 @@
         ],
         "subs": [
           {
+            "minute": "85′",
+            "in": "Lance Duijvestijn",
+            "out": "Milan Smit",
+            "crestId": "000016",
+            "team": "SV Darmstadt 98",
+            "teamSide": "home"
+          },
+          {
+            "minute": "85′",
+            "in": "Branimir Hrgota",
+            "out": "Connor Metcalfe",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "away"
+          },
+          {
             "minute": "67′",
             "in": "Taichi Hara",
             "out": "Youssoupha Niang",
@@ -4499,7 +4515,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-23T18:15:55.412Z"
+        "checkedAt": "2026-10-23T18:18:17.308Z"
       }
     }
   },
