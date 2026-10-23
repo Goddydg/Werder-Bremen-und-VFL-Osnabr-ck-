@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T20:11:50.184Z",
+  "updatedAt": "2026-10-23T20:17:02.524Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2017,6 +2017,22 @@
         ],
         "subs": [
           {
+            "minute": "84′",
+            "in": "Lion Schweers",
+            "out": "Shuto Machino",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "away"
+          },
+          {
+            "minute": "84′",
+            "in": "Mathieu Nguefack",
+            "out": "Hugo Bolin",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "away"
+          },
+          {
             "minute": "76′",
             "in": "David Herold",
             "out": "Fabio Chiarodia",
@@ -2073,7 +2089,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-23T20:11:50.006Z"
+        "checkedAt": "2026-10-23T20:17:02.348Z"
       }
     },
     "bl2": {
