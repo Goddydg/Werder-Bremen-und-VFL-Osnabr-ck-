@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T20:17:02.524Z",
+  "updatedAt": "2026-10-23T20:23:15.340Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2017,6 +2017,14 @@
         ],
         "subs": [
           {
+            "minute": "90′",
+            "in": "Jeff Chabot",
+            "out": "Finn Jeltsch",
+            "crestId": "00000D",
+            "team": "VfB Stuttgart",
+            "teamSide": "home"
+          },
+          {
             "minute": "84′",
             "in": "Lion Schweers",
             "out": "Shuto Machino",
@@ -2089,7 +2097,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-23T20:17:02.348Z"
+        "checkedAt": "2026-10-23T20:23:15.164Z"
       }
     },
     "bl2": {
