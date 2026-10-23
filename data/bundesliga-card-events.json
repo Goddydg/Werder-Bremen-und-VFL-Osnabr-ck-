@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T17:37:23.418Z",
+  "updatedAt": "2026-10-23T17:49:06.170Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4423,6 +4423,14 @@
             "crestId": "00000H",
             "team": "FC St. Pauli",
             "teamSide": "away"
+          },
+          {
+            "minute": "56′",
+            "type": "yellow",
+            "player": "Kai Klefisch",
+            "crestId": "000016",
+            "team": "SV Darmstadt 98",
+            "teamSide": "home"
           }
         ],
         "subs": [
@@ -4451,7 +4459,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-23T17:37:15.228Z"
+        "checkedAt": "2026-10-23T17:48:58.007Z"
       }
     }
   },
