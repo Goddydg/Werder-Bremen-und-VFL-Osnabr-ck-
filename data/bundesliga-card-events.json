@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T20:08:42.484Z",
+  "updatedAt": "2026-10-23T20:11:50.184Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2005,6 +2005,14 @@
             "crestId": "000004",
             "team": "Borussia Mönchengladbach",
             "teamSide": "away"
+          },
+          {
+            "minute": "79′",
+            "type": "yellow",
+            "player": "Lukas Ullrich",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "away"
           }
         ],
         "subs": [
@@ -2065,7 +2073,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-23T20:08:42.306Z"
+        "checkedAt": "2026-10-23T20:11:50.006Z"
       }
     },
     "bl2": {
