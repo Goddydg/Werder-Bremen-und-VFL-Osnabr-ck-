@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-18T17:24:29.572Z",
+  "updatedAt": "2026-10-23T17:25:40.568Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4392,6 +4392,41 @@
         ],
         "checkedAt": "2026-10-16T18:27:57.934Z",
         "finalChecked": true
+      },
+      "83648": {
+        "matchId": "83648",
+        "home": "SV Darmstadt 98",
+        "away": "FC St. Pauli",
+        "round": 9,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/9/sv-darmstadt-98-vs-fc-st-pauli/liveticker/",
+        "cards": [
+          {
+            "minute": "26′",
+            "type": "yellow",
+            "player": "Raoul Petretta",
+            "crestId": "000016",
+            "team": "SV Darmstadt 98",
+            "teamSide": "home"
+          },
+          {
+            "minute": "26′",
+            "type": "yellow",
+            "player": "Abdoulie Ceesay",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "away"
+          },
+          {
+            "minute": "7′",
+            "type": "yellow",
+            "player": "Arkadiusz Pyrka",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [],
+        "checkedAt": "2026-10-23T17:25:29.509Z"
       }
     }
   },
