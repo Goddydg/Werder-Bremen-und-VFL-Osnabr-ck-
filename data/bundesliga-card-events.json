@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T20:02:24.376Z",
+  "updatedAt": "2026-10-23T20:03:28.137Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2010,6 +2010,14 @@
         "subs": [
           {
             "minute": "70′",
+            "in": "Robin Hack",
+            "out": "Wael Mohya",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "away"
+          },
+          {
+            "minute": "70′",
             "in": "Yukhym Konoplia",
             "out": "Joe Scally",
             "crestId": "000004",
@@ -2049,7 +2057,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-23T20:02:24.200Z"
+        "checkedAt": "2026-10-23T20:03:27.960Z"
       }
     },
     "bl2": {
