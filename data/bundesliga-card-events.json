@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T18:27:49.555Z",
+  "updatedAt": "2026-10-23T18:29:00.251Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4532,7 +4532,7 @@
         "away": "VfL Wolfsburg",
         "round": 9,
         "cards": [],
-        "finalAttempts": 2
+        "finalAttempts": 3
       }
     }
   },
