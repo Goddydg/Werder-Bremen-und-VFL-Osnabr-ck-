@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T18:25:27.196Z",
+  "updatedAt": "2026-10-23T18:26:38.663Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4523,7 +4523,16 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-23T18:25:19.025Z"
+        "checkedAt": "2026-10-23T18:26:30.500Z",
+        "finalChecked": true
+      },
+      "83655": {
+        "matchId": "83655",
+        "home": "VfL Bochum",
+        "away": "VfL Wolfsburg",
+        "round": 9,
+        "cards": [],
+        "finalAttempts": 1
       }
     }
   },
