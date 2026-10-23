@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T19:56:09.994Z",
+  "updatedAt": "2026-10-23T20:02:24.376Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2009,6 +2009,14 @@
         ],
         "subs": [
           {
+            "minute": "70′",
+            "in": "Yukhym Konoplia",
+            "out": "Joe Scally",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "away"
+          },
+          {
             "minute": "64′",
             "in": "Grischa Prömel",
             "out": "Atakan Karazor",
@@ -2041,7 +2049,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-23T19:56:09.818Z"
+        "checkedAt": "2026-10-23T20:02:24.200Z"
       }
     },
     "bl2": {
