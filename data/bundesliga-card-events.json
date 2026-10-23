@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T18:29:00.251Z",
+  "updatedAt": "2026-10-23T18:30:03.956Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1958,6 +1958,16 @@
         "round": 6,
         "cards": [],
         "finalAttempts": 3
+      },
+      "83212": {
+        "matchId": "83212",
+        "home": "VfB Stuttgart",
+        "away": "Borussia Mönchengladbach",
+        "round": 7,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/7/vfb-stuttgart-vs-borussia-moenchengladbach/liveticker/",
+        "cards": [],
+        "subs": [],
+        "checkedAt": "2026-10-23T18:30:03.774Z"
       }
     },
     "bl2": {
