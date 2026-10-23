@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T17:49:06.170Z",
+  "updatedAt": "2026-10-23T17:54:57.782Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4435,6 +4435,22 @@
         ],
         "subs": [
           {
+            "minute": "62′",
+            "in": "Ho-jae Lee",
+            "out": "Fynn-Luca Lakenmacher",
+            "crestId": "000016",
+            "team": "SV Darmstadt 98",
+            "teamSide": "home"
+          },
+          {
+            "minute": "62′",
+            "in": "Nicolas Verkooijen",
+            "out": "Marco Richter",
+            "crestId": "000016",
+            "team": "SV Darmstadt 98",
+            "teamSide": "home"
+          },
+          {
             "minute": "45+2′",
             "in": "Sam Klein",
             "out": "Mathias Rasmussen",
@@ -4459,7 +4475,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-23T17:48:58.007Z"
+        "checkedAt": "2026-10-23T17:54:49.620Z"
       }
     }
   },
