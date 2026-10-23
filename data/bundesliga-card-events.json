@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T19:47:51.889Z",
+  "updatedAt": "2026-10-23T19:56:09.994Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2009,6 +2009,14 @@
         ],
         "subs": [
           {
+            "minute": "64′",
+            "in": "Grischa Prömel",
+            "out": "Atakan Karazor",
+            "crestId": "00000D",
+            "team": "VfB Stuttgart",
+            "teamSide": "home"
+          },
+          {
             "minute": "55′",
             "in": "Bilal El Khannouss",
             "out": "Lorenz Assignon",
@@ -2033,7 +2041,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-23T19:47:51.714Z"
+        "checkedAt": "2026-10-23T19:56:09.818Z"
       }
     },
     "bl2": {
