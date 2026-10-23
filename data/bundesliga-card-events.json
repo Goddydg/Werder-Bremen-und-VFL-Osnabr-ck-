@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T17:58:29.584Z",
+  "updatedAt": "2026-10-23T18:00:51.312Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4443,6 +4443,14 @@
         ],
         "subs": [
           {
+            "minute": "67′",
+            "in": "Taichi Hara",
+            "out": "Youssoupha Niang",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "away"
+          },
+          {
             "minute": "62′",
             "in": "Ho-jae Lee",
             "out": "Fynn-Luca Lakenmacher",
@@ -4483,7 +4491,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-23T17:58:21.421Z"
+        "checkedAt": "2026-10-23T18:00:43.127Z"
       }
     }
   },
