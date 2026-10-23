@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T17:25:40.568Z",
+  "updatedAt": "2026-10-23T17:37:23.418Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4425,8 +4425,33 @@
             "teamSide": "away"
           }
         ],
-        "subs": [],
-        "checkedAt": "2026-10-23T17:25:29.509Z"
+        "subs": [
+          {
+            "minute": "45+2′",
+            "in": "Sam Klein",
+            "out": "Mathias Rasmussen",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "away"
+          },
+          {
+            "minute": "45+2′",
+            "in": "Adam Dźwigała",
+            "out": "Arkadiusz Pyrka",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "away"
+          },
+          {
+            "minute": "45+2′",
+            "in": "Martijn Kaars",
+            "out": "Abdoulie Ceesay",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-10-23T17:37:15.228Z"
       }
     }
   },
