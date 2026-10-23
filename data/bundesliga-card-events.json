@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T19:14:35.000Z",
+  "updatedAt": "2026-10-23T19:16:41.014Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1973,10 +1973,18 @@
             "crestId": "00000D",
             "team": "VfB Stuttgart",
             "teamSide": "home"
+          },
+          {
+            "minute": "45′",
+            "type": "yellow",
+            "player": "Atakan Karazor",
+            "crestId": "00000D",
+            "team": "VfB Stuttgart",
+            "teamSide": "home"
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-23T19:14:34.824Z"
+        "checkedAt": "2026-10-23T19:16:40.832Z"
       }
     },
     "bl2": {
