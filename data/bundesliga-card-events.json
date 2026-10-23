@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T18:30:03.956Z",
+  "updatedAt": "2026-10-23T19:14:35.000Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1965,9 +1965,18 @@
         "away": "Borussia Mönchengladbach",
         "round": 7,
         "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/7/vfb-stuttgart-vs-borussia-moenchengladbach/liveticker/",
-        "cards": [],
+        "cards": [
+          {
+            "minute": "44′",
+            "type": "yellow",
+            "player": "Leo Sauer",
+            "crestId": "00000D",
+            "team": "VfB Stuttgart",
+            "teamSide": "home"
+          }
+        ],
         "subs": [],
-        "checkedAt": "2026-10-23T18:30:03.774Z"
+        "checkedAt": "2026-10-23T19:14:34.824Z"
       }
     },
     "bl2": {
