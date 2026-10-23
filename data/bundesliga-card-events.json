@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T20:23:15.340Z",
+  "updatedAt": "2026-10-23T20:26:22.873Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2097,7 +2097,8 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-23T20:23:15.164Z"
+        "checkedAt": "2026-10-23T20:26:22.697Z",
+        "finalChecked": true
       }
     },
     "bl2": {
