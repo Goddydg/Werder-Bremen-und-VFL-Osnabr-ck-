@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T20:03:28.137Z",
+  "updatedAt": "2026-10-23T20:08:42.484Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2009,6 +2009,14 @@
         ],
         "subs": [
           {
+            "minute": "76′",
+            "in": "David Herold",
+            "out": "Fabio Chiarodia",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "away"
+          },
+          {
             "minute": "70′",
             "in": "Robin Hack",
             "out": "Wael Mohya",
@@ -2057,7 +2065,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-23T20:03:27.960Z"
+        "checkedAt": "2026-10-23T20:08:42.306Z"
       }
     },
     "bl2": {
