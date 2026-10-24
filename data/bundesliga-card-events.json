@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T12:42:40.997Z",
+  "updatedAt": "2026-10-24T12:46:57.205Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4576,6 +4576,14 @@
         ],
         "subs": [
           {
+            "minute": "86′",
+            "in": "Leart Paçarada",
+            "out": "Michael Heule",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "home"
+          },
+          {
             "minute": "83′",
             "in": "Christian Kinsombi",
             "out": "Dmytro Bogdanov",
@@ -4632,7 +4640,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T12:42:39.106Z"
+        "checkedAt": "2026-10-24T12:46:55.323Z"
       },
       "83648": {
         "matchId": "83648",
@@ -4865,7 +4873,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T12:42:40.050Z"
+        "checkedAt": "2026-10-24T12:46:56.266Z"
       },
       "83655": {
         "matchId": "83655",
@@ -4989,7 +4997,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T12:42:40.996Z"
+        "checkedAt": "2026-10-24T12:46:57.203Z"
       }
     }
   },
