@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T15:06:22.563Z",
+  "updatedAt": "2026-10-24T15:07:37.030Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2198,7 +2198,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T15:06:19.179Z"
+        "checkedAt": "2026-10-24T15:07:33.734Z"
       },
       "83216": {
         "matchId": "83216",
@@ -2226,6 +2226,22 @@
         ],
         "subs": [
           {
+            "minute": "75′",
+            "in": "Silvan Widmer",
+            "out": "Anthony Caci",
+            "crestId": "000006",
+            "team": "1. FSV Mainz 05",
+            "teamSide": "home"
+          },
+          {
+            "minute": "75′",
+            "in": "Ransford-Yeboah Königsdörffer",
+            "out": "Jaesung Lee",
+            "crestId": "000006",
+            "team": "1. FSV Mainz 05",
+            "teamSide": "home"
+          },
+          {
             "minute": "72′",
             "in": "Eren Dinkçi",
             "out": "Chuki",
@@ -2250,7 +2266,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:06:20.121Z"
+        "checkedAt": "2026-10-24T15:07:34.677Z"
       },
       "83217": {
         "matchId": "83217",
@@ -2266,6 +2282,14 @@
             "crestId": "000008",
             "team": "1. FC Köln",
             "teamSide": "home"
+          },
+          {
+            "minute": "71′",
+            "type": "yellow",
+            "player": "Junior Dina Ebimbe",
+            "crestId": "000009",
+            "team": "FC Schalke 04",
+            "teamSide": "away"
           }
         ],
         "subs": [
@@ -2294,7 +2318,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:06:21.050Z"
+        "checkedAt": "2026-10-24T15:07:35.606Z"
       },
       "83218": {
         "matchId": "83218",
@@ -2386,7 +2410,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:06:21.979Z"
+        "checkedAt": "2026-10-24T15:07:36.535Z"
       }
     },
     "bl2": {
