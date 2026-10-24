@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T17:57:12.980Z",
+  "updatedAt": "2026-10-24T18:06:30.777Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1985,6 +1985,22 @@
         ],
         "subs": [
           {
+            "minute": "77′",
+            "in": "Can Uzun",
+            "out": "Younes Ebnoutalib",
+            "crestId": "00000F",
+            "team": "Eintracht Frankfurt",
+            "teamSide": "away"
+          },
+          {
+            "minute": "77′",
+            "in": "Ansgar Knauff",
+            "out": "Jonathan Burkardt",
+            "crestId": "00000F",
+            "team": "Eintracht Frankfurt",
+            "teamSide": "away"
+          },
+          {
             "minute": "68′",
             "in": "Carney Chukwuemeka",
             "out": "Marcel Sabitzer",
@@ -2009,7 +2025,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T17:57:12.841Z"
+        "checkedAt": "2026-10-24T18:06:30.639Z"
       },
       "83211": {
         "matchId": "83211",
