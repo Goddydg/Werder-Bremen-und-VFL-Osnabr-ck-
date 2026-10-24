@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T18:30:16.319Z",
+  "updatedAt": "2026-10-24T18:59:08.521Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5508,9 +5508,18 @@
         "away": "1. FC Kaiserslautern",
         "round": 9,
         "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/9/1-fc-nuernberg-vs-1-fc-kaiserslautern/liveticker/",
-        "cards": [],
+        "cards": [
+          {
+            "minute": "27′",
+            "type": "yellow",
+            "player": "Ibrahim Kanaté",
+            "crestId": "00000I",
+            "team": "1. FC Kaiserslautern",
+            "teamSide": "away"
+          }
+        ],
         "subs": [],
-        "checkedAt": "2026-10-24T18:30:16.318Z"
+        "checkedAt": "2026-10-24T18:59:08.520Z"
       },
       "83655": {
         "matchId": "83655",
