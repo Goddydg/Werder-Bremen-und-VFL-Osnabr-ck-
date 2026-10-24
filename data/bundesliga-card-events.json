@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T15:19:59.377Z",
+  "updatedAt": "2026-10-24T15:21:13.966Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2222,7 +2222,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T15:19:56.168Z"
+        "checkedAt": "2026-10-24T15:21:10.743Z"
       },
       "83216": {
         "matchId": "83216",
@@ -2246,6 +2246,14 @@
             "crestId": "000006",
             "team": "1. FSV Mainz 05",
             "teamSide": "home"
+          },
+          {
+            "minute": "88′",
+            "type": "yellow",
+            "player": "Marco Grüll",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "away"
           }
         ],
         "subs": [
@@ -2314,7 +2322,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:19:57.117Z"
+        "checkedAt": "2026-10-24T15:21:11.692Z"
       },
       "83217": {
         "matchId": "83217",
@@ -2398,7 +2406,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:19:58.052Z"
+        "checkedAt": "2026-10-24T15:21:12.627Z"
       },
       "83218": {
         "matchId": "83218",
@@ -2506,7 +2514,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:19:58.987Z"
+        "checkedAt": "2026-10-24T15:21:13.560Z"
       }
     },
     "bl2": {
