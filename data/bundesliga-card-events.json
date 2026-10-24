@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T15:08:51.461Z",
+  "updatedAt": "2026-10-24T15:11:19.774Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2206,7 +2206,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T15:08:48.221Z"
+        "checkedAt": "2026-10-24T15:11:16.524Z"
       },
       "83216": {
         "matchId": "83216",
@@ -2274,7 +2274,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:08:49.164Z"
+        "checkedAt": "2026-10-24T15:11:17.466Z"
       },
       "83217": {
         "matchId": "83217",
@@ -2326,7 +2326,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:08:50.093Z"
+        "checkedAt": "2026-10-24T15:11:18.398Z"
       },
       "83218": {
         "matchId": "83218",
@@ -2353,6 +2353,14 @@
           }
         ],
         "subs": [
+          {
+            "minute": "79′",
+            "in": "Sven Michel",
+            "out": "Stefano Marino",
+            "crestId": "00000L",
+            "team": "SC Paderborn 07",
+            "teamSide": "home"
+          },
           {
             "minute": "71′",
             "in": "Albert Sambi Lokonga",
@@ -2418,7 +2426,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:08:51.022Z"
+        "checkedAt": "2026-10-24T15:11:19.328Z"
       }
     },
     "bl2": {
