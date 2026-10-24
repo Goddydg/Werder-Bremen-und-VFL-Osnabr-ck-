@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T20:24:49.579Z",
+  "updatedAt": "2026-10-24T20:26:54.723Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5540,6 +5540,14 @@
             "crestId": "00000I",
             "team": "1. FC Kaiserslautern",
             "teamSide": "away"
+          },
+          {
+            "minute": "90+6′",
+            "type": "yellow",
+            "player": "Marlon Ritter",
+            "crestId": "00000I",
+            "team": "1. FC Kaiserslautern",
+            "teamSide": "away"
           }
         ],
         "subs": [
@@ -5616,7 +5624,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T20:24:49.578Z"
+        "checkedAt": "2026-10-24T20:26:54.722Z"
       },
       "83655": {
         "matchId": "83655",
