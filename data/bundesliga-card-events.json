@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T15:02:39.022Z",
+  "updatedAt": "2026-10-24T15:03:53.483Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2190,7 +2190,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T15:02:35.825Z"
+        "checkedAt": "2026-10-24T15:03:50.190Z"
       },
       "83216": {
         "matchId": "83216",
@@ -2234,7 +2234,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:02:36.768Z"
+        "checkedAt": "2026-10-24T15:03:51.129Z"
       },
       "83217": {
         "matchId": "83217",
@@ -2254,6 +2254,14 @@
         ],
         "subs": [
           {
+            "minute": "68′",
+            "in": "Luca Waldschmidt",
+            "out": "Mikey Moore",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "home"
+          },
+          {
             "minute": "43′",
             "in": "Vitalie Becker",
             "out": "Robin Gosens",
@@ -2270,7 +2278,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:02:37.698Z"
+        "checkedAt": "2026-10-24T15:03:52.057Z"
       },
       "83218": {
         "matchId": "83218",
@@ -2297,6 +2305,30 @@
           }
         ],
         "subs": [
+          {
+            "minute": "71′",
+            "in": "Albert Sambi Lokonga",
+            "out": "Miro Muheim",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "away"
+          },
+          {
+            "minute": "71′",
+            "in": "Albert Grønbæk",
+            "out": "Bilal Nadir",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "away"
+          },
+          {
+            "minute": "70′",
+            "in": "Rayan Philippe",
+            "out": "Laurin Ulrich",
+            "crestId": "00000L",
+            "team": "SC Paderborn 07",
+            "teamSide": "home"
+          },
           {
             "minute": "62′",
             "in": "Marvin Pieringer",
@@ -2338,7 +2370,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:02:38.628Z"
+        "checkedAt": "2026-10-24T15:03:52.984Z"
       }
     },
     "bl2": {
