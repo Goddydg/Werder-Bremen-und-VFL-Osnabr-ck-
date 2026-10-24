@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T12:24:24.762Z",
+  "updatedAt": "2026-10-24T12:25:29.925Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4569,6 +4569,14 @@
         "subs": [
           {
             "minute": "65′",
+            "in": "Jannis Zaydan",
+            "out": "Fousseny Doumbia",
+            "crestId": "00000O",
+            "team": "Energie Cottbus",
+            "teamSide": "away"
+          },
+          {
+            "minute": "65′",
             "in": "Jannis Boziaris",
             "out": "Leon Guwara",
             "crestId": "00000O",
@@ -4600,7 +4608,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T12:24:22.763Z"
+        "checkedAt": "2026-10-24T12:25:27.907Z"
       },
       "83648": {
         "matchId": "83648",
@@ -4785,7 +4793,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T12:24:23.811Z"
+        "checkedAt": "2026-10-24T12:25:28.979Z"
       },
       "83655": {
         "matchId": "83655",
@@ -4861,7 +4869,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T12:24:24.761Z"
+        "checkedAt": "2026-10-24T12:25:29.924Z"
       }
     }
   },
