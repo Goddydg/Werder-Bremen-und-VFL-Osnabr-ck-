@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T18:06:30.777Z",
+  "updatedAt": "2026-10-24T18:08:35.776Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1985,6 +1985,14 @@
         ],
         "subs": [
           {
+            "minute": "79′",
+            "in": "Jobe Bellingham",
+            "out": "Felix Nmecha",
+            "crestId": "000007",
+            "team": "Borussia Dortmund",
+            "teamSide": "home"
+          },
+          {
             "minute": "77′",
             "in": "Can Uzun",
             "out": "Younes Ebnoutalib",
@@ -2025,7 +2033,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T18:06:30.639Z"
+        "checkedAt": "2026-10-24T18:08:35.641Z"
       },
       "83211": {
         "matchId": "83211",
