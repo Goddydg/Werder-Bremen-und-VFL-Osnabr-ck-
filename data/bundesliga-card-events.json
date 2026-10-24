@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T15:07:37.030Z",
+  "updatedAt": "2026-10-24T15:08:51.461Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2146,6 +2146,14 @@
             "crestId": "000010",
             "team": "FC Augsburg",
             "teamSide": "home"
+          },
+          {
+            "minute": "77′",
+            "type": "yellow",
+            "player": "Mekhi Gray",
+            "crestId": "00000V",
+            "team": "1. FC Union Berlin",
+            "teamSide": "away"
           }
         ],
         "subs": [
@@ -2198,7 +2206,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T15:07:33.734Z"
+        "checkedAt": "2026-10-24T15:08:48.221Z"
       },
       "83216": {
         "matchId": "83216",
@@ -2266,7 +2274,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:07:34.677Z"
+        "checkedAt": "2026-10-24T15:08:49.164Z"
       },
       "83217": {
         "matchId": "83217",
@@ -2318,7 +2326,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:07:35.606Z"
+        "checkedAt": "2026-10-24T15:08:50.093Z"
       },
       "83218": {
         "matchId": "83218",
@@ -2410,7 +2418,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:07:36.535Z"
+        "checkedAt": "2026-10-24T15:08:51.022Z"
       }
     },
     "bl2": {
