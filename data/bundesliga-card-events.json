@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T15:01:24.523Z",
+  "updatedAt": "2026-10-24T15:02:39.022Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2150,6 +2150,22 @@
         ],
         "subs": [
           {
+            "minute": "72′",
+            "in": "Mert Kömür",
+            "out": "Arijon Ibrahimović",
+            "crestId": "000010",
+            "team": "FC Augsburg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "72′",
+            "in": "Robin Fellhauer",
+            "out": "Marius Wolf",
+            "crestId": "000010",
+            "team": "FC Augsburg",
+            "teamSide": "home"
+          },
+          {
             "minute": "45+4′",
             "in": "Mekhi Gray",
             "out": "Tim Skarke",
@@ -2174,7 +2190,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T15:01:21.022Z"
+        "checkedAt": "2026-10-24T15:02:35.825Z"
       },
       "83216": {
         "matchId": "83216",
@@ -2218,7 +2234,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:01:21.968Z"
+        "checkedAt": "2026-10-24T15:02:36.768Z"
       },
       "83217": {
         "matchId": "83217",
@@ -2254,7 +2270,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:01:22.907Z"
+        "checkedAt": "2026-10-24T15:02:37.698Z"
       },
       "83218": {
         "matchId": "83218",
@@ -2322,7 +2338,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:01:23.954Z"
+        "checkedAt": "2026-10-24T15:02:38.628Z"
       }
     },
     "bl2": {
