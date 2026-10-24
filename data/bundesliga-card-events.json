@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T19:08:25.919Z",
+  "updatedAt": "2026-10-24T19:35:14.118Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5520,6 +5520,22 @@
         ],
         "subs": [
           {
+            "minute": "45+3′",
+            "in": "Thierry Tazemeta",
+            "out": "Ibrahim Kanaté",
+            "crestId": "00000I",
+            "team": "1. FC Kaiserslautern",
+            "teamSide": "away"
+          },
+          {
+            "minute": "45+3′",
+            "in": "Erencan Yardımcı",
+            "out": "Miloš Luković",
+            "crestId": "00000I",
+            "team": "1. FC Kaiserslautern",
+            "teamSide": "away"
+          },
+          {
             "minute": "37′",
             "in": "Styopa Mkrtchyan",
             "out": "Fynn Otto",
@@ -5528,7 +5544,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T19:08:25.918Z"
+        "checkedAt": "2026-10-24T19:35:14.117Z"
       },
       "83655": {
         "matchId": "83655",
