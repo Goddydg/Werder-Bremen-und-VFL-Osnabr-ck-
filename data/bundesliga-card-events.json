@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T15:11:19.774Z",
+  "updatedAt": "2026-10-24T15:13:47.552Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2206,7 +2206,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T15:11:16.524Z"
+        "checkedAt": "2026-10-24T15:13:44.296Z"
       },
       "83216": {
         "matchId": "83216",
@@ -2233,6 +2233,14 @@
           }
         ],
         "subs": [
+          {
+            "minute": "81′",
+            "in": "Cedric Itten",
+            "out": "Niclas Füllkrug",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "away"
+          },
           {
             "minute": "75′",
             "in": "Silvan Widmer",
@@ -2274,7 +2282,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:11:17.466Z"
+        "checkedAt": "2026-10-24T15:13:45.237Z"
       },
       "83217": {
         "matchId": "83217",
@@ -2326,7 +2334,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:11:18.398Z"
+        "checkedAt": "2026-10-24T15:13:46.165Z"
       },
       "83218": {
         "matchId": "83218",
@@ -2426,7 +2434,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:11:19.328Z"
+        "checkedAt": "2026-10-24T15:13:47.094Z"
       }
     },
     "bl2": {
