@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T12:28:43.727Z",
+  "updatedAt": "2026-10-24T12:35:07.517Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4616,7 +4616,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T12:28:41.704Z"
+        "checkedAt": "2026-10-24T12:35:05.634Z"
       },
       "83648": {
         "matchId": "83648",
@@ -4801,7 +4801,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T12:28:42.777Z"
+        "checkedAt": "2026-10-24T12:35:06.572Z"
       },
       "83655": {
         "matchId": "83655",
@@ -4844,6 +4844,22 @@
           }
         ],
         "subs": [
+          {
+            "minute": "73′",
+            "in": "Falko Michel",
+            "out": "Torben Müsel",
+            "crestId": "000N5D",
+            "team": "1. FC Magdeburg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "72′",
+            "in": "Richmond Tachie",
+            "out": "Baris Atik",
+            "crestId": "000N5D",
+            "team": "1. FC Magdeburg",
+            "teamSide": "home"
+          },
           {
             "minute": "64′",
             "in": "Herbert Bockhorn",
@@ -4893,7 +4909,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T12:28:43.726Z"
+        "checkedAt": "2026-10-24T12:35:07.516Z"
       }
     }
   },
