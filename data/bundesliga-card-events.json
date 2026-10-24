@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-23T20:26:22.873Z",
+  "updatedAt": "2026-10-24T11:32:03.434Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4534,6 +4534,33 @@
         "checkedAt": "2026-10-16T18:27:57.934Z",
         "finalChecked": true
       },
+      "83645": {
+        "matchId": "83645",
+        "home": "1. FC Heidenheim 1846",
+        "away": "Energie Cottbus",
+        "round": 9,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/9/1-fc-heidenheim-1846-vs-fc-energie-cottbus/liveticker/",
+        "cards": [
+          {
+            "minute": "15′",
+            "type": "yellow",
+            "player": "Marcel Lotka",
+            "crestId": "00000O",
+            "team": "Energie Cottbus",
+            "teamSide": "away"
+          },
+          {
+            "minute": "11′",
+            "type": "yellow",
+            "player": "Jan Schöppner",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "home"
+          }
+        ],
+        "subs": [],
+        "checkedAt": "2026-10-24T11:31:59.532Z"
+      },
       "83648": {
         "matchId": "83648",
         "home": "SV Darmstadt 98",
@@ -4667,6 +4694,16 @@
         "checkedAt": "2026-10-23T18:26:30.500Z",
         "finalChecked": true
       },
+      "83650": {
+        "matchId": "83650",
+        "home": "Hertha BSC",
+        "away": "DSC Arminia Bielefeld",
+        "round": 9,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/9/hertha-bsc-vs-dsc-arminia-bielefeld/liveticker/",
+        "cards": [],
+        "subs": [],
+        "checkedAt": "2026-10-24T11:32:00.576Z"
+      },
       "83655": {
         "matchId": "83655",
         "home": "VfL Bochum",
@@ -4674,6 +4711,25 @@
         "round": 9,
         "cards": [],
         "finalAttempts": 3
+      },
+      "83659": {
+        "matchId": "83659",
+        "home": "1. FC Magdeburg",
+        "away": "Karlsruher SC",
+        "round": 9,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/9/1-fc-magdeburg-vs-karlsruher-sc/liveticker/",
+        "cards": [
+          {
+            "minute": "6′",
+            "type": "yellow",
+            "player": "Mateusz Żukowski",
+            "crestId": "000N5D",
+            "team": "1. FC Magdeburg",
+            "teamSide": "home"
+          }
+        ],
+        "subs": [],
+        "checkedAt": "2026-10-24T11:32:03.433Z"
       }
     }
   },
