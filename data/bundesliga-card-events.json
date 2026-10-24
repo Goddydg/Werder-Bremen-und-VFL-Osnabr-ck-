@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T18:12:44.199Z",
+  "updatedAt": "2026-10-24T18:16:53.361Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1985,6 +1985,14 @@
         ],
         "subs": [
           {
+            "minute": "87′",
+            "in": "Ayoube Amaimouni-Echghouyab",
+            "out": "Ritsu Doan",
+            "crestId": "00000F",
+            "team": "Eintracht Frankfurt",
+            "teamSide": "away"
+          },
+          {
             "minute": "84′",
             "in": "Mario Götze",
             "out": "Noëll Aséko",
@@ -2049,7 +2057,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T18:12:44.057Z"
+        "checkedAt": "2026-10-24T18:16:53.227Z"
       },
       "83211": {
         "matchId": "83211",
