@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T12:25:29.925Z",
+  "updatedAt": "2026-10-24T12:26:34.979Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4568,7 +4568,7 @@
         ],
         "subs": [
           {
-            "minute": "65′",
+            "minute": "66′",
             "in": "Jannis Zaydan",
             "out": "Fousseny Doumbia",
             "crestId": "00000O",
@@ -4608,7 +4608,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T12:25:27.907Z"
+        "checkedAt": "2026-10-24T12:26:32.987Z"
       },
       "83648": {
         "matchId": "83648",
@@ -4793,7 +4793,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T12:25:28.979Z"
+        "checkedAt": "2026-10-24T12:26:34.028Z"
       },
       "83655": {
         "matchId": "83655",
@@ -4837,6 +4837,22 @@
         ],
         "subs": [
           {
+            "minute": "64′",
+            "in": "Herbert Bockhorn",
+            "out": "Alexander Nollenberger",
+            "crestId": "000N5D",
+            "team": "1. FC Magdeburg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "64′",
+            "in": "Roko Šimić",
+            "out": "Mateusz Żukowski",
+            "crestId": "000N5D",
+            "team": "1. FC Magdeburg",
+            "teamSide": "home"
+          },
+          {
             "minute": "56′",
             "in": "Louey Ben Farhat",
             "out": "Viktor Bergh",
@@ -4869,7 +4885,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T12:25:29.924Z"
+        "checkedAt": "2026-10-24T12:26:34.978Z"
       }
     }
   },
