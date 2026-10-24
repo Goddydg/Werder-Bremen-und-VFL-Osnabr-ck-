@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T11:32:03.434Z",
+  "updatedAt": "2026-10-24T11:36:20.106Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4559,7 +4559,7 @@
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-24T11:31:59.532Z"
+        "checkedAt": "2026-10-24T11:36:18.109Z"
       },
       "83648": {
         "matchId": "83648",
@@ -4700,9 +4700,18 @@
         "away": "DSC Arminia Bielefeld",
         "round": 9,
         "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/9/hertha-bsc-vs-dsc-arminia-bielefeld/liveticker/",
-        "cards": [],
+        "cards": [
+          {
+            "minute": "34′",
+            "type": "yellow",
+            "player": "Jonas Kersken",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "away"
+          }
+        ],
         "subs": [],
-        "checkedAt": "2026-10-24T11:32:00.576Z"
+        "checkedAt": "2026-10-24T11:36:19.157Z"
       },
       "83655": {
         "matchId": "83655",
@@ -4729,7 +4738,7 @@
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-24T11:32:03.433Z"
+        "checkedAt": "2026-10-24T11:36:20.105Z"
       }
     }
   },
