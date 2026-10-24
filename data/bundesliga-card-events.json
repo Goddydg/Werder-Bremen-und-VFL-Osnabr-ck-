@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T12:40:31.065Z",
+  "updatedAt": "2026-10-24T12:41:35.962Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4624,7 +4624,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T12:40:29.173Z"
+        "checkedAt": "2026-10-24T12:41:34.068Z"
       },
       "83648": {
         "matchId": "83648",
@@ -4841,7 +4841,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T12:40:30.117Z"
+        "checkedAt": "2026-10-24T12:41:35.013Z"
       },
       "83655": {
         "matchId": "83655",
@@ -4884,6 +4884,14 @@
           }
         ],
         "subs": [
+          {
+            "minute": "79′",
+            "in": "Tim Civeja",
+            "out": "Kevin Wiethaup",
+            "crestId": "00000T",
+            "team": "Karlsruher SC",
+            "teamSide": "away"
+          },
           {
             "minute": "73′",
             "in": "Richmond Tachie",
@@ -4949,7 +4957,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T12:40:31.064Z"
+        "checkedAt": "2026-10-24T12:41:35.961Z"
       }
     }
   },
