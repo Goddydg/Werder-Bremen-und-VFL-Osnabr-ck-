@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T11:39:34.504Z",
+  "updatedAt": "2026-10-24T11:40:39.804Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4567,7 +4567,7 @@
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-24T11:39:32.506Z"
+        "checkedAt": "2026-10-24T11:40:37.820Z"
       },
       "83648": {
         "matchId": "83648",
@@ -4719,7 +4719,7 @@
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-24T11:39:33.555Z"
+        "checkedAt": "2026-10-24T11:40:38.859Z"
       },
       "83655": {
         "matchId": "83655",
@@ -4751,10 +4751,18 @@
             "crestId": "00000T",
             "team": "Karlsruher SC",
             "teamSide": "away"
+          },
+          {
+            "minute": "39′",
+            "type": "yellow",
+            "player": "Baris Atik",
+            "crestId": "000N5D",
+            "team": "1. FC Magdeburg",
+            "teamSide": "home"
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-24T11:39:34.503Z"
+        "checkedAt": "2026-10-24T11:40:39.803Z"
       }
     }
   },
