@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T15:05:07.825Z",
+  "updatedAt": "2026-10-24T15:06:22.563Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2150,6 +2150,14 @@
         ],
         "subs": [
           {
+            "minute": "75′",
+            "in": "Oliver Burke",
+            "out": "Woo-yeong Jeong",
+            "crestId": "00000V",
+            "team": "1. FC Union Berlin",
+            "teamSide": "away"
+          },
+          {
             "minute": "72′",
             "in": "Mert Kömür",
             "out": "Arijon Ibrahimović",
@@ -2190,7 +2198,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T15:05:04.623Z"
+        "checkedAt": "2026-10-24T15:06:19.179Z"
       },
       "83216": {
         "matchId": "83216",
@@ -2242,7 +2250,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:05:05.562Z"
+        "checkedAt": "2026-10-24T15:06:20.121Z"
       },
       "83217": {
         "matchId": "83217",
@@ -2286,7 +2294,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:05:06.487Z"
+        "checkedAt": "2026-10-24T15:06:21.050Z"
       },
       "83218": {
         "matchId": "83218",
@@ -2378,7 +2386,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:05:07.412Z"
+        "checkedAt": "2026-10-24T15:06:21.979Z"
       }
     },
     "bl2": {
