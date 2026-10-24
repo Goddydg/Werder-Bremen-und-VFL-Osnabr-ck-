@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T14:49:02.530Z",
+  "updatedAt": "2026-10-24T14:50:17.634Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2106,9 +2106,67 @@
         "away": "1. FC Union Berlin",
         "round": 7,
         "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/7/fc-augsburg-vs-1-fc-union-berlin/liveticker/",
-        "cards": [],
-        "subs": [],
-        "checkedAt": "2026-10-24T14:48:58.753Z"
+        "cards": [
+          {
+            "minute": "36′",
+            "type": "yellow",
+            "player": "Leopold Querfeld",
+            "crestId": "00000V",
+            "team": "1. FC Union Berlin",
+            "teamSide": "away"
+          },
+          {
+            "minute": "31′",
+            "type": "yellow",
+            "player": "Janik Haberer",
+            "crestId": "00000V",
+            "team": "1. FC Union Berlin",
+            "teamSide": "away"
+          },
+          {
+            "minute": "",
+            "type": "red",
+            "player": "Uduokhai fliegt muss nach seinem Einsatz gegen",
+            "crestId": "00000V",
+            "team": "1. FC Union Berlin",
+            "teamSide": "away"
+          },
+          {
+            "minute": "19′",
+            "type": "red",
+            "player": "Felix Uduokhai",
+            "crestId": "00000V",
+            "team": "1. FC Union Berlin",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "45+4′",
+            "in": "Mekhi Gray",
+            "out": "Tim Skarke",
+            "crestId": "00000V",
+            "team": "1. FC Union Berlin",
+            "teamSide": "away"
+          },
+          {
+            "minute": "25′",
+            "in": "Leopold Querfeld",
+            "out": "Livan Burcu",
+            "crestId": "00000V",
+            "team": "1. FC Union Berlin",
+            "teamSide": "away"
+          },
+          {
+            "minute": "12′",
+            "in": "Jeffrey Gouweleeuw",
+            "out": "Calvin Brackelmann",
+            "crestId": "000010",
+            "team": "FC Augsburg",
+            "teamSide": "home"
+          }
+        ],
+        "checkedAt": "2026-10-24T14:50:14.068Z"
       },
       "83216": {
         "matchId": "83216",
@@ -2116,9 +2174,27 @@
         "away": "SV Werder Bremen",
         "round": 7,
         "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/7/1-fsv-mainz-05-vs-sv-werder-bremen/liveticker/",
-        "cards": [],
-        "subs": [],
-        "checkedAt": "2026-10-24T14:48:59.878Z"
+        "cards": [
+          {
+            "minute": "38′",
+            "type": "yellow",
+            "player": "Ludovit Reis",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "45+4′",
+            "in": "Mick Schmetgens",
+            "out": "Olivier Deman",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-10-24T14:50:15.008Z"
       },
       "83217": {
         "matchId": "83217",
@@ -2154,7 +2230,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T14:49:00.922Z"
+        "checkedAt": "2026-10-24T14:50:16.055Z"
       },
       "83218": {
         "matchId": "83218",
@@ -2170,6 +2246,14 @@
             "crestId": "00000C",
             "team": "Hamburger SV",
             "teamSide": "away"
+          },
+          {
+            "minute": "58′",
+            "type": "yellow",
+            "player": "Jano ter Horst",
+            "crestId": "00000L",
+            "team": "SC Paderborn 07",
+            "teamSide": "home"
           }
         ],
         "subs": [
@@ -2198,7 +2282,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T14:49:01.998Z"
+        "checkedAt": "2026-10-24T14:50:17.096Z"
       }
     },
     "bl2": {
