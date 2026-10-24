@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T20:26:54.723Z",
+  "updatedAt": "2026-10-24T20:28:59.323Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5624,7 +5624,8 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T20:26:54.722Z"
+        "checkedAt": "2026-10-24T20:28:59.323Z",
+        "finalChecked": true
       },
       "83655": {
         "matchId": "83655",
