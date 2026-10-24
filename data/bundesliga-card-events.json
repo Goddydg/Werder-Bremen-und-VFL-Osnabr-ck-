@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T12:19:04.313Z",
+  "updatedAt": "2026-10-24T12:24:24.762Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4568,6 +4568,22 @@
         ],
         "subs": [
           {
+            "minute": "65′",
+            "in": "Jannis Boziaris",
+            "out": "Leon Guwara",
+            "crestId": "00000O",
+            "team": "Energie Cottbus",
+            "teamSide": "away"
+          },
+          {
+            "minute": "65′",
+            "in": "Alessandro Vogt",
+            "out": "Mikkel Kaufmann",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "home"
+          },
+          {
             "minute": "52′",
             "in": "Ryan Malone",
             "out": "Tim Campulka",
@@ -4584,7 +4600,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T12:19:02.331Z"
+        "checkedAt": "2026-10-24T12:24:22.763Z"
       },
       "83648": {
         "matchId": "83648",
@@ -4743,8 +4759,33 @@
             "teamSide": "away"
           }
         ],
-        "subs": [],
-        "checkedAt": "2026-10-24T12:19:03.369Z"
+        "subs": [
+          {
+            "minute": "64′",
+            "in": "Farid Alfa-Ruprecht",
+            "out": "Oluwaseun Victor Adewumi",
+            "crestId": "00000Z",
+            "team": "Hertha BSC",
+            "teamSide": "home"
+          },
+          {
+            "minute": "64′",
+            "in": "Luca Schuler",
+            "out": "Sebastian Grønning",
+            "crestId": "00000Z",
+            "team": "Hertha BSC",
+            "teamSide": "home"
+          },
+          {
+            "minute": "64′",
+            "in": "Julian Eitschberger",
+            "out": "Deyovaisio Zeefuik",
+            "crestId": "00000Z",
+            "team": "Hertha BSC",
+            "teamSide": "home"
+          }
+        ],
+        "checkedAt": "2026-10-24T12:24:23.811Z"
       },
       "83655": {
         "matchId": "83655",
@@ -4820,7 +4861,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T12:19:04.312Z"
+        "checkedAt": "2026-10-24T12:24:24.761Z"
       }
     }
   },
