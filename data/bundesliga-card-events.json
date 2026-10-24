@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T15:21:13.966Z",
+  "updatedAt": "2026-10-24T15:22:28.651Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2222,7 +2222,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T15:21:10.743Z"
+        "checkedAt": "2026-10-24T15:22:25.297Z"
       },
       "83216": {
         "matchId": "83216",
@@ -2322,7 +2322,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:21:11.692Z"
+        "checkedAt": "2026-10-24T15:22:26.242Z"
       },
       "83217": {
         "matchId": "83217",
@@ -2406,7 +2406,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:21:12.627Z"
+        "checkedAt": "2026-10-24T15:22:27.172Z"
       },
       "83218": {
         "matchId": "83218",
@@ -2441,6 +2441,14 @@
           }
         ],
         "subs": [
+          {
+            "minute": "89′",
+            "in": "Alexander Røssing-Lelesiit",
+            "out": "Otto Stange",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "away"
+          },
           {
             "minute": "79′",
             "in": "Sven Michel",
@@ -2514,7 +2522,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:21:13.560Z"
+        "checkedAt": "2026-10-24T15:22:28.102Z"
       }
     },
     "bl2": {
