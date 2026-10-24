@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T15:03:53.483Z",
+  "updatedAt": "2026-10-24T15:05:07.825Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2190,7 +2190,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T15:03:50.190Z"
+        "checkedAt": "2026-10-24T15:05:04.623Z"
       },
       "83216": {
         "matchId": "83216",
@@ -2218,6 +2218,14 @@
         ],
         "subs": [
           {
+            "minute": "72′",
+            "in": "Eren Dinkçi",
+            "out": "Chuki",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "away"
+          },
+          {
             "minute": "59′",
             "in": "Oskar Wójcik",
             "out": "Mitchell Weiser",
@@ -2234,7 +2242,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:03:51.129Z"
+        "checkedAt": "2026-10-24T15:05:05.562Z"
       },
       "83217": {
         "matchId": "83217",
@@ -2278,7 +2286,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:03:52.057Z"
+        "checkedAt": "2026-10-24T15:05:06.487Z"
       },
       "83218": {
         "matchId": "83218",
@@ -2370,7 +2378,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:03:52.984Z"
+        "checkedAt": "2026-10-24T15:05:07.412Z"
       }
     },
     "bl2": {
