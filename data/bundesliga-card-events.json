@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T14:55:15.992Z",
+  "updatedAt": "2026-10-24T15:01:24.523Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2174,7 +2174,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T14:55:12.593Z"
+        "checkedAt": "2026-10-24T15:01:21.022Z"
       },
       "83216": {
         "matchId": "83216",
@@ -2190,6 +2190,14 @@
             "crestId": "00000E",
             "team": "SV Werder Bremen",
             "teamSide": "away"
+          },
+          {
+            "minute": "69′",
+            "type": "yellow",
+            "player": "Phillipp Mwene",
+            "crestId": "000006",
+            "team": "1. FSV Mainz 05",
+            "teamSide": "home"
           }
         ],
         "subs": [
@@ -2210,7 +2218,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T14:55:13.564Z"
+        "checkedAt": "2026-10-24T15:01:21.968Z"
       },
       "83217": {
         "matchId": "83217",
@@ -2246,7 +2254,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T14:55:14.497Z"
+        "checkedAt": "2026-10-24T15:01:22.907Z"
       },
       "83218": {
         "matchId": "83218",
@@ -2314,7 +2322,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T14:55:15.546Z"
+        "checkedAt": "2026-10-24T15:01:23.954Z"
       }
     },
     "bl2": {
