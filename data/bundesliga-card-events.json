@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T12:46:57.205Z",
+  "updatedAt": "2026-10-24T12:48:02.249Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4640,7 +4640,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T12:46:55.323Z"
+        "checkedAt": "2026-10-24T12:48:00.373Z"
       },
       "83648": {
         "matchId": "83648",
@@ -4809,6 +4809,14 @@
         ],
         "subs": [
           {
+            "minute": "87′",
+            "in": "Selim Telib",
+            "out": "Kevin Sessa",
+            "crestId": "00000Z",
+            "team": "Hertha BSC",
+            "teamSide": "home"
+          },
+          {
             "minute": "82′",
             "in": "Leon Schneider",
             "out": "Joel Felix",
@@ -4873,7 +4881,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T12:46:56.266Z"
+        "checkedAt": "2026-10-24T12:48:01.308Z"
       },
       "83655": {
         "matchId": "83655",
@@ -4997,7 +5005,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T12:46:57.203Z"
+        "checkedAt": "2026-10-24T12:48:02.248Z"
       }
     }
   },
