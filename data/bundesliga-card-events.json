@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T19:46:35.302Z",
+  "updatedAt": "2026-10-24T19:56:54.556Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5528,6 +5528,22 @@
         ],
         "subs": [
           {
+            "minute": "67′",
+            "in": "Fabian Kunze",
+            "out": "Erencan Yardımcı",
+            "crestId": "00000I",
+            "team": "1. FC Kaiserslautern",
+            "teamSide": "away"
+          },
+          {
+            "minute": "67′",
+            "in": "William Bøving",
+            "out": "Rayan Ghrieb",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "home"
+          },
+          {
             "minute": "45+3′",
             "in": "Thierry Tazemeta",
             "out": "Ibrahim Kanaté",
@@ -5552,7 +5568,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T19:46:35.302Z"
+        "checkedAt": "2026-10-24T19:56:54.555Z"
       },
       "83655": {
         "matchId": "83655",
