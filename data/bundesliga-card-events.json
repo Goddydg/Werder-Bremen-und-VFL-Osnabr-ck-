@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T11:40:39.804Z",
+  "updatedAt": "2026-10-24T11:42:48.733Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4567,7 +4567,7 @@
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-24T11:40:37.820Z"
+        "checkedAt": "2026-10-24T11:42:46.749Z"
       },
       "83648": {
         "matchId": "83648",
@@ -4716,10 +4716,18 @@
             "crestId": "000015",
             "team": "DSC Arminia Bielefeld",
             "teamSide": "away"
+          },
+          {
+            "minute": "41′",
+            "type": "yellow",
+            "player": "Joel Felix",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "away"
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-24T11:40:38.859Z"
+        "checkedAt": "2026-10-24T11:42:47.793Z"
       },
       "83655": {
         "matchId": "83655",
@@ -4762,7 +4770,7 @@
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-24T11:40:39.803Z"
+        "checkedAt": "2026-10-24T11:42:48.732Z"
       }
     }
   },
