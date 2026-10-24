@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T17:39:37.996Z",
+  "updatedAt": "2026-10-24T17:46:52.058Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1965,9 +1965,18 @@
         "away": "Eintracht Frankfurt",
         "round": 7,
         "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/7/borussia-dortmund-vs-eintracht-frankfurt/liveticker/",
-        "cards": [],
+        "cards": [
+          {
+            "minute": "58′",
+            "type": "yellow",
+            "player": "Nnamdi Collins",
+            "crestId": "00000F",
+            "team": "Eintracht Frankfurt",
+            "teamSide": "away"
+          }
+        ],
         "subs": [],
-        "checkedAt": "2026-10-24T17:39:37.860Z"
+        "checkedAt": "2026-10-24T17:46:51.917Z"
       },
       "83211": {
         "matchId": "83211",
