@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T12:07:19.911Z",
+  "updatedAt": "2026-10-24T12:11:36.032Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4568,6 +4568,14 @@
         ],
         "subs": [
           {
+            "minute": "52′",
+            "in": "Ryan Malone",
+            "out": "Tim Campulka",
+            "crestId": "00000O",
+            "team": "Energie Cottbus",
+            "teamSide": "away"
+          },
+          {
             "minute": "45+3′",
             "in": "Marcel Costly",
             "out": "Julian Niehues",
@@ -4576,7 +4584,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T12:07:17.914Z"
+        "checkedAt": "2026-10-24T12:11:34.038Z"
       },
       "83648": {
         "matchId": "83648",
@@ -4736,7 +4744,7 @@
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-24T12:07:18.959Z"
+        "checkedAt": "2026-10-24T12:11:35.085Z"
       },
       "83655": {
         "matchId": "83655",
@@ -4796,7 +4804,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T12:07:19.910Z"
+        "checkedAt": "2026-10-24T12:11:36.031Z"
       }
     }
   },
