@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T12:39:26.099Z",
+  "updatedAt": "2026-10-24T12:40:31.065Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4624,7 +4624,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T12:39:24.232Z"
+        "checkedAt": "2026-10-24T12:40:29.173Z"
       },
       "83648": {
         "matchId": "83648",
@@ -4793,6 +4793,14 @@
         ],
         "subs": [
           {
+            "minute": "80′",
+            "in": "Soufian Gouram",
+            "out": "Jón Dagur Thorsteinsson",
+            "crestId": "00000Z",
+            "team": "Hertha BSC",
+            "teamSide": "home"
+          },
+          {
             "minute": "76′",
             "in": "Jannik Rochelt",
             "out": "Marius Wörl",
@@ -4833,7 +4841,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T12:39:25.165Z"
+        "checkedAt": "2026-10-24T12:40:30.117Z"
       },
       "83655": {
         "matchId": "83655",
@@ -4878,16 +4886,16 @@
         "subs": [
           {
             "minute": "73′",
-            "in": "Falko Michel",
-            "out": "Torben Müsel",
+            "in": "Richmond Tachie",
+            "out": "Baris Atik",
             "crestId": "000N5D",
             "team": "1. FC Magdeburg",
             "teamSide": "home"
           },
           {
-            "minute": "72′",
-            "in": "Richmond Tachie",
-            "out": "Baris Atik",
+            "minute": "73′",
+            "in": "Falko Michel",
+            "out": "Torben Müsel",
             "crestId": "000N5D",
             "team": "1. FC Magdeburg",
             "teamSide": "home"
@@ -4941,7 +4949,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T12:39:26.098Z"
+        "checkedAt": "2026-10-24T12:40:31.064Z"
       }
     }
   },
