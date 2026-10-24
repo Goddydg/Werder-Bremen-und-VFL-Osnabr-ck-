@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T12:35:07.517Z",
+  "updatedAt": "2026-10-24T12:37:16.213Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4616,7 +4616,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T12:35:05.634Z"
+        "checkedAt": "2026-10-24T12:37:14.342Z"
       },
       "83648": {
         "matchId": "83648",
@@ -4777,6 +4777,22 @@
         ],
         "subs": [
           {
+            "minute": "76′",
+            "in": "Jannik Rochelt",
+            "out": "Marius Wörl",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "away"
+          },
+          {
+            "minute": "76′",
+            "in": "Sam Schreck",
+            "out": "Leon Jensen",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "away"
+          },
+          {
             "minute": "64′",
             "in": "Farid Alfa-Ruprecht",
             "out": "Oluwaseun Victor Adewumi",
@@ -4801,7 +4817,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T12:35:06.572Z"
+        "checkedAt": "2026-10-24T12:37:15.276Z"
       },
       "83655": {
         "matchId": "83655",
@@ -4909,7 +4925,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T12:35:07.516Z"
+        "checkedAt": "2026-10-24T12:37:16.212Z"
       }
     }
   },
