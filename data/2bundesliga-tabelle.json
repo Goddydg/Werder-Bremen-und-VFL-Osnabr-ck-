@@ -17,14 +17,14 @@
             "tla": "",
             "crest": ""
           },
-          "playedGames": 8,
-          "won": 7,
+          "playedGames": 9,
+          "won": 8,
           "draw": 1,
           "lost": 0,
-          "points": 22,
-          "goalsFor": 19,
+          "points": 25,
+          "goalsFor": 20,
           "goalsAgainst": 8,
-          "goalDifference": 11
+          "goalDifference": 12
         },
         {
           "position": 2,
@@ -65,6 +65,24 @@
         {
           "position": 4,
           "team": {
+            "id": 78,
+            "name": "1. FC Magdeburg",
+            "shortName": "1. FC Magdeburg",
+            "tla": "",
+            "crest": ""
+          },
+          "playedGames": 9,
+          "won": 5,
+          "draw": 1,
+          "lost": 3,
+          "points": 16,
+          "goalsFor": 20,
+          "goalsAgainst": 12,
+          "goalDifference": 8
+        },
+        {
+          "position": 5,
+          "team": {
             "id": 76,
             "name": "1. FC Kaiserslautern",
             "shortName": "1. FC Kaiserslautern",
@@ -81,7 +99,7 @@
           "goalDifference": 4
         },
         {
-          "position": 5,
+          "position": 6,
           "team": {
             "id": 199,
             "name": "1. FC Heidenheim 1846",
@@ -89,32 +107,14 @@
             "tla": "",
             "crest": ""
           },
-          "playedGames": 8,
+          "playedGames": 9,
           "won": 4,
-          "draw": 2,
+          "draw": 3,
           "lost": 2,
-          "points": 14,
-          "goalsFor": 15,
-          "goalsAgainst": 15,
+          "points": 15,
+          "goalsFor": 16,
+          "goalsAgainst": 16,
           "goalDifference": 0
-        },
-        {
-          "position": 6,
-          "team": {
-            "id": 78,
-            "name": "1. FC Magdeburg",
-            "shortName": "1. FC Magdeburg",
-            "tla": "",
-            "crest": ""
-          },
-          "playedGames": 8,
-          "won": 4,
-          "draw": 1,
-          "lost": 3,
-          "points": 13,
-          "goalsFor": 14,
-          "goalsAgainst": 11,
-          "goalDifference": 3
         },
         {
           "position": 7,
@@ -143,14 +143,14 @@
             "tla": "",
             "crest": ""
           },
-          "playedGames": 8,
+          "playedGames": 9,
           "won": 3,
           "draw": 2,
-          "lost": 3,
+          "lost": 4,
           "points": 11,
           "goalsFor": 13,
-          "goalsAgainst": 13,
-          "goalDifference": 0
+          "goalsAgainst": 14,
+          "goalDifference": -1
         },
         {
           "position": 9,
@@ -161,13 +161,13 @@
             "tla": "",
             "crest": ""
           },
-          "playedGames": 8,
+          "playedGames": 9,
           "won": 2,
-          "draw": 3,
+          "draw": 4,
           "lost": 3,
-          "points": 9,
-          "goalsFor": 16,
-          "goalsAgainst": 17,
+          "points": 10,
+          "goalsFor": 17,
+          "goalsAgainst": 18,
           "goalDifference": -1
         },
         {
@@ -227,24 +227,6 @@
         {
           "position": 13,
           "team": {
-            "id": 105,
-            "name": "Karlsruher SC",
-            "shortName": "Karlsruher SC",
-            "tla": "",
-            "crest": ""
-          },
-          "playedGames": 8,
-          "won": 2,
-          "draw": 2,
-          "lost": 4,
-          "points": 8,
-          "goalsFor": 10,
-          "goalsAgainst": 14,
-          "goalDifference": -4
-        },
-        {
-          "position": 14,
-          "team": {
             "id": 129,
             "name": "VfL Bochum",
             "shortName": "VfL Bochum",
@@ -261,7 +243,7 @@
           "goalDifference": -4
         },
         {
-          "position": 15,
+          "position": 14,
           "team": {
             "id": 55,
             "name": "Hannover 96",
@@ -277,6 +259,24 @@
           "goalsFor": 8,
           "goalsAgainst": 13,
           "goalDifference": -5
+        },
+        {
+          "position": 15,
+          "team": {
+            "id": 105,
+            "name": "Karlsruher SC",
+            "shortName": "Karlsruher SC",
+            "tla": "",
+            "crest": ""
+          },
+          "playedGames": 9,
+          "won": 2,
+          "draw": 2,
+          "lost": 5,
+          "points": 8,
+          "goalsFor": 11,
+          "goalsAgainst": 20,
+          "goalDifference": -9
         },
         {
           "position": 16,
