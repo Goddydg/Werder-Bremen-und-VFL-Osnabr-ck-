@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T15:18:44.877Z",
+  "updatedAt": "2026-10-24T15:19:59.377Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2158,6 +2158,22 @@
         ],
         "subs": [
           {
+            "minute": "89′",
+            "in": "Rodrigo Ribeiro",
+            "out": "Anton Kade",
+            "crestId": "000010",
+            "team": "FC Augsburg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "89′",
+            "in": "Uchenna Ogundu",
+            "out": "Han-Noah Massengo",
+            "crestId": "000010",
+            "team": "FC Augsburg",
+            "teamSide": "home"
+          },
+          {
             "minute": "76′",
             "in": "Oliver Burke",
             "out": "Woo-yeong Jeong",
@@ -2206,7 +2222,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T15:18:41.620Z"
+        "checkedAt": "2026-10-24T15:19:56.168Z"
       },
       "83216": {
         "matchId": "83216",
@@ -2298,7 +2314,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:18:42.558Z"
+        "checkedAt": "2026-10-24T15:19:57.117Z"
       },
       "83217": {
         "matchId": "83217",
@@ -2382,7 +2398,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:18:43.493Z"
+        "checkedAt": "2026-10-24T15:19:58.052Z"
       },
       "83218": {
         "matchId": "83218",
@@ -2406,6 +2422,14 @@
             "crestId": "00000L",
             "team": "SC Paderborn 07",
             "teamSide": "home"
+          },
+          {
+            "minute": "87′",
+            "type": "yellow",
+            "player": "Albert Sambi Lokonga",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "away"
           }
         ],
         "subs": [
@@ -2482,7 +2506,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:18:44.419Z"
+        "checkedAt": "2026-10-24T15:19:58.987Z"
       }
     },
     "bl2": {
