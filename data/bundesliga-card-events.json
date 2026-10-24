@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T15:22:28.651Z",
+  "updatedAt": "2026-10-24T15:24:56.700Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1959,6 +1959,14 @@
         "cards": [],
         "finalAttempts": 3
       },
+      "83211": {
+        "matchId": "83211",
+        "home": "RB Leipzig",
+        "away": "SV 07 Elversberg",
+        "round": 7,
+        "cards": [],
+        "finalAttempts": 1
+      },
       "83212": {
         "matchId": "83212",
         "home": "VfB Stuttgart",
@@ -2158,6 +2166,14 @@
         ],
         "subs": [
           {
+            "minute": "90+5′",
+            "in": "Aljoscha Kemlein",
+            "out": "Michel Aebischer",
+            "crestId": "00000V",
+            "team": "1. FC Union Berlin",
+            "teamSide": "away"
+          },
+          {
             "minute": "89′",
             "in": "Rodrigo Ribeiro",
             "out": "Anton Kade",
@@ -2222,7 +2238,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T15:22:25.297Z"
+        "checkedAt": "2026-10-24T15:24:53.389Z"
       },
       "83216": {
         "matchId": "83216",
@@ -2257,6 +2273,14 @@
           }
         ],
         "subs": [
+          {
+            "minute": "90+1′",
+            "in": "Eric Martel",
+            "out": "Kaishu Sano",
+            "crestId": "000006",
+            "team": "1. FSV Mainz 05",
+            "teamSide": "home"
+          },
           {
             "minute": "85′",
             "in": "Paul Nebel",
@@ -2322,7 +2346,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:22:26.242Z"
+        "checkedAt": "2026-10-24T15:24:54.335Z"
       },
       "83217": {
         "matchId": "83217",
@@ -2362,9 +2386,33 @@
             "crestId": "000009",
             "team": "FC Schalke 04",
             "teamSide": "away"
+          },
+          {
+            "minute": "90′",
+            "type": "yellow",
+            "player": "Hasan Kuruçay",
+            "crestId": "000009",
+            "team": "FC Schalke 04",
+            "teamSide": "away"
           }
         ],
         "subs": [
+          {
+            "minute": "90′",
+            "in": "Joël Schmied",
+            "out": "Borna Sosa",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "home"
+          },
+          {
+            "minute": "90′",
+            "in": "Jan Thielmann",
+            "out": "Linton Maina",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "home"
+          },
           {
             "minute": "80′",
             "in": "Reigan Heskey",
@@ -2406,7 +2454,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:22:27.172Z"
+        "checkedAt": "2026-10-24T15:24:55.269Z"
       },
       "83218": {
         "matchId": "83218",
@@ -2435,6 +2483,14 @@
             "minute": "87′",
             "type": "yellow",
             "player": "Albert Sambi Lokonga",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "away"
+          },
+          {
+            "minute": "89′",
+            "type": "yellow",
+            "player": "Merlin Polzin",
             "crestId": "00000C",
             "team": "Hamburger SV",
             "teamSide": "away"
@@ -2522,7 +2578,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:22:28.102Z"
+        "checkedAt": "2026-10-24T15:24:56.204Z"
       }
     },
     "bl2": {
