@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T14:52:46.219Z",
+  "updatedAt": "2026-10-24T14:54:01.058Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2138,6 +2138,14 @@
             "crestId": "00000V",
             "team": "1. FC Union Berlin",
             "teamSide": "away"
+          },
+          {
+            "minute": "63′",
+            "type": "red",
+            "player": "Juma Bah",
+            "crestId": "000010",
+            "team": "FC Augsburg",
+            "teamSide": "home"
           }
         ],
         "subs": [
@@ -2166,7 +2174,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T14:52:42.331Z"
+        "checkedAt": "2026-10-24T14:53:57.575Z"
       },
       "83216": {
         "matchId": "83216",
@@ -2202,7 +2210,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T14:52:43.271Z"
+        "checkedAt": "2026-10-24T14:53:58.524Z"
       },
       "83217": {
         "matchId": "83217",
@@ -2238,7 +2246,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T14:52:44.310Z"
+        "checkedAt": "2026-10-24T14:53:59.457Z"
       },
       "83218": {
         "matchId": "83218",
@@ -2290,7 +2298,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T14:52:45.355Z"
+        "checkedAt": "2026-10-24T14:54:00.498Z"
       }
     },
     "bl2": {
