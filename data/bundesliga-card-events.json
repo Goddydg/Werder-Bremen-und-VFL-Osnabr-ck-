@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T18:59:08.521Z",
+  "updatedAt": "2026-10-24T19:08:25.919Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5518,8 +5518,17 @@
             "teamSide": "away"
           }
         ],
-        "subs": [],
-        "checkedAt": "2026-10-24T18:59:08.520Z"
+        "subs": [
+          {
+            "minute": "37′",
+            "in": "Styopa Mkrtchyan",
+            "out": "Fynn Otto",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "home"
+          }
+        ],
+        "checkedAt": "2026-10-24T19:08:25.918Z"
       },
       "83655": {
         "matchId": "83655",
