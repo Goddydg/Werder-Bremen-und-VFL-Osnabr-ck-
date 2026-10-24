@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T15:17:30.315Z",
+  "updatedAt": "2026-10-24T15:18:44.877Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2158,7 +2158,7 @@
         ],
         "subs": [
           {
-            "minute": "75′",
+            "minute": "76′",
             "in": "Oliver Burke",
             "out": "Woo-yeong Jeong",
             "crestId": "00000V",
@@ -2206,7 +2206,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T15:17:27.056Z"
+        "checkedAt": "2026-10-24T15:18:41.620Z"
       },
       "83216": {
         "matchId": "83216",
@@ -2233,6 +2233,14 @@
           }
         ],
         "subs": [
+          {
+            "minute": "85′",
+            "in": "Paul Nebel",
+            "out": "Danny da Costa",
+            "crestId": "000006",
+            "team": "1. FSV Mainz 05",
+            "teamSide": "home"
+          },
           {
             "minute": "85′",
             "in": "Benedict Hollerbach",
@@ -2290,7 +2298,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:17:28.002Z"
+        "checkedAt": "2026-10-24T15:18:42.558Z"
       },
       "83217": {
         "matchId": "83217",
@@ -2322,6 +2330,14 @@
             "crestId": "000008",
             "team": "1. FC Köln",
             "teamSide": "home"
+          },
+          {
+            "minute": "83′",
+            "type": "yellow",
+            "player": "Vitalie Becker",
+            "crestId": "000009",
+            "team": "FC Schalke 04",
+            "teamSide": "away"
           }
         ],
         "subs": [
@@ -2366,7 +2382,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:17:28.935Z"
+        "checkedAt": "2026-10-24T15:18:43.493Z"
       },
       "83218": {
         "matchId": "83218",
@@ -2466,7 +2482,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:17:29.864Z"
+        "checkedAt": "2026-10-24T15:18:44.419Z"
       }
     },
     "bl2": {
