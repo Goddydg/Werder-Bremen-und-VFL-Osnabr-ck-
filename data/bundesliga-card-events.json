@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T17:53:04.223Z",
+  "updatedAt": "2026-10-24T17:57:12.980Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1983,8 +1983,33 @@
             "teamSide": "away"
           }
         ],
-        "subs": [],
-        "checkedAt": "2026-10-24T17:53:04.085Z"
+        "subs": [
+          {
+            "minute": "68′",
+            "in": "Carney Chukwuemeka",
+            "out": "Marcel Sabitzer",
+            "crestId": "000007",
+            "team": "Borussia Dortmund",
+            "teamSide": "home"
+          },
+          {
+            "minute": "68′",
+            "in": "Ethan Nwaneri",
+            "out": "Fabio Silva",
+            "crestId": "000007",
+            "team": "Borussia Dortmund",
+            "teamSide": "home"
+          },
+          {
+            "minute": "68′",
+            "in": "Maximilian Beier",
+            "out": "Daniel Svensson",
+            "crestId": "000007",
+            "team": "Borussia Dortmund",
+            "teamSide": "home"
+          }
+        ],
+        "checkedAt": "2026-10-24T17:57:12.841Z"
       },
       "83211": {
         "matchId": "83211",
