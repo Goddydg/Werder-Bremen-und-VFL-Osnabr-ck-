@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T14:50:17.634Z",
+  "updatedAt": "2026-10-24T14:52:46.219Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2166,7 +2166,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T14:50:14.068Z"
+        "checkedAt": "2026-10-24T14:52:42.331Z"
       },
       "83216": {
         "matchId": "83216",
@@ -2186,6 +2186,14 @@
         ],
         "subs": [
           {
+            "minute": "59′",
+            "in": "Oskar Wójcik",
+            "out": "Mitchell Weiser",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "away"
+          },
+          {
             "minute": "45+4′",
             "in": "Mick Schmetgens",
             "out": "Olivier Deman",
@@ -2194,7 +2202,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T14:50:15.008Z"
+        "checkedAt": "2026-10-24T14:52:43.271Z"
       },
       "83217": {
         "matchId": "83217",
@@ -2230,7 +2238,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T14:50:16.055Z"
+        "checkedAt": "2026-10-24T14:52:44.310Z"
       },
       "83218": {
         "matchId": "83218",
@@ -2282,7 +2290,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T14:50:17.096Z"
+        "checkedAt": "2026-10-24T14:52:45.355Z"
       }
     },
     "bl2": {
