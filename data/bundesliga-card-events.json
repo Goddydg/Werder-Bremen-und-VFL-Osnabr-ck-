@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T12:57:38.048Z",
+  "updatedAt": "2026-10-24T14:49:02.530Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2099,6 +2099,106 @@
         ],
         "checkedAt": "2026-10-23T20:26:22.697Z",
         "finalChecked": true
+      },
+      "83215": {
+        "matchId": "83215",
+        "home": "FC Augsburg",
+        "away": "1. FC Union Berlin",
+        "round": 7,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/7/fc-augsburg-vs-1-fc-union-berlin/liveticker/",
+        "cards": [],
+        "subs": [],
+        "checkedAt": "2026-10-24T14:48:58.753Z"
+      },
+      "83216": {
+        "matchId": "83216",
+        "home": "1. FSV Mainz 05",
+        "away": "SV Werder Bremen",
+        "round": 7,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/7/1-fsv-mainz-05-vs-sv-werder-bremen/liveticker/",
+        "cards": [],
+        "subs": [],
+        "checkedAt": "2026-10-24T14:48:59.878Z"
+      },
+      "83217": {
+        "matchId": "83217",
+        "home": "1. FC Köln",
+        "away": "FC Schalke 04",
+        "round": 7,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/7/1-fc-koeln-vs-fc-schalke-04/liveticker/",
+        "cards": [
+          {
+            "minute": "45+2′",
+            "type": "yellow",
+            "player": "Tom Krauß",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "home"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "43′",
+            "in": "Vitalie Becker",
+            "out": "Robin Gosens",
+            "crestId": "000009",
+            "team": "FC Schalke 04",
+            "teamSide": "away"
+          },
+          {
+            "minute": "43′",
+            "in": "Janik Bachmann",
+            "out": "Soufiane El-Faouzi",
+            "crestId": "000009",
+            "team": "FC Schalke 04",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-10-24T14:49:00.922Z"
+      },
+      "83218": {
+        "matchId": "83218",
+        "home": "SC Paderborn 07",
+        "away": "Hamburger SV",
+        "round": 7,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/7/sc-paderborn-07-vs-hamburger-sv/liveticker/",
+        "cards": [
+          {
+            "minute": "53′",
+            "type": "yellow",
+            "player": "Shafiq Nandja",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "45+3′",
+            "in": "Tom Baack",
+            "out": "Gabriel Vidović",
+            "crestId": "00000L",
+            "team": "SC Paderborn 07",
+            "teamSide": "home"
+          },
+          {
+            "minute": "45+3′",
+            "in": "Terem Moffi",
+            "out": "Yussuf Poulsen",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "away"
+          },
+          {
+            "minute": "13′",
+            "in": "Otto Stange",
+            "out": "Fábio Vieira",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-10-24T14:49:01.998Z"
       }
     },
     "bl2": {
