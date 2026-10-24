@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T12:38:21.154Z",
+  "updatedAt": "2026-10-24T12:39:26.099Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4576,6 +4576,14 @@
         ],
         "subs": [
           {
+            "minute": "79′",
+            "in": "Mathias Honsak",
+            "out": "Paul Hennrich",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "home"
+          },
+          {
             "minute": "66′",
             "in": "Jannis Zaydan",
             "out": "Fousseny Doumbia",
@@ -4616,7 +4624,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T12:38:19.275Z"
+        "checkedAt": "2026-10-24T12:39:24.232Z"
       },
       "83648": {
         "matchId": "83648",
@@ -4825,7 +4833,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T12:38:20.213Z"
+        "checkedAt": "2026-10-24T12:39:25.165Z"
       },
       "83655": {
         "matchId": "83655",
@@ -4933,7 +4941,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T12:38:21.153Z"
+        "checkedAt": "2026-10-24T12:39:26.098Z"
       }
     }
   },
