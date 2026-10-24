@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T11:42:48.733Z",
+  "updatedAt": "2026-10-24T12:05:09.602Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4566,8 +4566,17 @@
             "teamSide": "away"
           }
         ],
-        "subs": [],
-        "checkedAt": "2026-10-24T11:42:46.749Z"
+        "subs": [
+          {
+            "minute": "45+3′",
+            "in": "Marcel Costly",
+            "out": "Julian Niehues",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "home"
+          }
+        ],
+        "checkedAt": "2026-10-24T12:05:07.611Z"
       },
       "83648": {
         "matchId": "83648",
@@ -4727,7 +4736,7 @@
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-24T11:42:47.793Z"
+        "checkedAt": "2026-10-24T12:05:08.653Z"
       },
       "83655": {
         "matchId": "83655",
@@ -4770,7 +4779,7 @@
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-24T11:42:48.732Z"
+        "checkedAt": "2026-10-24T12:05:09.601Z"
       }
     }
   },
