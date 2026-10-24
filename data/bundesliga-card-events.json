@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T12:05:09.602Z",
+  "updatedAt": "2026-10-24T12:06:14.685Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4576,7 +4576,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T12:05:07.611Z"
+        "checkedAt": "2026-10-24T12:06:12.695Z"
       },
       "83648": {
         "matchId": "83648",
@@ -4736,7 +4736,7 @@
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-24T12:05:08.653Z"
+        "checkedAt": "2026-10-24T12:06:13.739Z"
       },
       "83655": {
         "matchId": "83655",
@@ -4778,8 +4778,17 @@
             "teamSide": "home"
           }
         ],
-        "subs": [],
-        "checkedAt": "2026-10-24T12:05:09.601Z"
+        "subs": [
+          {
+            "minute": "45+4′",
+            "in": "Rafael Pinto Pedrosa",
+            "out": "Sebastian Jung",
+            "crestId": "00000T",
+            "team": "Karlsruher SC",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-10-24T12:06:14.685Z"
       }
     }
   },
