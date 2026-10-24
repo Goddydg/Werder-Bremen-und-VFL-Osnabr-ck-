@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T20:17:34.343Z",
+  "updatedAt": "2026-10-24T20:18:37.347Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5524,6 +5524,14 @@
             "crestId": "00000I",
             "team": "1. FC Kaiserslautern",
             "teamSide": "away"
+          },
+          {
+            "minute": "88′",
+            "type": "yellow",
+            "player": "Maxwell Gyamfi",
+            "crestId": "00000I",
+            "team": "1. FC Kaiserslautern",
+            "teamSide": "away"
           }
         ],
         "subs": [
@@ -5600,7 +5608,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T20:17:34.343Z"
+        "checkedAt": "2026-10-24T20:18:37.346Z"
       },
       "83655": {
         "matchId": "83655",
