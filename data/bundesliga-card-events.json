@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T19:56:54.556Z",
+  "updatedAt": "2026-10-24T20:08:15.876Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5528,6 +5528,14 @@
         ],
         "subs": [
           {
+            "minute": "78′",
+            "in": "Mërgim Berisha",
+            "out": "Naatan Skyttä",
+            "crestId": "00000I",
+            "team": "1. FC Kaiserslautern",
+            "teamSide": "away"
+          },
+          {
             "minute": "67′",
             "in": "Fabian Kunze",
             "out": "Erencan Yardımcı",
@@ -5568,7 +5576,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T19:56:54.555Z"
+        "checkedAt": "2026-10-24T20:08:15.875Z"
       },
       "83655": {
         "matchId": "83655",
