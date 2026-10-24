@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T17:46:52.058Z",
+  "updatedAt": "2026-10-24T17:53:04.223Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1973,10 +1973,18 @@
             "crestId": "00000F",
             "team": "Eintracht Frankfurt",
             "teamSide": "away"
+          },
+          {
+            "minute": "63′",
+            "type": "yellow",
+            "player": "Farès Chaïbi",
+            "crestId": "00000F",
+            "team": "Eintracht Frankfurt",
+            "teamSide": "away"
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-24T17:46:51.917Z"
+        "checkedAt": "2026-10-24T17:53:04.085Z"
       },
       "83211": {
         "matchId": "83211",
