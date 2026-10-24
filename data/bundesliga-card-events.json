@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T11:38:29.340Z",
+  "updatedAt": "2026-10-24T11:39:34.504Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4567,7 +4567,7 @@
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-24T11:38:27.153Z"
+        "checkedAt": "2026-10-24T11:39:32.506Z"
       },
       "83648": {
         "matchId": "83648",
@@ -4719,7 +4719,7 @@
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-24T11:38:28.389Z"
+        "checkedAt": "2026-10-24T11:39:33.555Z"
       },
       "83655": {
         "matchId": "83655",
@@ -4743,10 +4743,18 @@
             "crestId": "000N5D",
             "team": "1. FC Magdeburg",
             "teamSide": "home"
+          },
+          {
+            "minute": "37′",
+            "type": "yellow",
+            "player": "Sandro Trémoulet",
+            "crestId": "00000T",
+            "team": "Karlsruher SC",
+            "teamSide": "away"
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-24T11:38:29.339Z"
+        "checkedAt": "2026-10-24T11:39:34.503Z"
       }
     }
   },
