@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T15:27:24.376Z",
+  "updatedAt": "2026-10-24T17:39:37.996Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1959,6 +1959,16 @@
         "cards": [],
         "finalAttempts": 3
       },
+      "83210": {
+        "matchId": "83210",
+        "home": "Borussia Dortmund",
+        "away": "Eintracht Frankfurt",
+        "round": 7,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/7/borussia-dortmund-vs-eintracht-frankfurt/liveticker/",
+        "cards": [],
+        "subs": [],
+        "checkedAt": "2026-10-24T17:39:37.860Z"
+      },
       "83211": {
         "matchId": "83211",
         "home": "RB Leipzig",
@@ -2355,7 +2365,8 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:27:22.738Z"
+        "checkedAt": "2026-10-24T17:39:36.859Z",
+        "finalChecked": true
       },
       "83217": {
         "matchId": "83217",
