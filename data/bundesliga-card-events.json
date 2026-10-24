@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T20:09:19.048Z",
+  "updatedAt": "2026-10-24T20:17:34.343Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5529,16 +5529,16 @@
         "subs": [
           {
             "minute": "79′",
-            "in": "Can Moustfa",
-            "out": "Rafael Lubach",
+            "in": "Sigurd Haugen",
+            "out": "Julian Justvan",
             "crestId": "000005",
             "team": "1. FC Nürnberg",
             "teamSide": "home"
           },
           {
-            "minute": "78′",
-            "in": "Sigurd Haugen",
-            "out": "Julian Justvan",
+            "minute": "79′",
+            "in": "Can Moustfa",
+            "out": "Rafael Lubach",
             "crestId": "000005",
             "team": "1. FC Nürnberg",
             "teamSide": "home"
@@ -5600,7 +5600,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T20:09:19.047Z"
+        "checkedAt": "2026-10-24T20:17:34.343Z"
       },
       "83655": {
         "matchId": "83655",
