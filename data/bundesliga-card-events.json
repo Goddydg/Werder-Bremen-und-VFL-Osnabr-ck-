@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T14:54:01.058Z",
+  "updatedAt": "2026-10-24T14:55:15.992Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2174,7 +2174,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T14:53:57.575Z"
+        "checkedAt": "2026-10-24T14:55:12.593Z"
       },
       "83216": {
         "matchId": "83216",
@@ -2210,7 +2210,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T14:53:58.524Z"
+        "checkedAt": "2026-10-24T14:55:13.564Z"
       },
       "83217": {
         "matchId": "83217",
@@ -2246,7 +2246,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T14:53:59.457Z"
+        "checkedAt": "2026-10-24T14:55:14.497Z"
       },
       "83218": {
         "matchId": "83218",
@@ -2274,6 +2274,22 @@
         ],
         "subs": [
           {
+            "minute": "62′",
+            "in": "Marvin Pieringer",
+            "out": "Steffen Tigges",
+            "crestId": "00000L",
+            "team": "SC Paderborn 07",
+            "teamSide": "home"
+          },
+          {
+            "minute": "62′",
+            "in": "Felix Götze",
+            "out": "Jano ter Horst",
+            "crestId": "00000L",
+            "team": "SC Paderborn 07",
+            "teamSide": "home"
+          },
+          {
             "minute": "45+3′",
             "in": "Tom Baack",
             "out": "Gabriel Vidović",
@@ -2298,7 +2314,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T14:54:00.498Z"
+        "checkedAt": "2026-10-24T14:55:15.546Z"
       }
     },
     "bl2": {
