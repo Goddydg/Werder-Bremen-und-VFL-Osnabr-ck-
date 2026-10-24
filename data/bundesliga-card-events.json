@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T20:18:37.347Z",
+  "updatedAt": "2026-10-24T20:24:49.579Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5532,6 +5532,14 @@
             "crestId": "00000I",
             "team": "1. FC Kaiserslautern",
             "teamSide": "away"
+          },
+          {
+            "minute": "90+5′",
+            "type": "yellow",
+            "player": "Thierry Tazemeta",
+            "crestId": "00000I",
+            "team": "1. FC Kaiserslautern",
+            "teamSide": "away"
           }
         ],
         "subs": [
@@ -5608,7 +5616,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T20:18:37.346Z"
+        "checkedAt": "2026-10-24T20:24:49.578Z"
       },
       "83655": {
         "matchId": "83655",
