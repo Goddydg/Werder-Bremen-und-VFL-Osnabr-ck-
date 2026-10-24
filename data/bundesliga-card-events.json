@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T12:26:34.979Z",
+  "updatedAt": "2026-10-24T12:28:43.727Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4564,6 +4564,14 @@
             "crestId": "00000O",
             "team": "Energie Cottbus",
             "teamSide": "away"
+          },
+          {
+            "minute": "69′",
+            "type": "yellow",
+            "player": "Michael Heule",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "home"
           }
         ],
         "subs": [
@@ -4608,7 +4616,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T12:26:32.987Z"
+        "checkedAt": "2026-10-24T12:28:41.704Z"
       },
       "83648": {
         "matchId": "83648",
@@ -4793,7 +4801,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T12:26:34.028Z"
+        "checkedAt": "2026-10-24T12:28:42.777Z"
       },
       "83655": {
         "matchId": "83655",
@@ -4885,7 +4893,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T12:26:34.978Z"
+        "checkedAt": "2026-10-24T12:28:43.726Z"
       }
     }
   },
