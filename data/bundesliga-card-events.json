@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T18:23:07.174Z",
+  "updatedAt": "2026-10-24T18:30:16.319Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5501,6 +5501,16 @@
         ],
         "checkedAt": "2026-10-24T12:55:29.952Z",
         "finalChecked": true
+      },
+      "83652": {
+        "matchId": "83652",
+        "home": "1. FC Nürnberg",
+        "away": "1. FC Kaiserslautern",
+        "round": 9,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/9/1-fc-nuernberg-vs-1-fc-kaiserslautern/liveticker/",
+        "cards": [],
+        "subs": [],
+        "checkedAt": "2026-10-24T18:30:16.318Z"
       },
       "83655": {
         "matchId": "83655",
