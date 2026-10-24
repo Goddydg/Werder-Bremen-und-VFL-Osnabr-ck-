@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T15:13:47.552Z",
+  "updatedAt": "2026-10-24T15:16:15.678Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2206,7 +2206,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T15:13:44.296Z"
+        "checkedAt": "2026-10-24T15:16:12.317Z"
       },
       "83216": {
         "matchId": "83216",
@@ -2282,7 +2282,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:13:45.237Z"
+        "checkedAt": "2026-10-24T15:16:13.256Z"
       },
       "83217": {
         "matchId": "83217",
@@ -2310,6 +2310,22 @@
         ],
         "subs": [
           {
+            "minute": "80′",
+            "in": "Reigan Heskey",
+            "out": "Saïd El Mala",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "home"
+          },
+          {
+            "minute": "80′",
+            "in": "Paul Okon-Engstler",
+            "out": "Tom Krauß",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "home"
+          },
+          {
             "minute": "68′",
             "in": "Luca Waldschmidt",
             "out": "Mikey Moore",
@@ -2334,7 +2350,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:13:46.165Z"
+        "checkedAt": "2026-10-24T15:16:14.182Z"
       },
       "83218": {
         "matchId": "83218",
@@ -2434,7 +2450,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:13:47.094Z"
+        "checkedAt": "2026-10-24T15:16:15.107Z"
       }
     },
     "bl2": {
