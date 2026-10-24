@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T11:36:20.106Z",
+  "updatedAt": "2026-10-24T11:38:29.340Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4556,10 +4556,18 @@
             "crestId": "000018",
             "team": "1. FC Heidenheim 1846",
             "teamSide": "home"
+          },
+          {
+            "minute": "37′",
+            "type": "yellow",
+            "player": "King Manu",
+            "crestId": "00000O",
+            "team": "Energie Cottbus",
+            "teamSide": "away"
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-24T11:36:18.109Z"
+        "checkedAt": "2026-10-24T11:38:27.153Z"
       },
       "83648": {
         "matchId": "83648",
@@ -4711,7 +4719,7 @@
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-24T11:36:19.157Z"
+        "checkedAt": "2026-10-24T11:38:28.389Z"
       },
       "83655": {
         "matchId": "83655",
@@ -4738,7 +4746,7 @@
           }
         ],
         "subs": [],
-        "checkedAt": "2026-10-24T11:36:20.105Z"
+        "checkedAt": "2026-10-24T11:38:29.339Z"
       }
     }
   },
