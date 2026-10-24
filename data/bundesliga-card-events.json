@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T15:24:56.700Z",
+  "updatedAt": "2026-10-24T15:26:11.415Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -1965,7 +1965,7 @@
         "away": "SV 07 Elversberg",
         "round": 7,
         "cards": [],
-        "finalAttempts": 1
+        "finalAttempts": 2
       },
       "83212": {
         "matchId": "83212",
@@ -2238,7 +2238,8 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T15:24:53.389Z"
+        "checkedAt": "2026-10-24T15:26:08.036Z",
+        "finalChecked": true
       },
       "83216": {
         "matchId": "83216",
@@ -2346,7 +2347,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:24:54.335Z"
+        "checkedAt": "2026-10-24T15:26:08.986Z"
       },
       "83217": {
         "matchId": "83217",
@@ -2400,7 +2401,7 @@
           {
             "minute": "90′",
             "in": "Joël Schmied",
-            "out": "Borna Sosa",
+            "out": "Luka Lochoshvili",
             "crestId": "000008",
             "team": "1. FC Köln",
             "teamSide": "home"
@@ -2454,7 +2455,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:24:55.269Z"
+        "checkedAt": "2026-10-24T15:26:09.922Z"
       },
       "83218": {
         "matchId": "83218",
@@ -2578,7 +2579,8 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T15:24:56.204Z"
+        "checkedAt": "2026-10-24T15:26:10.857Z",
+        "finalChecked": true
       }
     },
     "bl2": {
