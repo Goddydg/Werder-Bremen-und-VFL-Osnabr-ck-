@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T19:35:14.118Z",
+  "updatedAt": "2026-10-24T19:46:35.302Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5516,6 +5516,14 @@
             "crestId": "00000I",
             "team": "1. FC Kaiserslautern",
             "teamSide": "away"
+          },
+          {
+            "minute": "56′",
+            "type": "yellow",
+            "player": "Paul Joly",
+            "crestId": "00000I",
+            "team": "1. FC Kaiserslautern",
+            "teamSide": "away"
           }
         ],
         "subs": [
@@ -5544,7 +5552,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T19:35:14.117Z"
+        "checkedAt": "2026-10-24T19:46:35.302Z"
       },
       "83655": {
         "matchId": "83655",
