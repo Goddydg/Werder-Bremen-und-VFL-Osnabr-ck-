@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T12:48:02.249Z",
+  "updatedAt": "2026-10-24T12:50:11.060Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4640,7 +4640,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T12:48:00.373Z"
+        "checkedAt": "2026-10-24T12:50:09.177Z"
       },
       "83648": {
         "matchId": "83648",
@@ -4809,6 +4809,14 @@
         ],
         "subs": [
           {
+            "minute": "89′",
+            "in": "Tim Handwerker",
+            "out": "Joel Grodowski",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "away"
+          },
+          {
             "minute": "87′",
             "in": "Selim Telib",
             "out": "Kevin Sessa",
@@ -4881,7 +4889,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T12:48:01.308Z"
+        "checkedAt": "2026-10-24T12:50:10.116Z"
       },
       "83655": {
         "matchId": "83655",
@@ -5005,7 +5013,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-24T12:48:02.248Z"
+        "checkedAt": "2026-10-24T12:50:11.059Z"
       }
     }
   },
