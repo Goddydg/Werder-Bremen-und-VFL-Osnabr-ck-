@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T20:08:15.876Z",
+  "updatedAt": "2026-10-24T20:09:19.048Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5528,6 +5528,30 @@
         ],
         "subs": [
           {
+            "minute": "79′",
+            "in": "Can Moustfa",
+            "out": "Rafael Lubach",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "78′",
+            "in": "Sigurd Haugen",
+            "out": "Julian Justvan",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "78′",
+            "in": "Marlon Ritter",
+            "out": "Mário Sauer",
+            "crestId": "00000I",
+            "team": "1. FC Kaiserslautern",
+            "teamSide": "away"
+          },
+          {
             "minute": "78′",
             "in": "Mërgim Berisha",
             "out": "Naatan Skyttä",
@@ -5576,7 +5600,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-24T20:08:15.875Z"
+        "checkedAt": "2026-10-24T20:09:19.047Z"
       },
       "83655": {
         "matchId": "83655",
