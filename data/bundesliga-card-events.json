@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T16:24:08.155Z",
+  "updatedAt": "2026-10-25T16:26:13.937Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2287,6 +2287,14 @@
             "crestId": "00000B",
             "team": "Bayer 04 Leverkusen",
             "teamSide": "away"
+          },
+          {
+            "minute": "90+4′",
+            "type": "yellow",
+            "player": "Loïc Badé",
+            "crestId": "00000B",
+            "team": "Bayer 04 Leverkusen",
+            "teamSide": "away"
           }
         ],
         "subs": [
@@ -2363,7 +2371,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-25T16:24:07.988Z"
+        "checkedAt": "2026-10-25T16:26:13.769Z"
       },
       "83215": {
         "matchId": "83215",
