@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T13:54:05.679Z",
+  "updatedAt": "2026-10-25T13:56:15.442Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5681,6 +5681,14 @@
             "crestId": "000N5P",
             "team": "Holstein Kiel",
             "teamSide": "home"
+          },
+          {
+            "minute": "66′",
+            "type": "yellow",
+            "player": "Adrián Kaprálik",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
           }
         ],
         "subs": [
@@ -5701,7 +5709,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-25T13:54:03.511Z"
+        "checkedAt": "2026-10-25T13:56:13.281Z"
       },
       "83659": {
         "matchId": "83659",
@@ -5838,6 +5846,22 @@
         ],
         "subs": [
           {
+            "minute": "66′",
+            "in": "Benjamin Uphoff",
+            "out": "Ron-Thorben Hoffmann",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "home"
+          },
+          {
+            "minute": "66′",
+            "in": "Samuele Di Benedetto",
+            "out": "Junior Zé",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "home"
+          },
+          {
             "minute": "45+2′",
             "in": "Franz Roggow",
             "out": "Waniss Taïbi",
@@ -5854,7 +5878,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-25T13:54:04.588Z"
+        "checkedAt": "2026-10-25T13:56:14.361Z"
       },
       "83661": {
         "matchId": "83661",
@@ -5873,6 +5897,30 @@
           }
         ],
         "subs": [
+          {
+            "minute": "67′",
+            "in": "Mika Wallentowitz",
+            "out": "Jannik Dehm",
+            "crestId": "00000W",
+            "team": "SpVgg Greuther Fürth",
+            "teamSide": "away"
+          },
+          {
+            "minute": "67′",
+            "in": "Dennis Srbeny",
+            "out": "Jordan",
+            "crestId": "00000W",
+            "team": "SpVgg Greuther Fürth",
+            "teamSide": "away"
+          },
+          {
+            "minute": "67′",
+            "in": "Ismail Badjie",
+            "out": "Daniel Kofi Kyereh",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          },
           {
             "minute": "56′",
             "in": "Omar Sillah",
@@ -5898,7 +5946,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-25T13:54:05.678Z"
+        "checkedAt": "2026-10-25T13:56:15.440Z"
       }
     }
   },
