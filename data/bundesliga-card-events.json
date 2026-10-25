@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T13:51:55.874Z",
+  "updatedAt": "2026-10-25T13:54:05.679Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5673,6 +5673,14 @@
             "crestId": "000N5P",
             "team": "Holstein Kiel",
             "teamSide": "home"
+          },
+          {
+            "minute": "64′",
+            "type": "yellow",
+            "player": "Jonas Meffert",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
           }
         ],
         "subs": [
@@ -5693,7 +5701,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-25T13:51:53.714Z"
+        "checkedAt": "2026-10-25T13:54:03.511Z"
       },
       "83659": {
         "matchId": "83659",
@@ -5846,7 +5854,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-25T13:51:54.788Z"
+        "checkedAt": "2026-10-25T13:54:04.588Z"
       },
       "83661": {
         "matchId": "83661",
@@ -5890,7 +5898,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-25T13:51:55.873Z"
+        "checkedAt": "2026-10-25T13:54:05.678Z"
       }
     }
   },
