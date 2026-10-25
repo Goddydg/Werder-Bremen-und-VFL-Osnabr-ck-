@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T16:03:17.325Z",
+  "updatedAt": "2026-10-25T16:05:23.139Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2259,7 +2259,7 @@
         ],
         "subs": [
           {
-            "minute": "71′",
+            "minute": "72′",
             "in": "Bambasé Conté",
             "out": "Wouter Burger",
             "crestId": "000002",
@@ -2307,7 +2307,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-25T16:03:17.156Z"
+        "checkedAt": "2026-10-25T16:05:22.971Z"
       },
       "83215": {
         "matchId": "83215",
