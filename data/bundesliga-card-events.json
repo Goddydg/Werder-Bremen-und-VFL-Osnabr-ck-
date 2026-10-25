@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T13:47:35.011Z",
+  "updatedAt": "2026-10-25T13:48:40.686Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5677,7 +5677,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-25T13:47:32.839Z"
+        "checkedAt": "2026-10-25T13:48:38.518Z"
       },
       "83659": {
         "matchId": "83659",
@@ -5802,9 +5802,35 @@
         "away": "Hannover 96",
         "round": 9,
         "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/9/eintracht-braunschweig-vs-hannover-96/liveticker/",
-        "cards": [],
-        "subs": [],
-        "checkedAt": "2026-10-25T13:47:33.932Z"
+        "cards": [
+          {
+            "minute": "52′",
+            "type": "yellow",
+            "player": "Junior Zé",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "home"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "45+2′",
+            "in": "Franz Roggow",
+            "out": "Waniss Taïbi",
+            "crestId": "000001",
+            "team": "Hannover 96",
+            "teamSide": "away"
+          },
+          {
+            "minute": "45+2′",
+            "in": "Hayate Matsuda",
+            "out": "Kolja Oudenne",
+            "crestId": "000001",
+            "team": "Hannover 96",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-10-25T13:48:39.600Z"
       },
       "83661": {
         "matchId": "83661",
@@ -5812,9 +5838,43 @@
         "away": "SpVgg Greuther Fürth",
         "round": 9,
         "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/9/vfl-osnabrueck-vs-spvgg-greuther-fuerth/liveticker/",
-        "cards": [],
-        "subs": [],
-        "checkedAt": "2026-10-25T13:47:35.010Z"
+        "cards": [
+          {
+            "minute": "30′",
+            "type": "yellow",
+            "player": "Patrick Kammerbauer",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "56′",
+            "in": "Omar Sillah",
+            "out": "Shinta Appelkamp",
+            "crestId": "00000W",
+            "team": "SpVgg Greuther Fürth",
+            "teamSide": "away"
+          },
+          {
+            "minute": "56′",
+            "in": "Faton Ademi",
+            "out": "Sacha Bansé",
+            "crestId": "00000W",
+            "team": "SpVgg Greuther Fürth",
+            "teamSide": "away"
+          },
+          {
+            "minute": "45+2′",
+            "in": "Konrad Faber",
+            "out": "Patrick Kammerbauer",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          }
+        ],
+        "checkedAt": "2026-10-25T13:48:40.685Z"
       }
     }
   },
