@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T13:48:40.686Z",
+  "updatedAt": "2026-10-25T13:50:50.464Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5657,6 +5657,14 @@
             "crestId": "00000N",
             "team": "Dynamo Dresden",
             "teamSide": "away"
+          },
+          {
+            "minute": "61′",
+            "type": "yellow",
+            "player": "David Zec",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
           }
         ],
         "subs": [
@@ -5677,7 +5685,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-25T13:48:38.518Z"
+        "checkedAt": "2026-10-25T13:50:48.307Z"
       },
       "83659": {
         "matchId": "83659",
@@ -5830,7 +5838,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-25T13:48:39.600Z"
+        "checkedAt": "2026-10-25T13:50:49.387Z"
       },
       "83661": {
         "matchId": "83661",
@@ -5874,7 +5882,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-25T13:48:40.685Z"
+        "checkedAt": "2026-10-25T13:50:50.462Z"
       }
     }
   },
