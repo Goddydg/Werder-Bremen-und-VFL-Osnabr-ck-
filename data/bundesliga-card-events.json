@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T15:55:58.319Z",
+  "updatedAt": "2026-10-25T15:57:02.021Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2251,6 +2251,30 @@
         ],
         "subs": [
           {
+            "minute": "65′",
+            "in": "Andrej Kramarić",
+            "out": "Adam Hložek",
+            "crestId": "000002",
+            "team": "TSG Hoffenheim",
+            "teamSide": "home"
+          },
+          {
+            "minute": "64′",
+            "in": "Loïc Badé",
+            "out": "Jarell Quansah",
+            "crestId": "00000B",
+            "team": "Bayer 04 Leverkusen",
+            "teamSide": "away"
+          },
+          {
+            "minute": "64′",
+            "in": "Afonso Moreira",
+            "out": "Nathan Tella",
+            "crestId": "00000B",
+            "team": "Bayer 04 Leverkusen",
+            "teamSide": "away"
+          },
+          {
             "minute": "64′",
             "in": "Robert Andrich",
             "out": "Ezequiel Fernández",
@@ -2267,7 +2291,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-25T15:55:58.151Z"
+        "checkedAt": "2026-10-25T15:57:01.852Z"
       },
       "83215": {
         "matchId": "83215",
