@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T14:08:10.552Z",
+  "updatedAt": "2026-10-25T14:09:15.987Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5725,7 +5725,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-25T14:08:08.393Z"
+        "checkedAt": "2026-10-25T14:09:13.829Z"
       },
       "83659": {
         "matchId": "83659",
@@ -5886,6 +5886,22 @@
         ],
         "subs": [
           {
+            "minute": "79′",
+            "in": "Jovan Mijatović",
+            "out": "Jan Urbich",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "home"
+          },
+          {
+            "minute": "78′",
+            "in": "Tom Hobrecht",
+            "out": "Husseyn Chakroun",
+            "crestId": "000001",
+            "team": "Hannover 96",
+            "teamSide": "away"
+          },
+          {
             "minute": "78′",
             "in": "Merlin Sinanović",
             "out": "Marcel Hartel",
@@ -5926,7 +5942,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-25T14:08:09.474Z"
+        "checkedAt": "2026-10-25T14:09:14.908Z"
       },
       "83661": {
         "matchId": "83661",
@@ -6018,7 +6034,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-25T14:08:10.551Z"
+        "checkedAt": "2026-10-25T14:09:15.986Z"
       }
     }
   },
