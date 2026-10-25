@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T16:05:23.139Z",
+  "updatedAt": "2026-10-25T16:07:28.726Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2255,6 +2255,14 @@
             "crestId": "000002",
             "team": "TSG Hoffenheim",
             "teamSide": "home"
+          },
+          {
+            "minute": "75′",
+            "type": "yellow",
+            "player": "Facundo Medina",
+            "crestId": "00000B",
+            "team": "Bayer 04 Leverkusen",
+            "teamSide": "away"
           }
         ],
         "subs": [
@@ -2307,7 +2315,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-25T16:05:22.971Z"
+        "checkedAt": "2026-10-25T16:07:28.557Z"
       },
       "83215": {
         "matchId": "83215",
