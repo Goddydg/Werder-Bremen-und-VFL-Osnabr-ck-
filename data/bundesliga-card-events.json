@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T14:33:59.315Z",
+  "updatedAt": "2026-10-25T14:37:10.239Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2225,7 +2225,7 @@
         "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/7/tsg-hoffenheim-vs-bayer-04-leverkusen/liveticker/",
         "cards": [],
         "subs": [],
-        "checkedAt": "2026-10-25T14:33:57.134Z"
+        "checkedAt": "2026-10-25T14:37:08.984Z"
       },
       "83215": {
         "matchId": "83215",
@@ -6025,7 +6025,8 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-25T14:33:59.314Z"
+        "checkedAt": "2026-10-25T14:37:10.238Z",
+        "finalChecked": true
       },
       "83661": {
         "matchId": "83661",
