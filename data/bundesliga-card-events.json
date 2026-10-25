@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T15:16:35.470Z",
+  "updatedAt": "2026-10-25T15:49:44.369Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2239,6 +2239,14 @@
             "crestId": "000002",
             "team": "TSG Hoffenheim",
             "teamSide": "home"
+          },
+          {
+            "minute": "58′",
+            "type": "yellow",
+            "player": "Patrik Schick",
+            "crestId": "00000B",
+            "team": "Bayer 04 Leverkusen",
+            "teamSide": "away"
           }
         ],
         "subs": [
@@ -2251,7 +2259,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-25T15:16:35.303Z"
+        "checkedAt": "2026-10-25T15:49:44.196Z"
       },
       "83215": {
         "matchId": "83215",
