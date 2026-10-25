@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T14:19:01.689Z",
+  "updatedAt": "2026-10-25T14:22:15.522Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5693,6 +5693,14 @@
         ],
         "subs": [
           {
+            "minute": "90+3′",
+            "in": "Christoph Daferner",
+            "out": "Ben Bobzien",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "away"
+          },
+          {
             "minute": "88′",
             "in": "Till Wiese",
             "out": "Gyan de Regt",
@@ -5757,7 +5765,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-25T14:18:59.342Z"
+        "checkedAt": "2026-10-25T14:22:13.356Z"
       },
       "83659": {
         "matchId": "83659",
@@ -5990,7 +5998,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-25T14:19:00.608Z"
+        "checkedAt": "2026-10-25T14:22:14.443Z"
       },
       "83661": {
         "matchId": "83661",
@@ -6090,7 +6098,8 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-25T14:19:01.688Z"
+        "checkedAt": "2026-10-25T14:22:15.521Z",
+        "finalChecked": true
       }
     }
   },
