@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T15:57:02.021Z",
+  "updatedAt": "2026-10-25T16:00:09.662Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2247,6 +2247,14 @@
             "crestId": "00000B",
             "team": "Bayer 04 Leverkusen",
             "teamSide": "away"
+          },
+          {
+            "minute": "67′",
+            "type": "yellow",
+            "player": "Leon Avdullahu",
+            "crestId": "000002",
+            "team": "TSG Hoffenheim",
+            "teamSide": "home"
           }
         ],
         "subs": [
@@ -2291,7 +2299,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-25T15:57:01.852Z"
+        "checkedAt": "2026-10-25T16:00:09.495Z"
       },
       "83215": {
         "matchId": "83215",
