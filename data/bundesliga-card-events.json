@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T16:31:49.007Z",
+  "updatedAt": "2026-10-25T18:27:05.700Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2381,6 +2381,14 @@
         ],
         "checkedAt": "2026-10-25T16:31:40.032Z",
         "finalChecked": true
+      },
+      "83214": {
+        "matchId": "83214",
+        "home": "SC Freiburg",
+        "away": "FC Bayern München",
+        "round": 7,
+        "cards": [],
+        "finalAttempts": 1
       },
       "83215": {
         "matchId": "83215",
