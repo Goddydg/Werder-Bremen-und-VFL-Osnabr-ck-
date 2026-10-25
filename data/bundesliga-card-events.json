@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T14:22:15.522Z",
+  "updatedAt": "2026-10-25T14:23:20.137Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5765,7 +5765,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-25T14:22:13.356Z"
+        "checkedAt": "2026-10-25T14:23:19.037Z"
       },
       "83659": {
         "matchId": "83659",
@@ -5942,6 +5942,14 @@
         ],
         "subs": [
           {
+            "minute": "90+4′",
+            "in": "Robin Heußer",
+            "out": "Samuele Di Benedetto",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "home"
+          },
+          {
             "minute": "79′",
             "in": "Jovan Mijatović",
             "out": "Jan Urbich",
@@ -5998,7 +6006,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-25T14:22:14.443Z"
+        "checkedAt": "2026-10-25T14:23:20.136Z"
       },
       "83661": {
         "matchId": "83661",
