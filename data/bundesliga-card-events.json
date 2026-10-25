@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T14:13:35.961Z",
+  "updatedAt": "2026-10-25T14:14:41.594Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5694,6 +5694,14 @@
         "subs": [
           {
             "minute": "84′",
+            "in": "Nils Fröling",
+            "out": "Vincent Vermeij",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "away"
+          },
+          {
+            "minute": "84′",
             "in": "Jakob Lemmer",
             "out": "Niklas Hauptmann",
             "crestId": "00000N",
@@ -5733,7 +5741,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-25T14:13:33.794Z"
+        "checkedAt": "2026-10-25T14:14:39.435Z"
       },
       "83659": {
         "matchId": "83659",
@@ -5958,7 +5966,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-25T14:13:34.872Z"
+        "checkedAt": "2026-10-25T14:14:40.516Z"
       },
       "83661": {
         "matchId": "83661",
@@ -6050,7 +6058,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-25T14:13:35.960Z"
+        "checkedAt": "2026-10-25T14:14:41.593Z"
       }
     }
   },
