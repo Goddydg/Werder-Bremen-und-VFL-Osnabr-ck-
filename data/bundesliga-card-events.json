@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T14:05:59.551Z",
+  "updatedAt": "2026-10-25T14:07:05.234Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5725,7 +5725,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-25T14:05:57.369Z"
+        "checkedAt": "2026-10-25T14:07:03.085Z"
       },
       "83659": {
         "matchId": "83659",
@@ -5918,7 +5918,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-25T14:05:58.447Z"
+        "checkedAt": "2026-10-25T14:07:04.158Z"
       },
       "83661": {
         "matchId": "83661",
@@ -5939,16 +5939,16 @@
         "subs": [
           {
             "minute": "77′",
-            "in": "Bernd Riesselmann",
-            "out": "Leonhard Münst",
+            "in": "Theo Janotta",
+            "out": "Jannik Müller",
             "crestId": "000014",
             "team": "VfL Osnabrück",
             "teamSide": "home"
           },
           {
-            "minute": "76′",
-            "in": "Theo Janotta",
-            "out": "Jannik Müller",
+            "minute": "77′",
+            "in": "Bernd Riesselmann",
+            "out": "Leonhard Münst",
             "crestId": "000014",
             "team": "VfL Osnabrück",
             "teamSide": "home"
@@ -6010,7 +6010,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-25T14:05:59.550Z"
+        "checkedAt": "2026-10-25T14:07:05.233Z"
       }
     }
   },
