@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T14:02:45.684Z",
+  "updatedAt": "2026-10-25T14:05:59.551Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5725,7 +5725,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-25T14:02:43.530Z"
+        "checkedAt": "2026-10-25T14:05:57.369Z"
       },
       "83659": {
         "matchId": "83659",
@@ -5918,7 +5918,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-25T14:02:44.607Z"
+        "checkedAt": "2026-10-25T14:05:58.447Z"
       },
       "83661": {
         "matchId": "83661",
@@ -5937,6 +5937,30 @@
           }
         ],
         "subs": [
+          {
+            "minute": "77′",
+            "in": "Bernd Riesselmann",
+            "out": "Leonhard Münst",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          },
+          {
+            "minute": "76′",
+            "in": "Theo Janotta",
+            "out": "Jannik Müller",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          },
+          {
+            "minute": "76′",
+            "in": "Aaron Keller",
+            "out": "Ole Pohlmann",
+            "crestId": "00000W",
+            "team": "SpVgg Greuther Fürth",
+            "teamSide": "away"
+          },
           {
             "minute": "67′",
             "in": "Mika Wallentowitz",
@@ -5986,7 +6010,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-25T14:02:45.682Z"
+        "checkedAt": "2026-10-25T14:05:59.550Z"
       }
     }
   },
