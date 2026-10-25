@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T14:09:15.987Z",
+  "updatedAt": "2026-10-25T14:10:21.555Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5725,7 +5725,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-25T14:09:13.829Z"
+        "checkedAt": "2026-10-25T14:10:19.375Z"
       },
       "83659": {
         "matchId": "83659",
@@ -5882,6 +5882,14 @@
             "crestId": "00000X",
             "team": "Eintracht Braunschweig",
             "teamSide": "home"
+          },
+          {
+            "minute": "80′",
+            "type": "yellow",
+            "player": "Kevin Ehlers",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "home"
           }
         ],
         "subs": [
@@ -5942,7 +5950,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-25T14:09:14.908Z"
+        "checkedAt": "2026-10-25T14:10:20.474Z"
       },
       "83661": {
         "matchId": "83661",
@@ -6034,7 +6042,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-25T14:09:15.986Z"
+        "checkedAt": "2026-10-25T14:10:21.554Z"
       }
     }
   },
