@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T14:00:34.730Z",
+  "updatedAt": "2026-10-25T14:01:40.152Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5693,6 +5693,14 @@
         ],
         "subs": [
           {
+            "minute": "72′",
+            "in": "Kaan İnanoğlu",
+            "out": "Patrice Čović",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "away"
+          },
+          {
             "minute": "57′",
             "in": "Faride Alidou",
             "out": "Giorgi Kvilitaia",
@@ -5709,7 +5717,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-25T14:00:32.571Z"
+        "checkedAt": "2026-10-25T14:01:37.984Z"
       },
       "83659": {
         "matchId": "83659",
@@ -5858,6 +5866,14 @@
             "crestId": "000001",
             "team": "Hannover 96",
             "teamSide": "away"
+          },
+          {
+            "minute": "72′",
+            "type": "yellow",
+            "player": "Andi Hoti",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "home"
           }
         ],
         "subs": [
@@ -5894,7 +5910,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-25T14:00:33.652Z"
+        "checkedAt": "2026-10-25T14:01:39.070Z"
       },
       "83661": {
         "matchId": "83661",
@@ -5962,7 +5978,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-25T14:00:34.728Z"
+        "checkedAt": "2026-10-25T14:01:40.151Z"
       }
     }
   },
