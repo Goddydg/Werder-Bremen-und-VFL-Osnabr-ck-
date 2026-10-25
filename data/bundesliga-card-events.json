@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T13:59:29.109Z",
+  "updatedAt": "2026-10-25T14:00:34.730Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5709,7 +5709,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-25T13:59:26.952Z"
+        "checkedAt": "2026-10-25T14:00:32.571Z"
       },
       "83659": {
         "matchId": "83659",
@@ -5850,6 +5850,14 @@
             "crestId": "00000X",
             "team": "Eintracht Braunschweig",
             "teamSide": "home"
+          },
+          {
+            "minute": "70′",
+            "type": "yellow",
+            "player": "Franz Roggow",
+            "crestId": "000001",
+            "team": "Hannover 96",
+            "teamSide": "away"
           }
         ],
         "subs": [
@@ -5886,7 +5894,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-25T13:59:28.031Z"
+        "checkedAt": "2026-10-25T14:00:33.652Z"
       },
       "83661": {
         "matchId": "83661",
@@ -5954,7 +5962,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-25T13:59:29.107Z"
+        "checkedAt": "2026-10-25T14:00:34.728Z"
       }
     }
   },
