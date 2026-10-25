@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T15:11:22.189Z",
+  "updatedAt": "2026-10-25T15:12:25.808Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2233,8 +2233,17 @@
             "teamSide": "away"
           }
         ],
-        "subs": [],
-        "checkedAt": "2026-10-25T15:11:22.022Z"
+        "subs": [
+          {
+            "minute": "41′",
+            "in": "Malik Tillman",
+            "out": "Moussa Diaby",
+            "crestId": "00000B",
+            "team": "Bayer 04 Leverkusen",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-10-25T15:12:25.637Z"
       },
       "83215": {
         "matchId": "83215",
