@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T16:13:42.974Z",
+  "updatedAt": "2026-10-25T16:16:50.547Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2275,6 +2275,30 @@
         ],
         "subs": [
           {
+            "minute": "85′",
+            "in": "Jonas Hofmann",
+            "out": "Facundo Medina",
+            "crestId": "00000B",
+            "team": "Bayer 04 Leverkusen",
+            "teamSide": "away"
+          },
+          {
+            "minute": "84′",
+            "in": "Max Moerstedt",
+            "out": "Adam Daghim",
+            "crestId": "000002",
+            "team": "TSG Hoffenheim",
+            "teamSide": "home"
+          },
+          {
+            "minute": "84′",
+            "in": "Robin Hranáč",
+            "out": "Fisnik Asllani",
+            "crestId": "000002",
+            "team": "TSG Hoffenheim",
+            "teamSide": "home"
+          },
+          {
             "minute": "72′",
             "in": "Bambasé Conté",
             "out": "Wouter Burger",
@@ -2323,7 +2347,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-25T16:13:42.806Z"
+        "checkedAt": "2026-10-25T16:16:50.381Z"
       },
       "83215": {
         "matchId": "83215",
