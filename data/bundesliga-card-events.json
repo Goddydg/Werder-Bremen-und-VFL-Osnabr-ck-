@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T13:56:15.442Z",
+  "updatedAt": "2026-10-25T13:59:29.109Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5709,7 +5709,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-25T13:56:13.281Z"
+        "checkedAt": "2026-10-25T13:59:26.952Z"
       },
       "83659": {
         "matchId": "83659",
@@ -5842,6 +5842,14 @@
             "crestId": "00000X",
             "team": "Eintracht Braunschweig",
             "teamSide": "home"
+          },
+          {
+            "minute": "68′",
+            "type": "yellow",
+            "player": "Lars Kornetka",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "home"
           }
         ],
         "subs": [
@@ -5878,7 +5886,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-25T13:56:14.361Z"
+        "checkedAt": "2026-10-25T13:59:28.031Z"
       },
       "83661": {
         "matchId": "83661",
@@ -5946,7 +5954,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-25T13:56:15.440Z"
+        "checkedAt": "2026-10-25T13:59:29.107Z"
       }
     }
   },
