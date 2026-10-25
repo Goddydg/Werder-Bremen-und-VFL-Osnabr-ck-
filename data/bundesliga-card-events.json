@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T14:14:41.594Z",
+  "updatedAt": "2026-10-25T14:17:55.916Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5693,6 +5693,22 @@
         ],
         "subs": [
           {
+            "minute": "88′",
+            "in": "Till Wiese",
+            "out": "Gyan de Regt",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
+          },
+          {
+            "minute": "87′",
+            "in": "Mark Richter Monserrat",
+            "out": "Phil Harres",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
+          },
+          {
             "minute": "84′",
             "in": "Nils Fröling",
             "out": "Vincent Vermeij",
@@ -5741,7 +5757,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-25T14:14:39.435Z"
+        "checkedAt": "2026-10-25T14:17:53.757Z"
       },
       "83659": {
         "matchId": "83659",
@@ -5966,7 +5982,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-25T14:14:40.516Z"
+        "checkedAt": "2026-10-25T14:17:54.836Z"
       },
       "83661": {
         "matchId": "83661",
@@ -5985,6 +6001,14 @@
           }
         ],
         "subs": [
+          {
+            "minute": "88′",
+            "in": "Fridolin Wagner",
+            "out": "Bjarke Jacobsen",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          },
           {
             "minute": "77′",
             "in": "Theo Janotta",
@@ -6058,7 +6082,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-25T14:14:41.593Z"
+        "checkedAt": "2026-10-25T14:17:55.915Z"
       }
     }
   },
