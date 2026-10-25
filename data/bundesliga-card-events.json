@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-24T20:28:59.323Z",
+  "updatedAt": "2026-10-25T13:47:35.011Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5635,6 +5635,50 @@
         "cards": [],
         "finalAttempts": 3
       },
+      "83658": {
+        "matchId": "83658",
+        "home": "Holstein Kiel",
+        "away": "Dynamo Dresden",
+        "round": 9,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/9/holstein-kiel-vs-sg-dynamo-dresden/liveticker/",
+        "cards": [
+          {
+            "minute": "37′",
+            "type": "yellow",
+            "player": "Kasper Davidsen",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
+          },
+          {
+            "minute": "2′",
+            "type": "yellow",
+            "player": "Simon Straudi",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "57′",
+            "in": "Faride Alidou",
+            "out": "Giorgi Kvilitaia",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
+          },
+          {
+            "minute": "45+2′",
+            "in": "Ikem Ugoh",
+            "out": "Kasper Davidsen",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
+          }
+        ],
+        "checkedAt": "2026-10-25T13:47:32.839Z"
+      },
       "83659": {
         "matchId": "83659",
         "home": "1. FC Magdeburg",
@@ -5751,6 +5795,26 @@
         ],
         "checkedAt": "2026-10-24T12:57:38.047Z",
         "finalChecked": true
+      },
+      "83660": {
+        "matchId": "83660",
+        "home": "Eintracht Braunschweig",
+        "away": "Hannover 96",
+        "round": 9,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/9/eintracht-braunschweig-vs-hannover-96/liveticker/",
+        "cards": [],
+        "subs": [],
+        "checkedAt": "2026-10-25T13:47:33.932Z"
+      },
+      "83661": {
+        "matchId": "83661",
+        "home": "VfL Osnabrück",
+        "away": "SpVgg Greuther Fürth",
+        "round": 9,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/9/vfl-osnabrueck-vs-spvgg-greuther-fuerth/liveticker/",
+        "cards": [],
+        "subs": [],
+        "checkedAt": "2026-10-25T13:47:35.010Z"
       }
     }
   },
