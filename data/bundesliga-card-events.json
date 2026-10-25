@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T14:01:40.152Z",
+  "updatedAt": "2026-10-25T14:02:45.684Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5693,6 +5693,14 @@
         ],
         "subs": [
           {
+            "minute": "73′",
+            "in": "Jonas Therkelsen",
+            "out": "Adrián Kaprálik",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
+          },
+          {
             "minute": "72′",
             "in": "Kaan İnanoğlu",
             "out": "Patrice Čović",
@@ -5717,7 +5725,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-25T14:01:37.984Z"
+        "checkedAt": "2026-10-25T14:02:43.530Z"
       },
       "83659": {
         "matchId": "83659",
@@ -5910,7 +5918,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-25T14:01:39.070Z"
+        "checkedAt": "2026-10-25T14:02:44.607Z"
       },
       "83661": {
         "matchId": "83661",
@@ -5978,7 +5986,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-25T14:01:40.151Z"
+        "checkedAt": "2026-10-25T14:02:45.682Z"
       }
     }
   },
