@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T14:37:10.239Z",
+  "updatedAt": "2026-10-25T15:11:22.189Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2223,9 +2223,18 @@
         "away": "Bayer 04 Leverkusen",
         "round": 7,
         "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/7/tsg-hoffenheim-vs-bayer-04-leverkusen/liveticker/",
-        "cards": [],
+        "cards": [
+          {
+            "minute": "40′",
+            "type": "yellow",
+            "player": "Ezequiel Fernández",
+            "crestId": "00000B",
+            "team": "Bayer 04 Leverkusen",
+            "teamSide": "away"
+          }
+        ],
         "subs": [],
-        "checkedAt": "2026-10-25T14:37:08.984Z"
+        "checkedAt": "2026-10-25T15:11:22.022Z"
       },
       "83215": {
         "matchId": "83215",
