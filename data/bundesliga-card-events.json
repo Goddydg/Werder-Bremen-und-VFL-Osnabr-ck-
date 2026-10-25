@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T15:49:44.369Z",
+  "updatedAt": "2026-10-25T15:55:58.319Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2251,6 +2251,14 @@
         ],
         "subs": [
           {
+            "minute": "64′",
+            "in": "Robert Andrich",
+            "out": "Ezequiel Fernández",
+            "crestId": "00000B",
+            "team": "Bayer 04 Leverkusen",
+            "teamSide": "away"
+          },
+          {
             "minute": "41′",
             "in": "Malik Tillman",
             "out": "Moussa Diaby",
@@ -2259,7 +2267,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-25T15:49:44.196Z"
+        "checkedAt": "2026-10-25T15:55:58.151Z"
       },
       "83215": {
         "matchId": "83215",
