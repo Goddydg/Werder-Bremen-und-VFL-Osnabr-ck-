@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T14:10:21.555Z",
+  "updatedAt": "2026-10-25T14:13:35.961Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5693,6 +5693,14 @@
         ],
         "subs": [
           {
+            "minute": "84′",
+            "in": "Jakob Lemmer",
+            "out": "Niklas Hauptmann",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "away"
+          },
+          {
             "minute": "73′",
             "in": "Jonas Therkelsen",
             "out": "Adrián Kaprálik",
@@ -5725,7 +5733,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-25T14:10:19.375Z"
+        "checkedAt": "2026-10-25T14:13:33.794Z"
       },
       "83659": {
         "matchId": "83659",
@@ -5950,7 +5958,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-25T14:10:20.474Z"
+        "checkedAt": "2026-10-25T14:13:34.872Z"
       },
       "83661": {
         "matchId": "83661",
@@ -6042,7 +6050,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-25T14:10:21.554Z"
+        "checkedAt": "2026-10-25T14:13:35.960Z"
       }
     }
   },
