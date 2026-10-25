@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T19:42:41.853Z",
+  "updatedAt": "2026-10-25T19:43:52.919Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2388,7 +2388,7 @@
         "away": "FC Bayern München",
         "round": 7,
         "cards": [],
-        "finalAttempts": 2
+        "finalAttempts": 3
       },
       "83215": {
         "matchId": "83215",
