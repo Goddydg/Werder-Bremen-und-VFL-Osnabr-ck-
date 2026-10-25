@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T16:00:09.662Z",
+  "updatedAt": "2026-10-25T16:03:17.325Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2259,6 +2259,14 @@
         ],
         "subs": [
           {
+            "minute": "71′",
+            "in": "Bambasé Conté",
+            "out": "Wouter Burger",
+            "crestId": "000002",
+            "team": "TSG Hoffenheim",
+            "teamSide": "home"
+          },
+          {
             "minute": "65′",
             "in": "Andrej Kramarić",
             "out": "Adam Hložek",
@@ -2299,7 +2307,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-25T16:00:09.495Z"
+        "checkedAt": "2026-10-25T16:03:17.156Z"
       },
       "83215": {
         "matchId": "83215",
