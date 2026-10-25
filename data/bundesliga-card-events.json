@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T14:23:20.137Z",
+  "updatedAt": "2026-10-25T14:24:24.659Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5765,7 +5765,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-25T14:23:19.037Z"
+        "checkedAt": "2026-10-25T14:24:23.580Z"
       },
       "83659": {
         "matchId": "83659",
@@ -5938,6 +5938,14 @@
             "crestId": "000001",
             "team": "Hannover 96",
             "teamSide": "away"
+          },
+          {
+            "minute": "90+4′",
+            "type": "yellow",
+            "player": "Boris Tomiak",
+            "crestId": "000001",
+            "team": "Hannover 96",
+            "teamSide": "away"
           }
         ],
         "subs": [
@@ -6006,7 +6014,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-25T14:23:20.136Z"
+        "checkedAt": "2026-10-25T14:24:24.658Z"
       },
       "83661": {
         "matchId": "83661",
