@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-25T19:43:52.919Z",
+  "updatedAt": "2026-10-30T20:47:31.319Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -6291,6 +6291,123 @@
         ],
         "checkedAt": "2026-10-25T14:22:15.521Z",
         "finalChecked": true
+      },
+      "83671": {
+        "matchId": "83671",
+        "home": "DSC Arminia Bielefeld",
+        "away": "Eintracht Braunschweig",
+        "round": 10,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/10/dsc-arminia-bielefeld-vs-eintracht-braunschweig/liveticker/",
+        "cards": [
+          {
+            "minute": "56′",
+            "type": "yellow",
+            "player": "Leon Jensen",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "home"
+          },
+          {
+            "minute": "17′",
+            "type": "yellow",
+            "player": "Arne Sicker",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "home"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "86′",
+            "in": "Marvin Mehlem",
+            "out": "Joel Grodowski",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "home"
+          },
+          {
+            "minute": "80′",
+            "in": "Tristan Wagner",
+            "out": "Florian Flick",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "away"
+          },
+          {
+            "minute": "77′",
+            "in": "Sidi Sané",
+            "out": "Aaron Opoku",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "away"
+          },
+          {
+            "minute": "72′",
+            "in": "Benjamin Boakye",
+            "out": "Monju Momuluh",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "home"
+          },
+          {
+            "minute": "71′",
+            "in": "Felix Hagmann",
+            "out": "Henri Koudossou",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "home"
+          },
+          {
+            "minute": "67′",
+            "in": "Leon Schneider",
+            "out": "Leon Jensen",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "home"
+          },
+          {
+            "minute": "67′",
+            "in": "Tim Handwerker",
+            "out": "Arne Sicker",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "home"
+          },
+          {
+            "minute": "45+5′",
+            "in": "Lukas Frenkert",
+            "out": "Andi Hoti",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "away"
+          },
+          {
+            "minute": "45+5′",
+            "in": "Robin Heußer",
+            "out": "Junior Zé",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "away"
+          },
+          {
+            "minute": "45+5′",
+            "in": "Jovan Mijatović",
+            "out": "Jan Urbich",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-10-30T20:47:19.234Z",
+        "finalChecked": true
+      },
+      "83674": {
+        "matchId": "83674",
+        "home": "Energie Cottbus",
+        "away": "VfL Bochum",
+        "round": 10,
+        "cards": [],
+        "finalAttempts": 1
       }
     }
   },
