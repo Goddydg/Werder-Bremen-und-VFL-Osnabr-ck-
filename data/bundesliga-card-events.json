@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T20:47:31.319Z",
+  "updatedAt": "2026-10-30T20:48:50.957Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -6407,7 +6407,7 @@
         "away": "VfL Bochum",
         "round": 10,
         "cards": [],
-        "finalAttempts": 1
+        "finalAttempts": 2
       }
     }
   },
