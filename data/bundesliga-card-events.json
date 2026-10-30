@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-30T20:50:10.665Z",
+  "updatedAt": "2026-10-30T21:25:03.641Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2881,6 +2881,14 @@
         ],
         "checkedAt": "2026-10-24T15:26:10.857Z",
         "finalChecked": true
+      },
+      "83227": {
+        "matchId": "83227",
+        "home": "SV 07 Elversberg",
+        "away": "1. FSV Mainz 05",
+        "round": 8,
+        "cards": [],
+        "finalAttempts": 1
       }
     },
     "bl2": {
