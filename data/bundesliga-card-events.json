@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T16:20:00.090Z",
+  "updatedAt": "2026-10-31T16:21:15.815Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3028,7 +3028,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-31T16:19:47.740Z"
+        "checkedAt": "2026-10-31T16:21:03.544Z"
       },
       "83224": {
         "matchId": "83224",
@@ -3065,6 +3065,14 @@
             "minute": "84′",
             "type": "yellow",
             "player": "Tjark Scheller",
+            "crestId": "00000L",
+            "team": "SC Paderborn 07",
+            "teamSide": "away"
+          },
+          {
+            "minute": "90+1′",
+            "type": "yellow",
+            "player": "Laurin Ulrich",
             "crestId": "00000L",
             "team": "SC Paderborn 07",
             "teamSide": "away"
@@ -3136,7 +3144,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-31T16:19:57.008Z"
+        "checkedAt": "2026-10-31T16:21:12.873Z"
       },
       "83225": {
         "matchId": "83225",
@@ -3212,7 +3220,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-31T16:19:58.117Z"
+        "checkedAt": "2026-10-31T16:21:13.973Z"
       },
       "83226": {
         "matchId": "83226",
@@ -3312,7 +3320,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-31T16:19:59.216Z"
+        "checkedAt": "2026-10-31T16:21:15.070Z"
       },
       "83227": {
         "matchId": "83227",
