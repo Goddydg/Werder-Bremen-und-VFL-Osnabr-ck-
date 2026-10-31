@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T00:09:37.281Z",
+  "updatedAt": "2026-10-31T00:10:48.880Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2888,7 +2888,7 @@
         "away": "1. FSV Mainz 05",
         "round": 8,
         "cards": [],
-        "finalAttempts": 2
+        "finalAttempts": 3
       }
     },
     "bl2": {
