@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T16:09:59.210Z",
+  "updatedAt": "2026-10-31T16:14:57.615Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2956,6 +2956,14 @@
         ],
         "subs": [
           {
+            "minute": "83′",
+            "in": "Victor Boniface",
+            "out": "Aleix García",
+            "crestId": "00000B",
+            "team": "Bayer 04 Leverkusen",
+            "teamSide": "home"
+          },
+          {
             "minute": "75′",
             "in": "Malik Tillman",
             "out": "Afonso Moreira",
@@ -3004,7 +3012,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-31T16:09:47.021Z"
+        "checkedAt": "2026-10-31T16:14:45.128Z"
       },
       "83224": {
         "matchId": "83224",
@@ -3036,9 +3044,25 @@
             "crestId": "00000L",
             "team": "SC Paderborn 07",
             "teamSide": "away"
+          },
+          {
+            "minute": "84′",
+            "type": "yellow",
+            "player": "Tjark Scheller",
+            "crestId": "00000L",
+            "team": "SC Paderborn 07",
+            "teamSide": "away"
           }
         ],
         "subs": [
+          {
+            "minute": "85′",
+            "in": "Rayan Philippe",
+            "out": "Stefano Marino",
+            "crestId": "00000L",
+            "team": "SC Paderborn 07",
+            "teamSide": "away"
+          },
           {
             "minute": "77′",
             "in": "Jens Castrop",
@@ -3096,7 +3120,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-31T16:09:56.283Z"
+        "checkedAt": "2026-10-31T16:14:54.589Z"
       },
       "83225": {
         "matchId": "83225",
@@ -3148,7 +3172,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-31T16:09:57.378Z"
+        "checkedAt": "2026-10-31T16:14:55.724Z"
       },
       "83226": {
         "matchId": "83226",
@@ -3208,7 +3232,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-31T16:09:58.475Z"
+        "checkedAt": "2026-10-31T16:14:56.821Z"
       },
       "83227": {
         "matchId": "83227",
