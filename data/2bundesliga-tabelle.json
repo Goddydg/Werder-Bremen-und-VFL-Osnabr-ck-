@@ -17,17 +17,35 @@
             "tla": "",
             "crest": ""
           },
-          "playedGames": 9,
-          "won": 8,
+          "playedGames": 10,
+          "won": 9,
           "draw": 1,
           "lost": 0,
-          "points": 25,
-          "goalsFor": 20,
+          "points": 28,
+          "goalsFor": 23,
           "goalsAgainst": 8,
-          "goalDifference": 12
+          "goalDifference": 15
         },
         {
           "position": 2,
+          "team": {
+            "id": 131,
+            "name": "VfL Wolfsburg",
+            "shortName": "VfL Wolfsburg",
+            "tla": "",
+            "crest": ""
+          },
+          "playedGames": 10,
+          "won": 5,
+          "draw": 4,
+          "lost": 1,
+          "points": 19,
+          "goalsFor": 25,
+          "goalsAgainst": 14,
+          "goalDifference": 11
+        },
+        {
+          "position": 3,
           "team": {
             "id": 79,
             "name": "1. FC Nürnberg",
@@ -45,7 +63,7 @@
           "goalDifference": 9
         },
         {
-          "position": 3,
+          "position": 4,
           "team": {
             "id": 76,
             "name": "1. FC Kaiserslautern",
@@ -53,32 +71,14 @@
             "tla": "",
             "crest": ""
           },
-          "playedGames": 9,
+          "playedGames": 10,
           "won": 5,
           "draw": 3,
-          "lost": 1,
+          "lost": 2,
           "points": 18,
           "goalsFor": 9,
-          "goalsAgainst": 4,
-          "goalDifference": 5
-        },
-        {
-          "position": 4,
-          "team": {
-            "id": 131,
-            "name": "VfL Wolfsburg",
-            "shortName": "VfL Wolfsburg",
-            "tla": "",
-            "crest": ""
-          },
-          "playedGames": 9,
-          "won": 4,
-          "draw": 4,
-          "lost": 1,
-          "points": 16,
-          "goalsFor": 23,
-          "goalsAgainst": 14,
-          "goalDifference": 9
+          "goalsAgainst": 7,
+          "goalDifference": 2
         },
         {
           "position": 5,
@@ -89,13 +89,13 @@
             "tla": "",
             "crest": ""
           },
-          "playedGames": 9,
+          "playedGames": 10,
           "won": 5,
-          "draw": 1,
+          "draw": 2,
           "lost": 3,
-          "points": 16,
-          "goalsFor": 20,
-          "goalsAgainst": 12,
+          "points": 17,
+          "goalsFor": 21,
+          "goalsAgainst": 13,
           "goalDifference": 8
         },
         {
@@ -161,14 +161,14 @@
             "tla": "",
             "crest": ""
           },
-          "playedGames": 9,
+          "playedGames": 10,
           "won": 3,
           "draw": 2,
-          "lost": 4,
+          "lost": 5,
           "points": 11,
           "goalsFor": 14,
-          "goalsAgainst": 15,
-          "goalDifference": -1
+          "goalsAgainst": 17,
+          "goalDifference": -3
         },
         {
           "position": 10,
@@ -245,6 +245,24 @@
         {
           "position": 14,
           "team": {
+            "id": 118,
+            "name": "SV Darmstadt 98",
+            "shortName": "SV Darmstadt 98",
+            "tla": "",
+            "crest": ""
+          },
+          "playedGames": 10,
+          "won": 2,
+          "draw": 3,
+          "lost": 5,
+          "points": 9,
+          "goalsFor": 9,
+          "goalsAgainst": 19,
+          "goalDifference": -10
+        },
+        {
+          "position": 15,
+          "team": {
             "id": 104,
             "name": "Holstein Kiel",
             "shortName": "Holstein Kiel",
@@ -261,7 +279,7 @@
           "goalDifference": -1
         },
         {
-          "position": 15,
+          "position": 16,
           "team": {
             "id": 177,
             "name": "Dynamo Dresden",
@@ -279,7 +297,7 @@
           "goalDifference": -7
         },
         {
-          "position": 16,
+          "position": 17,
           "team": {
             "id": 55,
             "name": "Hannover 96",
@@ -297,7 +315,7 @@
           "goalDifference": -7
         },
         {
-          "position": 17,
+          "position": 18,
           "team": {
             "id": 105,
             "name": "Karlsruher SC",
@@ -313,24 +331,6 @@
           "goalsFor": 11,
           "goalsAgainst": 20,
           "goalDifference": -9
-        },
-        {
-          "position": 18,
-          "team": {
-            "id": 118,
-            "name": "SV Darmstadt 98",
-            "shortName": "SV Darmstadt 98",
-            "tla": "",
-            "crest": ""
-          },
-          "playedGames": 9,
-          "won": 2,
-          "draw": 2,
-          "lost": 5,
-          "points": 8,
-          "goalsFor": 8,
-          "goalsAgainst": 18,
-          "goalDifference": -10
         }
       ]
     }
