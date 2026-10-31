@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T20:57:25.452Z",
+  "updatedAt": "2026-10-31T20:59:30.780Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -7189,17 +7189,17 @@
         ],
         "subs": [
           {
-            "minute": "67′",
-            "in": "Tim Siersleben",
-            "out": "Jan Schöppner",
+            "minute": "68′",
+            "in": "Marnon Busch",
+            "out": "Oualid Mhamdi",
             "crestId": "000018",
             "team": "1. FC Heidenheim 1846",
             "teamSide": "away"
           },
           {
             "minute": "67′",
-            "in": "Marnon Busch",
-            "out": "Oualid Mhamdi",
+            "in": "Tim Siersleben",
+            "out": "Jan Schöppner",
             "crestId": "000018",
             "team": "1. FC Heidenheim 1846",
             "teamSide": "away"
@@ -7237,7 +7237,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-31T20:57:25.451Z"
+        "checkedAt": "2026-10-31T20:59:30.778Z"
       },
       "83671": {
         "matchId": "83671",
