@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T20:34:38.786Z",
+  "updatedAt": "2026-10-31T20:44:59.165Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -7177,7 +7177,16 @@
         "away": "1. FC Heidenheim 1846",
         "round": 10,
         "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/10/karlsruher-sc-vs-1-fc-heidenheim-1846/liveticker/",
-        "cards": [],
+        "cards": [
+          {
+            "minute": "55′",
+            "type": "yellow",
+            "player": "Santeri Väänänen",
+            "crestId": "00000T",
+            "team": "Karlsruher SC",
+            "teamSide": "home"
+          }
+        ],
         "subs": [
           {
             "minute": "45+3′",
@@ -7196,7 +7205,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-31T20:34:38.784Z"
+        "checkedAt": "2026-10-31T20:44:59.164Z"
       },
       "83671": {
         "matchId": "83671",
