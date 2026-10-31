@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T21:18:10.509Z",
+  "updatedAt": "2026-10-31T21:23:22.332Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -7209,9 +7209,25 @@
             "crestId": "00000T",
             "team": "Karlsruher SC",
             "teamSide": "home"
+          },
+          {
+            "minute": "90+2′",
+            "type": "yellow",
+            "player": "Maximilian Senft",
+            "crestId": "00000T",
+            "team": "Karlsruher SC",
+            "teamSide": "home"
           }
         ],
         "subs": [
+          {
+            "minute": "90+3′",
+            "in": "John Davis Meyer",
+            "out": "Shio Fukuda",
+            "crestId": "00000T",
+            "team": "Karlsruher SC",
+            "teamSide": "home"
+          },
           {
             "minute": "79′",
             "in": "Leart Paçarada",
@@ -7269,7 +7285,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-31T21:18:10.508Z"
+        "checkedAt": "2026-10-31T21:23:22.331Z"
       },
       "83671": {
         "matchId": "83671",
