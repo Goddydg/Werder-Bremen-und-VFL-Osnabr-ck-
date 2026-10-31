@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T16:21:15.815Z",
+  "updatedAt": "2026-10-31T16:22:31.262Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3028,7 +3028,15 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-31T16:21:03.544Z"
+        "checkedAt": "2026-10-31T16:22:19.166Z"
+      },
+      "83222": {
+        "matchId": "83222",
+        "home": "FC Augsburg",
+        "away": "SC Freiburg",
+        "round": 8,
+        "cards": [],
+        "finalAttempts": 1
       },
       "83224": {
         "matchId": "83224",
@@ -3144,7 +3152,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-31T16:21:12.873Z"
+        "checkedAt": "2026-10-31T16:22:28.434Z"
       },
       "83225": {
         "matchId": "83225",
@@ -3163,6 +3171,30 @@
           }
         ],
         "subs": [
+          {
+            "minute": "90+1′",
+            "in": "Oskar Wójcik",
+            "out": "Niclas Füllkrug",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "home"
+          },
+          {
+            "minute": "90+1′",
+            "in": "Dariusz Stalmach",
+            "out": "Ludovit Reis",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "home"
+          },
+          {
+            "minute": "90+1′",
+            "in": "Valentin Lässig",
+            "out": "Mats Rots",
+            "crestId": "000002",
+            "team": "TSG Hoffenheim",
+            "teamSide": "away"
+          },
           {
             "minute": "87′",
             "in": "Yasin Zor",
@@ -3220,7 +3252,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-31T16:21:13.973Z"
+        "checkedAt": "2026-10-31T16:22:29.554Z"
       },
       "83226": {
         "matchId": "83226",
@@ -3320,7 +3352,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-31T16:21:15.070Z"
+        "checkedAt": "2026-10-31T16:22:30.649Z"
       },
       "83227": {
         "matchId": "83227",
