@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T21:07:48.327Z",
+  "updatedAt": "2026-10-31T21:08:51.802Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -7193,9 +7193,25 @@
             "crestId": "000018",
             "team": "1. FC Heidenheim 1846",
             "teamSide": "away"
+          },
+          {
+            "minute": "78′",
+            "type": "yellow",
+            "player": "Mikkel Kaufmann",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "away"
           }
         ],
         "subs": [
+          {
+            "minute": "79′",
+            "in": "Leart Paçarada",
+            "out": "Marcel Costly",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "away"
+          },
           {
             "minute": "68′",
             "in": "Marnon Busch",
@@ -7245,7 +7261,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-31T21:07:48.325Z"
+        "checkedAt": "2026-10-31T21:08:51.800Z"
       },
       "83671": {
         "matchId": "83671",
