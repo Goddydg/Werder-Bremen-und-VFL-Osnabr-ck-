@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T16:25:03.222Z",
+  "updatedAt": "2026-10-31T19:55:22.759Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2882,6 +2882,34 @@
         "checkedAt": "2026-10-24T15:26:10.857Z",
         "finalChecked": true
       },
+      "83219": {
+        "matchId": "83219",
+        "home": "FC Bayern München",
+        "away": "Borussia Dortmund",
+        "round": 8,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/8/fc-bayern-muenchen-vs-borussia-dortmund/liveticker/",
+        "cards": [
+          {
+            "minute": "",
+            "type": "yellow",
+            "player": "Bellingham reißt Davies am Trikot links ganz k",
+            "crestId": "000007",
+            "team": "Borussia Dortmund",
+            "teamSide": "away"
+          },
+          {
+            "minute": "6′",
+            "type": "yellow",
+            "player": "Jobe Bellingham",
+            "crestId": "000007",
+            "team": "Borussia Dortmund",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [],
+        "checkedAt": "2026-10-31T19:55:21.088Z",
+        "finalChecked": true
+      },
       "83220": {
         "matchId": "83220",
         "home": "Bayer 04 Leverkusen",
@@ -3028,7 +3056,8 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-31T16:24:52.165Z"
+        "checkedAt": "2026-10-31T19:55:19.984Z",
+        "finalChecked": true
       },
       "83222": {
         "matchId": "83222",
@@ -7141,6 +7170,16 @@
         ],
         "checkedAt": "2026-10-31T16:06:13.554Z",
         "finalChecked": true
+      },
+      "83669": {
+        "matchId": "83669",
+        "home": "Karlsruher SC",
+        "away": "1. FC Heidenheim 1846",
+        "round": 10,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/10/karlsruher-sc-vs-1-fc-heidenheim-1846/liveticker/",
+        "cards": [],
+        "subs": [],
+        "checkedAt": "2026-10-31T19:55:22.758Z"
       },
       "83671": {
         "matchId": "83671",
