@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T16:06:13.556Z",
+  "updatedAt": "2026-10-31T16:07:29.389Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3004,7 +3004,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-31T16:05:53.441Z"
+        "checkedAt": "2026-10-31T16:07:17.024Z"
       },
       "83224": {
         "matchId": "83224",
@@ -3012,9 +3012,91 @@
         "away": "SC Paderborn 07",
         "round": 8,
         "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/8/borussia-moenchengladbach-vs-sc-paderborn-07/liveticker/",
-        "cards": [],
-        "subs": [],
-        "checkedAt": "2026-10-31T16:06:05.823Z"
+        "cards": [
+          {
+            "minute": "50′",
+            "type": "yellow",
+            "player": "Fabio Chiarodia",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "home"
+          },
+          {
+            "minute": "41′",
+            "type": "yellow",
+            "player": "Daiki Hashioka",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "home"
+          },
+          {
+            "minute": "29′",
+            "type": "yellow",
+            "player": "Tom Baack",
+            "crestId": "00000L",
+            "team": "SC Paderborn 07",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "77′",
+            "in": "Jens Castrop",
+            "out": "Wael Mohya",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "home"
+          },
+          {
+            "minute": "77′",
+            "in": "Kō Itakura",
+            "out": "Florian Neuhaus",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "home"
+          },
+          {
+            "minute": "77′",
+            "in": "Nicolas Kühn",
+            "out": "Robin Hack",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "home"
+          },
+          {
+            "minute": "69′",
+            "in": "Isac Lidberg",
+            "out": "Shuto Machino",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "home"
+          },
+          {
+            "minute": "68′",
+            "in": "Laurin Ulrich",
+            "out": "Tom Baack",
+            "crestId": "00000L",
+            "team": "SC Paderborn 07",
+            "teamSide": "away"
+          },
+          {
+            "minute": "68′",
+            "in": "Felix Götze",
+            "out": "Jano ter Horst",
+            "crestId": "00000L",
+            "team": "SC Paderborn 07",
+            "teamSide": "away"
+          },
+          {
+            "minute": "52′",
+            "in": "Steffen Tigges",
+            "out": "Marvin Pieringer",
+            "crestId": "00000L",
+            "team": "SC Paderborn 07",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-10-31T16:07:26.291Z"
       },
       "83225": {
         "matchId": "83225",
@@ -3022,9 +3104,51 @@
         "away": "TSG Hoffenheim",
         "round": 8,
         "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/8/sv-werder-bremen-vs-tsg-hoffenheim/liveticker/",
-        "cards": [],
-        "subs": [],
-        "checkedAt": "2026-10-31T16:06:06.934Z"
+        "cards": [
+          {
+            "minute": "60′",
+            "type": "yellow",
+            "player": "Marco Friedl",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "home"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "73′",
+            "in": "Senne Lynen",
+            "out": "Chuki",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "home"
+          },
+          {
+            "minute": "73′",
+            "in": "Mick Schmetgens",
+            "out": "Olivier Deman",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "home"
+          },
+          {
+            "minute": "60′",
+            "in": "Tim Lemperle",
+            "out": "Adam Hložek",
+            "crestId": "000002",
+            "team": "TSG Hoffenheim",
+            "teamSide": "away"
+          },
+          {
+            "minute": "16′",
+            "in": "Eren Dinkçi",
+            "out": "Mitchell Weiser",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "home"
+          }
+        ],
+        "checkedAt": "2026-10-31T16:07:27.391Z"
       },
       "83226": {
         "matchId": "83226",
@@ -3032,9 +3156,43 @@
         "away": "RB Leipzig",
         "round": 8,
         "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/8/fc-schalke-04-vs-rb-leipzig/liveticker/",
-        "cards": [],
-        "subs": [],
-        "checkedAt": "2026-10-31T16:06:08.045Z"
+        "cards": [
+          {
+            "minute": "51′",
+            "type": "yellow",
+            "player": "Timo Becker",
+            "crestId": "000009",
+            "team": "FC Schalke 04",
+            "teamSide": "home"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "68′",
+            "in": "Edin Džeko",
+            "out": "Mertcan Ayhan",
+            "crestId": "000009",
+            "team": "FC Schalke 04",
+            "teamSide": "home"
+          },
+          {
+            "minute": "61′",
+            "in": "Christoph Baumgartner",
+            "out": "Rocco Reitz",
+            "crestId": "000017",
+            "team": "RB Leipzig",
+            "teamSide": "away"
+          },
+          {
+            "minute": "57′",
+            "in": "Dejan Ljubičić",
+            "out": "Junior Adamu",
+            "crestId": "000009",
+            "team": "FC Schalke 04",
+            "teamSide": "home"
+          }
+        ],
+        "checkedAt": "2026-10-31T16:07:28.507Z"
       },
       "83227": {
         "matchId": "83227",
