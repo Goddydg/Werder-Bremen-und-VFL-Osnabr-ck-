@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T16:22:31.262Z",
+  "updatedAt": "2026-10-31T16:23:47.245Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3028,7 +3028,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-31T16:22:19.166Z"
+        "checkedAt": "2026-10-31T16:23:34.813Z"
       },
       "83222": {
         "matchId": "83222",
@@ -3036,7 +3036,7 @@
         "away": "SC Freiburg",
         "round": 8,
         "cards": [],
-        "finalAttempts": 1
+        "finalAttempts": 2
       },
       "83224": {
         "matchId": "83224",
@@ -3152,7 +3152,8 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-31T16:22:28.434Z"
+        "checkedAt": "2026-10-31T16:23:44.074Z",
+        "finalChecked": true
       },
       "83225": {
         "matchId": "83225",
@@ -3165,6 +3166,22 @@
             "minute": "60′",
             "type": "yellow",
             "player": "Marco Friedl",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "home"
+          },
+          {
+            "minute": "90+2′",
+            "type": "yellow",
+            "player": "Youri Regeer",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "home"
+          },
+          {
+            "minute": "90+2′",
+            "type": "yellow",
+            "player": "Arthur",
             "crestId": "00000E",
             "team": "SV Werder Bremen",
             "teamSide": "home"
@@ -3252,7 +3269,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-31T16:22:29.554Z"
+        "checkedAt": "2026-10-31T16:23:45.233Z"
       },
       "83226": {
         "matchId": "83226",
@@ -3352,7 +3369,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-31T16:22:30.649Z"
+        "checkedAt": "2026-10-31T16:23:46.354Z"
       },
       "83227": {
         "matchId": "83227",
