@@ -107,14 +107,14 @@
             "tla": "",
             "crest": ""
           },
-          "playedGames": 9,
+          "playedGames": 10,
           "won": 4,
           "draw": 3,
-          "lost": 2,
+          "lost": 3,
           "points": 15,
-          "goalsFor": 16,
-          "goalsAgainst": 16,
-          "goalDifference": 0
+          "goalsFor": 17,
+          "goalsAgainst": 18,
+          "goalDifference": -1
         },
         {
           "position": 7,
@@ -191,6 +191,24 @@
         {
           "position": 11,
           "team": {
+            "id": 105,
+            "name": "Karlsruher SC",
+            "shortName": "Karlsruher SC",
+            "tla": "",
+            "crest": ""
+          },
+          "playedGames": 10,
+          "won": 3,
+          "draw": 2,
+          "lost": 5,
+          "points": 11,
+          "goalsFor": 13,
+          "goalsAgainst": 21,
+          "goalDifference": -8
+        },
+        {
+          "position": 12,
+          "team": {
             "id": 93,
             "name": "Energie Cottbus",
             "shortName": "Energie Cottbus",
@@ -207,7 +225,7 @@
           "goalDifference": -2
         },
         {
-          "position": 12,
+          "position": 13,
           "team": {
             "id": 74,
             "name": "Eintracht Braunschweig",
@@ -225,7 +243,7 @@
           "goalDifference": -2
         },
         {
-          "position": 13,
+          "position": 14,
           "team": {
             "id": 115,
             "name": "SpVgg Greuther Fürth",
@@ -243,7 +261,7 @@
           "goalDifference": -4
         },
         {
-          "position": 14,
+          "position": 15,
           "team": {
             "id": 118,
             "name": "SV Darmstadt 98",
@@ -261,7 +279,7 @@
           "goalDifference": -10
         },
         {
-          "position": 15,
+          "position": 16,
           "team": {
             "id": 104,
             "name": "Holstein Kiel",
@@ -279,7 +297,7 @@
           "goalDifference": -1
         },
         {
-          "position": 16,
+          "position": 17,
           "team": {
             "id": 177,
             "name": "Dynamo Dresden",
@@ -297,7 +315,7 @@
           "goalDifference": -7
         },
         {
-          "position": 17,
+          "position": 18,
           "team": {
             "id": 55,
             "name": "Hannover 96",
@@ -313,24 +331,6 @@
           "goalsFor": 8,
           "goalsAgainst": 15,
           "goalDifference": -7
-        },
-        {
-          "position": 18,
-          "team": {
-            "id": 105,
-            "name": "Karlsruher SC",
-            "shortName": "Karlsruher SC",
-            "tla": "",
-            "crest": ""
-          },
-          "playedGames": 9,
-          "won": 2,
-          "draw": 2,
-          "lost": 5,
-          "points": 8,
-          "goalsFor": 11,
-          "goalsAgainst": 20,
-          "goalDifference": -9
         }
       ]
     }
