@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T16:14:57.615Z",
+  "updatedAt": "2026-10-31T16:16:13.384Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -2956,6 +2956,22 @@
         ],
         "subs": [
           {
+            "minute": "85′",
+            "in": "Ameen Al-Dakhil",
+            "out": "Jamie Leweling",
+            "crestId": "00000D",
+            "team": "VfB Stuttgart",
+            "teamSide": "away"
+          },
+          {
+            "minute": "85′",
+            "in": "Dženan Pejčinović",
+            "out": "Bilal El Khannouss",
+            "crestId": "00000D",
+            "team": "VfB Stuttgart",
+            "teamSide": "away"
+          },
+          {
             "minute": "83′",
             "in": "Victor Boniface",
             "out": "Aleix García",
@@ -3012,7 +3028,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-31T16:14:45.128Z"
+        "checkedAt": "2026-10-31T16:16:00.834Z"
       },
       "83224": {
         "matchId": "83224",
@@ -3120,7 +3136,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-31T16:14:54.589Z"
+        "checkedAt": "2026-10-31T16:16:10.085Z"
       },
       "83225": {
         "matchId": "83225",
@@ -3172,7 +3188,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-31T16:14:55.724Z"
+        "checkedAt": "2026-10-31T16:16:11.180Z"
       },
       "83226": {
         "matchId": "83226",
@@ -3191,6 +3207,22 @@
           }
         ],
         "subs": [
+          {
+            "minute": "83′",
+            "in": "Junior Dina Ebimbe",
+            "out": "Timo Becker",
+            "crestId": "000009",
+            "team": "FC Schalke 04",
+            "teamSide": "home"
+          },
+          {
+            "minute": "83′",
+            "in": "Bryan Lasme",
+            "out": "Hee Chan Hwang",
+            "crestId": "000009",
+            "team": "FC Schalke 04",
+            "teamSide": "home"
+          },
           {
             "minute": "76′",
             "in": "Ridle Baku",
@@ -3232,7 +3264,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-31T16:14:56.821Z"
+        "checkedAt": "2026-10-31T16:16:12.275Z"
       },
       "83227": {
         "matchId": "83227",
