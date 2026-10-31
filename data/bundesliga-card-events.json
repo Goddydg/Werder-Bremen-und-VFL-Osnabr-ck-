@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T20:49:08.404Z",
+  "updatedAt": "2026-10-31T20:57:25.452Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -7189,6 +7189,30 @@
         ],
         "subs": [
           {
+            "minute": "67′",
+            "in": "Tim Siersleben",
+            "out": "Jan Schöppner",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "away"
+          },
+          {
+            "minute": "67′",
+            "in": "Marnon Busch",
+            "out": "Oualid Mhamdi",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "away"
+          },
+          {
+            "minute": "67′",
+            "in": "Noel Eichinger",
+            "out": "Kevin Wiethaup",
+            "crestId": "00000T",
+            "team": "Karlsruher SC",
+            "teamSide": "home"
+          },
+          {
             "minute": "59′",
             "in": "Viktor Bergh",
             "out": "Deniz Ofli",
@@ -7213,7 +7237,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-31T20:49:08.404Z"
+        "checkedAt": "2026-10-31T20:57:25.451Z"
       },
       "83671": {
         "matchId": "83671",
