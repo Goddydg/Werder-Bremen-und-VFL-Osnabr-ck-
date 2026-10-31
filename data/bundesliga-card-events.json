@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T20:44:59.165Z",
+  "updatedAt": "2026-10-31T20:49:08.404Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -7189,6 +7189,14 @@
         ],
         "subs": [
           {
+            "minute": "59′",
+            "in": "Viktor Bergh",
+            "out": "Deniz Ofli",
+            "crestId": "00000T",
+            "team": "Karlsruher SC",
+            "teamSide": "home"
+          },
+          {
             "minute": "45+3′",
             "in": "Alessandro Vogt",
             "out": "Christian Conteh",
@@ -7205,7 +7213,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-31T20:44:59.164Z"
+        "checkedAt": "2026-10-31T20:49:08.404Z"
       },
       "83671": {
         "matchId": "83671",
