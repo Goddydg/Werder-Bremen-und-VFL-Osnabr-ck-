@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T19:55:22.759Z",
+  "updatedAt": "2026-10-31T20:34:38.786Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -7178,8 +7178,25 @@
         "round": 10,
         "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/10/karlsruher-sc-vs-1-fc-heidenheim-1846/liveticker/",
         "cards": [],
-        "subs": [],
-        "checkedAt": "2026-10-31T19:55:22.758Z"
+        "subs": [
+          {
+            "minute": "45+3′",
+            "in": "Alessandro Vogt",
+            "out": "Christian Conteh",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "away"
+          },
+          {
+            "minute": "45+3′",
+            "in": "Mathias Honsak",
+            "out": "Paul Hennrich",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-10-31T20:34:38.784Z"
       },
       "83671": {
         "matchId": "83671",
