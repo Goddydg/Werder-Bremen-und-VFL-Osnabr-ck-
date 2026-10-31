@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T16:17:28.826Z",
+  "updatedAt": "2026-10-31T16:18:44.454Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3028,7 +3028,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-31T16:17:16.640Z"
+        "checkedAt": "2026-10-31T16:18:32.021Z"
       },
       "83224": {
         "matchId": "83224",
@@ -3136,7 +3136,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-31T16:17:25.954Z"
+        "checkedAt": "2026-10-31T16:18:41.315Z"
       },
       "83225": {
         "matchId": "83225",
@@ -3212,7 +3212,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-31T16:17:27.056Z"
+        "checkedAt": "2026-10-31T16:18:42.412Z"
       },
       "83226": {
         "matchId": "83226",
@@ -3231,6 +3231,22 @@
           }
         ],
         "subs": [
+          {
+            "minute": "85′",
+            "in": "Nicolas Seiwald",
+            "out": "Ezechiel Banzuzi",
+            "crestId": "000017",
+            "team": "RB Leipzig",
+            "teamSide": "away"
+          },
+          {
+            "minute": "85′",
+            "in": "Johan Bakayoko",
+            "out": "Rômulo",
+            "crestId": "000017",
+            "team": "RB Leipzig",
+            "teamSide": "away"
+          },
           {
             "minute": "83′",
             "in": "Junior Dina Ebimbe",
@@ -3288,7 +3304,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-31T16:17:28.151Z"
+        "checkedAt": "2026-10-31T16:18:43.571Z"
       },
       "83227": {
         "matchId": "83227",
