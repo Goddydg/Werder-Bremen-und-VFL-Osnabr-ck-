@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T16:07:29.389Z",
+  "updatedAt": "2026-10-31T16:09:59.210Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3004,7 +3004,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-31T16:07:17.024Z"
+        "checkedAt": "2026-10-31T16:09:47.021Z"
       },
       "83224": {
         "matchId": "83224",
@@ -3096,7 +3096,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-31T16:07:26.291Z"
+        "checkedAt": "2026-10-31T16:09:56.283Z"
       },
       "83225": {
         "matchId": "83225",
@@ -3148,7 +3148,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-31T16:07:27.391Z"
+        "checkedAt": "2026-10-31T16:09:57.378Z"
       },
       "83226": {
         "matchId": "83226",
@@ -3167,6 +3167,22 @@
           }
         ],
         "subs": [
+          {
+            "minute": "76′",
+            "in": "Ridle Baku",
+            "out": "Benjamin Henrichs",
+            "crestId": "000017",
+            "team": "RB Leipzig",
+            "teamSide": "away"
+          },
+          {
+            "minute": "76′",
+            "in": "Tidiam Gomis",
+            "out": "Brajan Gruda",
+            "crestId": "000017",
+            "team": "RB Leipzig",
+            "teamSide": "away"
+          },
           {
             "minute": "68′",
             "in": "Edin Džeko",
@@ -3192,7 +3208,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-10-31T16:07:28.507Z"
+        "checkedAt": "2026-10-31T16:09:58.475Z"
       },
       "83227": {
         "matchId": "83227",
