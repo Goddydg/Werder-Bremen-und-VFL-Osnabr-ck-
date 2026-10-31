@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T21:08:51.802Z",
+  "updatedAt": "2026-10-31T21:18:10.509Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -7201,6 +7201,14 @@
             "crestId": "000018",
             "team": "1. FC Heidenheim 1846",
             "teamSide": "away"
+          },
+          {
+            "minute": "88′",
+            "type": "yellow",
+            "player": "Noel Eichinger",
+            "crestId": "00000T",
+            "team": "Karlsruher SC",
+            "teamSide": "home"
           }
         ],
         "subs": [
@@ -7261,7 +7269,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-10-31T21:08:51.800Z"
+        "checkedAt": "2026-10-31T21:18:10.508Z"
       },
       "83671": {
         "matchId": "83671",
