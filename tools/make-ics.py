@@ -119,7 +119,8 @@ def events(matches, target, label, horizon=None, status=None):
 
 def write(path, name, evs):
     lines = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Werder-VfL-App//DE", "CALSCALE:GREGORIAN",
-             "METHOD:PUBLISH", "X-WR-CALNAME:" + esc(name + " Spiele")]
+             "METHOD:PUBLISH", "X-WR-CALNAME:" + esc(name + " Spiele"),
+             "REFRESH-INTERVAL;VALUE=DURATION:PT1H", "X-PUBLISHED-TTL:PT1H"]
     for e in sorted(evs, key=lambda e: e["start"]):
         lines += ["BEGIN:VEVENT", "UID:" + e["uid"], "DTSTAMP:" + stamp(e["changed"]), "DTSTART:" + stamp(e["start"]),
                   "DTEND:" + stamp(e["start"] + timedelta(hours=2)), "SUMMARY:" + esc(e["title"]),
