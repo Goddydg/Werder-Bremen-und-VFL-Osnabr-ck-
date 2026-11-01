@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T16:03:44.869Z",
+  "updatedAt": "2026-11-01T16:05:49.714Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3113,6 +3113,14 @@
             "crestId": "00000V",
             "team": "1. FC Union Berlin",
             "teamSide": "home"
+          },
+          {
+            "minute": "76′",
+            "type": "yellow",
+            "player": "Aljoscha Kemlein",
+            "crestId": "00000V",
+            "team": "1. FC Union Berlin",
+            "teamSide": "home"
           }
         ],
         "subs": [
@@ -3173,7 +3181,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-01T16:03:44.719Z"
+        "checkedAt": "2026-11-01T16:05:49.582Z"
       },
       "83224": {
         "matchId": "83224",
