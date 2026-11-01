@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T18:24:59.562Z",
+  "updatedAt": "2026-11-01T18:30:09.678Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3105,6 +3105,22 @@
             "crestId": "00000F",
             "team": "Eintracht Frankfurt",
             "teamSide": "home"
+          },
+          {
+            "minute": "90+8′",
+            "type": "yellow",
+            "player": "Otto Stange",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "away"
+          },
+          {
+            "minute": "90+8′",
+            "type": "yellow",
+            "player": "Robin Koch",
+            "crestId": "00000F",
+            "team": "Eintracht Frankfurt",
+            "teamSide": "home"
           }
         ],
         "subs": [
@@ -3181,7 +3197,8 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-01T18:24:59.424Z"
+        "checkedAt": "2026-11-01T18:30:09.538Z",
+        "finalChecked": true
       },
       "83222": {
         "matchId": "83222",
