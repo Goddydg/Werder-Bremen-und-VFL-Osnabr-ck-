@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T17:54:56.595Z",
+  "updatedAt": "2026-11-01T18:01:08.526Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3073,6 +3073,14 @@
             "crestId": "00000C",
             "team": "Hamburger SV",
             "teamSide": "away"
+          },
+          {
+            "minute": "69′",
+            "type": "yellow",
+            "player": "Martin Adeline",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "away"
           }
         ],
         "subs": [
@@ -3101,7 +3109,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-01T17:54:56.455Z"
+        "checkedAt": "2026-11-01T18:01:08.388Z"
       },
       "83222": {
         "matchId": "83222",
