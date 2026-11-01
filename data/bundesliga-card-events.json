@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T18:05:16.845Z",
+  "updatedAt": "2026-11-01T18:08:23.351Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3081,6 +3081,14 @@
             "crestId": "00000C",
             "team": "Hamburger SV",
             "teamSide": "away"
+          },
+          {
+            "minute": "76′",
+            "type": "yellow",
+            "player": "Warmed Omari",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "away"
           }
         ],
         "subs": [
@@ -3117,7 +3125,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-01T18:05:16.697Z"
+        "checkedAt": "2026-11-01T18:08:23.220Z"
       },
       "83222": {
         "matchId": "83222",
