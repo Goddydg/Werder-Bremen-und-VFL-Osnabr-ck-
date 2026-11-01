@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T18:21:51.396Z",
+  "updatedAt": "2026-11-01T18:22:54.638Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3109,6 +3109,22 @@
         ],
         "subs": [
           {
+            "minute": "90+1′",
+            "in": "Niko Iličević",
+            "out": "Can Uzun",
+            "crestId": "00000F",
+            "team": "Eintracht Frankfurt",
+            "teamSide": "home"
+          },
+          {
+            "minute": "90′",
+            "in": "Mario Götze",
+            "out": "Noëll Aséko",
+            "crestId": "00000F",
+            "team": "Eintracht Frankfurt",
+            "teamSide": "home"
+          },
+          {
             "minute": "88′",
             "in": "Otto Stange",
             "out": "Albert Grønbæk",
@@ -3165,7 +3181,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-01T18:21:51.263Z"
+        "checkedAt": "2026-11-01T18:22:54.504Z"
       },
       "83222": {
         "matchId": "83222",
