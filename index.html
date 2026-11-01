@@ -818,8 +818,12 @@ if(!choice){const after=ios?'Das iPhone zeigt dann alle deine Kalender (z. B. iC
 const iosTip='<p><b>iPhone:</b> Ein Kalender fehlt in der Auswahl? Konto in <i>Einstellungen → Apps → Kalender → Kalender-Accounts</i> hinzufügen (z. B. Outlook oder Google).</p>',androidTip='<p><b>Android:</b> Outlook-Kalender fehlt? In der Outlook-App <i>Einstellungen → dein Konto → „Kalender synchronisieren“</i> einschalten.</p>';
 // Real .ics file on the server (written by tools/make-ics.py in the data workflow): iOS only imports those, not data:/blob URLs
 const icsUrl=base+(key==='bl1'?'werder-bremen.ics':'vfl-osnabrueck.ics')+'?v='+Math.floor(Date.now()/60000);
+// Home-screen app on iOS opens links in an in-app viewer that cannot import .ics -> hand over to real Safari (iOS 17+)
+const standalone=ios&&(navigator.standalone||matchMedia('(display-mode: standalone)').matches),icsAbs=new URL(icsUrl,location.href).href;
+const icsAttrs=standalone?'href="'+esc('x-safari-'+icsAbs)+'"':ios?'href="'+esc(icsUrl)+'" target="_blank" rel="noopener"':'href="'+esc(icsUrl)+'" download="'+(key==='bl1'?'werder-bremen':'vfl-osnabrueck')+'-spiele.ics"';
+const safariHint=standalone?' Es öffnet sich dafür kurz Safari. Erscheint stattdessen ein leeres weißes Fenster: dort unten rechts auf den Kompass tippen.':'';
 body='<h3>📅 Spiele in den Kalender</h3><p>Alle fest terminierten Spiele von '+esc(club)+' (Spiele mit „Termin offen“ werden ausgelassen).</p>'+
-'<a class="cal-choice cal-main" href="'+icsUrl+'" '+(ios?'target="_blank" rel="noopener"':'download="'+(key==='bl1'?'werder-bremen':'vfl-osnabrueck')+'-spiele.ics"')+'>📅 Alle Spiele in meinen Kalender</a><p>'+after+' Bitte nur einmal tippen – manche Kalender tragen sonst doppelt ein.</p>'+
+'<a class="cal-choice cal-main" '+icsAttrs+'>📅 Alle Spiele in meinen Kalender</a><p>'+after+safariHint+' Bitte nur einmal tippen – manche Kalender tragen sonst doppelt ein.</p>'+
 '<button class="cal-choice cal-abo" type="button" onclick="openCalendarDialog('+k+',&quot;abo&quot;)">🔔 Spielplan abonnieren<small>Einmal einrichten – neue Spiele und geänderte Anstoßzeiten kommen automatisch dazu, nie doppelt</small></button>'+
 '<details style="margin-top:10px;font-size:13px"><summary style="cursor:pointer;opacity:.85">Klappt nicht?</summary>'+(ios?iosTip:android?androidTip:iosTip+androidTip)+
 '<p>Oder einzeln im Browser eintragen (Anmeldung nötig):</p><button class="cal-choice" type="button" onclick="openCalendarDialog('+k+',&quot;google&quot;)">🟦 Google Kalender</button><button class="cal-choice" type="button" onclick="openCalendarDialog('+k+',&quot;outlook&quot;)">📧 Outlook.com</button></details>';}
