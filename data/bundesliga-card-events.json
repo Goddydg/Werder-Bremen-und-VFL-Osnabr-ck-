@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-31T21:26:29.883Z",
+  "updatedAt": "2026-11-01T15:58:33.131Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3066,6 +3066,90 @@
         "round": 8,
         "cards": [],
         "finalAttempts": 3
+      },
+      "83223": {
+        "matchId": "83223",
+        "home": "1. FC Union Berlin",
+        "away": "1. FC Köln",
+        "round": 8,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/8/1-fc-union-berlin-vs-1-fc-koeln/liveticker/",
+        "cards": [
+          {
+            "minute": "69′",
+            "type": "yellow",
+            "player": "Linton Maina",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "away"
+          },
+          {
+            "minute": "54′",
+            "type": "yellow",
+            "player": "Kastriot Imeri",
+            "crestId": "00000V",
+            "team": "1. FC Union Berlin",
+            "teamSide": "home"
+          },
+          {
+            "minute": "53′",
+            "type": "yellow",
+            "player": "Paul Okon-Engstler",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "away"
+          },
+          {
+            "minute": "45+1′",
+            "type": "yellow",
+            "player": "Jahmai Simpson-Pusey",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "away"
+          },
+          {
+            "minute": "37′",
+            "type": "yellow",
+            "player": "Zeno van den Bosch",
+            "crestId": "00000V",
+            "team": "1. FC Union Berlin",
+            "teamSide": "home"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "61′",
+            "in": "Aljoscha Kemlein",
+            "out": "Kastriot Imeri",
+            "crestId": "00000V",
+            "team": "1. FC Union Berlin",
+            "teamSide": "home"
+          },
+          {
+            "minute": "61′",
+            "in": "Oliver Burke",
+            "out": "Tim Skarke",
+            "crestId": "00000V",
+            "team": "1. FC Union Berlin",
+            "teamSide": "home"
+          },
+          {
+            "minute": "61′",
+            "in": "Mikey Moore",
+            "out": "Ísak Jóhannesson",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "away"
+          },
+          {
+            "minute": "61′",
+            "in": "Alessio Castro-Montes",
+            "out": "Sebastian Sebulonsen",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-11-01T15:58:27.655Z"
       },
       "83224": {
         "matchId": "83224",
@@ -6921,6 +7005,256 @@
         "checkedAt": "2026-10-31T16:06:10.293Z",
         "finalChecked": true
       },
+      "83664": {
+        "matchId": "83664",
+        "home": "FC St. Pauli",
+        "away": "1. FC Nürnberg",
+        "round": 10,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/10/fc-st-pauli-vs-1-fc-nuernberg/liveticker/",
+        "cards": [
+          {
+            "minute": "90+3′",
+            "type": "yellow",
+            "player": "David Nemeth",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "home"
+          },
+          {
+            "minute": "80′",
+            "type": "yellow",
+            "player": "Rafael Lubach",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "78′",
+            "type": "yellow",
+            "player": "Joel Chima Fujita",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "home"
+          },
+          {
+            "minute": "70′",
+            "type": "yellow",
+            "player": "Sigurd Haugen",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "68′",
+            "type": "yellow",
+            "player": "Alexios Kalogeropoulos",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "55′",
+            "type": "yellow",
+            "player": "Eric Porstner",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "84′",
+            "in": "Styopa Mkrtchyan",
+            "out": "Tim Janisch",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "84′",
+            "in": "Marc Kornwachs Barjuan",
+            "out": "Rafael Lubach",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "81′",
+            "in": "Youssoupha Niang",
+            "out": "Lars Ritzka",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "home"
+          },
+          {
+            "minute": "74′",
+            "in": "Ioannis Masouras",
+            "out": "Julian Justvan",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "71′",
+            "in": "Martijn Kaars",
+            "out": "Branimir Hrgota",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "home"
+          },
+          {
+            "minute": "65′",
+            "in": "Sigurd Haugen",
+            "out": "Piet Scobel",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "65′",
+            "in": "William Bøving",
+            "out": "Rayan Ghrieb",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "58′",
+            "in": "Sam Klein",
+            "out": "Mathias Rasmussen",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "home"
+          }
+        ],
+        "checkedAt": "2026-11-01T15:58:29.410Z",
+        "finalChecked": true
+      },
+      "83665": {
+        "matchId": "83665",
+        "home": "Hannover 96",
+        "away": "Dynamo Dresden",
+        "round": 10,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/10/hannover-96-vs-sg-dynamo-dresden/liveticker/",
+        "cards": [
+          {
+            "minute": "90+4′",
+            "type": "yellow",
+            "player": "Robert Wagner",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "away"
+          },
+          {
+            "minute": "86′",
+            "type": "yellow",
+            "player": "Jean Hugonet",
+            "crestId": "000001",
+            "team": "Hannover 96",
+            "teamSide": "home"
+          },
+          {
+            "minute": "65′",
+            "type": "yellow-red",
+            "player": "Friedrich Müller",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "away"
+          },
+          {
+            "minute": "59′",
+            "type": "yellow",
+            "player": "Friedrich Müller",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "88′",
+            "in": "Merlin Sinanović",
+            "out": "Benjamin Källman",
+            "crestId": "000001",
+            "team": "Hannover 96",
+            "teamSide": "home"
+          },
+          {
+            "minute": "83′",
+            "in": "Bastian Allgeier",
+            "out": "Emir Sahiti",
+            "crestId": "000001",
+            "team": "Hannover 96",
+            "teamSide": "home"
+          },
+          {
+            "minute": "69′",
+            "in": "Till Neininger",
+            "out": "Tobias Raschl",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "away"
+          },
+          {
+            "minute": "68′",
+            "in": "Mustapha Bundu",
+            "out": "Husseyn Chakroun",
+            "crestId": "000001",
+            "team": "Hannover 96",
+            "teamSide": "home"
+          },
+          {
+            "minute": "59′",
+            "in": "Ben Bobzien",
+            "out": "Jakob Lemmer",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "away"
+          },
+          {
+            "minute": "59′",
+            "in": "Luca Herrmann",
+            "out": "Niklas Hauptmann",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "away"
+          },
+          {
+            "minute": "59′",
+            "in": "Vincent Vermeij",
+            "out": "Christoph Daferner",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "away"
+          },
+          {
+            "minute": "45+3′",
+            "in": "Waniss Taïbi",
+            "out": "Kolja Oudenne",
+            "crestId": "000001",
+            "team": "Hannover 96",
+            "teamSide": "home"
+          },
+          {
+            "minute": "45+3′",
+            "in": "Franz Roggow",
+            "out": "Stefán Teitur Thórdarson",
+            "crestId": "000001",
+            "team": "Hannover 96",
+            "teamSide": "home"
+          },
+          {
+            "minute": "45+3′",
+            "in": "Ahmet Muhamedbegović",
+            "out": "Nicolai Rapp",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-11-01T15:58:31.160Z",
+        "finalChecked": true
+      },
       "83667": {
         "matchId": "83667",
         "home": "SV Darmstadt 98",
@@ -7395,6 +7729,107 @@
           }
         ],
         "checkedAt": "2026-10-30T20:47:19.234Z",
+        "finalChecked": true
+      },
+      "83673": {
+        "matchId": "83673",
+        "home": "SpVgg Greuther Fürth",
+        "away": "Holstein Kiel",
+        "round": 10,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/10/spvgg-greuther-fuerth-vs-holstein-kiel/liveticker/",
+        "cards": [
+          {
+            "minute": "74′",
+            "type": "yellow",
+            "player": "Giorgi Kvilitaia",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "away"
+          },
+          {
+            "minute": "23′",
+            "type": "yellow",
+            "player": "Kasper Davidsen",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "89′",
+            "in": "Faride Alidou",
+            "out": "Jonas Meffert",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "away"
+          },
+          {
+            "minute": "85′",
+            "in": "Lukas Reich",
+            "out": "Jannik Dehm",
+            "crestId": "00000W",
+            "team": "SpVgg Greuther Fürth",
+            "teamSide": "home"
+          },
+          {
+            "minute": "85′",
+            "in": "Dennis Srbeny",
+            "out": "Paul Will",
+            "crestId": "00000W",
+            "team": "SpVgg Greuther Fürth",
+            "teamSide": "home"
+          },
+          {
+            "minute": "79′",
+            "in": "Guillermo Balzi",
+            "out": "Giorgi Kvilitaia",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "away"
+          },
+          {
+            "minute": "72′",
+            "in": "Faton Ademi",
+            "out": "Shinta Appelkamp",
+            "crestId": "00000W",
+            "team": "SpVgg Greuther Fürth",
+            "teamSide": "home"
+          },
+          {
+            "minute": "72′",
+            "in": "Jordan",
+            "out": "Omar Sillah",
+            "crestId": "00000W",
+            "team": "SpVgg Greuther Fürth",
+            "teamSide": "home"
+          },
+          {
+            "minute": "66′",
+            "in": "Aaron Keller",
+            "out": "Ole Pohlmann",
+            "crestId": "00000W",
+            "team": "SpVgg Greuther Fürth",
+            "teamSide": "home"
+          },
+          {
+            "minute": "45+1′",
+            "in": "John Tolkin",
+            "out": "Leon Parduzi",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "away"
+          },
+          {
+            "minute": "45+1′",
+            "in": "Gyan de Regt",
+            "out": "Jonas Therkelsen",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-11-01T15:58:33.130Z",
         "finalChecked": true
       },
       "83674": {
