@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T16:22:22.116Z",
+  "updatedAt": "2026-11-01T16:30:30.163Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3058,6 +3058,16 @@
         ],
         "checkedAt": "2026-10-31T19:55:19.984Z",
         "finalChecked": true
+      },
+      "83221": {
+        "matchId": "83221",
+        "home": "Eintracht Frankfurt",
+        "away": "Hamburger SV",
+        "round": 8,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/8/eintracht-frankfurt-vs-hamburger-sv/liveticker/",
+        "cards": [],
+        "subs": [],
+        "checkedAt": "2026-11-01T16:30:30.024Z"
       },
       "83222": {
         "matchId": "83222",
