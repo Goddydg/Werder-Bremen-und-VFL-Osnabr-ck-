@@ -587,15 +587,20 @@ function collect(value,context={}){
 if(!value)return;
 if(Array.isArray(value)){value.forEach(v=>collect(v,context));return;}
 if(typeof value!=='object')return;
-const teamObj=value.team||value.competitor||value.competitors?.[0]||{};
+const teamObj=value.team||value.competitor||{};
 const playerObj=value.athlete||value.player||value.participants?.find?.(p=>p.athlete||p.player)||{};
-const teamName=teamObj.displayName||teamObj.name||teamObj.team?.displayName||teamObj.team?.name||value.teamName||context.teamName||'';
-const teamId=String(teamObj.id||teamObj.team?.id||value.teamId||context.teamId||'');
+// Own team (name or id) wins over inherited context, so an away card is never credited to the home side
+const ownId=String(teamObj.id||teamObj.team?.id||value.teamId||'');
+const ownName=teamObj.displayName||teamObj.name||teamObj.team?.displayName||teamObj.team?.name||value.teamName||(ownId&&ownId===item.homeId?item.homeName:ownId&&ownId===item.awayId?item.awayName:'');
+const teamName=ownName||(ownId?'':context.teamName)||'';
+const teamId=ownId||context.teamId||'';
 const player=playerObj.displayName||playerObj.fullName||playerObj.name||playerObj.athlete?.displayName||context.player||'';
 const minute=value.clock?.displayValue||value.time?.displayValue||value.time?.elapsed||value.minute||value.clock||context.minute||'';
-const texts=[value.text,value.shortText,value.description,value.type?.text,value.type?.name,value.type?.abbreviation,value.detail,value.name,value.type?.description].filter(x=>typeof x==='string').join(' ');
-if(/red card|sent off|sending off|second yellow|yellow-red|yellow card|booking|rote karte|gelb-rot|gelbe karte/i.test(texts)){
-const red=/red card|sent off|sending off|second yellow|yellow-red|rote karte|gelb-rot/i.test(texts);
+// Only real card events (with an event type) count; player stats like "red cards: 0" or commentary text do not
+const typeText=[typeof value.type==='string'?value.type:'',value.type?.text,value.type?.name,value.type?.type,value.type?.abbreviation].filter(x=>typeof x==='string').join(' ');
+const texts=[typeText,value.text,value.shortText,value.detail].filter(x=>typeof x==='string').join(' ');
+if(/card|booking|karte/i.test(typeText)&&!/cancel|overturn|rescind|aufgehoben|zurückgenommen/i.test(texts)&&/red card|second yellow|yellow-red|yellow card|booking|rote karte|gelb-rot|gelbe karte/i.test(texts)){
+const red=/red card|second yellow|yellow-red|rote karte|gelb-rot/i.test(typeText)||(/second yellow|yellow-red|gelb-rot/i.test(texts));
 const resolvedTeam=teamName||(teamId&&teamId===item.homeId?item.homeName:teamId&&teamId===item.awayId?item.awayName:'');
 if(resolvedTeam){
 const ev={team:normalizeName(resolvedTeam),teamName:resolvedTeam,player,minute:String(minute||''),type:red?'red':'yellow',detail:texts};
@@ -639,7 +644,7 @@ const apiTypes=[];
 for(const event of apiEvents(apiMatch)){
 const detail=String(event.detail||'').toLowerCase(),type=String(event.type||'').toLowerCase();
 const eventTeam=normalizeName(event.team?.name||'');
-if(!(type.includes('card')||detail.includes('red')||detail.includes('yellow')))continue;
+if(!type.includes('card')||/cancel|overturn/.test(detail))continue;
 if(!eventTeam||!(eventTeam===team||eventTeam.includes(team)||team.includes(eventTeam)))continue;
 if(detail.includes('red')||detail.includes('second yellow')||detail.includes('yellow-red'))apiTypes.push('red');
 else if(detail.includes('yellow'))apiTypes.push('yellow');
