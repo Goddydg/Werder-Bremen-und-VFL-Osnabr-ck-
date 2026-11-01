@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T18:16:40.010Z",
+  "updatedAt": "2026-11-01T18:19:46.567Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3101,6 +3101,14 @@
         ],
         "subs": [
           {
+            "minute": "88′",
+            "in": "Otto Stange",
+            "out": "Albert Grønbæk",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "away"
+          },
+          {
             "minute": "80′",
             "in": "Alexander Røssing-Lelesiit",
             "out": "Martin Adeline",
@@ -3149,7 +3157,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-01T18:16:39.864Z"
+        "checkedAt": "2026-11-01T18:19:46.428Z"
       },
       "83222": {
         "matchId": "83222",
