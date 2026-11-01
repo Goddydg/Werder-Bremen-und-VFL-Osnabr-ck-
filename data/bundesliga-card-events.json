@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T18:01:08.526Z",
+  "updatedAt": "2026-11-01T18:05:16.845Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3085,6 +3085,14 @@
         ],
         "subs": [
           {
+            "minute": "74′",
+            "in": "Jonathan Burkardt",
+            "out": "Younes Ebnoutalib",
+            "crestId": "00000F",
+            "team": "Eintracht Frankfurt",
+            "teamSide": "home"
+          },
+          {
             "minute": "63′",
             "in": "Zakaria El Ouahdi",
             "out": "Louis Lemke",
@@ -3109,7 +3117,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-01T18:01:08.388Z"
+        "checkedAt": "2026-11-01T18:05:16.697Z"
       },
       "83222": {
         "matchId": "83222",
