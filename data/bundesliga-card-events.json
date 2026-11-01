@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T16:05:49.714Z",
+  "updatedAt": "2026-11-01T16:06:52.720Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3121,6 +3121,14 @@
             "crestId": "00000V",
             "team": "1. FC Union Berlin",
             "teamSide": "home"
+          },
+          {
+            "minute": "77′",
+            "type": "yellow",
+            "player": "Derrick Köhn",
+            "crestId": "00000V",
+            "team": "1. FC Union Berlin",
+            "teamSide": "home"
           }
         ],
         "subs": [
@@ -3181,7 +3189,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-01T16:05:49.582Z"
+        "checkedAt": "2026-11-01T16:06:52.580Z"
       },
       "83224": {
         "matchId": "83224",
