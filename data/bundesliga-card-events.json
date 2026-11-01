@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T18:19:46.567Z",
+  "updatedAt": "2026-11-01T18:21:51.396Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3097,6 +3097,14 @@
             "crestId": "00000F",
             "team": "Eintracht Frankfurt",
             "teamSide": "home"
+          },
+          {
+            "minute": "90′",
+            "type": "yellow",
+            "player": "Adi Hütter",
+            "crestId": "00000F",
+            "team": "Eintracht Frankfurt",
+            "teamSide": "home"
           }
         ],
         "subs": [
@@ -3157,7 +3165,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-01T18:19:46.428Z"
+        "checkedAt": "2026-11-01T18:21:51.263Z"
       },
       "83222": {
         "matchId": "83222",
