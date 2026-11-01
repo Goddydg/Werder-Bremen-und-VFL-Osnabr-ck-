@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T16:01:39.915Z",
+  "updatedAt": "2026-11-01T16:03:44.869Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3117,6 +3117,22 @@
         ],
         "subs": [
           {
+            "minute": "74′",
+            "in": "Christopher Trimmel",
+            "out": "Janik Haberer",
+            "crestId": "00000V",
+            "team": "1. FC Union Berlin",
+            "teamSide": "home"
+          },
+          {
+            "minute": "74′",
+            "in": "Woo-yeong Jeong",
+            "out": "Livan Burcu",
+            "crestId": "00000V",
+            "team": "1. FC Union Berlin",
+            "teamSide": "home"
+          },
+          {
             "minute": "72′",
             "in": "Malek El Mala",
             "out": "Linton Maina",
@@ -3157,7 +3173,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-01T16:01:39.784Z"
+        "checkedAt": "2026-11-01T16:03:44.719Z"
       },
       "83224": {
         "matchId": "83224",
