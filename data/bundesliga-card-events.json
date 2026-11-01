@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T18:11:30.003Z",
+  "updatedAt": "2026-11-01T18:16:40.010Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3089,6 +3089,14 @@
             "crestId": "00000C",
             "team": "Hamburger SV",
             "teamSide": "away"
+          },
+          {
+            "minute": "85′",
+            "type": "yellow",
+            "player": "Elias Baum",
+            "crestId": "00000F",
+            "team": "Eintracht Frankfurt",
+            "teamSide": "home"
           }
         ],
         "subs": [
@@ -3141,7 +3149,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-01T18:11:29.860Z"
+        "checkedAt": "2026-11-01T18:16:39.864Z"
       },
       "83222": {
         "matchId": "83222",
