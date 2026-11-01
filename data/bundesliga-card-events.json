@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T18:22:54.638Z",
+  "updatedAt": "2026-11-01T18:24:59.562Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3109,7 +3109,7 @@
         ],
         "subs": [
           {
-            "minute": "90+1′",
+            "minute": "90′",
             "in": "Niko Iličević",
             "out": "Can Uzun",
             "crestId": "00000F",
@@ -3181,7 +3181,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-01T18:22:54.504Z"
+        "checkedAt": "2026-11-01T18:24:59.424Z"
       },
       "83222": {
         "matchId": "83222",
