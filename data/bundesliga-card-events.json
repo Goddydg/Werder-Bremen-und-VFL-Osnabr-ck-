@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T17:36:24.096Z",
+  "updatedAt": "2026-11-01T17:54:56.595Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3077,6 +3077,22 @@
         ],
         "subs": [
           {
+            "minute": "63′",
+            "in": "Zakaria El Ouahdi",
+            "out": "Louis Lemke",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "away"
+          },
+          {
+            "minute": "63′",
+            "in": "Patson Daka",
+            "out": "Terem Moffi",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "away"
+          },
+          {
             "minute": "45+3′",
             "in": "Ansgar Knauff",
             "out": "Keita Kosugi",
@@ -3085,7 +3101,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-01T17:36:23.956Z"
+        "checkedAt": "2026-11-01T17:54:56.455Z"
       },
       "83222": {
         "matchId": "83222",
