@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T18:59:00.699Z",
+  "updatedAt": "2026-11-06T19:07:24.188Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -8104,7 +8104,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-06T18:58:59.758Z"
+        "checkedAt": "2026-11-06T19:07:23.259Z"
       },
       "83687": {
         "matchId": "83687",
@@ -8140,6 +8140,14 @@
         ],
         "subs": [
           {
+            "minute": "78′",
+            "in": "Jannis Boziaris",
+            "out": "Christian Kinsombi",
+            "crestId": "00000O",
+            "team": "Energie Cottbus",
+            "teamSide": "away"
+          },
+          {
             "minute": "70′",
             "in": "Junior Zé",
             "out": "Robin Heußer",
@@ -8164,7 +8172,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-06T18:59:00.698Z"
+        "checkedAt": "2026-11-06T19:07:24.187Z"
       }
     }
   },
