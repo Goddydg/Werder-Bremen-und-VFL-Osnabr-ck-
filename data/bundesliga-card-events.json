@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T19:07:24.188Z",
+  "updatedAt": "2026-11-06T19:14:44.938Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -8064,6 +8064,22 @@
         ],
         "subs": [
           {
+            "minute": "82′",
+            "in": "Christoph Daferner",
+            "out": "Vincent Vermeij",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "home"
+          },
+          {
+            "minute": "82′",
+            "in": "Kaan İnanoğlu",
+            "out": "Niklas Hauptmann",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "home"
+          },
+          {
             "minute": "65′",
             "in": "Krisztián Keresztes",
             "out": "Felix Klaus",
@@ -8104,7 +8120,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-06T19:07:23.259Z"
+        "checkedAt": "2026-11-06T19:14:44.008Z"
       },
       "83687": {
         "matchId": "83687",
@@ -8172,7 +8188,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-06T19:07:24.187Z"
+        "checkedAt": "2026-11-06T19:14:44.937Z"
       }
     }
   },
