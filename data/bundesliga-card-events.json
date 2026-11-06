@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T20:52:55.580Z",
+  "updatedAt": "2026-11-06T21:10:29.212Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3710,6 +3710,38 @@
         ],
         "subs": [
           {
+            "minute": "81′",
+            "in": "Franck Honorat",
+            "out": "Shuto Machino",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "away"
+          },
+          {
+            "minute": "81′",
+            "in": "Jens Castrop",
+            "out": "Zento Uno",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "away"
+          },
+          {
+            "minute": "80′",
+            "in": "Yussuf Poulsen",
+            "out": "Albert Grønbæk",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "home"
+          },
+          {
+            "minute": "80′",
+            "in": "Kofi Amoako",
+            "out": "Albert Sambi Lokonga",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "home"
+          },
+          {
             "minute": "63′",
             "in": "Terem Moffi",
             "out": "Martin Adeline",
@@ -3734,7 +3766,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-06T20:52:55.435Z"
+        "checkedAt": "2026-11-06T21:10:29.071Z"
       }
     },
     "bl2": {
