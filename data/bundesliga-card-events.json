@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T19:20:01.416Z",
+  "updatedAt": "2026-11-06T19:21:04.700Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -8064,6 +8064,14 @@
         ],
         "subs": [
           {
+            "minute": "88′",
+            "in": "Kennedy Okpala",
+            "out": "Ben Bobzien",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "home"
+          },
+          {
             "minute": "82′",
             "in": "Christoph Daferner",
             "out": "Vincent Vermeij",
@@ -8120,7 +8128,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-06T19:20:00.483Z"
+        "checkedAt": "2026-11-06T19:21:04.699Z"
       },
       "83687": {
         "matchId": "83687",
