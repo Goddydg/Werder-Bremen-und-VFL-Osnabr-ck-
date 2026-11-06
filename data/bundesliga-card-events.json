@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T21:11:32.523Z",
+  "updatedAt": "2026-11-06T21:18:46.698Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3710,6 +3710,14 @@
         ],
         "subs": [
           {
+            "minute": "89′",
+            "in": "Jason Bissi-Mouelle",
+            "out": "Sebastiaan Bornauw",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "home"
+          },
+          {
             "minute": "81′",
             "in": "Isac Lidberg",
             "out": "Lukas Ullrich",
@@ -3774,7 +3782,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-06T21:11:32.386Z"
+        "checkedAt": "2026-11-06T21:18:46.558Z"
       }
     },
     "bl2": {
