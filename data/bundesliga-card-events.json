@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T20:38:26.189Z",
+  "updatedAt": "2026-11-06T20:45:40.840Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3708,8 +3708,17 @@
             "teamSide": "away"
           }
         ],
-        "subs": [],
-        "checkedAt": "2026-11-06T20:38:26.051Z"
+        "subs": [
+          {
+            "minute": "56′",
+            "in": "Kevin Diks",
+            "out": "Robin Hack",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-11-06T20:45:40.697Z"
       }
     },
     "bl2": {
