@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T18:42:12.792Z",
+  "updatedAt": "2026-11-06T18:53:44.356Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -8052,10 +8052,51 @@
             "crestId": "00000N",
             "team": "Dynamo Dresden",
             "teamSide": "home"
+          },
+          {
+            "minute": "62′",
+            "type": "yellow-red",
+            "player": "Hendry Blank",
+            "crestId": "00000W",
+            "team": "SpVgg Greuther Fürth",
+            "teamSide": "away"
           }
         ],
-        "subs": [],
-        "checkedAt": "2026-11-06T18:42:11.850Z"
+        "subs": [
+          {
+            "minute": "61′",
+            "in": "Aaron Keller",
+            "out": "Ole Pohlmann",
+            "crestId": "00000W",
+            "team": "SpVgg Greuther Fürth",
+            "teamSide": "away"
+          },
+          {
+            "minute": "61′",
+            "in": "Benjamin Zank",
+            "out": "Omar Sillah",
+            "crestId": "00000W",
+            "team": "SpVgg Greuther Fürth",
+            "teamSide": "away"
+          },
+          {
+            "minute": "61′",
+            "in": "Dennis Srbeny",
+            "out": "Shinta Appelkamp",
+            "crestId": "00000W",
+            "team": "SpVgg Greuther Fürth",
+            "teamSide": "away"
+          },
+          {
+            "minute": "61′",
+            "in": "Faton Ademi",
+            "out": "Sacha Bansé",
+            "crestId": "00000W",
+            "team": "SpVgg Greuther Fürth",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-11-06T18:53:43.411Z"
       },
       "83687": {
         "matchId": "83687",
@@ -8099,7 +8140,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-06T18:42:12.791Z"
+        "checkedAt": "2026-11-06T18:53:44.355Z"
       }
     }
   },
