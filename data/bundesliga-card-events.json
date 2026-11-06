@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T18:56:53.945Z",
+  "updatedAt": "2026-11-06T18:59:00.699Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -8104,7 +8104,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-06T18:56:53.002Z"
+        "checkedAt": "2026-11-06T18:58:59.758Z"
       },
       "83687": {
         "matchId": "83687",
@@ -8140,6 +8140,22 @@
         ],
         "subs": [
           {
+            "minute": "70′",
+            "in": "Junior Zé",
+            "out": "Robin Heußer",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "home"
+          },
+          {
+            "minute": "70′",
+            "in": "Tristan Wagner",
+            "out": "Mehmet Can Aydın",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "home"
+          },
+          {
             "minute": "45+2′",
             "in": "Jan Urbich",
             "out": "Jovan Mijatović",
@@ -8148,7 +8164,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-06T18:56:53.944Z"
+        "checkedAt": "2026-11-06T18:59:00.698Z"
       }
     }
   },
