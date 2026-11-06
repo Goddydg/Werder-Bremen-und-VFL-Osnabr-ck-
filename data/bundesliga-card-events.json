@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T20:09:32.092Z",
+  "updatedAt": "2026-11-06T20:38:26.189Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3698,10 +3698,18 @@
             "crestId": "000004",
             "team": "Borussia Mönchengladbach",
             "teamSide": "away"
+          },
+          {
+            "minute": "49′",
+            "type": "yellow-red",
+            "player": "Kō Itakura",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "away"
           }
         ],
         "subs": [],
-        "checkedAt": "2026-11-06T20:09:31.950Z"
+        "checkedAt": "2026-11-06T20:38:26.051Z"
       }
     },
     "bl2": {
