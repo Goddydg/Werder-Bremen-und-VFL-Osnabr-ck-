@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T19:30:18.472Z",
+  "updatedAt": "2026-11-06T20:09:32.092Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3690,9 +3690,18 @@
         "away": "Borussia Mönchengladbach",
         "round": 9,
         "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/9/hamburger-sv-vs-borussia-moenchengladbach/liveticker/",
-        "cards": [],
+        "cards": [
+          {
+            "minute": "38′",
+            "type": "yellow",
+            "player": "Kō Itakura",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "away"
+          }
+        ],
         "subs": [],
-        "checkedAt": "2026-11-06T19:30:18.330Z"
+        "checkedAt": "2026-11-06T20:09:31.950Z"
       }
     },
     "bl2": {
