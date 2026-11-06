@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-01T18:30:09.678Z",
+  "updatedAt": "2026-11-06T18:14:57.314Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -8029,6 +8029,52 @@
         "round": 10,
         "cards": [],
         "finalAttempts": 3
+      },
+      "83684": {
+        "matchId": "83684",
+        "home": "Dynamo Dresden",
+        "away": "SpVgg Greuther Fürth",
+        "round": 11,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/11/sg-dynamo-dresden-vs-spvgg-greuther-fuerth/liveticker/",
+        "cards": [
+          {
+            "minute": "1′",
+            "type": "yellow",
+            "player": "Hendry Blank",
+            "crestId": "00000W",
+            "team": "SpVgg Greuther Fürth",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [],
+        "checkedAt": "2026-11-06T18:14:52.275Z"
+      },
+      "83687": {
+        "matchId": "83687",
+        "home": "Eintracht Braunschweig",
+        "away": "Energie Cottbus",
+        "round": 11,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/11/eintracht-braunschweig-vs-fc-energie-cottbus/liveticker/",
+        "cards": [
+          {
+            "minute": "20′",
+            "type": "yellow",
+            "player": "Mehmet Can Aydın",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "home"
+          },
+          {
+            "minute": "19′",
+            "type": "yellow",
+            "player": "Leonardo Bittencourt",
+            "crestId": "00000O",
+            "team": "Energie Cottbus",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [],
+        "checkedAt": "2026-11-06T18:14:57.313Z"
       }
     }
   },
