@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T18:33:49.649Z",
+  "updatedAt": "2026-11-06T18:42:12.792Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -8044,10 +8044,18 @@
             "crestId": "00000W",
             "team": "SpVgg Greuther Fürth",
             "teamSide": "away"
+          },
+          {
+            "minute": "50′",
+            "type": "yellow",
+            "player": "Nicolai Rapp",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "home"
           }
         ],
         "subs": [],
-        "checkedAt": "2026-11-06T18:33:48.707Z"
+        "checkedAt": "2026-11-06T18:42:11.850Z"
       },
       "83687": {
         "matchId": "83687",
@@ -8091,7 +8099,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-06T18:33:49.648Z"
+        "checkedAt": "2026-11-06T18:42:12.791Z"
       }
     }
   },
