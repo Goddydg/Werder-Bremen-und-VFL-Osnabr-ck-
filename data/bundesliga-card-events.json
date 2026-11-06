@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T18:14:57.314Z",
+  "updatedAt": "2026-11-06T18:23:21.070Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -8047,7 +8047,7 @@
           }
         ],
         "subs": [],
-        "checkedAt": "2026-11-06T18:14:52.275Z"
+        "checkedAt": "2026-11-06T18:23:20.109Z"
       },
       "83687": {
         "matchId": "83687",
@@ -8071,10 +8071,18 @@
             "crestId": "00000O",
             "team": "Energie Cottbus",
             "teamSide": "away"
+          },
+          {
+            "minute": "19′",
+            "type": "yellow",
+            "player": "Mehmet Can Aydın",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "home"
           }
         ],
         "subs": [],
-        "checkedAt": "2026-11-06T18:14:57.313Z"
+        "checkedAt": "2026-11-06T18:23:21.069Z"
       }
     }
   },
