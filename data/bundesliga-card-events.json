@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T18:23:21.070Z",
+  "updatedAt": "2026-11-06T18:33:49.649Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -8047,7 +8047,7 @@
           }
         ],
         "subs": [],
-        "checkedAt": "2026-11-06T18:23:20.109Z"
+        "checkedAt": "2026-11-06T18:33:48.707Z"
       },
       "83687": {
         "matchId": "83687",
@@ -8081,8 +8081,17 @@
             "teamSide": "home"
           }
         ],
-        "subs": [],
-        "checkedAt": "2026-11-06T18:23:21.069Z"
+        "subs": [
+          {
+            "minute": "45+2′",
+            "in": "Jan Urbich",
+            "out": "Jovan Mijatović",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "home"
+          }
+        ],
+        "checkedAt": "2026-11-06T18:33:49.648Z"
       }
     }
   },
