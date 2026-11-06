@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T21:21:53.633Z",
+  "updatedAt": "2026-11-06T21:22:56.876Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3714,6 +3714,14 @@
             "crestId": "000004",
             "team": "Borussia Mönchengladbach",
             "teamSide": "away"
+          },
+          {
+            "minute": "90+3′",
+            "type": "yellow",
+            "player": "Warmed Omari",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "home"
           }
         ],
         "subs": [
@@ -3790,7 +3798,8 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-06T21:21:53.486Z"
+        "checkedAt": "2026-11-06T21:22:56.734Z",
+        "finalChecked": true
       }
     },
     "bl2": {
