@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T21:10:29.212Z",
+  "updatedAt": "2026-11-06T21:11:32.523Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3711,6 +3711,14 @@
         "subs": [
           {
             "minute": "81′",
+            "in": "Isac Lidberg",
+            "out": "Lukas Ullrich",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "away"
+          },
+          {
+            "minute": "81′",
             "in": "Franck Honorat",
             "out": "Shuto Machino",
             "crestId": "000004",
@@ -3766,7 +3774,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-06T21:10:29.071Z"
+        "checkedAt": "2026-11-06T21:11:32.386Z"
       }
     },
     "bl2": {
