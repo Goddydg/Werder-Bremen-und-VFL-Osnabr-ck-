@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T20:45:40.840Z",
+  "updatedAt": "2026-11-06T20:52:55.580Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3710,6 +3710,22 @@
         ],
         "subs": [
           {
+            "minute": "63′",
+            "in": "Terem Moffi",
+            "out": "Martin Adeline",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "home"
+          },
+          {
+            "minute": "63′",
+            "in": "Alexander Røssing-Lelesiit",
+            "out": "Shafiq Nandja",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "home"
+          },
+          {
             "minute": "56′",
             "in": "Kevin Diks",
             "out": "Robin Hack",
@@ -3718,7 +3734,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-06T20:45:40.697Z"
+        "checkedAt": "2026-11-06T20:52:55.435Z"
       }
     },
     "bl2": {
