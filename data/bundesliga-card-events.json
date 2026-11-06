@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T21:18:46.698Z",
+  "updatedAt": "2026-11-06T21:21:53.633Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3706,6 +3706,14 @@
             "crestId": "000004",
             "team": "Borussia Mönchengladbach",
             "teamSide": "away"
+          },
+          {
+            "minute": "90+2′",
+            "type": "yellow",
+            "player": "Jens Castrop",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "away"
           }
         ],
         "subs": [
@@ -3782,7 +3790,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-06T21:18:46.558Z"
+        "checkedAt": "2026-11-06T21:21:53.486Z"
       }
     },
     "bl2": {
