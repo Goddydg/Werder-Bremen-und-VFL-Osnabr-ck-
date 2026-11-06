@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T19:24:11.435Z",
+  "updatedAt": "2026-11-06T19:30:18.472Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3683,6 +3683,16 @@
         "round": 8,
         "cards": [],
         "finalAttempts": 3
+      },
+      "83234": {
+        "matchId": "83234",
+        "home": "Hamburger SV",
+        "away": "Borussia Mönchengladbach",
+        "round": 9,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/9/hamburger-sv-vs-borussia-moenchengladbach/liveticker/",
+        "cards": [],
+        "subs": [],
+        "checkedAt": "2026-11-06T19:30:18.330Z"
       }
     },
     "bl2": {
