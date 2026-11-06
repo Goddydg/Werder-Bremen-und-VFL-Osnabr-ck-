@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T18:53:44.356Z",
+  "updatedAt": "2026-11-06T18:56:53.945Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -8064,6 +8064,14 @@
         ],
         "subs": [
           {
+            "minute": "65′",
+            "in": "Krisztián Keresztes",
+            "out": "Felix Klaus",
+            "crestId": "00000W",
+            "team": "SpVgg Greuther Fürth",
+            "teamSide": "away"
+          },
+          {
             "minute": "61′",
             "in": "Aaron Keller",
             "out": "Ole Pohlmann",
@@ -8096,7 +8104,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-06T18:53:43.411Z"
+        "checkedAt": "2026-11-06T18:56:53.002Z"
       },
       "83687": {
         "matchId": "83687",
@@ -8140,7 +8148,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-06T18:53:44.355Z"
+        "checkedAt": "2026-11-06T18:56:53.944Z"
       }
     }
   },
