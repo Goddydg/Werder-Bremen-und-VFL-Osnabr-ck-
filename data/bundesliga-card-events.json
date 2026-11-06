@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T19:14:44.938Z",
+  "updatedAt": "2026-11-06T19:15:49.027Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -8120,7 +8120,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-06T19:14:44.008Z"
+        "checkedAt": "2026-11-06T19:15:48.090Z"
       },
       "83687": {
         "matchId": "83687",
@@ -8156,6 +8156,22 @@
         ],
         "subs": [
           {
+            "minute": "87′",
+            "in": "Fousseny Doumbia",
+            "out": "Leon Guwara",
+            "crestId": "00000O",
+            "team": "Energie Cottbus",
+            "teamSide": "away"
+          },
+          {
+            "minute": "87′",
+            "in": "Tolcay Ciğerci",
+            "out": "Lukas Michelbrink",
+            "crestId": "00000O",
+            "team": "Energie Cottbus",
+            "teamSide": "away"
+          },
+          {
             "minute": "78′",
             "in": "Jannis Boziaris",
             "out": "Christian Kinsombi",
@@ -8188,7 +8204,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-06T19:14:44.937Z"
+        "checkedAt": "2026-11-06T19:15:49.026Z"
       }
     }
   },
