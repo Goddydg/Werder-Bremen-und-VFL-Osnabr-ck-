@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T19:56:42.771Z",
+  "updatedAt": "2026-11-07T22:59:55.225Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -8546,9 +8546,57 @@
             "minute": "",
             "type": "red",
             "player": "Überprüfung Notbremse Entscheidung"
+          },
+          {
+            "minute": "74′",
+            "type": "yellow",
+            "player": "Kevin Sessa",
+            "crestId": "00000Z",
+            "team": "Hertha BSC",
+            "teamSide": "home"
+          },
+          {
+            "minute": "48′",
+            "type": "yellow",
+            "player": "Vinicius Souza",
+            "crestId": "000003",
+            "team": "VfL Wolfsburg",
+            "teamSide": "away"
           }
         ],
         "subs": [
+          {
+            "minute": "76′",
+            "in": "Fraser Hornby",
+            "out": "Alexander Bernhardsson",
+            "crestId": "000003",
+            "team": "VfL Wolfsburg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "76′",
+            "in": "Elvis Rexhbeçaj",
+            "out": "Muhammed Damar",
+            "crestId": "000003",
+            "team": "VfL Wolfsburg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "61′",
+            "in": "Gustaf Nilsson",
+            "out": "Sebastian Grønning",
+            "crestId": "00000Z",
+            "team": "Hertha BSC",
+            "teamSide": "home"
+          },
+          {
+            "minute": "45+4′",
+            "in": "Kento Shiogai",
+            "out": "Maximilian Arnold",
+            "crestId": "000003",
+            "team": "VfL Wolfsburg",
+            "teamSide": "away"
+          },
           {
             "minute": "25′",
             "in": "Mathys Angély",
@@ -8558,7 +8606,8 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-07T19:56:42.770Z"
+        "checkedAt": "2026-11-07T22:59:55.111Z",
+        "finalChecked": true
       },
       "83682": {
         "matchId": "83682",
