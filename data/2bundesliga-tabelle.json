@@ -17,14 +17,14 @@
             "tla": "",
             "crest": ""
           },
-          "playedGames": 10,
-          "won": 9,
+          "playedGames": 11,
+          "won": 10,
           "draw": 1,
           "lost": 0,
-          "points": 28,
-          "goalsFor": 23,
-          "goalsAgainst": 8,
-          "goalDifference": 15
+          "points": 31,
+          "goalsFor": 25,
+          "goalsAgainst": 9,
+          "goalDifference": 16
         },
         {
           "position": 2,
@@ -71,14 +71,14 @@
             "tla": "",
             "crest": ""
           },
-          "playedGames": 10,
+          "playedGames": 11,
           "won": 5,
           "draw": 4,
-          "lost": 1,
+          "lost": 2,
           "points": 19,
-          "goalsFor": 25,
-          "goalsAgainst": 14,
-          "goalDifference": 11
+          "goalsFor": 26,
+          "goalsAgainst": 16,
+          "goalDifference": 10
         },
         {
           "position": 5,
