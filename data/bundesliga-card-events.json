@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T19:53:35.754Z",
+  "updatedAt": "2026-11-07T19:56:42.771Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -8548,8 +8548,17 @@
             "player": "Überprüfung Notbremse Entscheidung"
           }
         ],
-        "subs": [],
-        "checkedAt": "2026-11-07T19:53:35.753Z"
+        "subs": [
+          {
+            "minute": "25′",
+            "in": "Mathys Angély",
+            "out": "Robert Glatzel",
+            "crestId": "000003",
+            "team": "VfL Wolfsburg",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-11-07T19:56:42.770Z"
       },
       "83682": {
         "matchId": "83682",
