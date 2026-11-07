@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T19:42:13.243Z",
+  "updatedAt": "2026-11-07T19:51:30.830Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -8525,9 +8525,18 @@
         "away": "VfL Wolfsburg",
         "round": 11,
         "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/11/hertha-bsc-vs-vfl-wolfsburg/liveticker/",
-        "cards": [],
+        "cards": [
+          {
+            "minute": "20′",
+            "type": "yellow",
+            "player": "Cleiton",
+            "crestId": "000003",
+            "team": "VfL Wolfsburg",
+            "teamSide": "away"
+          }
+        ],
         "subs": [],
-        "checkedAt": "2026-11-07T19:42:13.242Z"
+        "checkedAt": "2026-11-07T19:51:30.829Z"
       },
       "83682": {
         "matchId": "83682",
