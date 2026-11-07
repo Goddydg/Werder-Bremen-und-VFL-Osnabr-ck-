@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T19:41:01.660Z",
+  "updatedAt": "2026-11-07T19:42:13.243Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3690,7 +3690,7 @@
         "away": "SV 07 Elversberg",
         "round": 9,
         "cards": [],
-        "finalAttempts": 2
+        "finalAttempts": 3
       },
       "83229": {
         "matchId": "83229",
@@ -8527,7 +8527,7 @@
         "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/11/hertha-bsc-vs-vfl-wolfsburg/liveticker/",
         "cards": [],
         "subs": [],
-        "checkedAt": "2026-11-07T19:41:01.658Z"
+        "checkedAt": "2026-11-07T19:42:13.242Z"
       },
       "83682": {
         "matchId": "83682",
