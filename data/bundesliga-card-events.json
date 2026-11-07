@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T15:46:51.513Z",
+  "updatedAt": "2026-11-07T15:50:41.430Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3718,7 +3718,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-07T15:46:49.044Z"
+        "checkedAt": "2026-11-07T15:50:38.938Z"
       },
       "83233": {
         "matchId": "83233",
@@ -3746,7 +3746,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-07T15:46:49.969Z"
+        "checkedAt": "2026-11-07T15:50:39.863Z"
       },
       "83234": {
         "matchId": "83234",
@@ -3871,7 +3871,16 @@
         "away": "Eintracht Frankfurt",
         "round": 9,
         "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/9/sc-paderborn-07-vs-eintracht-frankfurt/liveticker/",
-        "cards": [],
+        "cards": [
+          {
+            "minute": "60′",
+            "type": "yellow",
+            "player": "Elias Baum",
+            "crestId": "00000F",
+            "team": "Eintracht Frankfurt",
+            "teamSide": "away"
+          }
+        ],
         "subs": [
           {
             "minute": "45+3′",
@@ -3898,7 +3907,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-07T15:46:50.990Z"
+        "checkedAt": "2026-11-07T15:50:40.883Z"
       }
     },
     "bl2": {
