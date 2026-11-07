@@ -35,17 +35,35 @@
             "tla": "",
             "crest": ""
           },
-          "playedGames": 10,
-          "won": 6,
+          "playedGames": 11,
+          "won": 7,
           "draw": 3,
           "lost": 1,
-          "points": 21,
-          "goalsFor": 24,
+          "points": 24,
+          "goalsFor": 26,
           "goalsAgainst": 13,
-          "goalDifference": 11
+          "goalDifference": 13
         },
         {
           "position": 3,
+          "team": {
+            "id": 76,
+            "name": "1. FC Kaiserslautern",
+            "shortName": "1. FC Kaiserslautern",
+            "tla": "",
+            "crest": ""
+          },
+          "playedGames": 11,
+          "won": 6,
+          "draw": 3,
+          "lost": 2,
+          "points": 21,
+          "goalsFor": 10,
+          "goalsAgainst": 7,
+          "goalDifference": 3
+        },
+        {
+          "position": 4,
           "team": {
             "id": 131,
             "name": "VfL Wolfsburg",
@@ -61,24 +79,6 @@
           "goalsFor": 25,
           "goalsAgainst": 14,
           "goalDifference": 11
-        },
-        {
-          "position": 4,
-          "team": {
-            "id": 76,
-            "name": "1. FC Kaiserslautern",
-            "shortName": "1. FC Kaiserslautern",
-            "tla": "",
-            "crest": ""
-          },
-          "playedGames": 10,
-          "won": 5,
-          "draw": 3,
-          "lost": 2,
-          "points": 18,
-          "goalsFor": 9,
-          "goalsAgainst": 7,
-          "goalDifference": 2
         },
         {
           "position": 5,
@@ -101,6 +101,24 @@
         {
           "position": 6,
           "team": {
+            "id": 83,
+            "name": "DSC Arminia Bielefeld",
+            "shortName": "DSC Arminia Bielefeld",
+            "tla": "",
+            "crest": ""
+          },
+          "playedGames": 11,
+          "won": 5,
+          "draw": 2,
+          "lost": 4,
+          "points": 17,
+          "goalsFor": 18,
+          "goalsAgainst": 16,
+          "goalDifference": 2
+        },
+        {
+          "position": 7,
+          "team": {
             "id": 199,
             "name": "1. FC Heidenheim 1846",
             "shortName": "1. FC Heidenheim 1846",
@@ -115,24 +133,6 @@
           "goalsFor": 17,
           "goalsAgainst": 18,
           "goalDifference": -1
-        },
-        {
-          "position": 7,
-          "team": {
-            "id": 83,
-            "name": "DSC Arminia Bielefeld",
-            "shortName": "DSC Arminia Bielefeld",
-            "tla": "",
-            "crest": ""
-          },
-          "playedGames": 10,
-          "won": 4,
-          "draw": 2,
-          "lost": 4,
-          "points": 14,
-          "goalsFor": 16,
-          "goalsAgainst": 15,
-          "goalDifference": 1
         },
         {
           "position": 8,
@@ -209,24 +209,6 @@
         {
           "position": 12,
           "team": {
-            "id": 36,
-            "name": "VfL Osnabrück",
-            "shortName": "VfL Osnabrück",
-            "tla": "",
-            "crest": ""
-          },
-          "playedGames": 10,
-          "won": 3,
-          "draw": 2,
-          "lost": 5,
-          "points": 11,
-          "goalsFor": 14,
-          "goalsAgainst": 17,
-          "goalDifference": -3
-        },
-        {
-          "position": 13,
-          "team": {
             "id": 129,
             "name": "VfL Bochum",
             "shortName": "VfL Bochum",
@@ -241,6 +223,24 @@
           "goalsFor": 8,
           "goalsAgainst": 11,
           "goalDifference": -3
+        },
+        {
+          "position": 13,
+          "team": {
+            "id": 36,
+            "name": "VfL Osnabrück",
+            "shortName": "VfL Osnabrück",
+            "tla": "",
+            "crest": ""
+          },
+          "playedGames": 11,
+          "won": 3,
+          "draw": 2,
+          "lost": 6,
+          "points": 11,
+          "goalsFor": 14,
+          "goalsAgainst": 18,
+          "goalDifference": -4
         },
         {
           "position": 14,
@@ -305,14 +305,14 @@
             "tla": "",
             "crest": ""
           },
-          "playedGames": 10,
+          "playedGames": 11,
           "won": 2,
           "draw": 3,
-          "lost": 5,
+          "lost": 6,
           "points": 9,
           "goalsFor": 9,
-          "goalsAgainst": 19,
-          "goalDifference": -10
+          "goalsAgainst": 21,
+          "goalDifference": -12
         },
         {
           "position": 18,
@@ -323,14 +323,14 @@
             "tla": "",
             "crest": ""
           },
-          "playedGames": 10,
+          "playedGames": 11,
           "won": 1,
           "draw": 5,
-          "lost": 4,
+          "lost": 5,
           "points": 8,
-          "goalsFor": 10,
-          "goalsAgainst": 12,
-          "goalDifference": -2
+          "goalsFor": 11,
+          "goalsAgainst": 14,
+          "goalDifference": -3
         }
       ]
     }
