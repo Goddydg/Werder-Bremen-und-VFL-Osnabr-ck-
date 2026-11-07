@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T15:50:41.430Z",
+  "updatedAt": "2026-11-07T19:39:49.836Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3684,6 +3684,14 @@
         "cards": [],
         "finalAttempts": 3
       },
+      "83228": {
+        "matchId": "83228",
+        "home": "Borussia Dortmund",
+        "away": "SV 07 Elversberg",
+        "round": 9,
+        "cards": [],
+        "finalAttempts": 1
+      },
       "83229": {
         "matchId": "83229",
         "home": "RB Leipzig",
@@ -3706,9 +3714,81 @@
             "crestId": "000017",
             "team": "RB Leipzig",
             "teamSide": "home"
+          },
+          {
+            "minute": "72′",
+            "type": "yellow",
+            "player": "Robin Fellhauer",
+            "crestId": "000010",
+            "team": "FC Augsburg",
+            "teamSide": "away"
           }
         ],
         "subs": [
+          {
+            "minute": "87′",
+            "in": "Mert Kömür",
+            "out": "Anton Kade",
+            "crestId": "000010",
+            "team": "FC Augsburg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "77′",
+            "in": "Maxime Estève",
+            "out": "Castello Lukeba",
+            "crestId": "000017",
+            "team": "RB Leipzig",
+            "teamSide": "home"
+          },
+          {
+            "minute": "73′",
+            "in": "Uchenna Ogundu",
+            "out": "Rodrigo Ribeiro",
+            "crestId": "000010",
+            "team": "FC Augsburg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "73′",
+            "in": "Tim Schnitzer",
+            "out": "Han-Noah Massengo",
+            "crestId": "000010",
+            "team": "FC Augsburg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "73′",
+            "in": "Abdoul Koné",
+            "out": "Willi Orbán",
+            "crestId": "000017",
+            "team": "RB Leipzig",
+            "teamSide": "home"
+          },
+          {
+            "minute": "65′",
+            "in": "Benjamin Henrichs",
+            "out": "Ridle Baku",
+            "crestId": "000017",
+            "team": "RB Leipzig",
+            "teamSide": "home"
+          },
+          {
+            "minute": "65′",
+            "in": "Christoph Baumgartner",
+            "out": "Rômulo",
+            "crestId": "000017",
+            "team": "RB Leipzig",
+            "teamSide": "home"
+          },
+          {
+            "minute": "65′",
+            "in": "Antonio Nusa",
+            "out": "Brajan Gruda",
+            "crestId": "000017",
+            "team": "RB Leipzig",
+            "teamSide": "home"
+          },
           {
             "minute": "45+4′",
             "in": "Alexis Claude-Maurice",
@@ -3718,7 +3798,109 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-07T15:50:38.938Z"
+        "checkedAt": "2026-11-07T19:39:44.323Z",
+        "finalChecked": true
+      },
+      "83230": {
+        "matchId": "83230",
+        "home": "VfB Stuttgart",
+        "away": "SV Werder Bremen",
+        "round": 9,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/9/vfb-stuttgart-vs-sv-werder-bremen/liveticker/",
+        "cards": [
+          {
+            "minute": "53′",
+            "type": "yellow",
+            "player": "Marco Grüll",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "away"
+          },
+          {
+            "minute": "45′",
+            "type": "yellow",
+            "player": "Olivier Deman",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "away"
+          },
+          {
+            "minute": "24′",
+            "type": "yellow",
+            "player": "Niclas Füllkrug",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "86′",
+            "in": "Cedric Itten",
+            "out": "Eren Dinkçi",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "away"
+          },
+          {
+            "minute": "83′",
+            "in": "Atakan Karazor",
+            "out": "Yanik Spalt",
+            "crestId": "00000D",
+            "team": "VfB Stuttgart",
+            "teamSide": "home"
+          },
+          {
+            "minute": "83′",
+            "in": "Ermedin Demirović",
+            "out": "Chris Führich",
+            "crestId": "00000D",
+            "team": "VfB Stuttgart",
+            "teamSide": "home"
+          },
+          {
+            "minute": "67′",
+            "in": "Justin Njinmah",
+            "out": "Marco Grüll",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "away"
+          },
+          {
+            "minute": "67′",
+            "in": "Chuki",
+            "out": "Senne Lynen",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "away"
+          },
+          {
+            "minute": "65′",
+            "in": "Tiago Tomás",
+            "out": "Jamie Leweling",
+            "crestId": "00000D",
+            "team": "VfB Stuttgart",
+            "teamSide": "home"
+          },
+          {
+            "minute": "64′",
+            "in": "Nikolas Nartey",
+            "out": "Bilal El Khannouss",
+            "crestId": "00000D",
+            "team": "VfB Stuttgart",
+            "teamSide": "home"
+          },
+          {
+            "minute": "55′",
+            "in": "Finn Jeltsch",
+            "out": "Luca Jaquez",
+            "crestId": "00000D",
+            "team": "VfB Stuttgart",
+            "teamSide": "home"
+          }
+        ],
+        "checkedAt": "2026-11-07T19:39:48.173Z",
+        "finalChecked": true
       },
       "83233": {
         "matchId": "83233",
@@ -3746,7 +3928,8 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-07T15:50:39.863Z"
+        "checkedAt": "2026-11-07T19:39:45.436Z",
+        "finalChecked": true
       },
       "83234": {
         "matchId": "83234",
@@ -3879,9 +4062,89 @@
             "crestId": "00000F",
             "team": "Eintracht Frankfurt",
             "teamSide": "away"
+          },
+          {
+            "minute": "86′",
+            "type": "yellow",
+            "player": "Nnamdi Collins",
+            "crestId": "00000F",
+            "team": "Eintracht Frankfurt",
+            "teamSide": "away"
+          },
+          {
+            "minute": "80′",
+            "type": "yellow",
+            "player": "Deniz Zeitler",
+            "crestId": "00000L",
+            "team": "SC Paderborn 07",
+            "teamSide": "home"
+          },
+          {
+            "minute": "75′",
+            "type": "yellow-red",
+            "player": "Elias Baum",
+            "crestId": "00000F",
+            "team": "Eintracht Frankfurt",
+            "teamSide": "away"
           }
         ],
         "subs": [
+          {
+            "minute": "88′",
+            "in": "Steffen Tigges",
+            "out": "Deniz Zeitler",
+            "crestId": "00000L",
+            "team": "SC Paderborn 07",
+            "teamSide": "home"
+          },
+          {
+            "minute": "85′",
+            "in": "Love Arrhov",
+            "out": "Raphael Onyedika",
+            "crestId": "00000F",
+            "team": "Eintracht Frankfurt",
+            "teamSide": "away"
+          },
+          {
+            "minute": "74′",
+            "in": "Rayan Philippe",
+            "out": "Stefano Marino",
+            "crestId": "00000L",
+            "team": "SC Paderborn 07",
+            "teamSide": "home"
+          },
+          {
+            "minute": "65′",
+            "in": "Clemens Lippmann",
+            "out": "Raphael Obermair",
+            "crestId": "00000L",
+            "team": "SC Paderborn 07",
+            "teamSide": "home"
+          },
+          {
+            "minute": "65′",
+            "in": "Marvin Pieringer",
+            "out": "Ruben Müller",
+            "crestId": "00000L",
+            "team": "SC Paderborn 07",
+            "teamSide": "home"
+          },
+          {
+            "minute": "64′",
+            "in": "Niko Iličević",
+            "out": "Ritsu Dōan",
+            "crestId": "00000F",
+            "team": "Eintracht Frankfurt",
+            "teamSide": "away"
+          },
+          {
+            "minute": "64′",
+            "in": "Younes Ebnoutalib",
+            "out": "Can Uzun",
+            "crestId": "00000F",
+            "team": "Eintracht Frankfurt",
+            "teamSide": "away"
+          },
           {
             "minute": "45+3′",
             "in": "Oscar Højlund",
@@ -3907,7 +4170,8 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-07T15:50:40.883Z"
+        "checkedAt": "2026-11-07T19:39:46.461Z",
+        "finalChecked": true
       }
     },
     "bl2": {
@@ -8254,6 +8518,16 @@
         "round": 10,
         "cards": [],
         "finalAttempts": 3
+      },
+      "83681": {
+        "matchId": "83681",
+        "home": "Hertha BSC",
+        "away": "VfL Wolfsburg",
+        "round": 11,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/11/hertha-bsc-vs-vfl-wolfsburg/liveticker/",
+        "cards": [],
+        "subs": [],
+        "checkedAt": "2026-11-07T19:39:49.836Z"
       },
       "83682": {
         "matchId": "83682",
