@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T19:51:30.830Z",
+  "updatedAt": "2026-11-07T19:53:35.754Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -8533,10 +8533,23 @@
             "crestId": "000003",
             "team": "VfL Wolfsburg",
             "teamSide": "away"
+          },
+          {
+            "minute": "22′",
+            "type": "red",
+            "player": "Cleiton",
+            "crestId": "000003",
+            "team": "VfL Wolfsburg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "",
+            "type": "red",
+            "player": "Überprüfung Notbremse Entscheidung"
           }
         ],
         "subs": [],
-        "checkedAt": "2026-11-07T19:51:30.829Z"
+        "checkedAt": "2026-11-07T19:53:35.753Z"
       },
       "83682": {
         "matchId": "83682",
