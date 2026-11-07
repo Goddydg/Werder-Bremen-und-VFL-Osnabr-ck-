@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-06T21:22:56.876Z",
+  "updatedAt": "2026-11-07T15:45:37.695Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3684,6 +3684,61 @@
         "cards": [],
         "finalAttempts": 3
       },
+      "83229": {
+        "matchId": "83229",
+        "home": "RB Leipzig",
+        "away": "FC Augsburg",
+        "round": 9,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/9/rb-leipzig-vs-fc-augsburg/liveticker/",
+        "cards": [
+          {
+            "minute": "45′",
+            "type": "yellow",
+            "player": "Jeffrey Gouweleeuw",
+            "crestId": "000010",
+            "team": "FC Augsburg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "26′",
+            "type": "yellow",
+            "player": "David Raum",
+            "crestId": "000017",
+            "team": "RB Leipzig",
+            "teamSide": "home"
+          }
+        ],
+        "subs": [],
+        "checkedAt": "2026-11-07T15:45:29.263Z"
+      },
+      "83233": {
+        "matchId": "83233",
+        "home": "1. FSV Mainz 05",
+        "away": "FC Bayern München",
+        "round": 9,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/9/1-fsv-mainz-05-vs-fc-bayern-muenchen/liveticker/",
+        "cards": [
+          {
+            "minute": "45′",
+            "type": "yellow",
+            "player": "Markus Hoffmann",
+            "crestId": "000006",
+            "team": "1. FSV Mainz 05",
+            "teamSide": "home"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "45′",
+            "in": "Jonas Urbig",
+            "out": "Manuel Neuer",
+            "crestId": "00000G",
+            "team": "FC Bayern München",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-11-07T15:45:30.841Z"
+      },
       "83234": {
         "matchId": "83234",
         "home": "Hamburger SV",
@@ -3800,6 +3855,16 @@
         ],
         "checkedAt": "2026-11-06T21:22:56.734Z",
         "finalChecked": true
+      },
+      "83236": {
+        "matchId": "83236",
+        "home": "SC Paderborn 07",
+        "away": "Eintracht Frankfurt",
+        "round": 9,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/9/sc-paderborn-07-vs-eintracht-frankfurt/liveticker/",
+        "cards": [],
+        "subs": [],
+        "checkedAt": "2026-11-07T15:45:31.867Z"
       }
     },
     "bl2": {
@@ -8147,6 +8212,115 @@
         "cards": [],
         "finalAttempts": 3
       },
+      "83682": {
+        "matchId": "83682",
+        "home": "1. FC Nürnberg",
+        "away": "SV Darmstadt 98",
+        "round": 11,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/11/1-fc-nuernberg-vs-sv-darmstadt-98/liveticker/",
+        "cards": [
+          {
+            "minute": "90+3′",
+            "type": "yellow",
+            "player": "Milan Smit",
+            "crestId": "000016",
+            "team": "SV Darmstadt 98",
+            "teamSide": "away"
+          },
+          {
+            "minute": "56′",
+            "type": "yellow",
+            "player": "Yannik Lührs",
+            "crestId": "000016",
+            "team": "SV Darmstadt 98",
+            "teamSide": "away"
+          },
+          {
+            "minute": "17′",
+            "type": "yellow",
+            "player": "Tim Janisch",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "home"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "90+1′",
+            "in": "Marc Kornwachs Barjuan",
+            "out": "Julian Justvan",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "90+1′",
+            "in": "Andrea Ceresoli",
+            "out": "William Bøving",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "86′",
+            "in": "Lars Kehl",
+            "out": "Hiroki Akiyama",
+            "crestId": "000016",
+            "team": "SV Darmstadt 98",
+            "teamSide": "away"
+          },
+          {
+            "minute": "74′",
+            "in": "Ibrahim El Kadiri",
+            "out": "Marco Richter",
+            "crestId": "000016",
+            "team": "SV Darmstadt 98",
+            "teamSide": "away"
+          },
+          {
+            "minute": "74′",
+            "in": "Christopher Lannert",
+            "out": "William Mikelbrencis",
+            "crestId": "000016",
+            "team": "SV Darmstadt 98",
+            "teamSide": "away"
+          },
+          {
+            "minute": "65′",
+            "in": "Sigurd Haugen",
+            "out": "Piet Scobel",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "59′",
+            "in": "Rayan Ghrieb",
+            "out": "Rafael Lubach",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "59′",
+            "in": "Ioannis Masouras",
+            "out": "Tim Janisch",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "48′",
+            "in": "Lance Duijvestijn",
+            "out": "Ho-jae Lee",
+            "crestId": "000016",
+            "team": "SV Darmstadt 98",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-11-07T15:45:34.303Z",
+        "finalChecked": true
+      },
       "83684": {
         "matchId": "83684",
         "home": "Dynamo Dresden",
@@ -8248,6 +8422,171 @@
         "checkedAt": "2026-11-06T19:24:11.434Z",
         "finalChecked": true
       },
+      "83685": {
+        "matchId": "83685",
+        "home": "Holstein Kiel",
+        "away": "DSC Arminia Bielefeld",
+        "round": 11,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/11/holstein-kiel-vs-dsc-arminia-bielefeld/liveticker/",
+        "cards": [
+          {
+            "minute": "88′",
+            "type": "yellow",
+            "player": "Leon Schneider",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "away"
+          },
+          {
+            "minute": "87′",
+            "type": "yellow",
+            "player": "Jonas Kersken",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "away"
+          },
+          {
+            "minute": "65′",
+            "type": "yellow",
+            "player": "Jonas Meffert",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
+          },
+          {
+            "minute": "59′",
+            "type": "yellow",
+            "player": "Leon Parduzi",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
+          },
+          {
+            "minute": "57′",
+            "type": "yellow",
+            "player": "Leon Jensen",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "away"
+          },
+          {
+            "minute": "50′",
+            "type": "yellow",
+            "player": "Dirk Bremser",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
+          },
+          {
+            "minute": "43′",
+            "type": "yellow",
+            "player": "Joel Grodowski",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "away"
+          },
+          {
+            "minute": "41′",
+            "type": "yellow",
+            "player": "Arne Sicker",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "away"
+          },
+          {
+            "minute": "29′",
+            "type": "yellow",
+            "player": "Jannik Rochelt",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "84′",
+            "in": "Felix Hagmann",
+            "out": "Joel Grodowski",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "away"
+          },
+          {
+            "minute": "77′",
+            "in": "Andu Kelati",
+            "out": "Guillermo Balzi",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
+          },
+          {
+            "minute": "68′",
+            "in": "Steven Skrzybski",
+            "out": "Leon Parduzi",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
+          },
+          {
+            "minute": "67′",
+            "in": "Ivan Nekić",
+            "out": "Sebastian Schonlau",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
+          },
+          {
+            "minute": "64′",
+            "in": "Isaiah Young",
+            "out": "Jannik Rochelt",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "away"
+          },
+          {
+            "minute": "64′",
+            "in": "Leon Schneider",
+            "out": "Leon Jensen",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "away"
+          },
+          {
+            "minute": "64′",
+            "in": "Benjamin Boakye",
+            "out": "Monju Momuluh",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "away"
+          },
+          {
+            "minute": "51′",
+            "in": "Tim Handwerker",
+            "out": "Arne Sicker",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "away"
+          },
+          {
+            "minute": "45+2′",
+            "in": "Adrián Kaprálik",
+            "out": "Kasper Davidsen",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
+          },
+          {
+            "minute": "45+2′",
+            "in": "Giorgi Kvilitaia",
+            "out": "Jonas Therkelsen",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
+          }
+        ],
+        "checkedAt": "2026-11-07T15:45:36.145Z",
+        "finalChecked": true
+      },
       "83687": {
         "matchId": "83687",
         "home": "Eintracht Braunschweig",
@@ -8331,6 +8670,131 @@
           }
         ],
         "checkedAt": "2026-11-06T19:20:01.415Z",
+        "finalChecked": true
+      },
+      "83688": {
+        "matchId": "83688",
+        "home": "VfL Osnabrück",
+        "away": "1. FC Kaiserslautern",
+        "round": 11,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/11/vfl-osnabrueck-vs-1-fc-kaiserslautern/liveticker/",
+        "cards": [
+          {
+            "minute": "84′",
+            "type": "yellow",
+            "player": "Alex Murphy",
+            "crestId": "00000I",
+            "team": "1. FC Kaiserslautern",
+            "teamSide": "away"
+          },
+          {
+            "minute": "77′",
+            "type": "yellow",
+            "player": "Jan Elvedi",
+            "crestId": "00000I",
+            "team": "1. FC Kaiserslautern",
+            "teamSide": "away"
+          },
+          {
+            "minute": "71′",
+            "type": "yellow",
+            "player": "Fabian Kunze",
+            "crestId": "00000I",
+            "team": "1. FC Kaiserslautern",
+            "teamSide": "away"
+          },
+          {
+            "minute": "14′",
+            "type": "yellow",
+            "player": "Paul Joly",
+            "crestId": "00000I",
+            "team": "1. FC Kaiserslautern",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "90′",
+            "in": "Leon Robinson",
+            "out": "Ibrahim Kanaté",
+            "crestId": "00000I",
+            "team": "1. FC Kaiserslautern",
+            "teamSide": "away"
+          },
+          {
+            "minute": "89′",
+            "in": "Theo Janotta",
+            "out": "Adrian Beck",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          },
+          {
+            "minute": "82′",
+            "in": "Erencan Yardımcı",
+            "out": "Mário Sauer",
+            "crestId": "00000I",
+            "team": "1. FC Kaiserslautern",
+            "teamSide": "away"
+          },
+          {
+            "minute": "77′",
+            "in": "Luca Raimund",
+            "out": "Bjarke Jacobsen",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          },
+          {
+            "minute": "67′",
+            "in": "Bernd Riesselmann",
+            "out": "Daniel Kofi Kyereh",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          },
+          {
+            "minute": "66′",
+            "in": "Ismail Badjie",
+            "out": "Jonathan Gómez",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          },
+          {
+            "minute": "66′",
+            "in": "Patrick Kammerbauer",
+            "out": "Konrad Faber",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "home"
+          },
+          {
+            "minute": "58′",
+            "in": "Simon Asta",
+            "out": "Paul Joly",
+            "crestId": "00000I",
+            "team": "1. FC Kaiserslautern",
+            "teamSide": "away"
+          },
+          {
+            "minute": "58′",
+            "in": "Ibrahim Kanaté",
+            "out": "Naatan Skyttä",
+            "crestId": "00000I",
+            "team": "1. FC Kaiserslautern",
+            "teamSide": "away"
+          },
+          {
+            "minute": "45+1′",
+            "in": "Thierry Tazemeta",
+            "out": "Ivan Prtajin",
+            "crestId": "00000I",
+            "team": "1. FC Kaiserslautern",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-11-07T15:45:37.692Z",
         "finalChecked": true
       }
     }
