@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T15:45:37.695Z",
+  "updatedAt": "2026-11-07T15:46:51.513Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3708,8 +3708,17 @@
             "teamSide": "home"
           }
         ],
-        "subs": [],
-        "checkedAt": "2026-11-07T15:45:29.263Z"
+        "subs": [
+          {
+            "minute": "45+4′",
+            "in": "Alexis Claude-Maurice",
+            "out": "Arijon Ibrahimović",
+            "crestId": "000010",
+            "team": "FC Augsburg",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-11-07T15:46:49.044Z"
       },
       "83233": {
         "matchId": "83233",
@@ -3737,7 +3746,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-07T15:45:30.841Z"
+        "checkedAt": "2026-11-07T15:46:49.969Z"
       },
       "83234": {
         "matchId": "83234",
@@ -3863,8 +3872,33 @@
         "round": 9,
         "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/9/sc-paderborn-07-vs-eintracht-frankfurt/liveticker/",
         "cards": [],
-        "subs": [],
-        "checkedAt": "2026-11-07T15:45:31.867Z"
+        "subs": [
+          {
+            "minute": "45+3′",
+            "in": "Oscar Højlund",
+            "out": "Noëll Aséko",
+            "crestId": "00000F",
+            "team": "Eintracht Frankfurt",
+            "teamSide": "away"
+          },
+          {
+            "minute": "45+3′",
+            "in": "Nnamdi Collins",
+            "out": "Ansgar Knauff",
+            "crestId": "00000F",
+            "team": "Eintracht Frankfurt",
+            "teamSide": "away"
+          },
+          {
+            "minute": "45+3′",
+            "in": "Deniz Zeitler",
+            "out": "Gabriel Vidović",
+            "crestId": "00000L",
+            "team": "SC Paderborn 07",
+            "teamSide": "home"
+          }
+        ],
+        "checkedAt": "2026-11-07T15:46:50.990Z"
       }
     },
     "bl2": {
