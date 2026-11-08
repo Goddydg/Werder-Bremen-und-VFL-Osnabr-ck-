@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-08T16:04:58.902Z",
+  "updatedAt": "2026-11-08T16:07:04.866Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4122,6 +4122,14 @@
         ],
         "subs": [
           {
+            "minute": "76′",
+            "in": "Jonas Hofmann",
+            "out": "Malik Tillman",
+            "crestId": "00000B",
+            "team": "Bayer 04 Leverkusen",
+            "teamSide": "away"
+          },
+          {
             "minute": "75′",
             "in": "Reigan Heskey",
             "out": "Linton Maina",
@@ -4146,7 +4154,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-08T16:04:58.737Z"
+        "checkedAt": "2026-11-08T16:07:04.700Z"
       },
       "83236": {
         "matchId": "83236",
