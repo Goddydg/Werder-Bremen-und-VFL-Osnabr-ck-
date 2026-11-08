@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-08T16:13:18.338Z",
+  "updatedAt": "2026-11-08T16:17:28.119Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4122,6 +4122,22 @@
         ],
         "subs": [
           {
+            "minute": "88′",
+            "in": "Robert Andrich",
+            "out": "Ibrahim Maza",
+            "crestId": "00000B",
+            "team": "Bayer 04 Leverkusen",
+            "teamSide": "away"
+          },
+          {
+            "minute": "88′",
+            "in": "Loïc Badé",
+            "out": "Facundo Medina",
+            "crestId": "00000B",
+            "team": "Bayer 04 Leverkusen",
+            "teamSide": "away"
+          },
+          {
             "minute": "84′",
             "in": "Alessio Castro-Montes",
             "out": "Sebastian Sebulonsen",
@@ -4170,7 +4186,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-08T16:13:18.174Z"
+        "checkedAt": "2026-11-08T16:17:27.952Z"
       },
       "83236": {
         "matchId": "83236",
