@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-08T15:56:19.738Z",
+  "updatedAt": "2026-11-08T15:57:31.566Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4113,7 +4113,7 @@
           }
         ],
         "subs": [],
-        "checkedAt": "2026-11-08T15:56:04.328Z"
+        "checkedAt": "2026-11-08T15:57:23.230Z"
       },
       "83236": {
         "matchId": "83236",
@@ -8802,7 +8802,7 @@
         "away": "Karlsruher SC",
         "round": 11,
         "cards": [],
-        "finalAttempts": 1
+        "finalAttempts": 2
       },
       "83684": {
         "matchId": "83684",
