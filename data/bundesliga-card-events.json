@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-08T16:24:43.838Z",
+  "updatedAt": "2026-11-08T20:10:14.979Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3901,6 +3901,98 @@
         ],
         "checkedAt": "2026-11-07T19:39:48.173Z",
         "finalChecked": true
+      },
+      "83231": {
+        "matchId": "83231",
+        "home": "TSG Hoffenheim",
+        "away": "FC Schalke 04",
+        "round": 9,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/9/tsg-hoffenheim-vs-fc-schalke-04/liveticker/",
+        "cards": [
+          {
+            "minute": "75′",
+            "type": "yellow",
+            "player": "Hee Chan Hwang",
+            "crestId": "000009",
+            "team": "FC Schalke 04",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "78′",
+            "in": "Adam Daghim",
+            "out": "Fisnik Asllani",
+            "crestId": "000002",
+            "team": "TSG Hoffenheim",
+            "teamSide": "home"
+          },
+          {
+            "minute": "78′",
+            "in": "Bernardo",
+            "out": "Mats Rots",
+            "crestId": "000002",
+            "team": "TSG Hoffenheim",
+            "teamSide": "home"
+          },
+          {
+            "minute": "76′",
+            "in": "Edin Džeko",
+            "out": "Dejan Ljubičić",
+            "crestId": "000009",
+            "team": "FC Schalke 04",
+            "teamSide": "away"
+          },
+          {
+            "minute": "70′",
+            "in": "Junior Adamu",
+            "out": "Satoshi Tanaka",
+            "crestId": "000009",
+            "team": "FC Schalke 04",
+            "teamSide": "away"
+          },
+          {
+            "minute": "70′",
+            "in": "Junior Dina Ebimbe",
+            "out": "Mertcan Ayhan",
+            "crestId": "000009",
+            "team": "FC Schalke 04",
+            "teamSide": "away"
+          },
+          {
+            "minute": "70′",
+            "in": "Adam Hložek",
+            "out": "Andrej Kramarić",
+            "crestId": "000002",
+            "team": "TSG Hoffenheim",
+            "teamSide": "home"
+          },
+          {
+            "minute": "51′",
+            "in": "Kevin Müller",
+            "out": "Loris Karius",
+            "crestId": "000009",
+            "team": "FC Schalke 04",
+            "teamSide": "away"
+          },
+          {
+            "minute": "51′",
+            "in": "Vitalie Becker",
+            "out": "Robin Gosens",
+            "crestId": "000009",
+            "team": "FC Schalke 04",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-11-08T20:10:14.319Z"
+      },
+      "83232": {
+        "matchId": "83232",
+        "home": "SC Freiburg",
+        "away": "1. FC Union Berlin",
+        "round": 9,
+        "cards": [],
+        "finalAttempts": 1
       },
       "83233": {
         "matchId": "83233",
