@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-08T16:00:48.916Z",
+  "updatedAt": "2026-11-08T16:04:58.902Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4120,8 +4120,33 @@
             "teamSide": "home"
           }
         ],
-        "subs": [],
-        "checkedAt": "2026-11-08T16:00:48.755Z"
+        "subs": [
+          {
+            "minute": "75′",
+            "in": "Reigan Heskey",
+            "out": "Linton Maina",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "home"
+          },
+          {
+            "minute": "75′",
+            "in": "Malek El Mala",
+            "out": "Marius Bülter",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "home"
+          },
+          {
+            "minute": "74′",
+            "in": "Ísak Jóhannesson",
+            "out": "Tom Krauß",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "home"
+          }
+        ],
+        "checkedAt": "2026-11-08T16:04:58.737Z"
       },
       "83236": {
         "matchId": "83236",
