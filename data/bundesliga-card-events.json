@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-08T20:12:39.925Z",
+  "updatedAt": "2026-11-08T20:25:07.812Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3920,6 +3920,14 @@
         ],
         "subs": [
           {
+            "minute": "90+6′",
+            "in": "Max Moerstedt",
+            "out": "Tim Lemperle",
+            "crestId": "000002",
+            "team": "TSG Hoffenheim",
+            "teamSide": "home"
+          },
+          {
             "minute": "78′",
             "in": "Adam Daghim",
             "out": "Fisnik Asllani",
@@ -3984,7 +3992,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-08T20:12:39.104Z"
+        "checkedAt": "2026-11-08T20:25:07.638Z"
       },
       "83232": {
         "matchId": "83232",
