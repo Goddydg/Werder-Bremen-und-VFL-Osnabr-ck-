@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-08T20:11:27.525Z",
+  "updatedAt": "2026-11-08T20:12:39.925Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -3984,7 +3984,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-08T20:11:26.701Z"
+        "checkedAt": "2026-11-08T20:12:39.104Z"
       },
       "83232": {
         "matchId": "83232",
@@ -3992,7 +3992,7 @@
         "away": "1. FC Union Berlin",
         "round": 9,
         "cards": [],
-        "finalAttempts": 2
+        "finalAttempts": 3
       },
       "83233": {
         "matchId": "83233",
