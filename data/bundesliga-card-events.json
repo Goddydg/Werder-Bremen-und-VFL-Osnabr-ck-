@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-08T16:17:28.119Z",
+  "updatedAt": "2026-11-08T16:24:43.838Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4118,6 +4118,22 @@
             "crestId": "000008",
             "team": "1. FC Köln",
             "teamSide": "home"
+          },
+          {
+            "minute": "90+5′",
+            "type": "yellow",
+            "player": "Jahmai Simpson-Pusey",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "home"
+          },
+          {
+            "minute": "90+5′",
+            "type": "yellow",
+            "player": "Aleix García",
+            "crestId": "00000B",
+            "team": "Bayer 04 Leverkusen",
+            "teamSide": "away"
           }
         ],
         "subs": [
@@ -4186,7 +4202,8 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-08T16:17:27.952Z"
+        "checkedAt": "2026-11-08T16:24:43.677Z",
+        "finalChecked": true
       },
       "83236": {
         "matchId": "83236",
