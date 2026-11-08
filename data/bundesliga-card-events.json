@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-08T16:07:04.866Z",
+  "updatedAt": "2026-11-08T16:13:18.338Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4122,6 +4122,22 @@
         ],
         "subs": [
           {
+            "minute": "84′",
+            "in": "Alessio Castro-Montes",
+            "out": "Sebastian Sebulonsen",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "home"
+          },
+          {
+            "minute": "84′",
+            "in": "Luca Waldschmidt",
+            "out": "Mikey Moore",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "home"
+          },
+          {
             "minute": "76′",
             "in": "Jonas Hofmann",
             "out": "Malik Tillman",
@@ -4154,7 +4170,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-08T16:07:04.700Z"
+        "checkedAt": "2026-11-08T16:13:18.174Z"
       },
       "83236": {
         "matchId": "83236",
