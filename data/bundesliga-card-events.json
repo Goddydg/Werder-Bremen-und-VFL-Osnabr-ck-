@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-07T22:59:55.225Z",
+  "updatedAt": "2026-11-08T15:56:19.738Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4047,6 +4047,73 @@
         ],
         "checkedAt": "2026-11-06T21:22:56.734Z",
         "finalChecked": true
+      },
+      "83235": {
+        "matchId": "83235",
+        "home": "1. FC Köln",
+        "away": "Bayer 04 Leverkusen",
+        "round": 9,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/9/1-fc-koeln-vs-bayer-04-leverkusen/liveticker/",
+        "cards": [
+          {
+            "minute": "57′",
+            "type": "yellow",
+            "player": "Joël Schmied",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "home"
+          },
+          {
+            "minute": "53′",
+            "type": "yellow",
+            "player": "Edmond Tapsoba",
+            "crestId": "00000B",
+            "team": "Bayer 04 Leverkusen",
+            "teamSide": "away"
+          },
+          {
+            "minute": "52′",
+            "type": "yellow",
+            "player": "Linton Maina",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "home"
+          },
+          {
+            "minute": "52′",
+            "type": "yellow",
+            "player": "Afonso Moreira",
+            "crestId": "00000B",
+            "team": "Bayer 04 Leverkusen",
+            "teamSide": "away"
+          },
+          {
+            "minute": "46′",
+            "type": "yellow",
+            "player": "Mikey Moore",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "home"
+          },
+          {
+            "minute": "40′",
+            "type": "yellow",
+            "player": "Tom Krauß",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "home"
+          },
+          {
+            "minute": "34′",
+            "type": "yellow",
+            "player": "Facundo Medina",
+            "crestId": "00000B",
+            "team": "Bayer 04 Leverkusen",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [],
+        "checkedAt": "2026-11-08T15:56:04.328Z"
       },
       "83236": {
         "matchId": "83236",
@@ -8519,6 +8586,17 @@
         "cards": [],
         "finalAttempts": 3
       },
+      "83678": {
+        "matchId": "83678",
+        "home": "1. FC Heidenheim 1846",
+        "away": "Hannover 96",
+        "round": 11,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/11/1-fc-heidenheim-1846-vs-hannover-96/liveticker/",
+        "cards": [],
+        "subs": [],
+        "checkedAt": "2026-11-08T15:56:05.680Z",
+        "finalChecked": true
+      },
       "83681": {
         "matchId": "83681",
         "home": "Hertha BSC",
@@ -8717,6 +8795,14 @@
         ],
         "checkedAt": "2026-11-07T15:45:34.303Z",
         "finalChecked": true
+      },
+      "83683": {
+        "matchId": "83683",
+        "home": "VfL Bochum",
+        "away": "Karlsruher SC",
+        "round": 11,
+        "cards": [],
+        "finalAttempts": 1
       },
       "83684": {
         "matchId": "83684",
@@ -8982,6 +9068,155 @@
           }
         ],
         "checkedAt": "2026-11-07T15:45:36.145Z",
+        "finalChecked": true
+      },
+      "83686": {
+        "matchId": "83686",
+        "home": "1. FC Magdeburg",
+        "away": "FC St. Pauli",
+        "round": 11,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/11/1-fc-magdeburg-vs-fc-st-pauli/liveticker/",
+        "cards": [
+          {
+            "minute": "90+6′",
+            "type": "yellow",
+            "player": "Sam Klein",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "away"
+          },
+          {
+            "minute": "82′",
+            "type": "red",
+            "player": "Louis Oppie",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "away"
+          },
+          {
+            "minute": "65′",
+            "type": "yellow",
+            "player": "Eric Smith",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "away"
+          },
+          {
+            "minute": "61′",
+            "type": "yellow",
+            "player": "Anselmo García MacNulty",
+            "crestId": "000N5D",
+            "team": "1. FC Magdeburg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "60′",
+            "type": "yellow",
+            "player": "Joel Chima Fujita",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "away"
+          },
+          {
+            "minute": "57′",
+            "type": "yellow",
+            "player": "Tobias Müller",
+            "crestId": "000N5D",
+            "team": "1. FC Magdeburg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "56′",
+            "type": "yellow",
+            "player": "David Nemeth",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "88′",
+            "in": "Ricky-Jade Jones",
+            "out": "Joel Chima Fujita",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "away"
+          },
+          {
+            "minute": "88′",
+            "in": "Richmond Tachie",
+            "out": "Emmanuel Iyoha",
+            "crestId": "000N5D",
+            "team": "1. FC Magdeburg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "88′",
+            "in": "Roko Šimić",
+            "out": "Mateusz Żukowski",
+            "crestId": "000N5D",
+            "team": "1. FC Magdeburg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "85′",
+            "in": "Taichi Hara",
+            "out": "Branimir Hrgota",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "away"
+          },
+          {
+            "minute": "78′",
+            "in": "Herbert Bockhorn",
+            "out": "Alexander Nollenberger",
+            "crestId": "000N5D",
+            "team": "1. FC Magdeburg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "61′",
+            "in": "Martijn Kaars",
+            "out": "Abdoulie Ceesay",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "away"
+          },
+          {
+            "minute": "61′",
+            "in": "Daniel Heber",
+            "out": "Tobias Müller",
+            "crestId": "000N5D",
+            "team": "1. FC Magdeburg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "45+3′",
+            "in": "Youssoupha Niang",
+            "out": "Mathias Rasmussen",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "away"
+          },
+          {
+            "minute": "45+3′",
+            "in": "Sam Klein",
+            "out": "Connor Metcalfe",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "away"
+          },
+          {
+            "minute": "45+3′",
+            "in": "Felipe Chávez",
+            "out": "Leon Mergner",
+            "crestId": "000N5D",
+            "team": "1. FC Magdeburg",
+            "teamSide": "home"
+          }
+        ],
+        "checkedAt": "2026-11-08T15:56:19.736Z",
         "finalChecked": true
       },
       "83687": {
