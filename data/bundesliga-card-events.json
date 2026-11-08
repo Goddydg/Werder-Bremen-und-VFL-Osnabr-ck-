@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-08T15:58:43.414Z",
+  "updatedAt": "2026-11-08T16:00:48.916Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4110,10 +4110,18 @@
             "crestId": "00000B",
             "team": "Bayer 04 Leverkusen",
             "teamSide": "away"
+          },
+          {
+            "minute": "70′",
+            "type": "yellow",
+            "player": "Borna Sosa",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "home"
           }
         ],
         "subs": [],
-        "checkedAt": "2026-11-08T15:58:35.090Z"
+        "checkedAt": "2026-11-08T16:00:48.755Z"
       },
       "83236": {
         "matchId": "83236",
