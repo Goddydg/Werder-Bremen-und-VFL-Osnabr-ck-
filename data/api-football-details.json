@@ -1,4 +1,8 @@
 {
   "leagues": {},
-  "updatedAt": "2026-10-15T15:57:01.860206+00:00"
+  "updatedAt": "2026-11-11T00:00:17.988045+00:00",
+  "errors": {
+    "bl1": "API-Fehler bei fixtures: {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'}",
+    "bl2": "API-Fehler bei fixtures: {'plan': 'Free plans do not have access to this season, try from 2022 to 2024.'}"
+  }
 }
