@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-08T20:28:15.488Z",
+  "updatedAt": "2026-11-20T21:21:34.515Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4430,6 +4430,42 @@
         ],
         "checkedAt": "2026-11-07T19:39:46.461Z",
         "finalChecked": true
+      },
+      "83237": {
+        "matchId": "83237",
+        "home": "FC Bayern München",
+        "away": "1. FC Köln",
+        "round": 10,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/10/fc-bayern-muenchen-vs-1-fc-koeln/liveticker/",
+        "cards": [
+          {
+            "minute": "56′",
+            "type": "yellow",
+            "player": "Paul Okon-Engstler",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "45+5′",
+            "in": "Tim Binder",
+            "out": "Michael Olise",
+            "crestId": "00000G",
+            "team": "FC Bayern München",
+            "teamSide": "home"
+          },
+          {
+            "minute": "20′",
+            "in": "Tom Bischof",
+            "out": "Harry Kane",
+            "crestId": "00000G",
+            "team": "FC Bayern München",
+            "teamSide": "home"
+          }
+        ],
+        "checkedAt": "2026-11-20T21:21:31.051Z"
       }
     },
     "bl2": {
@@ -9618,6 +9654,192 @@
           }
         ],
         "checkedAt": "2026-11-07T15:45:37.692Z",
+        "finalChecked": true
+      },
+      "83697": {
+        "matchId": "83697",
+        "home": "SV Darmstadt 98",
+        "away": "1. FC Heidenheim 1846",
+        "round": 12,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/12/sv-darmstadt-98-vs-1-fc-heidenheim-1846/liveticker/",
+        "cards": [
+          {
+            "minute": "90+2′",
+            "type": "yellow",
+            "player": "Oualid Mhamdi",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "away"
+          },
+          {
+            "minute": "79′",
+            "type": "yellow",
+            "player": "Mathias Honsak",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "away"
+          },
+          {
+            "minute": "55′",
+            "type": "yellow",
+            "player": "Aleksandar Vukotić",
+            "crestId": "000016",
+            "team": "SV Darmstadt 98",
+            "teamSide": "home"
+          },
+          {
+            "minute": "40′",
+            "type": "yellow",
+            "player": "Jan Schöppner",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "away"
+          },
+          {
+            "minute": "24′",
+            "type": "yellow",
+            "player": "Marko Zrilić",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "84′",
+            "in": "Christopher Lannert",
+            "out": "Matthias Bader",
+            "crestId": "000016",
+            "team": "SV Darmstadt 98",
+            "teamSide": "home"
+          },
+          {
+            "minute": "78′",
+            "in": "Merveille Papela",
+            "out": "Marco Richter",
+            "crestId": "000016",
+            "team": "SV Darmstadt 98",
+            "teamSide": "home"
+          },
+          {
+            "minute": "77′",
+            "in": "Maximilian Breunig",
+            "out": "Christian Conteh",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "away"
+          },
+          {
+            "minute": "71′",
+            "in": "Sirlord Conteh",
+            "out": "Jan Schöppner",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "away"
+          },
+          {
+            "minute": "71′",
+            "in": "Paul Hennrich",
+            "out": "Marcel Costly",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "away"
+          },
+          {
+            "minute": "70′",
+            "in": "Fynn-Luca Lakenmacher",
+            "out": "Lars Kehl",
+            "crestId": "000016",
+            "team": "SV Darmstadt 98",
+            "teamSide": "home"
+          },
+          {
+            "minute": "45+3′",
+            "in": "Leart Paçarada",
+            "out": "Marko Zrilić",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "away"
+          },
+          {
+            "minute": "45+3′",
+            "in": "Mathias Honsak",
+            "out": "Mikkel Kaufmann",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-11-20T21:21:33.434Z",
+        "finalChecked": true
+      },
+      "83705": {
+        "matchId": "83705",
+        "home": "DSC Arminia Bielefeld",
+        "away": "1. FC Magdeburg",
+        "round": 12,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/12/dsc-arminia-bielefeld-vs-1-fc-magdeburg/liveticker/",
+        "cards": [
+          {
+            "minute": "74′",
+            "type": "yellow",
+            "player": "Marius Wörl",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "home"
+          },
+          {
+            "minute": "46′",
+            "type": "yellow",
+            "player": "Alexander Nollenberger",
+            "crestId": "000N5D",
+            "team": "1. FC Magdeburg",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "70′",
+            "in": "Leon Mergner",
+            "out": "Moritz-Broni Kwarteng",
+            "crestId": "000N5D",
+            "team": "1. FC Magdeburg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "61′",
+            "in": "Henri Koudossou",
+            "out": "Monju Momuluh",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "home"
+          },
+          {
+            "minute": "61′",
+            "in": "Leo Oppermann",
+            "out": "Jonas Kersken",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "home"
+          },
+          {
+            "minute": "61′",
+            "in": "Isaiah Young",
+            "out": "Felix Hagmann",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "home"
+          },
+          {
+            "minute": "61′",
+            "in": "Benjamin Boakye",
+            "out": "Arne Sicker",
+            "crestId": "000015",
+            "team": "DSC Arminia Bielefeld",
+            "teamSide": "home"
+          }
+        ],
+        "checkedAt": "2026-11-20T21:21:34.514Z",
         "finalChecked": true
       }
     }
