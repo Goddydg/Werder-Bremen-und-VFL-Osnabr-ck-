@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T21:21:34.515Z",
+  "updatedAt": "2026-11-20T21:22:38.653Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4445,9 +4445,81 @@
             "crestId": "000008",
             "team": "1. FC Köln",
             "teamSide": "away"
+          },
+          {
+            "minute": "66′",
+            "type": "yellow",
+            "player": "Saïd El Mala",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "away"
+          },
+          {
+            "minute": "62′",
+            "type": "yellow",
+            "player": "Dayot Upamecano",
+            "crestId": "00000G",
+            "team": "FC Bayern München",
+            "teamSide": "home"
           }
         ],
         "subs": [
+          {
+            "minute": "87′",
+            "in": "Noah Codjo-Evora",
+            "out": "Aleksandar Pavlović",
+            "crestId": "00000G",
+            "team": "FC Bayern München",
+            "teamSide": "home"
+          },
+          {
+            "minute": "85′",
+            "in": "Alessio Castro-Montes",
+            "out": "Sebastian Sebulonsen",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "away"
+          },
+          {
+            "minute": "85′",
+            "in": "Reigan Heskey",
+            "out": "Saïd El Mala",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "away"
+          },
+          {
+            "minute": "77′",
+            "in": "Jan Thielmann",
+            "out": "Linton Maina",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "away"
+          },
+          {
+            "minute": "77′",
+            "in": "Ísak Jóhannesson",
+            "out": "Paul Okon-Engstler",
+            "crestId": "000008",
+            "team": "1. FC Köln",
+            "teamSide": "away"
+          },
+          {
+            "minute": "70′",
+            "in": "Minjae Kim",
+            "out": "Dayot Upamecano",
+            "crestId": "00000G",
+            "team": "FC Bayern München",
+            "teamSide": "home"
+          },
+          {
+            "minute": "70′",
+            "in": "Jamal Musiala",
+            "out": "Konrad Laimer",
+            "crestId": "00000G",
+            "team": "FC Bayern München",
+            "teamSide": "home"
+          },
           {
             "minute": "45+5′",
             "in": "Tim Binder",
@@ -4465,7 +4537,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-20T21:21:31.051Z"
+        "checkedAt": "2026-11-20T21:22:38.455Z"
       }
     },
     "bl2": {
