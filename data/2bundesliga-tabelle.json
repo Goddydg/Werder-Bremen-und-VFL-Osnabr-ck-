@@ -47,6 +47,24 @@
         {
           "position": 3,
           "team": {
+            "id": 78,
+            "name": "1. FC Magdeburg",
+            "shortName": "1. FC Magdeburg",
+            "tla": "",
+            "crest": ""
+          },
+          "playedGames": 12,
+          "won": 7,
+          "draw": 2,
+          "lost": 3,
+          "points": 23,
+          "goalsFor": 27,
+          "goalsAgainst": 15,
+          "goalDifference": 12
+        },
+        {
+          "position": 4,
+          "team": {
             "id": 76,
             "name": "1. FC Kaiserslautern",
             "shortName": "1. FC Kaiserslautern",
@@ -61,24 +79,6 @@
           "goalsFor": 10,
           "goalsAgainst": 7,
           "goalDifference": 3
-        },
-        {
-          "position": 4,
-          "team": {
-            "id": 78,
-            "name": "1. FC Magdeburg",
-            "shortName": "1. FC Magdeburg",
-            "tla": "",
-            "crest": ""
-          },
-          "playedGames": 11,
-          "won": 6,
-          "draw": 2,
-          "lost": 3,
-          "points": 20,
-          "goalsFor": 25,
-          "goalsAgainst": 14,
-          "goalDifference": 11
         },
         {
           "position": 5,
@@ -107,14 +107,14 @@
             "tla": "",
             "crest": ""
           },
-          "playedGames": 11,
+          "playedGames": 12,
           "won": 5,
           "draw": 2,
-          "lost": 4,
+          "lost": 5,
           "points": 17,
-          "goalsFor": 18,
-          "goalsAgainst": 16,
-          "goalDifference": 2
+          "goalsFor": 19,
+          "goalsAgainst": 18,
+          "goalDifference": 1
         },
         {
           "position": 7,
@@ -125,14 +125,14 @@
             "tla": "",
             "crest": ""
           },
-          "playedGames": 11,
+          "playedGames": 12,
           "won": 4,
           "draw": 4,
-          "lost": 3,
+          "lost": 4,
           "points": 16,
-          "goalsFor": 19,
-          "goalsAgainst": 20,
-          "goalDifference": -1
+          "goalsFor": 20,
+          "goalsAgainst": 23,
+          "goalDifference": -3
         },
         {
           "position": 8,
@@ -209,6 +209,24 @@
         {
           "position": 12,
           "team": {
+            "id": 118,
+            "name": "SV Darmstadt 98",
+            "shortName": "SV Darmstadt 98",
+            "tla": "",
+            "crest": ""
+          },
+          "playedGames": 12,
+          "won": 3,
+          "draw": 3,
+          "lost": 6,
+          "points": 12,
+          "goalsFor": 12,
+          "goalsAgainst": 22,
+          "goalDifference": -10
+        },
+        {
+          "position": 13,
+          "team": {
             "id": 93,
             "name": "Energie Cottbus",
             "shortName": "Energie Cottbus",
@@ -225,7 +243,7 @@
           "goalDifference": -2
         },
         {
-          "position": 13,
+          "position": 14,
           "team": {
             "id": 74,
             "name": "Eintracht Braunschweig",
@@ -243,7 +261,7 @@
           "goalDifference": -2
         },
         {
-          "position": 14,
+          "position": 15,
           "team": {
             "id": 36,
             "name": "VfL Osnabrück",
@@ -261,7 +279,7 @@
           "goalDifference": -4
         },
         {
-          "position": 15,
+          "position": 16,
           "team": {
             "id": 177,
             "name": "Dynamo Dresden",
@@ -279,7 +297,7 @@
           "goalDifference": -5
         },
         {
-          "position": 16,
+          "position": 17,
           "team": {
             "id": 105,
             "name": "Karlsruher SC",
@@ -295,24 +313,6 @@
           "goalsFor": 15,
           "goalsAgainst": 24,
           "goalDifference": -9
-        },
-        {
-          "position": 17,
-          "team": {
-            "id": 118,
-            "name": "SV Darmstadt 98",
-            "shortName": "SV Darmstadt 98",
-            "tla": "",
-            "crest": ""
-          },
-          "playedGames": 11,
-          "won": 2,
-          "draw": 3,
-          "lost": 6,
-          "points": 9,
-          "goalsFor": 9,
-          "goalsAgainst": 21,
-          "goalDifference": -12
         },
         {
           "position": 18,
