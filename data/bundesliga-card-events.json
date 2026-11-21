@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T17:29:24.969Z",
+  "updatedAt": "2026-11-21T17:30:28.693Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4861,6 +4861,16 @@
         ],
         "checkedAt": "2026-11-21T17:26:49.492Z",
         "finalChecked": true
+      },
+      "83244": {
+        "matchId": "83244",
+        "home": "FC Schalke 04",
+        "away": "VfB Stuttgart",
+        "round": 10,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/10/fc-schalke-04-vs-vfb-stuttgart/liveticker/",
+        "cards": [],
+        "subs": [],
+        "checkedAt": "2026-11-21T17:30:28.562Z"
       },
       "83245": {
         "matchId": "83245",
