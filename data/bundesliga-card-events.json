@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T21:24:45.226Z",
+  "updatedAt": "2026-11-21T17:27:01.415Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4547,6 +4547,328 @@
         ],
         "checkedAt": "2026-11-20T21:24:45.007Z",
         "finalChecked": true
+      },
+      "83238": {
+        "matchId": "83238",
+        "home": "Bayer 04 Leverkusen",
+        "away": "SC Paderborn 07",
+        "round": 10,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/10/bayer-04-leverkusen-vs-sc-paderborn-07/liveticker/",
+        "cards": [
+          {
+            "minute": "55′",
+            "type": "yellow",
+            "player": "Miguel Gutiérrez",
+            "crestId": "00000B",
+            "team": "Bayer 04 Leverkusen",
+            "teamSide": "home"
+          },
+          {
+            "minute": "54′",
+            "type": "yellow",
+            "player": "Ezequiel Fernández",
+            "crestId": "00000B",
+            "team": "Bayer 04 Leverkusen",
+            "teamSide": "home"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "78′",
+            "in": "Marvin Pieringer",
+            "out": "Stefano Marino",
+            "crestId": "00000L",
+            "team": "SC Paderborn 07",
+            "teamSide": "away"
+          },
+          {
+            "minute": "78′",
+            "in": "Tim Oermann",
+            "out": "Edmond Tapsoba",
+            "crestId": "00000B",
+            "team": "Bayer 04 Leverkusen",
+            "teamSide": "home"
+          },
+          {
+            "minute": "73′",
+            "in": "Jonah Sticker",
+            "out": "Tom Baack",
+            "crestId": "00000L",
+            "team": "SC Paderborn 07",
+            "teamSide": "away"
+          },
+          {
+            "minute": "67′",
+            "in": "Christian Kofane",
+            "out": "Patrik Schick",
+            "crestId": "00000B",
+            "team": "Bayer 04 Leverkusen",
+            "teamSide": "home"
+          },
+          {
+            "minute": "67′",
+            "in": "Jonas Hofmann",
+            "out": "Malik Tillman",
+            "crestId": "00000B",
+            "team": "Bayer 04 Leverkusen",
+            "teamSide": "home"
+          },
+          {
+            "minute": "60′",
+            "in": "Moussa Diaby",
+            "out": "Nathan Tella",
+            "crestId": "00000B",
+            "team": "Bayer 04 Leverkusen",
+            "teamSide": "home"
+          },
+          {
+            "minute": "60′",
+            "in": "Robert Andrich",
+            "out": "Ezequiel Fernández",
+            "crestId": "00000B",
+            "team": "Bayer 04 Leverkusen",
+            "teamSide": "home"
+          },
+          {
+            "minute": "57′",
+            "in": "Laurin Ulrich",
+            "out": "Ruben Müller",
+            "crestId": "00000L",
+            "team": "SC Paderborn 07",
+            "teamSide": "away"
+          },
+          {
+            "minute": "57′",
+            "in": "Deniz Zeitler",
+            "out": "Gabriel Vidović",
+            "crestId": "00000L",
+            "team": "SC Paderborn 07",
+            "teamSide": "away"
+          },
+          {
+            "minute": "45+2′",
+            "in": "Felix Götze",
+            "out": "Jano ter Horst",
+            "crestId": "00000L",
+            "team": "SC Paderborn 07",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-11-21T17:26:46.476Z",
+        "finalChecked": true
+      },
+      "83239": {
+        "matchId": "83239",
+        "home": "Eintracht Frankfurt",
+        "away": "TSG Hoffenheim",
+        "round": 10,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/10/eintracht-frankfurt-vs-tsg-hoffenheim/liveticker/",
+        "cards": [
+          {
+            "minute": "69′",
+            "type": "yellow",
+            "player": "Leon Avdullahu",
+            "crestId": "000002",
+            "team": "TSG Hoffenheim",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "84′",
+            "in": "Malik Pimpong",
+            "out": "Jonathan Burkardt",
+            "crestId": "00000F",
+            "team": "Eintracht Frankfurt",
+            "teamSide": "home"
+          },
+          {
+            "minute": "83′",
+            "in": "Mario Götze",
+            "out": "Younes Ebnoutalib",
+            "crestId": "00000F",
+            "team": "Eintracht Frankfurt",
+            "teamSide": "home"
+          },
+          {
+            "minute": "83′",
+            "in": "Nnamdi Collins",
+            "out": "Ansgar Knauff",
+            "crestId": "00000F",
+            "team": "Eintracht Frankfurt",
+            "teamSide": "home"
+          },
+          {
+            "minute": "80′",
+            "in": "Max Moerstedt",
+            "out": "Alexander Prass",
+            "crestId": "000002",
+            "team": "TSG Hoffenheim",
+            "teamSide": "away"
+          },
+          {
+            "minute": "72′",
+            "in": "Mats Rots",
+            "out": "Bernardo",
+            "crestId": "000002",
+            "team": "TSG Hoffenheim",
+            "teamSide": "away"
+          },
+          {
+            "minute": "72′",
+            "in": "Bambasé Conté",
+            "out": "Fisnik Asllani",
+            "crestId": "000002",
+            "team": "TSG Hoffenheim",
+            "teamSide": "away"
+          },
+          {
+            "minute": "64′",
+            "in": "Oscar Højlund",
+            "out": "Noëll Aséko",
+            "crestId": "00000F",
+            "team": "Eintracht Frankfurt",
+            "teamSide": "home"
+          },
+          {
+            "minute": "61′",
+            "in": "Adam Daghim",
+            "out": "Tim Lemperle",
+            "crestId": "000002",
+            "team": "TSG Hoffenheim",
+            "teamSide": "away"
+          },
+          {
+            "minute": "61′",
+            "in": "Adam Hložek",
+            "out": "Andrej Kramarić",
+            "crestId": "000002",
+            "team": "TSG Hoffenheim",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-11-21T17:26:47.523Z",
+        "finalChecked": true
+      },
+      "83241": {
+        "matchId": "83241",
+        "home": "1. FC Union Berlin",
+        "away": "RB Leipzig",
+        "round": 10,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/10/1-fc-union-berlin-vs-rb-leipzig/liveticker/",
+        "cards": [],
+        "subs": [],
+        "checkedAt": "2026-11-21T17:26:48.451Z",
+        "finalChecked": true
+      },
+      "83242": {
+        "matchId": "83242",
+        "home": "Borussia Mönchengladbach",
+        "away": "Borussia Dortmund",
+        "round": 10,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/10/borussia-moenchengladbach-vs-borussia-dortmund/liveticker/",
+        "cards": [
+          {
+            "minute": "71′",
+            "type": "yellow",
+            "player": "Kevin Diks",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "home"
+          },
+          {
+            "minute": "32′",
+            "type": "yellow",
+            "player": "Zento Uno",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "home"
+          },
+          {
+            "minute": "16′",
+            "type": "yellow",
+            "player": "Joane Gadou",
+            "crestId": "000007",
+            "team": "Borussia Dortmund",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "74′",
+            "in": "Franck Honorat",
+            "out": "Jens Castrop",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "home"
+          },
+          {
+            "minute": "74′",
+            "in": "Isac Lidberg",
+            "out": "Shuto Machino",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "home"
+          },
+          {
+            "minute": "74′",
+            "in": "David Herold",
+            "out": "Robin Hack",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "home"
+          },
+          {
+            "minute": "73′",
+            "in": "Mathis Albert",
+            "out": "Fabio Silva",
+            "crestId": "000007",
+            "team": "Borussia Dortmund",
+            "teamSide": "away"
+          },
+          {
+            "minute": "72′",
+            "in": "Marcel Sabitzer",
+            "out": "Konstantinos Karetsas",
+            "crestId": "000007",
+            "team": "Borussia Dortmund",
+            "teamSide": "away"
+          },
+          {
+            "minute": "60′",
+            "in": "Joey Veerman",
+            "out": "Jobe Bellingham",
+            "crestId": "000007",
+            "team": "Borussia Dortmund",
+            "teamSide": "away"
+          },
+          {
+            "minute": "45+1′",
+            "in": "Waldemar Anton",
+            "out": "Joane Gadou",
+            "crestId": "000007",
+            "team": "Borussia Dortmund",
+            "teamSide": "away"
+          },
+          {
+            "minute": "45+1′",
+            "in": "Mathieu Nguefack",
+            "out": "Zento Uno",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "home"
+          }
+        ],
+        "checkedAt": "2026-11-21T17:26:49.492Z",
+        "finalChecked": true
+      },
+      "83245": {
+        "matchId": "83245",
+        "home": "SV 07 Elversberg",
+        "away": "SC Freiburg",
+        "round": 10,
+        "cards": [],
+        "finalAttempts": 1
       }
     },
     "bl2": {
@@ -9735,6 +10057,157 @@
           }
         ],
         "checkedAt": "2026-11-07T15:45:37.692Z",
+        "finalChecked": true
+      },
+      "83689": {
+        "matchId": "83689",
+        "home": "VfL Wolfsburg",
+        "away": "Holstein Kiel",
+        "round": 12,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/12/vfl-wolfsburg-vs-holstein-kiel/liveticker/",
+        "cards": [
+          {
+            "minute": "80′",
+            "type": "yellow",
+            "player": "Harres begeht ein Stürmerfoul und beschwert si",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "away"
+          },
+          {
+            "minute": "80′",
+            "type": "yellow",
+            "player": "Phil Harres",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "away"
+          },
+          {
+            "minute": "55′",
+            "type": "yellow",
+            "player": "Nach einem harten Einsteigen von Balzi gegen A"
+          },
+          {
+            "minute": "55′",
+            "type": "yellow",
+            "player": "Guillermo Balzi",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "away"
+          },
+          {
+            "minute": "40′",
+            "type": "yellow",
+            "player": "Nach Ballverlust der Kieler unterbindet Meffer"
+          },
+          {
+            "minute": "40′",
+            "type": "yellow",
+            "player": "Jonas Meffert",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "away"
+          },
+          {
+            "minute": "32′",
+            "type": "yellow",
+            "player": "Souza geht von hinten in die Beine eines Gegen",
+            "crestId": "000003",
+            "team": "VfL Wolfsburg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "32′",
+            "type": "yellow",
+            "player": "Vinicius Souza",
+            "crestId": "000003",
+            "team": "VfL Wolfsburg",
+            "teamSide": "home"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "85′",
+            "in": "Aaron Zehnter",
+            "out": "Kento Shiogai",
+            "crestId": "000003",
+            "team": "VfL Wolfsburg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "85′",
+            "in": "Ikem Ugoh",
+            "out": "Kasper Davidsen",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "away"
+          },
+          {
+            "minute": "73′",
+            "in": "Giorgi Kvilitaia",
+            "out": "Guillermo Balzi",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "away"
+          },
+          {
+            "minute": "73′",
+            "in": "Lasse Rosenboom",
+            "out": "John Tolkin",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "away"
+          },
+          {
+            "minute": "73′",
+            "in": "Steven Skrzybski",
+            "out": "Gyan de Regt",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "away"
+          },
+          {
+            "minute": "65′",
+            "in": "Kento Shiogai",
+            "out": "Robert Glatzel",
+            "crestId": "000003",
+            "team": "VfL Wolfsburg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "64′",
+            "in": "Yannick Gerhardt",
+            "out": "Bence Dárdai",
+            "crestId": "000003",
+            "team": "VfL Wolfsburg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "64′",
+            "in": "Alessio Besio",
+            "out": "Alexander Bernhardsson",
+            "crestId": "000003",
+            "team": "VfL Wolfsburg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "64′",
+            "in": "Fraser Hornby",
+            "out": "Muhammed Damar",
+            "crestId": "000003",
+            "team": "VfL Wolfsburg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "59′",
+            "in": "David Zec",
+            "out": "Ivan Nekić",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-11-21T17:27:01.413Z",
         "finalChecked": true
       },
       "83697": {
