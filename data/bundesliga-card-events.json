@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T19:21:54.852Z",
+  "updatedAt": "2026-11-21T21:26:25.047Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -10302,6 +10302,14 @@
         ],
         "checkedAt": "2026-11-21T17:27:01.413Z",
         "finalChecked": true
+      },
+      "83691": {
+        "matchId": "83691",
+        "home": "FC St. Pauli",
+        "away": "VfL Bochum",
+        "round": 12,
+        "cards": [],
+        "finalAttempts": 1
       },
       "83694": {
         "matchId": "83694",
