@@ -35,14 +35,14 @@
             "tla": "",
             "crest": ""
           },
-          "playedGames": 11,
+          "playedGames": 12,
           "won": 7,
           "draw": 3,
-          "lost": 1,
+          "lost": 2,
           "points": 24,
-          "goalsFor": 26,
-          "goalsAgainst": 13,
-          "goalDifference": 13
+          "goalsFor": 27,
+          "goalsAgainst": 15,
+          "goalDifference": 12
         },
         {
           "position": 3,
@@ -65,6 +65,24 @@
         {
           "position": 4,
           "team": {
+            "id": 131,
+            "name": "VfL Wolfsburg",
+            "shortName": "VfL Wolfsburg",
+            "tla": "",
+            "crest": ""
+          },
+          "playedGames": 12,
+          "won": 6,
+          "draw": 4,
+          "lost": 2,
+          "points": 22,
+          "goalsFor": 29,
+          "goalsAgainst": 16,
+          "goalDifference": 13
+        },
+        {
+          "position": 5,
+          "team": {
             "id": 76,
             "name": "1. FC Kaiserslautern",
             "shortName": "1. FC Kaiserslautern",
@@ -79,24 +97,6 @@
           "goalsFor": 10,
           "goalsAgainst": 7,
           "goalDifference": 3
-        },
-        {
-          "position": 5,
-          "team": {
-            "id": 131,
-            "name": "VfL Wolfsburg",
-            "shortName": "VfL Wolfsburg",
-            "tla": "",
-            "crest": ""
-          },
-          "playedGames": 11,
-          "won": 5,
-          "draw": 4,
-          "lost": 2,
-          "points": 19,
-          "goalsFor": 26,
-          "goalsAgainst": 16,
-          "goalDifference": 10
         },
         {
           "position": 6,
@@ -137,6 +137,42 @@
         {
           "position": 8,
           "team": {
+            "id": 55,
+            "name": "Hannover 96",
+            "shortName": "Hannover 96",
+            "tla": "",
+            "crest": ""
+          },
+          "playedGames": 12,
+          "won": 4,
+          "draw": 3,
+          "lost": 5,
+          "points": 15,
+          "goalsFor": 14,
+          "goalsAgainst": 19,
+          "goalDifference": -5
+        },
+        {
+          "position": 9,
+          "team": {
+            "id": 74,
+            "name": "Eintracht Braunschweig",
+            "shortName": "Eintracht Braunschweig",
+            "tla": "",
+            "crest": ""
+          },
+          "playedGames": 12,
+          "won": 4,
+          "draw": 2,
+          "lost": 6,
+          "points": 14,
+          "goalsFor": 18,
+          "goalsAgainst": 19,
+          "goalDifference": -1
+        },
+        {
+          "position": 10,
+          "team": {
             "id": 129,
             "name": "VfL Bochum",
             "shortName": "VfL Bochum",
@@ -153,7 +189,7 @@
           "goalDifference": -2
         },
         {
-          "position": 9,
+          "position": 11,
           "team": {
             "id": 98,
             "name": "FC St. Pauli",
@@ -171,7 +207,7 @@
           "goalDifference": -3
         },
         {
-          "position": 10,
+          "position": 12,
           "team": {
             "id": 115,
             "name": "SpVgg Greuther Fürth",
@@ -179,35 +215,17 @@
             "tla": "",
             "crest": ""
           },
-          "playedGames": 11,
+          "playedGames": 12,
           "won": 3,
           "draw": 3,
-          "lost": 5,
+          "lost": 6,
           "points": 12,
-          "goalsFor": 13,
-          "goalsAgainst": 19,
-          "goalDifference": -6
+          "goalsFor": 14,
+          "goalsAgainst": 21,
+          "goalDifference": -7
         },
         {
-          "position": 11,
-          "team": {
-            "id": 55,
-            "name": "Hannover 96",
-            "shortName": "Hannover 96",
-            "tla": "",
-            "crest": ""
-          },
-          "playedGames": 11,
-          "won": 3,
-          "draw": 3,
-          "lost": 5,
-          "points": 12,
-          "goalsFor": 12,
-          "goalsAgainst": 18,
-          "goalDifference": -6
-        },
-        {
-          "position": 12,
+          "position": 13,
           "team": {
             "id": 118,
             "name": "SV Darmstadt 98",
@@ -225,7 +243,7 @@
           "goalDifference": -10
         },
         {
-          "position": 13,
+          "position": 14,
           "team": {
             "id": 93,
             "name": "Energie Cottbus",
@@ -240,24 +258,6 @@
           "points": 11,
           "goalsFor": 18,
           "goalsAgainst": 20,
-          "goalDifference": -2
-        },
-        {
-          "position": 14,
-          "team": {
-            "id": 74,
-            "name": "Eintracht Braunschweig",
-            "shortName": "Eintracht Braunschweig",
-            "tla": "",
-            "crest": ""
-          },
-          "playedGames": 11,
-          "won": 3,
-          "draw": 2,
-          "lost": 6,
-          "points": 11,
-          "goalsFor": 16,
-          "goalsAgainst": 18,
           "goalDifference": -2
         },
         {
@@ -323,14 +323,14 @@
             "tla": "",
             "crest": ""
           },
-          "playedGames": 11,
+          "playedGames": 12,
           "won": 1,
           "draw": 5,
-          "lost": 5,
+          "lost": 6,
           "points": 8,
           "goalsFor": 11,
-          "goalsAgainst": 14,
-          "goalDifference": -3
+          "goalsAgainst": 17,
+          "goalDifference": -6
         }
       ]
     }
