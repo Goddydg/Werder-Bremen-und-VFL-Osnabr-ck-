@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T18:55:00.109Z",
+  "updatedAt": "2026-11-21T19:00:11.133Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4880,6 +4880,14 @@
         ],
         "subs": [
           {
+            "minute": "71′",
+            "in": "Nikolas Nartey",
+            "out": "Yanik Spalt",
+            "crestId": "00000D",
+            "team": "VfB Stuttgart",
+            "teamSide": "away"
+          },
+          {
             "minute": "66′",
             "in": "Moussa Sylla",
             "out": "Hee Chan Hwang",
@@ -4904,7 +4912,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-21T18:54:59.964Z"
+        "checkedAt": "2026-11-21T19:00:11.001Z"
       },
       "83245": {
         "matchId": "83245",
