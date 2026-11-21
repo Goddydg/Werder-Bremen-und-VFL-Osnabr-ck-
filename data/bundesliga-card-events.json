@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T17:30:28.693Z",
+  "updatedAt": "2026-11-21T18:48:45.531Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4869,8 +4869,17 @@
         "round": 10,
         "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/10/fc-schalke-04-vs-vfb-stuttgart/liveticker/",
         "cards": [],
-        "subs": [],
-        "checkedAt": "2026-11-21T17:30:28.562Z"
+        "subs": [
+          {
+            "minute": "60′",
+            "in": "Bilal El Khannouss",
+            "out": "Jamie Leweling",
+            "crestId": "00000D",
+            "team": "VfB Stuttgart",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-11-21T18:48:45.399Z"
       },
       "83245": {
         "matchId": "83245",
