@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T18:48:45.531Z",
+  "updatedAt": "2026-11-21T18:49:48.810Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4872,6 +4872,14 @@
         "subs": [
           {
             "minute": "60′",
+            "in": "Dženan Pejčinović",
+            "out": "Ermedin Demirović",
+            "crestId": "00000D",
+            "team": "VfB Stuttgart",
+            "teamSide": "away"
+          },
+          {
+            "minute": "60′",
             "in": "Bilal El Khannouss",
             "out": "Jamie Leweling",
             "crestId": "00000D",
@@ -4879,7 +4887,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-21T18:48:45.399Z"
+        "checkedAt": "2026-11-21T18:49:48.678Z"
       },
       "83245": {
         "matchId": "83245",
