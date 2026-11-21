@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T19:10:32.040Z",
+  "updatedAt": "2026-11-21T19:15:42.812Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4880,6 +4880,22 @@
         ],
         "subs": [
           {
+            "minute": "86′",
+            "in": "Edin Džeko",
+            "out": "Kenan Karaman",
+            "crestId": "000009",
+            "team": "FC Schalke 04",
+            "teamSide": "home"
+          },
+          {
+            "minute": "86′",
+            "in": "Satoshi Tanaka",
+            "out": "Adil Aouchiche",
+            "crestId": "000009",
+            "team": "FC Schalke 04",
+            "teamSide": "home"
+          },
+          {
             "minute": "81′",
             "in": "Mertcan Ayhan",
             "out": "Junior Adamu",
@@ -4936,7 +4952,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-21T19:10:31.906Z"
+        "checkedAt": "2026-11-21T19:15:42.678Z"
       },
       "83245": {
         "matchId": "83245",
