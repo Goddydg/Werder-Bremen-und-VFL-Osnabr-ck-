@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T19:00:11.133Z",
+  "updatedAt": "2026-11-21T19:09:28.280Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4880,6 +4880,22 @@
         ],
         "subs": [
           {
+            "minute": "80′",
+            "in": "Josha Vagnoman",
+            "out": "Finn Jeltsch",
+            "crestId": "00000D",
+            "team": "VfB Stuttgart",
+            "teamSide": "away"
+          },
+          {
+            "minute": "80′",
+            "in": "Tiago Tomás",
+            "out": "Deniz Undav",
+            "crestId": "00000D",
+            "team": "VfB Stuttgart",
+            "teamSide": "away"
+          },
+          {
             "minute": "71′",
             "in": "Nikolas Nartey",
             "out": "Yanik Spalt",
@@ -4912,7 +4928,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-21T19:00:11.001Z"
+        "checkedAt": "2026-11-21T19:09:28.146Z"
       },
       "83245": {
         "matchId": "83245",
