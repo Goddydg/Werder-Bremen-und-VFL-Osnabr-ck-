@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T19:09:28.280Z",
+  "updatedAt": "2026-11-21T19:10:32.040Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4880,6 +4880,14 @@
         ],
         "subs": [
           {
+            "minute": "81′",
+            "in": "Mertcan Ayhan",
+            "out": "Junior Adamu",
+            "crestId": "000009",
+            "team": "FC Schalke 04",
+            "teamSide": "home"
+          },
+          {
             "minute": "80′",
             "in": "Josha Vagnoman",
             "out": "Finn Jeltsch",
@@ -4928,7 +4936,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-21T19:09:28.146Z"
+        "checkedAt": "2026-11-21T19:10:31.906Z"
       },
       "83245": {
         "matchId": "83245",
