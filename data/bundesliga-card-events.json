@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T18:49:48.810Z",
+  "updatedAt": "2026-11-21T18:55:00.109Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4868,8 +4868,25 @@
         "away": "VfB Stuttgart",
         "round": 10,
         "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/10/fc-schalke-04-vs-vfb-stuttgart/liveticker/",
-        "cards": [],
+        "cards": [
+          {
+            "minute": "66′",
+            "type": "yellow",
+            "player": "Maximilian Mittelstädt",
+            "crestId": "00000D",
+            "team": "VfB Stuttgart",
+            "teamSide": "away"
+          }
+        ],
         "subs": [
+          {
+            "minute": "66′",
+            "in": "Moussa Sylla",
+            "out": "Hee Chan Hwang",
+            "crestId": "000009",
+            "team": "FC Schalke 04",
+            "teamSide": "home"
+          },
           {
             "minute": "60′",
             "in": "Dženan Pejčinović",
@@ -4887,7 +4904,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-21T18:49:48.678Z"
+        "checkedAt": "2026-11-21T18:54:59.964Z"
       },
       "83245": {
         "matchId": "83245",
