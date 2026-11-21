@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T17:27:01.415Z",
+  "updatedAt": "2026-11-21T17:28:14.305Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4868,7 +4868,7 @@
         "away": "SC Freiburg",
         "round": 10,
         "cards": [],
-        "finalAttempts": 1
+        "finalAttempts": 2
       }
     },
     "bl2": {
@@ -10210,6 +10210,43 @@
         "checkedAt": "2026-11-21T17:27:01.413Z",
         "finalChecked": true
       },
+      "83694": {
+        "matchId": "83694",
+        "home": "Hannover 96",
+        "away": "SpVgg Greuther Fürth",
+        "round": 12,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/12/hannover-96-vs-spvgg-greuther-fuerth/liveticker/",
+        "cards": [
+          {
+            "minute": "45′",
+            "type": "yellow",
+            "player": "Dennis Srbeny",
+            "crestId": "00000W",
+            "team": "SpVgg Greuther Fürth",
+            "teamSide": "away"
+          },
+          {
+            "minute": "45′",
+            "type": "yellow",
+            "player": "Jean Hugonet",
+            "crestId": "000001",
+            "team": "Hannover 96",
+            "teamSide": "home"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "8′",
+            "in": "Stefán Teitur Thórdarson",
+            "out": "Benjamin Källman",
+            "crestId": "000001",
+            "team": "Hannover 96",
+            "teamSide": "home"
+          }
+        ],
+        "checkedAt": "2026-11-21T17:28:13.275Z",
+        "finalChecked": true
+      },
       "83697": {
         "matchId": "83697",
         "home": "SV Darmstadt 98",
@@ -10325,6 +10362,131 @@
           }
         ],
         "checkedAt": "2026-11-20T21:21:33.434Z",
+        "finalChecked": true
+      },
+      "83699": {
+        "matchId": "83699",
+        "home": "1. FC Nürnberg",
+        "away": "Eintracht Braunschweig",
+        "round": 12,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/12/1-fc-nuernberg-vs-eintracht-braunschweig/liveticker/",
+        "cards": [
+          {
+            "minute": "90+2′",
+            "type": "yellow",
+            "player": "Tim Janisch",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "90+2′",
+            "type": "yellow",
+            "player": "Maximilian Entrup",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "away"
+          },
+          {
+            "minute": "71′",
+            "type": "yellow",
+            "player": "Florian Flick",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "away"
+          },
+          {
+            "minute": "49′",
+            "type": "yellow",
+            "player": "Adam Markhiyev",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "38′",
+            "type": "yellow",
+            "player": "Lukas Frenkert",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "88′",
+            "in": "Marko Soldić",
+            "out": "Javier Fernández",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "84′",
+            "in": "Andrea Ceresoli",
+            "out": "William Bøving",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "84′",
+            "in": "Mikayil Faye",
+            "out": "Styopa Mkrtchyan",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "72′",
+            "in": "Junior Zé",
+            "out": "Aaron Opoku",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "away"
+          },
+          {
+            "minute": "72′",
+            "in": "Noah Katterbach",
+            "out": "Andi Hoti",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "away"
+          },
+          {
+            "minute": "71′",
+            "in": "Rayan Ghrieb",
+            "out": "Rafael Lubach",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "71′",
+            "in": "Sigurd Haugen",
+            "out": "Piet Scobel",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "68′",
+            "in": "Maximilian Entrup",
+            "out": "Jan Urbich",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "away"
+          },
+          {
+            "minute": "45+4′",
+            "in": "Andi Hoti",
+            "out": "Lukas Frenkert",
+            "crestId": "00000X",
+            "team": "Eintracht Braunschweig",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-11-21T17:28:14.302Z",
         "finalChecked": true
       },
       "83705": {
