@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T21:26:25.047Z",
+  "updatedAt": "2026-11-21T22:17:10.361Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -10309,7 +10309,7 @@
         "away": "VfL Bochum",
         "round": 12,
         "cards": [],
-        "finalAttempts": 1
+        "finalAttempts": 2
       },
       "83694": {
         "matchId": "83694",
