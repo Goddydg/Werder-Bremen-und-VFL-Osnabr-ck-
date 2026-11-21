@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T17:28:14.305Z",
+  "updatedAt": "2026-11-21T17:29:24.969Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4868,7 +4868,7 @@
         "away": "SC Freiburg",
         "round": 10,
         "cards": [],
-        "finalAttempts": 2
+        "finalAttempts": 3
       }
     },
     "bl2": {
