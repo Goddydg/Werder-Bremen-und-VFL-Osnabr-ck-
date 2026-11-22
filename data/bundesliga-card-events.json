@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22T18:09:12.794Z",
+  "updatedAt": "2026-11-22T18:12:20.790Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5019,6 +5019,14 @@
             "crestId": "00000E",
             "team": "SV Werder Bremen",
             "teamSide": "home"
+          },
+          {
+            "minute": "74′",
+            "type": "yellow",
+            "player": "Nicolás Capaldo",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "away"
           }
         ],
         "subs": [
@@ -5047,7 +5055,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-22T18:09:12.625Z"
+        "checkedAt": "2026-11-22T18:12:20.626Z"
       },
       "83244": {
         "matchId": "83244",
