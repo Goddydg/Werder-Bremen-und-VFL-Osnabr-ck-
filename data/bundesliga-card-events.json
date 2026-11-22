@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22T18:18:37.457Z",
+  "updatedAt": "2026-11-22T18:21:45.533Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5027,6 +5027,14 @@
             "crestId": "00000C",
             "team": "Hamburger SV",
             "teamSide": "away"
+          },
+          {
+            "minute": "84′",
+            "type": "yellow",
+            "player": "Albert Grønbæk",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "away"
           }
         ],
         "subs": [
@@ -5048,16 +5056,16 @@
           },
           {
             "minute": "72′",
-            "in": "Terem Moffi",
-            "out": "Patson Daka",
+            "in": "Fábio Vieira",
+            "out": "Kofi Amoako",
             "crestId": "00000C",
             "team": "Hamburger SV",
             "teamSide": "away"
           },
           {
-            "minute": "71′",
-            "in": "Fábio Vieira",
-            "out": "Kofi Amoako",
+            "minute": "72′",
+            "in": "Terem Moffi",
+            "out": "Patson Daka",
             "crestId": "00000C",
             "team": "Hamburger SV",
             "teamSide": "away"
@@ -5079,7 +5087,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-22T18:18:37.297Z"
+        "checkedAt": "2026-11-22T18:21:45.370Z"
       },
       "83244": {
         "matchId": "83244",
