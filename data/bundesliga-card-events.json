@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22T18:15:29.260Z",
+  "updatedAt": "2026-11-22T18:18:37.457Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5047,6 +5047,14 @@
             "teamSide": "home"
           },
           {
+            "minute": "72′",
+            "in": "Terem Moffi",
+            "out": "Patson Daka",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "away"
+          },
+          {
             "minute": "71′",
             "in": "Fábio Vieira",
             "out": "Kofi Amoako",
@@ -5071,7 +5079,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-22T18:15:29.098Z"
+        "checkedAt": "2026-11-22T18:18:37.297Z"
       },
       "83244": {
         "matchId": "83244",
