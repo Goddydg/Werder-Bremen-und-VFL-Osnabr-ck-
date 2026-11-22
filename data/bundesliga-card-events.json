@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22T17:38:02.705Z",
+  "updatedAt": "2026-11-22T17:47:24.540Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5011,6 +5011,14 @@
             "crestId": "00000E",
             "team": "SV Werder Bremen",
             "teamSide": "home"
+          },
+          {
+            "minute": "50′",
+            "type": "yellow",
+            "player": "Olivier Deman",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "home"
           }
         ],
         "subs": [
@@ -5023,7 +5031,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-22T17:38:02.543Z"
+        "checkedAt": "2026-11-22T17:47:24.381Z"
       },
       "83244": {
         "matchId": "83244",
