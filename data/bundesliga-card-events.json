@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22T17:47:24.540Z",
+  "updatedAt": "2026-11-22T18:09:12.794Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5023,6 +5023,22 @@
         ],
         "subs": [
           {
+            "minute": "71′",
+            "in": "Fábio Vieira",
+            "out": "Kofi Amoako",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "away"
+          },
+          {
+            "minute": "71′",
+            "in": "Otto Stange",
+            "out": "Alexander Røssing-Lelesiit",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "away"
+          },
+          {
             "minute": "19′",
             "in": "Kofi Amoako",
             "out": "Miro Muheim",
@@ -5031,7 +5047,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-22T17:47:24.381Z"
+        "checkedAt": "2026-11-22T18:09:12.625Z"
       },
       "83244": {
         "matchId": "83244",
