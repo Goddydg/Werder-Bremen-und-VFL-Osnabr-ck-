@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T22:18:21.099Z",
+  "updatedAt": "2026-11-22T17:36:59.070Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4750,6 +4750,125 @@
         "checkedAt": "2026-11-21T17:26:47.523Z",
         "finalChecked": true
       },
+      "83240": {
+        "matchId": "83240",
+        "home": "FC Augsburg",
+        "away": "1. FSV Mainz 05",
+        "round": 10,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/10/fc-augsburg-vs-1-fsv-mainz-05/liveticker/",
+        "cards": [
+          {
+            "minute": "76′",
+            "type": "yellow",
+            "player": "Silvan Widmer",
+            "crestId": "000006",
+            "team": "1. FSV Mainz 05",
+            "teamSide": "away"
+          },
+          {
+            "minute": "75′",
+            "type": "yellow",
+            "player": "Stefan Posch",
+            "crestId": "000006",
+            "team": "1. FSV Mainz 05",
+            "teamSide": "away"
+          },
+          {
+            "minute": "",
+            "type": "red",
+            "player": "Es bleibt bei der Entscheidung."
+          },
+          {
+            "minute": "",
+            "type": "red",
+            "player": "Überprüfung Foulspiel"
+          },
+          {
+            "minute": "44′",
+            "type": "yellow",
+            "player": "Robin Fellhauer",
+            "crestId": "000010",
+            "team": "FC Augsburg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "43′",
+            "type": "red",
+            "player": "Manuel Baum",
+            "crestId": "000010",
+            "team": "FC Augsburg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "43′",
+            "type": "yellow",
+            "player": "Nadiem Amiri",
+            "crestId": "000006",
+            "team": "1. FSV Mainz 05",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "81′",
+            "in": "Eric Martel",
+            "out": "Danny da Costa",
+            "crestId": "000006",
+            "team": "1. FSV Mainz 05",
+            "teamSide": "away"
+          },
+          {
+            "minute": "73′",
+            "in": "Youngwoo Seol",
+            "out": "Marius Wolf",
+            "crestId": "000010",
+            "team": "FC Augsburg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "73′",
+            "in": "Uchenna Ogundu",
+            "out": "Michael Gregoritsch",
+            "crestId": "000010",
+            "team": "FC Augsburg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "68′",
+            "in": "Benedict Hollerbach",
+            "out": "Sheraldo Becker",
+            "crestId": "000006",
+            "team": "1. FSV Mainz 05",
+            "teamSide": "away"
+          },
+          {
+            "minute": "68′",
+            "in": "Silvan Widmer",
+            "out": "Anthony Caci",
+            "crestId": "000006",
+            "team": "1. FSV Mainz 05",
+            "teamSide": "away"
+          },
+          {
+            "minute": "64′",
+            "in": "Arijon Ibrahimović",
+            "out": "Alexis Claude-Maurice",
+            "crestId": "000010",
+            "team": "FC Augsburg",
+            "teamSide": "home"
+          },
+          {
+            "minute": "45+6′",
+            "in": "Ransford-Yeboah Königsdörffer",
+            "out": "Paul Nebel",
+            "crestId": "000006",
+            "team": "1. FSV Mainz 05",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-11-22T17:36:47.770Z",
+        "finalChecked": true
+      },
       "83241": {
         "matchId": "83241",
         "home": "1. FC Union Berlin",
@@ -4861,6 +4980,16 @@
         ],
         "checkedAt": "2026-11-21T17:26:49.492Z",
         "finalChecked": true
+      },
+      "83243": {
+        "matchId": "83243",
+        "home": "SV Werder Bremen",
+        "away": "Hamburger SV",
+        "round": 10,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/10/sv-werder-bremen-vs-hamburger-sv/liveticker/",
+        "cards": [],
+        "subs": [],
+        "checkedAt": "2026-11-22T17:36:48.933Z"
       },
       "83244": {
         "matchId": "83244",
@@ -10465,6 +10594,91 @@
         "checkedAt": "2026-11-20T21:21:33.434Z",
         "finalChecked": true
       },
+      "83698": {
+        "matchId": "83698",
+        "home": "1. FC Kaiserslautern",
+        "away": "Dynamo Dresden",
+        "round": 12,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/12/1-fc-kaiserslautern-vs-sg-dynamo-dresden/liveticker/",
+        "cards": [
+          {
+            "minute": "30′",
+            "type": "yellow",
+            "player": "Paul Joly",
+            "crestId": "00000I",
+            "team": "1. FC Kaiserslautern",
+            "teamSide": "home"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "88′",
+            "in": "Simon Asta",
+            "out": "Paul Joly",
+            "crestId": "00000I",
+            "team": "1. FC Kaiserslautern",
+            "teamSide": "home"
+          },
+          {
+            "minute": "82′",
+            "in": "Kaan İnanoğlu",
+            "out": "Niklas Hauptmann",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "away"
+          },
+          {
+            "minute": "82′",
+            "in": "Lukas Boeder",
+            "out": "Tobias Raschl",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "away"
+          },
+          {
+            "minute": "76′",
+            "in": "Christoph Daferner",
+            "out": "Vincent Vermeij",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "away"
+          },
+          {
+            "minute": "76′",
+            "in": "Kennedy Okpala",
+            "out": "Ben Bobzien",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "away"
+          },
+          {
+            "minute": "71′",
+            "in": "Ivan Prtajin",
+            "out": "Maxwell Gyamfi",
+            "crestId": "00000I",
+            "team": "1. FC Kaiserslautern",
+            "teamSide": "home"
+          },
+          {
+            "minute": "63′",
+            "in": "Miloš Luković",
+            "out": "Naatan Skyttä",
+            "crestId": "00000I",
+            "team": "1. FC Kaiserslautern",
+            "teamSide": "home"
+          },
+          {
+            "minute": "45′",
+            "in": "Ahmet Muhamedbegović",
+            "out": "Nicolai Rapp",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-11-22T17:36:50.752Z",
+        "finalChecked": true
+      },
       "83699": {
         "matchId": "83699",
         "home": "1. FC Nürnberg",
@@ -10590,6 +10804,107 @@
         "checkedAt": "2026-11-21T17:28:14.302Z",
         "finalChecked": true
       },
+      "83702": {
+        "matchId": "83702",
+        "home": "Karlsruher SC",
+        "away": "VfL Osnabrück",
+        "round": 12,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/12/karlsruher-sc-vs-vfl-osnabrueck/liveticker/",
+        "cards": [
+          {
+            "minute": "90+1′",
+            "type": "yellow",
+            "player": "Joel Abu Hanna",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "away"
+          },
+          {
+            "minute": "62′",
+            "type": "yellow",
+            "player": "Adrian Beck",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "90+1′",
+            "in": "Konrad Faber",
+            "out": "Patrick Kammerbauer",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "away"
+          },
+          {
+            "minute": "90+1′",
+            "in": "Joel Abu Hanna",
+            "out": "Ismail Badjie",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "away"
+          },
+          {
+            "minute": "82′",
+            "in": "Noel Eichinger",
+            "out": "Kevin Wiethaup",
+            "crestId": "00000T",
+            "team": "Karlsruher SC",
+            "teamSide": "home"
+          },
+          {
+            "minute": "82′",
+            "in": "Héliton",
+            "out": "Marcel Franke",
+            "crestId": "00000T",
+            "team": "Karlsruher SC",
+            "teamSide": "home"
+          },
+          {
+            "minute": "72′",
+            "in": "Sebastian Jung",
+            "out": "Rafael Pinto Pedrosa",
+            "crestId": "00000T",
+            "team": "Karlsruher SC",
+            "teamSide": "home"
+          },
+          {
+            "minute": "66′",
+            "in": "Christoph Kobald",
+            "out": "Paul Scholl",
+            "crestId": "00000T",
+            "team": "Karlsruher SC",
+            "teamSide": "home"
+          },
+          {
+            "minute": "61′",
+            "in": "Leon Opitz",
+            "out": "Robin Meißner",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "away"
+          },
+          {
+            "minute": "45+4′",
+            "in": "Bernd Riesselmann",
+            "out": "Bjarke Jacobsen",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "away"
+          },
+          {
+            "minute": "24′",
+            "in": "Leon Flach",
+            "out": "Fridolin Wagner",
+            "crestId": "000014",
+            "team": "VfL Osnabrück",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-11-22T17:36:51.858Z",
+        "finalChecked": true
+      },
       "83705": {
         "matchId": "83705",
         "home": "DSC Arminia Bielefeld",
@@ -10657,6 +10972,17 @@
           }
         ],
         "checkedAt": "2026-11-20T21:21:34.514Z",
+        "finalChecked": true
+      },
+      "83706": {
+        "matchId": "83706",
+        "home": "Energie Cottbus",
+        "away": "Hertha BSC",
+        "round": 12,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/12/fc-energie-cottbus-vs-hertha-bsc/liveticker/",
+        "cards": [],
+        "subs": [],
+        "checkedAt": "2026-11-22T17:36:59.068Z",
         "finalChecked": true
       }
     }
