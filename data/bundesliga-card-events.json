@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22T17:36:59.070Z",
+  "updatedAt": "2026-11-22T17:38:02.705Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -4987,9 +4987,43 @@
         "away": "Hamburger SV",
         "round": 10,
         "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/10/sv-werder-bremen-vs-hamburger-sv/liveticker/",
-        "cards": [],
-        "subs": [],
-        "checkedAt": "2026-11-22T17:36:48.933Z"
+        "cards": [
+          {
+            "minute": "39′",
+            "type": "yellow",
+            "player": "Chuki",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "home"
+          },
+          {
+            "minute": "23′",
+            "type": "yellow",
+            "player": "Warmed Omari",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "away"
+          },
+          {
+            "minute": "10′",
+            "type": "yellow",
+            "player": "Amos Pieper",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "home"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "19′",
+            "in": "Kofi Amoako",
+            "out": "Miro Muheim",
+            "crestId": "00000C",
+            "team": "Hamburger SV",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-11-22T17:38:02.543Z"
       },
       "83244": {
         "matchId": "83244",
