@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T22:52:30.301Z",
+  "updatedAt": "2026-11-27T22:53:41.726Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -11348,7 +11348,7 @@
         "away": "SV Darmstadt 98",
         "round": 13,
         "cards": [],
-        "finalAttempts": 1
+        "finalAttempts": 2
       }
     }
   },
