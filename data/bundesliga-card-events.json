@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22T18:31:08.678Z",
+  "updatedAt": "2026-11-27T22:52:30.301Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -5214,6 +5214,139 @@
         "round": 10,
         "cards": [],
         "finalAttempts": 3
+      },
+      "83253": {
+        "matchId": "83253",
+        "home": "SV Werder Bremen",
+        "away": "Borussia Mönchengladbach",
+        "round": 11,
+        "url": "https://www.bundesliga.com/de/bundesliga/spieltag/2026-2027/11/sv-werder-bremen-vs-borussia-moenchengladbach/liveticker/",
+        "cards": [
+          {
+            "minute": "90+5′",
+            "type": "yellow",
+            "player": "Alexander Schlager",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "home"
+          },
+          {
+            "minute": "57′",
+            "type": "yellow",
+            "player": "Mick Schmetgens",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "home"
+          },
+          {
+            "minute": "55′",
+            "type": "yellow",
+            "player": "Shuto Machino",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "away"
+          },
+          {
+            "minute": "44′",
+            "type": "yellow",
+            "player": "Niclas Füllkrug",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "home"
+          },
+          {
+            "minute": "44′",
+            "type": "yellow",
+            "player": "Philipp Sander",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "away"
+          },
+          {
+            "minute": "36′",
+            "type": "yellow",
+            "player": "Jens Castrop",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "89′",
+            "in": "Tim Kleindienst",
+            "out": "Shuto Machino",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "away"
+          },
+          {
+            "minute": "86′",
+            "in": "Senne Lynen",
+            "out": "Youri Regeer",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "home"
+          },
+          {
+            "minute": "84′",
+            "in": "Kō Itakura",
+            "out": "Zento Uno",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "away"
+          },
+          {
+            "minute": "84′",
+            "in": "Fritz Fleck",
+            "out": "Franck Honorat",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "away"
+          },
+          {
+            "minute": "79′",
+            "in": "Cedric Itten",
+            "out": "Chuki",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "home"
+          },
+          {
+            "minute": "75′",
+            "in": "Mathieu Nguefack",
+            "out": "Florian Neuhaus",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "away"
+          },
+          {
+            "minute": "75′",
+            "in": "David Herold",
+            "out": "Jens Castrop",
+            "crestId": "000004",
+            "team": "Borussia Mönchengladbach",
+            "teamSide": "away"
+          },
+          {
+            "minute": "72′",
+            "in": "Mitchell Weiser",
+            "out": "Olivier Deman",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "home"
+          },
+          {
+            "minute": "45+5′",
+            "in": "Mick Schmetgens",
+            "out": "Paul Erevbenagie",
+            "crestId": "00000E",
+            "team": "SV Werder Bremen",
+            "teamSide": "home"
+          }
+        ],
+        "checkedAt": "2026-11-27T22:52:17.077Z",
+        "finalChecked": true
       }
     },
     "bl2": {
@@ -11107,6 +11240,115 @@
         "subs": [],
         "checkedAt": "2026-11-22T17:36:59.068Z",
         "finalChecked": true
+      },
+      "83707": {
+        "matchId": "83707",
+        "home": "1. FC Heidenheim 1846",
+        "away": "1. FC Nürnberg",
+        "round": 13,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/13/1-fc-heidenheim-1846-vs-1-fc-nuernberg/liveticker/",
+        "cards": [
+          {
+            "minute": "75′",
+            "type": "yellow",
+            "player": "Oualid Mhamdi",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "home"
+          },
+          {
+            "minute": "44′",
+            "type": "yellow",
+            "player": "Budu Zivzivadze",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "home"
+          },
+          {
+            "minute": "6′",
+            "type": "yellow",
+            "player": "Alexios Kalogeropoulos",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "78′",
+            "in": "Can Moustfa",
+            "out": "Rafael Lubach",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "74′",
+            "in": "Sirlord Conteh",
+            "out": "Paul Hennrich",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "home"
+          },
+          {
+            "minute": "74′",
+            "in": "Leart Paçarada",
+            "out": "Marcel Costly",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "home"
+          },
+          {
+            "minute": "70′",
+            "in": "Rayan Ghrieb",
+            "out": "Javier Fernández",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "70′",
+            "in": "Sigurd Haugen",
+            "out": "William Bøving",
+            "crestId": "000005",
+            "team": "1. FC Nürnberg",
+            "teamSide": "away"
+          },
+          {
+            "minute": "61′",
+            "in": "Oualid Mhamdi",
+            "out": "Marnon Busch",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "home"
+          },
+          {
+            "minute": "61′",
+            "in": "Alessandro Vogt",
+            "out": "Christian Conteh",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "home"
+          },
+          {
+            "minute": "37′",
+            "in": "Julian Niehues",
+            "out": "Marko Zrilić",
+            "crestId": "000018",
+            "team": "1. FC Heidenheim 1846",
+            "teamSide": "home"
+          }
+        ],
+        "checkedAt": "2026-11-27T22:52:19.209Z",
+        "finalChecked": true
+      },
+      "83709": {
+        "matchId": "83709",
+        "home": "VfL Bochum",
+        "away": "SV Darmstadt 98",
+        "round": 13,
+        "cards": [],
+        "finalAttempts": 1
       }
     }
   },
