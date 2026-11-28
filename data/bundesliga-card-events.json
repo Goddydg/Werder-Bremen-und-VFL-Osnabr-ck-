@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-28T13:51:20.940Z",
+  "updatedAt": "2026-11-28T13:52:26.331Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -11433,6 +11433,14 @@
           },
           {
             "minute": "61′",
+            "in": "Viktor Bergh",
+            "out": "Deniz Ofli",
+            "crestId": "00000T",
+            "team": "Karlsruher SC",
+            "teamSide": "away"
+          },
+          {
+            "minute": "61′",
             "in": "Danyal Zor",
             "out": "Kevin Wiethaup",
             "crestId": "00000T",
@@ -11448,14 +11456,6 @@
             "teamSide": "away"
           },
           {
-            "minute": "60′",
-            "in": "Viktor Bergh",
-            "out": "Deniz Ofli",
-            "crestId": "00000T",
-            "team": "Karlsruher SC",
-            "teamSide": "away"
-          },
-          {
             "minute": "4′",
             "in": "Héliton",
             "out": "Sandro Trémoulet",
@@ -11464,7 +11464,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-28T13:51:18.939Z"
+        "checkedAt": "2026-11-28T13:52:24.306Z"
       },
       "83709": {
         "matchId": "83709",
@@ -11588,7 +11588,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-28T13:51:19.893Z"
+        "checkedAt": "2026-11-28T13:52:25.259Z"
       },
       "83712": {
         "matchId": "83712",
@@ -11696,7 +11696,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-28T13:51:20.938Z"
+        "checkedAt": "2026-11-28T13:52:26.329Z"
       }
     }
   },
