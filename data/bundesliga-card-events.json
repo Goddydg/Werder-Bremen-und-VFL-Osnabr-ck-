@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-28T13:24:17.251Z",
+  "updatedAt": "2026-11-28T13:26:26.800Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -11408,7 +11408,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-28T13:24:15.274Z"
+        "checkedAt": "2026-11-28T13:26:24.820Z"
       },
       "83709": {
         "matchId": "83709",
@@ -11451,7 +11451,7 @@
           }
         ],
         "subs": [],
-        "checkedAt": "2026-11-28T13:24:16.215Z"
+        "checkedAt": "2026-11-28T13:26:25.760Z"
       },
       "83712": {
         "matchId": "83712",
@@ -11477,8 +11477,25 @@
             "teamSide": "away"
           }
         ],
-        "subs": [],
-        "checkedAt": "2026-11-28T13:24:17.249Z"
+        "subs": [
+          {
+            "minute": "65′",
+            "in": "Naatan Skyttä",
+            "out": "Fabian Kunze",
+            "crestId": "00000I",
+            "team": "1. FC Kaiserslautern",
+            "teamSide": "away"
+          },
+          {
+            "minute": "64′",
+            "in": "Thierry Tazemeta",
+            "out": "Erencan Yardımcı",
+            "crestId": "00000I",
+            "team": "1. FC Kaiserslautern",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-11-28T13:26:26.799Z"
       }
     }
   },
