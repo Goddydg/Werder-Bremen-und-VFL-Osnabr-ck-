@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T22:54:53.183Z",
+  "updatedAt": "2026-11-28T13:21:00.906Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -11342,6 +11342,42 @@
         "checkedAt": "2026-11-27T22:52:19.209Z",
         "finalChecked": true
       },
+      "83708": {
+        "matchId": "83708",
+        "home": "Hertha BSC",
+        "away": "Karlsruher SC",
+        "round": 13,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/13/hertha-bsc-vs-karlsruher-sc/liveticker/",
+        "cards": [
+          {
+            "minute": "38′",
+            "type": "yellow",
+            "player": "Tim Civeja",
+            "crestId": "00000T",
+            "team": "Karlsruher SC",
+            "teamSide": "away"
+          },
+          {
+            "minute": "29′",
+            "type": "yellow",
+            "player": "Héliton",
+            "crestId": "00000T",
+            "team": "Karlsruher SC",
+            "teamSide": "away"
+          }
+        ],
+        "subs": [
+          {
+            "minute": "4′",
+            "in": "Héliton",
+            "out": "Sandro Trémoulet",
+            "crestId": "00000T",
+            "team": "Karlsruher SC",
+            "teamSide": "away"
+          }
+        ],
+        "checkedAt": "2026-11-28T13:20:58.433Z"
+      },
       "83709": {
         "matchId": "83709",
         "home": "VfL Bochum",
@@ -11349,6 +11385,60 @@
         "round": 13,
         "cards": [],
         "finalAttempts": 3
+      },
+      "83710": {
+        "matchId": "83710",
+        "home": "Dynamo Dresden",
+        "away": "FC St. Pauli",
+        "round": 13,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/13/sg-dynamo-dresden-vs-fc-st-pauli/liveticker/",
+        "cards": [
+          {
+            "minute": "61′",
+            "type": "yellow",
+            "player": "Erik Ahlstrand",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "away"
+          },
+          {
+            "minute": "53′",
+            "type": "yellow",
+            "player": "Joel Chima Fujita",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "away"
+          },
+          {
+            "minute": "31′",
+            "type": "yellow",
+            "player": "Friedrich Müller",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "home"
+          }
+        ],
+        "subs": [],
+        "checkedAt": "2026-11-28T13:20:59.867Z"
+      },
+      "83712": {
+        "matchId": "83712",
+        "home": "Holstein Kiel",
+        "away": "1. FC Kaiserslautern",
+        "round": 13,
+        "url": "https://www.bundesliga.com/de/2bundesliga/spieltag/2026-2027/13/holstein-kiel-vs-1-fc-kaiserslautern/liveticker/",
+        "cards": [
+          {
+            "minute": "34′",
+            "type": "yellow",
+            "player": "Jonas Therkelsen",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
+          }
+        ],
+        "subs": [],
+        "checkedAt": "2026-11-28T13:21:00.904Z"
       }
     }
   },
