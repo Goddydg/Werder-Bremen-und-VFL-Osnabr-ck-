@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-28T13:26:26.800Z",
+  "updatedAt": "2026-11-28T13:29:40.029Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -11376,6 +11376,30 @@
         ],
         "subs": [
           {
+            "minute": "67′",
+            "in": "Selim Telib",
+            "out": "Jón Dagur Thorsteinsson",
+            "crestId": "00000Z",
+            "team": "Hertha BSC",
+            "teamSide": "home"
+          },
+          {
+            "minute": "67′",
+            "in": "Farid Alfa-Ruprecht",
+            "out": "Oluwaseun Adewumi",
+            "crestId": "00000Z",
+            "team": "Hertha BSC",
+            "teamSide": "home"
+          },
+          {
+            "minute": "67′",
+            "in": "Gustaf Nilsson",
+            "out": "Sebastian Grønning",
+            "crestId": "00000Z",
+            "team": "Hertha BSC",
+            "teamSide": "home"
+          },
+          {
             "minute": "61′",
             "in": "Danyal Zor",
             "out": "Kevin Wiethaup",
@@ -11408,7 +11432,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-28T13:26:24.820Z"
+        "checkedAt": "2026-11-28T13:29:38.032Z"
       },
       "83709": {
         "matchId": "83709",
@@ -11450,8 +11474,17 @@
             "teamSide": "home"
           }
         ],
-        "subs": [],
-        "checkedAt": "2026-11-28T13:26:25.760Z"
+        "subs": [
+          {
+            "minute": "70′",
+            "in": "Alexander Rossipal",
+            "out": "Simon Straudi",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "home"
+          }
+        ],
+        "checkedAt": "2026-11-28T13:29:38.982Z"
       },
       "83712": {
         "matchId": "83712",
@@ -11495,7 +11528,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-28T13:26:26.799Z"
+        "checkedAt": "2026-11-28T13:29:40.027Z"
       }
     }
   },
