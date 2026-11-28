@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-28T13:22:06.561Z",
+  "updatedAt": "2026-11-28T13:23:11.962Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -11368,6 +11368,30 @@
         ],
         "subs": [
           {
+            "minute": "61′",
+            "in": "Danyal Zor",
+            "out": "Kevin Wiethaup",
+            "crestId": "00000T",
+            "team": "Karlsruher SC",
+            "teamSide": "away"
+          },
+          {
+            "minute": "61′",
+            "in": "Noel Eichinger",
+            "out": "Tim Civeja",
+            "crestId": "00000T",
+            "team": "Karlsruher SC",
+            "teamSide": "away"
+          },
+          {
+            "minute": "60′",
+            "in": "Viktor Bergh",
+            "out": "Deniz Ofli",
+            "crestId": "00000T",
+            "team": "Karlsruher SC",
+            "teamSide": "away"
+          },
+          {
             "minute": "4′",
             "in": "Héliton",
             "out": "Sandro Trémoulet",
@@ -11376,7 +11400,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-28T13:22:04.591Z"
+        "checkedAt": "2026-11-28T13:23:09.988Z"
       },
       "83709": {
         "matchId": "83709",
@@ -11419,7 +11443,7 @@
           }
         ],
         "subs": [],
-        "checkedAt": "2026-11-28T13:22:05.527Z"
+        "checkedAt": "2026-11-28T13:23:10.927Z"
       },
       "83712": {
         "matchId": "83712",
@@ -11446,7 +11470,7 @@
           }
         ],
         "subs": [],
-        "checkedAt": "2026-11-28T13:22:06.559Z"
+        "checkedAt": "2026-11-28T13:23:11.961Z"
       }
     }
   },
