@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-28T13:40:31.585Z",
+  "updatedAt": "2026-11-28T13:44:49.049Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -11376,6 +11376,14 @@
         ],
         "subs": [
           {
+            "minute": "82′",
+            "in": "Pascal Klemens",
+            "out": "Paul Seguin",
+            "crestId": "00000Z",
+            "team": "Hertha BSC",
+            "teamSide": "home"
+          },
+          {
             "minute": "75′",
             "in": "Deyovaisio Zeefuik",
             "out": "Mads Pedersen",
@@ -11440,7 +11448,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-28T13:40:29.534Z"
+        "checkedAt": "2026-11-28T13:44:47.024Z"
       },
       "83709": {
         "matchId": "83709",
@@ -11532,7 +11540,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-28T13:40:30.518Z"
+        "checkedAt": "2026-11-28T13:44:47.989Z"
       },
       "83712": {
         "matchId": "83712",
@@ -11624,7 +11632,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-28T13:40:31.580Z"
+        "checkedAt": "2026-11-28T13:44:49.048Z"
       }
     }
   },
