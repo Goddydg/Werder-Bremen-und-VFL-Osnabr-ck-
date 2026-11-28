@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-28T13:44:49.049Z",
+  "updatedAt": "2026-11-28T13:45:54.682Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -11448,7 +11448,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-28T13:44:47.024Z"
+        "checkedAt": "2026-11-28T13:45:52.676Z"
       },
       "83709": {
         "matchId": "83709",
@@ -11500,6 +11500,30 @@
         ],
         "subs": [
           {
+            "minute": "87′",
+            "in": "Jakob Lemmer",
+            "out": "Niklas Hauptmann",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "home"
+          },
+          {
+            "minute": "87′",
+            "in": "Kaan İnanoğlu",
+            "out": "Patrice Čović",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "home"
+          },
+          {
+            "minute": "87′",
+            "in": "Christoph Daferner",
+            "out": "Ben Bobzien",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "home"
+          },
+          {
             "minute": "81′",
             "in": "Connor Metcalfe",
             "out": "Branimir Hrgota",
@@ -11540,7 +11564,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-28T13:44:47.989Z"
+        "checkedAt": "2026-11-28T13:45:53.624Z"
       },
       "83712": {
         "matchId": "83712",
@@ -11616,7 +11640,7 @@
             "teamSide": "home"
           },
           {
-            "minute": "65′",
+            "minute": "64′",
             "in": "Naatan Skyttä",
             "out": "Fabian Kunze",
             "crestId": "00000I",
@@ -11632,7 +11656,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-28T13:44:49.048Z"
+        "checkedAt": "2026-11-28T13:45:54.680Z"
       }
     }
   },
