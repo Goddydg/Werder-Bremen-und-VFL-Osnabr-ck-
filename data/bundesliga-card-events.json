@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-28T13:32:54.959Z",
+  "updatedAt": "2026-11-28T13:35:04.358Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -11432,7 +11432,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-28T13:32:52.971Z"
+        "checkedAt": "2026-11-28T13:35:02.317Z"
       },
       "83709": {
         "matchId": "83709",
@@ -11484,6 +11484,22 @@
         ],
         "subs": [
           {
+            "minute": "75′",
+            "in": "Martijn Kaars",
+            "out": "Abdoulie Ceesay",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "away"
+          },
+          {
+            "minute": "75′",
+            "in": "Taichi Hara",
+            "out": "Youssoupha Niang",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "away"
+          },
+          {
             "minute": "70′",
             "in": "Alexander Rossipal",
             "out": "Simon Straudi",
@@ -11492,7 +11508,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-28T13:32:53.917Z"
+        "checkedAt": "2026-11-28T13:35:03.291Z"
       },
       "83712": {
         "matchId": "83712",
@@ -11552,7 +11568,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-28T13:32:54.957Z"
+        "checkedAt": "2026-11-28T13:35:04.357Z"
       }
     }
   },
