@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-28T13:45:54.682Z",
+  "updatedAt": "2026-11-28T13:47:00.112Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -11448,7 +11448,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-28T13:45:52.676Z"
+        "checkedAt": "2026-11-28T13:46:58.055Z"
       },
       "83709": {
         "matchId": "83709",
@@ -11499,6 +11499,14 @@
           }
         ],
         "subs": [
+          {
+            "minute": "87′",
+            "in": "Sam Klein",
+            "out": "Joel Chima Fujita",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "away"
+          },
           {
             "minute": "87′",
             "in": "Jakob Lemmer",
@@ -11564,7 +11572,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-28T13:45:53.624Z"
+        "checkedAt": "2026-11-28T13:46:59.033Z"
       },
       "83712": {
         "matchId": "83712",
@@ -11640,23 +11648,23 @@
             "teamSide": "home"
           },
           {
-            "minute": "64′",
-            "in": "Naatan Skyttä",
-            "out": "Fabian Kunze",
+            "minute": "65′",
+            "in": "Thierry Tazemeta",
+            "out": "Erencan Yardımcı",
             "crestId": "00000I",
             "team": "1. FC Kaiserslautern",
             "teamSide": "away"
           },
           {
             "minute": "64′",
-            "in": "Thierry Tazemeta",
-            "out": "Erencan Yardımcı",
+            "in": "Naatan Skyttä",
+            "out": "Fabian Kunze",
             "crestId": "00000I",
             "team": "1. FC Kaiserslautern",
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-28T13:45:54.680Z"
+        "checkedAt": "2026-11-28T13:47:00.111Z"
       }
     }
   },
