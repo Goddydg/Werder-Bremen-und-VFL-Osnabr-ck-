@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-28T13:29:40.029Z",
+  "updatedAt": "2026-11-28T13:31:49.529Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -11432,7 +11432,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-28T13:29:38.032Z"
+        "checkedAt": "2026-11-28T13:31:47.551Z"
       },
       "83709": {
         "matchId": "83709",
@@ -11484,7 +11484,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-28T13:29:38.982Z"
+        "checkedAt": "2026-11-28T13:31:48.489Z"
       },
       "83712": {
         "matchId": "83712",
@@ -11512,6 +11512,22 @@
         ],
         "subs": [
           {
+            "minute": "70′",
+            "in": "Ikem Ugoh",
+            "out": "Kasper Davidsen",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
+          },
+          {
+            "minute": "70′",
+            "in": "David Zec",
+            "out": "Noah Madsen",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
+          },
+          {
             "minute": "65′",
             "in": "Naatan Skyttä",
             "out": "Fabian Kunze",
@@ -11528,7 +11544,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-28T13:29:40.027Z"
+        "checkedAt": "2026-11-28T13:31:49.527Z"
       }
     }
   },
