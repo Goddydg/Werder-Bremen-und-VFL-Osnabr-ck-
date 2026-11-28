@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-28T13:23:11.962Z",
+  "updatedAt": "2026-11-28T13:24:17.251Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -11364,6 +11364,14 @@
             "crestId": "00000T",
             "team": "Karlsruher SC",
             "teamSide": "away"
+          },
+          {
+            "minute": "61′",
+            "type": "yellow",
+            "player": "Viktor Bergh",
+            "crestId": "00000T",
+            "team": "Karlsruher SC",
+            "teamSide": "away"
           }
         ],
         "subs": [
@@ -11400,7 +11408,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-28T13:23:09.988Z"
+        "checkedAt": "2026-11-28T13:24:15.274Z"
       },
       "83709": {
         "matchId": "83709",
@@ -11443,7 +11451,7 @@
           }
         ],
         "subs": [],
-        "checkedAt": "2026-11-28T13:23:10.927Z"
+        "checkedAt": "2026-11-28T13:24:16.215Z"
       },
       "83712": {
         "matchId": "83712",
@@ -11470,7 +11478,7 @@
           }
         ],
         "subs": [],
-        "checkedAt": "2026-11-28T13:23:11.961Z"
+        "checkedAt": "2026-11-28T13:24:17.249Z"
       }
     }
   },
