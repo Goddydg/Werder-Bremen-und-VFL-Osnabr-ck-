@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-28T13:21:00.906Z",
+  "updatedAt": "2026-11-28T13:22:06.561Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -11376,7 +11376,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-28T13:20:58.433Z"
+        "checkedAt": "2026-11-28T13:22:04.591Z"
       },
       "83709": {
         "matchId": "83709",
@@ -11419,7 +11419,7 @@
           }
         ],
         "subs": [],
-        "checkedAt": "2026-11-28T13:20:59.867Z"
+        "checkedAt": "2026-11-28T13:22:05.527Z"
       },
       "83712": {
         "matchId": "83712",
@@ -11435,10 +11435,18 @@
             "crestId": "000N5P",
             "team": "Holstein Kiel",
             "teamSide": "home"
+          },
+          {
+            "minute": "42′",
+            "type": "yellow",
+            "player": "Alex Murphy",
+            "crestId": "00000I",
+            "team": "1. FC Kaiserslautern",
+            "teamSide": "away"
           }
         ],
         "subs": [],
-        "checkedAt": "2026-11-28T13:21:00.904Z"
+        "checkedAt": "2026-11-28T13:22:06.559Z"
       }
     }
   },
