@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-28T13:50:15.435Z",
+  "updatedAt": "2026-11-28T13:51:20.940Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -11372,6 +11372,14 @@
             "crestId": "00000T",
             "team": "Karlsruher SC",
             "teamSide": "away"
+          },
+          {
+            "minute": "89′",
+            "type": "yellow",
+            "player": "Noel Eichinger",
+            "crestId": "00000T",
+            "team": "Karlsruher SC",
+            "teamSide": "away"
           }
         ],
         "subs": [
@@ -11456,7 +11464,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-28T13:50:13.403Z"
+        "checkedAt": "2026-11-28T13:51:18.939Z"
       },
       "83709": {
         "matchId": "83709",
@@ -11580,7 +11588,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-28T13:50:14.388Z"
+        "checkedAt": "2026-11-28T13:51:19.893Z"
       },
       "83712": {
         "matchId": "83712",
@@ -11688,7 +11696,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-28T13:50:15.433Z"
+        "checkedAt": "2026-11-28T13:51:20.938Z"
       }
     }
   },
