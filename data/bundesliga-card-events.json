@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-28T13:37:15.158Z",
+  "updatedAt": "2026-11-28T13:38:20.628Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -11376,6 +11376,14 @@
         ],
         "subs": [
           {
+            "minute": "75′",
+            "in": "Deyovaisio Zeefuik",
+            "out": "Mads Pedersen",
+            "crestId": "00000Z",
+            "team": "Hertha BSC",
+            "teamSide": "home"
+          },
+          {
             "minute": "67′",
             "in": "Selim Telib",
             "out": "Jón Dagur Thorsteinsson",
@@ -11432,7 +11440,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-28T13:37:13.169Z"
+        "checkedAt": "2026-11-28T13:38:18.635Z"
       },
       "83709": {
         "matchId": "83709",
@@ -11516,7 +11524,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-28T13:37:14.115Z"
+        "checkedAt": "2026-11-28T13:38:19.584Z"
       },
       "83712": {
         "matchId": "83712",
@@ -11592,7 +11600,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-28T13:37:15.157Z"
+        "checkedAt": "2026-11-28T13:38:20.627Z"
       }
     }
   },
