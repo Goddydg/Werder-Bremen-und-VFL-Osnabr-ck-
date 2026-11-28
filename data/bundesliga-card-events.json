@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-28T13:35:04.358Z",
+  "updatedAt": "2026-11-28T13:36:09.734Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -11432,7 +11432,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-28T13:35:02.317Z"
+        "checkedAt": "2026-11-28T13:36:07.736Z"
       },
       "83709": {
         "matchId": "83709",
@@ -11508,7 +11508,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-28T13:35:03.291Z"
+        "checkedAt": "2026-11-28T13:36:08.685Z"
       },
       "83712": {
         "matchId": "83712",
@@ -11535,6 +11535,22 @@
           }
         ],
         "subs": [
+          {
+            "minute": "75′",
+            "in": "Ivan Prtajin",
+            "out": "Ibrahim Kanaté",
+            "crestId": "00000I",
+            "team": "1. FC Kaiserslautern",
+            "teamSide": "away"
+          },
+          {
+            "minute": "75′",
+            "in": "Simon Asta",
+            "out": "Paul Joly",
+            "crestId": "00000I",
+            "team": "1. FC Kaiserslautern",
+            "teamSide": "away"
+          },
           {
             "minute": "70′",
             "in": "Ikem Ugoh",
@@ -11568,7 +11584,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-28T13:35:04.357Z"
+        "checkedAt": "2026-11-28T13:36:09.732Z"
       }
     }
   },
