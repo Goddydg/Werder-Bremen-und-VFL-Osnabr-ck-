@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-28T13:47:00.112Z",
+  "updatedAt": "2026-11-28T13:49:09.936Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -11376,6 +11376,14 @@
         ],
         "subs": [
           {
+            "minute": "86′",
+            "in": "Christoph Kobald",
+            "out": "Héliton",
+            "crestId": "00000T",
+            "team": "Karlsruher SC",
+            "teamSide": "away"
+          },
+          {
             "minute": "82′",
             "in": "Pascal Klemens",
             "out": "Paul Seguin",
@@ -11448,7 +11456,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-28T13:46:58.055Z"
+        "checkedAt": "2026-11-28T13:49:07.960Z"
       },
       "83709": {
         "matchId": "83709",
@@ -11572,7 +11580,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-28T13:46:59.033Z"
+        "checkedAt": "2026-11-28T13:49:08.897Z"
       },
       "83712": {
         "matchId": "83712",
@@ -11664,7 +11672,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-28T13:47:00.111Z"
+        "checkedAt": "2026-11-28T13:49:09.934Z"
       }
     }
   },
