@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-28T13:36:09.734Z",
+  "updatedAt": "2026-11-28T13:37:15.158Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -11432,7 +11432,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-28T13:36:07.736Z"
+        "checkedAt": "2026-11-28T13:37:13.169Z"
       },
       "83709": {
         "matchId": "83709",
@@ -11484,6 +11484,14 @@
         ],
         "subs": [
           {
+            "minute": "78′",
+            "in": "Thomas Keller",
+            "out": "Ahmet Muhamedbegović",
+            "crestId": "00000N",
+            "team": "Dynamo Dresden",
+            "teamSide": "home"
+          },
+          {
             "minute": "75′",
             "in": "Martijn Kaars",
             "out": "Abdoulie Ceesay",
@@ -11508,7 +11516,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-28T13:36:08.685Z"
+        "checkedAt": "2026-11-28T13:37:14.115Z"
       },
       "83712": {
         "matchId": "83712",
@@ -11584,7 +11592,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-28T13:36:09.732Z"
+        "checkedAt": "2026-11-28T13:37:15.157Z"
       }
     }
   },
