@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-28T13:39:26.166Z",
+  "updatedAt": "2026-11-28T13:40:31.585Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -11440,7 +11440,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-28T13:39:24.059Z"
+        "checkedAt": "2026-11-28T13:40:29.534Z"
       },
       "83709": {
         "matchId": "83709",
@@ -11492,6 +11492,14 @@
         ],
         "subs": [
           {
+            "minute": "81′",
+            "in": "Connor Metcalfe",
+            "out": "Branimir Hrgota",
+            "crestId": "00000H",
+            "team": "FC St. Pauli",
+            "teamSide": "away"
+          },
+          {
             "minute": "78′",
             "in": "Thomas Keller",
             "out": "Ahmet Muhamedbegović",
@@ -11524,7 +11532,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-28T13:39:25.007Z"
+        "checkedAt": "2026-11-28T13:40:30.518Z"
       },
       "83712": {
         "matchId": "83712",
@@ -11551,6 +11559,22 @@
           }
         ],
         "subs": [
+          {
+            "minute": "79′",
+            "in": "Andu Kelati",
+            "out": "Jonas Therkelsen",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
+          },
+          {
+            "minute": "79′",
+            "in": "Leon Parduzi",
+            "out": "Lasse Rosenboom",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
+          },
           {
             "minute": "75′",
             "in": "Ivan Prtajin",
@@ -11600,7 +11624,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-28T13:39:26.164Z"
+        "checkedAt": "2026-11-28T13:40:31.580Z"
       }
     }
   },
