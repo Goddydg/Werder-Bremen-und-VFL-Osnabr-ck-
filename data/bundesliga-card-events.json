@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-28T13:49:09.936Z",
+  "updatedAt": "2026-11-28T13:50:15.435Z",
   "leagues": {
     "bl1": {
       "83159": {
@@ -11456,7 +11456,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-28T13:49:07.960Z"
+        "checkedAt": "2026-11-28T13:50:13.403Z"
       },
       "83709": {
         "matchId": "83709",
@@ -11580,7 +11580,7 @@
             "teamSide": "home"
           }
         ],
-        "checkedAt": "2026-11-28T13:49:08.897Z"
+        "checkedAt": "2026-11-28T13:50:14.388Z"
       },
       "83712": {
         "matchId": "83712",
@@ -11607,6 +11607,22 @@
           }
         ],
         "subs": [
+          {
+            "minute": "89′",
+            "in": "Faride Alidou",
+            "out": "Gyan de Regt",
+            "crestId": "000N5P",
+            "team": "Holstein Kiel",
+            "teamSide": "home"
+          },
+          {
+            "minute": "89′",
+            "in": "Jacob Rasmussen",
+            "out": "Alex Murphy",
+            "crestId": "00000I",
+            "team": "1. FC Kaiserslautern",
+            "teamSide": "away"
+          },
           {
             "minute": "79′",
             "in": "Andu Kelati",
@@ -11672,7 +11688,7 @@
             "teamSide": "away"
           }
         ],
-        "checkedAt": "2026-11-28T13:49:09.934Z"
+        "checkedAt": "2026-11-28T13:50:15.433Z"
       }
     }
   },
